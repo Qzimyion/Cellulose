@@ -1,17 +1,17 @@
 {
 	"schemaVersion": 1,
-	"id": "cellulose-",
-	"version": "${1.0}",
+	"id": "cellulose",
+	"version": "v1.0",
 	"name": "Cellulose ",
 	"description": "Improving wood related blocks in minecraft by adding new ones and improving the old",
 	"authors": [
 		"Coder: Qzimyion",
-		"Texture for Engraved logs and wood: Amaro and Raze on the r/MinecraftSuggestions discord server"
+		"Texture for Engraved logs: Amaro and Raze on the r/MinecraftSuggestions discord server"
 	],
 	"contact": {
 		"homepage": "https://qzimyion.carrd.co/",
-		"sources": "https://github.com/Qzimyion/cellulose-template-1.20.1",
-		"issues": "https://github.com/Qzimyion/cellulose-template-1.20.1/issues"
+		"sources": "https://github.com/Qzimyion/cellulose-1.20.1",
+		"issues": "https://github.com/Qzimyion/cellulose-1.20.1/issues"
 	},
 	"license": "CC-BY-4.0",
 	"icon": "assets/cellulose/icon.png",
@@ -37,6 +37,6 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"another-mod": "https://modrinth.com/mod/continuity/version/3.0.0-beta.2+1.20"
 	}
 }
