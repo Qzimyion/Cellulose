@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_mosaic_slab",
+    "cellulose:birch_mosaic_slab",
+    "cellulose:spruce_mosaic_slab",
+    "cellulose:dark_oak_mosaic_slab",
+    "cellulose:jungle_mosaic_slab",
+    "cellulose:acacia_mosaic_slab",
+    "cellulose:crimson_mosaic_slab",
+    "cellulose:warped_mosaic_slab",
+    "cellulose:mangrove_mosaic_slab",
+    "cellulose:cherry_mosaic_slab"
+  ]
+}

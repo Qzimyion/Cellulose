@@ -1,0 +1,8 @@
+{
+  "type": "cellulose:sawmill",
+  "count": 4,
+  "ingredient": {
+    "tag": "minecraft:spruce_logs"
+  },
+  "result": "minecraft:spruce_planks"
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "cellulose:block/mangrove_mosaic",
+    "top": "cellulose:block/mangrove_mosaic",
+    "side": "cellulose:block/mangrove_mosaic"
+  }
+}

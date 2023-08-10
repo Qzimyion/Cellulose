@@ -1,0 +1,8 @@
+{
+  "type": "cellulose:sawmill",
+  "count": 4,
+  "ingredient": {
+    "tag": "minecraft:acacia_logs"
+  },
+  "result": "minecraft:acacia_planks"
+}

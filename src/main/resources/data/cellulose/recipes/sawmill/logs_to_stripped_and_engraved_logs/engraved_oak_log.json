@@ -1,0 +1,8 @@
+{
+  "type": "cellulose:sawmill",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:oak_log"
+  },
+  "result": "cellulose:engraved_oak_log"
+}

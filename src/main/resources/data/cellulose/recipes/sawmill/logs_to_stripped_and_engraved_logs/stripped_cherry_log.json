@@ -1,0 +1,8 @@
+{
+  "type": "cellulose:sawmill",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:cherry_log"
+  },
+  "result": "minecraft:stripped_cherry_log"
+}

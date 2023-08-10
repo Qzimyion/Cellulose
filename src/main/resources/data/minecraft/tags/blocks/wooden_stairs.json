@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:vertical_oak_planks_stairs",
+    "cellulose:vertical_birch_planks_stairs",
+    "cellulose:vertical_spruce_planks_stairs",
+    "cellulose:vertical_dark_oak_planks_stairs",
+    "cellulose:vertical_acacia_planks_stairs",
+    "cellulose:vertical_jungle_planks_stairs",
+    "cellulose:vertical_crimson_planks_stairs",
+    "cellulose:vertical_warped_planks_stairs",
+    "cellulose:vertical_mangrove_planks_stairs",
+    "cellulose:vertical_bamboo_planks_stairs",
+    "cellulose:vertical_cherry_planks_stairs"
+  ]
+}

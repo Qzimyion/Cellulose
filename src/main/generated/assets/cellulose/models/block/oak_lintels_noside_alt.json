@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_noside_alt",
+  "textures": {
+    "pane": "cellulose:block/oak_frame",
+    "edge": "cellulose:block/oak_lintels_top"
+  }
+}

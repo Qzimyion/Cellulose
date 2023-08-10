@@ -1,0 +1,13 @@
+{
+	"loader": "fusion:model",
+	"type": "fusion:connecting",
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"all": "cellulose:block/oak_frame"
+  },
+  "connections": [
+    {
+      "type": "fusion:is_same_block"
+    }
+  ]
+}

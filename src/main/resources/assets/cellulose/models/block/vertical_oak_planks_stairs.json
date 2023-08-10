@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "cellulose:block/vertical_oak_planks",
+    "top": "cellulose:block/vertical_oak_planks",
+    "side": "cellulose:block/vertical_oak_planks"
+  }
+}
