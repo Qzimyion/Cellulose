@@ -14,11 +14,13 @@ import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.recipe.SawmillingRecipe;
 import net.qzimyion.cellulose.registry.CelluloseBlocks;
+import net.qzimyion.cellulose.registry.CelluloseSounds;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 
 import java.util.List;
@@ -73,7 +75,7 @@ public class SawmillScreenHandler extends ScreenHandler {
                 context.run((world, pos) -> {
                     long l = world.getTime();
                     if (SawmillScreenHandler.this.lastTakeTime != l) {
-                        world.playSound(null, (BlockPos)pos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                        world.playSound(null, (BlockPos)pos, SoundEvent.of(CelluloseSounds.UI_SAWMILL_TAKE_RESULT), SoundCategory.BLOCKS, 1.0f, 1.0f);
                         SawmillScreenHandler.this.lastTakeTime = l;
                     }
                 });
