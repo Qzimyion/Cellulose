@@ -1,5 +1,6 @@
 package net.qzimyion.cellulose.recipe;
 
+
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemConvertible;
@@ -15,8 +16,7 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.registry.CelluloseBlocks;
 
-public class SawmillingRecipe extends CuttingRecipe
-{
+public class SawmillingRecipe extends CuttingRecipe {
     public SawmillingRecipe(Identifier id, String group, Ingredient input, ItemStack output) {
         super(new Type(), new Serializer(), id, group, input, output);
     }
