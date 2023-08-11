@@ -8,10 +8,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.Property;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerContext;
-import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -33,10 +30,11 @@ public class SawmillScreenHandler extends ScreenHandler {
     private ItemStack inputStack = ItemStack.EMPTY;
     long lastTakeTime;
     final Slot inputSlot;
+    final Slot inputSlot1;
     final Slot outputSlot;
     public  List<ItemStack> ingredients;
     Runnable contentsChangedListener = () -> {};
-    public final Inventory input = new SimpleInventory(1){
+    public final Inventory input = new SimpleInventory(2){
 
         @Override
         public void markDirty() {
@@ -56,8 +54,9 @@ public class SawmillScreenHandler extends ScreenHandler {
         int i;
         this.context = context;
         this.world = playerInventory.player.getWorld();
-        this.inputSlot = this.addSlot(new Slot(this.input, 0, 20, 33));
-        this.outputSlot = this.addSlot(new Slot(this.output, 1, 143, 33){
+        this.inputSlot = this.addSlot(new Slot(this.input, 0, 25, 21));
+        this.inputSlot1 = this.addSlot(new Slot(this.input, 1, 25, 41));
+        this.outputSlot = this.addSlot(new Slot(this.output, 2, 143, 33){
 
             @Override
             public boolean canInsert(ItemStack stack) {
@@ -69,13 +68,10 @@ public class SawmillScreenHandler extends ScreenHandler {
                 stack.onCraft(player.getWorld(), player, stack.getCount());
                 SawmillScreenHandler.this.output.unlockLastRecipe(player, ingredients);
                 ItemStack itemStack = SawmillScreenHandler.this.inputSlot.takeStack(1);
-                if (!itemStack.isEmpty()) {
-                    SawmillScreenHandler.this.populateResult();
-                }
                 context.run((world, pos) -> {
                     long l = world.getTime();
                     if (SawmillScreenHandler.this.lastTakeTime != l) {
-                        world.playSound(null, (BlockPos)pos, SoundEvent.of((CelluloseSounds.UI_SAWMILL_TAKE_RESULT)), SoundCategory.BLOCKS, 1.0f, 1.0f);
+                        world.playSound(null, (BlockPos)pos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundCategory.BLOCKS, 1.0f, 1.0f);
                         SawmillScreenHandler.this.lastTakeTime = l;
                     }
                 });
