@@ -75,7 +75,7 @@ public class SawmillScreenHandler extends ScreenHandler {
                 context.run((world, pos) -> {
                     long l = world.getTime();
                     if (SawmillScreenHandler.this.lastTakeTime != l) {
-                        world.playSound(null, (BlockPos)pos, SoundEvent.of(CelluloseSounds.UI_SAWMILL_TAKE_RESULT), SoundCategory.BLOCKS, 1.0f, 1.0f);
+                        world.playSound(null, (BlockPos)pos, SoundEvent.of((CelluloseSounds.UI_SAWMILL_TAKE_RESULT)), SoundCategory.BLOCKS, 1.0f, 1.0f);
                         SawmillScreenHandler.this.lastTakeTime = l;
                     }
                 });

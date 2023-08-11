@@ -1,8 +1,13 @@
 {
-  "my_sound": {
-    "subtitle": "subtitles.cellulose.sawmilling",
+  "ui.sawmill.select_recipe": {
+    "sounds": [
+      "random/click"
+    ]
+  },
+  "ui.sawmill.take_result": {
     "sounds": [
       "cellulose:sawmilling"
-    ]
+    ],
+    "subtitle": "subtitles.ui.sawmill.take_result"
   }
 }
