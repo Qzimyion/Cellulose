@@ -12,14 +12,14 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.recipe.SawmillingRecipe;
 
 import java.util.List;
 
 @Environment(value= EnvType.CLIENT)
 public class SawmillScreen extends HandledScreen<SawmillScreenHandler> {
-    private static final Identifier TEXTURE =
-            new Identifier("textures/gui/container/stonecutter.png");
+    private static final Identifier TEXTURE = new Identifier(Cellulose.MOD_ID, "textures/gui/container/sawmill/sawmill.png");
     private float scrollAmount;
     private boolean mouseClicked;
     private int scrollOffset;

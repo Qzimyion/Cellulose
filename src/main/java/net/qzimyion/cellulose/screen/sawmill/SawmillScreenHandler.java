@@ -21,6 +21,7 @@ import net.qzimyion.cellulose.registry.CelluloseSounds;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 
 import java.util.List;
+import java.util.Optional;
 
 public class SawmillScreenHandler extends ScreenHandler {
     private final ScreenHandlerContext context;
@@ -68,6 +69,7 @@ public class SawmillScreenHandler extends ScreenHandler {
                 stack.onCraft(player.getWorld(), player, stack.getCount());
                 SawmillScreenHandler.this.output.unlockLastRecipe(player, ingredients);
                 ItemStack itemStack = SawmillScreenHandler.this.inputSlot.takeStack(1);
+                ItemStack itemStack1 = SawmillScreenHandler.this.inputSlot.takeStack(1);
                 context.run((world, pos) -> {
                     long l = world.getTime();
                     if (SawmillScreenHandler.this.lastTakeTime != l) {
@@ -102,7 +104,8 @@ public class SawmillScreenHandler extends ScreenHandler {
     }
 
     public boolean canCraft() {
-        return this.inputSlot.hasStack() && !this.availableRecipes.isEmpty();
+        return this.inputSlot.hasStack() && this.inputSlot1.hasStack() && !this.availableRecipes.isEmpty();
+
     }
 
     @Override
@@ -126,6 +129,7 @@ public class SawmillScreenHandler extends ScreenHandler {
     @Override
     public void onContentChanged(Inventory inventory) {
         ItemStack itemStack = this.inputSlot.getStack();
+        ItemStack itemStack1 = this.inputSlot1.getStack();
         if (!itemStack.isOf(this.inputStack.getItem())) {
             this.inputStack = itemStack.copy();
             this.updateInput(inventory, itemStack);
@@ -137,14 +141,15 @@ public class SawmillScreenHandler extends ScreenHandler {
         this.selectedRecipe.set(-1);
         this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
         if (!stack.isEmpty()) {
-            this.availableRecipes = this.world.getRecipeManager().getAllMatches(SawmillingRecipe.Type.INSTANCE, input, this.world);
+            this.availableRecipes = this.world.getRecipeManager().getAllMatches
+                    (SawmillingRecipe.Type.INSTANCE, new SimpleInventory(), this.world);
         }
     }
 
     void populateResult() {
         if (!this.availableRecipes.isEmpty() && this.isInBounds(this.selectedRecipe.get())) {
             SawmillingRecipe sawmillingRecipe = this.availableRecipes.get(this.selectedRecipe.get());
-            ItemStack itemStack = sawmillingRecipe.craft(this.input, this.world.getRegistryManager());
+            ItemStack itemStack = sawmillingRecipe.craft((SimpleInventory) this.input, this.world.getRegistryManager());
             if (itemStack.isItemEnabled(this.world.getEnabledFeatures())) {
                 this.output.setLastRecipe(sawmillingRecipe);
                 this.outputSlot.setStackNoCallbacks(itemStack);
