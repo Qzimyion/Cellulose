@@ -13,6 +13,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.registry.CelluloseBlocks;
+import org.spongepowered.include.com.google.gson.JsonSyntaxException;
 
 public class SawmillingRecipe implements Recipe<SimpleInventory> {
     private final Ingredient inputA;
@@ -29,7 +30,6 @@ public class SawmillingRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-        if(inventory.size() < 2) return false;
         return inputA.test(inventory.getStack(0)) && inputB.test(inventory.getStack(1));
     }
 
@@ -87,10 +87,16 @@ public class SawmillingRecipe implements Recipe<SimpleInventory> {
         public SawmillingRecipe read(Identifier id, JsonObject json) {
             SawmillRecipeJsonFormat recipeJsonFormat = new Gson().fromJson(json, SawmillRecipeJsonFormat.class);
 
+            if (recipeJsonFormat.inputA == null || recipeJsonFormat.inputB == null || recipeJsonFormat.outputItem == null) {
+                throw new JsonSyntaxException("A required attribute is missing!");
+            }
+            if (recipeJsonFormat.outputAmount == 0) recipeJsonFormat.outputAmount = 1;
+
             Ingredient inputA = Ingredient.fromJson(recipeJsonFormat.inputA);
             Ingredient inputB = Ingredient.fromJson(recipeJsonFormat.inputB);
 
-            Item outputItem = Registries.ITEM.getOrEmpty(new Identifier(recipeJsonFormat.outputItem)).get();
+            Item outputItem = Registries.ITEM.getOrEmpty(new Identifier(recipeJsonFormat.outputItem))
+                    .orElseThrow(() -> new JsonSyntaxException("No such item " + recipeJsonFormat.outputItem));;
             ItemStack output = new ItemStack(outputItem, recipeJsonFormat.outputAmount);
 
             return new SawmillingRecipe(id, output, inputA, inputB);
