@@ -24,7 +24,6 @@ public class Cellulose implements ModInitializer
 		CelluloseRecipes.registerRecipes();
 		CelluloseScreens.registerScreens();
 		CelluloseStats.registerStats();
-		CelluloseSounds.registerSounds();
 		CelluloseTags.registerTags();
 	}
 }

@@ -108,7 +108,7 @@ public class SawmillScreenHandler extends ScreenHandler {
     }
 
     public boolean canCraft() {
-        return this.inputSlot.hasStack() && !this.availableRecipes.isEmpty();
+        return this.inputSlot.hasStack() && this.inputSlot1.hasStack() && !this.availableRecipes.isEmpty();
     }
 
     @Override
@@ -134,18 +134,18 @@ public class SawmillScreenHandler extends ScreenHandler {
         ItemStack itemStack = this.inputSlot.getStack();
         if (!itemStack.isOf(this.inputStack.getItem())) {
             this.inputStack = itemStack.copy();
-            this.updateInput(inventory, itemStack);
+            this.updateInput(itemStack);
         }
 
         ItemStack itemStack1 = this.inputSlot1.getStack();
         if (!itemStack1.isOf(this.inputStack1.getItem())) {
             this.inputStack1 = itemStack1.copy();
-            this.updateInput(inventory, itemStack1);
+            this.updateInput(itemStack1);
         }
 
     }
 
-    private void updateInput(Inventory input, ItemStack stack) {
+    private void updateInput(ItemStack stack) {
         this.availableRecipes.clear();
         this.selectedRecipe.set(-1);
         this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);

@@ -1,11 +1,14 @@
 {
   "type": "cellulose:sawmill",
-  "inputA" : {
-    "item": "minecraft:redstone"
-  },
-  "inputB": {
-    "tag": "minecraft:logs"
-  },
-  "outputItem": "minecraft:cobblestone",
-  "outputAmount": "20"
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "output": {
+    "item": "minecraft:sand"
+  }
 }
