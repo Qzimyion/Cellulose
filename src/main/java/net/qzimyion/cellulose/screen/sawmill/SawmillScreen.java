@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.recipe.SawmillingRecipe;
+import net.qzimyion.cellulose.registry.CelluloseSounds;
 
 import java.util.List;
 
@@ -24,7 +25,6 @@ public class SawmillScreen extends HandledScreen<SawmillScreenHandler> {
     private boolean mouseClicked;
     private int scrollOffset;
     private boolean canCraft;
-    public List<Text> text;
 
     public SawmillScreen(SawmillScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
@@ -110,7 +110,7 @@ public class SawmillScreen extends HandledScreen<SawmillScreenHandler> {
                 double d = mouseX - (double)(i + m % 4 * 16);
                 double e = mouseY - (double)(j + m / 4 * 18);
                 if (!(d >= 0.0) || !(e >= 0.0) || !(d < 16.0) || !(e < 18.0) || !((SawmillScreenHandler)this.handler).onButtonClick(this.client.player, l)) continue;
-                MinecraftClient.getInstance().getSoundManager().play(PositionedSoundInstance.master(SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1.0f));
+                MinecraftClient.getInstance().getSoundManager().play(PositionedSoundInstance.master(CelluloseSounds.UI_SAWMILL_TAKE_RESULT, 1.0f));
                 this.client.interactionManager.clickButton(((SawmillScreenHandler)this.handler).syncId, l);
                 return true;
             }

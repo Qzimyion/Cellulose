@@ -1,29 +1,31 @@
 package net.qzimyion.cellulose.recipe;
 
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.registry.CelluloseBlocks;
-import org.spongepowered.include.com.google.gson.JsonSyntaxException;
 
 public class SawmillingRecipe implements Recipe<SimpleInventory> {
     private final Ingredient inputA;
     private final Ingredient inputB;
-    private final ItemStack outputStack;
+    private final ItemStack output;
     private final Identifier id;
 
-    public SawmillingRecipe(Identifier id, ItemStack outputStack, Ingredient inputA, Ingredient inputB) {
+    private final String string;
+
+    public SawmillingRecipe(Identifier id, String string, ItemStack output, Ingredient inputA, Ingredient inputB) {
         this.id = id;
-        this.outputStack = outputStack;
+        this.string = string;
+        this.output = output;
         this.inputA = inputA;
         this.inputB = inputB;
     }
@@ -35,7 +37,7 @@ public class SawmillingRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
-        return outputStack;
+        return output;
     }
 
     public ItemStack createIcon() {
@@ -48,7 +50,7 @@ public class SawmillingRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public ItemStack getOutput(DynamicRegistryManager registryManager) {
-        return outputStack.copy();
+        return output.copy();
     }
 
     @Override
@@ -72,43 +74,42 @@ public class SawmillingRecipe implements Recipe<SimpleInventory> {
         public static final String ID = "sawmill";
     }
 
-    class SawmillRecipeJsonFormat {
-        JsonObject inputA;
-        JsonObject inputB;
-        String outputItem;
-        int outputAmount;
-    }
-
     public static class Serializer implements RecipeSerializer<SawmillingRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "sawmill";
 
         @Override
         public SawmillingRecipe read(Identifier id, JsonObject json) {
-            SawmillRecipeJsonFormat recipeJsonFormat = new Gson().fromJson(json, SawmillRecipeJsonFormat.class);
-
-            if (recipeJsonFormat.inputA == null || recipeJsonFormat.inputB == null || recipeJsonFormat.outputItem == null) {
-                throw new JsonSyntaxException("A required attribute is missing!");
+            String string = JsonHelper.getString(json, "group", "");
+            Ingredient inputA;
+            if (JsonHelper.hasArray(json, "inputA")) {
+                inputA = Ingredient.fromJson(JsonHelper.getArray(json, "inputA"));
+            } else {
+                inputA = Ingredient.fromJson(JsonHelper.getObject(json, "inputA"));
             }
-            if (recipeJsonFormat.outputAmount == 0) recipeJsonFormat.outputAmount = 1;
 
-            Ingredient inputA = Ingredient.fromJson(recipeJsonFormat.inputA);
-            Ingredient inputB = Ingredient.fromJson(recipeJsonFormat.inputB);
+            Ingredient inputB;
+            if (JsonHelper.hasArray(json, "inputB")) {
+                inputB = Ingredient.fromJson(JsonHelper.getArray(json, "inputB"));
+            } else {
+                inputB = Ingredient.fromJson(JsonHelper.getObject(json, "inputB"));
+            }
 
-            Item outputItem = Registries.ITEM.getOrEmpty(new Identifier(recipeJsonFormat.outputItem))
-                    .orElseThrow(() -> new JsonSyntaxException("No such item " + recipeJsonFormat.outputItem));;
-            ItemStack output = new ItemStack(outputItem, recipeJsonFormat.outputAmount);
+            String string2 = JsonHelper.getString(json, "result");
+            int i = JsonHelper.getInt(json, "count");
+            ItemStack itemStack = new ItemStack((ItemConvertible) Registries.ITEM.get(new Identifier(string2)), i);
 
-            return new SawmillingRecipe(id, output, inputA, inputB);
+            return new SawmillingRecipe(id, string, itemStack, inputA, inputB);
         }
 
         @Override
         public SawmillingRecipe read(Identifier id, PacketByteBuf buf) {
 
+            String string = buf.readString();
             Ingredient inputA = Ingredient.fromPacket(buf);
             Ingredient inputB = Ingredient.fromPacket(buf);
-            ItemStack outputItem = buf.readItemStack();
-            return new SawmillingRecipe(id, outputItem, inputA, inputB);
+            ItemStack result = buf.readItemStack();
+            return new SawmillingRecipe(id, string, result, inputA, inputB);
         }
 
         @Override
@@ -116,7 +117,7 @@ public class SawmillingRecipe implements Recipe<SimpleInventory> {
 
             recipe.inputA.write(buf);
             recipe.inputB.write(buf);
-            buf.writeItemStack(recipe.outputStack);
+            buf.writeItemStack(recipe.output);
         }
     }
 }
