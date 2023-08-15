@@ -8,6 +8,9 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.ItemStack;
+import net.minecraft.screen.LoomScreenHandler;
+import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -45,6 +48,10 @@ public class SawmillScreen extends HandledScreen<SawmillScreenHandler> {
         int i = this.x;
         int j = this.y;
         context.drawTexture(TEXTURE, i, j, 0, 0, this.backgroundWidth, this.backgroundHeight);
+        Slot slot = (Slot) this.handler.getinputslot1();
+        if (!slot.hasStack()) {
+            context.drawTexture(TEXTURE, i + slot.x, j + slot.y, this.backgroundWidth, 0, 16, 16);
+        }
         int k = (int)(41.0f * this.scrollAmount);
         context.drawTexture(TEXTURE, i + 119, j + 15 + k, 176 + (this.shouldScroll() ? 0 : 12), 0, 12, 15);
         int l = this.x + 52;
@@ -156,6 +163,7 @@ public class SawmillScreen extends HandledScreen<SawmillScreenHandler> {
     }
 
     private void onInventoryChange() {
+        Class<?> itemStack = ((SawmillScreenHandler)this.handler).getinputslot1().getClass();
         this.canCraft = ((SawmillScreenHandler)this.handler).canCraft();
         if (!this.canCraft) {
             this.scrollAmount = 0.0f;
