@@ -18,12 +18,13 @@ import net.qzimyion.cellulose.registry.CelluloseSounds;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 
 import java.util.List;
+import java.util.Optional;
 
 public class SawmillScreenHandler extends ScreenHandler {
     private final ScreenHandlerContext context;
     private final Property selectedRecipe = Property.create();
     private final World world;
-    private List<SawmillingRecipe> availableRecipes = Lists.newArrayList();
+    private final List<SawmillingRecipe> availableRecipes = Lists.newArrayList();
     private ItemStack inputStack = ItemStack.EMPTY;
     private ItemStack inputStack1 = ItemStack.EMPTY;
     long lastTakeTime;
@@ -137,23 +138,27 @@ public class SawmillScreenHandler extends ScreenHandler {
             this.updateInput(itemStack);
         }
 
-        ItemStack itemStack1 = this.inputSlot1.getStack();
-        if (!itemStack1.isOf(this.inputStack1.getItem())) {
-            this.inputStack1 = itemStack1.copy();
-            this.updateInput(itemStack1);
-        }
-
     }
 
-    private void updateInput(ItemStack stack) {
+    private void updateInput(ItemStack itemStack) {
         this.availableRecipes.clear();
         this.selectedRecipe.set(-1);
         this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
-        if (!stack.isEmpty()) {
-            SimpleInventory inventory = new SimpleInventory(2);
-            this.availableRecipes = this.world.getRecipeManager().getAllMatches(SawmillingRecipe.Type.INSTANCE, inventory, this.world);
+        if (!itemStack.isEmpty()) {
+            SimpleInventory inventory = new SimpleInventory(inputStack, inputStack1);
+            Optional<SawmillingRecipe> match = world.getRecipeManager().getFirstMatch(SawmillingRecipe.Type.INSTANCE, inventory, world);
 
+            return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                    && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
         }
+    }
+    private boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output)
+    {
+        return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty();
+    }
+
+    private Object canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
+        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
     }
 
     void populateResult() {
