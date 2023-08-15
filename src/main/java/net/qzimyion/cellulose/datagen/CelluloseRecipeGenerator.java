@@ -2,11 +2,15 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
+import net.qzimyion.cellulose.registry.CelluloseTags;
+
 import java.util.function.Consumer;
 
 import static net.minecraft.registry.tag.ItemTags.*;
@@ -390,6 +394,13 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .pattern("AAA").input('#', Items.IRON_INGOT).input('A', PLANKS).criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT), FabricRecipeProvider.conditionsFromTag(PLANKS))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(SAWMILL)));
 
+        //Frame recipes
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, OAK_FRAME, 5)
+                .pattern("#A#")
+                .pattern("A#A")
+                .pattern("#A#")
+                .input('#', Items.OAK_PLANKS).input('A', Items.STICK).criterion(FabricRecipeProvider.hasItem(Items.OAK_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
+                .group("cellulose:s").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(OAK_FRAME)));
 
     }
 }

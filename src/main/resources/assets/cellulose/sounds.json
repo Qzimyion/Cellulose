@@ -4,10 +4,10 @@
       "random/click"
     ]
   },
-  "ui.sawmill.take_result": {
+  "ui.sawmill.sawmilling_take_result": {
+    "subtitle": "subtitles.ui.sawmill.take_result",
     "sounds": [
-      "cellulose:sawmilling"
-    ],
-    "subtitle": "subtitles.ui.sawmill.take_result"
+      "cellulose:sawmilling_take_result"
+    ]
   }
 }

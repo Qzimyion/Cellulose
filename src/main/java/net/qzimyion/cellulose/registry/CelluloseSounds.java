@@ -9,7 +9,7 @@ import net.qzimyion.cellulose.Cellulose;
 
 public class CelluloseSounds
 {
-    public static final SoundEvent UI_SAWMILL_TAKE_RESULT = registerSounds("sawmilling");
+    public static final SoundEvent UI_SAWMILL_TAKE_RESULT = registerSounds("sawmilling_take_result");
 
     public static final BlockSoundGroup SAWMILL = new BlockSoundGroup(1f, 1f, CelluloseSounds.UI_SAWMILL_TAKE_RESULT, CelluloseSounds.UI_SAWMILL_TAKE_RESULT, CelluloseSounds.UI_SAWMILL_TAKE_RESULT, CelluloseSounds.UI_SAWMILL_TAKE_RESULT, CelluloseSounds.UI_SAWMILL_TAKE_RESULT);
 
