@@ -34,7 +34,6 @@ public class PickaxeMixin extends MiningToolItem {
         super(attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings);
     }
 
-    @Override
     public ActionResult useOnBlock(ItemUsageContext context){
         BlockPos blockPos = context.getBlockPos();
         World world = context.getWorld();
@@ -67,7 +66,7 @@ public class PickaxeMixin extends MiningToolItem {
     }
 
     @Unique
-    private static final Map<Block, Block> CHIPPED_BLOCKS = new ImmutableMap.Builder<Block, Block>()
+    private final Map<Block, Block> CHIPPED_BLOCKS = new ImmutableMap.Builder<Block, Block>()
             .put(Blocks.OAK_WOOD, CelluloseBlocks.CHIPPED_OAK_WOOD).put(Blocks.OAK_LOG, CelluloseBlocks.CHIPPED_OAK)
             .build();
 }
