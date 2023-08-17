@@ -14,7 +14,6 @@ import net.qzimyion.cellulose.Cellulose;
 public class CelluloseBlocks
 {
     //This section adds blocks
-    public static final Block CHIPPED_OAK = registerBlock("chipped_oak", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block VERTICAL_OAK_PLANKS = registerBlock("vertical_oak_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block OAK_MOSAIC = registerBlock("oak_mosaic", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block VERTICAL_BIRCH_PLANKS = registerBlock("vertical_birch_planks", new Block(FabricBlockSettings.copyOf(Blocks.BIRCH_PLANKS)));
@@ -127,6 +126,11 @@ public class CelluloseBlocks
     public static final Block ENGRAVED_MANGROVE_WOOD = registerBlock("engraved_mangrove_wood",new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_MANGROVE_WOOD)));
     public static final Block ENGRAVED_CHERRY = registerBlock("engraved_cherry_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CHERRY_LOG)));
     public static final Block ENGRAVED_CHERRY_WOOD = registerBlock("engraved_cherry_wood",new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CHERRY_WOOD)));
+
+    //Chipped wood
+
+    public static final Block CHIPPED_OAK = registerBlock("chipped_oak_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block CHIPPED_OAK_WOOD = registerBlock("chipped_oak_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
 
 
     private static Block registerBlock(String name, Block block){

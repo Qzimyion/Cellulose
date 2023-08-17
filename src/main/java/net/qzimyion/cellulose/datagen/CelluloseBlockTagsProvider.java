@@ -28,6 +28,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
         TagKey<Block> WOODEN_MOSAICS_STAIRS = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "wooden_mosaics_stairs"));
         TagKey<Block> WOODEN_FRAMES = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "wooden_frames"));
         TagKey<Block> LINTELS = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "lintels"));
+        TagKey<Block> CHARRABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "charrable"));
 
         getOrCreateTagBuilder(WOODEN_MOSAICS)
                 .add(OAK_MOSAIC)
@@ -73,6 +74,13 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(WARPED_MOSAIC_STAIRS)
                 .add(MANGROVE_MOSAIC_STAIRS)
                 .add(CHERRY_MOSAIC_STAIRS);
+
+        getOrCreateTagBuilder(CHARRABLE)
+                .forceAddTag(PLANKS)
+                .forceAddTag(LOGS_THAT_BURN)
+                .forceAddTag(WOODEN_MOSAICS)
+                .forceAddTag(WOODEN_MOSAICS_SLABS)
+                .forceAddTag(WOODEN_MOSAICS_STAIRS);
 
         getOrCreateTagBuilder(AXE_MINEABLE)
                 //Vertical Planks
