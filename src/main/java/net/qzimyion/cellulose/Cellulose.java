@@ -1,7 +1,6 @@
 package net.qzimyion.cellulose;
 
 import net.fabricmc.api.ModInitializer;
-import net.qzimyion.cellulose.events.WoodChipperEvent;
 import net.qzimyion.cellulose.recipe.CelluloseRecipes;
 import net.qzimyion.cellulose.registry.*;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
@@ -17,7 +16,6 @@ public class Cellulose implements ModInitializer
 	public void onInitialize()
 	{
 		CelluloseItems.registerCelluloseItems();
-		CelluloseItemGroups.registerItemGroups();
 		CelluloseBlocks.registerCelluloseBlocks();
 		CelluloseFlammableBlocks.registerFlammableBlocks();
 		CelluloseStrippableBlock.registerStrippableBlocks();
@@ -26,8 +24,7 @@ public class Cellulose implements ModInitializer
 		CelluloseScreens.registerScreens();
 		CelluloseStats.registerStats();
 		CelluloseTags.registerTags();
+		CelluloseItemGroups.registerItemGroups();
 
-		//Events
-		WoodChipperEvent.registerEvents();
 	}
 }

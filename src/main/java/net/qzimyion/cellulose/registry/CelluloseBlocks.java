@@ -10,6 +10,13 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 
+import static net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents.modifyEntriesEvent;
+import static net.minecraft.item.ItemGroups.*;
+import static net.minecraft.item.ItemGroups.BUILDING_BLOCKS;
+import static net.minecraft.item.Items.EGG;
+import static net.minecraft.item.Items.STONECUTTER;
+import static net.qzimyion.cellulose.registry.CelluloseItems.PIPIS;
+
 public class CelluloseBlocks
 {
     //This section adds blocks
