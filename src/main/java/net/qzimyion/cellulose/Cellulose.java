@@ -17,7 +17,6 @@ public class Cellulose implements ModInitializer
 	{
 		CelluloseItems.registerCelluloseItems();
 		CelluloseBlocks.registerCelluloseBlocks();
-		CelluloseItemGroups.registerItemGroups();
 		CelluloseFlammableBlocks.registerFlammableBlocks();
 		CelluloseStrippableBlock.registerStrippableBlocks();
 		CelluloseFuel.registerFuel();
@@ -25,6 +24,7 @@ public class Cellulose implements ModInitializer
 		CelluloseScreens.registerScreens();
 		CelluloseStats.registerStats();
 		CelluloseTags.registerTags();
+		CelluloseItemGroups.registerItemGroups();
 
 	}
 }
