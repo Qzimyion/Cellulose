@@ -9,7 +9,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
-import net.minecraft.registry.tag.TagKey;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -18,19 +19,20 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import net.qzimyion.cellulose.registry.CelluloseBlocks;
+import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
+
 
 import java.util.Map;
 import java.util.Optional;
 
-
+@Debug(export = true)
 @Mixin(PickaxeItem.class)
 public class PickaxeMixin extends MiningToolItem {
-    public PickaxeMixin(float attackDamage, float attackSpeed, ToolMaterial material, TagKey<Block> effectiveBlocks, Settings settings) {
-        super(attackDamage, attackSpeed, material, effectiveBlocks, settings);
+    public PickaxeMixin(float attackDamage, float attackSpeed, ToolMaterial material, Item.Settings settings) {
+        super(attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings);
     }
-
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context){
