@@ -1,58 +1,57 @@
 package net.qzimyion.cellulose.recipe;
 
-
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.*;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.registry.CelluloseBlocks;
 
-public class SawmillingRecipe implements Recipe<SimpleInventory> {
-    private final ItemStack output;
+public class SawmillingRecipe implements RecipeType, Recipe<Inventory> {
+
+    private final Ingredient inputA;
+    private final Ingredient inputB;
+    private final ItemStack outputStack;
     private final Identifier id;
-    private final DefaultedList<Ingredient> recipeItems;
-
-
-    public SawmillingRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
+    private final String string;
+    public SawmillingRecipe(Ingredient inputA, Ingredient inputB, ItemStack outputStack, Identifier id, String string) {
+        this.inputA = inputA;
+        this.inputB = inputB;
+        this.outputStack = outputStack;
         this.id = id;
-        this.output = output;
-        this.recipeItems = recipeItems;
+        this.string = string;
+    }
+
+    public boolean matches(Inventory inventory, World world) {
+        return this.inputA.test(inventory.getStack(0)) && this.inputB.test(inventory.getStack(1));
     }
 
     @Override
-    public boolean matches(SimpleInventory inventory, World world) {
-        if(world.isClient()) { return false; }
+    public ItemStack craft(Inventory inventory, DynamicRegistryManager registryManager) {
+        return null;
+    }
 
-        if(recipeItems.get(0).test(inventory.getStack(0))) {
-            return recipeItems.get(1).test(inventory.getStack(1));
-        }
-
+    @Override
+    public boolean fits(int width, int height) {
         return false;
     }
 
     @Override
-    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
-        return output;
+    public ItemStack getOutput(DynamicRegistryManager registryManager) {
+        return outputStack;
     }
 
     public ItemStack createIcon() {
         return new ItemStack(CelluloseBlocks.SAWMILL);
-    }
-    @Override
-    public boolean fits(int width, int height) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getOutput(DynamicRegistryManager registryManager) {
-        return output.copy();
     }
 
     @Override
@@ -81,36 +80,43 @@ public class SawmillingRecipe implements Recipe<SimpleInventory> {
         public static final String ID = "sawmill";
 
         @Override
-        public SawmillingRecipe read(Identifier id, JsonObject json) {
-            ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
-
-            JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY);
-
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+        public SawmillingRecipe read(Identifier id, JsonObject json){
+            String string = JsonHelper.getString(json, "group", "");
+            Ingredient inputA;
+            if (JsonHelper.hasArray(json, "inputA")) {
+                inputA = Ingredient.fromJson(JsonHelper.getArray(json, "inputA"));
+            } else {
+                inputA = Ingredient.fromJson(JsonHelper.getObject(json, "inputA"));
             }
 
-            return new SawmillingRecipe(id, output, inputs);
+            Ingredient inputB;
+            if (JsonHelper.hasArray(json, "inputA")) {
+                inputB = Ingredient.fromJson(JsonHelper.getArray(json, "inputB"));
+            } else {
+                inputB = Ingredient.fromJson(JsonHelper.getObject(json, "inputB"));
+            }
+
+            String string2 = JsonHelper.getString(json, "result");
+            int i = JsonHelper.getInt(json, "count");
+            ItemStack itemStack = new ItemStack((ItemConvertible) Registries.ITEM.get(new Identifier(string2)), i);
+            return new SawmillingRecipe(inputA, inputB, itemStack, id, string);
         }
 
         @Override
-        public SawmillingRecipe read(Identifier id, PacketByteBuf buf) {
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
-
-            inputs.replaceAll(ignored -> Ingredient.fromPacket(buf));
-
-            ItemStack output = buf.readItemStack();
-            return new SawmillingRecipe(id, output, inputs);
+        public SawmillingRecipe read(Identifier id, PacketByteBuf buf){
+            String string = buf.readString();
+            Ingredient inputA = Ingredient.fromPacket(buf);
+            Ingredient inputB = Ingredient.fromPacket(buf);
+            ItemStack itemStack = buf.readItemStack();
+            return new SawmillingRecipe(inputA, inputB, itemStack, id, string);
         }
 
         @Override
-        public void write(PacketByteBuf buf, SawmillingRecipe recipe) {
-            buf.writeInt(recipe.getIngredients().size());
-            for (Ingredient ing : recipe.getIngredients()) {
-                ing.write(buf);
-            }
-            buf.writeItemStack(recipe.output);
+        public void write(PacketByteBuf buf, SawmillingRecipe recipe){
+            buf.writeString(recipe.string);
+            recipe.inputA.write(buf);
+            recipe.inputB.write(buf);
+            buf.writeItemStack(recipe.outputStack);
         }
     }
 }
