@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.recipe.SawmillingRecipe;
 import net.qzimyion.cellulose.registry.CelluloseBlocks;
@@ -26,7 +27,7 @@ public class SawmillScreenHandler extends ScreenHandler {
     private final World world;
     private final List<SawmillingRecipe> availableRecipes = Lists.newArrayList();
     private ItemStack inputStack = ItemStack.EMPTY;
-    private ItemStack inputStack1 = ItemStack.EMPTY;
+    private final ItemStack inputStack1 = ItemStack.EMPTY;
     long lastTakeTime;
     final Slot inputSlot;
     final Slot inputSlot1;
@@ -148,10 +149,10 @@ public class SawmillScreenHandler extends ScreenHandler {
             SimpleInventory inventory = new SimpleInventory(inputStack, inputStack1);
             Optional<SawmillingRecipe> match = world.getRecipeManager().getFirstMatch(SawmillingRecipe.Type.INSTANCE, inventory, world);
 
-            return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                    && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
         }
     }
+
+
     private boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output)
     {
         return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty();
@@ -202,7 +203,7 @@ public class SawmillScreenHandler extends ScreenHandler {
     @Override
     public ItemStack quickMove(PlayerEntity player, int slot) {
         ItemStack itemStack = ItemStack.EMPTY;
-        Slot slot2 = (Slot)this.slots.get(slot);
+        Slot slot2 = this.slots.get(slot);
         if (slot2 != null && slot2.hasStack()) {
             ItemStack itemStack2 = slot2.getStack();
             Item item = itemStack2.getItem();
