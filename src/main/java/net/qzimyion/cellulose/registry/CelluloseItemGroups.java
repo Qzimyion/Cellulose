@@ -1,142 +1,140 @@
 package net.qzimyion.cellulose.registry;
 
-
-
-
-
 import net.minecraft.item.ItemGroups;
 
-import static net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents.modifyEntriesEvent;
-import static net.minecraft.item.ItemGroups.*;
-import static net.minecraft.item.Items.*;
-import static net.qzimyion.cellulose.registry.CelluloseBlocks.*;
-import static net.qzimyion.cellulose.registry.CelluloseItems.PIPIS;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.Items;
 
 public class CelluloseItemGroups
 {
     public static void registerItemGroups()
     {
-        modifyEntriesEvent(INGREDIENTS).register(content->{content.addAfter(EGG, PIPIS);});
+        //This section adds items to ingredients group
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register( content->{
+            content.addAfter(Items.EGG, CelluloseItems.PIPIS);
+        });
 
-        /*This section adds items to building blocks group
-        Section1: Solid block*/
+        /* This section adds items to building blocks group */
 
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(JUNGLE_SLAB, VERTICAL_JUNGLE_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(DARK_OAK_SLAB, VERTICAL_DARK_OAK_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(OAK_SLAB, VERTICAL_OAK_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(BIRCH_SLAB, VERTICAL_BIRCH_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(SPRUCE_SLAB, VERTICAL_SPRUCE_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ACACIA_SLAB, VERTICAL_ACACIA_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(MANGROVE_SLAB, VERTICAL_MANGROVE_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(BAMBOO_SLAB, VERTICAL_BAMBOO_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(CHERRY_SLAB, VERTICAL_CHERRY_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(CRIMSON_SLAB, VERTICAL_CRIMSON_PLANKS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(WARPED_SLAB, VERTICAL_WARPED_PLANKS);});
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
+            /* Section 1: Solid blocks */
+            content.addAfter(Items.JUNGLE_SLAB, CelluloseBlocks.VERTICAL_JUNGLE_PLANKS);
+            content.addAfter(Items.DARK_OAK_SLAB, CelluloseBlocks.VERTICAL_DARK_OAK_PLANKS);
+            content.addAfter(Items.OAK_SLAB, CelluloseBlocks.VERTICAL_OAK_PLANKS);
+            content.addAfter(Items.BIRCH_SLAB, CelluloseBlocks.VERTICAL_BIRCH_PLANKS);
+            content.addAfter(Items.SPRUCE_SLAB, CelluloseBlocks.VERTICAL_SPRUCE_PLANKS);
+            content.addAfter(Items.ACACIA_SLAB, CelluloseBlocks.VERTICAL_ACACIA_PLANKS);
+            content.addAfter(Items.MANGROVE_SLAB, CelluloseBlocks.VERTICAL_MANGROVE_PLANKS);
+            content.addAfter(Items.BAMBOO_SLAB, CelluloseBlocks.VERTICAL_BAMBOO_PLANKS);
+            content.addAfter(Items.CHERRY_SLAB, CelluloseBlocks.VERTICAL_CHERRY_PLANKS);
+            content.addAfter(Items.CRIMSON_SLAB, CelluloseBlocks.VERTICAL_CRIMSON_PLANKS);
+            content.addAfter(Items.WARPED_SLAB, CelluloseBlocks.VERTICAL_WARPED_PLANKS);
 
-        /*Section 2: Stairs*/
+            /*Section 2: Stairs*/
+            content.addAfter(CelluloseBlocks.VERTICAL_OAK_PLANKS, CelluloseBlocks.VERTICAL_OAK_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_BIRCH_PLANKS, CelluloseBlocks.VERTICAL_BIRCH_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_SPRUCE_PLANKS, CelluloseBlocks.VERTICAL_SPRUCE_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_DARK_OAK_PLANKS, CelluloseBlocks.VERTICAL_DARK_OAK_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_JUNGLE_PLANKS, CelluloseBlocks.VERTICAL_JUNGLE_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_ACACIA_PLANKS, CelluloseBlocks.VERTICAL_ACACIA_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_CRIMSON_PLANKS, CelluloseBlocks.VERTICAL_CRIMSON_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_WARPED_PLANKS, CelluloseBlocks.VERTICAL_WARPED_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_MANGROVE_PLANKS, CelluloseBlocks.VERTICAL_MANGROVE_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_BAMBOO_PLANKS, CelluloseBlocks.VERTICAL_BAMBOO_PLANKS_STAIRS);
+            content.addAfter(CelluloseBlocks.VERTICAL_CHERRY_PLANKS, CelluloseBlocks.VERTICAL_CHERRY_PLANKS_STAIRS);
 
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_OAK_PLANKS, VERTICAL_OAK_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_BIRCH_PLANKS, VERTICAL_BIRCH_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_SPRUCE_PLANKS, VERTICAL_SPRUCE_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_DARK_OAK_PLANKS, VERTICAL_DARK_OAK_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_JUNGLE_PLANKS, VERTICAL_JUNGLE_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_ACACIA_PLANKS, VERTICAL_ACACIA_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_CRIMSON_PLANKS, VERTICAL_CRIMSON_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_WARPED_PLANKS, VERTICAL_WARPED_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_MANGROVE_PLANKS, VERTICAL_MANGROVE_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_BAMBOO_PLANKS, VERTICAL_BAMBOO_PLANKS_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_CHERRY_PLANKS, VERTICAL_CHERRY_PLANKS_STAIRS);});
 
+            /*Section 3: Slabs*/
+            content.addAfter(CelluloseBlocks.VERTICAL_OAK_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_OAK_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_BIRCH_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_BIRCH_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_SPRUCE_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_SPRUCE_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_DARK_OAK_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_DARK_OAK_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_JUNGLE_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_JUNGLE_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_ACACIA_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_ACACIA_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_CRIMSON_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_CRIMSON_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_WARPED_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_WARPED_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_MANGROVE_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_MANGROVE_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_BAMBOO_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_BAMBOO_PLANKS_SLABS);
+            content.addAfter(CelluloseBlocks.VERTICAL_CHERRY_PLANKS_STAIRS, CelluloseBlocks.VERTICAL_CHERRY_PLANKS_SLABS);
 
-        /*Section 3: Slabs*/
+            //This section adds Lintels (Custom block)
 
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_OAK_PLANKS_STAIRS, VERTICAL_OAK_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_BIRCH_PLANKS_STAIRS, VERTICAL_BIRCH_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_SPRUCE_PLANKS_STAIRS, VERTICAL_SPRUCE_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_DARK_OAK_PLANKS_STAIRS, VERTICAL_DARK_OAK_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_JUNGLE_PLANKS_STAIRS, VERTICAL_JUNGLE_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_ACACIA_PLANKS_STAIRS, VERTICAL_ACACIA_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_CRIMSON_PLANKS_STAIRS, VERTICAL_CRIMSON_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_WARPED_PLANKS_STAIRS, VERTICAL_WARPED_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_MANGROVE_PLANKS_STAIRS, VERTICAL_MANGROVE_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_BAMBOO_PLANKS_STAIRS, VERTICAL_BAMBOO_PLANKS_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_CHERRY_PLANKS_STAIRS, VERTICAL_CHERRY_PLANKS_SLABS);});
+            content.addAfter(CelluloseBlocks.VERTICAL_OAK_PLANKS_SLABS, CelluloseBlocks.OAK_FRAME);
+            content.addAfter(CelluloseBlocks.VERTICAL_BIRCH_PLANKS_SLABS, CelluloseBlocks.BIRCH_FRAME);
+            content.addAfter(CelluloseBlocks.OAK_FRAME, CelluloseBlocks.OAK_LINTELS);
+            content.addAfter(CelluloseBlocks.BIRCH_FRAME, CelluloseBlocks.BIRCH_LINTELS);
 
-        //This section adds Lintels (Custom block)
+            //This section adds mosaic blocks
 
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_OAK_PLANKS_SLABS, OAK_FRAME);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(VERTICAL_BIRCH_PLANKS_SLABS, BIRCH_FRAME);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(OAK_FRAME, OAK_LINTELS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(BIRCH_FRAME, BIRCH_LINTELS);});
+            content.addAfter(Items.STRIPPED_OAK_WOOD, CelluloseBlocks.OAK_MOSAIC);
+            content.addAfter(Items.STRIPPED_BIRCH_WOOD, CelluloseBlocks.BIRCH_MOSAIC);
+            content.addAfter(Items.STRIPPED_SPRUCE_WOOD, CelluloseBlocks.SPRUCE_MOSAIC);
+            content.addAfter(Items.STRIPPED_JUNGLE_WOOD, CelluloseBlocks.JUNGLE_MOSAIC);
+            content.addAfter(Items.STRIPPED_ACACIA_WOOD, CelluloseBlocks.ACACIA_MOSAIC);
+            content.addAfter(Items.STRIPPED_DARK_OAK_WOOD, CelluloseBlocks.DARK_OAK_MOSAIC);
+            content.addAfter(Items.STRIPPED_CRIMSON_HYPHAE, CelluloseBlocks.CRIMSON_MOSAIC);
+            content.addAfter(Items.STRIPPED_WARPED_HYPHAE, CelluloseBlocks.WARPED_MOSAIC);
+            content.addAfter(Items.STRIPPED_MANGROVE_WOOD, CelluloseBlocks.MANGROVE_MOSAIC);
+            content.addAfter(Items.STRIPPED_CHERRY_WOOD, CelluloseBlocks.CHERRY_MOSAIC);
 
-        //This section adds mosaic blocks
+            //Mosaic stairs
+            content.addAfter(CelluloseBlocks.OAK_MOSAIC, CelluloseBlocks.OAK_MOSAIC_STAIRS);
+            content.addAfter(CelluloseBlocks.BIRCH_MOSAIC, CelluloseBlocks.BIRCH_MOSAIC_STAIRS);
+            content.addAfter(CelluloseBlocks.SPRUCE_MOSAIC, CelluloseBlocks.SPRUCE_MOSAIC_STAIRS);
+            content.addAfter(CelluloseBlocks.JUNGLE_MOSAIC, CelluloseBlocks.JUNGLE_MOSAIC_STAIRS);
+            content.addAfter(CelluloseBlocks.ACACIA_MOSAIC, CelluloseBlocks.ACACIA_MOSAIC_STAIRS);
+            content.addAfter(CelluloseBlocks.DARK_OAK_MOSAIC, CelluloseBlocks.DARK_OAK_MOSAIC_STAIRS);
+            content.addAfter(CelluloseBlocks.CRIMSON_MOSAIC, CelluloseBlocks.CRIMSON_MOSAIC_STAIRS);
+            content.addAfter(CelluloseBlocks.WARPED_MOSAIC, CelluloseBlocks.WARPED_MOSAIC_STAIRS);
+            content.addAfter(CelluloseBlocks.MANGROVE_MOSAIC, CelluloseBlocks.MANGROVE_MOSAIC_STAIRS);
+            content.addAfter(CelluloseBlocks.CHERRY_MOSAIC, CelluloseBlocks.CHERRY_MOSAIC_STAIRS);
 
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_OAK_WOOD, OAK_MOSAIC);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_BIRCH_WOOD, BIRCH_MOSAIC);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_SPRUCE_WOOD, SPRUCE_MOSAIC);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_JUNGLE_WOOD, JUNGLE_MOSAIC);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_ACACIA_WOOD, ACACIA_MOSAIC);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_DARK_OAK_WOOD, DARK_OAK_MOSAIC);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_CRIMSON_HYPHAE, CRIMSON_MOSAIC);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_WARPED_HYPHAE, WARPED_MOSAIC);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_MANGROVE_WOOD, MANGROVE_MOSAIC);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_CHERRY_WOOD, CHERRY_MOSAIC);});
+            //Mosaic slabs
 
-        //Mosaic stairs
+            content.addAfter(CelluloseBlocks.OAK_MOSAIC_STAIRS, CelluloseBlocks.OAK_MOSAIC_SLABS);
+            content.addAfter(CelluloseBlocks.BIRCH_MOSAIC_STAIRS, CelluloseBlocks.BIRCH_MOSAIC_SLABS);
+            content.addAfter(CelluloseBlocks.SPRUCE_MOSAIC_STAIRS, CelluloseBlocks.SPRUCE_MOSAIC_SLABS);
+            content.addAfter(CelluloseBlocks.JUNGLE_MOSAIC_STAIRS, CelluloseBlocks.JUNGLE_MOSAIC_SLABS);
+            content.addAfter(CelluloseBlocks.ACACIA_MOSAIC_STAIRS, CelluloseBlocks.ACACIA_MOSAIC_SLABS);
+            content.addAfter(CelluloseBlocks.DARK_OAK_MOSAIC_STAIRS, CelluloseBlocks.DARK_OAK_MOSAIC_SLABS);
+            content.addAfter(CelluloseBlocks.CRIMSON_MOSAIC_STAIRS, CelluloseBlocks.CRIMSON_MOSAIC_SLABS);
+            content.addAfter(CelluloseBlocks.WARPED_MOSAIC_STAIRS, CelluloseBlocks.WARPED_MOSAIC_SLABS);
+            content.addAfter(CelluloseBlocks.MANGROVE_MOSAIC_STAIRS, CelluloseBlocks.MANGROVE_MOSAIC_SLABS);
+            content.addAfter(CelluloseBlocks.CHERRY_MOSAIC_STAIRS, CelluloseBlocks.CHERRY_MOSAIC_SLABS);
 
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(OAK_MOSAIC, OAK_MOSAIC_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(BIRCH_MOSAIC, BIRCH_MOSAIC_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(SPRUCE_MOSAIC, SPRUCE_MOSAIC_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(JUNGLE_MOSAIC, JUNGLE_MOSAIC_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ACACIA_MOSAIC, ACACIA_MOSAIC_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(DARK_OAK_MOSAIC, DARK_OAK_MOSAIC_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(CRIMSON_MOSAIC, CRIMSON_MOSAIC_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(WARPED_MOSAIC, WARPED_MOSAIC_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(MANGROVE_MOSAIC, MANGROVE_MOSAIC_STAIRS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(CHERRY_MOSAIC, CHERRY_MOSAIC_STAIRS);});
+            //Engraved logs and wood
 
-        //Mosaic slabs
+            content.addAfter(Items.STRIPPED_OAK_WOOD, CelluloseBlocks.ENGRAVED_OAK);
+            content.addAfter(Items.STRIPPED_BIRCH_WOOD, CelluloseBlocks.ENGRAVED_BIRCH);
+            content.addAfter(Items.STRIPPED_SPRUCE_WOOD, CelluloseBlocks.ENGRAVED_SPRUCE);
+            content.addAfter(Items.STRIPPED_JUNGLE_WOOD, CelluloseBlocks.ENGRAVED_JUNGLE);
+            content.addAfter(Items.STRIPPED_ACACIA_WOOD, CelluloseBlocks.ENGRAVED_ACACIA);
+            content.addAfter(Items.STRIPPED_DARK_OAK_WOOD, CelluloseBlocks.ENGRAVED_DARK_OAK);
+            content.addAfter(Items.STRIPPED_CRIMSON_HYPHAE, CelluloseBlocks.ENGRAVED_CRIMSON);
+            content.addAfter(Items.STRIPPED_WARPED_HYPHAE, CelluloseBlocks.ENGRAVED_WARPED);
+            content.addAfter(Items.STRIPPED_MANGROVE_WOOD, CelluloseBlocks.ENGRAVED_MANGROVE);
+            content.addAfter(Items.STRIPPED_CHERRY_WOOD, CelluloseBlocks.ENGRAVED_CHERRY);
+            content.addAfter(CelluloseBlocks.ENGRAVED_OAK, CelluloseBlocks.ENGRAVED_OAK_WOOD);
+            content.addAfter(CelluloseBlocks.ENGRAVED_BIRCH, CelluloseBlocks.ENGRAVED_BIRCH_WOOD);
+            content.addAfter(CelluloseBlocks.ENGRAVED_SPRUCE, CelluloseBlocks.ENGRAVED_SPRUCE_WOOD);
+            content.addAfter(CelluloseBlocks.ENGRAVED_JUNGLE, CelluloseBlocks.ENGRAVED_JUNGLE_WOOD);
+            content.addAfter(CelluloseBlocks.ENGRAVED_ACACIA, CelluloseBlocks.ENGRAVED_ACACIA_WOOD);
+            content.addAfter(CelluloseBlocks.ENGRAVED_DARK_OAK, CelluloseBlocks.ENGRAVED_DARK_OAK_WOOD);
+            content.addAfter(CelluloseBlocks.ENGRAVED_CRIMSON, CelluloseBlocks.ENGRAVED_CRIMSON_HYPHAE);
+            content.addAfter(CelluloseBlocks.ENGRAVED_WARPED, CelluloseBlocks.ENGRAVED_WARPED_HYPHAE);
+            content.addAfter(CelluloseBlocks.ENGRAVED_MANGROVE, CelluloseBlocks.ENGRAVED_MANGROVE_WOOD);
+            content.addAfter(CelluloseBlocks.ENGRAVED_CHERRY, CelluloseBlocks.ENGRAVED_CHERRY_WOOD);
 
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(OAK_MOSAIC_STAIRS, OAK_MOSAIC_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(BIRCH_MOSAIC_STAIRS, BIRCH_MOSAIC_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(SPRUCE_MOSAIC_STAIRS, SPRUCE_MOSAIC_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(JUNGLE_MOSAIC_STAIRS, JUNGLE_MOSAIC_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ACACIA_MOSAIC_STAIRS, ACACIA_MOSAIC_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(DARK_OAK_MOSAIC_STAIRS, DARK_OAK_MOSAIC_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(CRIMSON_MOSAIC_STAIRS, CRIMSON_MOSAIC_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(WARPED_MOSAIC_STAIRS, WARPED_MOSAIC_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(MANGROVE_MOSAIC_STAIRS, MANGROVE_MOSAIC_SLABS);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(CHERRY_MOSAIC_STAIRS, CHERRY_MOSAIC_SLABS);});
+            //Chipped woodset
+            content.addAfter(CelluloseBlocks.ENGRAVED_OAK_WOOD, CelluloseBlocks.CHIPPED_OAK);
+            content.addAfter(CelluloseBlocks.CHIPPED_OAK, CelluloseBlocks.CHIPPED_OAK_WOOD);
 
-        //Sawmill
-        modifyEntriesEvent(FUNCTIONAL).register(content->{content.addAfter(STONECUTTER, SAWMILL);});
+        });
 
-        //Engraved logs and wood
-
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_OAK_WOOD, ENGRAVED_OAK);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_BIRCH_WOOD, ENGRAVED_BIRCH);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_SPRUCE_WOOD, ENGRAVED_SPRUCE);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_JUNGLE_WOOD, ENGRAVED_JUNGLE);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_ACACIA_WOOD, ENGRAVED_ACACIA);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_DARK_OAK_WOOD, ENGRAVED_DARK_OAK);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_CRIMSON_HYPHAE, ENGRAVED_CRIMSON);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_WARPED_HYPHAE, ENGRAVED_WARPED);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_MANGROVE_WOOD, ENGRAVED_MANGROVE);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(STRIPPED_CHERRY_WOOD, ENGRAVED_CHERRY);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_OAK, ENGRAVED_OAK_WOOD);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_BIRCH, ENGRAVED_BIRCH_WOOD);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_SPRUCE, ENGRAVED_SPRUCE_WOOD);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_JUNGLE, ENGRAVED_JUNGLE_WOOD);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_ACACIA, ENGRAVED_ACACIA_WOOD);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_DARK_OAK, ENGRAVED_DARK_OAK_WOOD);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_CRIMSON, ENGRAVED_CRIMSON_HYPHAE);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_WARPED, ENGRAVED_WARPED_HYPHAE);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_MANGROVE, ENGRAVED_MANGROVE_WOOD);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_CHERRY, ENGRAVED_CHERRY_WOOD);});
-
-        //Chipped woodset
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_OAK_WOOD, CHIPPED_OAK);});
-        modifyEntriesEvent(BUILDING_BLOCKS).register(content->{content.addAfter(CHIPPED_OAK, CHIPPED_OAK_WOOD);});
+        // Functional blocks
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
+            content.addAfter(Items.STONECUTTER, CelluloseBlocks.SAWMILL);
+        });
 
     }
 
