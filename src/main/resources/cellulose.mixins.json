@@ -2,10 +2,10 @@
 	"required": true,
 	"package": "net.qzimyion.cellulose.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-		"ExampleMixin",
-		"PickaxeMixin"
-	],
+	"mixins": ["ExampleMixin",
+		       "PickaxeMixin"],
+	"client": [],
+	"server": [],
 	"injectors": {
 		"defaultRequire": 1
 	}
