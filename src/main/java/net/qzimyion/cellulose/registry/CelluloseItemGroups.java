@@ -133,6 +133,10 @@ public class CelluloseItemGroups
         modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_MANGROVE, ENGRAVED_MANGROVE_WOOD);});
         modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_CHERRY, ENGRAVED_CHERRY_WOOD);});
 
+        //Chipped woodset
+        modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content->{content.addAfter(ENGRAVED_OAK_WOOD, CHIPPED_OAK);});
+        modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content->{content.addAfter(CHIPPED_OAK, CHIPPED_OAK_WOOD);});
+
     }
 
 }
