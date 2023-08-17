@@ -3,7 +3,8 @@
 	"package": "net.qzimyion.cellulose.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"PickaxeMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
