@@ -1,7 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "pane": "cellulose:block/oak_frame",
-    "edge": "minecraft:block/oak_planks"
+    "layer0": "cellulose:block/oak_frame"
   }
 }
