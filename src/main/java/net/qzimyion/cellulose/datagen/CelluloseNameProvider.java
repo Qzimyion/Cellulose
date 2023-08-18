@@ -3,6 +3,7 @@ package net.qzimyion.cellulose.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.qzimyion.cellulose.registry.CelluloseBlocks;
+import net.qzimyion.cellulose.registry.CelluloseItems;
 import net.qzimyion.cellulose.registry.CelluloseStats;
 
 import java.nio.file.Path;
@@ -75,9 +76,29 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(ENGRAVED_WARPED_HYPHAE, "Engraved Warped Hyphae");
         translationBuilder.add(ENGRAVED_MANGROVE_WOOD, "Engraved Mangrove Wood");
         translationBuilder.add(ENGRAVED_CHERRY_WOOD, "Engraved Cherry Wood");
-
+        //Cactus Woodset
+        translationBuilder.add(CACTUS_BUNDLE, "Cactus Bundle");
+        translationBuilder.add(CACTUS_PLANKS, "Cactus Planks");
+        translationBuilder.add(CACTUS_STAIRS, "Cactus Planks Stairs");
+        translationBuilder.add(CACTUS_SLABS, "Cactus Planks Slabs");
+        translationBuilder.add(CACTUS_CROWN, "Cactus Crown");
+        translationBuilder.add(STRIPPED_CACTUS, "Stripped Cactus");
+        translationBuilder.add(STRIPPED_CACTUS_CROWN, "Stripped Cactus Crown");
+        translationBuilder.add(CACTUS_FENCE, "Cactus Fence");
+        translationBuilder.add(CACTUS_FENCE_GATE, "Cactus Fence gate");
+        translationBuilder.add(CACTUS_BUTTON, "Cactus Button");
+        translationBuilder.add(CACTUS_PRESSURE_PLATE, "Cactus Pressure Plate");
+        translationBuilder.add(CACTUS_DOOR, "Cactus Door");
+        translationBuilder.add(CACTUS_TRAPDOOR, "Cactus Trapdoor");
+        translationBuilder.add(VERTICAL_CACTUS_PLANKS, "Vertical Cactus Planks");
+        translationBuilder.add(VERTICAL_CACTUS_PLANKS_STAIRS, "Vertical Cactus Planks Stairs");
+        translationBuilder.add(VERTICAL_CACTUS_PLANKS_SLABS, "Vertical Cactus Planks Stairs");
+        translationBuilder.add(ENGRAVED_CACTUS, "Engraved Cactus");
+        translationBuilder.add(ENGRAVED_CACTUS_CROWN, "Engraved Cactus Crown");
         /*Stats*/
         translationBuilder.add(CelluloseStats.INTERACT_WITH_SAWMILL, "Interaction with sawmill");
+        //Misc
+        translationBuilder.add(CelluloseItems.CACTUS_JUICE, "Cactus Juice");
 
     }
 }

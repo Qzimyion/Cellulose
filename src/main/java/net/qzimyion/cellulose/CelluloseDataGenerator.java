@@ -12,8 +12,8 @@ public class CelluloseDataGenerator implements DataGeneratorEntrypoint
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(CelluloseRecipeGenerator::new);
-		pack.addProvider(CelluloseModelProvider::new);
 		pack.addProvider(CelluloseNameProvider::new);
+		pack.addProvider(CelluloseModelProvider::new);
 		pack.addProvider(CelluloseLootTableProvider::new);
 		pack.addProvider(CelluloseBlockTagsProvider::new);
 	}

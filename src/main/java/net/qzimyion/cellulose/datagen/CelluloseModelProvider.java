@@ -21,7 +21,34 @@ public class CelluloseModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         //Blocks
-        blockStateModelGenerator.registerSimpleCubeAll(CHIPPED_OAK);
+        BlockStateModelGenerator.BlockTexturePool cactusTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(CACTUS_PLANKS);
+        blockStateModelGenerator.registerSimpleCubeAll(CACTUS_BUNDLE);
+        blockStateModelGenerator.registerSimpleCubeAll(CACTUS_MOSAIC);
+
+        //Slabs
+        cactusTexturePool.slab(CACTUS_SLABS);
+
+        //Stairs
+        cactusTexturePool.stairs(CACTUS_STAIRS);
+
+        //Fence and Fence-Gates
+        cactusTexturePool.fence(CACTUS_FENCE);
+        cactusTexturePool.fenceGate(CACTUS_FENCE_GATE);
+
+        //Button
+        cactusTexturePool.button(CACTUS_BUTTON);
+
+        //P.Plate
+        cactusTexturePool.pressurePlate(CACTUS_PRESSURE_PLATE);
+
+        //Hanging Sign
+        blockStateModelGenerator.registerHangingSign(STRIPPED_CACTUS, CACTUS_HANGING_SIGN, CACTUS_WALL_HANGING_SIGN);
+
+        //Door
+        blockStateModelGenerator.registerDoor(CACTUS_DOOR);
+
+        //Trapdoor
+        blockStateModelGenerator.registerTrapdoor(CACTUS_TRAPDOOR);
 
         //Panes
         blockStateModelGenerator.registerGlassPane(OAK_FRAME, OAK_LINTELS);
