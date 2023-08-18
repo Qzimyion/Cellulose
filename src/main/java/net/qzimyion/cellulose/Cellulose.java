@@ -25,6 +25,5 @@ public class Cellulose implements ModInitializer
 		CelluloseStats.registerStats();
 		CelluloseTags.registerTags();
 		CelluloseItemGroups.registerItemGroups();
-
 	}
 }
