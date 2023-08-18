@@ -69,5 +69,17 @@
   "block.cellulose.warped_mosaic_slab": "Warped Mosaic Slab",
   "block.cellulose.warped_mosaic_stairs": "Warped Mosaic Stairs",
   "cellulose.interact_with_sawmill": "Interaction with sawmill",
-  "item.cellulose.cactus_juice": "Cactus Juice"
+  "item.cellulose.acacia_bark": "Acacia Bark",
+  "item.cellulose.bamboo_bark": "Bamboo Bark",
+  "item.cellulose.birch_bark": "Birch Bark",
+  "item.cellulose.cactus_bark": "Cactus Bark",
+  "item.cellulose.cactus_juice": "Cactus Juice",
+  "item.cellulose.cherry_bark": "Cherry Bark",
+  "item.cellulose.crimson_bark": "Crimson Bark",
+  "item.cellulose.dark_oak_bark": "Dark Oak Bark",
+  "item.cellulose.jungle_bark": "Jungle Bark",
+  "item.cellulose.mangrove_bark": "Mangrove Bark",
+  "item.cellulose.oak_bark": "Oak Bark",
+  "item.cellulose.spruce_bark": "Spruce Bark",
+  "item.cellulose.warped_bark": "Warped Bark"
 }
