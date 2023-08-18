@@ -30,5 +30,17 @@ public class CelluloseStrippableBlock
         StrippableBlockRegistry.register(STRIPPED_WARPED_HYPHAE, ENGRAVED_WARPED_HYPHAE);
         StrippableBlockRegistry.register(STRIPPED_MANGROVE_WOOD, ENGRAVED_MANGROVE_WOOD);
         StrippableBlockRegistry.register(STRIPPED_CHERRY_WOOD, ENGRAVED_CHERRY_WOOD);
+        //Cactus stuff
+        StrippableBlockRegistry.register(CACTUS_BUNDLE, STRIPPED_CACTUS);
+        StrippableBlockRegistry.register(CACTUS_CROWN, STRIPPED_CACTUS_CROWN);
+        StrippableBlockRegistry.register(STRIPPED_CACTUS, ENGRAVED_CACTUS);
+        StrippableBlockRegistry.register(STRIPPED_CACTUS_CROWN, ENGRAVED_CACTUS_CROWN);
+        //Overworld Mushroom stuff
+        /*Red*/
+
+        /*Brown*/
+        //Azalea Wood
+
+        //Gay™ wood
     }
 }

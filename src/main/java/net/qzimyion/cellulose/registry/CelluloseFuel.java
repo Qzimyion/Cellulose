@@ -1,7 +1,9 @@
 package net.qzimyion.cellulose.registry;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.item.Items;
 
+import static net.minecraft.item.Items.*;
 import static net.qzimyion.cellulose.registry.CelluloseBlocks.*;
 
 public class CelluloseFuel
@@ -74,5 +76,33 @@ public class CelluloseFuel
 
         //Sawmill
         registry.add(SAWMILL, 300);
+
+        //Chipped Woodset
+
+        //Cactus Woodset
+        registry.add(CACTUS, 300);
+        registry.add(CACTUS_BUNDLE, 300);
+        registry.add(CACTUS_CROWN, 300);
+        registry.add(STRIPPED_CACTUS, 300);
+        registry.add(STRIPPED_CACTUS_CROWN, 300);
+        registry.add(ENGRAVED_CACTUS, 300);
+        registry.add(ENGRAVED_CACTUS_CROWN, 300);
+        registry.add(CACTUS_PLANKS, 300);
+        registry.add(CACTUS_STAIRS, 300);
+        registry.add(CACTUS_SLABS, 300);
+        registry.add(CACTUS_PLANKS, 300);
+        registry.add(CACTUS_FENCE, 300);
+        registry.add(CACTUS_FENCE_GATE, 300);
+        registry.add(CACTUS_BUTTON, 300);
+        registry.add(CACTUS_PRESSURE_PLATE, 300);
+        registry.add(CACTUS_DOOR, 300);
+        registry.add(CACTUS_TRAPDOOR, 300);
+        registry.add(CACTUS_SIGN, 300);
+        registry.add(CACTUS_HANGING_SIGN, 300);
+        registry.add(ENGRAVED_CACTUS, 300);
+        registry.add(ENGRAVED_CACTUS_CROWN, 300);
+        registry.add(CACTUS_MOSAIC, 300);
+        registry.add(CACTUS_MOSAIC_STAIRS, 300);
+        registry.add(CACTUS_MOSAIC_SLABS, 300);
     }
 }

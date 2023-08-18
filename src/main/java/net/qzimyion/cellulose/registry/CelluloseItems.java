@@ -9,6 +9,7 @@ import net.qzimyion.cellulose.Cellulose;
 public class CelluloseItems
 {
   public static final Item PIPIS = registerItem("pipis", new Item(new FabricItemSettings()));
+    public static final Item CACTUS_JUICE = registerItem("cactus_juice", new CactusJuiceItem(new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item)
     {
