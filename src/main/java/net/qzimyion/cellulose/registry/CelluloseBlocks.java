@@ -145,7 +145,7 @@ public class CelluloseBlocks
     //Cactus Woodset
     public static final Block CACTUS_BUNDLE = registerBlock("cactus_bundle", new PillarBlock(FabricBlockSettings.create().burnable().mapColor(MapColor.DARK_GREEN).nonOpaque().sounds(BlockSoundGroup.CHERRY_WOOD).strength(0.5f)));
     public static final Block CACTUS_CROWN = registerBlock("cactus_crown", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
-    public static final Block STRIPPED_CACTUS = registerBlock("stripped_cactus", new CelluloseCactus(FabricBlockSettings.copyOf(STRIPPED_CHERRY_LOG)));
+    public static final Block STRIPPED_CACTUS = registerBlock("stripped_cactus", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_CHERRY_LOG)));
     public static final Block STRIPPED_CACTUS_CROWN = registerBlock("stripped_cactus_crown", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_CHERRY_LOG)));
     public static final Block CACTUS_PLANKS = registerBlock("cactus_planks", new Block(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
     public static final Block CACTUS_SLABS = registerBlock("cactus_planks_slab", new SlabBlock(FabricBlockSettings.copyOf(CHERRY_SLAB)));
