@@ -10,7 +10,6 @@ import net.minecraft.block.PillarBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -29,11 +28,9 @@ import java.util.Optional;
 
 @Debug(export = true)
 @Mixin(PickaxeItem.class)
-public class PickaxeMixin extends MiningToolItem {
-    public PickaxeMixin(float attackDamage, float attackSpeed, ToolMaterial material, Item.Settings settings) {
-        super(attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings);
-    }
+public class PickaxeMixin {
 
+    @Unique
     public ActionResult useOnBlock(ItemUsageContext context){
         BlockPos blockPos = context.getBlockPos();
         World world = context.getWorld();
@@ -57,7 +54,7 @@ public class PickaxeMixin extends MiningToolItem {
             }
             return ActionResult.success(world.isClient);
         }
-        return super.useOnBlock(context);
+        return ActionResult.PASS;
     }
 
     @Unique
