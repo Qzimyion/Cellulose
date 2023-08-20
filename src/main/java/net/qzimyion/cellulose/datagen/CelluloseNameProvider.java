@@ -2,13 +2,10 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.qzimyion.cellulose.registry.CelluloseBlocks;
-import net.qzimyion.cellulose.registry.CelluloseItems;
-import net.qzimyion.cellulose.registry.CelluloseStats;
+import net.qzimyion.cellulose.Util.CelluloseStats;
 
-import java.nio.file.Path;
-
-import static net.qzimyion.cellulose.registry.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
 public class CelluloseNameProvider extends FabricLanguageProvider
 {
@@ -97,8 +94,23 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(ENGRAVED_CACTUS_CROWN, "Engraved Cactus Crown");
         /*Stats*/
         translationBuilder.add(CelluloseStats.INTERACT_WITH_SAWMILL, "Interaction with sawmill");
-        //Misc
-        translationBuilder.add(CelluloseItems.CACTUS_JUICE, "Cactus Juice");
-
+        //Item
+        translationBuilder.add(PIPIS, "[[PIPIS]]");
+        //Chipped woodset
+        translationBuilder.add(CHIPPED_OAK, "Chipped Oak Log");
+        translationBuilder.add(CHIPPED_OAK_WOOD, "Chipped Oak Wood");
+        translationBuilder.add(CHIPPED_BIRCH, "Chipped Birch Log");
+        translationBuilder.add(CHIPPED_BIRCH_WOOD, "Chipped Birch Wood");
+        translationBuilder.add(CHIPPED_SPRUCE, "Chipped Spruce Log");
+        translationBuilder.add(CHIPPED_SPRUCE_WOOD, "Chipped Spruce Wood");
+        translationBuilder.add(CHIPPED_DARK_OAK, "Chipped Spruce Log");
+        translationBuilder.add(CHIPPED_DARK_OAK_WOOD, "Chipped Spruce Wood");
+        translationBuilder.add(CHIPPED_JUNGLE, "Chipped Spruce Log");
+        translationBuilder.add(CHIPPED_JUNGLE_WOOD, "Chipped spruce Wood");
+        translationBuilder.add(CHIPPED_ACACIA, "Chipped Spruce Log");
+        translationBuilder.add(CHIPPED_ACACIA_WOOD, "Chipped Spruce Wood");
+        //Boats
+        translationBuilder.add(CACTUS_BOAT, "Cactus Boat");
+        translationBuilder.add(CACTUS_CHEST_BOAT, "Cactus Chest boat");
     }
 }

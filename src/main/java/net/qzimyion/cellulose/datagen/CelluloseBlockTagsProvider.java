@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 import java.util.concurrent.CompletableFuture;
 
 import static net.minecraft.registry.tag.BlockTags.*;
-import static net.qzimyion.cellulose.registry.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 
 public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvider
 {
@@ -87,6 +87,21 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(MANGROVE_MOSAIC_STAIRS)
                 .add(CHERRY_MOSAIC_STAIRS)
                 .add(CACTUS_MOSAIC_STAIRS);
+
+        getOrCreateTagBuilder(PLANKS)
+                .add(CACTUS_PLANKS)
+                .add(VERTICAL_OAK_PLANKS)
+                .add(VERTICAL_BIRCH_PLANKS)
+                .add(VERTICAL_SPRUCE_PLANKS)
+                .add(VERTICAL_DARK_OAK_PLANKS)
+                .add(VERTICAL_JUNGLE_PLANKS)
+                .add(VERTICAL_ACACIA_PLANKS)
+                .add(VERTICAL_CRIMSON_PLANKS)
+                .add(VERTICAL_WARPED_PLANKS)
+                .add(VERTICAL_MANGROVE_PLANKS)
+                .add(VERTICAL_BAMBOO_PLANKS)
+                .add(VERTICAL_CHERRY_PLANKS)
+                .add(VERTICAL_CACTUS_PLANKS);
 
         getOrCreateTagBuilder(CHARRABLE)
                 .forceAddTag(PLANKS)
@@ -224,7 +239,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(CACTUS_FENCE_GATE)
 
                 //Button
-                .add(CACTUS_BUNDLE)
+                .add(CACTUS_BUTTON)
 
                 //PressurePlate
                 .add(CACTUS_PRESSURE_PLATE)
@@ -237,6 +252,9 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
 
                 //Signs
                 .add(CACTUS_SIGN)
-                .add(CACTUS_HANGING_SIGN);
+                .add(CACTUS_HANGING_SIGN)
+
+                //Mics
+                .add(CACTUS_BUNDLE);
     }
 }

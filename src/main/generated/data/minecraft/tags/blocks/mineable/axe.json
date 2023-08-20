@@ -103,11 +103,12 @@
     "cellulose:cactus_planks_stairs",
     "cellulose:cactus_fence",
     "cellulose:cactus_fence_gate",
-    "cellulose:cactus_bundle",
+    "cellulose:cactus_button",
     "cellulose:cactus_pressure_plate",
     "cellulose:cactus_door",
     "cellulose:cactus_trapdoor",
     "cellulose:cactus_sign",
-    "cellulose:cactus_hanging_sign"
+    "cellulose:cactus_hanging_sign",
+    "cellulose:cactus_bundle"
   ]
 }

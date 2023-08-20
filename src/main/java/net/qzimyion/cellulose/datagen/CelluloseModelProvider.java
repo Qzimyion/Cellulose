@@ -2,14 +2,10 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.data.client.*;
-import net.minecraft.state.property.Properties;
-import net.qzimyion.cellulose.registry.CelluloseBlocks;
-import net.qzimyion.cellulose.registry.CelluloseItems;
 
-import static net.qzimyion.cellulose.registry.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
 public class CelluloseModelProvider extends FabricModelProvider {
     public CelluloseModelProvider(FabricDataOutput output)
@@ -58,6 +54,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator)
     {
-
+        itemModelGenerator.register(CACTUS_BOAT, Models.GENERATED);
+        itemModelGenerator.register(CACTUS_CHEST_BOAT, Models.GENERATED);
     }
 }
