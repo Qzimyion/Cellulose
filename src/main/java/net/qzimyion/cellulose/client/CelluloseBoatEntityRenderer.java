@@ -13,16 +13,21 @@ import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.entities.CelluloseBoatEntity;
 
 import java.util.Map;
+import java.util.stream.Stream;
 
 public final class CelluloseBoatEntityRenderer extends BoatEntityRenderer {
-    public Map<BoatEntity.Type, Pair<Identifier, CompositeEntityModel<BoatEntity>>> texturesAndModels;
+    private final Map<CelluloseBoatEntity.Type, Pair<Identifier, CompositeEntityModel<BoatEntity>>> texturesAndModels;
+
+
+
     public CelluloseBoatEntityRenderer(EntityRendererFactory.Context context, boolean chest, CelluloseBoatEntity.CelluloseBoat boatData) {
         super(context, chest);
         var id = boatData.id();
+        this.shadowRadius = 0.8f;
         var texture = new Identifier(id.getNamespace(), "textures/entity/" + (chest ? "chest_boat/" : "boat/") + id.getPath() + ".png");
         var rootPart = context.getPart(getModelLayer(boatData, chest));
         var model = chest ? new ChestBoatEntityModel(rootPart) : new BoatEntityModel(rootPart);
-        texturesAndModels = texturesAndModels.entrySet().stream().collect(ImmutableMap.toImmutableMap(Map.Entry::getKey, entry -> Pair.of(texture, model)));
+        texturesAndModels = Stream.of(CelluloseBoatEntity.Type.values()).collect(ImmutableMap.toImmutableMap(type -> type, type -> Pair.of(texture, model)));
     }
 
     public static EntityModelLayer getModelLayer(CelluloseBoatEntity.CelluloseBoat boat, boolean chest) {

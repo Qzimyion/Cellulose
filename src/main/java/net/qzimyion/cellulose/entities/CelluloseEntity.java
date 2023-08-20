@@ -31,6 +31,6 @@ public class CelluloseEntity
 
     public static void registerEntityTypes()
     {
-        Cellulose.LOGGER.info("Registering boats for " + Cellulose.MOD_ID);
+
     }
 }

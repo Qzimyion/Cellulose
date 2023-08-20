@@ -3,6 +3,7 @@ package net.qzimyion.cellulose.items;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -15,8 +16,8 @@ public class CelluloseItems
   public static final Item PIPIS = registerItem("pipis", new Item(new FabricItemSettings()));
 
   //Boats
-  public static final Item CACTUS_BOAT = registerItem("cactus_boat", new CelluloseBoatItem(false, BoatEntity.Type.OAK, new FabricItemSettings().maxCount(1), CelluloseBoatEntity.CelluloseBoat.CACTUS));
-  public static final Item CACTUS_CHEST_BOAT = registerItem("cactus_chest_boat", new CelluloseBoatItem(true, BoatEntity.Type.OAK, new FabricItemSettings().maxCount(1), CelluloseBoatEntity.CelluloseBoat.CACTUS));
+  public static final Item CACTUS_BOAT = registerItem("cactus_boat", new CelluloseBoatItem(false, CelluloseBoatEntity.CelluloseBoat.CACTUS,new Item.Settings().maxCount(1)));
+  public static final Item CACTUS_CHEST_BOAT = registerItem("cactus_chest_boat", new CelluloseBoatItem(true, CelluloseBoatEntity.CelluloseBoat.CACTUS, new Item.Settings().maxCount(1)));
 
 
     private static Item registerItem(String name, Item item)
