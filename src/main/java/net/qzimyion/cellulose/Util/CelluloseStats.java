@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.registry;
+package net.qzimyion.cellulose.Util;
 
 import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;

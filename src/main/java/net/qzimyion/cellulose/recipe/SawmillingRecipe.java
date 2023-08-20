@@ -14,7 +14,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
-import net.qzimyion.cellulose.registry.CelluloseBlocks;
+import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
 public class SawmillingRecipe implements RecipeType, Recipe<Inventory> {
 

@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.registry;
+package net.qzimyion.cellulose.feature;
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

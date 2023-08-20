@@ -4,7 +4,7 @@ package net.qzimyion.cellulose.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 
-import static net.qzimyion.cellulose.registry.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 
 public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
     public CelluloseLootTableProvider(FabricDataOutput dataOutput) {

@@ -1,8 +1,8 @@
-package net.qzimyion.cellulose.registry;
+package net.qzimyion.cellulose.feature;
 
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 
-import static net.qzimyion.cellulose.registry.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 
 public class CelluloseFlammableBlocks
 {

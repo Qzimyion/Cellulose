@@ -1,8 +1,16 @@
 package net.qzimyion.cellulose;
 
 import net.fabricmc.api.ModInitializer;
+import net.qzimyion.cellulose.Util.CelluloseStats;
+import net.qzimyion.cellulose.feature.CelluloseFlammableBlocks;
+import net.qzimyion.cellulose.feature.CelluloseFuel;
+import net.qzimyion.cellulose.feature.CelluloseStrippableBlock;
+import net.qzimyion.cellulose.Util.CelluloseTags;
+import net.qzimyion.cellulose.entities.CelluloseEntity;
+import net.qzimyion.cellulose.items.CelluloseItemGroups;
+import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.recipe.CelluloseRecipes;
-import net.qzimyion.cellulose.registry.*;
+import net.qzimyion.cellulose.blocks.*;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,5 +33,6 @@ public class Cellulose implements ModInitializer
 		CelluloseStats.registerStats();
 		CelluloseTags.registerTags();
 		CelluloseItemGroups.registerItemGroups();
+		CelluloseEntity.registerEntityTypes();
 	}
 }

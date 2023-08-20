@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.registry;
+package net.qzimyion.cellulose.blocks;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -21,10 +21,9 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.qzimyion.cellulose.Util.CelluloseStats;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreenHandler;
 import org.jetbrains.annotations.Nullable;
-
-import static javax.swing.text.html.HTML.Tag.TITLE;
 
 public class SawmillBlock extends HorizontalFacingBlock
 {

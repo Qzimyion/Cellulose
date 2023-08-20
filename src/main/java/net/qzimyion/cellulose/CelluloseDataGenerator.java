@@ -16,5 +16,6 @@ public class CelluloseDataGenerator implements DataGeneratorEntrypoint
 		pack.addProvider(CelluloseModelProvider::new);
 		pack.addProvider(CelluloseLootTableProvider::new);
 		pack.addProvider(CelluloseBlockTagsProvider::new);
+		pack.addProvider(CelluloseItemTagsProvider::new);
 	}
 }

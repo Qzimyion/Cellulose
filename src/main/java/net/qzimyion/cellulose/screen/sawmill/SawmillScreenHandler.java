@@ -11,11 +11,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.recipe.SawmillingRecipe;
-import net.qzimyion.cellulose.registry.CelluloseBlocks;
-import net.qzimyion.cellulose.registry.CelluloseSounds;
+import net.qzimyion.cellulose.blocks.CelluloseBlocks;
+import net.qzimyion.cellulose.feature.CelluloseSounds;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 
 import java.util.List;

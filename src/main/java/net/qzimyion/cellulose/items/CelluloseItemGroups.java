@@ -1,12 +1,12 @@
-package net.qzimyion.cellulose.registry;
+package net.qzimyion.cellulose.items;
 
 import net.minecraft.item.ItemGroups;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Items;
 
 import static net.minecraft.item.Items.*;
-import static net.qzimyion.cellulose.registry.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
 public class CelluloseItemGroups
 {
@@ -14,11 +14,13 @@ public class CelluloseItemGroups
     {
         //This section adds items to ingredients group
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register( content->{
-            content.addAfter(EGG, CelluloseItems.PIPIS);
+            content.addAfter(EGG, PIPIS);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register( content->{
-            content.addAfter(HONEY_BOTTLE, CelluloseItems.CACTUS_JUICE);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register( content->{
+            content.addAfter(CHERRY_CHEST_BOAT, CACTUS_BOAT);
+            content.addAfter(CACTUS_BOAT, CACTUS_CHEST_BOAT);
+
         });
 
         /* This section adds items to building blocks group */
@@ -135,6 +137,16 @@ public class CelluloseItemGroups
             //Chipped woodset
             content.addAfter(ENGRAVED_OAK_WOOD, CHIPPED_OAK);
             content.addAfter(CHIPPED_OAK, CHIPPED_OAK_WOOD);
+            content.addAfter(ENGRAVED_BIRCH_WOOD, CHIPPED_BIRCH);
+            content.addAfter(CHIPPED_BIRCH, CHIPPED_BIRCH_WOOD);
+            content.addAfter(ENGRAVED_SPRUCE, CHIPPED_SPRUCE);
+            content.addAfter(CHIPPED_SPRUCE, CHIPPED_SPRUCE_WOOD);
+            content.addAfter(ENGRAVED_DARK_OAK_WOOD, CHIPPED_DARK_OAK);
+            content.addAfter(CHIPPED_DARK_OAK, CHIPPED_DARK_OAK_WOOD);
+            content.addAfter(ENGRAVED_JUNGLE, CHIPPED_JUNGLE);
+            content.addAfter(CHIPPED_JUNGLE, CHIPPED_JUNGLE_WOOD);
+            content.addAfter(ENGRAVED_ACACIA, CHIPPED_ACACIA);
+            content.addAfter(CHIPPED_ACACIA, CHIPPED_ACACIA_WOOD);
 
         });
 
@@ -144,9 +156,8 @@ public class CelluloseItemGroups
         });
 
         //Cactus woodset
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
-            content.addAfter(WARPED_BUTTON, CACTUS);
-            content.addAfter(CACTUS, CACTUS_BUNDLE);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
+            content.addAfter(WARPED_BUTTON, CACTUS_BUNDLE);
             content.addAfter(CACTUS_BUNDLE, CACTUS_CROWN);
             content.addAfter(CACTUS_CROWN, STRIPPED_CACTUS);
             content.addAfter(STRIPPED_CACTUS, STRIPPED_CACTUS_CROWN);
