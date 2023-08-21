@@ -8,20 +8,13 @@ import static net.minecraft.item.Items.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
+@SuppressWarnings("UnstableApiUsage")
 public class CelluloseItemGroups
 {
     public static void registerItemGroups()
     {
         //This section adds items to ingredients group
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register( content->{
-            content.addAfter(EGG, PIPIS);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register( content->{
-            content.addAfter(CHERRY_CHEST_BOAT, CACTUS_BOAT);
-            content.addAfter(CACTUS_BOAT, CACTUS_CHEST_BOAT);
-
-        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register( content-> content.addAfter(EGG, PIPIS));
 
         /* This section adds items to building blocks group */
 
@@ -151,9 +144,7 @@ public class CelluloseItemGroups
         });
 
         // Functional blocks
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
-            content.addAfter(STONECUTTER, SAWMILL);
-        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> content.addAfter(STONECUTTER, SAWMILL));
 
         //Cactus woodset
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {

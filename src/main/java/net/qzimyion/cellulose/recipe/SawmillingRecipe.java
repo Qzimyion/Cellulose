@@ -16,6 +16,7 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
+@SuppressWarnings("rawtypes")
 public class SawmillingRecipe implements RecipeType, Recipe<Inventory> {
 
     private final Ingredient inputA;

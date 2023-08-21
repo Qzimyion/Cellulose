@@ -1,6 +1,5 @@
-package net.qzimyion.cellulose.Util;
+package net.qzimyion.cellulose.util;
 
-import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;

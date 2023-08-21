@@ -23,16 +23,17 @@ public class WildWestDoor extends DoorBlock {
         boolean bl = state.get(OPEN) == false;
         boolean bl2 = state.get(HINGE) == DoorHinge.RIGHT;
         switch (direction) {
-            default: {
+            default -> {
                 return bl ? WEST_SHAPE : (bl2 ? SOUTH_SHAPE : NORTH_SHAPE);
             }
-            case SOUTH: {
+            case SOUTH -> {
                 return bl ? NORTH_SHAPE : (bl2 ? WEST_SHAPE : EAST_SHAPE);
             }
-            case WEST: {
+            case WEST -> {
                 return bl ? EAST_SHAPE : (bl2 ? NORTH_SHAPE : SOUTH_SHAPE);
             }
-            case NORTH:
+            case NORTH -> {
+            }
         }
         return bl ? SOUTH_SHAPE : (bl2 ? EAST_SHAPE : WEST_SHAPE);
     }

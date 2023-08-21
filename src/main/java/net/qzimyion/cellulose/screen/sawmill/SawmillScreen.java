@@ -66,7 +66,10 @@ public class SawmillScreen extends HandledScreen<SawmillScreenHandler> {
                 int n = i + m % 4 * 16;
                 int o = j + m / 4 * 18 + 2;
                 if (x < n || x >= n + 16 || y < o || y >= o + 18) continue;
-                context.drawItemTooltip(this.textRenderer, list.get(l).getOutput(this.client.world.getRegistryManager()), x, y);            }
+                if (this.client.world != null) {
+                    context.drawItemTooltip(this.textRenderer, list.get(l).getOutput(this.client.world.getRegistryManager()), x, y);
+                }
+            }
         }
     }
 
@@ -93,7 +96,9 @@ public class SawmillScreen extends HandledScreen<SawmillScreenHandler> {
             int k = x + j % 4 * 16;
             int l = j / 4;
             int m = y + l * 18 + 2;
-            context.drawItem(list.get(i).getOutput(this.client.world.getRegistryManager()), k, m);
+            if (this.client.world != null) {
+                context.drawItem(list.get(i).getOutput(this.client.world.getRegistryManager()), k, m);
+            }
         }
     }
 
@@ -108,9 +113,12 @@ public class SawmillScreen extends HandledScreen<SawmillScreenHandler> {
                 int m = l - this.scrollOffset;
                 double d = mouseX - (double)(i + m % 4 * 16);
                 double e = mouseY - (double)(j + m / 4 * 18);
-                if (!(d >= 0.0) || !(e >= 0.0) || !(d < 16.0) || !(e < 18.0) || !((SawmillScreenHandler)this.handler).onButtonClick(this.client.player, l)) continue;
+                if (this.client != null && (!(d >= 0.0) || !(e >= 0.0) || !(d < 16.0) || !(e < 18.0) || !((SawmillScreenHandler) this.handler).onButtonClick(this.client.player, l)))
+                    continue;
                 MinecraftClient.getInstance().getSoundManager().play(PositionedSoundInstance.master(SoundEvents.UI_STONECUTTER_TAKE_RESULT, 1.0f));
-                this.client.interactionManager.clickButton(((SawmillScreenHandler)this.handler).syncId, l);
+                if (this.client.interactionManager != null) {
+                    this.client.interactionManager.clickButton(((SawmillScreenHandler)this.handler).syncId, l);
+                }
                 return true;
             }
             i = this.x + 119;

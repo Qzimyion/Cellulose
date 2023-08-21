@@ -106,7 +106,5 @@ public class CelluloseFuel
         registry.add(CACTUS_MOSAIC_SLABS, 300);
 
         //boats
-        registry.add(CACTUS_BOAT, 150);
-        registry.add(CACTUS_CHEST_BOAT, 150);
     }
 }

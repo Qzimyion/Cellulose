@@ -147,7 +147,6 @@ public class SawmillScreenHandler extends ScreenHandler {
         if (!itemStack.isEmpty()) {
             SimpleInventory inventory = new SimpleInventory(inputStack, inputStack1);
             Optional<SawmillingRecipe> match = world.getRecipeManager().getFirstMatch(SawmillingRecipe.Type.INSTANCE, inventory, world);
-
         }
     }
 
@@ -203,7 +202,7 @@ public class SawmillScreenHandler extends ScreenHandler {
     public ItemStack quickMove(PlayerEntity player, int slot) {
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot2 = this.slots.get(slot);
-        if (slot2 != null && slot2.hasStack()) {
+        if (slot2.hasStack()) {
             ItemStack itemStack2 = slot2.getStack();
             Item item = itemStack2.getItem();
             itemStack = itemStack2.copy();

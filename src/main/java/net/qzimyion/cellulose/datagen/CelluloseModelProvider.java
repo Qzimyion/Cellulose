@@ -54,7 +54,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator)
     {
-        itemModelGenerator.register(CACTUS_BOAT, Models.GENERATED);
-        itemModelGenerator.register(CACTUS_CHEST_BOAT, Models.GENERATED);
+
     }
 }

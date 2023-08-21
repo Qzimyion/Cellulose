@@ -103,6 +103,8 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         //Sawmill
         addDrop(SAWMILL);
 
+        //Boats
+
         /*SilkTouch Stuff
         //Frames:*/
         addDrop(OAK_FRAME, dropsWithSilkTouch(OAK_FRAME));

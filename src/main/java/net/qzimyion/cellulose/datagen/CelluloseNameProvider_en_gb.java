@@ -2,14 +2,14 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.qzimyion.cellulose.Util.CelluloseStats;
+import net.qzimyion.cellulose.util.CelluloseStats;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
-public class CelluloseNameProvider_en_uk extends FabricLanguageProvider {
-    public CelluloseNameProvider_en_uk(FabricDataOutput dataOutput) {
-        super(dataOutput, "en_uk");
+public class CelluloseNameProvider_en_gb extends FabricLanguageProvider {
+    public CelluloseNameProvider_en_gb(FabricDataOutput dataOutput) {
+        super(dataOutput, "en_gb");
     }
 
     @Override
@@ -107,7 +107,5 @@ public class CelluloseNameProvider_en_uk extends FabricLanguageProvider {
         translationBuilder.add(CHIPPED_ACACIA, "Chipped Spruce Log");
         translationBuilder.add(CHIPPED_ACACIA_WOOD, "Chipped Spruce Wood");
         //Boats
-        translationBuilder.add(CACTUS_BOAT, "Cactus Boat");
-        translationBuilder.add(CACTUS_CHEST_BOAT, "Cactus Chest boat");
     }
 }

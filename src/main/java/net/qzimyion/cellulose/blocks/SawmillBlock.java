@@ -21,7 +21,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.qzimyion.cellulose.Util.CelluloseStats;
+import net.qzimyion.cellulose.util.CelluloseStats;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreenHandler;
 import org.jetbrains.annotations.Nullable;
 

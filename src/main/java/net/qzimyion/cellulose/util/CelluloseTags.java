@@ -1,8 +1,7 @@
-package net.qzimyion.cellulose.Util;
+package net.qzimyion.cellulose.util;
 
 import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;

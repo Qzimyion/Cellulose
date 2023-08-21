@@ -504,8 +504,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
 
 
         //Boats
-        offerBoatRecipe(exporter, CACTUS_BOAT, CACTUS_PLANKS);
-        offerChestBoatRecipe(exporter, CACTUS_CHEST_BOAT, CACTUS_PLANKS);
     }
 
     private void offerPlanksRecipe(Consumer<RecipeJsonProvider> exporter, Block cactusPlanks, Block cactusBundle, int count)
