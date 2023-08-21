@@ -1,12 +1,12 @@
 package net.qzimyion.cellulose;
 
 import net.fabricmc.api.ModInitializer;
-import net.qzimyion.cellulose.Util.CelluloseStats;
+import net.qzimyion.cellulose.boats.CelluloseBoats;
+import net.qzimyion.cellulose.util.CelluloseStats;
 import net.qzimyion.cellulose.feature.CelluloseFlammableBlocks;
 import net.qzimyion.cellulose.feature.CelluloseFuel;
 import net.qzimyion.cellulose.feature.CelluloseStrippableBlock;
-import net.qzimyion.cellulose.Util.CelluloseTags;
-import net.qzimyion.cellulose.entities.CelluloseEntity;
+import net.qzimyion.cellulose.util.CelluloseTags;
 import net.qzimyion.cellulose.items.CelluloseItemGroups;
 import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.recipe.CelluloseRecipes;
@@ -33,6 +33,6 @@ public class Cellulose implements ModInitializer
 		CelluloseStats.registerStats();
 		CelluloseTags.registerTags();
 		CelluloseItemGroups.registerItemGroups();
-		CelluloseEntity.registerEntityTypes();
+		CelluloseBoats.registerBoats();
 	}
 }
