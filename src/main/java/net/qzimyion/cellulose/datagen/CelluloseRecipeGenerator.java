@@ -411,6 +411,9 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .input('#', CACTUS).criterion(FabricRecipeProvider.hasItem(CACTUS), FabricRecipeProvider.conditionsFromTag(PLANKS))
                 .group("cellulose:cactus_wood").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_BUNDLE)));
         offerPlanksRecipe(exporter, CACTUS_PLANKS, CACTUS_BUNDLE, 4);
+        offerPlanksRecipe(exporter, CACTUS_PLANKS, CACTUS_CROWN, 4);
+        offerPlanksRecipe(exporter, CACTUS_PLANKS, STRIPPED_CACTUS, 4);
+        offerPlanksRecipe(exporter, CACTUS_PLANKS, STRIPPED_CACTUS_CROWN, 4);
         offerSlabRecipe(exporter, BUILDING_BLOCKS, CACTUS_SLABS, CACTUS_PLANKS);
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_STAIRS, 8)
                 .pattern("#  ")
@@ -502,8 +505,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .input('#', ACACIA_LOG).criterion(FabricRecipeProvider.hasItem(ACACIA_LOG), FabricRecipeProvider.conditionsFromTag(ACACIA_LOGS))
                 .group("cellulose:chipped_logs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CHIPPED_ACACIA)));
 
-
-        //Boats
     }
 
     private void offerPlanksRecipe(Consumer<RecipeJsonProvider> exporter, Block cactusPlanks, Block cactusBundle, int count)

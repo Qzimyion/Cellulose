@@ -2,6 +2,7 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.qzimyion.cellulose.boats.CelluloseBoats;
 import net.qzimyion.cellulose.util.CelluloseStats;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
@@ -109,6 +110,5 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CHIPPED_JUNGLE_WOOD, "Chipped spruce Wood");
         translationBuilder.add(CHIPPED_ACACIA, "Chipped Spruce Log");
         translationBuilder.add(CHIPPED_ACACIA_WOOD, "Chipped Spruce Wood");
-        //Boats
     }
 }
