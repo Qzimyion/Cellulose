@@ -1,5 +1,7 @@
 package net.qzimyion.cellulose.blocks;
 
+import com.terraformersmc.terraform.boat.api.TerraformBoatType;
+import com.terraformersmc.terraform.boat.impl.TerraformBoatTypeImpl;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -183,7 +185,6 @@ public class CelluloseBlocks
     public static final Block CACTUS_WALL_SIGN = registerBlock("cactus_wall_sign", new WallSignBlock(FabricBlockSettings.copyOf(CHERRY_WALL_SIGN), WoodType.CHERRY));
     public static final Block CACTUS_HANGING_SIGN = registerBlock("cactus_hanging_sign", new HangingSignBlock(FabricBlockSettings.copyOf(CHERRY_HANGING_SIGN), WoodType.CHERRY));
     public static final Block CACTUS_WALL_HANGING_SIGN = registerBlock("cactus_wall_hanging_sign", new WallHangingSignBlock(FabricBlockSettings.copyOf(CHERRY_WALL_HANGING_SIGN), WoodType.CHERRY));
-
 
     //Overworld Shroom woodset
     /*Brown*/
