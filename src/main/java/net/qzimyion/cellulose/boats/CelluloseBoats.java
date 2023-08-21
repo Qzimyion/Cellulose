@@ -15,8 +15,10 @@ import net.qzimyion.cellulose.Cellulose;
 
 public class CelluloseBoats {
 
-    /*Note: If you want to copy this code for your project please remember to add Terraform Wood API
-      to your Build.Gradlew file first otherwise it won't work*/
+    /*
+    Note: If you want to copy this code for your project please remember to add Terraform Wood API
+    to your Build.Gradlew file first otherwise it won't work.
+    */
 
 
     private static final Identifier CACTUS_BOAT_ID = new Identifier(Cellulose.MOD_ID, "cactus_boat");
@@ -43,7 +45,7 @@ public class CelluloseBoats {
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, CACTUS_BOAT_KEY, boat);
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, CACTUS_CHEST_BOAT_KEY, ChestBoat);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> entries.addAfter(
-                Items.MANGROVE_CHEST_BOAT, boatItem, chestBoatItem));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.addAfter(
+                Items.CHERRY_CHEST_BOAT, boatItem, chestBoatItem));
     }
 }
