@@ -33,5 +33,9 @@ public class CelluloseClient implements ClientModInitializer
         TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "cactus_boat"), false);
         TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "cactus_chest_boat"), false);
 
+        //Doors and Trapdoors
+        BlockRenderLayerMap.INSTANCE.putBlock(CelluloseBlocks.CACTUS_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CelluloseBlocks.CACTUS_TRAPDOOR, RenderLayer.getCutout());
+
     }
 }

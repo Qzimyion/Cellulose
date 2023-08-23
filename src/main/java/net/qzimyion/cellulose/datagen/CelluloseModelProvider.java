@@ -16,9 +16,10 @@ public class CelluloseModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        //Blocks
+        //Texturepool
         BlockStateModelGenerator.BlockTexturePool cactusTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(CACTUS_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(CACTUS_BUNDLE);
+
+        //Blocks
         blockStateModelGenerator.registerSimpleCubeAll(CACTUS_MOSAIC);
 
         //Slabs

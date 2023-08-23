@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 
 import static net.minecraft.item.Items.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
-import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
 public class CelluloseFuel
 {
