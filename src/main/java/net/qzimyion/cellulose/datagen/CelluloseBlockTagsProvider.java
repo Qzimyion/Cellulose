@@ -3,11 +3,12 @@ package net.qzimyion.cellulose.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
-import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.qzimyion.cellulose.Cellulose;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -24,13 +25,12 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg)
     {
-        TagKey<Block> WOODEN_MOSAICS = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "wooden_mosaics"));
-        TagKey<Block> WOODEN_MOSAICS_SLABS = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "wooden_mosaics_slabs"));
-        TagKey<Block> WOODEN_MOSAICS_STAIRS = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "wooden_mosaics_stairs"));
-        TagKey<Block> WOODEN_FRAMES = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "wooden_frames"));
-        TagKey<Block> LINTELS = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "lintels"));
-        TagKey<Block> CHARRABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "charrable"));
-        TagKey<Block> CACTUS_LOGS = TagKey.of(RegistryKeys.BLOCK, new Identifier("cellulose", "charrable"));
+        TagKey<Block> WOODEN_MOSAICS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "wooden_mosaics"));
+        TagKey<Block> WOODEN_MOSAICS_SLABS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "wooden_mosaics_slabs"));
+        TagKey<Block> WOODEN_MOSAICS_STAIRS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "wooden_mosaics_stairs"));
+        TagKey<Block> WOODEN_FRAMES = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "wooden_frames"));
+        TagKey<Block> LINTELS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "lintels"));
+        TagKey<Block> CHARRABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "charrable"));
 
         getOrCreateTagBuilder(WOODEN_MOSAICS)
                 .add(OAK_MOSAIC)
@@ -57,14 +57,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(MANGROVE_MOSAIC_SLABS)
                 .add(CHERRY_MOSAIC_SLABS)
                 .add(CACTUS_MOSAIC_SLABS);
-
-        getOrCreateTagBuilder(CACTUS_LOGS)
-                .add(Block.getBlockFromItem(Items.CACTUS))
-                .add(CACTUS_BUNDLE)
-                .add(CACTUS_CROWN)
-                .add(STRIPPED_CACTUS)
-                .add(STRIPPED_CACTUS_CROWN);
-
 
         getOrCreateTagBuilder(WOODEN_FRAMES)
                 .add(OAK_FRAME)
@@ -103,9 +95,107 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_CHERRY_PLANKS)
                 .add(VERTICAL_CACTUS_PLANKS);
 
+        getOrCreateTagBuilder(BlockTags.WOODEN_SLABS)
+                .add(CACTUS_SLABS)
+                .add(VERTICAL_OAK_PLANKS_SLABS)
+                .add(VERTICAL_BIRCH_PLANKS_SLABS)
+                .add(VERTICAL_SPRUCE_PLANKS_SLABS)
+                .add(VERTICAL_DARK_OAK_PLANKS_SLABS)
+                .add(VERTICAL_JUNGLE_PLANKS_SLABS)
+                .add(VERTICAL_ACACIA_PLANKS_SLABS)
+                .add(VERTICAL_CRIMSON_PLANKS_SLABS)
+                .add(VERTICAL_WARPED_PLANKS_SLABS)
+                .add(VERTICAL_MANGROVE_PLANKS_SLABS)
+                .add(VERTICAL_BAMBOO_PLANKS_SLABS)
+                .add(VERTICAL_CHERRY_PLANKS_SLABS)
+                .add(VERTICAL_CACTUS_PLANKS_SLABS);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS)
+                .add(CACTUS_STAIRS)
+                .add(VERTICAL_OAK_PLANKS_STAIRS)
+                .add(VERTICAL_BIRCH_PLANKS_STAIRS)
+                .add(VERTICAL_SPRUCE_PLANKS_STAIRS)
+                .add(VERTICAL_DARK_OAK_PLANKS_STAIRS)
+                .add(VERTICAL_JUNGLE_PLANKS_STAIRS)
+                .add(VERTICAL_ACACIA_PLANKS_STAIRS)
+                .add(VERTICAL_CRIMSON_PLANKS_STAIRS)
+                .add(VERTICAL_WARPED_PLANKS_STAIRS)
+                .add(VERTICAL_MANGROVE_PLANKS_STAIRS)
+                .add(VERTICAL_BAMBOO_PLANKS_STAIRS)
+                .add(VERTICAL_CHERRY_PLANKS_STAIRS)
+                .add(VERTICAL_CACTUS_PLANKS_STAIRS);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS)
+                .add(CACTUS_BUTTON);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
+                .add(CACTUS_PRESSURE_PLATE);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
+                .add(CACTUS_DOOR);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)
+                .add(CACTUS_TRAPDOOR);
+
+        //Logs
+        getOrCreateTagBuilder(BlockTags.OAK_LOGS)
+                .add(ENGRAVED_OAK)
+                .add(ENGRAVED_OAK_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.BIRCH_LOGS)
+                .add(ENGRAVED_BIRCH)
+                .add(ENGRAVED_BIRCH_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.SPRUCE_LOGS)
+                .add(ENGRAVED_SPRUCE)
+                .add(ENGRAVED_SPRUCE_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.DARK_OAK_LOGS)
+                .add(ENGRAVED_DARK_OAK)
+                .add(ENGRAVED_DARK_OAK_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.ACACIA_LOGS)
+                .add(ENGRAVED_ACACIA)
+                .add(ENGRAVED_ACACIA_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.JUNGLE_LOGS)
+                .add(ENGRAVED_JUNGLE)
+                .add(ENGRAVED_JUNGLE_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.CRIMSON_STEMS)
+                .add(ENGRAVED_CRIMSON)
+                .add(ENGRAVED_CRIMSON_HYPHAE);
+
+        getOrCreateTagBuilder(BlockTags.WARPED_STEMS)
+                .add(ENGRAVED_WARPED)
+                .add(ENGRAVED_WARPED_HYPHAE);
+
+        getOrCreateTagBuilder(BlockTags.MANGROVE_LOGS)
+                .add(ENGRAVED_MANGROVE)
+                .add(ENGRAVED_MANGROVE_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.CHERRY_LOGS)
+                .add(ENGRAVED_CHERRY)
+                .add(ENGRAVED_CHERRY_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.LOGS)
+                .forceAddTag(BlockTags.LOGS_THAT_BURN)
+                .forceAddTag(BlockTags.CRIMSON_STEMS)
+                .forceAddTag(BlockTags.WARPED_STEMS);
+
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .forceAddTag(BlockTags.OAK_LOGS)
+                .forceAddTag(BlockTags.BIRCH_LOGS)
+                .forceAddTag(BlockTags.SPRUCE_LOGS)
+                .forceAddTag(BlockTags.DARK_OAK_LOGS)
+                .forceAddTag(BlockTags.JUNGLE_LOGS)
+                .forceAddTag(BlockTags.ACACIA_LOGS)
+                .forceAddTag(BlockTags.MANGROVE_LOGS)
+                .forceAddTag(BlockTags.CHERRY_LOGS);
+
         getOrCreateTagBuilder(CHARRABLE)
                 .forceAddTag(PLANKS)
-                .forceAddTag(LOGS_THAT_BURN)
+                .forceAddTag(BlockTags.LOGS_THAT_BURN)
                 .forceAddTag(WOODEN_MOSAICS)
                 .forceAddTag(WOODEN_MOSAICS_SLABS)
                 .forceAddTag(WOODEN_MOSAICS_STAIRS);
