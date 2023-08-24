@@ -1,11 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:cactus",
-    "cellulose:cactus_bundle",
-    "cellulose:cactus_crown",
-    "cellulose:stripped_cactus",
-    "cellulose:stripped_cactus_crown",
     "#minecraft:planks",
     "#minecraft:logs_that_burn",
     "#cellulose:wooden_mosaics",

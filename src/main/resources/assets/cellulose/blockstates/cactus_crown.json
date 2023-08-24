@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "cellulose:block/cactus_bundle_crown",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "cellulose:block/cactus_bundle_crown"
+    },
+    "axis=z": {
+      "model": "cellulose:block/cactus_bundle_crown",
+      "x": 90
+    }
+  }
+}

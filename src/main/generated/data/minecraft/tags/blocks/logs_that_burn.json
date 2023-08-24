@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:oak_logs",
+    "#minecraft:birch_logs",
+    "#minecraft:spruce_logs",
+    "#minecraft:dark_oak_logs",
+    "#minecraft:jungle_logs",
+    "#minecraft:acacia_logs",
+    "#minecraft:mangrove_logs",
+    "#minecraft:cherry_logs"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "cellulose:block/stripped_cactus_crown",
-    "side": "cellulose:block/stripped_cactus_crown"
+    "end": "cellulose:block/stripped_cactus",
+    "side": "cellulose:block/stripped_cactus"
   }
 }
