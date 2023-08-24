@@ -2,7 +2,6 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.qzimyion.cellulose.boats.CelluloseBoats;
 import net.qzimyion.cellulose.util.CelluloseStats;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
@@ -93,6 +92,9 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(VERTICAL_CACTUS_PLANKS_SLABS, "Vertical Cactus Planks Stairs");
         translationBuilder.add(ENGRAVED_CACTUS, "Engraved Cactus");
         translationBuilder.add(ENGRAVED_CACTUS_CROWN, "Engraved Cactus Crown");
+        translationBuilder.add(CACTUS_MOSAIC, "Cactus Mosaic");
+        translationBuilder.add(CACTUS_MOSAIC_STAIRS, "Cactus Mosaic Stairs");
+        translationBuilder.add(CACTUS_MOSAIC_SLABS, "Cactus Mosaic Slab");
         /*Stats*/
         translationBuilder.add(CelluloseStats.INTERACT_WITH_SAWMILL, "Interaction with sawmill");
         //Item

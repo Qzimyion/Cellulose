@@ -12,7 +12,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 
-
+@SuppressWarnings("UnstableApiUsage")
 public class CelluloseBoats {
 
     /*
@@ -44,6 +44,7 @@ public class CelluloseBoats {
 
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, CACTUS_BOAT_KEY, boat);
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, CACTUS_CHEST_BOAT_KEY, ChestBoat);
+
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.addAfter(
                 Items.CHERRY_CHEST_BOAT, boatItem, chestBoatItem));

@@ -18,15 +18,19 @@ public class CelluloseModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         //Texturepool
         BlockStateModelGenerator.BlockTexturePool cactusTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(CACTUS_PLANKS);
+        BlockStateModelGenerator.BlockTexturePool cactusVerticalTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(VERTICAL_CACTUS_PLANKS);
+        BlockStateModelGenerator.BlockTexturePool cactusMosaicTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(CACTUS_MOSAIC);
 
-        //Blocks
-        blockStateModelGenerator.registerSimpleCubeAll(CACTUS_MOSAIC);
 
         //Slabs
         cactusTexturePool.slab(CACTUS_SLABS);
+        cactusTexturePool.slab(VERTICAL_CACTUS_PLANKS_SLABS);
+        cactusMosaicTexturePool.slab(CACTUS_MOSAIC_SLABS);
 
         //Stairs
         cactusTexturePool.stairs(CACTUS_STAIRS);
+        cactusTexturePool.stairs(VERTICAL_CACTUS_PLANKS_STAIRS);
+        cactusMosaicTexturePool.stairs(CACTUS_MOSAIC_STAIRS);
 
         //Fence and Fence-Gates
         cactusTexturePool.fence(CACTUS_FENCE);
