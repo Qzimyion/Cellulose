@@ -14,7 +14,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.recipe.SawmillingRecipe;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
-import net.qzimyion.cellulose.feature.CelluloseSounds;
+import net.qzimyion.cellulose.util.CelluloseSounds;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 
 import java.util.List;

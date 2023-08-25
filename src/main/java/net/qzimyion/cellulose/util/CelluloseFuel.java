@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.feature;
+package net.qzimyion.cellulose.util;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 
@@ -105,5 +105,6 @@ public class CelluloseFuel
         registry.add(CACTUS_MOSAIC_SLABS, 300);
 
         //boats
+        
     }
 }

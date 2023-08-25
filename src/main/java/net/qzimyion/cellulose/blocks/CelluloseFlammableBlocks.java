@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.feature;
+package net.qzimyion.cellulose.blocks;
 
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 
