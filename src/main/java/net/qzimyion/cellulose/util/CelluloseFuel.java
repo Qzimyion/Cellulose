@@ -96,15 +96,11 @@ public class CelluloseFuel
         registry.add(CACTUS_PRESSURE_PLATE, 300);
         registry.add(CACTUS_DOOR, 300);
         registry.add(CACTUS_TRAPDOOR, 300);
-        registry.add(CACTUS_SIGN, 300);
-        registry.add(CACTUS_HANGING_SIGN, 300);
         registry.add(ENGRAVED_CACTUS, 300);
         registry.add(ENGRAVED_CACTUS_CROWN, 300);
         registry.add(CACTUS_MOSAIC, 300);
         registry.add(CACTUS_MOSAIC_STAIRS, 300);
         registry.add(CACTUS_MOSAIC_SLABS, 300);
-
-        //boats
         
     }
 }

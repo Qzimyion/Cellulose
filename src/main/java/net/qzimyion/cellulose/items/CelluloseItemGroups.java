@@ -3,6 +3,7 @@ package net.qzimyion.cellulose.items;
 import net.minecraft.item.ItemGroups;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.Items;
 
 import static net.minecraft.item.Items.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
@@ -169,8 +170,6 @@ public class CelluloseItemGroups
             content.addAfter(CACTUS_DOOR, CACTUS_TRAPDOOR);
             content.addAfter(CACTUS_TRAPDOOR, CACTUS_PRESSURE_PLATE);
             content.addAfter(CACTUS_PRESSURE_PLATE, CACTUS_BUTTON);
-            content.addAfter(CHERRY_SIGN, CACTUS_SIGN);
-            content.addAfter(CHERRY_HANGING_SIGN, CACTUS_HANGING_SIGN);
         });
     }
 
