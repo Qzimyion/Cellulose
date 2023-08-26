@@ -425,7 +425,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerBarkBlockRecipe(exporter, STRIPPED_CACTUS_CROWN, CACTUS_BUNDLE);
         offerMosaicRecipe(exporter, BUILDING_BLOCKS, CACTUS_MOSAIC, CACTUS_SLABS);
         offerSlabRecipe(exporter, BUILDING_BLOCKS, CACTUS_MOSAIC_SLABS, CACTUS_MOSAIC);
-        offerHangingSignRecipe(exporter, CACTUS_HANGING_SIGN, STRIPPED_CACTUS);
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_MOSAIC_STAIRS, 8)
                 .pattern("#  ")
                 .pattern("## ")

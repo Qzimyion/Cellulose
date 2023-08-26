@@ -96,10 +96,6 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(CACTUS_DOOR, doorDrops(CACTUS_DOOR));
         addDrop(CACTUS_TRAPDOOR);
 
-        //Signs and Hanging signs
-        addDrop(CACTUS_SIGN);
-        addDrop(CACTUS_HANGING_SIGN);
-
         //Sawmill
         addDrop(SAWMILL);
 

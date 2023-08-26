@@ -340,10 +340,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 //Trapdoor
                 .add(CACTUS_TRAPDOOR)
 
-                //Signs
-                .add(CACTUS_SIGN)
-                .add(CACTUS_HANGING_SIGN)
-
                 //Mics
                 .add(CACTUS_BUNDLE);
     }
