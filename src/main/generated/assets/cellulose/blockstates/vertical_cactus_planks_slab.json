@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "cellulose:block/cactus_planks_slab"
+      "model": "cellulose:block/vertical_cactus_planks_slab"
     },
     "type=double": {
-      "model": "cellulose:block/cactus_planks"
+      "model": "cellulose:block/vertical_cactus_planks"
     },
     "type=top": {
-      "model": "cellulose:block/cactus_planks_slab_top"
+      "model": "cellulose:block/vertical_cactus_planks_slab_top"
     }
   }
 }
