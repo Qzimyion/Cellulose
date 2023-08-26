@@ -1,9 +1,8 @@
 package net.qzimyion.cellulose;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.block.Blocks;
 import net.qzimyion.cellulose.boats.CelluloseBoats;
-import net.qzimyion.cellulose.events.SlabStrippingEvent;
+import net.qzimyion.cellulose.events.OnUseBlockEventRegistry;
 import net.qzimyion.cellulose.util.CelluloseStats;
 import net.qzimyion.cellulose.blocks.CelluloseFlammableBlocks;
 import net.qzimyion.cellulose.util.CelluloseFuel;
@@ -36,8 +35,6 @@ public class Cellulose implements ModInitializer
 		CelluloseTags.registerTags();
 		CelluloseItemGroups.registerItemGroups();
 		CelluloseBoats.registerBoats();
-
-		//Events
-		SlabStrippingEvent.SlabStripping(Blocks.STONE_SLAB, Blocks.COBBLESTONE_SLAB);
+		OnUseBlockEventRegistry.registerEvents();
 	}
 }
