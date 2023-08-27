@@ -112,5 +112,7 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CHIPPED_JUNGLE_WOOD, "Chipped spruce Wood");
         translationBuilder.add(CHIPPED_ACACIA, "Chipped Spruce Log");
         translationBuilder.add(CHIPPED_ACACIA_WOOD, "Chipped Spruce Wood");
+        //Log slabs and stairs
+
     }
 }

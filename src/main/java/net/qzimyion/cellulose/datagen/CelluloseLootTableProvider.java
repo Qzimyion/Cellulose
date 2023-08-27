@@ -43,6 +43,8 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(MANGROVE_MOSAIC_STAIRS);
         addDrop(CHERRY_MOSAIC_STAIRS);
         addDrop(CACTUS_MOSAIC_STAIRS);
+        addDrop(OAK_LOG_STAIRS);
+        addDrop(STRIPPED_OAK_LOG_STAIRS);
 
         //Slabs
         addDrop(CACTUS_SLABS, slabDrops(CACTUS_SLABS));
@@ -57,6 +59,8 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(MANGROVE_MOSAIC_SLABS, slabDrops(MANGROVE_MOSAIC_SLABS));
         addDrop(CHERRY_MOSAIC_SLABS, slabDrops(CHERRY_MOSAIC_SLABS));
         addDrop(CACTUS_MOSAIC_SLABS, slabDrops(CACTUS_MOSAIC_SLABS));
+        addDrop(OAK_LOG_SLABS, slabDrops(OAK_LOG_SLABS));
+        addDrop(STRIPPED_OAK_LOG_SLABS, slabDrops(STRIPPED_OAK_LOG_SLABS));
 
         //Engraved logs and wood
         addDrop(ENGRAVED_OAK);
@@ -81,6 +85,8 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ENGRAVED_MANGROVE_WOOD);
         addDrop(ENGRAVED_CHERRY_WOOD);
         addDrop(ENGRAVED_CACTUS_CROWN);
+        addDrop(CHIPPED_OAK);
+        addDrop(CHIPPED_OAK_WOOD);
 
         //Fences and Fence-gates
         addDrop(CACTUS_FENCE);
@@ -99,13 +105,14 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         //Sawmill
         addDrop(SAWMILL);
 
-        //Boats
-
         /*SilkTouch Stuff
-        //Frames:*/
+        //Frames*/
+
         addDrop(OAK_FRAME, dropsWithSilkTouch(OAK_FRAME));
         addDrop(BIRCH_FRAME, dropsWithSilkTouch(BIRCH_FRAME));
         addDrop(SPRUCE_FRAME, dropsWithSilkTouch(SPRUCE_FRAME));
+        /*Charredwoodset*/
+        addDrop(CHARRED_PLANKS, dropsWithSilkTouch(CHARRED_PLANKS));
 
         //Lintels
         addDrop(OAK_LINTELS, dropsWithSilkTouch(OAK_LINTELS));

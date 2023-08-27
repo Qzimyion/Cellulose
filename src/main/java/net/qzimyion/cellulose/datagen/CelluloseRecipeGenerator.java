@@ -504,6 +504,10 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .input('#', ACACIA_LOG).criterion(FabricRecipeProvider.hasItem(ACACIA_LOG), FabricRecipeProvider.conditionsFromTag(ACACIA_LOGS))
                 .group("cellulose:chipped_logs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CHIPPED_ACACIA)));
 
+        //Log slabs and stairs
+        offerSlabRecipe(exporter, BUILDING_BLOCKS, OAK_LOG_SLABS, OAK_LOG);
+        offerSlabRecipe(exporter, BUILDING_BLOCKS, STRIPPED_OAK_LOG_SLABS, STRIPPED_OAK_LOG);
+
     }
 
     private void offerPlanksRecipe(Consumer<RecipeJsonProvider> exporter, Block cactusPlanks, Block cactusBundle, int count)

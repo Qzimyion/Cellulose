@@ -42,5 +42,6 @@ public class CelluloseClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(CelluloseBlocks.CACTUS_TRAPDOOR, RenderLayer.getCutout());
 
         //Signs and Hanging signs
+
     }
 }

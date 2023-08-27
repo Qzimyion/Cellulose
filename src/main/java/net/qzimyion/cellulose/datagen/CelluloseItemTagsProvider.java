@@ -28,6 +28,8 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
         TagKey<Item> WOODEN_MOSAICS_SLABS = TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, "wooden_mosaics_slabs"));
         TagKey<Item> WOODEN_MOSAICS_STAIRS = TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, "wooden_mosaics_stairs"));
         TagKey<Item> CACTUS_LOGS = TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, "cactus_logs"));
+        TagKey<Item> LOG_SLABS = TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, "log_slabs"));
+        TagKey<Item> LOG_STAIRS = TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, "log_stairs"));
 
         getOrCreateTagBuilder(PLANKS)
                 .add(Item.fromBlock(CACTUS_PLANKS))
