@@ -1,7 +1,5 @@
 package net.qzimyion.cellulose.blocks;
 
-import com.terraformersmc.terraform.boat.api.TerraformBoatType;
-import com.terraformersmc.terraform.boat.impl.TerraformBoatTypeImpl;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -49,6 +47,24 @@ public class CelluloseBlocks
     public static final Block BIRCH_LINTELS = registerBlock("birch_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
     public static final Block SPRUCE_FRAME = registerBlock("spruce_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
     public static final Block SPRUCE_LINTELS = registerBlock("spruce_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block DARK_OAK_FRAME = registerBlock("dark_oak_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
+    public static final Block DARK_OAK_LINTELS = registerBlock("dark_oak_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block JUNGLE_FRAME = registerBlock("jungle_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
+    public static final Block JUNGLE_LINTELS = registerBlock("jungle_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block ACACIA_FRAME = registerBlock("acacia_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
+    public static final Block ACACIA_LINTELS = registerBlock("acacia_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block CRIMSON_FRAME = registerBlock("crimson_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
+    public static final Block CRIMSON_LINTELS = registerBlock("crimson_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block WARPED_FRAME = registerBlock("warped_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
+    public static final Block WARPED_LINTELS = registerBlock("warped_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block MANGROVE_FRAME = registerBlock("mangrove_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
+    public static final Block MANGROVE_LINTELS = registerBlock("mangrove_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block BAMBOO_FRAME = registerBlock("bamboo_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
+    public static final Block BAMBOO_LINTELS = registerBlock("bamboo_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block CHERRY_FRAME = registerBlock("cherry_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
+    public static final Block CHERRY_LINTELS = registerBlock("cherry_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block CACTUS_FRAME = registerBlock("cactus_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
+    public static final Block CACTUS_LINTELS = registerBlock("cactus_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
 
 
 
@@ -164,7 +180,22 @@ public class CelluloseBlocks
     public static final Block CHIPPED_CHERRY = registerBlock("chipped_cherry_log", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
     public static final Block CHIPPED_CHERRY_WOOD = registerBlock("chipped__wood", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_WOOD)));
     public static final Block CHIPPED_CACTUS = registerBlock("chipped_cactus_log", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG).sounds(BlockSoundGroup.WOOL)));
-    public static final Block CHIPPED_CACTUS_WOOD = registerBlock("chipped_cactus_wood", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_WOOD).sounds(BlockSoundGroup.WOOL)));
+    public static final Block CHIPPED_CACTUS_CROWN = registerBlock("chipped_cactus_crown", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_WOOD).sounds(BlockSoundGroup.WOOL)));
+
+    //Chipped Planks
+    public static final Block CHIPPED_OAK_PLANKS = registerBlock("chipped_oak_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block CHIPPED_BIRCH_PLANKS = registerBlock("chipped_birch_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block CHIPPED_SPRUCE_PLANKS = registerBlock("chipped_spruce_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block CHIPPED_DARK_OAK_PLANKS = registerBlock("chipped_dark_oak_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block CHIPPED_JUNGLE_PLANKS = registerBlock("chipped_jungle_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block CHIPPED_ACACIA_PLANKS = registerBlock("chipped_acacia_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block CHIPPED_CRIMSON_PLANKS = registerBlock("chipped_crimson_planks", new Block(FabricBlockSettings.copyOf(CRIMSON_PLANKS)));
+    public static final Block CHIPPED_WARPED_PLANKS = registerBlock("chipped_warped_planks", new Block(FabricBlockSettings.copyOf(WARPED_PLANKS)));
+    public static final Block CHIPPED_MANGROVE_PLANKS = registerBlock("chipped_mangrove_planks", new Block(FabricBlockSettings.copyOf(MANGROVE_PLANKS)));
+    public static final Block CHIPPED_BAMBOO_PLANKS = registerBlock("chipped_bamboo_planks", new Block(FabricBlockSettings.copyOf(BAMBOO_PLANKS)));
+    public static final Block CHIPPED_CHERRY_PLANKS = registerBlock("chipped_cherry_planks", new Block(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
+    public static final Block CHIPPED_CACTUS_PLANKS = registerBlock("chipped_cactus_planks", new Block(FabricBlockSettings.copyOf(CHERRY_PLANKS).sounds(BlockSoundGroup.WOOL)));
+
 
     //Barricades
     public static final Block OAK_BARRICADES = registerBlock("oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
@@ -173,6 +204,13 @@ public class CelluloseBlocks
     public static final Block DARK_OAK_BARRICADES = registerBlock("dark_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block JUNGLE_BARRICADES = registerBlock("jungle_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block ACACIA_BARRICADES = registerBlock("acacia_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+
+    public static final Block STRIPPED_OAK_BARRICADES = registerBlock("stripped_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_BIRCH_BARRICADES = registerBlock("stripped_birch_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_SPRUCE_BARRICADES = registerBlock("stripped_spruce_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_DARK_OAK_BARRICADES = registerBlock("stripped_dark_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_JUNGLE_BARRICADES = registerBlock("stripped_jungle_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_ACACIA_BARRICADES = registerBlock("stripped_acacia_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
 
     //Carpented wood
     public static final Block OAK_CARPENTED_BLOCK = registerBlock("carpented_oak", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
@@ -198,7 +236,7 @@ public class CelluloseBlocks
     public static final Block JUNGLE_PLANK_BEAM = registerBlock("jungle_oak_plank_beam", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block ACACIA_PLANK_BEAM = registerBlock("acacia_plank_beam", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
 
-    //Log Beams
+    //Log Beams (Pillar Blocks)
     public static final Block OAK_LOG_BEAM = registerBlock("oak_plank_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
     public static final Block BIRCH_LOG_BEAM = registerBlock("birch_plank_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
     public static final Block SPRUCE_LOG_BEAM = registerBlock("spruce_plank_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
@@ -206,7 +244,7 @@ public class CelluloseBlocks
     public static final Block JUNGLE_LOG_BEAM = registerBlock("jungle_oak_plank_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
     public static final Block ACACIA_LOG_BEAM = registerBlock("acacia_plank_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
 
-    //Glazed Wood
+    //Glazed Wood (Polished Stone)
     public static final Block OAK_GLAZED = registerBlock("glazed_oak", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block BIRCH_GLAZED = registerBlock("glazed_birch", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block SPRUCE_GLAZED = registerBlock("glazed_spruce", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
@@ -214,7 +252,7 @@ public class CelluloseBlocks
     public static final Block JUNGLE_GLAZED = registerBlock("glazed_jungle_oak", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block ACACIA_GLAZED = registerBlock("glazed_acacia", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
 
-    //Carved wood
+    //Carved wood (Chiseled Stone)
     public static final Block OAK_CARVED = registerBlock("carved_oak", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block BIRCH_CARVED = registerBlock("carved_birch", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block SPRUCE_CARVED = registerBlock("carved_spruce", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
@@ -226,10 +264,14 @@ public class CelluloseBlocks
     /*Non-Stripped*/
     public static final Block OAK_LOG_SLABS = registerBlock("oak_log_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
     public static final Block OAK_LOG_STAIRS = registerBlock("oak_log_stairs", new StairsBlock(OAK_LOG.getDefaultState(), FabricBlockSettings.copyOf(OAK_SLAB)));
+    public static final Block OAK_WOOD_SLABS = registerBlock("oak_wood_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
+    public static final Block OAK_WOOD_STAIRS = registerBlock("oak_wood_stairs", new StairsBlock(OAK_LOG.getDefaultState(), FabricBlockSettings.copyOf(OAK_SLAB)));
 
     /*Stripped*/
     public static final Block STRIPPED_OAK_LOG_SLABS = registerBlock("stripped_oak_log_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
     public static final Block STRIPPED_OAK_LOG_STAIRS = registerBlock("stripped_oak_log_stairs", new StairsBlock(STRIPPED_OAK_LOG.getDefaultState(), FabricBlockSettings.copyOf(OAK_SLAB)));
+    public static final Block STRIPPED_OAK_WOOD_SLABS = registerBlock("stripped_oak_wood_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
+    public static final Block STRIPPED_OAK_WOOD_STAIRS = registerBlock("stripped_oak_wood_stairs", new StairsBlock(STRIPPED_OAK_LOG.getDefaultState(), FabricBlockSettings.copyOf(OAK_SLAB)));
 
 
     //Cactus Woodset
@@ -246,13 +288,17 @@ public class CelluloseBlocks
     public static final Block CACTUS_PRESSURE_PLATE = registerBlock("cactus_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(CHERRY_PLANKS), BlockSetType.CHERRY));
     public static final Block CACTUS_DOOR = registerBlock("cactus_door", new DoorBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).nonOpaque(), BlockSetType.CHERRY));
     public static final Block CACTUS_TRAPDOOR = registerBlock("cactus_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).nonOpaque(), BlockSetType.CHERRY));
+
     //Overworld Shroom woodset
     /*Brown*/
 
     /*Red*/
 
     //Charred woodset
-    public static final Block CHARRED_PLANKS = registerBlock("charred_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS).burnable().dropsLike(OAK_PLANKS).sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
+
+    public static final Block CHARRED_PLANKS = registerBlock("charred_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
+    public static final Block CHARRED_SLABS = registerBlock("charred_planks_slabs", new SlabBlock(FabricBlockSettings.copyOf(CHARRED_PLANKS)));
+    public static final Block CHARRED_STAIRS = registerBlock("charred_planks_stairs", new StairsBlock(CelluloseBlocks.CHARRED_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(CHARRED_PLANKS)));
 
 
     private static Block registerBlock(String name, Block block){
