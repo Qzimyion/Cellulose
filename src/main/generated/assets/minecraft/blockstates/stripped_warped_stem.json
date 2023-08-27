@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "minecraft:block/stripped_warped_stem"
+    }
+  }
+}

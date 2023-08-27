@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "minecraft:wooden_stairs",
+  "key": {
+    "#": {
+      "item": "cellulose:jungle_mosaic"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cellulose:jungle_mosaic_stairs"
+  },
+  "show_notification": true
+}

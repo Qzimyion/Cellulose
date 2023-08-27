@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "cellulose:block/engraved_cactus",
+    "side": "cellulose:block/engraved_cactus"
+  }
+}

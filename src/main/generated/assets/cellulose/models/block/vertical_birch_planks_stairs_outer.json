@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "cellulose:block/vertical_birch_planks",
+    "side": "cellulose:block/vertical_birch_planks",
+    "top": "cellulose:block/vertical_birch_planks"
+  }
+}

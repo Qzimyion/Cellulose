@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "minecraft:wooden_slabs",
+  "key": {
+    "#": {
+      "item": "cellulose:spruce_mosaic"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "cellulose:spruce_mosaic_slab"
+  },
+  "show_notification": true
+}
