@@ -6,11 +6,10 @@ import net.qzimyion.cellulose.Cellulose;
 
 public class Celluloseparticles {
 
-    public static final DefaultParticleType OAK_FALLING_LEAF = FabricParticleTypes.simple();
+    public static final DefaultParticleType OAK_FALLING_LEAF = FabricParticleTypes.simple(true);
 
     public static void registerParticles(){
-
-
+        
         Cellulose.LOGGER.info("Registering particles for" + Cellulose.MOD_ID);
     }
 }
