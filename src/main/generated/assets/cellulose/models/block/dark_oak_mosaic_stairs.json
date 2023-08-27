@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "cellulose:block/dark_oak_mosaic",
-    "side": "cellulose:block/dark_oak_mosaic",
-    "top": "cellulose:block/dark_oak_mosaic"
-  }
-}

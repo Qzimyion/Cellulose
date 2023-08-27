@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "cellulose:block/cactus_mosaic",
-    "side": "cellulose:block/cactus_mosaic",
-    "top": "cellulose:block/cactus_mosaic"
-  }
-}

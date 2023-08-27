@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_glass_pane_side_alt",
-  "textures": {
-    "edge": "cellulose:block/birch_lintels_top",
-    "pane": "cellulose:block/birch_frame"
-  }
-}
