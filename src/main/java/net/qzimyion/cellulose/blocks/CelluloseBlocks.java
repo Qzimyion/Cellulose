@@ -198,6 +198,7 @@ public class CelluloseBlocks
 
 
     //Barricades
+    public static final Block TEST_BARRICADES = registerBlock("test_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
     public static final Block OAK_BARRICADES = registerBlock("oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block BIRCH_BARRICADES = registerBlock("birch_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block SPRUCE_BARRICADES = registerBlock("spruce_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
