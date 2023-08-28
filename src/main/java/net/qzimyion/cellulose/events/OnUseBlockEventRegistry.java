@@ -20,7 +20,7 @@ public class OnUseBlockEventRegistry
         BlockChipperEvent.BlockChipping(CRIMSON_STEM, CHIPPED_CRIMSON);
         BlockChipperEvent.BlockChipping(WARPED_STEM, CHIPPED_WARPED);
         BlockChipperEvent.BlockChipping(MANGROVE_LOG, CHIPPED_MANGROVE);
-        BlockChipperEvent.BlockChipping(BAMBOO_BLOCK, CHIPPED_BAMBOO);
+        BlockChipperEvent.BlockChipping(BAMBOO_BLOCK, CHIPPED_BAMBOO_BLOCK);
         BlockChipperEvent.BlockChipping(CHERRY_LOG, CHIPPED_CHERRY);
         BlockChipperEvent.BlockChipping(CACTUS_BUNDLE, CHIPPED_CACTUS);
 

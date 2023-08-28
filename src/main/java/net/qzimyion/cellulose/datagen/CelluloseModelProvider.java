@@ -69,6 +69,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.LogTexturePool ChippedDarkOak = blockStateModelGenerator.registerLog(CHIPPED_DARK_OAK);
         BlockStateModelGenerator.LogTexturePool ChippedJungle = blockStateModelGenerator.registerLog(CHIPPED_JUNGLE);
         BlockStateModelGenerator.LogTexturePool ChippedAcacia = blockStateModelGenerator.registerLog(CHIPPED_ACACIA);
+        BlockStateModelGenerator.LogTexturePool ChippedBamboo = blockStateModelGenerator.registerLog(CHIPPED_BAMBOO_BLOCK);
 
         BlockStateModelGenerator.LogTexturePool Cactus = blockStateModelGenerator.registerLog(CACTUS_BUNDLE);
         BlockStateModelGenerator.LogTexturePool StrippedCactus = blockStateModelGenerator.registerLog(STRIPPED_CACTUS);
@@ -104,6 +105,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         EngravedCactus.log(ENGRAVED_CACTUS);
         Cactus.log(CACTUS_BUNDLE);
         ChippedOak.log(CHIPPED_OAK);
+        ChippedBamboo.log(CHIPPED_BAMBOO_BLOCK);
 
         //Wood
         EngravedOak.wood(ENGRAVED_OAK_WOOD);
@@ -120,6 +122,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         Cactus.wood(CACTUS_CROWN);
         StrippedCactus.wood(STRIPPED_CACTUS_CROWN);
         ChippedOak.wood(CHIPPED_OAK_WOOD);
+        ChippedBamboo.wood(CHIPPED_BAMBOO_WOOD);
 
         //Slabs
         VerticalOak.slab(VERTICAL_OAK_PLANKS_SLABS);
