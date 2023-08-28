@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-27T16:23:56.3465352	Cellulose /Block Loot Tables
+// 1.20.1	2023-08-28T18:22:33.5362918	Cellulose /Block Loot Tables
 b76f31b714b35157dedd12cfbd35dcd53b306977 data\cellulose\loot_tables\blocks\birch_mosaic_stairs.json
 30d192c15541ca8446bdc7be0995c32241724c59 data\cellulose\loot_tables\blocks\cactus_planks.json
 91ece017496ce948f5cc5bb50e42d9758aaa0542 data\cellulose\loot_tables\blocks\engraved_acacia_log.json
@@ -30,12 +30,13 @@ f3370c34a39a5aa8dca4acc49003bc49d19b1098 data\cellulose\loot_tables\blocks\acaci
 e0c60324a33a020a2cc91cacb011dae5cdb79a58 data\cellulose\loot_tables\blocks\spruce_mosaic_stairs.json
 aa130329c2833ea33cda58a40bc31e7ce9d89539 data\cellulose\loot_tables\blocks\dark_oak_mosaic_slab.json
 2da517562461145a69ba81bd97dce170b8e487ad data\cellulose\loot_tables\blocks\birch_frame.json
-7fdef2632f86843135850f43e354c03f62b03c6e data\cellulose\loot_tables\blocks\birch_mosaic.json
 cfd66cc03197c0220fdd0a1a34f51e7b0493a618 data\cellulose\loot_tables\blocks\spruce_mosaic_slab.json
+7fdef2632f86843135850f43e354c03f62b03c6e data\cellulose\loot_tables\blocks\birch_mosaic.json
 94303abf78233ee99c6b6afbb92a9f551679739c data\cellulose\loot_tables\blocks\stripped_oak_log_stairs.json
 6ca9a8182755b97810ca2adab2b54a288b7d5c10 data\cellulose\loot_tables\blocks\jungle_mosaic_slab.json
 93f94100403923c06a1dee83b08984619badceee data\cellulose\loot_tables\blocks\acacia_mosaic_stairs.json
 8e17fa8c2f7b6204ce1d787e18bfcc1302772792 data\cellulose\loot_tables\blocks\cherry_mosaic_slab.json
+3d3ac4766fb8406faaee2117bc1e43bf39f4caa2 data\cellulose\loot_tables\blocks\charred_planks.json
 b0330fea785e9db34f2b36166c82942a98bb1720 data\cellulose\loot_tables\blocks\engraved_acacia_wood.json
 025296c42a6553f3f15f461406569c1453d7309d data\cellulose\loot_tables\blocks\birch_lintels.json
 ae0f6575e7dcb40aac607e6419610a54f4e4c85a data\cellulose\loot_tables\blocks\cactus_trapdoor.json
