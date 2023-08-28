@@ -199,19 +199,18 @@ public class CelluloseBlocks
 
     //Barricades
     public static final Block TEST_BARRICADES = registerBlock("test_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
-    public static final Block OAK_BARRICADES = registerBlock("oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block BIRCH_BARRICADES = registerBlock("birch_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block SPRUCE_BARRICADES = registerBlock("spruce_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block DARK_OAK_BARRICADES = registerBlock("dark_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block JUNGLE_BARRICADES = registerBlock("jungle_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block ACACIA_BARRICADES = registerBlock("acacia_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-
-    public static final Block STRIPPED_OAK_BARRICADES = registerBlock("stripped_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block STRIPPED_BIRCH_BARRICADES = registerBlock("stripped_birch_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block STRIPPED_SPRUCE_BARRICADES = registerBlock("stripped_spruce_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block STRIPPED_DARK_OAK_BARRICADES = registerBlock("stripped_dark_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block STRIPPED_JUNGLE_BARRICADES = registerBlock("stripped_jungle_oak_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block STRIPPED_ACACIA_BARRICADES = registerBlock("stripped_acacia_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block OAK_BARRICADES = registerBlock("oak_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(TEST_BARRICADES)));
+    public static final Block BIRCH_BARRICADES = registerBlock("birch_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(TEST_BARRICADES)));
+    public static final Block SPRUCE_BARRICADES = registerBlock("spruce_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(TEST_BARRICADES)));
+    public static final Block DARK_OAK_BARRICADES = registerBlock("dark_oak_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(TEST_BARRICADES)));
+    public static final Block JUNGLE_BARRICADES = registerBlock("jungle_oak_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(TEST_BARRICADES)));
+    public static final Block ACACIA_BARRICADES = registerBlock("acacia_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(TEST_BARRICADES)));
+    public static final Block CRIMSON_BARRICADES = registerBlock("crimson_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.DULL_PINK).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block WARPED_BARRICADES = registerBlock("warped_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.DARK_AQUA).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block MANGROVE_BARRICADES = registerBlock("mangrove_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.RED).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
+    public static final Block BAMBOO_BARRICADES = registerBlock("bamboo_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.YELLOW).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.BAMBOO_WOOD).burnable()));
+    public static final Block CHERRY_BARRICADES = registerBlock("cherry_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
+    public static final Block CACTUS_BARRICADES = registerBlock("cactus_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOL).burnable()));
 
     //Carpented wood
     public static final Block OAK_CARPENTED_BLOCK = registerBlock("carpented_oak", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
