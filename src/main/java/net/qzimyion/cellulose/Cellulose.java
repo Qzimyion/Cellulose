@@ -35,6 +35,7 @@ public class Cellulose implements ModInitializer
 		CelluloseTags.registerTags();
 		CelluloseItemGroups.registerItemGroups();
 		CelluloseBoats.registerBoats();
+		CelluloseSigns.registerSigns();
 		OnUseBlockEventRegistry.registerEvents();
 	}
 }
