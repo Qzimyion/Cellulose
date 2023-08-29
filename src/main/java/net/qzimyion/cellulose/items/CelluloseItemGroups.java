@@ -101,6 +101,8 @@ public class CelluloseItemGroups
         // Functional blocks
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> content.addAfter(STONECUTTER, SAWMILL));
 
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(WET_SPONGE, BLOCK_OF_PAPER, BLOCK_SOAKED_OF_PAPER));
+
         //Cactus woodset
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.addAfter(WARPED_BUTTON, CACTUS_BUNDLE, CACTUS_CROWN, STRIPPED_CACTUS, STRIPPED_CACTUS_CROWN, ENGRAVED_CACTUS, ENGRAVED_CACTUS_CROWN,
                 CACTUS_MOSAIC, CACTUS_MOSAIC_STAIRS, CACTUS_MOSAIC_SLABS, CACTUS_PLANKS, CACTUS_STAIRS, CACTUS_SLABS, VERTICAL_CACTUS_PLANKS, VERTICAL_CACTUS_PLANKS_STAIRS,
