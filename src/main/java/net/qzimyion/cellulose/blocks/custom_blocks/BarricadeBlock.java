@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.blocks;
+package net.qzimyion.cellulose.blocks.custom_blocks;
 
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
