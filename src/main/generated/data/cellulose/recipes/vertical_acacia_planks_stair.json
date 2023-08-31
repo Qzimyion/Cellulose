@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "minecraft:wooden_stairs",
+  "key": {
+    "#": {
+      "item": "cellulose:vertical_acacia_planks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "cellulose:vertical_acacia_planks_stair"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "cellulose:block/glazed_cherry",
+    "side": "cellulose:block/glazed_cherry",
+    "top": "cellulose:block/glazed_cherry"
+  }
+}

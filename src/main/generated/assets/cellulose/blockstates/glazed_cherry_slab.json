@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/glazed_cherry_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/glazed_cherry"
+    },
+    "type=top": {
+      "model": "cellulose:block/glazed_cherry_slab_top"
+    }
+  }
+}

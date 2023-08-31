@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/glazed_warped_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/glazed_warped"
+    },
+    "type=top": {
+      "model": "cellulose:block/glazed_warped_slab_top"
+    }
+  }
+}

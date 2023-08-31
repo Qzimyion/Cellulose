@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "cellulose:block/glazed_dark_oak",
+    "side": "cellulose:block/glazed_dark_oak",
+    "top": "cellulose:block/glazed_dark_oak"
+  }
+}

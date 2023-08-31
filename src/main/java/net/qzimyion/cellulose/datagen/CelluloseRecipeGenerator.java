@@ -1,21 +1,24 @@
 package net.qzimyion.cellulose.datagen;
 
+import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 import static net.minecraft.item.Items.*;
 import static net.minecraft.recipe.book.RecipeCategory.*;
 import static net.minecraft.registry.tag.ItemTags.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
-import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
 public class CelluloseRecipeGenerator extends FabricRecipeProvider {
     public CelluloseRecipeGenerator(FabricDataOutput output) {
@@ -508,6 +511,15 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerSlabRecipe(exporter, BUILDING_BLOCKS, OAK_LOG_SLABS, OAK_LOG);
         offerSlabRecipe(exporter, BUILDING_BLOCKS, STRIPPED_OAK_LOG_SLABS, STRIPPED_OAK_LOG);
 
+        /**
+         * Smelting recipes
+         */
+
+        final List<ItemConvertible> PAPER_SMELTING = Util.make(Lists.newArrayList(), list -> {
+            list.add(SOAKED_BLOCK_OF_PAPER);
+        });
+
+        offerSmelting(exporter, PAPER_SMELTING, MISC, BLOCK_OF_PAPER, 0.15F, 200, "misc");
     }
 
     private void offerPlanksRecipe(Consumer<RecipeJsonProvider> exporter, Block cactusPlanks, Block cactusBundle, int count)

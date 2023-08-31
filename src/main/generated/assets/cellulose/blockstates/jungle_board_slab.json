@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/jungle_board_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/jungle_board"
+    },
+    "type=top": {
+      "model": "cellulose:block/jungle_board_slab_top"
+    }
+  }
+}

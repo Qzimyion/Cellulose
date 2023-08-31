@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "cellulose:block/vertical_oak_plank_pillars_top",
+    "side": "cellulose:block/vertical_oak_plank_pillars"
+  }
+}

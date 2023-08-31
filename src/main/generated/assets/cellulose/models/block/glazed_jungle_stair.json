@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "cellulose:block/glazed_jungle",
+    "side": "cellulose:block/glazed_jungle",
+    "top": "cellulose:block/glazed_jungle"
+  }
+}

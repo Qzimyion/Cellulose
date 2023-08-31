@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/chipped_bamboo_planks_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/chipped_bamboo_planks"
+    },
+    "type=top": {
+      "model": "cellulose:block/chipped_bamboo_planks_slab_top"
+    }
+  }
+}

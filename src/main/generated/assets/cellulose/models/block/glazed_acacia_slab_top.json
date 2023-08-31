@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "cellulose:block/glazed_acacia",
+    "side": "cellulose:block/glazed_acacia",
+    "top": "cellulose:block/glazed_acacia"
+  }
+}

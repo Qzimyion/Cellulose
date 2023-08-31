@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "cellulose:block/warped_tiles",
+    "side": "cellulose:block/warped_tiles",
+    "top": "cellulose:block/warped_tiles"
+  }
+}

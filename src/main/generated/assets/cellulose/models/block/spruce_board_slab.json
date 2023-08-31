@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "cellulose:block/spruce_board",
+    "side": "cellulose:block/spruce_board",
+    "top": "cellulose:block/spruce_board"
+  }
+}

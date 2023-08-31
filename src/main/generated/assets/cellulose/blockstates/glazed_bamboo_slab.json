@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/glazed_bamboo_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/glazed_bamboo"
+    },
+    "type=top": {
+      "model": "cellulose:block/glazed_bamboo_slab_top"
+    }
+  }
+}

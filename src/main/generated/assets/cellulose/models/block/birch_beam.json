@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "cellulose:block/birch_beam",
+    "side": "cellulose:block/birch_beam"
+  }
+}

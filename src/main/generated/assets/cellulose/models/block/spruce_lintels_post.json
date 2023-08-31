@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_post",
+  "textures": {
+    "edge": "cellulose:block/spruce_lintels_top",
+    "pane": "cellulose:block/spruce_frame"
+  }
+}

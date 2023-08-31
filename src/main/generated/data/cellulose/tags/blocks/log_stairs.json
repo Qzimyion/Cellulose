@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "cellulose:oak_log_stairs",
-    "cellulose:stripped_oak_log_stairs"
+    "cellulose:oak_log_stair",
+    "cellulose:stripped_oak_log_stair"
   ]
 }

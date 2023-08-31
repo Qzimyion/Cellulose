@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "cellulose:block/glazed_crimson",
+    "side": "cellulose:block/glazed_crimson",
+    "top": "cellulose:block/glazed_crimson"
+  }
+}

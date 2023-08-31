@@ -32,13 +32,13 @@ public class PaperBlock extends Block {
 
     protected void update(World world, BlockPos pos) {
         if (this.absorbWater(world, pos)) {
-            world.setBlockState(pos, CelluloseBlocks.BLOCK_SOAKED_OF_PAPER.getDefaultState(), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, CelluloseBlocks.SOAKED_BLOCK_OF_PAPER.getDefaultState(), Block.NOTIFY_LISTENERS);
             world.syncWorldEvent(WorldEvents.BLOCK_BROKEN, pos, Block.getRawIdFromState(Blocks.WATER.getDefaultState()));
         }
     }
 
     private boolean absorbWater(World world, BlockPos pos) {
-        return BlockPos.iterateRecursively(pos, 5, 36, (currentPos, queuer) -> {
+        return BlockPos.iterateRecursively(pos, 6, 36, (currentPos, queuer) -> {
             for (Direction direction : field_43257) {
                 queuer.accept(currentPos.offset(direction));
             }
