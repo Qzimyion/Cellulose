@@ -1,8 +1,8 @@
-// 1.20.1	2023-08-28T18:22:33.5342905	Cellulose /Tags for minecraft:item
+// 1.20.1	2023-08-31T20:20:27.4855895	Cellulose /Tags for minecraft:item
 dd35626a3a601c47bdf807941d495c8b6dba231c data\minecraft\tags\items\wooden_pressure_plates.json
 c42230b473f8c147b88bbe08eca81e3ecac6e5f4 data\minecraft\tags\items\fence_gates.json
 e54871c1ded023f3e2cd70e72f7b76dd610dc3c5 data\cellulose\tags\items\wooden_mosaics_slabs.json
-77131f6be0b1fe1de463676148f574bb24e96327 data\cellulose\tags\items\wooden_mosaics_stairs.json
+21eabff9dc7619755c62e299c04362e62729d50d data\cellulose\tags\items\wooden_mosaics_stairs.json
 461f832652de998725410ea272d0048b880ae99a data\minecraft\tags\items\oak_logs.json
 0c23759a0cc4eeafd62d61e85231d5fb747bf565 data\minecraft\tags\items\crimson_stems.json
 c27c76d27dacef1a65c648a5093f7d109b24df78 data\minecraft\tags\items\dark_oak_logs.json
@@ -10,7 +10,7 @@ c27c76d27dacef1a65c648a5093f7d109b24df78 data\minecraft\tags\items\dark_oak_logs
 4ea3dd01fb2540f9eccd06fb72ebcdbe852ff368 data\cellulose\tags\items\cactus_logs.json
 ebfaeccaf9cffad206a8451e40e99e2cd67a57ec data\minecraft\tags\items\wooden_fences.json
 3bc5e70849e51cf0e6c185e366c82cdfcd9a66f6 data\minecraft\tags\items\acacia_logs.json
-d739b03a87f7269ca626453eb999bb73961eab92 data\minecraft\tags\items\wooden_stairs.json
+1aef86036d66904ef350ebe36b713d13eb841769 data\minecraft\tags\items\wooden_stairs.json
 de4daeb30a0e96128a157f46190854909fda899f data\minecraft\tags\items\birch_logs.json
 05bd0538a1e9a01c095afdfe81546be4b10dd798 data\cellulose\tags\items\wooden_mosaics.json
 0e7fc1c292a24554de5f2e093cb90ca06e394627 data\minecraft\tags\items\cherry_logs.json
@@ -20,7 +20,7 @@ e2eb517c5e4bf207cd8bc0ddc6a653a181f24a01 data\minecraft\tags\items\wooden_button
 8f5366768c8c258ccd128d9968a0469168ffe429 data\minecraft\tags\items\wooden_doors.json
 42f6c6f0a71bda817ac0aec16ca52352564b3725 data\minecraft\tags\items\wooden_slabs.json
 490179b447a574e93142af481a1d5d65c6989671 data\minecraft\tags\items\spruce_logs.json
-7503cb4642da4952e699b80ab4355d170767cd34 data\minecraft\tags\items\jungle_logs.json
 cd44c90d5e5f2032742696e7c2270105e89eb838 data\minecraft\tags\items\mangrove_logs.json
+7503cb4642da4952e699b80ab4355d170767cd34 data\minecraft\tags\items\jungle_logs.json
 7d44bc5f4932118e26798734bd110804a69821be data\minecraft\tags\items\wooden_trapdoors.json
 92d316efcf4856cfadb45d22d23e3524340b5311 data\minecraft\tags\items\warped_stems.json
