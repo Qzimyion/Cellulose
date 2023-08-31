@@ -99,31 +99,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool CharredPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(CHARRED_PLANKS);
         BlockStateModelGenerator.BlockTexturePool CharredBambooPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(CHARRED_BAMBOO_PLANKS);
 
-        //Texturepool (Log slabs and stairs)
-        BlockStateModelGenerator.BlockTexturePool OakWood = blockStateModelGenerator.registerCubeAllModelTexturePool(OAK_LOG);
-        BlockStateModelGenerator.BlockTexturePool BirchWood = blockStateModelGenerator.registerCubeAllModelTexturePool(BIRCH_LOG);
-        BlockStateModelGenerator.BlockTexturePool SpruceWood = blockStateModelGenerator.registerCubeAllModelTexturePool(SPRUCE_LOG);
-        BlockStateModelGenerator.BlockTexturePool DarkOakWood = blockStateModelGenerator.registerCubeAllModelTexturePool(DARK_OAK_LOG);
-        BlockStateModelGenerator.BlockTexturePool JungleWood = blockStateModelGenerator.registerCubeAllModelTexturePool(JUNGLE_LOG);
-        BlockStateModelGenerator.BlockTexturePool AcaciaWood = blockStateModelGenerator.registerCubeAllModelTexturePool(ACACIA_LOG);
-        BlockStateModelGenerator.BlockTexturePool CrimsonWood = blockStateModelGenerator.registerCubeAllModelTexturePool(CRIMSON_STEM);
-        BlockStateModelGenerator.BlockTexturePool WarpedWood = blockStateModelGenerator.registerCubeAllModelTexturePool(WARPED_STEM);
-        BlockStateModelGenerator.BlockTexturePool MangroveWood = blockStateModelGenerator.registerCubeAllModelTexturePool(MANGROVE_LOG);
-        BlockStateModelGenerator.BlockTexturePool CherryWood = blockStateModelGenerator.registerCubeAllModelTexturePool(CHERRY_LOG);
-
-        BlockStateModelGenerator.BlockTexturePool StrippedOakWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_OAK_LOG);
-        BlockStateModelGenerator.BlockTexturePool StrippedBirchWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_BIRCH_LOG);
-        BlockStateModelGenerator.BlockTexturePool StrippedSpruceWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_SPRUCE_LOG);
-        BlockStateModelGenerator.BlockTexturePool StrippedDarkOakWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_DARK_OAK_LOG);
-        BlockStateModelGenerator.BlockTexturePool StrippedJungleWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_JUNGLE_LOG);
-        BlockStateModelGenerator.BlockTexturePool StrippedAcaciaWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_ACACIA_LOG);
-        BlockStateModelGenerator.BlockTexturePool StrippedCrimsonWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_CRIMSON_STEM);
-        BlockStateModelGenerator.BlockTexturePool StrippedWarpedWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_WARPED_STEM);
-        BlockStateModelGenerator.BlockTexturePool StrippedMangroveWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_MANGROVE_LOG);
-        BlockStateModelGenerator.BlockTexturePool StrippedCherryWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_CHERRY_LOG);
-        BlockStateModelGenerator.BlockTexturePool StrippedCactusWood = blockStateModelGenerator.registerCubeAllModelTexturePool(STRIPPED_CACTUS);
-
-
         //Texturepool (PillarBlocks)
         BlockStateModelGenerator.LogTexturePool ChippedOak = blockStateModelGenerator.registerLog(CHIPPED_OAK);
         BlockStateModelGenerator.LogTexturePool ChippedBirch = blockStateModelGenerator.registerLog(CHIPPED_BIRCH);
@@ -272,7 +247,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         VerticalPlankPillarCactus.log(VERTICAL_CACTUS_PLANK_PILLARS);
         //(Woodsets: Cactus)
         Cactus.log(CACTUS_BUNDLE);
-
+        StrippedCactus.log(STRIPPED_CACTUS);
         //Wood
         //(Engraved)
         EngravedOak.wood(ENGRAVED_OAK_WOOD);
@@ -398,9 +373,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         cactusVerticalTexturePool.slab(VERTICAL_CACTUS_PLANKS_SLABS);
         cactusMosaicTexturePool.slab(CACTUS_MOSAIC_SLABS);
 
-        OakWood.slab(OAK_WOOD_SLABS);
-        StrippedOakWood.slab(STRIPPED_OAK_WOOD_SLABS);
-
 
 
         //Stairs
@@ -481,10 +453,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         cactusVerticalTexturePool.stairs(VERTICAL_CACTUS_PLANKS_STAIRS);
         cactusMosaicTexturePool.stairs(CACTUS_MOSAIC_STAIRS);
 
-        OakWood.stairs(OAK_WOOD_STAIRS);
-
-        StrippedOakWood.stairs(STRIPPED_OAK_WOOD_STAIRS);
-
         //Fence and Fence-Gates
         cactusTexturePool.fence(CACTUS_FENCE);
         cactusTexturePool.fenceGate(CACTUS_FENCE_GATE);
@@ -536,8 +504,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_CHERRY);
         blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_CACTUS);
         //(Storage Blocks)
-        blockStateModelGenerator.registerSimpleCubeAll(BLOCK_OF_PAPER);
-        blockStateModelGenerator.registerSimpleCubeAll(SOAKED_BLOCK_OF_PAPER);
         blockStateModelGenerator.registerSimpleCubeAll(BLOCK_OF_STICKS);
         blockStateModelGenerator.registerSimpleCubeAll(BLOCK_OF_CHARCOAL);
 
