@@ -77,7 +77,7 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CACTUS_BUNDLE, "Cactus Bundle");
         translationBuilder.add(CACTUS_PLANKS, "Cactus Planks");
         translationBuilder.add(CACTUS_STAIRS, "Cactus Planks Stairs");
-        translationBuilder.add(CACTUS_SLABS, "Cactus Planks Slabs");
+        translationBuilder.add(CACTUS_SLABS, "Cactus Planks Slab");
         translationBuilder.add(CACTUS_CROWN, "Cactus Crown");
         translationBuilder.add(STRIPPED_CACTUS, "Stripped Cactus");
         translationBuilder.add(STRIPPED_CACTUS_CROWN, "Stripped Cactus Crown");
@@ -95,6 +95,11 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CACTUS_MOSAIC, "Cactus Mosaic");
         translationBuilder.add(CACTUS_MOSAIC_STAIRS, "Cactus Mosaic Stairs");
         translationBuilder.add(CACTUS_MOSAIC_SLABS, "Cactus Mosaic Slab");
+        translationBuilder.add(CHIPPED_CACTUS_PLANKS, "Chipped Cactus Planks");
+        translationBuilder.add(CHIPPED_CACTUS_PLANKS_SLABS, "Chipped Cactus Planks Slab");
+        translationBuilder.add(CHIPPED_CACTUS_PLANKS_STAIRS, "Chipped Cactus Planks Stairs");
+        translationBuilder.add(CACTUS_PLANK_PAVEMENT, "Cactus Pavement");
+        translationBuilder.add(CACTUS_CARVED, "Carved cactus");
         /*Stats*/
         translationBuilder.add(CelluloseStats.INTERACT_WITH_SAWMILL, "Interaction with sawmill");
         //Item
@@ -112,7 +117,65 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CHIPPED_JUNGLE_WOOD, "Chipped spruce Wood");
         translationBuilder.add(CHIPPED_ACACIA, "Chipped Spruce Log");
         translationBuilder.add(CHIPPED_ACACIA_WOOD, "Chipped Spruce Wood");
-        //Log slabs and stairs
-
+        //Chipped Planks
+        translationBuilder.add(CHIPPED_OAK_PLANKS, "Chipped Oak Planks");
+        translationBuilder.add(CHIPPED_BIRCH_PLANKS, "Chipped Birch Planks");
+        translationBuilder.add(CHIPPED_SPRUCE_PLANKS, "Chipped Spruce Planks");
+        translationBuilder.add(CHIPPED_DARK_OAK_PLANKS, "Chipped Dark Oak Planks");
+        translationBuilder.add(CHIPPED_JUNGLE_PLANKS, "Chipped Jungle Planks");
+        translationBuilder.add(CHIPPED_ACACIA_PLANKS, "Chipped Acacia Planks");
+        translationBuilder.add(CHIPPED_CRIMSON_PLANKS, "Chipped Crimson Planks");
+        translationBuilder.add(CHIPPED_WARPED_PLANKS, "Chipped Warped Planks");
+        translationBuilder.add(CHIPPED_MANGROVE_PLANKS, "Chipped Mangrove Planks");
+        translationBuilder.add(CHIPPED_BAMBOO_PLANKS, "Chipped Bamboo Planks");
+        translationBuilder.add(CHIPPED_CHERRY_PLANKS, "Chipped Cherry Planks");
+        //Chipped Planks Slab
+        translationBuilder.add(CHIPPED_OAK_PLANKS_SLABS, "Chipped Oak Planks Slab");
+        translationBuilder.add(CHIPPED_BIRCH_PLANKS_SLABS, "Chipped Birch Planks Slab");
+        translationBuilder.add(CHIPPED_SPRUCE_PLANKS_SLABS, "Chipped Spruce Planks Slab");
+        translationBuilder.add(CHIPPED_DARK_OAK_PLANKS_SLABS, "Chipped Dark Oak Planks Slab");
+        translationBuilder.add(CHIPPED_JUNGLE_PLANKS_SLABS, "Chipped Jungle Planks Slab");
+        translationBuilder.add(CHIPPED_ACACIA_PLANKS_SLABS, "Chipped Acacia Planks Slab");
+        translationBuilder.add(CHIPPED_CRIMSON_PLANKS_SLABS, "Chipped Crimson Planks Slab");
+        translationBuilder.add(CHIPPED_WARPED_PLANKS_SLABS, "Chipped Warped Planks Slab");
+        translationBuilder.add(CHIPPED_MANGROVE_PLANKS_SLABS, "Chipped Mangrove Planks Slab");
+        translationBuilder.add(CHIPPED_BAMBOO_PLANKS_SLABS, "Chipped Bamboo Planks Slab");
+        translationBuilder.add(CHIPPED_CHERRY_PLANKS_SLABS, "Chipped Cherry Planks Slab");
+        //Chipped Planks
+        translationBuilder.add(CHIPPED_OAK_PLANKS_STAIRS, "Chipped Oak Planks Stairs");
+        translationBuilder.add(CHIPPED_BIRCH_PLANKS_STAIRS, "Chipped Birch Planks Stairs");
+        translationBuilder.add(CHIPPED_SPRUCE_PLANKS_STAIRS, "Chipped Spruce Planks Stairs");
+        translationBuilder.add(CHIPPED_DARK_OAK_PLANKS_STAIRS, "Chipped Dark Oak Planks Stairs");
+        translationBuilder.add(CHIPPED_JUNGLE_PLANKS_STAIRS, "Chipped Jungle Planks Stairs");
+        translationBuilder.add(CHIPPED_ACACIA_PLANKS_STAIRS, "Chipped Acacia Planks Stairs");
+        translationBuilder.add(CHIPPED_CRIMSON_PLANKS_STAIRS, "Chipped Crimson Planks Stairs");
+        translationBuilder.add(CHIPPED_WARPED_PLANKS_STAIRS, "Chipped Warped Planks Stairs");
+        translationBuilder.add(CHIPPED_MANGROVE_PLANKS_STAIRS, "Chipped Mangrove Planks Stairs");
+        translationBuilder.add(CHIPPED_BAMBOO_PLANKS_STAIRS, "Chipped Bamboo Planks Stairs");
+        translationBuilder.add(CHIPPED_CHERRY_PLANKS_STAIRS, "Chipped Cherry Planks Stairs");
+        //Pavements
+        translationBuilder.add(OAK_PLANK_PAVEMENT, "Oak Pavement");
+        translationBuilder.add(BIRCH_PLANK_PAVEMENT, "Birch Pavement");
+        translationBuilder.add(SPRUCE_PLANK_PAVEMENT, "Spruce Pavement");
+        translationBuilder.add(DARK_OAK_PLANK_PAVEMENT, "Dark Oak Pavement");
+        translationBuilder.add(JUNGLE_PLANK_PAVEMENT, "Jungle Pavement");
+        translationBuilder.add(ACACIA_PLANK_PAVEMENT, "Acacia Pavement");
+        translationBuilder.add(CRIMSON_PLANK_PAVEMENT, "Crimson Pavement");
+        translationBuilder.add(WARPED_PLANK_PAVEMENT, "Warped Pavement");
+        translationBuilder.add(MANGROVE_PLANK_PAVEMENT, "Mangrove Pavement");
+        translationBuilder.add(BAMBOO_PLANK_PAVEMENT, "Bamboo Pavement");
+        translationBuilder.add(CHERRY_PLANK_PAVEMENT, "Cherry Pavement");
+        //Carved Wood
+        translationBuilder.add(OAK_CARVED, "Carved Oak");
+        translationBuilder.add(BIRCH_CARVED, "Carved Birch");
+        translationBuilder.add(SPRUCE_CARVED, "Carved Spruce");
+        translationBuilder.add(DARK_OAK_CARVED, "Carved Dark Oak");
+        translationBuilder.add(JUNGLE_CARVED, "Carved Jungle");
+        translationBuilder.add(ACACIA_CARVED, "Carved Acacia");
+        translationBuilder.add(CRIMSON_CARVED, "Carved Crimson");
+        translationBuilder.add(WARPED_CARVED, "Carved Warped");
+        translationBuilder.add(MANGROVE_CARVED, "Carved Mangrove");
+        translationBuilder.add(BAMBOO_CARVED, "Carved Bamboo");
+        translationBuilder.add(CHERRY_CARVED, "Carved Cherry");
     }
 }
