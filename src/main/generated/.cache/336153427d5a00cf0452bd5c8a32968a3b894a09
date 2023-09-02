@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-31T21:12:54.7463335	Cellulose /Tags for minecraft:item
+// 1.20.1	2023-09-02T20:25:50.9444059	Cellulose /Tags for minecraft:item
 dd35626a3a601c47bdf807941d495c8b6dba231c data\minecraft\tags\items\wooden_pressure_plates.json
 c42230b473f8c147b88bbe08eca81e3ecac6e5f4 data\minecraft\tags\items\fence_gates.json
 e54871c1ded023f3e2cd70e72f7b76dd610dc3c5 data\cellulose\tags\items\wooden_mosaics_slabs.json
@@ -14,8 +14,8 @@ ebfaeccaf9cffad206a8451e40e99e2cd67a57ec data\minecraft\tags\items\wooden_fences
 de4daeb30a0e96128a157f46190854909fda899f data\minecraft\tags\items\birch_logs.json
 05bd0538a1e9a01c095afdfe81546be4b10dd798 data\cellulose\tags\items\wooden_mosaics.json
 0e7fc1c292a24554de5f2e093cb90ca06e394627 data\minecraft\tags\items\cherry_logs.json
-8f88240b679f25ccb3fcf934ad5713b4a08d66a3 data\minecraft\tags\items\logs_that_burn.json
 60760629e0f420403db3b6d2c2a75eb675fc9a21 data\minecraft\tags\items\planks.json
+8f88240b679f25ccb3fcf934ad5713b4a08d66a3 data\minecraft\tags\items\logs_that_burn.json
 e2eb517c5e4bf207cd8bc0ddc6a653a181f24a01 data\minecraft\tags\items\wooden_buttons.json
 8f5366768c8c258ccd128d9968a0469168ffe429 data\minecraft\tags\items\wooden_doors.json
 42f6c6f0a71bda817ac0aec16ca52352564b3725 data\minecraft\tags\items\wooden_slabs.json

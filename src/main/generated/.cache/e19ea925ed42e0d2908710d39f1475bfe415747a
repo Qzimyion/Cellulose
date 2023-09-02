@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-31T21:12:54.7483366	Cellulose /Block Loot Tables
+// 1.20.1	2023-09-02T20:25:50.9454048	Cellulose /Block Loot Tables
 10c22db550ee7b9d09ba124b740396e2601770e7 data\cellulose\loot_tables\blocks\vertical_bamboo_plank_pillars.json
 405ae9b64726b95fa7d2c392ac5cdc22b64e8d56 data\cellulose\loot_tables\blocks\bamboo_tiles_stair.json
 8d956a2d3045729a62b7bca3b80300fbc3890cfe data\cellulose\loot_tables\blocks\cherry_board_slab.json
@@ -273,9 +273,9 @@ cb032847af0b08c10cab732d1e3742e4b51fe90f data\cellulose\loot_tables\blocks\dark_
 f7279aafb433f2873b4f0f15ffadfbb259d24d23 data\cellulose\loot_tables\blocks\acacia_tiles_stair.json
 fcb8613981616953cd7db0b077c0d31655da3134 data\cellulose\loot_tables\blocks\crimson_beam.json
 d4138a57a826e855bd35ce9b11e39dec6ea647fe data\cellulose\loot_tables\blocks\vertical_spruce_plank_pillars.json
-d667ea41a199619f6184d96b9a6b9dd201460348 data\cellulose\loot_tables\blocks\glazed_crimson_stair.json
-929b3659a79935ff4ca71bd7f2344f9f9d5ca43b data\cellulose\loot_tables\blocks\glazed_cherry_stair.json
 4c112080a35a45d69efa038074faa08f2201b454 data\cellulose\loot_tables\blocks\cactus_button.json
+929b3659a79935ff4ca71bd7f2344f9f9d5ca43b data\cellulose\loot_tables\blocks\glazed_cherry_stair.json
+d667ea41a199619f6184d96b9a6b9dd201460348 data\cellulose\loot_tables\blocks\glazed_crimson_stair.json
 f03aae120d3f7108bdf4f822162b89a944a2387f data\cellulose\loot_tables\blocks\chipped_oak_wood.json
 57a0258928130edbe7081c9c2dde67b4b6c31cf7 data\cellulose\loot_tables\blocks\jungle_tiles_stair.json
 919c154063a365d6ac4cb70e048db30227db46b3 data\cellulose\loot_tables\blocks\cactus_door.json
