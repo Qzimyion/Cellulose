@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.blocks;
+package net.qzimyion.cellulose.signs;
 
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;

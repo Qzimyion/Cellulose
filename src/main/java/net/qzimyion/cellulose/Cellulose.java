@@ -3,6 +3,7 @@ package net.qzimyion.cellulose;
 import net.fabricmc.api.ModInitializer;
 import net.qzimyion.cellulose.boats.CelluloseBoats;
 import net.qzimyion.cellulose.events.OnUseBlockEventRegistry;
+import net.qzimyion.cellulose.signs.CelluloseSigns;
 import net.qzimyion.cellulose.util.CelluloseStats;
 import net.qzimyion.cellulose.blocks.CelluloseFlammableBlocks;
 import net.qzimyion.cellulose.util.CelluloseFuel;
