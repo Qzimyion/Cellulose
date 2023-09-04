@@ -1,5 +1,5 @@
 {
-  "type": "cellulose:sawmill",
+  "type": "cellulose:sawmilling",
   "count": 1,
   "ingredient": {
     "item": "minecraft:cherry_log"
