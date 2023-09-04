@@ -19,7 +19,7 @@ import java.util.List;
 @SuppressWarnings("All")
 @Environment(value= EnvType.CLIENT)
 public class SawmillScreen extends HandledScreen<SawmillScreenHandler> {
-    private static final Identifier TEXTURE = new Identifier( "textures/gui/container/stonecutter/stonecutter.png");
+    private static final Identifier TEXTURE = new Identifier("textures/gui/container/stonecutter.png");
     private float scrollAmount;
     private boolean mouseClicked;
     private int scrollOffset;

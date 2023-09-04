@@ -25,6 +25,7 @@ import net.qzimyion.cellulose.util.CelluloseStats;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("ALL")
 public class SawmillBlock extends HorizontalFacingBlock
 {
     private static final Text TITLE = Text.translatable("container.cellulose.sawmill");
