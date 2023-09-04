@@ -1,4 +1,4 @@
-// 1.20.1	2023-09-02T20:25:50.9434079	Cellulose /Tags for minecraft:block
+// 1.20.1	2023-09-04T13:54:47.1333869	Cellulose /Tags for minecraft:block
 ccec23c77b7b86333073ae7b9b12547a30ece545 data\minecraft\tags\blocks\mineable\axe.json
 e2eb517c5e4bf207cd8bc0ddc6a653a181f24a01 data\minecraft\tags\blocks\wooden_buttons.json
 d462276414cc0267e086b375d28791bd72e7eb8b data\cellulose\tags\blocks\log_stairs.json
@@ -7,8 +7,8 @@ d462276414cc0267e086b375d28791bd72e7eb8b data\cellulose\tags\blocks\log_stairs.j
 c4819b00dcb7ad051e77e7e660f4053f22f03fb9 data\cellulose\tags\blocks\vertical_planks.json
 461f832652de998725410ea272d0048b880ae99a data\minecraft\tags\blocks\oak_logs.json
 3bc5e70849e51cf0e6c185e366c82cdfcd9a66f6 data\minecraft\tags\blocks\acacia_logs.json
-8f5366768c8c258ccd128d9968a0469168ffe429 data\minecraft\tags\blocks\wooden_doors.json
 dd35626a3a601c47bdf807941d495c8b6dba231c data\minecraft\tags\blocks\wooden_pressure_plates.json
+8f5366768c8c258ccd128d9968a0469168ffe429 data\minecraft\tags\blocks\wooden_doors.json
 7d44bc5f4932118e26798734bd110804a69821be data\minecraft\tags\blocks\wooden_trapdoors.json
 42f6c6f0a71bda817ac0aec16ca52352564b3725 data\minecraft\tags\blocks\wooden_slabs.json
 490179b447a574e93142af481a1d5d65c6989671 data\minecraft\tags\blocks\spruce_logs.json
@@ -27,8 +27,8 @@ d71884ae38866d7985396c38824a584a6e19297e data\cellulose\tags\blocks\wooden_frame
 e54871c1ded023f3e2cd70e72f7b76dd610dc3c5 data\cellulose\tags\blocks\wooden_mosaics_slabs.json
 1aef86036d66904ef350ebe36b713d13eb841769 data\minecraft\tags\blocks\wooden_stairs.json
 ebfaeccaf9cffad206a8451e40e99e2cd67a57ec data\minecraft\tags\blocks\wooden_fences.json
-ebfaeccaf9cffad206a8451e40e99e2cd67a57ec data\minecraft\tags\blocks\fences.json
 fe0f2889aefa17ae94c27ea046c8b1a98ed1763e data\minecraft\tags\blocks\logs_that_burn.json
+ebfaeccaf9cffad206a8451e40e99e2cd67a57ec data\minecraft\tags\blocks\fences.json
 c27c76d27dacef1a65c648a5093f7d109b24df78 data\minecraft\tags\blocks\dark_oak_logs.json
 19ab82b672fd5b0fdcecb14aa9a74649b82c3520 data\cellulose\tags\blocks\normal_planks.json
 78276ae0c3465b0c1ed119b4dff2b42c902f0ad3 data\cellulose\tags\blocks\log_slabs.json
