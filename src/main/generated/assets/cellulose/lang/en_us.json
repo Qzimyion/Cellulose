@@ -303,5 +303,6 @@
   "block.cellulose.warped_tiles_slab": "Warped Tiles Slab",
   "block.cellulose.warped_tiles_stair": "Warped Tiles Stairs",
   "cellulose.interact_with_sawmill": "Interaction with sawmill",
-  "item.cellulose.pipis": "[[PIPIS]]"
+  "item.cellulose.pipis": "[[PIPIS]]",
+  "container.cellulose.sawmill": "Sawmill"
 }
