@@ -38,6 +38,9 @@ public class OnUseBlockEventRegistry
         BlockChipperEvent.BlockChipping(CACTUS_CROWN, CHIPPED_CACTUS_CROWN);
 
         //Wood Charring
+        /*
+        Planks
+         */
         WoodCharrerEvent.WoodCharring(OAK_PLANKS, CHARRED_PLANKS);
         WoodCharrerEvent.WoodCharring(BIRCH_PLANKS, CHARRED_PLANKS);
         WoodCharrerEvent.WoodCharring(SPRUCE_PLANKS, CHARRED_PLANKS);
@@ -47,6 +50,7 @@ public class OnUseBlockEventRegistry
         WoodCharrerEvent.WoodCharring(MANGROVE_PLANKS, CHARRED_PLANKS);
         WoodCharrerEvent.WoodCharring(CHERRY_PLANKS, CHARRED_PLANKS);
         WoodCharrerEvent.WoodCharring(CACTUS_PLANKS, CHARRED_PLANKS);
+        WoodCharrerEvent.WoodCharring(BAMBOO_PLANKS, CHARRED_BAMBOO_PLANKS);
 
         WoodCharrerEvent.WoodCharring(OAK_SLAB, CHARRED_SLABS);
         WoodCharrerEvent.WoodCharring(BIRCH_SLAB, CHARRED_SLABS);
@@ -57,6 +61,7 @@ public class OnUseBlockEventRegistry
         WoodCharrerEvent.WoodCharring(MANGROVE_SLAB, CHARRED_SLABS);
         WoodCharrerEvent.WoodCharring(CHERRY_SLAB, CHARRED_SLABS);
         WoodCharrerEvent.WoodCharring(CACTUS_SLABS, CHARRED_SLABS);
+        WoodCharrerEvent.WoodCharring(BAMBOO_SLAB, CHARRED_BAMBOO_SLABS);
 
         WoodCharrerEvent.WoodCharring(OAK_STAIRS, CHARRED_STAIRS);
         WoodCharrerEvent.WoodCharring(BIRCH_STAIRS, CHARRED_STAIRS);
@@ -67,5 +72,61 @@ public class OnUseBlockEventRegistry
         WoodCharrerEvent.WoodCharring(MANGROVE_STAIRS, CHARRED_STAIRS);
         WoodCharrerEvent.WoodCharring(CHERRY_STAIRS, CHARRED_STAIRS);
         WoodCharrerEvent.WoodCharring(CACTUS_STAIRS, CHARRED_STAIRS);
+        WoodCharrerEvent.WoodCharring(BAMBOO_STAIRS, CHARRED_BAMBOO_STAIRS);
+        /*
+        Logs
+         */
+        WoodCharrerEvent.WoodCharring(OAK_LOG, CHARRED_OAK_LOG);
+        WoodCharrerEvent.WoodCharring(BIRCH_LOG, CHARRED_BIRCH_LOG);
+        WoodCharrerEvent.WoodCharring(SPRUCE_LOG, CHARRED_OAK_LOG);
+        WoodCharrerEvent.WoodCharring(DARK_OAK_LOG, CHARRED_OAK_LOG);
+        WoodCharrerEvent.WoodCharring(JUNGLE_LOG, CHARRED_JUNGLE_LOG);
+        WoodCharrerEvent.WoodCharring(ACACIA_LOG, CHARRED_OAK_LOG);
+        WoodCharrerEvent.WoodCharring(MANGROVE_LOG, CHARRED_MANGROVE_LOG);
+        WoodCharrerEvent.WoodCharring(BAMBOO_BLOCK, CHARRED_BAMBOO_WOOD);
+        WoodCharrerEvent.WoodCharring(CHERRY_LOG, CHARRED_CHERRY_LOG);
+        WoodCharrerEvent.WoodCharring(CACTUS_BUNDLE, CHARRED_CACTUS_BUNDLE);
+        /*
+        Doors
+         */
+        WoodCharrerEvent.WoodCharring(OAK_DOOR, CHARRED_OAK_DOOR);
+        WoodCharrerEvent.WoodCharring(BIRCH_DOOR, CHARRED_BIRCH_DOOR);
+        WoodCharrerEvent.WoodCharring(SPRUCE_DOOR, CHARRED_SPRUCE_DOOR);
+        WoodCharrerEvent.WoodCharring(DARK_OAK_DOOR, CHARRED_DARK_OAK_DOOR);
+        WoodCharrerEvent.WoodCharring(JUNGLE_DOOR, CHARRED_JUNGLE_DOOR);
+        WoodCharrerEvent.WoodCharring(ACACIA_DOOR, CHARRED_ACACIA_DOOR);
+        WoodCharrerEvent.WoodCharring(MANGROVE_DOOR, CHARRED_MANGROVE_DOOR);
+        WoodCharrerEvent.WoodCharring(BAMBOO_DOOR, CHARRED_BAMBOO_DOOR);
+        WoodCharrerEvent.WoodCharring(CHERRY_DOOR, CHARRED_CHERRY_DOOR);
+        WoodCharrerEvent.WoodCharring(CACTUS_DOOR, CHARRED_CACTUS_DOOR);
+        /*
+        Trapdoors
+         */
+        WoodCharrerEvent.WoodCharring(OAK_TRAPDOOR, CHARRED_OAK_TRAPDOOR);
+        WoodCharrerEvent.WoodCharring(BIRCH_TRAPDOOR, CHARRED_BIRCH_TRAPDOOR);
+        WoodCharrerEvent.WoodCharring(SPRUCE_TRAPDOOR, CHARRED_SPRUCE_TRAPDOOR);
+        WoodCharrerEvent.WoodCharring(DARK_OAK_TRAPDOOR, CHARRED_DARK_OAK_TRAPDOOR);
+        WoodCharrerEvent.WoodCharring(JUNGLE_TRAPDOOR, CHARRED_JUNGLE_TRAPDOOR);
+        WoodCharrerEvent.WoodCharring(ACACIA_TRAPDOOR, CHARRED_ACACIA_TRAPDOOR);
+        WoodCharrerEvent.WoodCharring(MANGROVE_TRAPDOOR, CHARRED_MANGROVE_TRAPDOOR);
+        WoodCharrerEvent.WoodCharring(BAMBOO_TRAPDOOR, CHARRED_BAMBOO_TRAPDOOR);
+        WoodCharrerEvent.WoodCharring(CHERRY_TRAPDOOR, CHARRED_CHERRY_TRAPDOOR);
+        WoodCharrerEvent.WoodCharring(CACTUS_TRAPDOOR, CHARRED_CACTUS_TRAPDOOR);
+         /*
+        Buttons
+         */
+
+         /*
+        Pressure Plates
+         */
+
+        /*
+        Fences
+         */
+        WoodCharrerEvent.WoodCharring(OAK_FENCE, CHARRED_FENCE);
+        WoodCharrerEvent.WoodCharring(OAK_FENCE_GATE, CHARRED_FENCE_GATE);
+
+        WoodCharrerEvent.WoodCharring(BAMBOO_FENCE, CHARRED_BAMBOO_FENCE);
+        WoodCharrerEvent.WoodCharring(BAMBOO_FENCE_GATE, CHARRED_BAMBOO_FENCE_GATE);
     }
 }
