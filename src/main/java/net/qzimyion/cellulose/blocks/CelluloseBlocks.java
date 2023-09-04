@@ -576,7 +576,9 @@ public class CelluloseBlocks
      Fences
     */
     public static final Block CHARRED_FENCE = registerBlock("charred_fence", new FenceBlock(FabricBlockSettings.copyOf(CHARRED_PLANKS)));
-    public static final Block CHARRED_FENCE_GATE = registerBlock("charred_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS), WoodType.CHERRY));
+    public static final Block CHARRED_FENCE_GATE = registerBlock("charred_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).sounds(BlockSoundGroup.NETHERRACK), WoodType.CHERRY));
+    public static final Block CHARRED_BAMBOO_FENCE = registerBlock("charred_bamboo_fence", new FenceBlock(FabricBlockSettings.copyOf(CHARRED_PLANKS)));
+    public static final Block CHARRED_BAMBOO_FENCE_GATE = registerBlock("charred_bamboo_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).sounds(BlockSoundGroup.NETHERRACK), WoodType.BAMBOO));
 
     /*
      Doors and trapdoors
