@@ -17,7 +17,7 @@ import net.minecraft.world.event.GameEvent;
 
 public class PlankChipperEvent {
 
-    public static void BlockChipping(Block input, Block output) {
+    public static void PlankChipping(Block input, Block output) {
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
             BlockPos pos = hitResult.getBlockPos();
             BlockState state = world.getBlockState(pos);
