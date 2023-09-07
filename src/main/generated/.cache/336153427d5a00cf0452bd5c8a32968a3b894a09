@@ -1,13 +1,14 @@
-// 1.20.1	2023-09-04T13:54:47.1353794	Cellulose /Tags for minecraft:item
+// 1.20.1	2023-09-07T20:45:46.9715673	Cellulose /Tags for minecraft:item
 dd35626a3a601c47bdf807941d495c8b6dba231c data\minecraft\tags\items\wooden_pressure_plates.json
 c42230b473f8c147b88bbe08eca81e3ecac6e5f4 data\minecraft\tags\items\fence_gates.json
 e54871c1ded023f3e2cd70e72f7b76dd610dc3c5 data\cellulose\tags\items\wooden_mosaics_slabs.json
-21eabff9dc7619755c62e299c04362e62729d50d data\cellulose\tags\items\wooden_mosaics_stairs.json
 461f832652de998725410ea272d0048b880ae99a data\minecraft\tags\items\oak_logs.json
 0c23759a0cc4eeafd62d61e85231d5fb747bf565 data\minecraft\tags\items\crimson_stems.json
+21eabff9dc7619755c62e299c04362e62729d50d data\cellulose\tags\items\wooden_mosaics_stairs.json
 c27c76d27dacef1a65c648a5093f7d109b24df78 data\minecraft\tags\items\dark_oak_logs.json
 175101589bb21b7633bd89df2548cb772848cdf0 data\minecraft\tags\items\logs.json
 4ea3dd01fb2540f9eccd06fb72ebcdbe852ff368 data\cellulose\tags\items\cactus_logs.json
+db359d96e51def92db43ba097a867a0260f0632a data\cellulose\tags\items\acorns.json
 ebfaeccaf9cffad206a8451e40e99e2cd67a57ec data\minecraft\tags\items\wooden_fences.json
 3bc5e70849e51cf0e6c185e366c82cdfcd9a66f6 data\minecraft\tags\items\acacia_logs.json
 1aef86036d66904ef350ebe36b713d13eb841769 data\minecraft\tags\items\wooden_stairs.json
@@ -18,7 +19,7 @@ de4daeb30a0e96128a157f46190854909fda899f data\minecraft\tags\items\birch_logs.js
 8f88240b679f25ccb3fcf934ad5713b4a08d66a3 data\minecraft\tags\items\logs_that_burn.json
 e2eb517c5e4bf207cd8bc0ddc6a653a181f24a01 data\minecraft\tags\items\wooden_buttons.json
 8f5366768c8c258ccd128d9968a0469168ffe429 data\minecraft\tags\items\wooden_doors.json
-42f6c6f0a71bda817ac0aec16ca52352564b3725 data\minecraft\tags\items\wooden_slabs.json
+4d0d6a3ba79b5faaae0c6e2baf43fbd47ea7a6d4 data\minecraft\tags\items\wooden_slabs.json
 490179b447a574e93142af481a1d5d65c6989671 data\minecraft\tags\items\spruce_logs.json
 7503cb4642da4952e699b80ab4355d170767cd34 data\minecraft\tags\items\jungle_logs.json
 cd44c90d5e5f2032742696e7c2270105e89eb838 data\minecraft\tags\items\mangrove_logs.json
