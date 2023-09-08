@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "cellulose:block/chipped_birch_planks",
+    "side": "cellulose:block/chipped_birch_planks",
+    "top": "cellulose:block/chipped_birch_planks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "cellulose:sawmilling",
+  "count": 16,
+  "ingredient": {
+    "item": "cellulose:chipped_oak_wood"
+  },
+  "result": "minecraft:stick"
+}

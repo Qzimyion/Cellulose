@@ -1,0 +1,7 @@
+{
+  "parent": "cellulose:block/barricade",
+  "textures": {
+    "edge": "cellulose:block/oak_barricade_top",
+    "pane": "minecraft:block/oak_planks"
+  }
+}

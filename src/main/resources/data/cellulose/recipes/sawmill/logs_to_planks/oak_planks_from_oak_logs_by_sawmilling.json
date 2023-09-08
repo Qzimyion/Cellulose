@@ -1,8 +1,0 @@
-{
-  "type": "cellulose:sawmilling",
-  "count": 4,
-  "ingredient": {
-    "tag": "minecraft:oak_logs"
-  },
-  "result": "minecraft:oak_planks"
-}

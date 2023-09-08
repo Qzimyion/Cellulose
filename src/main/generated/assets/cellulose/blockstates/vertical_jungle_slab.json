@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/vertical_jungle_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/vertical_jungle_planks"
+    },
+    "type=top": {
+      "model": "cellulose:block/vertical_jungle_slab_top"
+    }
+  }
+}

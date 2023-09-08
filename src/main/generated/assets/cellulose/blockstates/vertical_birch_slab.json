@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/vertical_birch_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/vertical_birch_planks"
+    },
+    "type=top": {
+      "model": "cellulose:block/vertical_birch_slab_top"
+    }
+  }
+}

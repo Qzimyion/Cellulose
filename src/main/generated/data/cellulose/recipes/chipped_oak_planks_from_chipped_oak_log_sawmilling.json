@@ -1,0 +1,8 @@
+{
+  "type": "cellulose:sawmilling",
+  "count": 4,
+  "ingredient": {
+    "item": "cellulose:chipped_oak_log"
+  },
+  "result": "cellulose:chipped_oak_planks"
+}

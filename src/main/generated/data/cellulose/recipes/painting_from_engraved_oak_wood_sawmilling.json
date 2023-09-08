@@ -1,0 +1,8 @@
+{
+  "type": "cellulose:sawmilling",
+  "count": 32,
+  "ingredient": {
+    "item": "cellulose:engraved_oak_wood"
+  },
+  "result": "minecraft:painting"
+}
