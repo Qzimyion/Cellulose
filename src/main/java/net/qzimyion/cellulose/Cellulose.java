@@ -1,8 +1,10 @@
 package net.qzimyion.cellulose;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.qzimyion.cellulose.boats.CelluloseBoats;
-import net.qzimyion.cellulose.events.OnUseBlockEventRegistry;
+import net.qzimyion.cellulose.events.CelluloseEvents;
+import net.qzimyion.cellulose.events.OnUseBlockEvent;
 import net.qzimyion.cellulose.signs.CelluloseSigns;
 import net.qzimyion.cellulose.util.CelluloseStats;
 import net.qzimyion.cellulose.blocks.CelluloseFlammableBlocks;
@@ -33,10 +35,10 @@ public class Cellulose implements ModInitializer
 		CelluloseRecipes.registerRecipes();
 		CelluloseScreens.registerScreens();
 		CelluloseStats.registerStats();
-		CelluloseTags.registerTags();
 		CelluloseItemGroups.registerItemGroups();
 		CelluloseBoats.registerBoats();
 		CelluloseSigns.registerSigns();
-		OnUseBlockEventRegistry.registerEvents();
+
+		CelluloseEvents.registerEvents();
 	}
 }
