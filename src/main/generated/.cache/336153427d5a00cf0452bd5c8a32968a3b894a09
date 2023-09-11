@@ -1,4 +1,4 @@
-// 1.20.1	2023-09-08T10:07:02.1586238	Cellulose /Tags for minecraft:item
+// 1.20.1	2023-09-11T11:51:12.1554385	Cellulose /Tags for minecraft:item
 dd35626a3a601c47bdf807941d495c8b6dba231c data\minecraft\tags\items\wooden_pressure_plates.json
 c42230b473f8c147b88bbe08eca81e3ecac6e5f4 data\minecraft\tags\items\fence_gates.json
 e54871c1ded023f3e2cd70e72f7b76dd610dc3c5 data\cellulose\tags\items\wooden_mosaics_slabs.json
@@ -8,7 +8,7 @@ e54871c1ded023f3e2cd70e72f7b76dd610dc3c5 data\cellulose\tags\items\wooden_mosaic
 c27c76d27dacef1a65c648a5093f7d109b24df78 data\minecraft\tags\items\dark_oak_logs.json
 175101589bb21b7633bd89df2548cb772848cdf0 data\minecraft\tags\items\logs.json
 4ea3dd01fb2540f9eccd06fb72ebcdbe852ff368 data\cellulose\tags\items\cactus_logs.json
-db359d96e51def92db43ba097a867a0260f0632a data\cellulose\tags\items\acorns.json
+b2b6a560b3a4f4a9468fcabd8c8241b9718c4a75 data\cellulose\tags\items\acorns.json
 ebfaeccaf9cffad206a8451e40e99e2cd67a57ec data\minecraft\tags\items\wooden_fences.json
 3bc5e70849e51cf0e6c185e366c82cdfcd9a66f6 data\minecraft\tags\items\acacia_logs.json
 065d49ecb98cd73cb7bbbb5d8434de2b4b121e16 data\minecraft\tags\items\wooden_stairs.json
