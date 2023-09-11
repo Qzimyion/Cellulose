@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/azalea_mosaic_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/azalea_mosaic"
+    },
+    "type=top": {
+      "model": "cellulose:block/azalea_mosaic_slab_top"
+    }
+  }
+}

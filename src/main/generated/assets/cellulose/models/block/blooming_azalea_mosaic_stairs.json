@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "cellulose:block/blooming_azalea_mosaic",
+    "side": "cellulose:block/blooming_azalea_mosaic",
+    "top": "cellulose:block/blooming_azalea_mosaic"
+  }
+}

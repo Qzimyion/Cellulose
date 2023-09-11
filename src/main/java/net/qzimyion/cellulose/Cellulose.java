@@ -1,16 +1,14 @@
 package net.qzimyion.cellulose;
 
+
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.qzimyion.cellulose.boats.CelluloseBoats;
 import net.qzimyion.cellulose.events.CelluloseEvents;
-import net.qzimyion.cellulose.events.OnUseBlockEvent;
 import net.qzimyion.cellulose.signs.CelluloseSigns;
 import net.qzimyion.cellulose.util.CelluloseStats;
 import net.qzimyion.cellulose.blocks.CelluloseFlammableBlocks;
 import net.qzimyion.cellulose.util.CelluloseFuel;
 import net.qzimyion.cellulose.blocks.CelluloseStrippableBlock;
-import net.qzimyion.cellulose.util.CelluloseTags;
 import net.qzimyion.cellulose.items.CelluloseItemGroups;
 import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.recipe.CelluloseRecipes;
