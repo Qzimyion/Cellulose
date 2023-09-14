@@ -12,42 +12,44 @@ import net.qzimyion.cellulose.screen.sawmill.SawmillScreen;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 
+@SuppressWarnings({"Deprecated API usage", "deprecation"})
 public class CelluloseClient implements ClientModInitializer
 {
-    @SuppressWarnings({"Deprecated API usage", "deprecation"})
     @Override
     public void onInitializeClient()
     {
-        BlockRenderLayerMap.INSTANCE.putBlock(SAWMILL, RenderLayer.getCutout());
+        RenderLayer Render = RenderLayer.getCutout();
+
+        BlockRenderLayerMap.INSTANCE.putBlock(SAWMILL, Render);
 
         //Frames
-        BlockRenderLayerMap.INSTANCE.putBlock(OAK_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BIRCH_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(SPRUCE_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(DARK_OAK_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ACACIA_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CRIMSON_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(WARPED_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MANGROVE_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BAMBOO_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_FRAME, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(OAK_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(BIRCH_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(SPRUCE_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(DARK_OAK_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(ACACIA_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CRIMSON_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(WARPED_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(MANGROVE_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(BAMBOO_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_FRAME, Render);
 
 
         //Lintels
-        BlockRenderLayerMap.INSTANCE.putBlock(OAK_LINTELS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BIRCH_LINTELS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(SPRUCE_LINTELS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(DARK_OAK_LINTELS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_LINTELS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ACACIA_LINTELS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CRIMSON_LINTELS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(WARPED_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MANGROVE_LINTELS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BAMBOO_LINTELS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_LINTELS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(OAK_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(BIRCH_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(SPRUCE_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(DARK_OAK_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(ACACIA_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CRIMSON_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(WARPED_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(MANGROVE_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(BAMBOO_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_LINTELS, Render);
 
 
         //Screen
@@ -56,31 +58,33 @@ public class CelluloseClient implements ClientModInitializer
         //Boats
         TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "cactus_boat"), false);
         TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "cactus_chest_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "azalea_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "azalea_chest_boat"), false);
 
         //Doors and Trapdoors
-        BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_OAK_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BIRCH_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_SPRUCE_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_DARK_OAK_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_JUNGLE_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_ACACIA_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_MANGROVE_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BAMBOO_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CHERRY_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CACTUS_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_OAK_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BIRCH_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_SPRUCE_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_DARK_OAK_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_JUNGLE_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_ACACIA_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_MANGROVE_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BAMBOO_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CHERRY_DOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CACTUS_DOOR, Render);
 
-        BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_OAK_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BIRCH_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_SPRUCE_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_DARK_OAK_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_JUNGLE_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_ACACIA_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_MANGROVE_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BAMBOO_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CHERRY_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CACTUS_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_OAK_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BIRCH_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_SPRUCE_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_DARK_OAK_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_JUNGLE_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_ACACIA_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_MANGROVE_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BAMBOO_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CHERRY_TRAPDOOR, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CACTUS_TRAPDOOR, Render);
 
         //CelluloseSigns and Hanging signs
 
