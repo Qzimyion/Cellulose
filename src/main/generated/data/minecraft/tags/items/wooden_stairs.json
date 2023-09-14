@@ -1,18 +1,22 @@
 {
   "replace": false,
   "values": [
-    "cellulose:cactus_planks_stair",
-    "cellulose:vertical_oak_planks_stair",
-    "cellulose:vertical_birch_planks_stair",
-    "cellulose:vertical_spruce_planks_stair",
-    "cellulose:vertical_dark_oak_planks_stair",
-    "cellulose:vertical_jungle_planks_stair",
-    "cellulose:vertical_acacia_planks_stair",
-    "cellulose:vertical_crimson_planks_stair",
-    "cellulose:vertical_warped_planks_stair",
-    "cellulose:vertical_mangrove_planks_stair",
-    "cellulose:vertical_bamboo_planks_stair",
-    "cellulose:vertical_cherry_planks_stair",
-    "cellulose:vertical_cactus_planks_stair"
+    "cellulose:blooming_azalea_stair",
+    "cellulose:azalea_stair",
+    "cellulose:cactus_stair",
+    "cellulose:vertical_oak_stair",
+    "cellulose:vertical_birch_stair",
+    "cellulose:vertical_spruce_stair",
+    "cellulose:vertical_dark_oak_stair",
+    "cellulose:vertical_jungle_stair",
+    "cellulose:vertical_acacia_stair",
+    "cellulose:vertical_crimson_stair",
+    "cellulose:vertical_warped_stair",
+    "cellulose:vertical_mangrove_stair",
+    "cellulose:vertical_bamboo_stair",
+    "cellulose:vertical_cherry_stair",
+    "cellulose:vertical_cactus_stair",
+    "cellulose:vertical_azalea_stair",
+    "cellulose:vertical_azalea_blooming_stair"
   ]
 }

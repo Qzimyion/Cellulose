@@ -1,14 +1,15 @@
 {
-	"required": true,
-	"package": "net.qzimyion.cellulose.mixin",
-	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"client": [
-	],
-	"server": [],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "net.qzimyion.cellulose.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ExampleMixin",
+    "ItemsMixin"
+  ],
+  "client": [
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

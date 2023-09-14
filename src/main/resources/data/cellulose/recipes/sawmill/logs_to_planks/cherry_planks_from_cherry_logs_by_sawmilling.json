@@ -1,8 +1,0 @@
-{
-  "type": "cellulose:sawmilling",
-  "count": 4,
-  "ingredient": {
-    "tag": "minecraft:cherry_logs"
-  },
-  "result": "minecraft:cherry_planks"
-}

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:warped_mosaic"
+        "recipe": "cellulose:warped_mosaic"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:planks"
+            "items": [
+              "minecraft:warped_slab"
+            ]
           }
         ]
       },
@@ -26,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:warped_mosaic"
+      "cellulose:warped_mosaic"
     ]
   },
   "sends_telemetry_event": false

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "cellulose:azalea_fence_gate",
     "cellulose:cactus_fence_gate"
   ]
 }

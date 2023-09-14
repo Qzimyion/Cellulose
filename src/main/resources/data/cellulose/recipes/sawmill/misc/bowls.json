@@ -1,8 +1,0 @@
-{
-  "type": "cellulose:sawmilling",
-  "count": 2,
-  "ingredient": {
-    "tag": "minecraft:planks"
-  },
-  "result": "minecraft:bowl"
-}

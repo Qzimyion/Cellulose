@@ -11,6 +11,8 @@
     "cellulose:warped_mosaic",
     "cellulose:mangrove_mosaic",
     "cellulose:cherry_mosaic",
-    "cellulose:cactus_mosaic"
+    "cellulose:cactus_mosaic",
+    "cellulose:azalea_mosaic",
+    "cellulose:blooming_azalea_mosaic"
   ]
 }

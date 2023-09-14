@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "cellulose:azalea_door",
+    "cellulose:blooming_azalea_door",
     "cellulose:cactus_door"
   ]
 }

@@ -1,18 +1,9 @@
 {
   "replace": false,
   "values": [
+    "cellulose:azalea_planks",
+    "cellulose:blooming_azalea_planks",
     "cellulose:cactus_planks",
-    "cellulose:vertical_oak_planks",
-    "cellulose:vertical_birch_planks",
-    "cellulose:vertical_spruce_planks",
-    "cellulose:vertical_dark_oak_planks",
-    "cellulose:vertical_jungle_planks",
-    "cellulose:vertical_acacia_planks",
-    "cellulose:vertical_crimson_planks",
-    "cellulose:vertical_warped_planks",
-    "cellulose:vertical_mangrove_planks",
-    "cellulose:vertical_bamboo_planks",
-    "cellulose:vertical_cherry_planks",
-    "cellulose:vertical_cactus_planks"
+    "#cellulose:vertical_planks"
   ]
 }

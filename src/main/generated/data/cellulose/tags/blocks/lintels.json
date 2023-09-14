@@ -2,6 +2,16 @@
   "replace": false,
   "values": [
     "cellulose:oak_lintels",
-    "cellulose:birch_lintels"
+    "cellulose:birch_lintels",
+    "cellulose:spruce_frame",
+    "cellulose:dark_oak_lintels",
+    "cellulose:jungle_lintels",
+    "cellulose:acacia_lintels",
+    "cellulose:crimson_lintels",
+    "cellulose:warped_lintels",
+    "cellulose:mangrove_lintels",
+    "cellulose:bamboo_lintels",
+    "cellulose:cherry_lintels",
+    "cellulose:cactus_lintels"
   ]
 }

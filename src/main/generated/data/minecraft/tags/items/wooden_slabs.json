@@ -1,18 +1,22 @@
 {
   "replace": false,
   "values": [
-    "cellulose:cactus_planks_slab",
-    "cellulose:vertical_oak_planks_slab",
-    "cellulose:vertical_birch_planks_slab",
-    "cellulose:vertical_spruce_planks_slab",
-    "cellulose:vertical_dark_oak_planks_slab",
-    "cellulose:vertical_jungle_planks_slab",
-    "cellulose:vertical_acacia_planks_slab",
-    "cellulose:vertical_crimson_planks_slab",
-    "cellulose:vertical_warped_planks_slab",
-    "cellulose:vertical_mangrove_planks_slab",
-    "cellulose:vertical_bamboo_planks_slab",
-    "cellulose:vertical_cherry_planks_slab",
-    "cellulose:vertical_cactus_planks_slab"
+    "cellulose:blooming_azalea_slab",
+    "cellulose:azalea_slab",
+    "cellulose:cactus_slab",
+    "cellulose:vertical_oak_slab",
+    "cellulose:vertical_birch_slab",
+    "cellulose:vertical_spruce_slab",
+    "cellulose:vertical_dark_oak_slab",
+    "cellulose:vertical_jungle_slab",
+    "cellulose:vertical_acacia_slab",
+    "cellulose:vertical_crimson_slab",
+    "cellulose:vertical_warped_slab",
+    "cellulose:vertical_mangrove_slab",
+    "cellulose:vertical_bamboo_slab",
+    "cellulose:vertical_cherry_slab",
+    "cellulose:vertical_cactus_slab",
+    "cellulose:vertical_azalea_planks_slab",
+    "cellulose:vertical_blooming_azalea_slab"
   ]
 }

@@ -1,8 +1,0 @@
-{
-  "type": "cellulose:sawmilling",
-  "count": 1,
-  "ingredient": {
-    "item": "minecraft:crimson_stem"
-  },
-  "result": "minecraft:stripped_crimson_stem"
-}

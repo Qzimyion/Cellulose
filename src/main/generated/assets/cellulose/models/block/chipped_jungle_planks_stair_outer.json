@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "cellulose:block/chipped_jungle_planks",
-    "side": "cellulose:block/chipped_jungle_planks",
-    "top": "cellulose:block/chipped_jungle_planks"
-  }
-}

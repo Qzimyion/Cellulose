@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "cellulose:azalea_pressure_plate",
     "cellulose:cactus_pressure_plate"
   ]
 }

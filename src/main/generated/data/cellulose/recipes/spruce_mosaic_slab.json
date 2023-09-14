@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "minecraft:wooden_slabs",
   "key": {
     "#": {
       "item": "cellulose:spruce_mosaic"

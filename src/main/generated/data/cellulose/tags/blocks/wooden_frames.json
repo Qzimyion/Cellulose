@@ -3,6 +3,15 @@
   "values": [
     "cellulose:oak_frame",
     "cellulose:birch_frame",
-    "cellulose:spruce_frame"
+    "cellulose:spruce_frame",
+    "cellulose:dark_oak_frame",
+    "cellulose:jungle_frame",
+    "cellulose:acacia_frame",
+    "cellulose:crimson_frame",
+    "cellulose:warped_frame",
+    "cellulose:mangrove_frame",
+    "cellulose:bamboo_frame",
+    "cellulose:cherry_frame",
+    "cellulose:cactus_frame"
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:blooming_azalea_log",
+    "cellulose:blooming_azalea_wood",
+    "cellulose:azalea_log",
+    "cellulose:azalea_wood",
+    "cellulose:stripped_blooming_azalea_log",
+    "cellulose:blooming_blooming_stripped_azalea_wood",
+    "cellulose:stripped_azalea_log",
+    "cellulose:stripped_azalea_wood",
+    "cellulose:engraved_blooming_azalea_log",
+    "cellulose:engraved_blooming_azalea_wood",
+    "cellulose:engraved_azalea_log",
+    "cellulose:engraved_azalea_wood"
+  ]
+}

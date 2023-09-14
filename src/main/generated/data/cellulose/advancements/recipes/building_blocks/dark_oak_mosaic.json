@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:planks"
+            "items": [
+              "minecraft:dark_oak_slab"
+            ]
           }
         ]
       },
@@ -13,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:dark_oak_mosaic"
+        "recipe": "cellulose:dark_oak_mosaic"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:dark_oak_mosaic"
+      "cellulose:dark_oak_mosaic"
     ]
   },
   "sends_telemetry_event": false

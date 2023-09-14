@@ -1,10 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "minecraft:wooden_slabs",
   "key": {
     "#": {
-      "item": "cellulose:dark_oak_mosaic"
+      "item": "cellulose:oak_mosaic"
     }
   },
   "pattern": [
@@ -12,7 +11,7 @@
   ],
   "result": {
     "count": 6,
-    "item": "cellulose:dark_oak_mosaic_slab"
+    "item": "cellulose:oak_mosaic_slab"
   },
   "show_notification": true
 }

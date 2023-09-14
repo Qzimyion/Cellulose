@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cactus_planks_slab": {
+    "has_cactus_slab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "cellulose:cactus_planks_slab"
+              "cellulose:cactus_slab"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_cactus_planks_slab",
+      "has_cactus_slab",
       "has_the_recipe"
     ]
   ],

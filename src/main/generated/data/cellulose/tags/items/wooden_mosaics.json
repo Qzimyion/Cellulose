@@ -1,16 +1,18 @@
 {
   "replace": false,
   "values": [
-    "cellulose:oak_mosaic",
-    "cellulose:birch_mosaic",
-    "cellulose:spruce_mosaic",
-    "cellulose:dark_oak_mosaic",
-    "cellulose:jungle_mosaic",
-    "cellulose:acacia_mosaic",
-    "cellulose:crimson_mosaic",
-    "cellulose:warped_mosaic",
-    "cellulose:mangrove_mosaic",
-    "cellulose:cherry_mosaic",
-    "cellulose:cactus_mosaic"
+    "cellulose:oak_mosaic_slab",
+    "cellulose:birch_mosaic_slab",
+    "cellulose:spruce_mosaic_slab",
+    "cellulose:dark_oak_mosaic_slab",
+    "cellulose:jungle_mosaic_slab",
+    "cellulose:acacia_mosaic_slab",
+    "cellulose:crimson_mosaic_slab",
+    "cellulose:warped_mosaic_slab",
+    "cellulose:mangrove_mosaic_slab",
+    "cellulose:cherry_mosaic_slab",
+    "cellulose:cactus_mosaic_slab",
+    "cellulose:azalea_mosaic_slab",
+    "cellulose:blooming_azalea_mosaic_slab"
   ]
 }

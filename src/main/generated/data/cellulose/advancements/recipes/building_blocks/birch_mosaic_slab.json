@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:wooden_slabs"
+            "items": [
+              "cellulose:birch_mosaic"
+            ]
           }
         ]
       },
@@ -13,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:birch_mosaic_slab"
+        "recipe": "cellulose:birch_mosaic_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:birch_mosaic_slab"
+      "cellulose:birch_mosaic_slab"
     ]
   },
   "sends_telemetry_event": false

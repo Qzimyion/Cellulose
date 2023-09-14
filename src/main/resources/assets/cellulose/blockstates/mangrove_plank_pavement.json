@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "cellulose:block/mangrove_plank_pavement",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "cellulose:block/mangrove_plank_pavement",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "cellulose:block/mangrove_plank_pavement"
+    },
+    "facing=west": {
+      "model": "cellulose:block/mangrove_plank_pavement",
+      "y": 90
+    }
+  }
+}

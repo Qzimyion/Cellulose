@@ -1,8 +1,0 @@
-{
-  "type": "cellulose:sawmilling",
-  "count": 1,
-  "ingredient": {
-    "item": "minecraft:warped_stem"
-  },
-  "result": "cellulose:engraved_warped_stem"
-}

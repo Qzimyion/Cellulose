@@ -1,8 +1,0 @@
-{
-  "type": "cellulose:sawmilling",
-  "count": 1,
-  "ingredient": {
-    "item": "minecraft:birch_log"
-  },
-  "result": "cellulose:engraved_birch_log"
-}

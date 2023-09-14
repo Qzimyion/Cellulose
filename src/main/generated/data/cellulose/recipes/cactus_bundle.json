@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "group": "cellulose:cactus_wood",
   "key": {
     "#": {
@@ -13,7 +13,7 @@
     "## "
   ],
   "result": {
-    "count": 5,
+    "count": 4,
     "item": "cellulose:cactus_bundle"
   },
   "show_notification": true

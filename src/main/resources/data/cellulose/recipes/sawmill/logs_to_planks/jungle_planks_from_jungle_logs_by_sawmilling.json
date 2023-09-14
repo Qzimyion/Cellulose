@@ -1,8 +1,0 @@
-{
-  "type": "cellulose:sawmilling",
-  "count": 4,
-  "ingredient": {
-    "tag": "minecraft:jungle_logs"
-  },
-  "result": "minecraft:jungle_planks"
-}

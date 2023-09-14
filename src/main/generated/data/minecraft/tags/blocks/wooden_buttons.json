@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "cellulose:azalea_button",
     "cellulose:cactus_button"
   ]
 }

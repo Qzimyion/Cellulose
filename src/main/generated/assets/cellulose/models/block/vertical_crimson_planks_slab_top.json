@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "cellulose:block/vertical_crimson_planks",
-    "side": "cellulose:block/vertical_crimson_planks",
-    "top": "cellulose:block/vertical_crimson_planks"
-  }
-}
