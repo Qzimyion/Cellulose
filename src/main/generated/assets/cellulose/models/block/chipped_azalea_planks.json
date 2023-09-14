@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "cellulose:block/acacia_plank_pavement"
+    "all": "cellulose:block/chipped_azalea_planks"
   }
 }
