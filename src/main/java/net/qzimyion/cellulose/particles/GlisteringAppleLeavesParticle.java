@@ -8,11 +8,11 @@ import net.minecraft.client.particle.SpriteProvider;
 import net.minecraft.client.world.ClientWorld;
 
 @Environment(value= EnvType.CLIENT)
-public class OakLeavesParticle extends SpriteBillboardParticle {
+public class GlisteringAppleLeavesParticle extends SpriteBillboardParticle {
     public float field_43369;
     public final float field_43370;
     public final float field_43371;
-    public OakLeavesParticle(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider) {
+    public GlisteringAppleLeavesParticle(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider) {
         super(world, x, y, z);
         float f;
         this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
