@@ -15,22 +15,23 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.qzimyion.cellulose.blocks.ModBlockProperties;
 
 @SuppressWarnings("deprecation")
 public class AppleBlock extends PlantBlock {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
-    public static final IntProperty FLOWER_AMOUNT = Properties.FLOWER_AMOUNT;
+    public static final IntProperty FRUIT_AMOUNT = ModBlockProperties.FRUIT_AMOUNT;
     public static final BooleanProperty HANGING = Properties.HANGING;
     public static final VoxelShape SHAPE = Block.createCuboidShape(0, 14, 0, 16,16,16);
 
     public AppleBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(FLOWER_AMOUNT, 1).with(HANGING, true));
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(FRUIT_AMOUNT, 1).with(HANGING, true));
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING, FLOWER_AMOUNT, HANGING);
+        builder.add(FACING, FRUIT_AMOUNT, HANGING);
     }
 
     @Override
@@ -52,7 +53,7 @@ public class AppleBlock extends PlantBlock {
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockState blockState = ctx.getWorld().getBlockState(ctx.getBlockPos());
         if (blockState.isOf(this)) {
-            return blockState.with(FLOWER_AMOUNT, Math.min(4, blockState.get(FLOWER_AMOUNT) + 1));
+            return blockState.with(FRUIT_AMOUNT, Math.min(4, blockState.get(FRUIT_AMOUNT) + 1));
         }
         return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
@@ -67,7 +68,7 @@ public class AppleBlock extends PlantBlock {
 
     @Override
     public boolean canReplace(BlockState state, ItemPlacementContext context) {
-        if (!context.shouldCancelInteraction() && context.getStack().isOf(this.asItem()) && state.get(FLOWER_AMOUNT) < 4) {
+        if (!context.shouldCancelInteraction() && context.getStack().isOf(this.asItem()) && state.get(FRUIT_AMOUNT) < 4) {
             return true;
         }
         return super.canReplace(state, context);
