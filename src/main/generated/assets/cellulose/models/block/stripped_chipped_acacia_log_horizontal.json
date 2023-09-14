@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "cellulose:block/stripped_chipped_acacia_log_top",
+    "side": "cellulose:block/stripped_chipped_acacia_log"
+  }
+}

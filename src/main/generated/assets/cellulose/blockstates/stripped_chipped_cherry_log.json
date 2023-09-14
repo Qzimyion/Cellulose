@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "cellulose:block/stripped_chipped_cherry_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "cellulose:block/stripped_chipped_cherry_log"
+    },
+    "axis=z": {
+      "model": "cellulose:block/stripped_chipped_cherry_log_horizontal",
+      "x": 90
+    }
+  }
+}
