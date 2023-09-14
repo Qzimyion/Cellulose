@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:azalea",
+    "minecraft:potted_azalea_bush",
+    "cellulose:azalea_log",
+    "cellulose:azalea_wood",
+    "cellulose:stripped_azalea_log",
+    "cellulose:stripped_azalea_wood",
+    "cellulose:engraved_azalea_log",
+    "cellulose:engraved_azalea_wood",
+    "minecraft:azalea_leaves",
+    "cellulose:azalea_planks",
+    "cellulose:azalea_slab",
+    "cellulose:azalea_stair",
+    "cellulose:chipped_azalea_planks",
+    "cellulose:chipped_azalea_slab",
+    "cellulose:chipped_azalea_stair",
+    "cellulose:vertical_azalea_planks",
+    "cellulose:vertical_azalea_planks_slab",
+    "cellulose:vertical_azalea_stair",
+    "cellulose:azalea_mosaic",
+    "cellulose:azalea_mosaic_slab",
+    "cellulose:azalea_mosaic_stairs",
+    "cellulose:azalea_door",
+    "cellulose:azalea_trapdoor"
+  ]
+}
