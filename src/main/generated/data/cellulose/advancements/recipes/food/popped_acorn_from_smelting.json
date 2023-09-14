@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_spruce_log": {
+    "has_acorn": {
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:spruce_logs"
+            "items": [
+              "cellulose:acorn"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chipped_spruce_log"
+        "recipe": "minecraft:popped_acorn_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_spruce_log",
+      "has_acorn",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chipped_spruce_log"
+      "minecraft:popped_acorn_from_smelting"
     ]
   },
   "sends_telemetry_event": false

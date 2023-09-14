@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 300,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "cellulose:acorn"
+  },
+  "result": "cellulose:popped_acorn"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 400,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "cellulose:acorn"
+  },
+  "result": "cellulose:popped_acorn"
+}
