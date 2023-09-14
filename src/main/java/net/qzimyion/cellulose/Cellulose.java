@@ -34,7 +34,7 @@ public class Cellulose implements ModInitializer
 		CelluloseScreens.registerScreens();
 		CelluloseStats.registerStats();
 		CelluloseItemGroups.registerItemGroups();
-		CelluloseBoats.registerBoats();
+
 		CelluloseSigns.registerSigns();
 
 		CelluloseEvents.registerEvents();
