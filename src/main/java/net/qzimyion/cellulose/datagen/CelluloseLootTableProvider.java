@@ -3,7 +3,23 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LootPoolEntry;
+import net.minecraft.loot.function.LootFunctionConsumingBuilder;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.predicate.StatePredicate;
+import net.qzimyion.cellulose.blocks.custom_blocks.AppleBlock;
 
+import java.util.stream.IntStream;
+
+import static net.minecraft.block.Blocks.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 
 public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
@@ -14,6 +30,20 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         //Blocks
+        //Vertical Planks
+        addDrop(VERTICAL_OAK_PLANKS);
+        addDrop(VERTICAL_BIRCH_PLANKS);
+        addDrop(VERTICAL_SPRUCE_PLANKS);
+        addDrop(VERTICAL_DARK_OAK_PLANKS);
+        addDrop(VERTICAL_JUNGLE_PLANKS);
+        addDrop(VERTICAL_ACACIA_PLANKS);
+        addDrop(VERTICAL_CRIMSON_PLANKS);
+        addDrop(VERTICAL_WARPED_PLANKS);
+        addDrop(VERTICAL_MANGROVE_PLANKS);
+        addDrop(VERTICAL_BAMBOO_PLANKS);
+        addDrop(VERTICAL_CHERRY_PLANKS);
+        addDrop(VERTICAL_CACTUS_PLANKS);
+        //Mosaic
         addDrop(CACTUS_PLANKS);
         addDrop(CACTUS_CROWN);
         addDrop(STRIPPED_CACTUS);
@@ -148,6 +178,31 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(CACTUS_PLANK_PAVEMENT);
 
         //Stairs
+        /*Vertical Planks*/
+        addDrop(VERTICAL_OAK_SLAB, slabDrops(VERTICAL_OAK_SLAB));
+        addDrop(VERTICAL_BIRCH_SLAB, slabDrops(VERTICAL_BIRCH_SLAB));
+        addDrop(VERTICAL_SPRUCE_SLAB, slabDrops(VERTICAL_SPRUCE_SLAB));
+        addDrop(VERTICAL_DARK_OAK_SLAB, slabDrops(VERTICAL_DARK_OAK_SLAB));
+        addDrop(VERTICAL_JUNGLE_SLAB, slabDrops(VERTICAL_JUNGLE_SLAB));
+        addDrop(VERTICAL_ACACIA_SLAB, slabDrops(VERTICAL_ACACIA_SLAB));
+        addDrop(VERTICAL_CRIMSON_SLAB, slabDrops(VERTICAL_CRIMSON_SLAB));
+        addDrop(VERTICAL_WARPED_SLAB, slabDrops(VERTICAL_WARPED_SLAB));
+        addDrop(VERTICAL_MANGROVE_SLAB, slabDrops(VERTICAL_MANGROVE_SLAB));
+        addDrop(VERTICAL_BAMBOO_SLAB, slabDrops(VERTICAL_BAMBOO_SLAB));
+        addDrop(VERTICAL_CHERRY_SLAB, slabDrops(VERTICAL_CHERRY_SLAB));
+        addDrop(VERTICAL_CACTUS_SLAB, slabDrops(VERTICAL_CACTUS_SLAB));
+        addDrop(VERTICAL_OAK_STAIR);
+        addDrop(VERTICAL_BIRCH_STAIR);
+        addDrop(VERTICAL_SPRUCE_STAIR);
+        addDrop(VERTICAL_DARK_OAK_STAIR);
+        addDrop(VERTICAL_JUNGLE_STAIR);
+        addDrop(VERTICAL_ACACIA_STAIR);
+        addDrop(VERTICAL_CRIMSON_STAIR);
+        addDrop(VERTICAL_WARPED_STAIR);
+        addDrop(VERTICAL_MANGROVE_STAIR);
+        addDrop(VERTICAL_BAMBOO_STAIR);
+        addDrop(VERTICAL_CHERRY_STAIR);
+        addDrop(VERTICAL_CACTUS_STAIR);
         /*Mosaic*/
         addDrop(CACTUS_STAIRS);
         addDrop(OAK_MOSAIC_STAIRS);
@@ -204,7 +259,7 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(GLAZED_CACTUS_STAIRS);
 
         //Slabs
-        addDrop(CACTUS_SLABS, slabDrops(CACTUS_SLABS));
+        addDrop(CACTUS_SLAB, slabDrops(CACTUS_SLAB));
         addDrop(OAK_MOSAIC_SLABS, slabDrops(OAK_MOSAIC_SLABS));
         addDrop(BIRCH_MOSAIC_SLABS, slabDrops(BIRCH_MOSAIC_SLABS));
         addDrop(SPRUCE_MOSAIC_SLABS, slabDrops(SPRUCE_MOSAIC_SLABS));
@@ -373,5 +428,19 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(BLOCK_OF_CHARCOAL);
         addDrop(BLOCK_OF_STICKS);
 
+        //Chipped Planks
+        addDrop(CHIPPED_WARPED_PLANKS);
+        addDrop(CHIPPED_WARPED_STAIR);
+        addDrop(CHIPPED_WARPED_SLAB);
+
+        //AppleBlocks
+        addDrop(APPLES, flowerbedDrops(APPLES));
+        addDrop(GLISTERING_APPLES, flowerbedDrops(GLISTERING_APPLES));
+
     }
+
+    private LootTable.Builder flowerbedDrops(Item apple) {
+        return flowerbedDrops(apple);
+    }
+
 }

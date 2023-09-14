@@ -13,6 +13,6 @@ public class CelluloseScreens
                     "sawmill"), SawmillScreenHandler::new);
 
     public static void registerScreens() {
-        Cellulose.LOGGER.info("Registering screens for " + Cellulose.MOD_ID);
+        Cellulose.LOGGER.info("Registering screens");
     }
 }

@@ -31,41 +31,41 @@ public class CelluloseFuel
         registry.add(CHERRY_MOSAIC, 300);
 
         //Stairs fuel
-        registry.add(VERTICAL_OAK_PLANKS_STAIRS, 300);
+        registry.add(VERTICAL_OAK_STAIR, 300);
         registry.add(OAK_MOSAIC_STAIRS, 300);
-        registry.add(VERTICAL_BIRCH_PLANKS_STAIRS, 300);
+        registry.add(VERTICAL_BIRCH_STAIR, 300);
         registry.add(BIRCH_MOSAIC_STAIRS, 300);
-        registry.add(VERTICAL_SPRUCE_PLANKS_STAIRS, 300);
+        registry.add(VERTICAL_SPRUCE_STAIR, 300);
         registry.add(SPRUCE_MOSAIC_STAIRS, 300);
-        registry.add(VERTICAL_JUNGLE_PLANKS_STAIRS, 300);
+        registry.add(VERTICAL_JUNGLE_STAIR, 300);
         registry.add(JUNGLE_MOSAIC_STAIRS, 300);
-        registry.add(VERTICAL_DARK_OAK_PLANKS_STAIRS, 300);
+        registry.add(VERTICAL_DARK_OAK_STAIR, 300);
         registry.add(DARK_OAK_MOSAIC_STAIRS, 300);
-        registry.add(VERTICAL_ACACIA_PLANKS_STAIRS, 300);
+        registry.add(VERTICAL_ACACIA_STAIR, 300);
         registry.add(ACACIA_MOSAIC_STAIRS, 300);
-        registry.add(VERTICAL_MANGROVE_PLANKS_STAIRS, 300);
+        registry.add(VERTICAL_MANGROVE_STAIR, 300);
         registry.add(MANGROVE_MOSAIC_STAIRS, 300);
-        registry.add(VERTICAL_BAMBOO_PLANKS_STAIRS, 300);
-        registry.add(VERTICAL_CHERRY_PLANKS_STAIRS, 300);
+        registry.add(VERTICAL_BAMBOO_STAIR, 300);
+        registry.add(VERTICAL_CHERRY_STAIR, 300);
         registry.add(CHERRY_MOSAIC_STAIRS, 300);
 
         //Slab fuel
-        registry.add(VERTICAL_OAK_PLANKS_SLABS, 300);
+        registry.add(VERTICAL_OAK_SLAB, 300);
         registry.add(OAK_MOSAIC_SLABS, 300);
-        registry.add(VERTICAL_BIRCH_PLANKS_SLABS, 300);
+        registry.add(VERTICAL_BIRCH_SLAB, 300);
         registry.add(BIRCH_MOSAIC_SLABS, 300);
-        registry.add(VERTICAL_SPRUCE_PLANKS_SLABS, 300);
+        registry.add(VERTICAL_SPRUCE_SLAB, 300);
         registry.add(SPRUCE_MOSAIC_SLABS, 300);
-        registry.add(VERTICAL_JUNGLE_PLANKS_SLABS, 300);
+        registry.add(VERTICAL_JUNGLE_SLAB, 300);
         registry.add(JUNGLE_MOSAIC_SLABS, 300);
-        registry.add(VERTICAL_DARK_OAK_PLANKS_SLABS, 300);
+        registry.add(VERTICAL_DARK_OAK_SLAB, 300);
         registry.add(DARK_OAK_MOSAIC_SLABS, 300);
-        registry.add(VERTICAL_ACACIA_PLANKS_SLABS, 300);
+        registry.add(VERTICAL_ACACIA_SLAB, 300);
         registry.add(ACACIA_MOSAIC_SLABS, 300);
-        registry.add(VERTICAL_MANGROVE_PLANKS_SLABS, 300);
+        registry.add(VERTICAL_MANGROVE_SLAB, 300);
         registry.add(MANGROVE_MOSAIC_SLABS, 300);
-        registry.add(VERTICAL_BAMBOO_PLANKS_SLABS, 300);
-        registry.add(VERTICAL_CHERRY_PLANKS_SLABS, 300);
+        registry.add(VERTICAL_BAMBOO_SLAB, 300);
+        registry.add(VERTICAL_CHERRY_SLAB, 300);
         registry.add(CHERRY_MOSAIC_SLABS, 300);
 
         //Lintel block fuel
@@ -88,7 +88,7 @@ public class CelluloseFuel
         registry.add(ENGRAVED_CACTUS_CROWN, 300);
         registry.add(CACTUS_PLANKS, 300);
         registry.add(CACTUS_STAIRS, 300);
-        registry.add(CACTUS_SLABS, 300);
+        registry.add(CACTUS_SLAB, 300);
         registry.add(CACTUS_PLANKS, 300);
         registry.add(CACTUS_FENCE, 300);
         registry.add(CACTUS_FENCE_GATE, 300);

@@ -30,26 +30,26 @@ public class CelluloseFlammableBlocks
         registry.add(CHERRY_MOSAIC, 5, 5);
 
         //Adds slabs
-        registry.add(VERTICAL_OAK_PLANKS_SLABS, 5, 5);
-        registry.add(VERTICAL_BIRCH_PLANKS_SLABS, 5, 5);
-        registry.add(VERTICAL_SPRUCE_PLANKS_SLABS, 5, 5);
-        registry.add(VERTICAL_DARK_OAK_PLANKS_SLABS, 5, 5);
-        registry.add(VERTICAL_JUNGLE_PLANKS_SLABS, 5, 5);
-        registry.add(VERTICAL_ACACIA_PLANKS_SLABS, 5, 5);
-        registry.add(VERTICAL_MANGROVE_PLANKS_SLABS, 5, 5);
-        registry.add(VERTICAL_BAMBOO_PLANKS_SLABS, 5, 5);
-        registry.add(VERTICAL_CHERRY_PLANKS_SLABS, 5, 5);
+        registry.add(VERTICAL_OAK_SLAB, 5, 5);
+        registry.add(VERTICAL_BIRCH_SLAB, 5, 5);
+        registry.add(VERTICAL_SPRUCE_SLAB, 5, 5);
+        registry.add(VERTICAL_DARK_OAK_SLAB, 5, 5);
+        registry.add(VERTICAL_JUNGLE_SLAB, 5, 5);
+        registry.add(VERTICAL_ACACIA_SLAB, 5, 5);
+        registry.add(VERTICAL_MANGROVE_SLAB, 5, 5);
+        registry.add(VERTICAL_BAMBOO_SLAB, 5, 5);
+        registry.add(VERTICAL_CHERRY_SLAB, 5, 5);
 
         //Adds stairs
-        registry.add(VERTICAL_OAK_PLANKS_STAIRS, 5, 5);
-        registry.add(VERTICAL_BIRCH_PLANKS_STAIRS, 5, 5);
-        registry.add(VERTICAL_SPRUCE_PLANKS_STAIRS, 5, 5);
-        registry.add(VERTICAL_DARK_OAK_PLANKS_STAIRS, 5, 5);
-        registry.add(VERTICAL_JUNGLE_PLANKS_STAIRS, 5, 5);
-        registry.add(VERTICAL_ACACIA_PLANKS_STAIRS, 5, 5);
-        registry.add(VERTICAL_MANGROVE_PLANKS_STAIRS, 5, 5);
-        registry.add(VERTICAL_BAMBOO_PLANKS_STAIRS, 5, 5);
-        registry.add(VERTICAL_CHERRY_PLANKS_STAIRS, 5, 5);
+        registry.add(VERTICAL_OAK_STAIR, 5, 5);
+        registry.add(VERTICAL_BIRCH_STAIR, 5, 5);
+        registry.add(VERTICAL_SPRUCE_STAIR, 5, 5);
+        registry.add(VERTICAL_DARK_OAK_STAIR, 5, 5);
+        registry.add(VERTICAL_JUNGLE_STAIR, 5, 5);
+        registry.add(VERTICAL_ACACIA_STAIR, 5, 5);
+        registry.add(VERTICAL_MANGROVE_STAIR, 5, 5);
+        registry.add(VERTICAL_BAMBOO_STAIR, 5, 5);
+        registry.add(VERTICAL_CHERRY_STAIR, 5, 5);
 
         //Adds Lintels
         registry.add(OAK_LINTELS, 1,10);

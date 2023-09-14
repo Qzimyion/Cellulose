@@ -2,6 +2,7 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.qzimyion.cellulose.blocks.custom_blocks.SawmillBlock;
 import net.qzimyion.cellulose.util.CelluloseStats;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
@@ -17,6 +18,42 @@ public class CelluloseNameProvider extends FabricLanguageProvider
 
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
+        //For Vertical Planks
+        translationBuilder.add(VERTICAL_OAK_PLANKS, "Vertical Oak Planks");
+        translationBuilder.add(VERTICAL_BIRCH_PLANKS, "Vertical Birch Planks");
+        translationBuilder.add(VERTICAL_SPRUCE_PLANKS, "Vertical Spruce Planks");
+        translationBuilder.add(VERTICAL_DARK_OAK_PLANKS, "Vertical Dark Oak Planks");
+        translationBuilder.add(VERTICAL_JUNGLE_PLANKS, "Vertical Jungle Planks");
+        translationBuilder.add(VERTICAL_ACACIA_PLANKS, "Vertical Acacia Planks");
+        translationBuilder.add(VERTICAL_CRIMSON_PLANKS, "Vertical Crimson Planks");
+        translationBuilder.add(VERTICAL_WARPED_PLANKS, "Vertical Warped Planks");
+        translationBuilder.add(VERTICAL_MANGROVE_PLANKS, "Vertical Mangrove Planks");
+        translationBuilder.add(VERTICAL_BAMBOO_PLANKS, "Vertical Bamboo Planks");
+        translationBuilder.add(VERTICAL_CHERRY_PLANKS, "Vertical Cherry Planks");
+        //For Vertical Plank Slabs
+        translationBuilder.add(VERTICAL_OAK_SLAB, "Vertical Oak Slab");
+        translationBuilder.add(VERTICAL_BIRCH_SLAB, "Vertical Birch Slab");
+        translationBuilder.add(VERTICAL_SPRUCE_SLAB, "Vertical Spruce Slab");
+        translationBuilder.add(VERTICAL_DARK_OAK_SLAB, "Vertical Dark Oak Slab");
+        translationBuilder.add(VERTICAL_JUNGLE_SLAB, "Vertical Jungle Slab");
+        translationBuilder.add(VERTICAL_ACACIA_SLAB, "Vertical Acacia Slab");
+        translationBuilder.add(VERTICAL_CRIMSON_SLAB, "Vertical Crimson Slab");
+        translationBuilder.add(VERTICAL_WARPED_SLAB, "Vertical Warped Slab");
+        translationBuilder.add(VERTICAL_MANGROVE_SLAB, "Vertical Mangrove Slab");
+        translationBuilder.add(VERTICAL_BAMBOO_SLAB, "Vertical Bamboo Slab");
+        translationBuilder.add(VERTICAL_CHERRY_SLAB, "Vertical Cherry Slab");
+        //For Vertical Plank Stairs
+        translationBuilder.add(VERTICAL_OAK_STAIR, "Vertical Oak Stairs");
+        translationBuilder.add(VERTICAL_BIRCH_STAIR, "Vertical Birch Stairs");
+        translationBuilder.add(VERTICAL_SPRUCE_STAIR, "Vertical Spruce Stairs");
+        translationBuilder.add(VERTICAL_DARK_OAK_STAIR, "Vertical Dark Oak Stairs");
+        translationBuilder.add(VERTICAL_JUNGLE_STAIR, "Vertical Jungle Stairs");
+        translationBuilder.add(VERTICAL_ACACIA_STAIR, "Vertical Acacia Stairs");
+        translationBuilder.add(VERTICAL_CRIMSON_STAIR, "Vertical Crimson Stairs");
+        translationBuilder.add(VERTICAL_WARPED_STAIR, "Vertical Warped Stairs");
+        translationBuilder.add(VERTICAL_MANGROVE_STAIR, "Vertical Mangrove Stairs");
+        translationBuilder.add(VERTICAL_BAMBOO_STAIR, "Vertical Bamboo Stairs");
+        translationBuilder.add(VERTICAL_CHERRY_STAIR, "Vertical Cherry Stairs");
         //For mosaic blocks
         translationBuilder.add(OAK_MOSAIC, "Oak Mosaic");
         translationBuilder.add(BIRCH_MOSAIC, "Birch Mosaic");
@@ -73,11 +110,13 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(ENGRAVED_WARPED_HYPHAE, "Engraved Warped Hyphae");
         translationBuilder.add(ENGRAVED_MANGROVE_WOOD, "Engraved Mangrove Wood");
         translationBuilder.add(ENGRAVED_CHERRY_WOOD, "Engraved Cherry Wood");
-        //Cactus Woodset
+
+
+        ///Cactus Woodset
         translationBuilder.add(CACTUS_BUNDLE, "Cactus Bundle");
         translationBuilder.add(CACTUS_PLANKS, "Cactus Planks");
-        translationBuilder.add(CACTUS_STAIRS, "Cactus Planks Stairs");
-        translationBuilder.add(CACTUS_SLABS, "Cactus Planks Slab");
+        translationBuilder.add(CACTUS_STAIRS, "Cactus Stairs");
+        translationBuilder.add(CACTUS_SLAB, "Cactus Slab");
         translationBuilder.add(CACTUS_CROWN, "Cactus Crown");
         translationBuilder.add(STRIPPED_CACTUS, "Stripped Cactus");
         translationBuilder.add(STRIPPED_CACTUS_CROWN, "Stripped Cactus Crown");
@@ -88,16 +127,16 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CACTUS_DOOR, "Cactus Door");
         translationBuilder.add(CACTUS_TRAPDOOR, "Cactus Trapdoor");
         translationBuilder.add(VERTICAL_CACTUS_PLANKS, "Vertical Cactus Planks");
-        translationBuilder.add(VERTICAL_CACTUS_PLANKS_STAIRS, "Vertical Cactus Planks Stairs");
-        translationBuilder.add(VERTICAL_CACTUS_PLANKS_SLABS, "Vertical Cactus Planks Stairs");
+        translationBuilder.add(VERTICAL_CACTUS_STAIR, "Vertical Cactus Stairs");
+        translationBuilder.add(VERTICAL_CACTUS_SLAB, "Vertical Cactus Stairs");
         translationBuilder.add(ENGRAVED_CACTUS, "Engraved Cactus");
         translationBuilder.add(ENGRAVED_CACTUS_CROWN, "Engraved Cactus Crown");
         translationBuilder.add(CACTUS_MOSAIC, "Cactus Mosaic");
         translationBuilder.add(CACTUS_MOSAIC_STAIRS, "Cactus Mosaic Stairs");
         translationBuilder.add(CACTUS_MOSAIC_SLABS, "Cactus Mosaic Slab");
         translationBuilder.add(CHIPPED_CACTUS_PLANKS, "Chipped Cactus Planks");
-        translationBuilder.add(CHIPPED_CACTUS_PLANKS_SLABS, "Chipped Cactus Planks Slab");
-        translationBuilder.add(CHIPPED_CACTUS_PLANKS_STAIRS, "Chipped Cactus Planks Stairs");
+        translationBuilder.add(CHIPPED_CACTUS_SLAB, "Chipped Cactus Slab");
+        translationBuilder.add(CHIPPED_CACTUS_STAIR, "Chipped Cactus Stairs");
         translationBuilder.add(CACTUS_PLANK_PAVEMENT, "Cactus Pavement");
         translationBuilder.add(CACTUS_CARVED, "Carved cactus");
         translationBuilder.add(CACTUS_GLAZED, "Glazed Cactus");
@@ -112,10 +151,54 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CACTUS_BEAM, "Cactus Beam");
         translationBuilder.add(CACTUS_PLANK_PILLARS, "Cactus Plank Pillar");
         translationBuilder.add(VERTICAL_CACTUS_PLANK_PILLARS, "Vertical Cactus Plank Pillar");
+        //Azalea woodset
+        ///Azalea woodset
+        translationBuilder.add(AZALEA_LOG, "Azalea Log");
+        translationBuilder.add(BLOOMING_AZALEA_LOG, "Azalea Blooming Log");
+        translationBuilder.add(AZALEA_PLANKS, "Azalea Planks");
+        translationBuilder.add(AZALEA_STAIRS, "Azalea Stairs");
+        translationBuilder.add(AZALEA_SLAB, "Azalea Slab");
+        translationBuilder.add(AZALEA_WOOD, "Azalea Wood");
+        translationBuilder.add(BLOOMING_AZALEA_WOOD, "Azalea Blooming Wood");
+        translationBuilder.add(STRIPPED_AZALEA, "Stripped Azalea Log");
+        translationBuilder.add(BLOOMING_STRIPPED_AZALEA, "Stripped Blooming Azalea Log");
+        translationBuilder.add(STRIPPED_AZALEA_WOOD, "Stripped Azalea Wood");
+        translationBuilder.add(BLOOMING_STRIPPED_AZALEA_WOOD, "Stripped Blooming Azalea Wood");
+        translationBuilder.add(AZALEA_FENCE, "Azalea Fence");
+        translationBuilder.add(AZALEA_FENCE_GATE, "Azalea Fence gate");
+        translationBuilder.add(AZALEA_BUTTON, "Azalea Button");
+        translationBuilder.add(AZALEA_PRESSURE_PLATE, "Azalea Pressure Plate");
+        translationBuilder.add(AZALEA_DOOR, "Azalea Door");
+        translationBuilder.add(BLOOMING_AZALEA_DOOR, "Blooming Azalea Door");
+        translationBuilder.add(AZALEA_TRAPDOOR, "Azalea Trapdoor");
+        translationBuilder.add(BLOOMING_AZALEA_TRAPDOOR, "Blooming Azalea Trapdoor");
+        translationBuilder.add(VERTICAL_AZALEA_PLANKS, "Vertical Azalea Planks");
+        translationBuilder.add(VERTICAL_AZALEA_STAIR, "Vertical Azalea Stairs");
+        translationBuilder.add(VERTICAL_AZALEA_SLAB, "Vertical Azalea Stairs");
+        translationBuilder.add(ENGRAVED_AZALEA, "Engraved Azalea");
+        translationBuilder.add(ENGRAVED_BLOOMING_AZALEA, "Engraved Blooming Azalea Log");
+        translationBuilder.add(ENGRAVED_AZALEA_WOOD, "Engraved Azalea Wood");
+        translationBuilder.add(ENGRAVED_BLOOMING_AZALEA_WOOD, "Engraved Blooming Azalea Wood");
+        translationBuilder.add(AZALEA_MOSAIC, "Azalea Mosaic");
+        translationBuilder.add(AZALEA_MOSAIC_STAIRS, "Azalea Mosaic Stairs");
+        translationBuilder.add(AZALEA_MOSAIC_SLABS, "Azalea Mosaic Slab");
+        translationBuilder.add(CHIPPED_AZALEA_PLANKS, "Chipped Azalea Planks");
+        translationBuilder.add(CHIPPED_AZALEA_SLAB, "Chipped Azalea Slab");
+        translationBuilder.add(CHIPPED_AZALEA_STAIR, "Chipped Azalea Stairs");
+        translationBuilder.add(AZALEA_PLANK_PAVEMENT, "Azalea Pavement");
+        translationBuilder.add(AZALEA_BLOOMING_PLANK_PAVEMENT, "Blooming Azalea Pavement");
+
+
         /*Stats*/
         translationBuilder.add(CelluloseStats.INTERACT_WITH_SAWMILL, "Interaction with sawmill");
         //Item
         translationBuilder.add(PIPIS, "[[PIPIS]]");
+        translationBuilder.add(AZALEA_FLOWERS, "Azalea Flowers");
+        translationBuilder.add(ACORN, "Oak Acorn");
+        translationBuilder.add(POPPED_ACORN, "Popped Oak Acorn");
+        translationBuilder.add(POPACORN_BOWL, "Bowl of Popacorn");
+        translationBuilder.add(POPACORN_BOWL_HALF, "Half Eaten Bowl of Popacorn");
+        translationBuilder.add(POPACORN_BOWL_QUATER, "Almost Eaten Bowl of Popacorn");
         //Chipped woodset
         translationBuilder.add(CHIPPED_OAK, "Chipped Oak Log");
         translationBuilder.add(CHIPPED_OAK_WOOD, "Chipped Oak Wood");
@@ -141,30 +224,30 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CHIPPED_MANGROVE_PLANKS, "Chipped Mangrove Planks");
         translationBuilder.add(CHIPPED_BAMBOO_PLANKS, "Chipped Bamboo Planks");
         translationBuilder.add(CHIPPED_CHERRY_PLANKS, "Chipped Cherry Planks");
-        //Chipped Planks Slab
-        translationBuilder.add(CHIPPED_OAK_PLANKS_SLABS, "Chipped Oak Planks Slab");
-        translationBuilder.add(CHIPPED_BIRCH_PLANKS_SLABS, "Chipped Birch Planks Slab");
-        translationBuilder.add(CHIPPED_SPRUCE_PLANKS_SLABS, "Chipped Spruce Planks Slab");
-        translationBuilder.add(CHIPPED_DARK_OAK_PLANKS_SLABS, "Chipped Dark Oak Planks Slab");
-        translationBuilder.add(CHIPPED_JUNGLE_PLANKS_SLABS, "Chipped Jungle Planks Slab");
-        translationBuilder.add(CHIPPED_ACACIA_PLANKS_SLABS, "Chipped Acacia Planks Slab");
-        translationBuilder.add(CHIPPED_CRIMSON_PLANKS_SLABS, "Chipped Crimson Planks Slab");
-        translationBuilder.add(CHIPPED_WARPED_PLANKS_SLABS, "Chipped Warped Planks Slab");
-        translationBuilder.add(CHIPPED_MANGROVE_PLANKS_SLABS, "Chipped Mangrove Planks Slab");
-        translationBuilder.add(CHIPPED_BAMBOO_PLANKS_SLABS, "Chipped Bamboo Planks Slab");
-        translationBuilder.add(CHIPPED_CHERRY_PLANKS_SLABS, "Chipped Cherry Planks Slab");
+        //Chipped Slab
+        translationBuilder.add(CHIPPED_OAK_SLAB, "Chipped Oak Slab");
+        translationBuilder.add(CHIPPED_BIRCH_SLAB, "Chipped Birch Slab");
+        translationBuilder.add(CHIPPED_SPRUCE_SLAB, "Chipped Spruce Slab");
+        translationBuilder.add(CHIPPED_DARK_OAK_SLAB, "Chipped Dark Oak Slab");
+        translationBuilder.add(CHIPPED_JUNGLE_SLAB, "Chipped Jungle Slab");
+        translationBuilder.add(CHIPPED_ACACIA_SLAB, "Chipped Acacia Slab");
+        translationBuilder.add(CHIPPED_CRIMSON_SLAB, "Chipped Crimson Slab");
+        translationBuilder.add(CHIPPED_WARPED_SLAB, "Chipped Warped Slab");
+        translationBuilder.add(CHIPPED_MANGROVE_SLAB, "Chipped Mangrove Slab");
+        translationBuilder.add(CHIPPED_BAMBOO_SLAB, "Chipped Bamboo Slab");
+        translationBuilder.add(CHIPPED_CHERRY_SLAB, "Chipped Cherry Slab");
         //Chipped Planks
-        translationBuilder.add(CHIPPED_OAK_PLANKS_STAIRS, "Chipped Oak Planks Stairs");
-        translationBuilder.add(CHIPPED_BIRCH_PLANKS_STAIRS, "Chipped Birch Planks Stairs");
-        translationBuilder.add(CHIPPED_SPRUCE_PLANKS_STAIRS, "Chipped Spruce Planks Stairs");
-        translationBuilder.add(CHIPPED_DARK_OAK_PLANKS_STAIRS, "Chipped Dark Oak Planks Stairs");
-        translationBuilder.add(CHIPPED_JUNGLE_PLANKS_STAIRS, "Chipped Jungle Planks Stairs");
-        translationBuilder.add(CHIPPED_ACACIA_PLANKS_STAIRS, "Chipped Acacia Planks Stairs");
-        translationBuilder.add(CHIPPED_CRIMSON_PLANKS_STAIRS, "Chipped Crimson Planks Stairs");
-        translationBuilder.add(CHIPPED_WARPED_PLANKS_STAIRS, "Chipped Warped Planks Stairs");
-        translationBuilder.add(CHIPPED_MANGROVE_PLANKS_STAIRS, "Chipped Mangrove Planks Stairs");
-        translationBuilder.add(CHIPPED_BAMBOO_PLANKS_STAIRS, "Chipped Bamboo Planks Stairs");
-        translationBuilder.add(CHIPPED_CHERRY_PLANKS_STAIRS, "Chipped Cherry Planks Stairs");
+        translationBuilder.add(CHIPPED_OAK_STAIR, "Chipped Oak Stairs");
+        translationBuilder.add(CHIPPED_BIRCH_STAIR, "Chipped Birch Stairs");
+        translationBuilder.add(CHIPPED_SPRUCE_STAIR, "Chipped Spruce Stairs");
+        translationBuilder.add(CHIPPED_DARK_OAK_STAIR, "Chipped Dark Oak Stairs");
+        translationBuilder.add(CHIPPED_JUNGLE_STAIR, "Chipped Jungle Stairs");
+        translationBuilder.add(CHIPPED_ACACIA_STAIR, "Chipped Acacia Stairs");
+        translationBuilder.add(CHIPPED_CRIMSON_STAIR, "Chipped Crimson Stairs");
+        translationBuilder.add(CHIPPED_WARPED_STAIR, "Chipped Warped Stairs");
+        translationBuilder.add(CHIPPED_MANGROVE_STAIR, "Chipped Mangrove Stairs");
+        translationBuilder.add(CHIPPED_BAMBOO_STAIR, "Chipped Bamboo Stairs");
+        translationBuilder.add(CHIPPED_CHERRY_STAIR, "Chipped Cherry Stairs");
         //Pavements
         translationBuilder.add(OAK_PLANK_PAVEMENT, "Oak Pavement");
         translationBuilder.add(BIRCH_PLANK_PAVEMENT, "Birch Pavement");
@@ -345,6 +428,33 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(VERTICAL_MANGROVE_PLANK_PILLARS, "Vertical Mangrove Plank Pillar");
         translationBuilder.add(VERTICAL_BAMBOO_PLANK_PILLARS, "Vertical Bamboo Plank Pillar");
         translationBuilder.add(VERTICAL_CHERRY_PLANK_PILLARS, "Vertical Cherry Plank Pillar");
+        //Flipped Planks
+        translationBuilder.add(FLIPPED_OAK_PLANKS, "Flipped Oak Planks");
+        translationBuilder.add(FLIPPED_BIRCH_PLANKS, "Flipped Birch Planks");
+        translationBuilder.add(FLIPPED_SPRUCE_PLANKS, "Flipped Spruce Planks");
+        translationBuilder.add(FLIPPED_DARK_OAK_PLANKS, "Flipped Dark Oak Planks");
+        translationBuilder.add(FLIPPED_JUNGLE_PLANKS, "Flipped Jungle Planks");
+        translationBuilder.add(FLIPPED_ACACIA_PLANKS, "Flipped Acacia Planks");
+        translationBuilder.add(FLIPPED_CRIMSON_PLANKS, "Flipped Crimson Planks");
+        translationBuilder.add(FLIPPED_WARPED_PLANKS, "Flipped Warped Planks");
+        translationBuilder.add(FLIPPED_MANGROVE_PLANKS, "Flipped Mangrove Planks");
+        translationBuilder.add(FLIPPED_BAMBOO_PLANKS, "Flipped Bamboo Planks");
+        translationBuilder.add(FLIPPED_CHERRY_PLANKS, "Flipped Cherry Planks");
+        translationBuilder.add(FLIPPED_CACTUS_PLANKS, "Flipped Cactus Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_OAK_PLANKS, "Flipped Vertical Oak Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_BIRCH_PLANKS, "Flipped Vertical Birch Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_SPRUCE_PLANKS, "Flipped Vertical Spruce Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_DARK_OAK_PLANKS, "Flipped Vertical Dark Oak Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_JUNGLE_PLANKS, "Flipped Vertical Jungle Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_ACACIA_PLANKS, "Flipped Vertical Acacia Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_CRIMSON_PLANKS, "Flipped Vertical Crimson Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_WARPED_PLANKS, "Flipped Vertical Warped Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_MANGROVE_PLANKS, "Flipped Vertical Mangrove Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_BAMBOO_PLANKS, "Flipped Vertical Bamboo Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_CHERRY_PLANKS, "Flipped Vertical Cherry Planks");
+        translationBuilder.add(FLIPPED_VERTICAL_CACTUS_PLANKS, "Flipped Vertical Cactus Planks");
+        //UI
+        translationBuilder.add(SawmillBlock.TITLE.toString(), "Sawmill");
 
         /*
         Compressed Blocks

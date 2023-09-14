@@ -47,7 +47,7 @@ public class CelluloseSigns {
         Registry.register(Registries.ITEM, CACTUS_HANGING_SIGN_ID, hangingSignItem);
 
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries ->
-                entries.addAfter(Items.CHERRY_HANGING_SIGN, signItem, hangingSignItem));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries ->
+                entries.addAfter(Items.BAMBOO_HANGING_SIGN, signItem, hangingSignItem));
     }
 }

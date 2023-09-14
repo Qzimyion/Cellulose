@@ -8,7 +8,7 @@ import net.qzimyion.cellulose.Cellulose;
 public class CelluloseRecipes {
 
     public static void registerRecipes() {
-        Cellulose.LOGGER.info("Registering Recipe Types for " + Cellulose.MOD_ID);
+        Cellulose.LOGGER.info("Registering Recipe Types");
 
         Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Cellulose.MOD_ID, SawmillingRecipe.Serializer.ID),
                 SawmillingRecipe.Serializer.INSTANCE);
