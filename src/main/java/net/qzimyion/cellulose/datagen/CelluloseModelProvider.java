@@ -198,15 +198,11 @@ public class CelluloseModelProvider extends FabricModelProvider {
         //Charred Wood
         BlockStateModelGenerator.LogTexturePool CharredOakLog = blockStateModelGenerator.registerLog(CHARRED_OAK_LOG);
         BlockStateModelGenerator.LogTexturePool CharredBirchLog = blockStateModelGenerator.registerLog(CHARRED_HORIZONTAL_LOG);
-        BlockStateModelGenerator.LogTexturePool CharredMangroveLog = blockStateModelGenerator.registerLog(CHARRED_MANGROVE_LOG);
         BlockStateModelGenerator.LogTexturePool CharredBambooBlock = blockStateModelGenerator.registerLog(CHARRED_BAMBOO);
-        BlockStateModelGenerator.LogTexturePool CharredCherryLog = blockStateModelGenerator.registerLog(CHARRED_CHERRY_LOG);
-        BlockStateModelGenerator.LogTexturePool CharredCactusLog = blockStateModelGenerator.registerLog(CHARRED_CACTUS_BUNDLE);
         BlockStateModelGenerator.BlockTexturePool CharredPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(CHARRED_PLANKS);
         BlockStateModelGenerator.BlockTexturePool CharredBambooPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(CHARRED_BAMBOO_PLANKS);
         BlockStateModelGenerator.LogTexturePool CharredStrippedOakLog = blockStateModelGenerator.registerLog(STRIPPED_CHARRED_OAK_LOG);
         BlockStateModelGenerator.LogTexturePool CharredStrippedJungleLog = blockStateModelGenerator.registerLog(STRIPPED_CHARRED_HORIZONTAL_LOG);
-        BlockStateModelGenerator.LogTexturePool CharredStrippedCactusLog = blockStateModelGenerator.registerLog(STRIPPED_CHARRED_CACTUS);
 
         //Azalea Wood
         BlockStateModelGenerator.LogTexturePool Azalea = blockStateModelGenerator.registerLog(AZALEA_LOG);
@@ -612,7 +608,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BoardsCactus.slab(CACTUS_BOARDS_SLABS);
         GlazedCactus.slab(GLAZED_CACTUS_SLABS);
         TilesCactus.stairs(CACTUS_TILES_STAIRS);
-        StrippedChippedCactus.log(STRIPPED_CHARRED_CACTUS);
         StrippedChippedCactus.wood(STRIPPED_CHIPPED_CACTUS_CROWN);
         blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_CACTUS_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_CACTUS_PLANKS);
