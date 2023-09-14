@@ -34,6 +34,15 @@ public class CelluloseStrippableBlock
         StrippableBlockRegistry.register(CACTUS_CROWN, STRIPPED_CACTUS_CROWN);
         StrippableBlockRegistry.register(STRIPPED_CACTUS, ENGRAVED_CACTUS);
         StrippableBlockRegistry.register(STRIPPED_CACTUS_CROWN, ENGRAVED_CACTUS_CROWN);
+        //Azalea stuff
+        StrippableBlockRegistry.register(AZALEA_LOG, STRIPPED_AZALEA);
+        StrippableBlockRegistry.register(AZALEA_WOOD, STRIPPED_AZALEA_WOOD);
+        StrippableBlockRegistry.register(STRIPPED_AZALEA, ENGRAVED_AZALEA);
+        StrippableBlockRegistry.register(STRIPPED_AZALEA_WOOD, ENGRAVED_AZALEA_WOOD);
+        StrippableBlockRegistry.register(BLOOMING_AZALEA_LOG, BLOOMING_STRIPPED_AZALEA);
+        StrippableBlockRegistry.register(BLOOMING_AZALEA_WOOD, BLOOMING_STRIPPED_AZALEA_WOOD);
+        StrippableBlockRegistry.register(BLOOMING_STRIPPED_AZALEA, ENGRAVED_BLOOMING_AZALEA);
+        StrippableBlockRegistry.register(BLOOMING_STRIPPED_AZALEA_WOOD, ENGRAVED_BLOOMING_AZALEA_WOOD);
         //Overworld Mushroom stuff
         /*Red*/
 
