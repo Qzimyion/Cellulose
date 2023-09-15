@@ -12,14 +12,13 @@ public class CelluloseTags
     public static class Blocks {
         //BlockTags
         public static final TagKey<Block> WOODEN_MOSAICS = createTag ("wooden_mosaics");
-        public static final TagKey<Block> WOODEN_MOSAICS_SLABS = createTag ("wooden_mosaics_slabs");
-        public static final TagKey<Block> WOODEN_MOSAICS_STAIRS = createTag ("wooden_mosaics_stairs");
         public static final TagKey<Block> WOODEN_FRAMES = createTag ("wooden_frames");
         public static final TagKey<Block> LINTELS = createTag ("lintels");
         public static final TagKey<Block> VERTICAL_PLANKS = createTag ("vertical_planks");
         public static final TagKey<Block> TILES = createTag ("tiles");
         public static final TagKey<Block> BOARDS = createTag ("boards");
         public static final TagKey<Block> CARPENTED_WOOD = createTag ("carpented_wood");
+        public static final TagKey<Block> CHARRABLE_WOOD = createTag ("charrable_wood");
         public static final TagKey<Block> CHIPPABLE_LOGS = createTag ("chippable_logs");
         public static final TagKey<Block> CHIPPED_PLANKS = createTag ("chipped_planks");
         public static final TagKey<Block> CHIPPED_PLANKS_SLAB = createTag ("chipped_planks_slabs");

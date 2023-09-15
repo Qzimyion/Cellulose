@@ -165,36 +165,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(AZALEA_MOSAIC)
                 .add(BLOOMING_AZALEA_MOSAIC);
 
-        getOrCreateTagBuilder(WOODEN_MOSAICS_SLABS)
-                .add(OAK_MOSAIC_SLABS)
-                .add(BIRCH_MOSAIC_SLABS)
-                .add(SPRUCE_MOSAIC_SLABS)
-                .add(DARK_OAK_MOSAIC_SLABS)
-                .add(JUNGLE_MOSAIC_SLABS)
-                .add(ACACIA_MOSAIC_SLABS)
-                .add(CRIMSON_MOSAIC_SLABS)
-                .add(WARPED_MOSAIC_SLABS)
-                .add(MANGROVE_MOSAIC_SLABS)
-                .add(CHERRY_MOSAIC_SLABS)
-                .add(CACTUS_MOSAIC_SLABS)
-                .add(AZALEA_MOSAIC_SLABS)
-                .add(BLOOMING_AZALEA_MOSAIC_SLABS);
-
-        getOrCreateTagBuilder(WOODEN_MOSAICS_STAIRS)
-                .add(OAK_MOSAIC_STAIRS)
-                .add(BIRCH_MOSAIC_STAIRS)
-                .add(SPRUCE_MOSAIC_STAIRS)
-                .add(DARK_OAK_MOSAIC_STAIRS)
-                .add(JUNGLE_MOSAIC_STAIRS)
-                .add(ACACIA_MOSAIC_STAIRS)
-                .add(CRIMSON_MOSAIC_STAIRS)
-                .add(WARPED_MOSAIC_STAIRS)
-                .add(MANGROVE_MOSAIC_STAIRS)
-                .add(CHERRY_MOSAIC_STAIRS)
-                .add(CACTUS_MOSAIC_STAIRS)
-                .add(AZALEA_MOSAIC_STAIRS)
-                .add(BLOOMING_AZALEA_MOSAIC_STAIRS);
-
         getOrCreateTagBuilder(WOODEN_FRAMES)
                 .add(OAK_FRAME)
                 .add(BIRCH_FRAME)
@@ -275,7 +245,20 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_CHERRY_SLAB)
                 .add(VERTICAL_CACTUS_SLAB)
                 .add(VERTICAL_AZALEA_SLAB)
-                .add(VERTICAL_BLOOMING_AZALEA_SLAB);
+                .add(VERTICAL_BLOOMING_AZALEA_SLAB)
+                .add(OAK_MOSAIC_SLABS)
+                .add(BIRCH_MOSAIC_SLABS)
+                .add(SPRUCE_MOSAIC_SLABS)
+                .add(DARK_OAK_MOSAIC_SLABS)
+                .add(JUNGLE_MOSAIC_SLABS)
+                .add(ACACIA_MOSAIC_SLABS)
+                .add(CRIMSON_MOSAIC_SLABS)
+                .add(WARPED_MOSAIC_SLABS)
+                .add(MANGROVE_MOSAIC_SLABS)
+                .add(CHERRY_MOSAIC_SLABS)
+                .add(CACTUS_MOSAIC_SLABS)
+                .add(AZALEA_MOSAIC_SLABS)
+                .add(BLOOMING_AZALEA_MOSAIC_SLABS);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS)
                 .add(AZALEA_STAIRS)
@@ -294,7 +277,20 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_CHERRY_STAIR)
                 .add(VERTICAL_CACTUS_STAIR)
                 .add(VERTICAL_AZALEA_STAIR)
-                .add(VERTICAL_BLOOMING_AZALEA_STAIR);
+                .add(VERTICAL_BLOOMING_AZALEA_STAIR)
+                .add(OAK_MOSAIC_STAIRS)
+                .add(BIRCH_MOSAIC_STAIRS)
+                .add(SPRUCE_MOSAIC_STAIRS)
+                .add(DARK_OAK_MOSAIC_STAIRS)
+                .add(JUNGLE_MOSAIC_STAIRS)
+                .add(ACACIA_MOSAIC_STAIRS)
+                .add(CRIMSON_MOSAIC_STAIRS)
+                .add(WARPED_MOSAIC_STAIRS)
+                .add(MANGROVE_MOSAIC_STAIRS)
+                .add(CHERRY_MOSAIC_STAIRS)
+                .add(CACTUS_MOSAIC_STAIRS)
+                .add(AZALEA_MOSAIC_STAIRS)
+                .add(BLOOMING_AZALEA_MOSAIC_STAIRS);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS)
                 .add(AZALEA_BUTTON)
@@ -423,8 +419,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
 
                 //Mosaic
                 .forceAddTag(WOODEN_MOSAICS)
-                .forceAddTag(WOODEN_MOSAICS_SLABS)
-                .forceAddTag(WOODEN_MOSAICS_STAIRS)
 
 
                 //Sawmill
