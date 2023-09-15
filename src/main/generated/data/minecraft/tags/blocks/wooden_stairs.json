@@ -17,6 +17,19 @@
     "cellulose:vertical_cherry_stair",
     "cellulose:vertical_cactus_stair",
     "cellulose:vertical_azalea_stair",
-    "cellulose:vertical_azalea_blooming_stair"
+    "cellulose:vertical_azalea_blooming_stair",
+    "cellulose:oak_mosaic_stair",
+    "cellulose:birch_mosaic_stair",
+    "cellulose:spruce_mosaic_stair",
+    "cellulose:dark_oak_mosaic_stair",
+    "cellulose:jungle_mosaic_stair",
+    "cellulose:acacia_mosaic_stair",
+    "cellulose:crimson_mosaic_stair",
+    "cellulose:warped_mosaic_stair",
+    "cellulose:mangrove_mosaic_stair",
+    "cellulose:cherry_mosaic_stair",
+    "cellulose:cactus_mosaic_stair",
+    "cellulose:azalea_mosaic_stairs",
+    "cellulose:blooming_azalea_mosaic_stairs"
   ]
 }
