@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "cellulose:engraved_jungle_log",
-    "cellulose:engraved_jungle_wood"
+    "cellulose:engraved_jungle_wood",
+    "cellulose:chipped_jungle_log",
+    "cellulose:chipped_jungle_wood"
   ]
 }

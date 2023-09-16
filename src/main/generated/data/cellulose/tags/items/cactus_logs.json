@@ -5,6 +5,8 @@
     "cellulose:stripped_cactus",
     "cellulose:stripped_cactus_crown",
     "cellulose:engraved_cactus",
-    "cellulose:engraved_cactus_crown"
+    "cellulose:engraved_cactus_crown",
+    "cellulose:chipped_cactus_log",
+    "cellulose:chipped_cactus_crown"
   ]
 }

@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "cellulose:engraved_acacia_log",
-    "cellulose:engraved_acacia_wood"
+    "cellulose:engraved_acacia_wood",
+    "cellulose:chipped_oak_log",
+    "cellulose:chipped_oak_wood"
   ]
 }

@@ -6,6 +6,8 @@
     "cellulose:stripped_azalea_log",
     "cellulose:stripped_azalea_wood",
     "cellulose:engraved_azalea_log",
-    "cellulose:engraved_azalea_wood"
+    "cellulose:engraved_azalea_wood",
+    "cellulose:chipped_azalea_log",
+    "cellulose:chipped_azalea_wood"
   ]
 }

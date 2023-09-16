@@ -2,158 +2,148 @@
   "multipart": [
     {
       "apply": {
-        "model": "cellulose:block/azalea_flowers_1"
+        "model": "cellulose:block/azalea_flowers"
       },
       "when": {
-        "facing": "north",
-        "flower_amount": "1|2|3|4"
+        "north": "true"
       }
     },
     {
       "apply": {
-        "model": "cellulose:block/azalea_flowers_1",
+        "model": "cellulose:block/azalea_flowers"
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
         "y": 90
       },
       "when": {
-        "facing": "east",
-        "flower_amount": "1|2|3|4"
+        "east": "true"
       }
     },
     {
       "apply": {
-        "model": "cellulose:block/azalea_flowers_1",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "flower_amount": "1|2|3|4"
-      }
-    },
-    {
-      "apply": {
-        "model": "cellulose:block/azalea_flowers_1",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "flower_amount": "1|2|3|4"
-      }
-    },
-    {
-      "apply": {
-        "model": "cellulose:block/azalea_flowers_2"
-      },
-      "when": {
-        "facing": "north",
-        "flower_amount": "2|3|4"
-      }
-    },
-    {
-      "apply": {
-        "model": "cellulose:block/azalea_flowers_2",
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
         "y": 90
       },
       "when": {
-        "facing": "east",
-        "flower_amount": "2|3|4"
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
       }
     },
     {
       "apply": {
-        "model": "cellulose:block/azalea_flowers_2",
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
         "y": 180
       },
       "when": {
-        "facing": "south",
-        "flower_amount": "2|3|4"
+        "south": "true"
       }
     },
     {
       "apply": {
-        "model": "cellulose:block/azalea_flowers_2",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "flower_amount": "2|3|4"
-      }
-    },
-    {
-      "apply": {
-        "model": "cellulose:block/azalea_flowers_3"
-      },
-      "when": {
-        "facing": "north",
-        "flower_amount": "3|4"
-      }
-    },
-    {
-      "apply": {
-        "model": "cellulose:block/azalea_flowers_3",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "flower_amount": "3|4"
-      }
-    },
-    {
-      "apply": {
-        "model": "cellulose:block/azalea_flowers_3",
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
         "y": 180
       },
       "when": {
-        "facing": "south",
-        "flower_amount": "3|4"
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
       }
     },
     {
       "apply": {
-        "model": "cellulose:block/azalea_flowers_3",
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
         "y": 270
       },
       "when": {
-        "facing": "west",
-        "flower_amount": "3|4"
+        "west": "true"
       }
     },
     {
       "apply": {
-        "model": "cellulose:block/azalea_flowers_4"
-      },
-      "when": {
-        "facing": "north",
-        "flower_amount": "4"
-      }
-    },
-    {
-      "apply": {
-        "model": "cellulose:block/azalea_flowers_4",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "flower_amount": "4"
-      }
-    },
-    {
-      "apply": {
-        "model": "cellulose:block/azalea_flowers_4",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "flower_amount": "4"
-      }
-    },
-    {
-      "apply": {
-        "model": "cellulose:block/azalea_flowers_4",
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
         "y": 270
       },
       "when": {
-        "facing": "west",
-        "flower_amount": "4"
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/azalea_flowers",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
       }
     }
   ]

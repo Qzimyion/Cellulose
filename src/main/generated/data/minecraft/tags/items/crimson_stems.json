@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "cellulose:engraved_crimson_stem",
-    "cellulose:engraved_crimson_hyphae"
+    "cellulose:engraved_crimson_hyphae",
+    "cellulose:chipped_crimson_log",
+    "cellulose:chipped_crimson_hyphae"
   ]
 }
