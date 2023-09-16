@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "cellulose:engraved_mangrove_log",
-    "cellulose:engraved_mangrove_wood"
+    "cellulose:engraved_mangrove_wood",
+    "cellulose:chipped_mangrove_log",
+    "cellulose:chipped_mangrove_wood"
   ]
 }
