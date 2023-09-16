@@ -31,7 +31,6 @@ public class CelluloseTags
         public static final TagKey<Block> APPLE_PLACEABLE = createTag("apple_placeable");
 
         //Plants
-        public static final TagKey<Block> LOTUS = createTag("lotus");
         public static final TagKey<Block> FLOWERABLE = createTag("flowerable");
         public static final TagKey<Block> DEFLOWER = createTag("deflower");
 
@@ -39,6 +38,7 @@ public class CelluloseTags
         //Woodsets
         public static final TagKey<Block> CACTUS_LOGS = createTag("cactus_logs");
         public static final TagKey<Block> AZALEA_LOGS = createTag("azalea_logs");
+        public static final TagKey<Block> CHARRED_LOGS = createTag("charred_logs");
 
         private static TagKey <Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, name));
@@ -51,6 +51,7 @@ public class CelluloseTags
 
     public static class Items {
 
+        public static final TagKey <Item> CHARRING_ITEMS = createTag("charring_items");
         public static final TagKey <Item> AZALEA_FLOWER = createCommonTag("azalea_flower");
         public static final TagKey <Item> WOODEN_MOSAICS = createTag("wooden_mosaics_slabs");
         public static final TagKey <Item> WOODEN_MOSAICS_SLABS = createTag("wooden_mosaics");

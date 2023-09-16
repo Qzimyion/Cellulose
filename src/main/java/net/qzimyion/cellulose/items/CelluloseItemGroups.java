@@ -69,6 +69,8 @@ public class CelluloseItemGroups
             content.addAfter(VERTICAL_BAMBOO_SLAB, BAMBOO_FRAME, BAMBOO_LINTELS);
             content.addAfter(VERTICAL_CHERRY_SLAB, CHERRY_FRAME, CHERRY_LINTELS);
             content.addAfter(VERTICAL_CACTUS_SLAB, CACTUS_FRAME, CACTUS_LINTELS);
+            content.addAfter(VERTICAL_AZALEA_SLAB, AZALEA_FRAME, AZALEA_LINTELS);
+            content.addAfter(VERTICAL_BLOOMING_AZALEA_SLAB, BLOOMING_AZALEA_FRAME, BLOOMING_AZALEA_LINTELS);
 
             /*Section 4: Engraved logs and wood*/
 
@@ -111,7 +113,8 @@ public class CelluloseItemGroups
             content.addAfter(BAMBOO_LINTELS, BAMBOO_PLANK_PAVEMENT);
             content.addAfter(CHERRY_LINTELS, CHERRY_PLANK_PAVEMENT);
             content.addAfter(CACTUS_LINTELS, CACTUS_PLANK_PAVEMENT);
-            content.addAfter(AZALEA_LINTELS, AZALEA_PLANK_PAVEMENT, AZALEA_BLOOMING_PLANK_PAVEMENT);
+            content.addAfter(AZALEA_LINTELS, AZALEA_PLANK_PAVEMENT);
+            content.addAfter(BLOOMING_AZALEA_LINTELS, AZALEA_BLOOMING_PLANK_PAVEMENT);
 
             /*Section 7: Boards, Tiles, Glazed, Carpented and Carved wood*/
             content.addAfter(OAK_PLANK_PAVEMENT, OAK_BOARDS, OAK_BOARDS_STAIRS, OAK_BOARDS_SLABS, OAK_TILES, OAK_TILES_STAIRS, OAK_TILES_SLABS, OAK_GLAZED, GLAZED_OAK_STAIRS, GLAZED_OAK_SLABS, CARPENTED_OAK, OAK_CARVED);

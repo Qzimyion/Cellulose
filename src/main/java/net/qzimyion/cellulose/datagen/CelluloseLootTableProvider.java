@@ -403,6 +403,8 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(BAMBOO_FRAME, dropsWithSilkTouch(BAMBOO_FRAME));
         addDrop(CHERRY_FRAME, dropsWithSilkTouch(CHERRY_FRAME));
         addDrop(CACTUS_FRAME, dropsWithSilkTouch(CACTUS_FRAME));
+        addDrop(AZALEA_FRAME, dropsWithSilkTouch(AZALEA_FRAME));
+        addDrop(BLOOMING_AZALEA_FRAME, dropsWithSilkTouch(BLOOMING_AZALEA_FRAME));
 
         /*Charredwoodset*/
         addDrop(CHARRED_PLANKS, dropsWithSilkTouch(CHARRED_PLANKS));
@@ -420,6 +422,8 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(BAMBOO_LINTELS, dropsWithSilkTouch(BAMBOO_LINTELS));
         addDrop(CHERRY_LINTELS, dropsWithSilkTouch(CHERRY_LINTELS));
         addDrop(CACTUS_LINTELS, dropsWithSilkTouch(CACTUS_LINTELS));
+        addDrop(AZALEA_LINTELS, dropsWithSilkTouch(AZALEA_LINTELS));
+        addDrop(BLOOMING_AZALEA_LINTELS, dropsWithSilkTouch(BLOOMING_AZALEA_LINTELS));
 
         //Misc
         addDrop(CACTUS_BUNDLE);

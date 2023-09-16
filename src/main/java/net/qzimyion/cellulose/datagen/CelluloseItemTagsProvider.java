@@ -3,6 +3,7 @@ package net.qzimyion.cellulose.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
@@ -33,7 +34,7 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
         TagKey<Item> LOG_STAIRS = TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, "log_stairs"));
 
 
-        //Vanilla Tags
+        ///Vanilla Tags
         getOrCreateTagBuilder(PLANKS)
                 .add(Item.fromBlock(BLOOMING_AZALEA_PLANKS))
                 .add(Item.fromBlock(AZALEA_PLANKS))
@@ -117,46 +118,66 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(AZALEA_TRAPDOOR))
                 .add(Item.fromBlock(CACTUS_TRAPDOOR));
 
-        ///Logs
+        //Logs
         getOrCreateTagBuilder(OAK_LOGS)
                 .add(Item.fromBlock(ENGRAVED_OAK))
-                .add(Item.fromBlock(ENGRAVED_OAK_WOOD));
+                .add(Item.fromBlock(ENGRAVED_OAK_WOOD))
+                .add(Item.fromBlock(CHIPPED_OAK))
+                .add(Item.fromBlock(CHIPPED_OAK_WOOD));
 
         getOrCreateTagBuilder(BIRCH_LOGS)
                 .add(Item.fromBlock(ENGRAVED_BIRCH))
-                .add(Item.fromBlock(ENGRAVED_BIRCH_WOOD));
+                .add(Item.fromBlock(ENGRAVED_BIRCH_WOOD))
+                .add(Item.fromBlock(CHIPPED_BIRCH))
+                .add(Item.fromBlock(CHIPPED_BIRCH_WOOD));
 
         getOrCreateTagBuilder(SPRUCE_LOGS)
                 .add(Item.fromBlock(ENGRAVED_SPRUCE))
-                .add(Item.fromBlock(ENGRAVED_SPRUCE_WOOD));
+                .add(Item.fromBlock(ENGRAVED_SPRUCE_WOOD))
+                .add(Item.fromBlock(CHIPPED_SPRUCE))
+                .add(Item.fromBlock(CHIPPED_SPRUCE_WOOD));
 
         getOrCreateTagBuilder(DARK_OAK_LOGS)
                 .add(Item.fromBlock(ENGRAVED_DARK_OAK))
-                .add(Item.fromBlock(ENGRAVED_DARK_OAK_WOOD));
+                .add(Item.fromBlock(ENGRAVED_DARK_OAK_WOOD))
+                .add(Item.fromBlock(CHIPPED_DARK_OAK))
+                .add(Item.fromBlock(CHIPPED_DARK_OAK_WOOD));
 
         getOrCreateTagBuilder(ACACIA_LOGS)
                 .add(Item.fromBlock(ENGRAVED_ACACIA))
-                .add(Item.fromBlock(ENGRAVED_ACACIA_WOOD));
+                .add(Item.fromBlock(ENGRAVED_ACACIA_WOOD))
+                .add(Item.fromBlock(CHIPPED_OAK))
+                .add(Item.fromBlock(CHIPPED_OAK_WOOD));
 
         getOrCreateTagBuilder(JUNGLE_LOGS)
                 .add(Item.fromBlock(ENGRAVED_JUNGLE))
-                .add(Item.fromBlock(ENGRAVED_JUNGLE_WOOD));
+                .add(Item.fromBlock(ENGRAVED_JUNGLE_WOOD))
+                .add(Item.fromBlock(CHIPPED_JUNGLE))
+                .add(Item.fromBlock(CHIPPED_JUNGLE_WOOD));
 
         getOrCreateTagBuilder(CRIMSON_STEMS)
                 .add(Item.fromBlock(ENGRAVED_CRIMSON))
-                .add(Item.fromBlock(ENGRAVED_CRIMSON_HYPHAE));
+                .add(Item.fromBlock(ENGRAVED_CRIMSON_HYPHAE))
+                .add(Item.fromBlock(CHIPPED_CRIMSON))
+                .add(Item.fromBlock(CHIPPED_CRIMSON_HYPHAE));
 
         getOrCreateTagBuilder(WARPED_STEMS)
                 .add(Item.fromBlock(ENGRAVED_WARPED))
-                .add(Item.fromBlock(ENGRAVED_WARPED_HYPHAE));
+                .add(Item.fromBlock(ENGRAVED_WARPED_HYPHAE))
+                .add(Item.fromBlock(CHIPPED_WARPED))
+                .add(Item.fromBlock(CHIPPED_WARPED_HYPHAE));
 
         getOrCreateTagBuilder(MANGROVE_LOGS)
                 .add(Item.fromBlock(ENGRAVED_MANGROVE))
-                .add(Item.fromBlock(ENGRAVED_MANGROVE_WOOD));
+                .add(Item.fromBlock(ENGRAVED_MANGROVE_WOOD))
+                .add(Item.fromBlock(CHIPPED_MANGROVE))
+                .add(Item.fromBlock(CHIPPED_MANGROVE_WOOD));
 
         getOrCreateTagBuilder(CHERRY_LOGS)
                 .add(Item.fromBlock(ENGRAVED_CHERRY))
-                .add(Item.fromBlock(ENGRAVED_CHERRY_WOOD));
+                .add(Item.fromBlock(ENGRAVED_CHERRY_WOOD))
+                .add(Item.fromBlock(CHIPPED_CHERRY))
+                .add(Item.fromBlock(CHIPPED_CHERRY_WOOD));
 
         getOrCreateTagBuilder(LOGS)
                 .forceAddTag(LOGS_THAT_BURN)
@@ -175,7 +196,7 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .forceAddTag(CHERRY_LOGS)
                 .forceAddTag(CelluloseTags.Items.AZALEA_LOGS);
 
-        ///Mod Tags
+        ///Modded Tags
 
         getOrCreateTagBuilder(CelluloseTags.Items.WOODEN_MOSAICS)
                 .add(Item.fromBlock(OAK_MOSAIC))
@@ -227,7 +248,9 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(STRIPPED_CACTUS))
                 .add(Item.fromBlock(STRIPPED_CACTUS_CROWN))
                 .add(Item.fromBlock(ENGRAVED_CACTUS))
-                .add(Item.fromBlock(ENGRAVED_CACTUS_CROWN));
+                .add(Item.fromBlock(ENGRAVED_CACTUS_CROWN))
+                .add(Item.fromBlock(CHIPPED_CACTUS))
+                .add(Item.fromBlock(CHIPPED_CACTUS_CROWN));
 
         getOrCreateTagBuilder(CelluloseTags.Items.AZALEA_LOGS)
                 .add(Item.fromBlock(AZALEA_LOG))
@@ -235,10 +258,23 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(STRIPPED_AZALEA))
                 .add(Item.fromBlock(STRIPPED_AZALEA_WOOD))
                 .add(Item.fromBlock(ENGRAVED_AZALEA))
-                .add(Item.fromBlock(ENGRAVED_AZALEA_WOOD));
+                .add(Item.fromBlock(ENGRAVED_AZALEA_WOOD))
+                .add(Item.fromBlock(CHIPPED_AZALEA))
+                .add(Item.fromBlock(CHIPPED_AZALEA_WOOD));
 
-        ///Food
+        //Food
         getOrCreateTagBuilder(CelluloseTags.Items.ACORNS)
                 .add(ACORN);
+
+        //Flowering
+        getOrCreateTagBuilder(CelluloseTags.Items.AZALEA_FLOWER)
+                .add(Item.fromBlock(AZALEA_FLOWERS));
+
+        //Charring
+        getOrCreateTagBuilder(CelluloseTags.Items.CHARRING_ITEMS)
+                .add(Items.BLAZE_POWDER)
+                .add(Items.MAGMA_CREAM)
+                .add(Items.FLINT_AND_STEEL)
+                .add(Items.FIRE_CHARGE);
     }
 }

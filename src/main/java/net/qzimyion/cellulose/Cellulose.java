@@ -14,6 +14,8 @@ import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.recipe.CelluloseRecipes;
 import net.qzimyion.cellulose.blocks.*;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
+import net.qzimyion.cellulose.villager.CelluloseVillagerTrades;
+import net.qzimyion.cellulose.villager.CelluloseVillagers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,9 +36,9 @@ public class Cellulose implements ModInitializer
 		CelluloseScreens.registerScreens();
 		CelluloseStats.registerStats();
 		CelluloseItemGroups.registerItemGroups();
-
 		CelluloseSigns.registerSigns();
-
 		CelluloseEvents.registerEvents();
+		CelluloseVillagers.registerVillagers();
+		CelluloseVillagerTrades.registerTrades();
 	}
 }

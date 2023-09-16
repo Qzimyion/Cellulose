@@ -15,7 +15,6 @@ import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
 @SuppressWarnings("deprecation, unused")
-
 public class CelluloseVillagers {
 
     public static final PointOfInterestType SAWMILL_POI = POI("sawmill_poi", CelluloseBlocks.SAWMILL);
@@ -27,7 +26,6 @@ public class CelluloseVillagers {
     public static PointOfInterestType POI (String name, Block block){
         return PointOfInterestHelper.register(new Identifier(Cellulose.MOD_ID, name), 1,10, ImmutableSet.copyOf(block.getStateManager().getStates()));
     }
-
     public static void registerVillagers(){
         Cellulose.LOGGER.info("Register Mod Villagers");
     }

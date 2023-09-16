@@ -46,6 +46,19 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
 
         ///Modded Tags
 
+        getOrCreateTagBuilder(CHARRABLE_WOOD)
+                .forceAddTag(LOGS_THAT_BURN)
+                .forceAddTag(CACTUS_LOGS)
+                .forceAddTag(PLANKS)
+                .forceAddTag(WOODEN_FENCES)
+                .forceAddTag(WOODEN_DOORS)
+                .forceAddTag(WOODEN_TRAPDOORS)
+                .forceAddTag(WOODEN_PRESSURE_PLATES)
+                .forceAddTag(WOODEN_BUTTONS)
+                .forceAddTag(WOODEN_SLABS)
+                .forceAddTag(WOODEN_STAIRS)
+        ;
+
         getOrCreateTagBuilder(CHIPPABLE_LOGS)
                 .add(OAK_LOG)
                 .add(OAK_WOOD)
@@ -191,7 +204,9 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(MANGROVE_LINTELS)
                 .add(BAMBOO_LINTELS)
                 .add(CHERRY_LINTELS)
-                .add(CACTUS_LINTELS);
+                .add(CACTUS_LINTELS)
+                .add(AZALEA_LINTELS)
+                .add(BLOOMING_AZALEA_LINTELS);
 
         getOrCreateTagBuilder(CHIPPED_PLANKS)
                 .add(CHIPPED_OAK_PLANKS)
@@ -419,7 +434,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
 
                 //Mosaic
                 .forceAddTag(WOODEN_MOSAICS)
-
 
                 //Sawmill
                 .add(SAWMILL)

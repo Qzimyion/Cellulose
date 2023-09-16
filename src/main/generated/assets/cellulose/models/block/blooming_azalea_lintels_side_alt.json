@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "edge": "cellulose:block/blooming_azalea_lintels_top",
+    "pane": "cellulose:block/blooming_azalea_frame"
+  }
+}

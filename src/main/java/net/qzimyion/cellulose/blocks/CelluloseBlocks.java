@@ -108,7 +108,11 @@ public class CelluloseBlocks
     public static final Block CHERRY_LINTELS = registerBlock("cherry_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
     public static final Block CACTUS_FRAME = registerBlock("cactus_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(1f,1f).burnable()));
     public static final Block CACTUS_LINTELS = registerBlock("cactus_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block AZALEA_FRAME = registerBlock("azalea_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
     public static final Block AZALEA_LINTELS = registerBlock("azalea_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block BLOOMING_AZALEA_FRAME = registerBlock("blooming_azalea_frame", new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+    public static final Block BLOOMING_AZALEA_LINTELS = registerBlock("blooming_azalea_lintels", new PaneBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SCAFFOLDING).nonOpaque().strength(0.3f,0.3f).burnable()));
+
 
     //This section adds engraved logs and wood (Idea by Amaro from C&C project and Textures by Raze#3510 on Discord)
     public static final Block ENGRAVED_OAK = registerBlock("engraved_oak_log", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
@@ -602,7 +606,7 @@ public class CelluloseBlocks
     public static final Block GLISTERING_APPLES = registerBlock("glistering_apple_block", new AppleBlock(FabricBlockSettings.copyOf(MANGROVE_PROPAGULE).burnable().sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
     public static final Block AZALEA_FLOWER_MAT = registerBlock("azalea_flower_mat", new FlowerbedBlock(FabricBlockSettings.copyOf(PINK_PETALS).burnable()));
     public static final Block APPLE_FLOWER_MAT = registerBlock("apple_flower_mat", new FlowerbedBlock(FabricBlockSettings.copyOf(PINK_PETALS).burnable()));
-    public static final Block AZALEA_FLOWERS = registerBlock("azalea_flowers", new VineFlowerBlocks(FabricBlockSettings.copyOf(PINK_PETALS).burnable()));
+    public static final Block AZALEA_FLOWERS = registerBlock("azalea_flowers", new GlowLichenBlock(FabricBlockSettings.copyOf(PINK_PETALS).burnable()));
 
 
     /*
@@ -685,17 +689,12 @@ public class CelluloseBlocks
     public static final Block CHARRED_OAK_LOG = registerBlock("charred_oak_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
     public static final Block CHARRED_HORIZONTAL_LOG = registerBlock("charred_horizontal_log", new PillarBlock(FabricBlockSettings.copyOf(CHARRED_OAK_LOG)));
     public static final Block CHARRED_BAMBOO = registerBlock("charred_bamboo", new PillarBlock(FabricBlockSettings.copyOf(CHARRED_OAK_LOG)));
-
     public static final Block CHARRED_OAK_WOOD = registerBlock("charred_oak_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
     public static final Block CHARRED_HORIZONTAL_WOOD = registerBlock("charred_horizontal_wood", new PillarBlock(FabricBlockSettings.copyOf(CHARRED_OAK_WOOD)));
-    public static final Block CHARRED_BAMBOO_WOOD = registerBlock("charred_bamboo_wood", new PillarBlock(FabricBlockSettings.copyOf(CHARRED_OAK_WOOD)));
-
     public static final Block STRIPPED_CHARRED_OAK_LOG = registerBlock("stripped_charred_oak_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
     public static final Block STRIPPED_CHARRED_HORIZONTAL_LOG = registerBlock("stripped_charred_horizontal_log", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_CHARRED_OAK_LOG)));
-
     public static final Block STRIPPED_CHARRED_OAK_WOOD = registerBlock("stripped_charred_oak_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
     public static final Block STRIPPED_CHARRED_HORIZONTAL_WOOD = registerBlock("stripped_charred_horizontal_wood", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_CHARRED_OAK_WOOD)));
-
     public static final Block ENGRAVED_CHARRED_OAK_LOG = registerBlock("engraved_charred_oak_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
     public static final Block ENGRAVED_CHARRED_BIRCH_LOG = registerBlock("engraved_charred_birch_log", new PillarBlock(FabricBlockSettings.copyOf(ENGRAVED_CHARRED_OAK_LOG)));
     public static final Block ENGRAVED_CHARRED_SPRUCE_LOG = registerBlock("engraved_charred_spruce_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
@@ -705,7 +704,6 @@ public class CelluloseBlocks
     public static final Block ENGRAVED_CHARRED_MANGROVE_LOG = registerBlock("engraved_charred_mangrove_log", new PillarBlock(FabricBlockSettings.copyOf(ENGRAVED_CHARRED_OAK_LOG)));
     public static final Block ENGRAVED_CHARRED_CHERRY_LOG = registerBlock("engraved_charred_cherry_log", new PillarBlock(FabricBlockSettings.copyOf(ENGRAVED_CHARRED_OAK_LOG)));
     public static final Block ENGRAVED_CHARRED_CACTUS_BUNDLE = registerBlock("engraved_charred_cactus_bundle", new PillarBlock(FabricBlockSettings.copyOf(ENGRAVED_CHARRED_OAK_LOG)));
-
     public static final Block ENGRAVED_CHARRED_OAK_WOOD = registerBlock("engraved_charred_oak_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
     public static final Block ENGRAVED_CHARRED_BIRCH_WOOD = registerBlock("engraved_charred_birch_wood", new PillarBlock(FabricBlockSettings.copyOf(ENGRAVED_CHARRED_OAK_WOOD)));
     public static final Block ENGRAVED_CHARRED_SPRUCE_WOOD = registerBlock("engraved_charred_spruce_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
@@ -715,11 +713,11 @@ public class CelluloseBlocks
     public static final Block ENGRAVED_CHARRED_MANGROVE_WOOD = registerBlock("engraved_charred_mangrove_wood", new PillarBlock(FabricBlockSettings.copyOf(ENGRAVED_CHARRED_OAK_WOOD)));
     public static final Block ENGRAVED_CHARRED_CHERRY_WOOD = registerBlock("engraved_charred_cherry_wood", new PillarBlock(FabricBlockSettings.copyOf(ENGRAVED_CHARRED_OAK_WOOD)));
     public static final Block ENGRAVED_CHARRED_CACTUS_CROWN = registerBlock("engraved_charred_cactus_crown", new PillarBlock(FabricBlockSettings.copyOf(ENGRAVED_CHARRED_OAK_WOOD)));
-
     public static final Block CHARRED_CHIPPED_LOG = registerBlock("charred_chipped_log", new PillarBlock(FabricBlockSettings.copyOf(CHIPPED_OAK)));
-
-    public static final Block CHARRED_PLANK_PILLARS = registerBlock("charred_plank_pillar", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
-    public static final Block CHARRED_VERTICAL_PLANK_PILLARS = registerBlock("charred_vertical_plank_pillar", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
+    public static final Block CHARRED_CHIPPED_HORIZONTAL_LOG = registerBlock("charred_chipped_horizontal_log", new PillarBlock(FabricBlockSettings.copyOf(CHIPPED_OAK)));
+    public static final Block CHARRED_PILLAR = registerBlock("charred_pillar", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).sounds(BlockSoundGroup.NETHERRACK)));
+    public static final Block CHARRED_PLANKS_PILLAR = registerBlock("charred_plank_pillar", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).sounds(BlockSoundGroup.NETHERRACK)));
+    public static final Block CHARRED_VERTICAL_PLANK_PILLAR = registerBlock("charred_vertical_plank_pillar", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).sounds(BlockSoundGroup.NETHERRACK)));
     public static final Block CHARRED_BEAM = registerBlock("charred_beam", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG).burnable().sounds(BlockSoundGroup.NETHERRACK).instrument(Instrument.COW_BELL)));
     /*
      Fences

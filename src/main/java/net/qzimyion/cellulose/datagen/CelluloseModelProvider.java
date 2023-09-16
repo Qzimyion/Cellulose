@@ -531,7 +531,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         //(Storage Blocks)
         blockStateModelGenerator.registerSimpleCubeAll(BLOCK_OF_STICKS);
         blockStateModelGenerator.registerSimpleCubeAll(BLOCK_OF_CHARCOAL);
-        blockStateModelGenerator.registerFlowerbed(AZALEA_FLOWERS);
+        blockStateModelGenerator.registerWallPlant(AZALEA_FLOWERS);
 
         //Door
         blockStateModelGenerator.registerDoor(CHARRED_OAK_DOOR);
@@ -570,6 +570,8 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerGlassPane(BAMBOO_FRAME, BAMBOO_LINTELS);
         blockStateModelGenerator.registerGlassPane(CHERRY_FRAME, CHERRY_LINTELS);
         blockStateModelGenerator.registerGlassPane(CACTUS_FRAME, CACTUS_LINTELS);
+        blockStateModelGenerator.registerGlassPane(AZALEA_FRAME, AZALEA_LINTELS);
+        blockStateModelGenerator.registerGlassPane(BLOOMING_AZALEA_FRAME, BLOOMING_AZALEA_LINTELS);
 
 
         /*
@@ -583,6 +585,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         Cactus.log(CACTUS_BUNDLE);
         BeamCactus.wood(CACTUS_BEAM);
         StrippedCactus.log(STRIPPED_CACTUS);
+        StrippedCactus.wood(STRIPPED_CACTUS_CROWN);
         EngravedCactus.log(ENGRAVED_CACTUS);
         ChippedCactus.log(CHIPPED_CACTUS);
         PlankPillarCactus.log(CACTUS_PLANK_PILLARS);
