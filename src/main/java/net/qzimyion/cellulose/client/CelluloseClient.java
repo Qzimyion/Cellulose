@@ -25,36 +25,36 @@ public class CelluloseClient implements ClientModInitializer
 
         //Frames
         BlockRenderLayerMap.INSTANCE.putBlock(OAK_FRAME, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(BIRCH_FRAME, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(BIRCH_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(SPRUCE_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(DARK_OAK_FRAME, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_FRAME, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(ACACIA_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(CRIMSON_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(WARPED_FRAME, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(MANGROVE_FRAME, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(MANGROVE_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(BAMBOO_FRAME, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_FRAME, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_FRAME, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_FRAME, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_FRAME, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_FRAME, Render);
 
 
         //Lintels
         BlockRenderLayerMap.INSTANCE.putBlock(OAK_LINTELS, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(BIRCH_LINTELS, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(BIRCH_LINTELS, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(SPRUCE_LINTELS, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(DARK_OAK_LINTELS, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_LINTELS, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_LINTELS, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(ACACIA_LINTELS, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(CRIMSON_LINTELS, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(WARPED_FRAME, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(MANGROVE_LINTELS, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(MANGROVE_LINTELS, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(BAMBOO_LINTELS, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_LINTELS, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_LINTELS, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_LINTELS, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_LINTELS, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_LINTELS, Render);
 
         //Nature
         BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_FLOWERS, Render);
