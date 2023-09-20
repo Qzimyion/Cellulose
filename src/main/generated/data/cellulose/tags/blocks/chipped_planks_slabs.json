@@ -4,6 +4,20 @@
     "cellulose:chipped_azalea_slab",
     "cellulose:chipped_blooming_azalea_slab",
     "cellulose:chipped_warped_slab",
-    "cellulose:chipped_crimson_slab"
+    "cellulose:chipped_crimson_slab",
+    "cellulose:chipped_vertical_oak_slab",
+    "cellulose:chipped_vertical_birch_slab",
+    "cellulose:chipped_vertical_spruce_slab",
+    "cellulose:chipped_vertical_dark_oak_slab",
+    "cellulose:chipped_vertical_jungle_slab",
+    "cellulose:chipped_vertical_acacia_slab",
+    "cellulose:chipped_vertical_warped_slab",
+    "cellulose:chipped_vertical_crimson_slab",
+    "cellulose:chipped_vertical_mangrove_slab",
+    "cellulose:chipped_vertical_bamboo_slab",
+    "cellulose:chipped_vertical_cherry_slab",
+    "cellulose:chipped_vertical_cactus_slab",
+    "cellulose:chipped_vertical_azalea_slab",
+    "cellulose:chipped_vertical_blooming_azalea"
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "minecraft:wooden_stairs",
+  "key": {
+    "#": {
+      "item": "cellulose:mangrove_mosaic"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "cellulose:mangrove_mosaic_stairs"
+  },
+  "show_notification": true
+}

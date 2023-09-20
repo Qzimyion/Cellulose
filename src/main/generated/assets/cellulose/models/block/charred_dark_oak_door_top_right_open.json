@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_right_open",
-  "textures": {
-    "bottom": "cellulose:block/charred_dark_oak_door_bottom",
-    "top": "cellulose:block/charred_dark_oak_door_top"
-  }
-}
