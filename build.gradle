@@ -65,7 +65,6 @@ dependencies {
 	//JEI API
 	modCompileOnlyApi("mezz.jei:jei-${mc_version}-fabric-api:${jei_version}")
 	modRuntimeOnly("mezz.jei:jei-${mc_version}-fabric:${jei_version}")
-
 	processResources {
 		inputs.property "version", project.version
 
