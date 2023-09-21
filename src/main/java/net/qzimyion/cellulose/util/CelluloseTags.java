@@ -1,6 +1,7 @@
 package net.qzimyion.cellulose.util;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -33,6 +34,7 @@ public class CelluloseTags
         //Plants
         public static final TagKey<Block> FLOWERABLE = createTag("flowerable");
         public static final TagKey<Block> DEFLOWER = createTag("deflower");
+        public static final TagKey<Block> LOTUS = createTag("lotus");
 
 
         //Woodsets
@@ -59,6 +61,7 @@ public class CelluloseTags
         public static final TagKey <Item> CACTUS_LOGS = createTag("cactus_logs");
         public static final TagKey <Item> AZALEA_LOGS = createTag("azalea_logs");
         public static final TagKey <Item> ACORNS = createTag("acorns");
+        public static final TagKey <Item> LOTUS = createTag("lotus");
 
         private static TagKey <Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, name));

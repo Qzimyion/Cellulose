@@ -10,6 +10,7 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
+import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.util.CelluloseTags;
 
@@ -270,11 +271,13 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
         getOrCreateTagBuilder(CelluloseTags.Items.AZALEA_FLOWER)
                 .add(Item.fromBlock(AZALEA_FLOWERS));
 
-        //Charring
-        getOrCreateTagBuilder(CelluloseTags.Items.CHARRING_ITEMS)
-                .add(Items.BLAZE_POWDER)
-                .add(Items.MAGMA_CREAM)
-                .add(Items.FLINT_AND_STEEL)
-                .add(Items.FIRE_CHARGE);
+        //Lotus
+        getOrCreateTagBuilder(CelluloseTags.Items.LOTUS)
+                .add((CelluloseItems.LOTUS))
+                .add((CelluloseItems.WHITE_LOTUS))
+                .add((CelluloseItems.YELLOW_LOTUS))
+                .add((CelluloseItems.BLUE_LOTUS))
+                .add((CelluloseItems.PINK_LOTUS))
+                .add((CelluloseItems.INDIGO_LOTUS));
     }
 }
