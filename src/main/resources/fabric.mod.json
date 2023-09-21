@@ -41,6 +41,8 @@
 
 	},
 	"suggests": {
-		"another-mod": "https://modrinth.com/mod/continuity/version/3.0.0-beta.2+1.20"
+		"another-mod": "https://modrinth.com/mod/continuity/version/3.0.0-beta.2+1.20",
+		"required-dependency": "https://modrinth.com/mod/fusion"
+
 	}
 }
