@@ -126,6 +126,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerSlabRecipe(exporter, BUILDING_BLOCKS,VERTICAL_CACTUS_SLAB, VERTICAL_CACTUS_PLANKS);
 
         //This section adds vertical plank recipes (STAIRS)
+        
 
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_BIRCH_STAIR, 4)
                 .pattern("#  ")
@@ -232,6 +233,21 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerSlabRecipe(exporter, BUILDING_BLOCKS,CHERRY_MOSAIC_SLABS, CHERRY_MOSAIC);
 
         //This section adds mosaic recipes (STAIRS)
+        createStairsRecipe(OAK_MOSAIC_STAIRS, OAK_MOSAIC);
+        createStairsRecipe(BIRCH_MOSAIC_STAIRS, BIRCH_MOSAIC);
+        createStairsRecipe(SPRUCE_MOSAIC_STAIRS, SPRUCE_MOSAIC);
+        createStairsRecipe(DARK_OAK_MOSAIC_STAIRS, DARK_OAK_MOSAIC);
+        createStairsRecipe(JUNGLE_MOSAIC_STAIRS, JUNGLE_MOSAIC);
+        createStairsRecipe(ACACIA_MOSAIC_STAIRS, ACACIA_MOSAIC);
+        createStairsRecipe(CRIMSON_MOSAIC_STAIRS, CRIMSON_MOSAIC);
+        createStairsRecipe(WARPED_MOSAIC_STAIRS, WARPED_MOSAIC);
+        createStairsRecipe(MANGROVE_MOSAIC_STAIRS, MANGROVE_MOSAIC);
+        createStairsRecipe(CHERRY_MOSAIC_STAIRS, CHERRY_MOSAIC);
+        createStairsRecipe(CACTUS_MOSAIC_STAIRS, CACTUS_MOSAIC);
+        createStairsRecipe(AZALEA_MOSAIC_STAIRS, AZALEA_MOSAIC);
+        createStairsRecipe(BLOOMING_AZALEA_MOSAIC_STAIRS, BLOOMING_AZALEA_MOSAIC);
+
+
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, BIRCH_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
@@ -323,10 +339,10 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .pattern("## ")
                 .input('#', CACTUS).criterion(FabricRecipeProvider.hasItem(CACTUS), FabricRecipeProvider.conditionsFromTag(PLANKS))
                 .group("cellulose:cactus_wood").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_BUNDLE)));
-        offerPlanksRecipe(CACTUS_BUNDLE, 4);
-        offerPlanksRecipe(CACTUS_CROWN, 4);
-        offerPlanksRecipe(STRIPPED_CACTUS, 4);
-        offerPlanksRecipe(STRIPPED_CACTUS_CROWN, 4);
+        offerPlanksRecipe(CACTUS_BUNDLE);
+        offerPlanksRecipe(CACTUS_CROWN);
+        offerPlanksRecipe(STRIPPED_CACTUS);
+        offerPlanksRecipe(STRIPPED_CACTUS_CROWN);
         offerSlabRecipe(exporter, BUILDING_BLOCKS, CACTUS_SLAB, CACTUS_PLANKS);
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_STAIRS, 4)
                 .pattern("#  ")
@@ -515,7 +531,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
 
         //Red Mushroom
 
-        //Apple
+        //Petrified wood
 
 
         final List<ItemConvertible> PAPER_SMELTING = Util.make(Lists.newArrayList(), list -> {
@@ -525,7 +541,10 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerSmelting(exporter, PAPER_SMELTING, MISC, BLOCK_OF_PAPER, 0.15F, 200, "misc");
     }
 
-    private void offerPlanksRecipe(Block cactusBundle, int count)
+    private void createStairsRecipe(Block oakMosaicStairs, Block oakMosaic) {
+    }
+
+    private void offerPlanksRecipe(Block block)
     {
 
     }
@@ -541,4 +560,5 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
     public static void offerSawmillingRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input, int count) {
         createSawmilling(Ingredient.ofItems(input), output, count).criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input)).offerTo(exporter, RecipeProvider.convertBetween(output, input) + "_sawmilling");
     }
+
 }
