@@ -4,8 +4,10 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.ParticleUtil;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.PickaxeItem;
@@ -15,11 +17,14 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.world.event.GameEvent;
 import net.qzimyion.cellulose.Cellulose;
-import net.qzimyion.cellulose.blocks.CelluloseBlocks;
+import net.qzimyion.cellulose.blocks.ModBlockProperties;
+import net.qzimyion.cellulose.blocks.custom_blocks.lotus.LotusBlock;
 import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.util.CelluloseTags;
 
@@ -40,15 +45,11 @@ public class CelluloseEvents {
     public static final HashMap<Block, Block> SLAB_REPAIR = new HashMap<>();
     public static final HashMap<Block, Block> STAIR_REPAIR = new HashMap<>();
     public static final HashMap<Block, Block> FLOWERING = new HashMap<>();
+    public static final HashMap<Entity, Entity> FLOWERING_ENTITY = new HashMap<>();
     public static final HashMap<Block, Block> DEFLOWER = new HashMap<>();
+    public static final HashMap<Entity, Entity> DEFLOWER_ENTITY = new HashMap<>();
+    public static final HashMap<Item, Block> LILY_FLOWERING = new HashMap<>();
 
-    ///Wood Charring
-    public static final HashMap<Block, Block> CHARRING = new HashMap<>();
-    public static final HashMap<Block, Block> FENCE_GATE_CHARRING = new HashMap<>();
-    public static final HashMap<Block, Block> DOOR_CHARRING = new HashMap<>();
-    public static final HashMap<Block, Block> TRAPDOOR_CHARRING = new HashMap<>();
-    public static final HashMap<Block, Block> SIGN_CHARRING = new HashMap<>();
-    public static final HashMap<Entity, Entity> BOAT_CHARRING = new HashMap<>();
 
     static {
         //Log Chipping
@@ -99,6 +100,20 @@ public class CelluloseEvents {
         PLANK_CHIPPING.put(CACTUS_PLANKS, CHIPPED_CACTUS_PLANKS);
         PLANK_CHIPPING.put(AZALEA_PLANKS, CHIPPED_AZALEA_PLANKS);
         PLANK_CHIPPING.put(BLOOMING_AZALEA_PLANKS, CHIPPED_BLOOMING_AZALEA_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_OAK_PLANKS, CHIPPED_VERTICAL_OAK_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_BIRCH_PLANKS, CHIPPED_VERTICAL_BIRCH_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_SPRUCE_PLANKS, CHIPPED_VERTICAL_SPRUCE_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_DARK_OAK_PLANKS, CHIPPED_VERTICAL_DARK_OAK_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_JUNGLE_PLANKS, CHIPPED_VERTICAL_JUNGLE_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_ACACIA_PLANKS, CHIPPED_VERTICAL_ACACIA_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_WARPED_PLANKS, CHIPPED_VERTICAL_WARPED_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_CRIMSON_PLANKS, CHIPPED_VERTICAL_CRIMSON_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_MANGROVE_PLANKS, CHIPPED_VERTICAL_MANGROVE_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_BAMBOO_PLANKS, CHIPPED_VERTICAL_BAMBOO_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_CHERRY_PLANKS, CHIPPED_VERTICAL_CHERRY_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_CACTUS_PLANKS, CHIPPED_VERTICAL_CACTUS_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_AZALEA_PLANKS, CHIPPED_VERTICAL_AZALEA_PLANKS);
+        PLANK_CHIPPING.put(VERTICAL_BLOOMING_AZALEA_PLANKS, CHIPPED_VERTICAL_BLOOMING_AZALEA_PLANKS);
         //Slab Chipping
         SLAB_CHIPPING.put(OAK_SLAB, CHIPPED_OAK_SLAB);
         SLAB_CHIPPING.put(BIRCH_SLAB, CHIPPED_BIRCH_SLAB);
@@ -114,6 +129,20 @@ public class CelluloseEvents {
         SLAB_CHIPPING.put(CACTUS_SLAB, CHIPPED_CACTUS_SLAB);
         SLAB_CHIPPING.put(AZALEA_SLAB, CHIPPED_AZALEA_SLAB);
         SLAB_CHIPPING.put(BLOOMING_AZALEA_SLAB, CHIPPED_BLOOMING_AZALEA_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_OAK_SLAB, CHIPPED_VERTICAL_OAK_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_BIRCH_SLAB, CHIPPED_VERTICAL_BIRCH_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_SPRUCE_SLAB, CHIPPED_VERTICAL_SPRUCE_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_DARK_OAK_SLAB, CHIPPED_VERTICAL_DARK_OAK_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_JUNGLE_SLAB, CHIPPED_VERTICAL_JUNGLE_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_ACACIA_SLAB, CHIPPED_VERTICAL_ACACIA_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_WARPED_SLAB, CHIPPED_VERTICAL_WARPED_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_CRIMSON_SLAB, CHIPPED_VERTICAL_CRIMSON_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_MANGROVE_SLAB, CHIPPED_VERTICAL_MANGROVE_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_BAMBOO_SLAB, CHIPPED_VERTICAL_BAMBOO_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_CHERRY_SLAB, CHIPPED_VERTICAL_CHERRY_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_CACTUS_SLAB, CHIPPED_VERTICAL_CACTUS_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_AZALEA_SLAB, CHIPPED_VERTICAL_AZALEA_SLAB);
+        SLAB_CHIPPING.put(VERTICAL_BLOOMING_AZALEA_SLAB, CHIPPED_VERTICAL_BLOOMING_AZALEA_SLAB);
         //Stair Chipping
         STAIR_CHIPPING.put(OAK_STAIRS, CHIPPED_OAK_STAIR);
         STAIR_CHIPPING.put(BIRCH_STAIRS, CHIPPED_BIRCH_STAIR);
@@ -129,6 +158,20 @@ public class CelluloseEvents {
         STAIR_CHIPPING.put(CACTUS_STAIRS, CHIPPED_CACTUS_STAIR);
         STAIR_CHIPPING.put(AZALEA_STAIRS, CHIPPED_AZALEA_STAIR);
         STAIR_CHIPPING.put(BLOOMING_AZALEA_STAIRS, CHIPPED_BLOOMING_AZALEA_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_OAK_STAIR, CHIPPED_VERTICAL_OAK_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_BIRCH_STAIR, CHIPPED_VERTICAL_BIRCH_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_SPRUCE_STAIR, CHIPPED_VERTICAL_SPRUCE_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_DARK_OAK_STAIR, CHIPPED_VERTICAL_DARK_OAK_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_JUNGLE_STAIR, CHIPPED_VERTICAL_JUNGLE_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_ACACIA_STAIR, CHIPPED_VERTICAL_ACACIA_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_WARPED_STAIR, CHIPPED_VERTICAL_WARPED_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_CRIMSON_STAIR, CHIPPED_VERTICAL_CRIMSON_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_MANGROVE_STAIR, CHIPPED_VERTICAL_MANGROVE_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_BAMBOO_STAIR, CHIPPED_VERTICAL_BAMBOO_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_CHERRY_STAIR, CHIPPED_VERTICAL_CHERRY_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_CACTUS_STAIR, CHIPPED_VERTICAL_CACTUS_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_AZALEA_STAIR, CHIPPED_VERTICAL_AZALEA_STAIR);
+        STAIR_CHIPPING.put(VERTICAL_BLOOMING_AZALEA_STAIR, CHIPPED_VERTICAL_BLOOMING_AZALEA_STAIR);
         //Plank Repairing
         PLANK_REPAIR.put(CHIPPED_WARPED_PLANKS, WARPED_PLANKS);
         PLANK_REPAIR.put(CHIPPED_CRIMSON_PLANKS, CRIMSON_PLANKS);
@@ -184,81 +227,13 @@ public class CelluloseEvents {
         FLOWERING.put(ENGRAVED_AZALEA, ENGRAVED_BLOOMING_AZALEA);
         FLOWERING.put(ENGRAVED_AZALEA_WOOD, ENGRAVED_BLOOMING_AZALEA_WOOD);
 
-        ///Charring
-        CHARRING.put(OAK_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(BIRCH_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(SPRUCE_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(DARK_OAK_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(JUNGLE_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(ACACIA_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(MANGROVE_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(CHERRY_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(CACTUS_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(AZALEA_PLANKS, CHARRED_PLANKS);
-        CHARRING.put(BAMBOO_PLANKS, CHARRED_BAMBOO_PLANKS);
-        CHARRING.put(OAK_SLAB, CHARRED_SLABS);
-        CHARRING.put(BIRCH_SLAB, CHARRED_SLABS);
-        CHARRING.put(SPRUCE_SLAB, CHARRED_SLABS);
-        CHARRING.put(DARK_OAK_SLAB, CHARRED_SLABS);
-        CHARRING.put(JUNGLE_SLAB, CHARRED_SLABS);
-        CHARRING.put(ACACIA_SLAB, CHARRED_SLABS);
-        CHARRING.put(MANGROVE_SLAB, CHARRED_SLABS);
-        CHARRING.put(CHERRY_SLAB, CHARRED_SLABS);
-        CHARRING.put(CACTUS_SLAB, CHARRED_SLABS);
-        CHARRING.put(AZALEA_SLAB, CHARRED_SLABS);
-        CHARRING.put(BAMBOO_SLAB, CHARRED_BAMBOO_SLABS);
-        CHARRING.put(OAK_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(BIRCH_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(SPRUCE_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(DARK_OAK_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(JUNGLE_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(ACACIA_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(MANGROVE_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(CHERRY_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(CACTUS_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(AZALEA_STAIRS, CHARRED_STAIRS);
-        CHARRING.put(BAMBOO_STAIRS, CHARRED_BAMBOO_STAIRS);
-        CHARRING.put(OAK_LOG, CHARRED_OAK_LOG);
-        CHARRING.put(BIRCH_LOG, CHARRED_HORIZONTAL_LOG);
-        CHARRING.put(SPRUCE_LOG, CHARRED_OAK_LOG);
-        CHARRING.put(DARK_OAK_LOG, CHARRED_OAK_LOG);
-        CHARRING.put(JUNGLE_LOG, CHARRED_HORIZONTAL_LOG);
-        CHARRING.put(ACACIA_LOG, CHARRED_OAK_LOG);
-        CHARRING.put(MANGROVE_LOG, CHARRED_HORIZONTAL_LOG);
-        CHARRING.put(CHERRY_LOG, CHARRED_HORIZONTAL_LOG);
-        CHARRING.put(CACTUS_BUNDLE, CHARRED_OAK_LOG);
-        CHARRING.put(AZALEA_LOG, CHARRED_OAK_LOG);
-        CHARRING.put(BAMBOO_BLOCK, CHARRED_BAMBOO);
-        CHARRING.put(OAK_WOOD, CHARRED_OAK_WOOD);
-        CHARRING.put(BIRCH_WOOD, CHARRED_HORIZONTAL_WOOD);
-        CHARRING.put(SPRUCE_WOOD, CHARRED_OAK_WOOD);
-        CHARRING.put(DARK_OAK_WOOD, CHARRED_OAK_WOOD);
-        CHARRING.put(JUNGLE_WOOD, CHARRED_HORIZONTAL_WOOD);
-        CHARRING.put(ACACIA_WOOD, CHARRED_OAK_WOOD);
-        CHARRING.put(MANGROVE_WOOD, CHARRED_HORIZONTAL_WOOD);
-        CHARRING.put(CHERRY_WOOD, CHARRED_HORIZONTAL_WOOD);
-        CHARRING.put(CACTUS_CROWN, CHARRED_OAK_LOG);
-        CHARRING.put(AZALEA_WOOD, CHARRED_OAK_WOOD);
-        DOOR_CHARRING.put(OAK_DOOR, CHARRED_OAK_DOOR);
-        DOOR_CHARRING.put(BIRCH_DOOR, CHARRED_BIRCH_DOOR);
-        DOOR_CHARRING.put(SPRUCE_DOOR, CHARRED_SPRUCE_DOOR);
-        DOOR_CHARRING.put(DARK_OAK_DOOR, CHARRED_DARK_OAK_DOOR);
-        DOOR_CHARRING.put(JUNGLE_DOOR, CHARRED_JUNGLE_DOOR);
-        DOOR_CHARRING.put(ACACIA_DOOR, CHARRED_ACACIA_DOOR);
-        DOOR_CHARRING.put(MANGROVE_DOOR, CHARRED_MANGROVE_DOOR);
-        DOOR_CHARRING.put(BAMBOO_DOOR, CHARRED_BAMBOO_DOOR);
-        DOOR_CHARRING.put(CHERRY_DOOR, CHARRED_CHERRY_DOOR);
-        DOOR_CHARRING.put(CACTUS_DOOR, CHARRED_CACTUS_DOOR);
-        TRAPDOOR_CHARRING.put(OAK_TRAPDOOR, CHARRED_OAK_TRAPDOOR);
-        TRAPDOOR_CHARRING.put(BIRCH_TRAPDOOR, CHARRED_BIRCH_TRAPDOOR);
-        TRAPDOOR_CHARRING.put(SPRUCE_TRAPDOOR, CHARRED_SPRUCE_TRAPDOOR);
-        TRAPDOOR_CHARRING.put(DARK_OAK_TRAPDOOR, CHARRED_DARK_OAK_TRAPDOOR);
-        TRAPDOOR_CHARRING.put(JUNGLE_TRAPDOOR, CHARRED_JUNGLE_TRAPDOOR);
-        TRAPDOOR_CHARRING.put(ACACIA_TRAPDOOR, CHARRED_ACACIA_TRAPDOOR);
-        TRAPDOOR_CHARRING.put(MANGROVE_TRAPDOOR, CHARRED_MANGROVE_TRAPDOOR);
-        TRAPDOOR_CHARRING.put(BAMBOO_TRAPDOOR, CHARRED_BAMBOO_TRAPDOOR);
-        TRAPDOOR_CHARRING.put(CHERRY_TRAPDOOR, CHARRED_CHERRY_TRAPDOOR);
-        TRAPDOOR_CHARRING.put(CACTUS_TRAPDOOR, CHARRED_CACTUS_TRAPDOOR);
+        //Lily flowering
+        LILY_FLOWERING.put(CelluloseItems.LOTUS, LOTUS_LILYPAD);
+        LILY_FLOWERING.put(CelluloseItems.WHITE_LOTUS, WHITE_LOTUS_LILYPAD);
+        LILY_FLOWERING.put(CelluloseItems.YELLOW_LOTUS, YELLOW_LOTUS_LILYPAD);
+        LILY_FLOWERING.put(CelluloseItems.PINK_LOTUS, PINK_LOTUS_LILYPAD);
+        LILY_FLOWERING.put(CelluloseItems.BLUE_LOTUS, BLUE_LOTUS_LILYPAD);
+        LILY_FLOWERING.put(CelluloseItems.INDIGO_LOTUS, INDIGO_LOTUS_LILYPAD);
 
 
     }
@@ -272,6 +247,8 @@ public class CelluloseEvents {
             BlockPos fixedPos = targetPos.offset(hitResult.getSide());
             BlockState State = world.getBlockState(Pos);
             ItemStack heldItem = player.getStackInHand(hand);
+            Item item = heldItem.getItem();
+            Block block;
 
             //Log Chipping
             if (heldItem.getItem() instanceof PickaxeItem && State.isIn(CelluloseTags.Blocks.CHIPPABLE_LOGS)) {
@@ -369,42 +346,16 @@ public class CelluloseEvents {
                 }
                 return ActionResult.SUCCESS;
             }
-
-            ///Charring
-            if (heldItem.isIn(CelluloseTags.Items.CHARRING_ITEMS) && player.isSneaking() && targetBlock.isIn(CelluloseTags.Blocks.CHARRABLE_WOOD)){
-                world.playSound(player, Pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                ParticleUtil.spawnParticle(world, Pos, ParticleTypes.SMOKE, UniformIntProvider.create(3, 5));
-                ParticleUtil.spawnParticle(world, Pos, ParticleTypes.SMALL_FLAME, UniformIntProvider.create(3, 5));
+            //Lily flowering
+            if (LILY_FLOWERING.containsKey(heldItem.getItem()) && targetBlock.isOf(LILY_PAD)) {
+                Block bloomblock = LILY_FLOWERING.get(heldItem.getItem());
+                world.playSound(player, Pos, SoundEvents.BLOCK_MOSS_PLACE, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 if (player instanceof ServerPlayerEntity) {
-                    Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, Pos, heldItem);
-                    if (!player.isCreative()) heldItem.damage(1, player, null);
-                    world.setBlockState(Pos,  CHARRING.get(targetBlock.getBlock()).getStateWithProperties(State));
+                    Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, targetPos, heldItem);
+                    if (!player.isCreative()) heldItem.decrement(1);
+                    world.setBlockState(targetPos, bloomblock.getStateWithProperties(targetBlock));
                 }
-                return ActionResult.SUCCESS;
             }
-            if (heldItem.isIn(CelluloseTags.Items.CHARRING_ITEMS) && player.isSneaking() && targetBlock.isIn(BlockTags.WOODEN_DOORS)){
-                world.playSound(player, Pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                ParticleUtil.spawnParticle(world, Pos, ParticleTypes.SMOKE, UniformIntProvider.create(3, 5));
-                ParticleUtil.spawnParticle(world, Pos, ParticleTypes.SMALL_FLAME, UniformIntProvider.create(3, 5));
-                if (player instanceof ServerPlayerEntity) {
-                    Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, Pos, heldItem);
-                    if (!player.isCreative()) heldItem.damage(1, player, null);
-                    world.setBlockState(Pos,  DOOR_CHARRING.get(targetBlock.getBlock()).getStateWithProperties(State));
-                }
-                return ActionResult.SUCCESS;
-            }
-            if (heldItem.isIn(CelluloseTags.Items.CHARRING_ITEMS) && player.isSneaking() && targetBlock.isIn(BlockTags.WOODEN_TRAPDOORS)){
-                world.playSound(player, Pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                ParticleUtil.spawnParticle(world, Pos, ParticleTypes.SMOKE, UniformIntProvider.create(3, 5));
-                ParticleUtil.spawnParticle(world, Pos, ParticleTypes.SMALL_FLAME, UniformIntProvider.create(3, 5));
-                if (player instanceof ServerPlayerEntity) {
-                    Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, Pos, heldItem);
-                    if (!player.isCreative()) heldItem.damage(1, player, null);
-                    world.setBlockState(Pos,  TRAPDOOR_CHARRING.get(targetBlock.getBlock()).getStateWithProperties(State));
-                }
-                return ActionResult.SUCCESS;
-            }
-
             return ActionResult.PASS;
         });
 
