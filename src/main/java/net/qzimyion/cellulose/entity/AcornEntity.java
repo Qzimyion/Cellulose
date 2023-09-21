@@ -4,7 +4,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -16,16 +15,16 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.items.CelluloseItems;
 
-public class AcornThrowEntity extends ThrownItemEntity {
-    public AcornThrowEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
+public class AcornEntity extends ThrownItemEntity {
+    public AcornEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super((EntityType<? extends ThrownItemEntity>)entityType, world);
     }
 
-    public AcornThrowEntity(World world, LivingEntity owner) {
+    public AcornEntity(World world, LivingEntity owner) {
         super((EntityType<? extends ThrownItemEntity>)EntityType.SNOWBALL, owner, world);
     }
 
-    public AcornThrowEntity(World world, double x, double y, double z) {
+    public AcornEntity(World world, double x, double y, double z) {
         super((EntityType<? extends ThrownItemEntity>)EntityType.SNOWBALL, x, y, z, world);
     }
 

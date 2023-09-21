@@ -15,11 +15,12 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
+@SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
 public class BarricadeBlock extends HorizontalConnectingBlock implements Waterloggable {
 
     public BarricadeBlock(AbstractBlock.Settings settings) {
         super(4.0f, 4.0f, 16.0f, 16.0f, 16.0f, settings);
-        this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(NORTH, false)).with(EAST, false)).with(SOUTH, false)).with(WEST, false)).with(WATERLOGGED, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(NORTH, false).with(EAST, false).with(SOUTH, false).with(WEST, false).with(WATERLOGGED, false));
     }
 
     @Override
@@ -35,16 +36,16 @@ public class BarricadeBlock extends HorizontalConnectingBlock implements Waterlo
         BlockState blockState2 = blockView.getBlockState(blockPos3);
         BlockState blockState3 = blockView.getBlockState(blockPos4);
         BlockState blockState4 = blockView.getBlockState(blockPos5);
-        return (BlockState) ((BlockState)((BlockState)((BlockState)((BlockState)this.getDefaultState().with(NORTH, this.connectsTo(blockState, blockState.isSideSolidFullSquare(blockView, blockPos2, Direction.SOUTH)))).with(SOUTH, this.connectsTo(blockState2, blockState2.isSideSolidFullSquare(blockView, blockPos3, Direction.NORTH)))).with(WEST, this.connectsTo(blockState3, blockState3.isSideSolidFullSquare(blockView, blockPos4, Direction.EAST)))).with(EAST, this.connectsTo(blockState4, blockState4.isSideSolidFullSquare(blockView, blockPos5, Direction.WEST)))).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+        return this.getDefaultState().with(NORTH, this.connectsTo(blockState, blockState.isSideSolidFullSquare(blockView, blockPos2, Direction.SOUTH))).with(SOUTH, this.connectsTo(blockState2, blockState2.isSideSolidFullSquare(blockView, blockPos3, Direction.NORTH))).with(WEST, this.connectsTo(blockState3, blockState3.isSideSolidFullSquare(blockView, blockPos4, Direction.EAST))).with(EAST, this.connectsTo(blockState4, blockState4.isSideSolidFullSquare(blockView, blockPos5, Direction.WEST))).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
     }
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (state.get(WATERLOGGED).booleanValue()) {
+        if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
         if (direction.getAxis().isHorizontal()) {
-            return (BlockState)state.with((Property)FACING_PROPERTIES.get(direction), this.connectsTo(neighborState, neighborState.isSideSolidFullSquare(world, neighborPos, direction.getOpposite())));
+            return state.with(FACING_PROPERTIES.get(direction), this.connectsTo(neighborState, neighborState.isSideSolidFullSquare(world, neighborPos, direction.getOpposite())));
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
@@ -60,7 +61,7 @@ public class BarricadeBlock extends HorizontalConnectingBlock implements Waterlo
             if (!direction.getAxis().isHorizontal()) {
                 return true;
             }
-            if (((Boolean)state.get((Property)FACING_PROPERTIES.get(direction))).booleanValue() && ((Boolean)stateFrom.get((Property)FACING_PROPERTIES.get(direction.getOpposite()))).booleanValue()) {
+            if ((Boolean) state.get((Property) FACING_PROPERTIES.get(direction)) && (Boolean) stateFrom.get((Property) FACING_PROPERTIES.get(direction.getOpposite()))) {
                 return true;
             }
         }

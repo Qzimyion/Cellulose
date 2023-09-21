@@ -369,22 +369,16 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         //Fences and Fence-gates
         addDrop(CACTUS_FENCE);
         addDrop(CACTUS_FENCE_GATE);
-        addDrop(CHARRED_FENCE, dropsWithSilkTouch(CHARRED_FENCE));
-        addDrop(CHARRED_FENCE_GATE, dropsWithSilkTouch(CHARRED_FENCE_GATE));
 
         //Button
         addDrop(CACTUS_BUTTON);
-        addDrop(CHARRED_BUTTON, dropsWithSilkTouch(CHARRED_BUTTON));
 
         //Pressure Plate
         addDrop(CACTUS_PRESSURE_PLATE);
-        addDrop(CHARRED_PRESSURE_PLATE, dropsWithSilkTouch(CHARRED_PRESSURE_PLATE));
 
         //Door and Trapdoors
         addDrop(CACTUS_DOOR, doorDrops(CACTUS_DOOR));
-        addDrop(CHARRED_CACTUS_DOOR, doorDrops(CHARRED_CACTUS_DOOR));
         addDrop(CACTUS_TRAPDOOR);
-        addDrop(CHARRED_CACTUS_TRAPDOOR, dropsWithSilkTouch(CHARRED_CACTUS_TRAPDOOR));
 
         //Sawmill
         addDrop(SAWMILL);
@@ -405,9 +399,6 @@ public class CelluloseLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(CACTUS_FRAME, dropsWithSilkTouch(CACTUS_FRAME));
         addDrop(AZALEA_FRAME, dropsWithSilkTouch(AZALEA_FRAME));
         addDrop(BLOOMING_AZALEA_FRAME, dropsWithSilkTouch(BLOOMING_AZALEA_FRAME));
-
-        /*Charredwoodset*/
-        addDrop(CHARRED_PLANKS, dropsWithSilkTouch(CHARRED_PLANKS));
 
         /*Lintels*/
         addDrop(OAK_LINTELS, dropsWithSilkTouch(OAK_LINTELS));

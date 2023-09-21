@@ -3,6 +3,7 @@ package net.qzimyion.cellulose.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.qzimyion.cellulose.Cellulose;
 
 
 import static net.minecraft.block.Blocks.*;
@@ -195,15 +196,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.LogTexturePool Cactus = blockStateModelGenerator.registerLog(CACTUS_BUNDLE);
         BlockStateModelGenerator.LogTexturePool StrippedCactus = blockStateModelGenerator.registerLog(STRIPPED_CACTUS);
 
-        //Charred Wood
-        BlockStateModelGenerator.LogTexturePool CharredOakLog = blockStateModelGenerator.registerLog(CHARRED_OAK_LOG);
-        BlockStateModelGenerator.LogTexturePool CharredBirchLog = blockStateModelGenerator.registerLog(CHARRED_HORIZONTAL_LOG);
-        BlockStateModelGenerator.LogTexturePool CharredBambooBlock = blockStateModelGenerator.registerLog(CHARRED_BAMBOO);
-        BlockStateModelGenerator.BlockTexturePool CharredPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(CHARRED_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool CharredBambooPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(CHARRED_BAMBOO_PLANKS);
-        BlockStateModelGenerator.LogTexturePool CharredStrippedOakLog = blockStateModelGenerator.registerLog(STRIPPED_CHARRED_OAK_LOG);
-        BlockStateModelGenerator.LogTexturePool CharredStrippedJungleLog = blockStateModelGenerator.registerLog(STRIPPED_CHARRED_HORIZONTAL_LOG);
-
         //Azalea Wood
         BlockStateModelGenerator.LogTexturePool Azalea = blockStateModelGenerator.registerLog(AZALEA_LOG);
         BlockStateModelGenerator.LogTexturePool StrippedAzalea = blockStateModelGenerator.registerLog(STRIPPED_AZALEA);
@@ -216,8 +208,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         //Red Mushroom wood
 
         //Brown Mushroom wood
-
-        //Apple Wood
 
         /*
         Actual additions:-
@@ -533,30 +523,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(BLOCK_OF_CHARCOAL);
         blockStateModelGenerator.registerWallPlant(AZALEA_FLOWERS);
 
-        //Door
-        blockStateModelGenerator.registerDoor(CHARRED_OAK_DOOR);
-        blockStateModelGenerator.registerDoor(CHARRED_BIRCH_DOOR);
-        blockStateModelGenerator.registerDoor(CHARRED_SPRUCE_DOOR);
-        blockStateModelGenerator.registerDoor(CHARRED_DARK_OAK_DOOR);
-        blockStateModelGenerator.registerDoor(CHARRED_JUNGLE_DOOR);
-        blockStateModelGenerator.registerDoor(CHARRED_ACACIA_DOOR);
-        blockStateModelGenerator.registerDoor(CHARRED_MANGROVE_DOOR);
-        blockStateModelGenerator.registerDoor(CHARRED_BAMBOO_DOOR);
-        blockStateModelGenerator.registerDoor(CHARRED_CHERRY_DOOR);
-        blockStateModelGenerator.registerDoor(CHARRED_CACTUS_DOOR);
-
-        //Trapdoor
-        blockStateModelGenerator.registerTrapdoor(CHARRED_OAK_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(CHARRED_BIRCH_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(CHARRED_SPRUCE_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(CHARRED_DARK_OAK_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(CHARRED_JUNGLE_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(CHARRED_ACACIA_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(CHARRED_MANGROVE_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(CHARRED_BAMBOO_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(CHARRED_CHERRY_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(CHARRED_CACTUS_TRAPDOOR);
-
         //Panes
         blockStateModelGenerator.registerGlassPane(OAK_FRAME, OAK_LINTELS);
         blockStateModelGenerator.registerGlassPane(BIRCH_FRAME, BIRCH_LINTELS);
@@ -580,42 +546,51 @@ public class CelluloseModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerGlassPane(OAK_PLANKS, OAK_BARRICADES);
 
+        //Misc stuff
+
 
         //(Woodsets: Cactus)
+        ///Logs
         Cactus.log(CACTUS_BUNDLE);
-        BeamCactus.wood(CACTUS_BEAM);
         StrippedCactus.log(STRIPPED_CACTUS);
-        StrippedCactus.wood(STRIPPED_CACTUS_CROWN);
         EngravedCactus.log(ENGRAVED_CACTUS);
         ChippedCactus.log(CHIPPED_CACTUS);
         PlankPillarCactus.log(CACTUS_PLANK_PILLARS);
         VerticalPlankPillarCactus.log(VERTICAL_CACTUS_PLANK_PILLARS);
+        BeamCactus.log(CACTUS_BEAM);
+        ///Wood
+        Cactus.wood(CACTUS_CROWN);
+        StrippedCactus.wood(STRIPPED_CACTUS_CROWN);
         ChippedCactus.wood(CHIPPED_CACTUS_CROWN);
         EngravedCactus.wood(ENGRAVED_CACTUS_CROWN);
-        ChippedPlankCactus.slab(CHIPPED_CACTUS_SLAB);
-        cactusTexturePool.slab(CACTUS_SLAB);
-        cactusVerticalTexturePool.slab(VERTICAL_CACTUS_SLAB);
-        cactusMosaicTexturePool.slab(CACTUS_MOSAIC_SLABS);
-        cactusTexturePool.stairs(CACTUS_STAIRS);
-        cactusVerticalTexturePool.stairs(VERTICAL_CACTUS_STAIR);
-        cactusMosaicTexturePool.stairs(CACTUS_MOSAIC_STAIRS);
-        cactusTexturePool.fence(CACTUS_FENCE);
-        cactusTexturePool.fenceGate(CACTUS_FENCE_GATE);
-        cactusTexturePool.button(CACTUS_BUTTON);
-        BoardsCactus.stairs(CACTUS_BOARDS_STAIRS);
-        GlazedCactus.stairs(GLAZED_CACTUS_STAIRS);
-        cactusTexturePool.pressurePlate(CACTUS_PRESSURE_PLATE);
-        blockStateModelGenerator.registerDoor(CACTUS_DOOR);
-        blockStateModelGenerator.registerTrapdoor(CACTUS_TRAPDOOR);
-        TilesCactus.slab(CACTUS_TILES_SLABS);
-        BoardsCactus.slab(CACTUS_BOARDS_SLABS);
-        GlazedCactus.slab(GLAZED_CACTUS_SLABS);
-        TilesCactus.stairs(CACTUS_TILES_STAIRS);
         StrippedChippedCactus.wood(STRIPPED_CHIPPED_CACTUS_CROWN);
+        ///Planks and other building blocks stuff
+        blockStateModelGenerator.registerTrapdoor(CACTUS_TRAPDOOR);
         blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_CACTUS_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_CACTUS_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(CACTUS_CARVED);
         blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_CACTUS);
+        ///Slabs
+        cactusTexturePool.slab(CACTUS_SLAB);
+        cactusVerticalTexturePool.slab(VERTICAL_CACTUS_SLAB);
+        cactusMosaicTexturePool.slab(CACTUS_MOSAIC_SLABS);
+        ChippedPlankCactus.slab(CHIPPED_CACTUS_SLAB);
+        TilesCactus.slab(CACTUS_TILES_SLABS);
+        BoardsCactus.slab(CACTUS_BOARDS_SLABS);
+        GlazedCactus.slab(GLAZED_CACTUS_SLABS);
+        ///Stairs
+        cactusTexturePool.stairs(CACTUS_STAIRS);
+        cactusVerticalTexturePool.stairs(VERTICAL_CACTUS_STAIR);
+        cactusMosaicTexturePool.stairs(CACTUS_MOSAIC_STAIRS);
+        BoardsCactus.stairs(CACTUS_BOARDS_STAIRS);
+        GlazedCactus.stairs(GLAZED_CACTUS_STAIRS);
+        TilesCactus.stairs(CACTUS_TILES_STAIRS);
+        ///Misc
+        cactusTexturePool.fence(CACTUS_FENCE);
+        cactusTexturePool.fenceGate(CACTUS_FENCE_GATE);
+        cactusTexturePool.button(CACTUS_BUTTON);
+        cactusTexturePool.pressurePlate(CACTUS_PRESSURE_PLATE);
+        blockStateModelGenerator.registerDoor(CACTUS_DOOR);
 
         //(Woodsets: Azalea)
         Azalea.log(AZALEA_LOG);
