@@ -41,5 +41,6 @@ public class Cellulose implements ModInitializer
 		CelluloseEvents.registerEvents();
 		CelluloseVillagers.registerVillagers();
 		CelluloseVillagerTrades.registerTrades();
+
 	}
 }
