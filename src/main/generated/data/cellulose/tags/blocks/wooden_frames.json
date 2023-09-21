@@ -12,6 +12,8 @@
     "cellulose:mangrove_frame",
     "cellulose:bamboo_frame",
     "cellulose:cherry_frame",
-    "cellulose:cactus_frame"
+    "cellulose:cactus_frame",
+    "cellulose:azalea_frame",
+    "cellulose:blooming_azalea_frame"
   ]
 }

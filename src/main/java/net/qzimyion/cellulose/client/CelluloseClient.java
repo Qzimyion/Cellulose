@@ -71,28 +71,8 @@ public class CelluloseClient implements ClientModInitializer
 
         //Doors and Trapdoors
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_OAK_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BIRCH_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_SPRUCE_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_DARK_OAK_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_JUNGLE_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_ACACIA_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_MANGROVE_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BAMBOO_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CHERRY_DOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CACTUS_DOOR, Render);
-
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_OAK_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BIRCH_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_SPRUCE_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_DARK_OAK_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_JUNGLE_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_ACACIA_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_MANGROVE_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_BAMBOO_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CHERRY_TRAPDOOR, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CHARRED_CACTUS_TRAPDOOR, Render);
+
 
         //CelluloseSigns and Hanging signs
 
