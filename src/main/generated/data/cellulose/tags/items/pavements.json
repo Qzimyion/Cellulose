@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_plank_pavement",
+    "cellulose:birch_plank_pavement",
+    "cellulose:spruce_plank_pavement",
+    "cellulose:dark_oak_plank_pavement",
+    "cellulose:jungle_plank_pavement",
+    "cellulose:acacia_plank_pavement",
+    "cellulose:crimson_plank_pavement",
+    "cellulose:warped_plank_pavement",
+    "cellulose:mangrove_plank_pavement",
+    "cellulose:bamboo_plank_pavement",
+    "cellulose:cherry_plank_pavement",
+    "cellulose:cactus_plank_pavement",
+    "cellulose:azalea_plank_pavement",
+    "cellulose:azalea_blooming_plank_pavement"
+  ]
+}
