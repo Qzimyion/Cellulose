@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "cellulose:azalea_planks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## "
+  ],
+  "result": {
+    "count": 3,
+    "item": "cellulose:azalea_plank_pavement"
+  },
+  "show_notification": true
+}
