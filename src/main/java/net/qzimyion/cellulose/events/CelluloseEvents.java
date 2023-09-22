@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.util.ParticleUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
@@ -17,14 +16,10 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.world.event.GameEvent;
 import net.qzimyion.cellulose.Cellulose;
-import net.qzimyion.cellulose.blocks.ModBlockProperties;
-import net.qzimyion.cellulose.blocks.custom_blocks.lotus.LotusBlock;
 import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.util.CelluloseTags;
 
@@ -247,8 +242,6 @@ public class CelluloseEvents {
             BlockPos fixedPos = targetPos.offset(hitResult.getSide());
             BlockState State = world.getBlockState(Pos);
             ItemStack heldItem = player.getStackInHand(hand);
-            Item item = heldItem.getItem();
-            Block block;
 
             //Log Chipping
             if (heldItem.getItem() instanceof PickaxeItem && State.isIn(CelluloseTags.Blocks.CHIPPABLE_LOGS)) {
