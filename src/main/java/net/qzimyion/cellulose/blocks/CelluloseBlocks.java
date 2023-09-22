@@ -12,7 +12,7 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.custom_blocks.*;
-import net.qzimyion.cellulose.blocks.custom_blocks.lotus.LotusBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.LotusBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.PaperBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.SoakedPaperBlock;
 
@@ -383,7 +383,7 @@ public class CelluloseBlocks
     public static final Block CHERRY_PLANK_PAVEMENT = registerBlock("cherry_plank_pavement", new GlazedTerracottaBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.CHERRY_WOOD)));
     public static final Block CACTUS_PLANK_PAVEMENT = registerBlock("cactus_plank_pavement", new GlazedTerracottaBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WART)));
     public static final Block AZALEA_PLANK_PAVEMENT = registerBlock("azalea_plank_pavement", new GlazedTerracottaBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_PAVEMENT)));
-    public static final Block AZALEA_BLOOMING_PLANK_PAVEMENT = registerBlock("azalea_blooming_plank_pavement", new GlazedTerracottaBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_PAVEMENT)));
+    public static final Block BLOOMING_AZALEA_PLANK_PAVEMENT = registerBlock("azalea_blooming_plank_pavement", new GlazedTerracottaBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_PAVEMENT)));
 
 
     //This section adds Plaster Blocks

@@ -212,7 +212,7 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CHIPPED_AZALEA_SLAB, "Chipped Azalea Slab");
         translationBuilder.add(CHIPPED_AZALEA_STAIR, "Chipped Azalea Stairs");
         translationBuilder.add(AZALEA_PLANK_PAVEMENT, "Azalea Pavement");
-        translationBuilder.add(AZALEA_BLOOMING_PLANK_PAVEMENT, "Blooming Azalea Pavement");
+        translationBuilder.add(BLOOMING_AZALEA_PLANK_PAVEMENT, "Blooming Azalea Pavement");
         translationBuilder.add(AZALEA_FRAME, "Azalea Frame");
         translationBuilder.add(BLOOMING_AZALEA_FRAME, "Blooming Azalea Frame");
         translationBuilder.add(AZALEA_LINTELS, "Azalea Lintels");
