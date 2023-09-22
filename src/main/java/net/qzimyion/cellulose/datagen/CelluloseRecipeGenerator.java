@@ -398,6 +398,22 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerSlabRecipe(exporter, BUILDING_BLOCKS, OAK_LOG_SLABS, OAK_LOG);
         offerSlabRecipe(exporter, BUILDING_BLOCKS, STRIPPED_OAK_LOG_SLABS, STRIPPED_OAK_LOG);
 
+        //Pavements
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, OAK_PLANK_PAVEMENT, OAK_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, BIRCH_PLANK_PAVEMENT, BIRCH_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, SPRUCE_PLANK_PAVEMENT, SPRUCE_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, DARK_OAK_PLANK_PAVEMENT, DARK_OAK_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, JUNGLE_PLANK_PAVEMENT, JUNGLE_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, ACACIA_PLANK_PAVEMENT, ACACIA_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, CRIMSON_PLANK_PAVEMENT, CRIMSON_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, WARPED_PLANK_PAVEMENT, WARPED_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, MANGROVE_PLANK_PAVEMENT, MANGROVE_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, BAMBOO_PLANK_PAVEMENT, BAMBOO_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, CHERRY_PLANK_PAVEMENT, CHERRY_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, CACTUS_PLANK_PAVEMENT, CACTUS_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, AZALEA_PLANK_PAVEMENT, AZALEA_PLANKS);
+        offerPavementRecipe(exporter, BUILDING_BLOCKS, BLOOMING_AZALEA_PLANK_PAVEMENT, BLOOMING_AZALEA_PLANKS);
+
         ///Cooking
 
         offerFoodCookingRecipe(exporter,"smelting", RecipeSerializer.SMELTING, 300, CelluloseItems.ACORN, CelluloseItems.POPPED_ACORN, 0.1f);
@@ -547,6 +563,10 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
     private void offerPlanksRecipe(Block block)
     {
 
+    }
+    //Custom recipe generators
+    public static void offerPavementRecipe(Consumer<RecipeJsonProvider> exporter, RecipeCategory category, ItemConvertible output, ItemConvertible input) {
+        ShapedRecipeJsonBuilder.create(category, output, 3).input(Character.valueOf('#'), input).pattern("#  ").pattern("## ").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input)).offerTo(exporter);
     }
 
     public static SingleItemRecipeJsonBuilder createSawmilling(Ingredient input, ItemConvertible output, int count) {
