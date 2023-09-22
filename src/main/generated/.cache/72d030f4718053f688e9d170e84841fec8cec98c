@@ -1,5 +1,5 @@
-// 1.20.1	2023-09-21T21:21:12.8267779	Cellulose /Tags for minecraft:block
-154db440ff09c0731d1b3c59e616ada7f2871d6f data\minecraft\tags\blocks\mineable\axe.json
+// 1.20.1	2023-09-22T23:42:11.7268974	Cellulose /Tags for minecraft:block
+9e970f0572b691509bc0899b8e1c305dc1629a8f data\minecraft\tags\blocks\mineable\axe.json
 64507db0f8e4e282eef9ff7518ab76872b7831ca data\cellulose\tags\blocks\log_stairs.json
 363278e2d956de48e8b135abb7c4f6e3e23f13a4 data\minecraft\tags\blocks\wooden_buttons.json
 0c23759a0cc4eeafd62d61e85231d5fb747bf565 data\minecraft\tags\blocks\crimson_stems.json
@@ -29,6 +29,7 @@ f271a3ec18c604a1adc65f0ac86842223bc08db2 data\cellulose\tags\blocks\lotus.json
 de4daeb30a0e96128a157f46190854909fda899f data\minecraft\tags\blocks\birch_logs.json
 39e6960c118caf045f0ebbfe8a799db336950f20 data\cellulose\tags\blocks\wooden_frames.json
 6d0ac35e2f44efa40027ab164df60cd9381241a9 data\cellulose\tags\blocks\wooden_mosaics.json
+ac635f7b0e7db229a83fc55b24fd4ea267af2622 data\cellulose\tags\blocks\pavements.json
 0da8867d71f0d4ff66c0290dbc6f810f09f58508 data\minecraft\tags\blocks\wooden_stairs.json
 4fc218a97b1d1c9a420462977699c36df098b44e data\cellulose\tags\blocks\deflower.json
 19d688adadae3a1bec75caf076fdcc6918628ea8 data\minecraft\tags\blocks\wooden_fences.json
