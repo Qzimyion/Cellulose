@@ -3,23 +3,19 @@ package net.qzimyion.cellulose.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
-import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.util.CelluloseTags;
-
 import java.util.concurrent.CompletableFuture;
 
 import static net.minecraft.registry.tag.ItemTags.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
-import static net.qzimyion.cellulose.util.CelluloseTags.Blocks.*;
 
 @SuppressWarnings("noinspection deprecation")
 public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider {
@@ -279,5 +275,22 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add((CelluloseItems.BLUE_LOTUS))
                 .add((CelluloseItems.PINK_LOTUS))
                 .add((CelluloseItems.INDIGO_LOTUS));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.PAVEMENTS)
+                .add(Item.fromBlock(OAK_PLANK_PAVEMENT))
+                .add(Item.fromBlock(BIRCH_PLANK_PAVEMENT))
+                .add(Item.fromBlock(SPRUCE_PLANK_PAVEMENT))
+                .add(Item.fromBlock(DARK_OAK_PLANK_PAVEMENT))
+                .add(Item.fromBlock(JUNGLE_PLANK_PAVEMENT))
+                .add(Item.fromBlock(ACACIA_PLANK_PAVEMENT))
+                .add(Item.fromBlock(CRIMSON_PLANK_PAVEMENT))
+                .add(Item.fromBlock(WARPED_PLANK_PAVEMENT))
+                .add(Item.fromBlock(MANGROVE_PLANK_PAVEMENT))
+                .add(Item.fromBlock(BAMBOO_PLANK_PAVEMENT))
+                .add(Item.fromBlock(CHERRY_PLANK_PAVEMENT))
+                .add(Item.fromBlock(CACTUS_PLANK_PAVEMENT))
+                .add(Item.fromBlock(AZALEA_PLANK_PAVEMENT))
+                .add(Item.fromBlock(BLOOMING_AZALEA_PLANK_PAVEMENT))
+        ;
     }
 }

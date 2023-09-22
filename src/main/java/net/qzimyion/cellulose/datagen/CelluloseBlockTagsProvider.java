@@ -34,7 +34,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
         TagKey<Block> CARPENTED_WOOD = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "carpented_wood"));
         TagKey<Block> CARVED_WOOD = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "carved_wood"));
         TagKey<Block> GLAZED_WOOD = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "glazed_wood"));
-        TagKey<Block> WOODEN_PAVEMENTS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "wooden_pavements"));
         TagKey<Block> PLANK_PILLARS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "plank_pillars"));
         TagKey<Block> BEAMS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "beams"));
         TagKey<Block> APPLE_PLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "apple_placeable"));
@@ -46,6 +45,23 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
         //Woodsets
 
         ///Modded Tags
+
+        getOrCreateTagBuilder(PAVEMENTS)
+                .add(OAK_PLANK_PAVEMENT)
+                .add(BIRCH_PLANK_PAVEMENT)
+                .add(SPRUCE_PLANK_PAVEMENT)
+                .add(DARK_OAK_PLANK_PAVEMENT)
+                .add(JUNGLE_PLANK_PAVEMENT)
+                .add(SPRUCE_PLANK_PAVEMENT)
+                .add(CRIMSON_PLANK_PAVEMENT)
+                .add(WARPED_PLANK_PAVEMENT)
+                .add(MANGROVE_PLANK_PAVEMENT)
+                .add(BAMBOO_PLANK_PAVEMENT)
+                .add(CHERRY_PLANK_PAVEMENT)
+                .add(CACTUS_PLANK_PAVEMENT)
+                .add(AZALEA_PLANK_PAVEMENT)
+                .add(BLOOMING_AZALEA_PLANK_PAVEMENT)
+        ;
 
         getOrCreateTagBuilder(CelluloseTags.Blocks.LOTUS)
                 .add(CelluloseBlocks.LOTUS)
@@ -482,6 +498,8 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .forceAddTag(WOODEN_FRAMES)
                 .forceAddTag(LINTELS)
 
+                //
+                .forceAddTag(PAVEMENTS)
 
                 //Fence and Fence Gates
                 .forceAddTag(FENCES)
