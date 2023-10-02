@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dark_oak_sawdust": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "cellulose:sawdust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cellulose:dark_oak_saw_dust_layer"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_dark_oak_sawdust",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cellulose:dark_oak_saw_dust_layer"
+    ]
+  },
+  "sends_telemetry_event": false
+}

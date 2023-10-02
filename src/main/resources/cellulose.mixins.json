@@ -3,6 +3,7 @@
   "package": "net.qzimyion.cellulose.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AnvilBlockMixin",
     "ExampleMixin"
   ],
   "client": [

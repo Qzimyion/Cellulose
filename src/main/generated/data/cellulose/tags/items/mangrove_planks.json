@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:mangrove_planks",
+    "cellulose:vertical_mangrove_planks",
+    "cellulose:chipped_mangrove_planks"
+  ]
+}

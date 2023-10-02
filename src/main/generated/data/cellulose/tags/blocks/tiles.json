@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_tiles",
+    "cellulose:birch_tiles",
+    "cellulose:spruce_tiles",
+    "cellulose:dark_oak_tiles",
+    "cellulose:jungle_tiles",
+    "cellulose:acacia_tiles",
+    "cellulose:crimson_tiles",
+    "cellulose:warped_tiles",
+    "cellulose:mangrove_tiles",
+    "cellulose:bamboo_tiles",
+    "cellulose:cherry_tiles",
+    "cellulose:cactus_tiles",
+    "cellulose:azalea_tiles",
+    "cellulose:blooming_azalea_tiles"
+  ]
+}

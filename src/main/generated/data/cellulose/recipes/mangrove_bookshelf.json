@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ceelulose:bookshelves",
+  "key": {
+    "#": {
+      "tag": "cellulose:mangrove_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "count": 3,
+    "item": "cellulose:mangrove_bookshelf"
+  },
+  "show_notification": true
+}

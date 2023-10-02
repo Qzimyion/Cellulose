@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "planks",
+  "key": {
+    "#": {
+      "item": "cellulose:vertical_oak_planks"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 3,
+    "item": "minecraft:oak_planks"
+  },
+  "show_notification": true
+}

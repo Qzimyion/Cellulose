@@ -68,11 +68,12 @@ public class CelluloseClient implements ClientModInitializer
         TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "cactus_chest_boat"), false);
         TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "azalea_boat"), false);
         TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "azalea_chest_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "blooming_azalea_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "blooming_azalea_chest_boat"), false);
 
         //Doors and Trapdoors
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_DOOR, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_TRAPDOOR, Render);
-
 
         //CelluloseSigns and Hanging signs
 

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cellulose:sawdust_layers",
+  "key": {
+    "#": {
+      "item": "cellulose:dark_oak_sawdust"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "item": "cellulose:dark_oak_saw_dust_layer"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ceelulose:bookshelves",
+  "key": {
+    "#": {
+      "tag": "cellulose:bamboo_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "count": 3,
+    "item": "cellulose:bamboo_bookshelf"
+  },
+  "show_notification": true
+}

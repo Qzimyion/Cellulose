@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_sawdust",
+    "cellulose:birch_sawdust",
+    "cellulose:spruce_sawdust",
+    "cellulose:dark_oak_sawdust",
+    "cellulose:jungle_sawdust",
+    "cellulose:acacia_sawdust",
+    "cellulose:crimson_sawdust",
+    "cellulose:warped_sawdust",
+    "cellulose:mangrove_sawdust",
+    "cellulose:bamboo_sawdust",
+    "cellulose:cherry_sawdust",
+    "cellulose:azalea_sawdust"
+  ]
+}

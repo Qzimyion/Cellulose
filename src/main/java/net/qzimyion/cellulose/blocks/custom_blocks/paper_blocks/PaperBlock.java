@@ -10,7 +10,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
-public class PaperBlock extends Block {
+@SuppressWarnings("deprecation")
+public class PaperBlock extends FallingBlock {
     private static final Direction[] field_43257 = Direction.values();
     public PaperBlock(Settings settings) {
         super(settings);
@@ -47,21 +48,21 @@ public class PaperBlock extends Block {
             if (currentPos.equals(pos)) {
                 return true;
             }
-            BlockState blockState = world.getBlockState((BlockPos)currentPos);
-            FluidState fluidState = world.getFluidState((BlockPos)currentPos);
+            BlockState blockState = world.getBlockState(currentPos);
+            FluidState fluidState = world.getFluidState(currentPos);
             if (!fluidState.isIn(FluidTags.WATER)) {
                 return false;
             }
             Block block = blockState.getBlock();
-            if (block instanceof FluidDrainable && !(fluidDrainable = (FluidDrainable)((Object)block)).tryDrainFluid(world, (BlockPos)currentPos, blockState).isEmpty()) {
+            if (block instanceof FluidDrainable && !(fluidDrainable = (FluidDrainable) block).tryDrainFluid(world, currentPos, blockState).isEmpty()) {
                 return true;
             }
             if (blockState.getBlock() instanceof FluidBlock) {
-                world.setBlockState((BlockPos)currentPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
+                world.setBlockState(currentPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
             } else if (blockState.isOf(Blocks.KELP) || blockState.isOf(Blocks.KELP_PLANT) || blockState.isOf(Blocks.SEAGRASS) || blockState.isOf(Blocks.TALL_SEAGRASS)) {
-                BlockEntity blockEntity = blockState.hasBlockEntity() ? world.getBlockEntity((BlockPos)currentPos) : null;
+                BlockEntity blockEntity = blockState.hasBlockEntity() ? world.getBlockEntity(currentPos) : null;
                 PaperBlock.dropStacks(blockState, world, currentPos, blockEntity);
-                world.setBlockState((BlockPos)currentPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
+                world.setBlockState(currentPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
             } else {
                 return false;
             }

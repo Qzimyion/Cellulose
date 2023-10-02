@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "cellulose:azalea_planks"
-            ]
+            "tag": "cellulose:pavements"
           }
         ]
       },

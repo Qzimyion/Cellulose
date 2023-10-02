@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "minecraft:planks",
+  "group": "cellulose:vertical_planks",
   "key": {
     "#": {
       "item": "minecraft:birch_planks"

@@ -5,11 +5,7 @@ import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.ParticleUtil;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.*;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.BlockTags;
@@ -17,19 +13,21 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.qzimyion.cellulose.Cellulose;
-import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.util.CelluloseTags;
 
 import java.util.HashMap;
 
 import static net.minecraft.block.Blocks.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.boats.CelluloseBoats.*;
 
 
 public class CelluloseEvents {
+    public static final HashMap<Block, Block> ENGRAVING = new HashMap<>();
     public static final HashMap<Block, Block> LOG_CHIPPING = new HashMap<>();
     public static final HashMap<Block, Block> LOG_SLAB_STRIPPING = new HashMap<>();
     public static final HashMap<Block, Block> LOG_STAIR_STRIPPING = new HashMap<>();
@@ -40,13 +38,39 @@ public class CelluloseEvents {
     public static final HashMap<Block, Block> SLAB_REPAIR = new HashMap<>();
     public static final HashMap<Block, Block> STAIR_REPAIR = new HashMap<>();
     public static final HashMap<Block, Block> FLOWERING = new HashMap<>();
-    public static final HashMap<Entity, Entity> FLOWERING_ENTITY = new HashMap<>();
+    public static final HashMap<Identifier, Identifier> FLOWERING_ENTITY = new HashMap<>();
     public static final HashMap<Block, Block> DEFLOWER = new HashMap<>();
-    public static final HashMap<Entity, Entity> DEFLOWER_ENTITY = new HashMap<>();
-    public static final HashMap<Item, Block> LILY_FLOWERING = new HashMap<>();
+    public static final HashMap<Identifier, Identifier> DEFLOWER_ENTITY = new HashMap<>();
+    public static final HashMap<Block, Block> BOOKSHELF_ABANDONING = new HashMap<>();
+    public static final HashMap<Block, Item> BOOK_DROP = new HashMap<>();
+
 
 
     static {
+
+        //Engraving
+        ENGRAVING.put(STRIPPED_OAK_LOG, ENGRAVED_OAK);
+        ENGRAVING.put(STRIPPED_BIRCH_LOG, ENGRAVED_BIRCH);
+        ENGRAVING.put(STRIPPED_SPRUCE_LOG, ENGRAVED_SPRUCE);
+        ENGRAVING.put(STRIPPED_DARK_OAK_LOG, ENGRAVED_DARK_OAK);
+        ENGRAVING.put(STRIPPED_JUNGLE_LOG, ENGRAVED_JUNGLE);
+        ENGRAVING.put(STRIPPED_ACACIA_LOG, ENGRAVED_ACACIA);
+        ENGRAVING.put(STRIPPED_CRIMSON_STEM, ENGRAVED_CRIMSON);
+        ENGRAVING.put(STRIPPED_WARPED_STEM, ENGRAVED_WARPED);
+        ENGRAVING.put(STRIPPED_MANGROVE_LOG, ENGRAVED_MANGROVE);
+        ENGRAVING.put(STRIPPED_BAMBOO_BLOCK, ENGRAVED_BAMBOO);
+        ENGRAVING.put(STRIPPED_CHERRY_LOG, ENGRAVED_CHERRY);
+        ENGRAVING.put(STRIPPED_OAK_WOOD, ENGRAVED_OAK_WOOD);
+        ENGRAVING.put(STRIPPED_BIRCH_WOOD, ENGRAVED_BIRCH_WOOD);
+        ENGRAVING.put(STRIPPED_SPRUCE_WOOD, ENGRAVED_SPRUCE_WOOD);
+        ENGRAVING.put(STRIPPED_DARK_OAK_WOOD, ENGRAVED_DARK_OAK_WOOD);
+        ENGRAVING.put(STRIPPED_JUNGLE_WOOD, ENGRAVED_JUNGLE_WOOD);
+        ENGRAVING.put(STRIPPED_ACACIA_WOOD, ENGRAVED_ACACIA_WOOD);
+        ENGRAVING.put(STRIPPED_CRIMSON_HYPHAE, ENGRAVED_CRIMSON_HYPHAE);
+        ENGRAVING.put(STRIPPED_WARPED_HYPHAE, ENGRAVED_WARPED_HYPHAE);
+        ENGRAVING.put(STRIPPED_MANGROVE_WOOD, ENGRAVED_MANGROVE_WOOD);
+        ENGRAVING.put(STRIPPED_CHERRY_WOOD, ENGRAVED_CHERRY_WOOD);
+
         //Log Chipping
         LOG_CHIPPING.put(OAK_LOG, CHIPPED_OAK);
         LOG_CHIPPING.put(BIRCH_LOG, CHIPPED_BIRCH);
@@ -74,12 +98,15 @@ public class CelluloseEvents {
         LOG_CHIPPING.put(CACTUS_CROWN, CHIPPED_CACTUS_CROWN);
         LOG_CHIPPING.put(AZALEA_LOG, CHIPPED_AZALEA);
         LOG_CHIPPING.put(AZALEA_WOOD, CHIPPED_AZALEA_WOOD);
+
         //Log Slab Stripping
         LOG_SLAB_STRIPPING.put(OAK_LOG_SLABS, STRIPPED_OAK_LOG_SLABS);
         LOG_SLAB_STRIPPING.put(OAK_WOOD_SLABS, STRIPPED_OAK_WOOD_SLABS);
+
         //Log Stair Stripping
         LOG_STAIR_STRIPPING.put(OAK_LOG_STAIRS, STRIPPED_OAK_LOG_STAIRS);
         LOG_STAIR_STRIPPING.put(OAK_WOOD_STAIRS, STRIPPED_OAK_WOOD_STAIRS);
+
         //Plank Chipping
         PLANK_CHIPPING.put(OAK_PLANKS, CHIPPED_OAK_PLANKS);
         PLANK_CHIPPING.put(BIRCH_PLANKS, CHIPPED_BIRCH_PLANKS);
@@ -109,6 +136,7 @@ public class CelluloseEvents {
         PLANK_CHIPPING.put(VERTICAL_CACTUS_PLANKS, CHIPPED_VERTICAL_CACTUS_PLANKS);
         PLANK_CHIPPING.put(VERTICAL_AZALEA_PLANKS, CHIPPED_VERTICAL_AZALEA_PLANKS);
         PLANK_CHIPPING.put(VERTICAL_BLOOMING_AZALEA_PLANKS, CHIPPED_VERTICAL_BLOOMING_AZALEA_PLANKS);
+
         //Slab Chipping
         SLAB_CHIPPING.put(OAK_SLAB, CHIPPED_OAK_SLAB);
         SLAB_CHIPPING.put(BIRCH_SLAB, CHIPPED_BIRCH_SLAB);
@@ -138,6 +166,7 @@ public class CelluloseEvents {
         SLAB_CHIPPING.put(VERTICAL_CACTUS_SLAB, CHIPPED_VERTICAL_CACTUS_SLAB);
         SLAB_CHIPPING.put(VERTICAL_AZALEA_SLAB, CHIPPED_VERTICAL_AZALEA_SLAB);
         SLAB_CHIPPING.put(VERTICAL_BLOOMING_AZALEA_SLAB, CHIPPED_VERTICAL_BLOOMING_AZALEA_SLAB);
+
         //Stair Chipping
         STAIR_CHIPPING.put(OAK_STAIRS, CHIPPED_OAK_STAIR);
         STAIR_CHIPPING.put(BIRCH_STAIRS, CHIPPED_BIRCH_STAIR);
@@ -167,15 +196,19 @@ public class CelluloseEvents {
         STAIR_CHIPPING.put(VERTICAL_CACTUS_STAIR, CHIPPED_VERTICAL_CACTUS_STAIR);
         STAIR_CHIPPING.put(VERTICAL_AZALEA_STAIR, CHIPPED_VERTICAL_AZALEA_STAIR);
         STAIR_CHIPPING.put(VERTICAL_BLOOMING_AZALEA_STAIR, CHIPPED_VERTICAL_BLOOMING_AZALEA_STAIR);
+
         //Plank Repairing
         PLANK_REPAIR.put(CHIPPED_WARPED_PLANKS, WARPED_PLANKS);
         PLANK_REPAIR.put(CHIPPED_CRIMSON_PLANKS, CRIMSON_PLANKS);
+
         //Slab Repairing
         SLAB_REPAIR.put(CHIPPED_WARPED_SLAB, WARPED_SLAB);
         SLAB_REPAIR.put(CHIPPED_CRIMSON_SLAB, CRIMSON_SLAB);
+
         //Stair Repairing
         STAIR_REPAIR.put(CHIPPED_WARPED_STAIR, WARPED_STAIRS);
         STAIR_REPAIR.put(CHIPPED_CRIMSON_STAIR, CRIMSON_STAIRS);
+
         //Deflower
         DEFLOWER.put(FLOWERING_AZALEA, AZALEA);
         DEFLOWER.put(POTTED_FLOWERING_AZALEA_BUSH, POTTED_AZALEA_BUSH);
@@ -194,10 +227,12 @@ public class CelluloseEvents {
         DEFLOWER.put(BLOOMING_AZALEA_MOSAIC_STAIRS, AZALEA_MOSAIC_STAIRS);
         DEFLOWER.put(BLOOMING_AZALEA_LOG, AZALEA_LOG);
         DEFLOWER.put(BLOOMING_AZALEA_WOOD, AZALEA_WOOD);
-        DEFLOWER.put(BLOOMING_STRIPPED_AZALEA, STRIPPED_AZALEA);
+        DEFLOWER.put(BLOOMING_STRIPPED_AZALEA, STRIPPED_AZALEA_LOG);
         DEFLOWER.put(BLOOMING_STRIPPED_AZALEA_WOOD, STRIPPED_AZALEA_WOOD);
         DEFLOWER.put(ENGRAVED_BLOOMING_AZALEA, ENGRAVED_AZALEA);
         DEFLOWER.put(ENGRAVED_BLOOMING_AZALEA_WOOD, ENGRAVED_AZALEA_WOOD);
+        DEFLOWER_ENTITY.put(BLOOMING_AZALEA_BOAT_ID, AZALEA_BOAT_ID);
+        DEFLOWER_ENTITY.put(BLOOMING_AZALEA_CHEST_BOAT_ID, AZALEA_CHEST_BOAT_ID);
 
         //Flowering
         FLOWERING.put(AZALEA, FLOWERING_AZALEA);
@@ -217,19 +252,20 @@ public class CelluloseEvents {
         FLOWERING.put(AZALEA_MOSAIC_STAIRS, BLOOMING_AZALEA_MOSAIC_STAIRS);
         FLOWERING.put(AZALEA_LOG, BLOOMING_AZALEA_LOG);
         FLOWERING.put(AZALEA_WOOD, BLOOMING_AZALEA_WOOD);
-        FLOWERING.put(STRIPPED_AZALEA, BLOOMING_STRIPPED_AZALEA);
+        FLOWERING.put(STRIPPED_AZALEA_LOG, BLOOMING_STRIPPED_AZALEA);
         FLOWERING.put(STRIPPED_AZALEA_WOOD, BLOOMING_STRIPPED_AZALEA_WOOD);
         FLOWERING.put(ENGRAVED_AZALEA, ENGRAVED_BLOOMING_AZALEA);
         FLOWERING.put(ENGRAVED_AZALEA_WOOD, ENGRAVED_BLOOMING_AZALEA_WOOD);
+        FLOWERING_ENTITY.put(AZALEA_BOAT_ID, BLOOMING_AZALEA_BOAT_ID);
+        FLOWERING_ENTITY.put(AZALEA_CHEST_BOAT_ID, BLOOMING_AZALEA_CHEST_BOAT_ID);
 
-        //Lily flowering
-        LILY_FLOWERING.put(CelluloseItems.LOTUS, LOTUS_LILYPAD);
-        LILY_FLOWERING.put(CelluloseItems.WHITE_LOTUS, WHITE_LOTUS_LILYPAD);
-        LILY_FLOWERING.put(CelluloseItems.YELLOW_LOTUS, YELLOW_LOTUS_LILYPAD);
-        LILY_FLOWERING.put(CelluloseItems.PINK_LOTUS, PINK_LOTUS_LILYPAD);
-        LILY_FLOWERING.put(CelluloseItems.BLUE_LOTUS, BLUE_LOTUS_LILYPAD);
-        LILY_FLOWERING.put(CelluloseItems.INDIGO_LOTUS, INDIGO_LOTUS_LILYPAD);
+        //Book drop
+        BOOK_DROP.put(BOOKSHELF, Items.BOOK);
+        BOOK_DROP.put(BIRCH_BOOKSHELF, Items.BOOK);
 
+        //Bookshelf Abandoning
+        BOOKSHELF_ABANDONING.put(BOOKSHELF, ABANDONED_OAK_BOOKSHELF);
+        BOOKSHELF_ABANDONING.put(BIRCH_BOOKSHELF, ABANDONED_BIRCH_BOOKSHELF);
 
     }
 
@@ -242,6 +278,18 @@ public class CelluloseEvents {
             BlockPos fixedPos = targetPos.offset(hitResult.getSide());
             BlockState State = world.getBlockState(Pos);
             ItemStack heldItem = player.getStackInHand(hand);
+
+            //Engraving
+            if (heldItem.getItem()==Items.FLINT && State.isIn(CelluloseTags.Blocks.ENGRAVABLE_LOGS)) {
+                world.playSound(player, Pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
+
+                if (player instanceof ServerPlayerEntity) {
+                    Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, Pos, heldItem);
+                    if (!player.isCreative()) heldItem.decrement(1);
+                    world.setBlockState(Pos, ENGRAVING.get(State.getBlock()).getStateWithProperties(State));
+                }
+                return ActionResult.SUCCESS;
+            }
 
             //Log Chipping
             if (heldItem.getItem() instanceof PickaxeItem && State.isIn(CelluloseTags.Blocks.CHIPPABLE_LOGS)) {
@@ -338,15 +386,19 @@ public class CelluloseEvents {
                     world.setBlockState(Pos,  FLOWERING.get(targetBlock.getBlock()).getStateWithProperties(State));
                 }
                 return ActionResult.SUCCESS;
+
             }
-            //Lily flowering
-            if (LILY_FLOWERING.containsKey(heldItem.getItem()) && targetBlock.isOf(LILY_PAD)) {
-                Block bloomblock = LILY_FLOWERING.get(heldItem.getItem());
-                world.playSound(player, Pos, SoundEvents.BLOCK_MOSS_PLACE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-                if (player instanceof ServerPlayerEntity) {
-                    Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, targetPos, heldItem);
-                    if (!player.isCreative()) heldItem.decrement(1);
-                    world.setBlockState(targetPos, bloomblock.getStateWithProperties(targetBlock));
+            //Bookshelf abandoning
+            if (heldItem.getItem() instanceof PickaxeItem) {
+                if (targetBlock.isIn(CelluloseTags.Blocks.BOOKSHELVES)) {
+                    Block.dropStack(world, fixedPos, new ItemStack(BOOK_DROP.get(targetBlock.getBlock())));
+                    world.playSound(player, targetPos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                    if (player instanceof ServerPlayerEntity) {
+                        Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, targetPos, heldItem);
+                        if (!player.isCreative()) heldItem.damage(1, player, null);
+                        world.setBlockState(targetPos, BOOKSHELF_ABANDONING.get(targetBlock.getBlock()).getStateWithProperties(targetBlock));
+                    }
+                    return ActionResult.SUCCESS;
                 }
             }
             return ActionResult.PASS;

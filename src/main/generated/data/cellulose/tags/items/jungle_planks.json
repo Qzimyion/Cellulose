@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:jungle_planks",
+    "cellulose:vertical_jungle_planks",
+    "cellulose:chipped_jungle_planks"
+  ]
+}

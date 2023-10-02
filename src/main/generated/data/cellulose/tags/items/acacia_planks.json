@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:acacia_planks",
+    "cellulose:vertical_acacia_planks",
+    "cellulose:chipped_acacia_planks"
+  ]
+}

@@ -2,11 +2,10 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
-import net.qzimyion.cellulose.Cellulose;
+import net.minecraft.util.Identifier;
 
-
-import static net.minecraft.block.Blocks.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
@@ -66,7 +65,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool ChippedPlankAzalea = blockStateModelGenerator.registerCubeAllModelTexturePool(CHIPPED_AZALEA_PLANKS);
         BlockStateModelGenerator.BlockTexturePool ChippedPlankBloomingAzalea = blockStateModelGenerator.registerCubeAllModelTexturePool(CHIPPED_BLOOMING_AZALEA_PLANKS);
 
-
         BlockStateModelGenerator.BlockTexturePool TilesOak = blockStateModelGenerator.registerCubeAllModelTexturePool(OAK_TILES);
         BlockStateModelGenerator.BlockTexturePool TilesBirch = blockStateModelGenerator.registerCubeAllModelTexturePool(BIRCH_TILES);
         BlockStateModelGenerator.BlockTexturePool TilesSpruce = blockStateModelGenerator.registerCubeAllModelTexturePool(SPRUCE_TILES);
@@ -79,6 +77,9 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool TilesBamboo = blockStateModelGenerator.registerCubeAllModelTexturePool(BAMBOO_TILES);
         BlockStateModelGenerator.BlockTexturePool TilesCherry = blockStateModelGenerator.registerCubeAllModelTexturePool(CHERRY_TILES);
         BlockStateModelGenerator.BlockTexturePool TilesCactus = blockStateModelGenerator.registerCubeAllModelTexturePool(CACTUS_TILES);
+        BlockStateModelGenerator.BlockTexturePool TilesAzalea = blockStateModelGenerator.registerCubeAllModelTexturePool(AZALEA_TILES);
+        BlockStateModelGenerator.BlockTexturePool TilesBloomingAzalea = blockStateModelGenerator.registerCubeAllModelTexturePool(BLOOMING_AZALEA_TILES);
+
 
         BlockStateModelGenerator.BlockTexturePool BoardsOak = blockStateModelGenerator.registerCubeAllModelTexturePool(OAK_BOARDS);
         BlockStateModelGenerator.BlockTexturePool BoardsBirch = blockStateModelGenerator.registerCubeAllModelTexturePool(BIRCH_BOARDS);
@@ -105,6 +106,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool GlazedBamboo = blockStateModelGenerator.registerCubeAllModelTexturePool(BAMBOO_GLAZED);
         BlockStateModelGenerator.BlockTexturePool GlazedCherry = blockStateModelGenerator.registerCubeAllModelTexturePool(CHERRY_GLAZED);
         BlockStateModelGenerator.BlockTexturePool GlazedCactus = blockStateModelGenerator.registerCubeAllModelTexturePool(CACTUS_GLAZED);
+        BlockStateModelGenerator.BlockTexturePool GlazedAzalea = blockStateModelGenerator.registerCubeAllModelTexturePool(AZALEA_GLAZED);
 
         //Texturepool (PillarBlocks)
         BlockStateModelGenerator.LogTexturePool ChippedOak = blockStateModelGenerator.registerLog(CHIPPED_OAK);
@@ -145,6 +147,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.LogTexturePool EngravedCrimson = blockStateModelGenerator.registerLog(ENGRAVED_CRIMSON);
         BlockStateModelGenerator.LogTexturePool EngravedWarped = blockStateModelGenerator.registerLog(ENGRAVED_WARPED);
         BlockStateModelGenerator.LogTexturePool EngravedMangrove = blockStateModelGenerator.registerLog(ENGRAVED_MANGROVE);
+        BlockStateModelGenerator.LogTexturePool EngravedBamboo = blockStateModelGenerator.registerLog(ENGRAVED_BAMBOO);
         BlockStateModelGenerator.LogTexturePool EngravedCherry = blockStateModelGenerator.registerLog(ENGRAVED_CHERRY);
         BlockStateModelGenerator.LogTexturePool EngravedCactus = blockStateModelGenerator.registerLog(ENGRAVED_CACTUS);
         BlockStateModelGenerator.LogTexturePool EngravedAzalea = blockStateModelGenerator.registerLog(ENGRAVED_AZALEA);
@@ -161,19 +164,9 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.LogTexturePool PlankPillarBamboo = blockStateModelGenerator.registerLog(BAMBOO_PLANK_PILLARS);
         BlockStateModelGenerator.LogTexturePool PlankPillarCherry = blockStateModelGenerator.registerLog(CHERRY_PLANK_PILLARS);
         BlockStateModelGenerator.LogTexturePool PlankPillarCactus = blockStateModelGenerator.registerLog(CACTUS_PLANK_PILLARS);
+        BlockStateModelGenerator.LogTexturePool PlankPillarAzalea = blockStateModelGenerator.registerLog(AZALEA_PLANK_PILLARS);
+        BlockStateModelGenerator.LogTexturePool PlankPillarBloomingAzalea = blockStateModelGenerator.registerLog(BLOOMING_AZALEA_PLANK_PILLARS);
 
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarOak = blockStateModelGenerator.registerLog(VERTICAL_OAK_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarBirch = blockStateModelGenerator.registerLog(VERTICAL_BIRCH_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarSpruce = blockStateModelGenerator.registerLog(VERTICAL_SPRUCE_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarDarkOak = blockStateModelGenerator.registerLog(VERTICAL_DARK_OAK_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarJungle = blockStateModelGenerator.registerLog(VERTICAL_JUNGLE_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarAcacia = blockStateModelGenerator.registerLog(VERTICAL_ACACIA_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarCrimson = blockStateModelGenerator.registerLog(VERTICAL_CRIMSON_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarWarped = blockStateModelGenerator.registerLog(VERTICAL_WARPED_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarMangrove = blockStateModelGenerator.registerLog(VERTICAL_MANGROVE_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarBamboo = blockStateModelGenerator.registerLog(VERTICAL_BAMBOO_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarCherry = blockStateModelGenerator.registerLog(VERTICAL_CHERRY_PLANK_PILLARS);
-        BlockStateModelGenerator.LogTexturePool VerticalPlankPillarCactus = blockStateModelGenerator.registerLog(VERTICAL_CACTUS_PLANK_PILLARS);
 
         BlockStateModelGenerator.LogTexturePool BeamOak = blockStateModelGenerator.registerLog(OAK_BEAM);
         BlockStateModelGenerator.LogTexturePool BeamBirch = blockStateModelGenerator.registerLog(BIRCH_BEAM);
@@ -198,12 +191,17 @@ public class CelluloseModelProvider extends FabricModelProvider {
 
         //Azalea Wood
         BlockStateModelGenerator.LogTexturePool Azalea = blockStateModelGenerator.registerLog(AZALEA_LOG);
-        BlockStateModelGenerator.LogTexturePool StrippedAzalea = blockStateModelGenerator.registerLog(STRIPPED_AZALEA);
+        BlockStateModelGenerator.LogTexturePool StrippedAzalea = blockStateModelGenerator.registerLog(STRIPPED_AZALEA_LOG);
         BlockStateModelGenerator.LogTexturePool BloomingAzalea = blockStateModelGenerator.registerLog(BLOOMING_AZALEA_LOG);
         BlockStateModelGenerator.LogTexturePool BloomingEngravedAzalea = blockStateModelGenerator.registerLog(ENGRAVED_BLOOMING_AZALEA);
         BlockStateModelGenerator.LogTexturePool BloomingStrippedAzalea = blockStateModelGenerator.registerLog(BLOOMING_STRIPPED_AZALEA);
         BlockStateModelGenerator.BlockTexturePool AzaleaPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(AZALEA_PLANKS);
         BlockStateModelGenerator.BlockTexturePool BloomingAzaleaPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(BLOOMING_AZALEA_PLANKS);
+
+        /*
+        Misc stuff
+         */
+
 
         //Red Mushroom wood
 
@@ -213,102 +211,55 @@ public class CelluloseModelProvider extends FabricModelProvider {
         Actual additions:-
          */
 
-        //Log
+
         //(Engraved)
-        EngravedOak.log(ENGRAVED_OAK);
-        EngravedBirch.log(ENGRAVED_BIRCH);
-        EngravedSpruce.log(ENGRAVED_SPRUCE);
-        EngravedDarkOak.log(ENGRAVED_DARK_OAK);
-        EngravedJungle.log(ENGRAVED_JUNGLE);
-        EngravedAcacia.log(ENGRAVED_ACACIA);
-        EngravedCrimson.log(ENGRAVED_CRIMSON);
-        EngravedWarped.log(ENGRAVED_WARPED);
-        EngravedMangrove.log(ENGRAVED_MANGROVE);
-        EngravedCherry.log(ENGRAVED_CHERRY);
+        EngravedOak.log(ENGRAVED_OAK).wood(ENGRAVED_OAK_WOOD);
+        EngravedBirch.log(ENGRAVED_BIRCH).wood(ENGRAVED_BIRCH_WOOD);
+        EngravedSpruce.log(ENGRAVED_SPRUCE).wood(ENGRAVED_SPRUCE_WOOD);
+        EngravedDarkOak.log(ENGRAVED_DARK_OAK).wood(ENGRAVED_DARK_OAK_WOOD);
+        EngravedJungle.log(ENGRAVED_JUNGLE).wood(ENGRAVED_JUNGLE_WOOD);
+        EngravedAcacia.log(ENGRAVED_ACACIA).wood(ENGRAVED_ACACIA_WOOD);
+        EngravedCrimson.log(ENGRAVED_CRIMSON).wood(ENGRAVED_CRIMSON_HYPHAE);
+        EngravedWarped.log(ENGRAVED_WARPED).wood(ENGRAVED_WARPED_HYPHAE);
+        EngravedMangrove.log(ENGRAVED_MANGROVE).wood(ENGRAVED_MANGROVE_WOOD);
+        EngravedBamboo.log(ENGRAVED_BAMBOO).wood(ENGRAVED_BAMBOO_BLOCK);
+        EngravedCherry.log(ENGRAVED_CHERRY).wood(ENGRAVED_CHERRY_WOOD);
         //(Chipped)
-        ChippedOak.log(CHIPPED_OAK);
-        ChippedBirch.log(CHIPPED_BIRCH);
-        ChippedSpruce.log(CHIPPED_SPRUCE);
-        ChippedDarkOak.log(CHIPPED_DARK_OAK);
-        ChippedJungle.log(CHIPPED_JUNGLE);
-        ChippedAcacia.log(CHIPPED_ACACIA);
-        ChippedCrimson.log(CHIPPED_CRIMSON);
-        ChippedWarped.log(CHIPPED_WARPED);
-        ChippedMangrove.log(CHIPPED_MANGROVE);
+        ChippedOak.log(CHIPPED_OAK).wood(CHIPPED_OAK_WOOD);
+        ChippedBirch.log(CHIPPED_BIRCH).wood(CHIPPED_BIRCH_WOOD);
+        ChippedSpruce.log(CHIPPED_SPRUCE).wood(CHIPPED_SPRUCE_WOOD);
+        ChippedDarkOak.log(CHIPPED_DARK_OAK).wood(CHIPPED_DARK_OAK_WOOD);
+        ChippedJungle.log(CHIPPED_JUNGLE).wood(CHIPPED_JUNGLE_WOOD);
+        ChippedAcacia.log(CHIPPED_ACACIA).wood(CHIPPED_ACACIA_WOOD);
+        ChippedCrimson.log(CHIPPED_CRIMSON).wood(CHIPPED_CRIMSON_HYPHAE);
+        ChippedWarped.log(CHIPPED_WARPED).wood(CHIPPED_WARPED_HYPHAE);
+        ChippedMangrove.log(CHIPPED_MANGROVE).wood(CHIPPED_MANGROVE_WOOD);
         ChippedBamboo.log(CHIPPED_BAMBOO_BLOCK);
         ChippedStrippedBamboo.log(CHIPPED_STRIPPED_BAMBOO_BLOCK);
-        ChippedCherry.log(CHIPPED_CHERRY);
+        ChippedCherry.log(CHIPPED_CHERRY).wood(CHIPPED_CHERRY_WOOD);
         //(Stripped_Chipped)
-        StrippedChippedOak.log(STRIPPED_CHIPPED_OAK);
-        StrippedChippedBirch.log(STRIPPED_CHIPPED_BIRCH);
-        StrippedChippedSpruce.log(STRIPPED_CHIPPED_SPRUCE);
-        StrippedChippedDarkOak.log(STRIPPED_CHIPPED_DARK_OAK);
-        StrippedChippedJungle.log(STRIPPED_CHIPPED_JUNGLE);
-        StrippedChippedAcacia.log(STRIPPED_CHIPPED_ACACIA);
-        StrippedChippedCrimson.log(STRIPPED_CHIPPED_CRIMSON);
-        StrippedChippedWarped.log(STRIPPED_CHIPPED_WARPED);
-        StrippedChippedMangrove.log(STRIPPED_CHIPPED_MANGROVE);
-        StrippedChippedCherry.log(STRIPPED_CHIPPED_CHERRY);
+        StrippedChippedOak.log(STRIPPED_CHIPPED_OAK).wood(STRIPPED_CHIPPED_OAK_WOOD);
+        StrippedChippedBirch.log(STRIPPED_CHIPPED_BIRCH).wood(STRIPPED_CHIPPED_BIRCH_WOOD);
+        StrippedChippedSpruce.log(STRIPPED_CHIPPED_SPRUCE).wood(STRIPPED_CHIPPED_SPRUCE_WOOD);
+        StrippedChippedDarkOak.log(STRIPPED_CHIPPED_DARK_OAK).wood(STRIPPED_CHIPPED_DARK_OAK_WOOD);
+        StrippedChippedJungle.log(STRIPPED_CHIPPED_JUNGLE).wood(STRIPPED_CHIPPED_JUNGLE_WOOD);
+        StrippedChippedAcacia.log(STRIPPED_CHIPPED_ACACIA).wood(STRIPPED_CHIPPED_ACACIA_WOOD);
+        StrippedChippedCrimson.log(STRIPPED_CHIPPED_CRIMSON).wood(STRIPPED_CHIPPED_CRIMSON_HYPHAE);
+        StrippedChippedWarped.log(STRIPPED_CHIPPED_WARPED).wood(STRIPPED_CHIPPED_WARPED_HYPHAE);
+        StrippedChippedMangrove.log(STRIPPED_CHIPPED_MANGROVE).wood(STRIPPED_CHIPPED_MANGROVE_WOOD);
+        StrippedChippedCherry.log(STRIPPED_CHIPPED_CHERRY).wood(STRIPPED_CHIPPED_CHERRY_WOOD);
         //Plank pillars
-        PlankPillarOak.log(OAK_PLANK_PILLARS);
-        PlankPillarBirch.log(BIRCH_PLANK_PILLARS);
-        PlankPillarSpruce.log(SPRUCE_PLANK_PILLARS);
-        PlankPillarDarkOak.log(DARK_OAK_PLANK_PILLARS);
-        PlankPillarJungle.log(JUNGLE_PLANK_PILLARS);
-        PlankPillarAcacia.log(ACACIA_PLANK_PILLARS);
-        PlankPillarCrimson.log(CRIMSON_PLANK_PILLARS);
-        PlankPillarWarped.log(WARPED_PLANK_PILLARS);
-        PlankPillarMangrove.log(MANGROVE_PLANK_PILLARS);
-        PlankPillarBamboo.log(BAMBOO_PLANK_PILLARS);
-        PlankPillarCherry.log(CHERRY_PLANK_PILLARS);
-        //Vertical Plank pillars
-        VerticalPlankPillarOak.log(VERTICAL_OAK_PLANK_PILLARS);
-        VerticalPlankPillarBirch.log(VERTICAL_BIRCH_PLANK_PILLARS);
-        VerticalPlankPillarSpruce.log(VERTICAL_SPRUCE_PLANK_PILLARS);
-        VerticalPlankPillarDarkOak.log(VERTICAL_DARK_OAK_PLANK_PILLARS);
-        VerticalPlankPillarJungle.log(VERTICAL_JUNGLE_PLANK_PILLARS);
-        VerticalPlankPillarAcacia.log(VERTICAL_ACACIA_PLANK_PILLARS);
-        VerticalPlankPillarCrimson.log(VERTICAL_CRIMSON_PLANK_PILLARS);
-        VerticalPlankPillarWarped.log(VERTICAL_WARPED_PLANK_PILLARS);
-        VerticalPlankPillarMangrove.log(VERTICAL_MANGROVE_PLANK_PILLARS);
-        VerticalPlankPillarBamboo.log(VERTICAL_BAMBOO_PLANK_PILLARS);
-        VerticalPlankPillarCherry.log(VERTICAL_CHERRY_PLANK_PILLARS);
-        //Wood
-        //(Engraved)
-        EngravedOak.wood(ENGRAVED_OAK_WOOD);
-        EngravedBirch.wood(ENGRAVED_BIRCH_WOOD);
-        EngravedSpruce.wood(ENGRAVED_SPRUCE_WOOD);
-        EngravedDarkOak.wood(ENGRAVED_DARK_OAK_WOOD);
-        EngravedJungle.wood(ENGRAVED_JUNGLE_WOOD);
-        EngravedAcacia.wood(ENGRAVED_ACACIA_WOOD);
-        EngravedCrimson.wood(ENGRAVED_CRIMSON_HYPHAE);
-        EngravedWarped.wood(ENGRAVED_WARPED_HYPHAE);
-        EngravedMangrove.wood(ENGRAVED_MANGROVE_WOOD);
-        EngravedCherry.wood(ENGRAVED_CHERRY_WOOD);
-        //(Chipped)
-        ChippedOak.wood(CHIPPED_OAK_WOOD);
-        ChippedBirch.wood(CHIPPED_BIRCH_WOOD);
-        ChippedSpruce.wood(CHIPPED_SPRUCE_WOOD);
-        ChippedDarkOak.wood(CHIPPED_DARK_OAK_WOOD);
-        ChippedJungle.wood(CHIPPED_JUNGLE_WOOD);
-        ChippedAcacia.wood(CHIPPED_ACACIA_WOOD);
-        ChippedCrimson.wood(CHIPPED_CRIMSON_HYPHAE);
-        ChippedWarped.wood(CHIPPED_WARPED_HYPHAE);
-        ChippedMangrove.wood(CHIPPED_MANGROVE_WOOD);
-        ChippedBamboo.wood(CHIPPED_BAMBOO_WOOD);
-        ChippedStrippedBamboo.wood(CHIPPED_STRIPPED_BAMBOO_WOOD);
-        ChippedCherry.wood(CHIPPED_CHERRY_WOOD);
-        //(Stripped_chipped)
-        StrippedChippedOak.wood(STRIPPED_CHIPPED_OAK_WOOD);
-        StrippedChippedBirch.wood(STRIPPED_CHIPPED_BIRCH_WOOD);
-        StrippedChippedSpruce.wood(STRIPPED_CHIPPED_SPRUCE_WOOD);
-        StrippedChippedDarkOak.wood(STRIPPED_CHIPPED_DARK_OAK_WOOD);
-        StrippedChippedJungle.wood(STRIPPED_CHIPPED_JUNGLE_WOOD);
-        StrippedChippedAcacia.wood(STRIPPED_CHIPPED_ACACIA_WOOD);
-        StrippedChippedCrimson.wood(STRIPPED_CHIPPED_CRIMSON_HYPHAE);
-        StrippedChippedWarped.wood(STRIPPED_CHIPPED_WARPED_HYPHAE);
-        StrippedChippedMangrove.wood(STRIPPED_CHIPPED_MANGROVE_WOOD);
-        StrippedChippedCherry.wood(STRIPPED_CHIPPED_CHERRY_WOOD);
+        PlankPillarOak.log(OAK_PLANK_PILLARS).wood(OAK_PLANK_BOX);
+        PlankPillarBirch.log(BIRCH_PLANK_PILLARS).wood(BIRCH_PLANK_BOX);
+        PlankPillarSpruce.log(SPRUCE_PLANK_PILLARS).wood(SPRUCE_PLANK_BOX);
+        PlankPillarDarkOak.log(DARK_OAK_PLANK_PILLARS).wood(DARK_OAK_PLANK_BOX);
+        PlankPillarJungle.log(JUNGLE_PLANK_PILLARS).wood(JUNGLE_PLANK_BOX);
+        PlankPillarAcacia.log(ACACIA_PLANK_PILLARS).wood(ACACIA_PLANK_BOX);
+        PlankPillarCrimson.log(CRIMSON_PLANK_PILLARS).wood(CRIMSON_PLANK_BOX);
+        PlankPillarWarped.log(WARPED_PLANK_PILLARS).wood(WARPED_PLANK_BOX);
+        PlankPillarMangrove.log(MANGROVE_PLANK_PILLARS).wood(MANGROVE_PLANK_BOX);
+        PlankPillarBamboo.log(BAMBOO_PLANK_PILLARS).wood(BAMBOO_PLANK_BOX);
+        PlankPillarCherry.log(CHERRY_PLANK_PILLARS).wood(CHERRY_PLANK_BOX);
 
         //Beam
         BeamOak.wood(OAK_BEAM);
@@ -324,199 +275,89 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BeamCherry.wood(CHERRY_BEAM);
 
         //Slabs
-        VerticalOak.slab(VERTICAL_OAK_SLAB);
-        VerticalBirch.slab(VERTICAL_BIRCH_SLAB);
-        VerticalSpruce.slab(VERTICAL_SPRUCE_SLAB);
-        VerticalDarkOak.slab(VERTICAL_DARK_OAK_SLAB);
-        VerticalJungle.slab(VERTICAL_JUNGLE_SLAB);
-        VerticalAcacia.slab(VERTICAL_ACACIA_SLAB);
-        VerticalCrimson.slab(VERTICAL_CRIMSON_SLAB);
-        VerticalWarped.slab(VERTICAL_WARPED_SLAB);
-        VerticalMangrove.slab(VERTICAL_MANGROVE_SLAB);
-        VerticalBamboo.slab(VERTICAL_BAMBOO_SLAB);
-        VerticalCherry.slab(VERTICAL_CHERRY_SLAB);
+        VerticalOak.slab(VERTICAL_OAK_SLAB).stairs(VERTICAL_OAK_STAIR);
+        VerticalBirch.slab(VERTICAL_BIRCH_SLAB).stairs(VERTICAL_BIRCH_STAIR);
+        VerticalSpruce.slab(VERTICAL_SPRUCE_SLAB).stairs(VERTICAL_SPRUCE_STAIR);
+        VerticalDarkOak.slab(VERTICAL_DARK_OAK_SLAB).stairs(VERTICAL_DARK_OAK_STAIR);
+        VerticalJungle.slab(VERTICAL_JUNGLE_SLAB).stairs(VERTICAL_JUNGLE_STAIR);
+        VerticalAcacia.slab(VERTICAL_ACACIA_SLAB).stairs(VERTICAL_ACACIA_STAIR);
+        VerticalCrimson.slab(VERTICAL_CRIMSON_SLAB).stairs(VERTICAL_CRIMSON_STAIR);
+        VerticalWarped.slab(VERTICAL_WARPED_SLAB).stairs(VERTICAL_WARPED_STAIR);
+        VerticalMangrove.slab(VERTICAL_MANGROVE_SLAB).stairs(VERTICAL_MANGROVE_STAIR);
+        VerticalBamboo.slab(VERTICAL_BAMBOO_SLAB).stairs(VERTICAL_BAMBOO_STAIR);
+        VerticalCherry.slab(VERTICAL_CHERRY_SLAB).stairs(VERTICAL_CHERRY_STAIR);
 
-        MosaicOak.slab(OAK_MOSAIC_SLABS);
-        MosaicBirch.slab(BIRCH_MOSAIC_SLABS);
-        MosaicSpruce.slab(SPRUCE_MOSAIC_SLABS);
-        MosaicDarkOak.slab(DARK_OAK_MOSAIC_SLABS);
-        MosaicJungle.slab(JUNGLE_MOSAIC_SLABS);
-        MosaicAcacia.slab(ACACIA_MOSAIC_SLABS);
-        MosaicCrimson.slab(CRIMSON_MOSAIC_SLABS);
-        MosaicWarped.slab(WARPED_MOSAIC_SLABS);
-        MosaicMangrove.slab(MANGROVE_MOSAIC_SLABS);
-        MosaicCherry.slab(CHERRY_MOSAIC_SLABS);
+        MosaicOak.slab(OAK_MOSAIC_SLABS).stairs(OAK_MOSAIC_STAIRS);
+        MosaicBirch.slab(BIRCH_MOSAIC_SLABS).stairs(BIRCH_MOSAIC_STAIRS);
+        MosaicSpruce.slab(SPRUCE_MOSAIC_SLABS).stairs(SPRUCE_MOSAIC_STAIRS);
+        MosaicDarkOak.slab(DARK_OAK_MOSAIC_SLABS).stairs(DARK_OAK_MOSAIC_STAIRS);
+        MosaicJungle.slab(JUNGLE_MOSAIC_SLABS).stairs(JUNGLE_MOSAIC_STAIRS);
+        MosaicAcacia.slab(ACACIA_MOSAIC_SLABS).stairs(ACACIA_MOSAIC_STAIRS);
+        MosaicCrimson.slab(CRIMSON_MOSAIC_SLABS).stairs(CRIMSON_MOSAIC_STAIRS);
+        MosaicWarped.slab(WARPED_MOSAIC_SLABS).stairs(WARPED_MOSAIC_STAIRS);
+        MosaicMangrove.slab(MANGROVE_MOSAIC_SLABS).stairs(MANGROVE_MOSAIC_STAIRS);
+        MosaicCherry.slab(CHERRY_MOSAIC_SLABS).stairs(CHERRY_MOSAIC_STAIRS);
 
-        ChippedPlankOak.slab(CHIPPED_OAK_SLAB);
-        ChippedPlankBirch.slab(CHIPPED_BIRCH_SLAB);
-        ChippedPlankSpruce.slab(CHIPPED_SPRUCE_SLAB);
-        ChippedPlankDarkOak.slab(CHIPPED_DARK_OAK_SLAB);
-        ChippedPlankJungle.slab(CHIPPED_JUNGLE_SLAB);
-        ChippedPlankAcacia.slab(CHIPPED_ACACIA_SLAB);
-        ChippedPlankCrimson.slab(CHIPPED_CRIMSON_SLAB);
-        ChippedPlankWarped.slab(CHIPPED_WARPED_SLAB);
-        ChippedPlankMangrove.slab(CHIPPED_MANGROVE_SLAB);
-        ChippedPlankBamboo.slab(CHIPPED_BAMBOO_SLAB);
-        ChippedPlankCherry.slab(CHIPPED_CHERRY_SLAB);
+        ChippedPlankOak.slab(CHIPPED_OAK_SLAB).stairs(CHIPPED_OAK_STAIR);
+        ChippedPlankBirch.slab(CHIPPED_BIRCH_SLAB).stairs(CHIPPED_BIRCH_STAIR);
+        ChippedPlankSpruce.slab(CHIPPED_SPRUCE_SLAB).stairs(CHIPPED_SPRUCE_STAIR);
+        ChippedPlankDarkOak.slab(CHIPPED_DARK_OAK_SLAB).stairs(CHIPPED_DARK_OAK_STAIR);
+        ChippedPlankJungle.slab(CHIPPED_JUNGLE_SLAB).stairs(CHIPPED_JUNGLE_STAIR);
+        ChippedPlankAcacia.slab(CHIPPED_ACACIA_SLAB).stairs(CHIPPED_ACACIA_STAIR);
+        ChippedPlankCrimson.slab(CHIPPED_CRIMSON_SLAB).stairs(CHIPPED_CRIMSON_STAIR);
+        ChippedPlankWarped.slab(CHIPPED_WARPED_SLAB).stairs(CHIPPED_WARPED_STAIR);
+        ChippedPlankMangrove.slab(CHIPPED_MANGROVE_SLAB).stairs(CHIPPED_MANGROVE_STAIR);
+        ChippedPlankBamboo.slab(CHIPPED_BAMBOO_SLAB).stairs(CHIPPED_BAMBOO_STAIR);
+        ChippedPlankCherry.slab(CHIPPED_CHERRY_SLAB).stairs(CHIPPED_CHERRY_STAIR);
 
-        TilesOak.slab(OAK_TILES_SLABS);
-        TilesBirch.slab(BIRCH_TILES_SLABS);
-        TilesSpruce.slab(SPRUCE_TILES_SLABS);
-        TilesDarkOak.slab(DARK_OAK_TILES_SLABS);
-        TilesJungle.slab(JUNGLE_TILES_SLABS);
-        TilesAcacia.slab(ACACIA_TILES_SLABS);
-        TilesCrimson.slab(CRIMSON_TILES_SLABS);
-        TilesWarped.slab(WARPED_TILES_SLABS);
-        TilesMangrove.slab(MANGROVE_TILES_SLABS);
-        TilesBamboo.slab(BAMBOO_TILES_SLABS);
-        TilesCherry.slab(CHERRY_TILES_SLABS);
+        TilesOak.slab(OAK_TILES_SLABS).stairs(OAK_TILES_STAIRS);
+        TilesBirch.slab(BIRCH_TILES_SLABS).stairs(BIRCH_TILES_STAIRS);
+        TilesSpruce.slab(SPRUCE_TILES_SLABS).stairs(SPRUCE_TILES_STAIRS);
+        TilesDarkOak.slab(DARK_OAK_TILES_SLABS).stairs(DARK_OAK_TILES_STAIRS);
+        TilesJungle.slab(JUNGLE_TILES_SLABS).stairs(JUNGLE_TILES_STAIRS);
+        TilesAcacia.slab(ACACIA_TILES_SLABS).stairs(ACACIA_TILES_STAIRS);
+        TilesCrimson.slab(CRIMSON_TILES_SLABS).stairs(CRIMSON_TILES_STAIRS);
+        TilesWarped.slab(WARPED_TILES_SLABS).stairs(WARPED_TILES_STAIRS);
+        TilesMangrove.slab(MANGROVE_TILES_SLABS).stairs(MANGROVE_TILES_STAIRS);
+        TilesBamboo.slab(BAMBOO_TILES_SLABS).stairs(BAMBOO_TILES_STAIRS);
+        TilesCherry.slab(CHERRY_TILES_SLABS).stairs(CHERRY_TILES_STAIRS);
 
-        BoardsOak.slab(OAK_BOARDS_SLABS);
-        BoardsBirch.slab(BIRCH_BOARDS_SLABS);
-        BoardsSpruce.slab(SPRUCE_BOARDS_SLABS);
-        BoardsDarkOak.slab(DARK_OAK_BOARDS_SLABS);
-        BoardsJungle.slab(JUNGLE_BOARDS_SLABS);
-        BoardsAcacia.slab(ACACIA_BOARDS_SLABS);
-        BoardsCrimson.slab(CRIMSON_BOARDS_SLABS);
-        BoardsWarped.slab(WARPED_BOARDS_SLABS);
-        BoardsMangrove.slab(MANGROVE_BOARDS_SLABS);
-        BoardsBamboo.slab(BAMBOO_BOARDS_SLABS);
-        BoardsCherry.slab(CHERRY_BOARDS_SLABS);
+        BoardsOak.slab(OAK_BOARDS_SLABS).stairs(OAK_BOARDS_STAIRS);
+        BoardsBirch.slab(BIRCH_BOARDS_SLABS).stairs(BIRCH_BOARDS_STAIRS);
+        BoardsSpruce.slab(SPRUCE_BOARDS_SLABS).stairs(SPRUCE_BOARDS_STAIRS);
+        BoardsDarkOak.slab(DARK_OAK_BOARDS_SLABS).stairs(DARK_OAK_BOARDS_STAIRS);
+        BoardsJungle.slab(JUNGLE_BOARDS_SLABS).stairs(JUNGLE_BOARDS_STAIRS);
+        BoardsAcacia.slab(ACACIA_BOARDS_SLABS).stairs(ACACIA_BOARDS_STAIRS);
+        BoardsCrimson.slab(CRIMSON_BOARDS_SLABS).stairs(CRIMSON_BOARDS_STAIRS);
+        BoardsWarped.slab(WARPED_BOARDS_SLABS).stairs(WARPED_BOARDS_STAIRS);
+        BoardsMangrove.slab(MANGROVE_BOARDS_SLABS).stairs(MANGROVE_BOARDS_STAIRS);
+        BoardsBamboo.slab(BAMBOO_BOARDS_SLABS).stairs(BAMBOO_BOARDS_STAIRS);
+        BoardsCherry.slab(CHERRY_BOARDS_SLABS).stairs(CHERRY_BOARDS_STAIRS);
 
-        GlazedOak.slab(GLAZED_OAK_SLABS);
-        GlazedBirch.slab(GLAZED_BIRCH_SLABS);
-        GlazedSpruce.slab(GLAZED_SPRUCE_SLABS);
-        GlazedDarkOak.slab(GLAZED_DARK_OAK_SLABS);
-        GlazedJungle.slab(GLAZED_JUNGLE_SLABS);
-        GlazedAcacia.slab(GLAZED_ACACIA_SLABS);
-        GlazedCrimson.slab(GLAZED_CRIMSON_SLABS);
-        GlazedWarped.slab(GLAZED_WARPED_SLABS);
-        GlazedMangrove.slab(GLAZED_MANGROVE_SLABS);
-        GlazedBamboo.slab(GLAZED_BAMBOO_SLABS);
-        GlazedCherry.slab(GLAZED_CHERRY_SLABS);
+        GlazedOak.slab(GLAZED_OAK_SLABS).stairs(GLAZED_OAK_STAIRS);
+        GlazedBirch.slab(GLAZED_BIRCH_SLABS).stairs(GLAZED_BIRCH_STAIRS);
+        GlazedSpruce.slab(GLAZED_SPRUCE_SLABS).stairs(GLAZED_SPRUCE_STAIRS);
+        GlazedDarkOak.slab(GLAZED_DARK_OAK_SLABS).stairs(GLAZED_DARK_OAK_STAIRS);
+        GlazedJungle.slab(GLAZED_JUNGLE_SLABS).stairs(GLAZED_JUNGLE_STAIRS);
+        GlazedAcacia.slab(GLAZED_ACACIA_SLABS).stairs(GLAZED_ACACIA_STAIRS);
+        GlazedCrimson.slab(GLAZED_CRIMSON_SLABS).stairs(GLAZED_CRIMSON_STAIRS);
+        GlazedWarped.slab(GLAZED_WARPED_SLABS).stairs(GLAZED_WARPED_STAIRS);
+        GlazedMangrove.slab(GLAZED_MANGROVE_SLABS).stairs(GLAZED_MANGROVE_STAIRS);
+        GlazedBamboo.slab(GLAZED_BAMBOO_SLABS).stairs(GLAZED_BAMBOO_STAIRS);
+        GlazedCherry.slab(GLAZED_CHERRY_SLABS).stairs(GLAZED_CHERRY_STAIRS);
 
-        //Stairs
-        VerticalOak.stairs(VERTICAL_OAK_STAIR);
-        VerticalBirch.stairs(VERTICAL_BIRCH_STAIR);
-        VerticalSpruce.stairs(VERTICAL_SPRUCE_STAIR);
-        VerticalDarkOak.stairs(VERTICAL_DARK_OAK_STAIR);
-        VerticalJungle.stairs(VERTICAL_JUNGLE_STAIR);
-        VerticalAcacia.stairs(VERTICAL_ACACIA_STAIR);
-        VerticalCrimson.stairs(VERTICAL_CRIMSON_STAIR);
-        VerticalWarped.stairs(VERTICAL_WARPED_STAIR);
-        VerticalMangrove.stairs(VERTICAL_MANGROVE_STAIR);
-        VerticalBamboo.stairs(VERTICAL_BAMBOO_STAIR);
-        VerticalCherry.stairs(VERTICAL_CHERRY_STAIR);
-
-        MosaicOak.stairs(OAK_MOSAIC_STAIRS);
-        MosaicBirch.stairs(BIRCH_MOSAIC_STAIRS);
-        MosaicSpruce.stairs(SPRUCE_MOSAIC_STAIRS);
-        MosaicDarkOak.stairs(DARK_OAK_MOSAIC_STAIRS);
-        MosaicJungle.stairs(JUNGLE_MOSAIC_STAIRS);
-        MosaicAcacia.stairs(ACACIA_MOSAIC_STAIRS);
-        MosaicCrimson.stairs(CRIMSON_MOSAIC_STAIRS);
-        MosaicWarped.stairs(WARPED_MOSAIC_STAIRS);
-        MosaicMangrove.stairs(MANGROVE_MOSAIC_STAIRS);
-        MosaicCherry.stairs(CHERRY_MOSAIC_STAIRS);
-
-        ChippedPlankBirch.stairs(CHIPPED_BIRCH_STAIR);
-        ChippedPlankSpruce.stairs(CHIPPED_SPRUCE_STAIR);
-        ChippedPlankDarkOak.stairs(CHIPPED_DARK_OAK_STAIR);
-        ChippedPlankJungle.stairs(CHIPPED_JUNGLE_STAIR);
-        ChippedPlankAcacia.stairs(CHIPPED_ACACIA_STAIR);
-        ChippedPlankCrimson.stairs(CHIPPED_CRIMSON_STAIR);
-        ChippedPlankWarped.stairs(CHIPPED_WARPED_STAIR);
-        ChippedPlankMangrove.stairs(CHIPPED_MANGROVE_STAIR);
-        ChippedPlankBamboo.stairs(CHIPPED_BAMBOO_STAIR);
-        ChippedPlankCherry.stairs(CHIPPED_CHERRY_STAIR);
-
-        TilesOak.stairs(OAK_TILES_STAIRS);
-        TilesBirch.stairs(BIRCH_TILES_STAIRS);
-        TilesSpruce.stairs(SPRUCE_TILES_STAIRS);
-        TilesDarkOak.stairs(DARK_OAK_TILES_STAIRS);
-        TilesJungle.stairs(JUNGLE_TILES_STAIRS);
-        TilesAcacia.stairs(ACACIA_TILES_STAIRS);
-        TilesCrimson.stairs(CRIMSON_TILES_STAIRS);
-        TilesWarped.stairs(WARPED_TILES_STAIRS);
-        TilesMangrove.stairs(MANGROVE_TILES_STAIRS);
-        TilesBamboo.stairs(BAMBOO_TILES_STAIRS);
-        TilesCherry.stairs(CHERRY_TILES_STAIRS);
-
-        BoardsOak.stairs(OAK_BOARDS_STAIRS);
-        BoardsBirch.stairs(BIRCH_BOARDS_STAIRS);
-        BoardsSpruce.stairs(SPRUCE_BOARDS_STAIRS);
-        BoardsDarkOak.stairs(DARK_OAK_BOARDS_STAIRS);
-        BoardsJungle.stairs(JUNGLE_BOARDS_STAIRS);
-        BoardsAcacia.stairs(ACACIA_BOARDS_STAIRS);
-        BoardsCrimson.stairs(CRIMSON_BOARDS_STAIRS);
-        BoardsWarped.stairs(WARPED_BOARDS_STAIRS);
-        BoardsMangrove.stairs(MANGROVE_BOARDS_STAIRS);
-        BoardsBamboo.stairs(BAMBOO_BOARDS_STAIRS);
-        BoardsCherry.stairs(CHERRY_BOARDS_STAIRS);
-
-        GlazedOak.stairs(GLAZED_OAK_STAIRS);
-        GlazedBirch.stairs(GLAZED_BIRCH_STAIRS);
-        GlazedSpruce.stairs(GLAZED_SPRUCE_STAIRS);
-        GlazedDarkOak.stairs(GLAZED_DARK_OAK_STAIRS);
-        GlazedJungle.stairs(GLAZED_JUNGLE_STAIRS);
-        GlazedAcacia.stairs(GLAZED_ACACIA_STAIRS);
-        GlazedCrimson.stairs(GLAZED_CRIMSON_STAIRS);
-        GlazedWarped.stairs(GLAZED_WARPED_STAIRS);
-        GlazedMangrove.stairs(GLAZED_MANGROVE_STAIRS);
-        GlazedBamboo.stairs(GLAZED_BAMBOO_STAIRS);
-        GlazedCherry.stairs(GLAZED_CHERRY_STAIRS);
-
-        //Blocks
-        // (Flipped Planks)
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_OAK_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_BIRCH_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_SPRUCE_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_DARK_OAK_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_JUNGLE_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_ACACIA_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_CRIMSON_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_WARPED_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_MANGROVE_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_BAMBOO_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_CHERRY_PLANKS);
-
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_OAK_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_BIRCH_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_SPRUCE_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_DARK_OAK_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_JUNGLE_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_ACACIA_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_CRIMSON_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_WARPED_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_MANGROVE_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_BAMBOO_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_CHERRY_PLANKS);
-
-        //(Carved wood)
-        blockStateModelGenerator.registerSimpleCubeAll(OAK_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(BIRCH_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(SPRUCE_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(DARK_OAK_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(JUNGLE_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(ACACIA_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(CRIMSON_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(WARPED_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(MANGROVE_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(BAMBOO_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(CHERRY_CARVED);
-
-        //(Carpented Wood)
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_OAK);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_BIRCH);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_SPRUCE);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_DARK_OAK);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_JUNGLE);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_ACACIA);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_CRIMSON);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_WARPED);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_MANGROVE);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_BAMBOO);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_CHERRY);
+        //(Chiseled planks)
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_OAK);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_BIRCH);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_SPRUCE);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_DARK_OAK);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_JUNGLE);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_ACACIA);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_CRIMSON);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_WARPED);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_MANGROVE);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_BAMBOO);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_CHERRY);
 
         //(Storage Blocks)
         blockStateModelGenerator.registerSimpleCubeAll(BLOCK_OF_STICKS);
@@ -544,58 +385,37 @@ public class CelluloseModelProvider extends FabricModelProvider {
         *Barricades
         */
 
-        blockStateModelGenerator.registerGlassPane(OAK_PLANKS, OAK_BARRICADES);
-
-        //Misc stuff
-
+        //Other stuff
 
         //(Woodsets: Cactus)
-        ///Logs
-        Cactus.log(CACTUS_BUNDLE);
-        StrippedCactus.log(STRIPPED_CACTUS);
-        EngravedCactus.log(ENGRAVED_CACTUS);
-        ChippedCactus.log(CHIPPED_CACTUS);
-        PlankPillarCactus.log(CACTUS_PLANK_PILLARS);
-        VerticalPlankPillarCactus.log(VERTICAL_CACTUS_PLANK_PILLARS);
+        ///Logs stuff
+        Cactus.log(CACTUS_BUNDLE).wood(CACTUS_CROWN);
+        StrippedCactus.log(STRIPPED_CACTUS).wood(STRIPPED_CACTUS_CROWN);
+        EngravedCactus.log(ENGRAVED_CACTUS).wood(ENGRAVED_CACTUS_CROWN);
+        ChippedCactus.log(CHIPPED_CACTUS).wood(CHIPPED_CACTUS_CROWN);
+        PlankPillarCactus.log(CACTUS_PLANK_PILLARS).wood(CACTUS_PLANK_BOX);
+        StrippedChippedCactus.log(STRIPPED_CHIPPED_CACTUS).wood(STRIPPED_CHIPPED_CACTUS_CROWN);
         BeamCactus.log(CACTUS_BEAM);
-        ///Wood
-        Cactus.wood(CACTUS_CROWN);
-        StrippedCactus.wood(STRIPPED_CACTUS_CROWN);
-        ChippedCactus.wood(CHIPPED_CACTUS_CROWN);
-        EngravedCactus.wood(ENGRAVED_CACTUS_CROWN);
-        StrippedChippedCactus.wood(STRIPPED_CHIPPED_CACTUS_CROWN);
-        ///Planks and other building blocks stuff
-        blockStateModelGenerator.registerTrapdoor(CACTUS_TRAPDOOR);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_CACTUS_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(FLIPPED_VERTICAL_CACTUS_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(CACTUS_CARVED);
-        blockStateModelGenerator.registerSimpleCubeAll(CARPENTED_CACTUS);
-        ///Slabs
-        cactusTexturePool.slab(CACTUS_SLAB);
-        cactusVerticalTexturePool.slab(VERTICAL_CACTUS_SLAB);
-        cactusMosaicTexturePool.slab(CACTUS_MOSAIC_SLABS);
-        ChippedPlankCactus.slab(CHIPPED_CACTUS_SLAB);
-        TilesCactus.slab(CACTUS_TILES_SLABS);
-        BoardsCactus.slab(CACTUS_BOARDS_SLABS);
-        GlazedCactus.slab(GLAZED_CACTUS_SLABS);
-        ///Stairs
-        cactusTexturePool.stairs(CACTUS_STAIRS);
-        cactusVerticalTexturePool.stairs(VERTICAL_CACTUS_STAIR);
-        cactusMosaicTexturePool.stairs(CACTUS_MOSAIC_STAIRS);
-        BoardsCactus.stairs(CACTUS_BOARDS_STAIRS);
-        GlazedCactus.stairs(GLAZED_CACTUS_STAIRS);
-        TilesCactus.stairs(CACTUS_TILES_STAIRS);
-        ///Misc
-        cactusTexturePool.fence(CACTUS_FENCE);
-        cactusTexturePool.fenceGate(CACTUS_FENCE_GATE);
-        cactusTexturePool.button(CACTUS_BUTTON);
-        cactusTexturePool.pressurePlate(CACTUS_PRESSURE_PLATE);
+        ///Redstone component
         blockStateModelGenerator.registerDoor(CACTUS_DOOR);
+        blockStateModelGenerator.registerTrapdoor(CACTUS_TRAPDOOR);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_CACTUS);
+        ///Plank related
+        cactusTexturePool.slab(CACTUS_SLAB).stairs(CACTUS_STAIRS).fence(CACTUS_FENCE).fenceGate(CACTUS_FENCE_GATE).button(CACTUS_BUTTON).pressurePlate(CACTUS_PRESSURE_PLATE);
+        cactusVerticalTexturePool.slab(VERTICAL_CACTUS_SLAB).stairs(VERTICAL_CACTUS_STAIR);
+        cactusMosaicTexturePool.slab(CACTUS_MOSAIC_SLABS).stairs(CACTUS_MOSAIC_STAIRS);
+        ChippedPlankCactus.slab(CHIPPED_CACTUS_SLAB).stairs(CHIPPED_CACTUS_STAIR);
+        TilesCactus.slab(CACTUS_TILES_SLABS).stairs(CACTUS_TILES_STAIRS);
+        BoardsCactus.slab(CACTUS_BOARDS_SLABS).stairs(CACTUS_BOARDS_STAIRS);
+        GlazedCactus.slab(GLAZED_CACTUS_SLABS).stairs(GLAZED_CACTUS_STAIRS);
 
         //(Woodsets: Azalea)
+        ///Logs stuff
+        ///Redstone component
+        ///Plank related
         Azalea.log(AZALEA_LOG);
         BloomingAzalea.log(BLOOMING_AZALEA_LOG);
-        StrippedAzalea.log(STRIPPED_AZALEA);
+        StrippedAzalea.log(STRIPPED_AZALEA_LOG);
         BloomingStrippedAzalea.log(BLOOMING_STRIPPED_AZALEA);
         EngravedAzalea.log(ENGRAVED_AZALEA);
         EngravedAzalea.wood(ENGRAVED_AZALEA_WOOD);
@@ -633,6 +453,18 @@ public class CelluloseModelProvider extends FabricModelProvider {
         ChippedPlankBloomingAzalea.stairs(CHIPPED_BLOOMING_AZALEA_STAIR);
         BloomingEngravedAzalea.log(ENGRAVED_BLOOMING_AZALEA);
         BloomingEngravedAzalea.wood(ENGRAVED_BLOOMING_AZALEA_WOOD);
+        TilesAzalea.slab(AZALEA_TILES_SLABS);
+        TilesAzalea.stairs(AZALEA_TILES_STAIRS);
+        TilesBloomingAzalea.slab(BLOOMING_AZALEA_TILES_SLABS);
+        TilesBloomingAzalea.stairs(BLOOMING_AZALEA_TILES_STAIRS);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_AZALEA);
+        blockStateModelGenerator.registerSimpleCubeAll(CHISELED_BLOOMING_AZALEA);
+        PlankPillarAzalea.log(AZALEA_PLANK_PILLARS).wood(AZALEA_PLANK_BOX);
+        PlankPillarBloomingAzalea.log(BLOOMING_AZALEA_PLANK_PILLARS).wood(BLOOMING_AZALEA_PLANK_BOX);
+        GlazedAzalea.slab(GLAZED_AZALEA_SLABS).stairs(GLAZED_AZALEA_STAIRS);
+
+        ///Misc
+
 
     }
 
@@ -643,5 +475,20 @@ public class CelluloseModelProvider extends FabricModelProvider {
         itemModelGenerator.register(POPACORN_BOWL, Models.GENERATED);
         itemModelGenerator.register(POPACORN_BOWL_HALF, Models.GENERATED);
         itemModelGenerator.register(POPACORN_BOWL_QUATER, Models.GENERATED);
+
+        //barks
+        itemModelGenerator.register(OAK_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(BIRCH_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(SPRUCE_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(DARK_OAK_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(JUNGLE_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(ACACIA_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(CRIMSON_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(WARPED_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(MANGROVE_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(BAMBOO_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(CHERRY_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(CACTUS_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(AZALEA_SAWDUST, Models.GENERATED);
     }
 }

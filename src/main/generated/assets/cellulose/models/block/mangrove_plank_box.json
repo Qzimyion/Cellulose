@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "cellulose:block/mangrove_plank_pillar",
+    "side": "cellulose:block/mangrove_plank_pillar"
+  }
+}

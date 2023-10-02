@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:oak_planks",
+    "cellulose:vertical_oak_planks",
+    "cellulose:chipped_oak_planks"
+  ]
+}

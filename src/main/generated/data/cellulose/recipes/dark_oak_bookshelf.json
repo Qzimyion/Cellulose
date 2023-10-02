@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ceelulose:bookshelves",
+  "key": {
+    "#": {
+      "tag": "cellulose:dark_oak_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "count": 3,
+    "item": "cellulose:dark_oak_bookshelf"
+  },
+  "show_notification": true
+}

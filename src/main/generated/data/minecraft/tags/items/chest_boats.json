@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:cactus_chest_boat",
+    "cellulose:azalea_chest_boat",
+    "cellulose:blooming_azalea_chest_boat"
+  ]
+}

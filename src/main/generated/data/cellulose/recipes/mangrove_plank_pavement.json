@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "group": "cellulose:pavements",
   "key": {
     "#": {
       "item": "minecraft:mangrove_planks"
@@ -8,10 +9,11 @@
   },
   "pattern": [
     "#  ",
-    "## "
+    "#  ",
+    "###"
   ],
   "result": {
-    "count": 3,
+    "count": 5,
     "item": "cellulose:mangrove_plank_pavement"
   },
   "show_notification": true

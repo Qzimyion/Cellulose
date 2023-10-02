@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:dark_oak_planks",
+    "cellulose:vertical_dark_oak_planks",
+    "cellulose:chipped_dark_oak_planks"
+  ]
+}

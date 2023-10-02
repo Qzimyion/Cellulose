@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cherry_sawdust": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "cellulose:sawdust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cellulose:cherry_saw_dust_layer"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cherry_sawdust",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cellulose:cherry_saw_dust_layer"
+    ]
+  },
+  "sends_telemetry_event": false
+}

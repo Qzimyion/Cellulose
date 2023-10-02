@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "group": "cellulose:pavements",
   "key": {
     "#": {
       "item": "minecraft:dark_oak_planks"
@@ -8,10 +9,11 @@
   },
   "pattern": [
     "#  ",
-    "## "
+    "#  ",
+    "###"
   ],
   "result": {
-    "count": 3,
+    "count": 5,
     "item": "cellulose:dark_oak_plank_pavement"
   },
   "show_notification": true

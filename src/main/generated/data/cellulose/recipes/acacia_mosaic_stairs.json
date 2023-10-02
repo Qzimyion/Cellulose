@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "minecraft:wooden_stairs",
+  "group": "cellulose:wooden_mosaic_stairs",
   "key": {
     "#": {
       "item": "cellulose:acacia_mosaic"

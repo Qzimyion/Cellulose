@@ -5,10 +5,12 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.*;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 import net.qzimyion.cellulose.items.CelluloseItems;
@@ -272,7 +274,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         //Sawmill recipe
         ShapedRecipeJsonBuilder.create(DECORATIONS, SAWMILL, 1)
                 .pattern(" # ")
-                .pattern("AAA").input('#', IRON_INGOT).input('A', PLANKS).criterion(FabricRecipeProvider.hasItem(IRON_INGOT), FabricRecipeProvider.conditionsFromItem(IRON_INGOT))
+                .pattern("AAA").input('#', IRON_INGOT).input('A', PLANKS).criterion(FabricRecipeProvider.hasItem(OAK_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(SAWMILL)));
 
         //Frame recipes
@@ -331,14 +333,10 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .input(CACTUS_PLANKS).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_BUTTONS))
                 .group("minecraft:wooden_buttons").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_BUTTON)));
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_PRESSURE_PLATE, 2)
-                .pattern("   ")
-                .pattern("   ")
                 .pattern("## ")
                 .input('#', CACTUS_PLANKS).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_PRESSURE_PLATES))
                 .group("minecraft:wooden_pressure_plates").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_PRESSURE_PLATE)));
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_TRAPDOOR, 2)
-                .pattern("   ")
-                .pattern("   ")
                 .pattern("## ")
                 .input('#', CACTUS_PLANKS).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_TRAPDOORS))
                 .group("minecraft:wooden_trapdoors").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_TRAPDOOR)));
@@ -366,22 +364,22 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerSlabRecipe(exporter, BUILDING_BLOCKS, STRIPPED_OAK_LOG_SLABS, STRIPPED_OAK_LOG);
 
         //Pavements
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, OAK_PLANK_PAVEMENT, OAK_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, BIRCH_PLANK_PAVEMENT, BIRCH_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, SPRUCE_PLANK_PAVEMENT, SPRUCE_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, DARK_OAK_PLANK_PAVEMENT, DARK_OAK_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, JUNGLE_PLANK_PAVEMENT, JUNGLE_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, ACACIA_PLANK_PAVEMENT, ACACIA_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, CRIMSON_PLANK_PAVEMENT, CRIMSON_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, WARPED_PLANK_PAVEMENT, WARPED_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, MANGROVE_PLANK_PAVEMENT, MANGROVE_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, BAMBOO_PLANK_PAVEMENT, BAMBOO_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, CHERRY_PLANK_PAVEMENT, CHERRY_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, CACTUS_PLANK_PAVEMENT, CACTUS_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, AZALEA_PLANK_PAVEMENT, AZALEA_PLANKS);
-        offerPavementRecipe(exporter, BUILDING_BLOCKS, BLOOMING_AZALEA_PLANK_PAVEMENT, BLOOMING_AZALEA_PLANKS);
+        offerPavementRecipe(exporter, OAK_PLANK_PAVEMENT, OAK_PLANKS);
+        offerPavementRecipe(exporter, BIRCH_PLANK_PAVEMENT, BIRCH_PLANKS);
+        offerPavementRecipe(exporter, SPRUCE_PLANK_PAVEMENT, SPRUCE_PLANKS);
+        offerPavementRecipe(exporter, DARK_OAK_PLANK_PAVEMENT, DARK_OAK_PLANKS);
+        offerPavementRecipe(exporter, JUNGLE_PLANK_PAVEMENT, JUNGLE_PLANKS);
+        offerPavementRecipe(exporter, ACACIA_PLANK_PAVEMENT, ACACIA_PLANKS);
+        offerPavementRecipe(exporter, CRIMSON_PLANK_PAVEMENT, CRIMSON_PLANKS);
+        offerPavementRecipe(exporter, WARPED_PLANK_PAVEMENT, WARPED_PLANKS);
+        offerPavementRecipe(exporter, MANGROVE_PLANK_PAVEMENT, MANGROVE_PLANKS);
+        offerPavementRecipe(exporter, BAMBOO_PLANK_PAVEMENT, BAMBOO_PLANKS);
+        offerPavementRecipe(exporter, CHERRY_PLANK_PAVEMENT, CHERRY_PLANKS);
+        offerPavementRecipe(exporter, CACTUS_PLANK_PAVEMENT, CACTUS_PLANKS);
+        offerPavementRecipe(exporter, AZALEA_PLANK_PAVEMENT, AZALEA_PLANKS);
+        offerPavementRecipe(exporter, BLOOMING_AZALEA_PLANK_PAVEMENT, BLOOMING_AZALEA_PLANKS);
 
-        //Sawlayers
+        //SawlayersF
         offerSawdustLayerRecipe(exporter, OAK_SAWDUST_LAYER, CelluloseItems.OAK_SAWDUST);
         offerSawdustLayerRecipe(exporter, BIRCH_SAWDUST_LAYER, CelluloseItems.BIRCH_SAWDUST);
         offerSawdustLayerRecipe(exporter, SPRUCE_SAWDUST_LAYER, CelluloseItems.SPRUCE_SAWDUST);
@@ -395,6 +393,20 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerSawdustLayerRecipe(exporter, CHERRY_SAWDUST_LAYER, CelluloseItems.CHERRY_SAWDUST);
         offerSawdustLayerRecipe(exporter, CACTUS_SAWDUST_LAYER, CelluloseItems.CACTUS_SAWDUST);
         offerSawdustLayerRecipe(exporter, AZALEA_SAWDUST_LAYER, CelluloseItems.AZALEA_SAWDUST);
+
+        //Bookshelves
+        offerBookShelvesRecipe(exporter, BIRCH_BOOKSHELF, CelluloseTags.Items.BIRCH_PLANKS);
+        offerBookShelvesRecipe(exporter, SPRUCE_BOOKSHELF, CelluloseTags.Items.SPRUCE_PLANKS);
+        offerBookShelvesRecipe(exporter, DARK_OAK_BOOKSHELF, CelluloseTags.Items.DARK_OAK_PLANKS);
+        offerBookShelvesRecipe(exporter, JUNGLE_BOOKSHELF, CelluloseTags.Items.JUNGLE_PLANKS);
+        offerBookShelvesRecipe(exporter, ACACIA_BOOKSHELF, CelluloseTags.Items.ACACIA_PLANKS);
+        offerBookShelvesRecipe(exporter, CRIMSON_BOOKSHELF, CelluloseTags.Items.CRIMSON_PLANKS);
+        offerBookShelvesRecipe(exporter, WARPED_BOOKSHELF, CelluloseTags.Items.WARPED_PLANKS);
+        offerBookShelvesRecipe(exporter, MANGROVE_BOOKSHELF, CelluloseTags.Items.MANGROVE_PLANKS);
+        offerBookShelvesRecipe(exporter, BAMBOO_BOOKSHELF, CelluloseTags.Items.BAMBOO_PLANKS);
+        offerBookShelvesRecipe(exporter, CHERRY_BOOKSHELF, CelluloseTags.Items.CHERRY_PLANKS);
+        offerBookShelvesRecipe(exporter, CACTUS_BOOKSHELF, CelluloseTags.Items.CACTUS_PLANKS);
+        offerBookShelvesRecipe(exporter, AZALEA_BOOKSHELF, CelluloseTags.Items.AZALEA_PLANKS);
 
         ///Cooking
 
@@ -547,19 +559,27 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
     //Custom recipe generators
 
     public static void offerVerticalPlanksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("#"  ).pattern("#  ").pattern("#  ").group("planks").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("#").pattern("#").pattern("#").group("cellulose:vertical_planks").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(CelluloseTags.Items.VERTICAL_PLANKS)).offerTo(exporter);
     }
 
     public static void offerReverseVerticalPlanksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("###").group("planks").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("###").group("planks").group("planks").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(PLANKS)).offerTo(exporter);
     }
 
     public static void offerSawdustLayerRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 16).input('#', input).pattern("##").group("sawdust").pattern("cellulose:pavements").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("##").group("cellulose:sawdust_layers").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(CelluloseTags.Items.SAWDUST)).offerTo(exporter);
     }
-    public static void offerPavementRecipe(Consumer<RecipeJsonProvider> exporter, RecipeCategory category, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(category, output, 3).input('#', input).pattern("#  ").pattern("## ").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input)).offerTo(exporter);
+
+    public static void offerPavementRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 5).input('#', input).pattern("#  ").pattern("#  ").pattern("###").group("cellulose:pavements").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(CelluloseTags.Items.PAVEMENTS)).offerTo(exporter);
     }
+
+    public static void offerBookShelvesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 3).group("ceelulose:bookshelves").input('#', input).input('X', BOOK).pattern("###").pattern("XXX").pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_book", RecipeProvider.conditionsFromItem(BOOK)).offerTo(exporter);
+    }
+
+
+    ////Sawmilling
 
     public static SingleItemRecipeJsonBuilder createSawmilling(Ingredient input, ItemConvertible output, int count) {
         return new SingleItemRecipeJsonBuilder(RecipeCategory.BUILDING_BLOCKS, SawmillingRecipe.Serializer.INSTANCE, input, output, count);
