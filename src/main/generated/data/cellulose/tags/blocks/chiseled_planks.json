@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:chiseled_oak_planks",
+    "cellulose:chiseled_birch_planks",
+    "cellulose:chiseled_spruce_planks",
+    "cellulose:chiseled_dark_oak_planks",
+    "cellulose:chiseled_jungle_planks",
+    "cellulose:chiseled_acacia_planks",
+    "cellulose:chiseled_crimson_planks",
+    "cellulose:chiseled_warped_planks",
+    "cellulose:chiseled_mangrove_planks",
+    "cellulose:chiseled_bamboo_planks",
+    "cellulose:chiseled_cherry_planks",
+    "cellulose:chiseled_cactus_planks",
+    "cellulose:chiseled_acacia_planks",
+    "cellulose:chiseled_blooming_azalea_planks"
+  ]
+}

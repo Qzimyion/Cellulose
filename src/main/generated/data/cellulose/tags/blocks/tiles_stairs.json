@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_tiles_stairs",
+    "cellulose:birch_tiles_stairs",
+    "cellulose:spruce_tiles_stairs",
+    "cellulose:dark_oak_tiles_stairs",
+    "cellulose:jungle_tiles_stairs",
+    "cellulose:acacia_tiles_stairs",
+    "cellulose:crimson_tiles_stairs",
+    "cellulose:warped_tiles_stairs",
+    "cellulose:mangrove_tiles_stairs",
+    "cellulose:bamboo_tiles_stairs",
+    "cellulose:cherry_tiles_stairs",
+    "cellulose:cactus_tiles_stairs",
+    "cellulose:azalea_tiles_stairs",
+    "cellulose:blooming_azalea_tiles_stairs"
+  ]
+}

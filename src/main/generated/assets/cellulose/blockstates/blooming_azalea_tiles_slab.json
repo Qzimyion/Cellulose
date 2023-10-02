@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/blooming_azalea_tiles_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/blooming_azalea_tiles"
+    },
+    "type=top": {
+      "model": "cellulose:block/blooming_azalea_tiles_slab_top"
+    }
+  }
+}

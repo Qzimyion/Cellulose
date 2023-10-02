@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cellulose:block/chiseled_cherry_planks"
+  }
+}

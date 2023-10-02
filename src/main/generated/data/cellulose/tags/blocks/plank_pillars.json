@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_plank_pillar",
+    "cellulose:birch_plank_pillar",
+    "cellulose:spruce_plank_pillar",
+    "cellulose:dark_oak_plank_pillar",
+    "cellulose:jungle_plank_pillar",
+    "cellulose:acacia_plank_pillar",
+    "cellulose:crimson_plank_pillar",
+    "cellulose:warped_plank_pillar",
+    "cellulose:mangrove_plank_pillar",
+    "cellulose:bamboo_plank_pillar",
+    "cellulose:cherry_plank_pillar",
+    "cellulose:cactus_plank_pillar",
+    "cellulose:azalea_plank_pillar",
+    "cellulose:blooming_azalea_plank_pillar"
+  ]
+}

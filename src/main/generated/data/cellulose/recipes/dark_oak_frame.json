@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cellulose:wooden_frame",
+  "key": {
+    "#": {
+      "tag": "cellulose:dark_oak_planks"
+    },
+    "A": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "#A#",
+    "A#A",
+    "#A#"
+  ],
+  "result": {
+    "count": 5,
+    "item": "cellulose:dark_oak_frame"
+  },
+  "show_notification": true
+}
