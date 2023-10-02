@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_saw_dust_layer",
+    "cellulose:birch_saw_dust_layer",
+    "cellulose:spruce_saw_dust_layer",
+    "cellulose:dark_oak_saw_dust_layer",
+    "cellulose:jungle_saw_dust_layer",
+    "cellulose:acacia_saw_dust_layer",
+    "cellulose:crimson_saw_dust_layer",
+    "cellulose:warped_saw_dust_layer",
+    "cellulose:mangrove_saw_dust_layer",
+    "cellulose:bamboo_saw_dust_layer",
+    "cellulose:cherry_saw_dust_layer",
+    "cellulose:cactus_saw_dust_layer",
+    "cellulose:azalea_saw_dust_layer"
+  ]
+}
