@@ -3,6 +3,7 @@ package net.qzimyion.cellulose;
 
 import net.fabricmc.api.ModInitializer;
 import net.qzimyion.cellulose.boats.CelluloseBoats;
+import net.qzimyion.cellulose.entity.CelluloseEntities;
 import net.qzimyion.cellulose.events.CelluloseEvents;
 import net.qzimyion.cellulose.signs.CelluloseSigns;
 import net.qzimyion.cellulose.util.CelluloseStats;
@@ -41,6 +42,6 @@ public class Cellulose implements ModInitializer
 		CelluloseEvents.registerEvents();
 		CelluloseVillagers.registerVillagers();
 		CelluloseVillagerTrades.registerTrades();
-
+		CelluloseEntities.registerEntities();
 	}
 }

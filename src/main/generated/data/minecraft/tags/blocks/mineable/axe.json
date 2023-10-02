@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "cellulose:potion_rack",
     "#minecraft:logs",
     "#minecraft:planks",
     "#minecraft:wooden_slabs",

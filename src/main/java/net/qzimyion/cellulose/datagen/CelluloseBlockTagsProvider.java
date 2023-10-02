@@ -660,6 +660,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
         ///Mining tags
         getOrCreateTagBuilder(AXE_MINEABLE)
 
+                .add(POTION_RACK)
                 //Logs
                 .forceAddTag(LOGS)
 

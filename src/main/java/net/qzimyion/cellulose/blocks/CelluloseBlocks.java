@@ -13,7 +13,6 @@ import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.custom_blocks.*;
 import net.qzimyion.cellulose.blocks.custom_blocks.BambooLadders.FreshBambooLadder;
-import net.qzimyion.cellulose.blocks.custom_blocks.LotusBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.PaperBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.SoakedPaperBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.sticky_blocks.StickyBookshelfBlock;
@@ -204,20 +203,63 @@ public class CelluloseBlocks
     //Empty shelves
     public static final Block EMPTY_OAK_BOOKSHELF = registerBlock("empty_oak_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
     public static final Block EMPTY_BIRCH_BOOKSHELF = registerBlock("empty_birch_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block EMPTY_SPRUCE_BOOKSHELF = registerBlock("empty_spruce_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block EMPTY_DARK_OAK_BOOKSHELF = registerBlock("empty_dark_oak_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block EMPTY_JUNGLE_BOOKSHELF = registerBlock("empty_jungle_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block EMPTY_ACACIA_BOOKSHELF = registerBlock("empty_acacia_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block EMPTY_CRIMSON_BOOKSHELF = registerBlock("empty_crimson_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block EMPTY_WARPED_BOOKSHELF = registerBlock("empty_warped_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block EMPTY_MANGROVE_BOOKSHELF = registerBlock("empty_mangrove_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block EMPTY_BAMBOO_BOOKSHELF = registerBlock("empty_bamboo_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.BAMBOO_WOOD)));
+    public static final Block EMPTY_CHERRY_BOOKSHELF = registerBlock("empty_cherry_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block EMPTY_CACTUS_BOOKSHELF = registerBlock("empty_cactus_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block EMPTY_AZALEA_BOOKSHELF = registerBlock("empty_azalea_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
 
     //Abandoned shelves
     public static final Block ABANDONED_OAK_BOOKSHELF = registerBlock("abandoned_oak_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
     public static final Block ABANDONED_BIRCH_BOOKSHELF = registerBlock("abandoned_birch_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block ABANDONED_SPRUCE_BOOKSHELF = registerBlock("abandoned_spruce_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block ABANDONED_DARK_OAK_BOOKSHELF = registerBlock("abandoned_dark_oak_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block ABANDONED_JUNGLE_BOOKSHELF = registerBlock("abandoned_jungle_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block ABANDONED_ACACIA_BOOKSHELF = registerBlock("abandoned_acacia_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block ABANDONED_CRIMSON_BOOKSHELF = registerBlock("abandoned_crimson_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block ABANDONED_WARPED_BOOKSHELF = registerBlock("abandoned_warped_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block ABANDONED_MANGROVE_BOOKSHELF = registerBlock("abandoned_mangrove_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block ABANDONED_BAMBOO_BOOKSHELF = registerBlock("abandoned_bamboo_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.BAMBOO_WOOD)));
+    public static final Block ABANDONED_CHERRY_BOOKSHELF = registerBlock("abandoned_cherry_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block ABANDONED_CACTUS_BOOKSHELF = registerBlock("abandoned_cactus_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block ABANDONED_AZALEA_BOOKSHELF = registerBlock("abandoned_azalea_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
 
     //Cobwebbed versions
     //Cobwebbed empty shelves
     public static final Block COBWEBBED_EMPTY_OAK_BOOKSHELF = registerBlock("cobwebbed_empty_oak_bookshelf", new StickyBookshelfBlock(FabricBlockSettings.copyOf(BOOKSHELF)));
     public static final Block COBWEBBED_EMPTY_BIRCH_BOOKSHELF = registerBlock("cobwebbed_empty_birch_bookshelf", new StickyBookshelfBlock(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_EMPTY_SPRUCE_BOOKSHELF = registerBlock("cobwebbed_empty_spruce_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_EMPTY_DARK_OAK_BOOKSHELF = registerBlock("cobwebbed_empty_dark_oak_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_EMPTY_JUNGLE_BOOKSHELF = registerBlock("cobwebbed_empty_jungle_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_EMPTY_ACACIA_BOOKSHELF = registerBlock("cobwebbed_empty_acacia_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_EMPTY_CRIMSON_BOOKSHELF = registerBlock("cobwebbed_empty_crimson_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block COBWEBBED_EMPTY_WARPED_BOOKSHELF = registerBlock("cobwebbed_empty_warped_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block COBWEBBED_EMPTY_MANGROVE_BOOKSHELF = registerBlock("cobwebbed_empty_mangrove_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_EMPTY_BAMBOO_BOOKSHELF = registerBlock("cobwebbed_empty_bamboo_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.BAMBOO_WOOD)));
+    public static final Block COBWEBBED_EMPTY_CHERRY_BOOKSHELF = registerBlock("cobwebbed_empty_cherry_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block COBWEBBED_EMPTY_CACTUS_BOOKSHELF = registerBlock("cobwebbed_empty_cactus_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block COBWEBBED_EMPTY_AZALEA_BOOKSHELF = registerBlock("cobwebbed_empty_azalea_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
 
     //Cobwebbed normal shelves
     public static final Block COBWEBBED_OAK_BOOKSHELF = registerBlock("cobwebbed_oak_bookshelf", new StickyBookshelfBlock(FabricBlockSettings.copyOf(BOOKSHELF)));
     public static final Block COBWEBBED_BIRCH_BOOKSHELF = registerBlock("cobwebbed_birch_bookshelf", new StickyBookshelfBlock(FabricBlockSettings.copyOf(BOOKSHELF)));
-
+    public static final Block COBWEBBED_SPRUCE_BOOKSHELF = registerBlock("cobwebbed_spruce_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_DARK_OAK_BOOKSHELF = registerBlock("cobwebbed_dark_oak_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_JUNGLE_BOOKSHELF = registerBlock("cobwebbed_jungle_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_ACACIA_BOOKSHELF = registerBlock("cobwebbed_acacia_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_CRIMSON_BOOKSHELF = registerBlock("cobwebbed_crimson_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block COBWEBBED_WARPED_BOOKSHELF = registerBlock("cobwebbed_warped_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block COBWEBBED_MANGROVE_BOOKSHELF = registerBlock("cobwebbed_mangrove_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF)));
+    public static final Block COBWEBBED_BAMBOO_BOOKSHELF = registerBlock("cobwebbed_bamboo_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.BAMBOO_WOOD)));
+    public static final Block COBWEBBED_CHERRY_BOOKSHELF = registerBlock("cobwebbed_cherry_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block COBWEBBED_CACTUS_BOOKSHELF = registerBlock("cobwebbed_cactus_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block COBWEBBED_AZALEA_BOOKSHELF = registerBlock("cobwebbed_azalea_bookshelf", new Block(FabricBlockSettings.copyOf(BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
     //Panels (Version 1.1)
 
     //Chiseled Panels (Version 1.1)
@@ -754,7 +796,7 @@ public class CelluloseBlocks
 
     ///Misc
     public static final Block FRESH_BAMBOO_LADDER = registerBlockWithoutBlockItem("fresh_bamboo_ladder", new FreshBambooLadder(FabricBlockSettings.copyOf(SCAFFOLDING).sounds(BlockSoundGroup.BAMBOO_WOOD)));
-
+    public static final Block POTION_RACK = registerBlock("potion_rack", new PotionRackBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
 
 
     private static Block registerBlock(String name, Block block){

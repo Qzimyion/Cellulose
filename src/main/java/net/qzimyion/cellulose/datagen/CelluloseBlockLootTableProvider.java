@@ -3,12 +3,19 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
+import net.minecraft.block.Block;
+import net.minecraft.data.server.loottable.BlockLootTableGenerator;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LeafEntry;
+import net.minecraft.loot.entry.LootPoolEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvider {
     public CelluloseBlockLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
@@ -390,8 +397,12 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         addDrop(CHIPPED_WARPED_STAIR);
         addDrop(CHIPPED_WARPED_SLAB);
 
-        ///Vanilla Modification
+        ///Potion Rack
+        addDrop(POTION_RACK, dropsWithSilkTouch(POTION_RACK));
 
+    }
+    public LootTable.Builder BookshelfDrops(Block drop) {
+        return BlockLootTableGenerator.dropsWithSilkTouch(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop, ((LeafEntry.Builder) ItemEntry.builder(Items.BOOK).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3,3))))));
     }
 
 }

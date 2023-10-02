@@ -464,6 +464,61 @@ public class CelluloseModelProvider extends FabricModelProvider {
         GlazedAzalea.slab(GLAZED_AZALEA_SLABS).stairs(GLAZED_AZALEA_STAIRS);
 
         ///Misc
+        blockStateModelGenerator.registerSimpleState(EMPTY_OAK_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_BIRCH_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_SPRUCE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_DARK_OAK_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_JUNGLE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_ACACIA_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_CRIMSON_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_WARPED_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_MANGROVE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_BAMBOO_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_CHERRY_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_CACTUS_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(EMPTY_AZALEA_BOOKSHELF);
+
+        blockStateModelGenerator.registerSimpleState(ABANDONED_OAK_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_BIRCH_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_SPRUCE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_DARK_OAK_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_JUNGLE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_ACACIA_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_CRIMSON_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_WARPED_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_MANGROVE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_BAMBOO_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_CHERRY_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_CACTUS_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(ABANDONED_AZALEA_BOOKSHELF);
+
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_OAK_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_BIRCH_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_SPRUCE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_DARK_OAK_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_JUNGLE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_ACACIA_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_CRIMSON_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_WARPED_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_MANGROVE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_BAMBOO_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_CHERRY_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_CACTUS_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_AZALEA_BOOKSHELF);
+
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_OAK_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_BIRCH_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_SPRUCE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_DARK_OAK_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_JUNGLE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_ACACIA_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_CRIMSON_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_WARPED_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_MANGROVE_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_BAMBOO_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_CHERRY_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_CACTUS_BOOKSHELF);
+        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_AZALEA_BOOKSHELF);
 
 
     }

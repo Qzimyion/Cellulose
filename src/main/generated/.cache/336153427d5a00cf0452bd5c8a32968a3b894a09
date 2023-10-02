@@ -1,7 +1,8 @@
-// 1.20.1	2023-10-02T12:42:02.5278643	Cellulose /Tags for minecraft:item
+// 1.20.1	2023-10-02T22:16:37.4621382	Cellulose /Tags for minecraft:item
 f7fed8653d39425e39d86124fc3495007d02ee5f data\cellulose\tags\items\cherry_planks.json
 e078b53cfbe4a235aa3edaf668ea41e2c0f01017 data\minecraft\tags\items\fence_gates.json
 93cccaa390337f337fb6a3ad8c41d318c3c54b86 data\cellulose\tags\items\oak_planks.json
+07e3b224aa1891530b9402a7e44b214ea168664b data\cellulose\tags\items\potion_rack_potions.json
 bdd812df9217e662c4917b88567669987ab345a5 data\cellulose\tags\items\bamboo_planks.json
 175101589bb21b7633bd89df2548cb772848cdf0 data\minecraft\tags\items\logs.json
 b2b6a560b3a4f4a9468fcabd8c8241b9718c4a75 data\cellulose\tags\items\acorns.json

@@ -3,7 +3,7 @@ package net.qzimyion.cellulose.entity.BlockEntity;
 import com.mojang.logging.LogUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ChiseledBookshelfBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.PotionRackBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
@@ -13,7 +13,6 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.qzimyion.cellulose.blocks.custom_blocks.PotionRackBlock;
 import net.qzimyion.cellulose.entity.CelluloseEntities;
 import net.qzimyion.cellulose.util.CelluloseTags;
 import org.slf4j.Logger;
@@ -25,7 +24,6 @@ import java.util.function.Predicate;
 public class PotionRackBlockEntity extends BlockEntity implements Inventory {
     public static final int MAX_POTIONS = 6;
     public static final int MAX_GLASS_BOTTLES = 6;
-    public static final int MAX_WATER_BOTTLES = 6;
     public static final int MAX_HONEY_BOTTLES = 6;
     private static final Logger LOGGER = LogUtils.getLogger();
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);
@@ -43,7 +41,7 @@ public class PotionRackBlockEntity extends BlockEntity implements Inventory {
         BlockState blockState = this.getCachedState();
         for (int i = 0; i < PotionRackBlock.SLOT_OCCUPIED_PROPERTIES.size(); ++i){
             boolean bl = !this.getStack(i).isEmpty();
-            BooleanProperty booleanProperty = ChiseledBookshelfBlock.SLOT_OCCUPIED_PROPERTIES.get(i);
+            BooleanProperty booleanProperty = PotionRackBlock.SLOT_OCCUPIED_PROPERTIES.get(i);
             blockState = blockState.with(booleanProperty, bl);
         }
         Objects.requireNonNull(this.world).setBlockState(this.pos, blockState, Block.NOTIFY_ALL);
@@ -102,18 +100,7 @@ public class PotionRackBlockEntity extends BlockEntity implements Inventory {
             this.inventory.set(slot, stack);
             this.updateState(slot);
         }
-        if (stack.isIn(CelluloseTags.Items.POTION_RACK_BOTTLES)) {
-            this.inventory.set(slot, stack);
-            this.updateState(slot);
-        }
-        if (stack.isIn(CelluloseTags.Items.POTION_RACK_WATER_BOTTLES)) {
-            this.inventory.set(slot, stack);
-            this.updateState(slot);
-        }
-        if (stack.isIn(CelluloseTags.Items.POTION_RACK_HONEY_BOTTLES)) {
-            this.inventory.set(slot, stack);
-            this.updateState(slot);
-        }
+
     }
 
     @Override
@@ -123,11 +110,7 @@ public class PotionRackBlockEntity extends BlockEntity implements Inventory {
 
     @Override
     public boolean isValid(int slot, ItemStack stack) {
-        return stack.isIn(CelluloseTags.Items.POTION_RACK_POTIONS)
-                && stack.isIn(CelluloseTags.Items.POTION_RACK_BOTTLES)
-                && stack.isIn(CelluloseTags.Items.POTION_RACK_WATER_BOTTLES)
-                && stack.isIn(CelluloseTags.Items.POTION_RACK_HONEY_BOTTLES)
-                && this.getStack(slot).isEmpty();
+        return stack.isIn(CelluloseTags.Items.POTION_RACK_POTIONS) && this.getStack(slot).isEmpty();
     }
 
     @Override

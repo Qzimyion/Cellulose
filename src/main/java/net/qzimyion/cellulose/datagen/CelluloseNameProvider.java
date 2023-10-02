@@ -463,5 +463,8 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(COBWEBBED_OAK_BOOKSHELF, "Cobwebbed Bookshelf");
         translationBuilder.add(COBWEBBED_EMPTY_OAK_BOOKSHELF, "Cobwebbed Empty Oak Bookshelf");
         translationBuilder.add(ABANDONED_OAK_BOOKSHELF, "Abandoned Oak Bookshelf");
+
+        //Potion rack
+        translationBuilder.add(POTION_RACK, "Potion Rack");
     }
 }

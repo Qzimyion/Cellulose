@@ -423,5 +423,13 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(BLOOMING_AZALEA_PLANKS))
                 .add(Item.fromBlock(VERTICAL_BLOOMING_AZALEA_PLANKS))
                 .add(Item.fromBlock(CHIPPED_BLOOMING_AZALEA_PLANKS));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.POTION_RACK_POTIONS)
+                .add(Items.GLASS_BOTTLE)
+                .add(Items.POTION)
+                .add(Items.SPLASH_POTION)
+                .add(Items.LINGERING_POTION)
+                .add(Items.HONEY_BOTTLE)
+                .add(Items.EXPERIENCE_BOTTLE);
     }
 }

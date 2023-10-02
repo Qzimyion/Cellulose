@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "block/cherry_planks",
+    "side": "cellulose:block/empty_cherry_bookshelf"
+  }
+}

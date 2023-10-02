@@ -32,11 +32,9 @@ import java.util.Optional;
 public class PotionRackBlock extends BlockWithEntity {
     private static final int MAX_POTION_COUNT = 6;
     private static final int MAX_GLASS_BOTTLE_COUNT = 6;
-    private static final int MAX_WATER_BOTTLE_COUNT = 6;
     private static final int MAX_HONEY_BOTTLE_COUNT = 6;
     public static final int POTION_HEIGHT = 3;
     public static final int GLASS_BOTTLE_HEIGHT = 3;
-    public static final int WATER_BOTTLE_HEIGHT = 3;
     public static final int HONEY_BOTTLE_HEIGHT = 3;
     public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(Properties.SLOT_0_OCCUPIED, Properties.SLOT_1_OCCUPIED, Properties.SLOT_2_OCCUPIED, Properties.SLOT_3_OCCUPIED, Properties.SLOT_4_OCCUPIED, Properties.SLOT_5_OCCUPIED);
 
@@ -64,48 +62,17 @@ public class PotionRackBlock extends BlockWithEntity {
         if (optional.isEmpty()) {
             return ActionResult.PASS;
         }
+        //Potions
         int i = PotionRackBlock.getSlotForHitPos(optional.get());
         if (state.get(SLOT_OCCUPIED_PROPERTIES.get(i))){
             PotionRackBlock.tryRemovingPotions(world, pos, player, potionRackBlockEntity, i);
             return ActionResult.success(world.isClient);
         }
         ItemStack itemStack = player.getStackInHand(hand);
-        //Potions
         if ((itemStack.isIn(CelluloseTags.Items.POTION_RACK_POTIONS))){
             PotionRackBlock.tryAddingPotions(world, pos, player, potionRackBlockEntity, itemStack, i);
             return ActionResult.success(world.isClient);
         }
-        //Glass bottles
-        if (state.get(SLOT_OCCUPIED_PROPERTIES.get(i))){
-            PotionRackBlock.tryRemovingGlassBottles(world, pos, player, potionRackBlockEntity, i);
-            return ActionResult.success(world.isClient);
-        }
-        ItemStack itemStack1 = player.getStackInHand(hand);
-        if ((itemStack.isIn(CelluloseTags.Items.POTION_RACK_POTIONS))){
-            PotionRackBlock.tryAddingGlassBottles(world, pos, player, potionRackBlockEntity, itemStack1, i);
-            return ActionResult.success(world.isClient);
-        }
-        //Water Bottles
-        if (state.get(SLOT_OCCUPIED_PROPERTIES.get(i))){
-            PotionRackBlock.tryRemovingWaterBottles(world, pos, player, potionRackBlockEntity, i);
-            return ActionResult.success(world.isClient);
-        }
-        ItemStack itemStack2 = player.getStackInHand(hand);
-        if ((itemStack.isIn(CelluloseTags.Items.POTION_RACK_POTIONS))){
-            PotionRackBlock.tryAddingWaterBottles(world, pos, player, potionRackBlockEntity, itemStack2, i);
-            return ActionResult.success(world.isClient);
-        }
-        //Honey Bottles
-        if (state.get(SLOT_OCCUPIED_PROPERTIES.get(i))){
-            PotionRackBlock.tryRemovingHoneyBottles(world, pos, player, potionRackBlockEntity, i);
-            return ActionResult.success(world.isClient);
-        }
-        ItemStack itemStack3 = player.getStackInHand(hand);
-        if ((itemStack.isIn(CelluloseTags.Items.POTION_RACK_POTIONS))){
-            PotionRackBlock.tryAddingHoneyBottles(world, pos, player, potionRackBlockEntity, itemStack3, i);
-            return ActionResult.success(world.isClient);
-        }
-
         return ActionResult.CONSUME;
     }
 
@@ -168,87 +135,6 @@ public class PotionRackBlock extends BlockWithEntity {
         }
         ItemStack itemStack = blockEntity.removeStack(slot, 1);
         SoundEvent soundEvent = itemStack.isOf(Items.ENCHANTED_BOOK) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP;
-        world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        if (!player.getInventory().insertStack(itemStack)) {
-            player.dropItem(itemStack, false);
-        }
-        world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-    }
-    ///For empty Bottles
-    public static void tryAddingGlassBottles(World world, BlockPos pos, PlayerEntity player, PotionRackBlockEntity blockEntity, ItemStack stack, int slot){
-        if (world.isClient) {
-            return;
-        }
-        player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
-        SoundEvent soundEvent = stack.isOf(Items.GLASS_BOTTLE) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT;
-        blockEntity.setStack(slot, stack.split(1));
-        world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        if (player.isCreative()) {
-            stack.increment(1);
-        }
-        world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-    }
-
-    public static void tryRemovingGlassBottles(World world, BlockPos pos, PlayerEntity player, PotionRackBlockEntity blockEntity, int slot) {
-        if (world.isClient) {
-            return;
-        }
-        ItemStack itemStack = blockEntity.removeStack(slot, 1);
-        SoundEvent soundEvent = itemStack.isOf(Items.GLASS_BOTTLE) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP;
-        world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        if (!player.getInventory().insertStack(itemStack)) {
-            player.dropItem(itemStack, false);
-        }
-        world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-    }
-    ///For water bottles
-    public static void tryAddingWaterBottles(World world, BlockPos pos, PlayerEntity player, PotionRackBlockEntity blockEntity, ItemStack stack, int slot){
-        if (world.isClient) {
-            return;
-        }
-        player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
-        SoundEvent soundEvent = stack.isOf(Items.GLASS_BOTTLE) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT;
-        blockEntity.setStack(slot, stack.split(1));
-        world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        if (player.isCreative()) {
-            stack.increment(1);
-        }
-        world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-    }
-
-    public static void tryRemovingWaterBottles(World world, BlockPos pos, PlayerEntity player, PotionRackBlockEntity blockEntity, int slot) {
-        if (world.isClient) {
-            return;
-        }
-        ItemStack itemStack = blockEntity.removeStack(slot, 1);
-        SoundEvent soundEvent = itemStack.isOf(Items.GLASS_BOTTLE) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP;
-        world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        if (!player.getInventory().insertStack(itemStack)) {
-            player.dropItem(itemStack, false);
-        }
-        world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-    }
-    ///For Honey bottles
-    public static void tryAddingHoneyBottles(World world, BlockPos pos, PlayerEntity player, PotionRackBlockEntity blockEntity, ItemStack stack, int slot){
-        if (world.isClient) {
-            return;
-        }
-        player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
-        SoundEvent soundEvent = stack.isOf(Items.HONEY_BOTTLE) ? SoundEvents.BLOCK_HONEY_BLOCK_PLACE : SoundEvents.BLOCK_HONEY_BLOCK_HIT;
-        blockEntity.setStack(slot, stack.split(1));
-        world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        if (player.isCreative()) {
-            stack.increment(1);
-        }
-        world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-    }
-
-    public static void tryRemovingHoneyBottles(World world, BlockPos pos, PlayerEntity player, PotionRackBlockEntity blockEntity, int slot) {
-        if (world.isClient) {
-            return;
-        }
-        ItemStack itemStack = blockEntity.removeStack(slot, 1);
-        SoundEvent soundEvent = itemStack.isOf(Items.HONEY_BOTTLE) ? SoundEvents.BLOCK_HONEY_BLOCK_PLACE : SoundEvents.BLOCK_HONEY_BLOCK_HIT;
         world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
         if (!player.getInventory().insertStack(itemStack)) {
             player.dropItem(itemStack, false);

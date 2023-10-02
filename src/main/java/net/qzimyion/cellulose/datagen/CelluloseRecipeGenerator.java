@@ -414,7 +414,12 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerFoodCookingRecipe(exporter,"smoking", RecipeSerializer.SMOKING, 150, CelluloseItems.ACORN, CelluloseItems.POPPED_ACORN, 0.1f);
         offerFoodCookingRecipe(exporter,"campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 400, CelluloseItems.ACORN, CelluloseItems.POPPED_ACORN, 0.1f);
 
-
+        //Potion rack
+        ShapedRecipeJsonBuilder.create(DECORATIONS, POTION_RACK)
+                .pattern("###")
+                .pattern("X X")
+                .pattern("###")
+                .input('#', PLANKS).input('X', STICK).criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_stick", RecipeProvider.conditionsFromItem(STICK)).offerTo(exporter);
         /*
          * Sawmilling recipes
          */

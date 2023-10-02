@@ -1,7 +1,6 @@
 package net.qzimyion.cellulose.util;
 
 import net.minecraft.block.Block;
-import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -121,6 +120,7 @@ public class CelluloseTags
         public static final TagKey <Item> AZALEA_PLANKS = createTag("azalea_planks");
         public static final TagKey <Item> BLOOMING_AZALEA_PLANKS = createTag("blooming_azalea_planks");
         public static final TagKey <Item> SAWDUST = createTag("sawdust");
+        public static final TagKey <Item> POTION_RACK_POTIONS = createTag("potion_rack_potions");
 
         //Common
 

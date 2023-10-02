@@ -400,5 +400,8 @@ public class CelluloseNameProvider_en_gb extends FabricLanguageProvider {
         translationBuilder.add(SOAKED_BLOCK_OF_PAPER, "Soaked Paper Block");
         translationBuilder.add(BLOCK_OF_STICKS, "Stick Bundle");
         translationBuilder.add(BLOCK_OF_CHARCOAL, "Block Of Charcoal");
+
+        //Potion rack
+        translationBuilder.add(POTION_RACK, "Potion Rack");
     }
 }

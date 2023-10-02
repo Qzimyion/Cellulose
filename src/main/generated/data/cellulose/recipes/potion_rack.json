@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "X": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "X X",
+    "###"
+  ],
+  "result": {
+    "item": "cellulose:potion_rack"
+  },
+  "show_notification": true
+}
