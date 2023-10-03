@@ -120,7 +120,7 @@ public class PotionRackBlock extends BlockWithEntity {
             return;
         }
         player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
-        SoundEvent soundEvent = stack.isOf(Items.ENCHANTED_BOOK) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT;
+        SoundEvent soundEvent = stack.isOf(Items.ENCHANTED_BOOK) ? SoundEvents.BLOCK_GLASS_STEP : SoundEvents.BLOCK_GLASS_PLACE;
         blockEntity.setStack(slot, stack.split(1));
         world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
         if (player.isCreative()) {
@@ -134,7 +134,7 @@ public class PotionRackBlock extends BlockWithEntity {
             return;
         }
         ItemStack itemStack = blockEntity.removeStack(slot, 1);
-        SoundEvent soundEvent = itemStack.isOf(Items.ENCHANTED_BOOK) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP;
+        SoundEvent soundEvent = itemStack.isOf(Items.ENCHANTED_BOOK) ? SoundEvents.BLOCK_GLASS_STEP : SoundEvents.BLOCK_GLASS_HIT;
         world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
         if (!player.getInventory().insertStack(itemStack)) {
             player.dropItem(itemStack, false);
