@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "cellulose:block/cherry_timbers",
+    "side": "cellulose:block/cherry_timbers",
+    "top": "cellulose:block/cherry_timbers"
+  }
+}

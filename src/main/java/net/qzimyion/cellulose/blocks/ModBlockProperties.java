@@ -1,39 +1,39 @@
 package net.qzimyion.cellulose.blocks;
 
+import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
+
+import java.util.Map;
 
 public class ModBlockProperties {
 
     public static final IntProperty FRUIT_AMOUNT = IntProperty.of("fruit_amount", 1, 4);
     public static final IntProperty SAWDUST_LAYERS = IntProperty.of("sawdust_layers", 1, 16);
-    public static final BooleanProperty FLUID_FILLED = BooleanProperty.of("fluid_filled");
+    public static final BooleanProperty TOP = BooleanProperty.of("top");
 
 
     //Triple door Properties
 
 
-    //Enchantment properties
+    //Armour properties
     public static boolean hasThorns(LivingEntity entity) {
         return EnchantmentHelper.getEquipmentLevel(Enchantments.THORNS, entity) > 0;
     }
 
-    ///Potion rack properties
-    //Glass bottles
-    public static final BooleanProperty GLASS_SLOT_0_OCCUPIED = BooleanProperty.of("glass_slot_0_occupied");
-    public static final BooleanProperty GLASS_SLOT_1_OCCUPIED = BooleanProperty.of("glass_slot_1_occupied");
-    public static final BooleanProperty GLASS_SLOT_2_OCCUPIED = BooleanProperty.of("glass_slot_2_occupied");
-    public static final BooleanProperty GLASS_SLOT_3_OCCUPIED = BooleanProperty.of("glass_slot_3_occupied");
-    public static final BooleanProperty GLASS_SLOT_4_OCCUPIED = BooleanProperty.of("glass_slot_4_occupied");
-    public static final BooleanProperty GLASS_SLOT_5_OCCUPIED = BooleanProperty.of("glass_slot_5_occupied");
-    //Honey bottles
-    public static final BooleanProperty HONEY_SLOT_0_OCCUPIED = BooleanProperty.of("honey_slot_0_occupied");
-    public static final BooleanProperty HONEY_SLOT_1_OCCUPIED = BooleanProperty.of("honey_slot_1_occupied");
-    public static final BooleanProperty HONEY_SLOT_2_OCCUPIED = BooleanProperty.of("honey_slot_2_occupied");
-    public static final BooleanProperty HONEY_SLOT_3_OCCUPIED = BooleanProperty.of("honey_slot_3_occupied");
-    public static final BooleanProperty HONEY_SLOT_4_OCCUPIED = BooleanProperty.of("honey_slot_4_occupied");
-    public static final BooleanProperty HONEY_SLOT_5_OCCUPIED = BooleanProperty.of("honey_slot_5_occupied");
+    public static boolean ImmuneToSpikyStuff (LivingEntity entity){
+        return entity.getEquippedStack(EquipmentSlot.FEET).isOf(Items.CHAINMAIL_BOOTS);
+    }
+
+    //Cauldron behaviors
+    public static final Map<Item, CauldronBehavior> DISSOVLED_BAMBOO_CAULDRON_BEHAVIOR = CauldronBehavior.createMap();
+    public static final Map<Item, CauldronBehavior> PAPER_MESH_CAULDRON_BEHAVIOR = CauldronBehavior.createMap();
+    public static final CauldronBehavior FILL_WITH_BAMBOO_SHELLS = (state, world, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(world, pos, player, hand, stack, CelluloseBlocks.DISSOLVED_BAMBOO_CAULDRON_BLOCK.getDefaultState(), SoundEvents.ITEM_BUCKET_EMPTY);
 }

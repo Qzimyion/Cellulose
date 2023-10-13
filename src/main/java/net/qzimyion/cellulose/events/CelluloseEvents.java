@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.ParticleUtil;
 import net.minecraft.item.*;
 import net.minecraft.particle.BlockStateParticleEffect;
@@ -17,6 +18,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.qzimyion.cellulose.Cellulose;
+import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.util.CelluloseTags;
 
 import java.util.HashMap;
@@ -43,7 +45,7 @@ public class CelluloseEvents {
     public static final HashMap<Identifier, Identifier> DEFLOWER_ENTITY = new HashMap<>();
     public static final HashMap<Block, Block> BOOKSHELF_ABANDONING = new HashMap<>();
     public static final HashMap<Block, Item> BOOK_DROP = new HashMap<>();
-
+    public static final HashMap<Block, Block> PAPER_PROCESSING = new HashMap<>();
 
 
     static {
@@ -280,7 +282,7 @@ public class CelluloseEvents {
             ItemStack heldItem = player.getStackInHand(hand);
 
             //Engraving
-            if (heldItem.getItem()==Items.FLINT && State.isIn(CelluloseTags.Blocks.ENGRAVABLE_LOGS)) {
+            if (heldItem.getItem()==Items.POTION && State.isIn(CelluloseTags.Blocks.ENGRAVABLE_LOGS)) {
                 world.playSound(player, Pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
 
                 if (player instanceof ServerPlayerEntity) {
@@ -397,6 +399,18 @@ public class CelluloseEvents {
                         Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, targetPos, heldItem);
                         if (!player.isCreative()) heldItem.damage(1, player, null);
                         world.setBlockState(targetPos, BOOKSHELF_ABANDONING.get(targetBlock.getBlock()).getStateWithProperties(targetBlock));
+                    }
+                    return ActionResult.SUCCESS;
+                }
+            }
+            //BambooStripping
+            if (heldItem.getItem() instanceof AxeItem){
+                if (targetBlock.isOf(BAMBOO)){
+                    world.playSound(player, targetPos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                    if (player instanceof ServerPlayerEntity) {
+                        Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, targetPos, heldItem);
+                        if (!player.isCreative()) heldItem.damage(1, player, null);
+                        world.setBlockState(targetPos, STRIPPED_BAMBOO_STALK.getDefaultState());
                     }
                     return ActionResult.SUCCESS;
                 }

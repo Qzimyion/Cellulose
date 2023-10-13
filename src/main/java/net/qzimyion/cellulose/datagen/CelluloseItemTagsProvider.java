@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.potion.Potions;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
@@ -431,5 +432,13 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Items.LINGERING_POTION)
                 .add(Items.HONEY_BOTTLE)
                 .add(Items.EXPERIENCE_BOTTLE);
+
+        getOrCreateTagBuilder(CelluloseTags.Items.CURING_AGENTS)
+                .add(Items.RED_MUSHROOM)
+                .add(Items.BROWN_MUSHROOM)
+                .add(Items.CRIMSON_FUNGUS)
+                .add(Items.WARPED_FUNGUS)
+            ;
+
     }
 }

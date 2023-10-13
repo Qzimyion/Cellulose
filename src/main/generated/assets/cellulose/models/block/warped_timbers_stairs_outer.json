@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "cellulose:block/warped_timbers",
+    "side": "cellulose:block/warped_timbers",
+    "top": "cellulose:block/warped_timbers"
+  }
+}

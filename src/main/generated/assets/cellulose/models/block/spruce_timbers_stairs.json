@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "cellulose:block/spruce_timbers",
+    "side": "cellulose:block/spruce_timbers",
+    "top": "cellulose:block/spruce_timbers"
+  }
+}

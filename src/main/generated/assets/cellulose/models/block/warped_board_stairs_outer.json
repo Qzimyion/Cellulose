@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "cellulose:block/warped_board",
-    "side": "cellulose:block/warped_board",
-    "top": "cellulose:block/warped_board"
-  }
-}

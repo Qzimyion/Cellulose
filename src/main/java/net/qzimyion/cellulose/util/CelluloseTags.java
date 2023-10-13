@@ -52,6 +52,8 @@ public class CelluloseTags
         public static final TagKey <Block> EMPTY_COBWEBBED_BOOKSHELVES = createTag("empty_cobwebbed_bookshelves");
         public static final TagKey <Block> ABANDONED_BOOKSHELVES = createTag("abandoned_bookshelves");
 
+        public static final TagKey <Block> BAMBOO_LADDERS_PLACEABLE_ON = createTag("bamboo_ladders_placeable_on");
+
         //Event only tags
         public static final TagKey <Block> ENGRAVABLE_LOGS = createTag ("engravable_logs");
         public static final TagKey <Block> CHIPPABLE_LOGS = createTag ("chippable_logs");
@@ -97,6 +99,7 @@ public class CelluloseTags
         public static final TagKey <Item> GLAZED_STAIRS = createTag ("glazed_stairs");
         public static final TagKey <Item> AZALEA_FLOWER = createCommonTag("azalea_flower");
         public static final TagKey <Item> VERTICAL_PLANKS = createTag ("vertical_planks");
+        public static final TagKey <Item> CURING_AGENTS = createTag("curing_potions");
 
         public static final TagKey <Item> ACORNS = createTag("acorns");
 

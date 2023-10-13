@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "cellulose:block/jungle_timbers",
+    "side": "cellulose:block/jungle_timbers",
+    "top": "cellulose:block/jungle_timbers"
+  }
+}

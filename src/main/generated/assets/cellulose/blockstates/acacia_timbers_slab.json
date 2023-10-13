@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cellulose:block/acacia_timbers_slab"
+    },
+    "type=double": {
+      "model": "cellulose:block/acacia_timbers"
+    },
+    "type=top": {
+      "model": "cellulose:block/acacia_timbers_slab_top"
+    }
+  }
+}

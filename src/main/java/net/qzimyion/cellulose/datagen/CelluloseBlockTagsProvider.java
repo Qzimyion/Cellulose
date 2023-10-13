@@ -35,6 +35,10 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
 
         ///Modded Tags
 
+        getOrCreateTagBuilder(BAMBOO_LADDERS_PLACEABLE_ON)
+                .add(LADDER)
+                .add(FRESH_BAMBOO_LADDER);
+
         getOrCreateTagBuilder(SAWDUST_LAYERS)
                 .add(OAK_SAWDUST_LAYER)
                 .add(BIRCH_SAWDUST_LAYER)
@@ -656,6 +660,13 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(AZALEA_FENCE_GATE)
                 .add(CACTUS_FENCE_GATE);
 
+        getOrCreateTagBuilder(BAMBOO_PLANTABLE_ON)
+                .add(STRIPPED_BAMBOO_STALK);
+
+        getOrCreateTagBuilder(CLIMBABLE)
+                .add(FRESH_BAMBOO_LADDER)
+                //.add(STRIPPED_BAMBOO_LADDER)
+                ;
 
         ///Mining tags
         getOrCreateTagBuilder(AXE_MINEABLE)

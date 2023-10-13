@@ -66,6 +66,8 @@ public class AppleBlock extends PlantBlock {
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
+
+
     @Override
     public boolean canReplace(BlockState state, ItemPlacementContext context) {
         if (!context.shouldCancelInteraction() && context.getStack().isOf(this.asItem()) && state.get(FRUIT_AMOUNT) < 4) {

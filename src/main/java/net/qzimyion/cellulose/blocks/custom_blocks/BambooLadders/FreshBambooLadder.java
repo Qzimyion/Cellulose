@@ -4,6 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
@@ -14,11 +15,13 @@ import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.qzimyion.cellulose.util.CelluloseTags;
 
 import java.util.Iterator;
 
@@ -69,28 +72,21 @@ public class FreshBambooLadder extends Block implements Waterloggable {
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (state.get(WATERLOGGED)) {
-            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (!state.canPlaceAt(world, pos)) {
+            world.breakBlock(pos, true);
         }
-        if (!world.isClient()) {
-            world.scheduleBlockTick(pos, this, 1);
-        }
-        if (direction == state.get(FACING) && !state.canPlaceAt(world, pos)) {
-            return Blocks.AIR.getDefaultState();
-        }
-        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
     @Override
-    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        Direction direction = state.get(FACING);
-        return this.canPlaceOn(world, pos.offset(direction.getOpposite()), direction);
-    }
-
-    private boolean canPlaceOn(BlockView world, BlockPos pos, Direction side) {
-        BlockState blockState = world.getBlockState(pos.up());
-        return blockState.isSideSolidFullSquare(world, pos.up(), side);
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (!state.canPlaceAt(world, pos)) {
+            return Blocks.AIR.getDefaultState();
+        }
+        if (state.get(WATERLOGGED)) {
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        }
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
     @Override

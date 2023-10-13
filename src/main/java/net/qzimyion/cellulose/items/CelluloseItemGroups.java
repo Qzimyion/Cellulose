@@ -26,6 +26,10 @@ public class CelluloseItemGroups
             content.addAfter(SUSPICIOUS_STEW, POPACORN_BOWL);
         });
 
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> {
+            content.addAfter(BAMBOO, STRIPPED_BAMBOO_STALK);
+        });
+
         /* This section adds items to building blocks group */
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
@@ -117,10 +121,10 @@ public class CelluloseItemGroups
             content.addAfter(BLOOMING_AZALEA_LINTELS, BLOOMING_AZALEA_PLANK_PAVEMENT, BLOOMING_AZALEA_PLANK_PILLARS, BLOOMING_AZALEA_PLANK_BOX);
 
             /*Section 7: Boards, Tiles, Glazed, Carpented and Carved wood*/
-            content.addAfter(OAK_PLANK_PAVEMENT, OAK_BOARDS, OAK_BOARDS_STAIRS, OAK_BOARDS_SLABS, OAK_TILES, OAK_TILES_STAIRS, OAK_TILES_SLABS, OAK_GLAZED, GLAZED_OAK_STAIRS, GLAZED_OAK_SLABS, CHISELED_OAK);
+            content.addAfter(OAK_PLANK_PAVEMENT, OAK_TIMBERS, OAK_BOARDS_STAIRS, OAK_BOARDS_SLABS, OAK_TILES, OAK_TILES_STAIRS, OAK_TILES_SLABS, OAK_GLAZED, GLAZED_OAK_STAIRS, GLAZED_OAK_SLABS, CHISELED_OAK);
 
             /*Section 8: Barricades*/
-            content.addAfter(OAK_FENCE_GATE, OAK_BARRICADES, POTION_RACK);
+            content.addAfter(OAK_FENCE_GATE, OAK_PLANK_BARRICADES, POTION_RACK);
 
             /*Section 9: bookshelves*/
             content.addAfter(OAK_DOOR, BOOKSHELF, ABANDONED_OAK_BOOKSHELF, COBWEBBED_OAK_BOOKSHELF, EMPTY_OAK_BOOKSHELF, COBWEBBED_EMPTY_OAK_BOOKSHELF);
@@ -141,7 +145,7 @@ public class CelluloseItemGroups
         // Functional blocks
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> content.addAfter(STONECUTTER, SAWMILL));
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(WARPED_FUNGUS_ON_A_STICK, BLOCK_OF_PAPER, SOAKED_BLOCK_OF_PAPER));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(WARPED_FUNGUS_ON_A_STICK, BLOCK_OF_PAPER, GREY_PAPER_BLOCK));
 
         //Cactus woodset
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.addAfter(WARPED_BUTTON, CACTUS_BUNDLE, CACTUS_CROWN, STRIPPED_CACTUS, STRIPPED_CACTUS_CROWN, ENGRAVED_CACTUS, ENGRAVED_CACTUS_CROWN,

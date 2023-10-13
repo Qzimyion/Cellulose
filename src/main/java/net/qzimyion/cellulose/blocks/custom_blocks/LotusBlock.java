@@ -31,8 +31,14 @@ import net.qzimyion.cellulose.blocks.ModBlockProperties;
 
 @SuppressWarnings("ALL")
 public class LotusBlock extends PlantBlock {
+    public LotusBlock(Settings settings) {
+        super(settings);
+    }
+    /*
     protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 15.0, 1.5, 15.0);
     public static final BooleanProperty FLUID = ModBlockProperties.FLUID_FILLED;
+
+
 
     public LotusBlock(Settings settings) {
         super(settings);
@@ -101,4 +107,6 @@ public class LotusBlock extends PlantBlock {
         }
         return ActionResult.PASS;
     }
+
+     */
 }

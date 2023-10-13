@@ -170,7 +170,7 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CACTUS_TILES, "Cactus Tiles");
         translationBuilder.add(CACTUS_TILES_STAIRS, "Cactus Tiles Stairs");
         translationBuilder.add(CACTUS_TILES_SLABS, "Cactus Tiles Slab");
-        translationBuilder.add(CACTUS_BOARDS, "Cactus Boards");
+        translationBuilder.add(CACTUS_TIMBERS, "Cactus Boards");
         translationBuilder.add(CACTUS_BOARDS_STAIRS, "Cactus Boards Stairs");
         translationBuilder.add(CACTUS_BOARDS_SLABS, "Cactus Boards Slab");
         translationBuilder.add(CACTUS_BEAM, "Cactus Beam");
@@ -375,17 +375,17 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(BAMBOO_TILES_SLABS, "Bamboo Tiles Slab");
         translationBuilder.add(CHERRY_TILES_SLABS, "Cherry Tiles Slab");
         //Boards
-        translationBuilder.add(OAK_BOARDS, "Oak Boards");
-        translationBuilder.add(BIRCH_BOARDS, "Birch Boards");
-        translationBuilder.add(SPRUCE_BOARDS, "Spruce Boards");
-        translationBuilder.add(DARK_OAK_BOARDS, "Dark Oak Boards");
-        translationBuilder.add(JUNGLE_BOARDS, "Jungle Boards");
-        translationBuilder.add(ACACIA_BOARDS, "Acacia Boards");
-        translationBuilder.add(CRIMSON_BOARDS, "Crimson Boards");
-        translationBuilder.add(WARPED_BOARDS, "Warped Boards");
-        translationBuilder.add(MANGROVE_BOARDS, "Mangrove Boards");
-        translationBuilder.add(BAMBOO_BOARDS, "Bamboo Boards");
-        translationBuilder.add(CHERRY_BOARDS, "Cherry Boards");
+        translationBuilder.add(OAK_TIMBERS, "Oak Boards");
+        translationBuilder.add(BIRCH_TIMBERS, "Birch Boards");
+        translationBuilder.add(SPRUCE_TIMBERS, "Spruce Boards");
+        translationBuilder.add(DARK_OAK_TIMBERS, "Dark Oak Boards");
+        translationBuilder.add(JUNGLE_TIMBERS, "Jungle Boards");
+        translationBuilder.add(ACACIA_TIMBERS, "Acacia Boards");
+        translationBuilder.add(CRIMSON_TIMBERS, "Crimson Boards");
+        translationBuilder.add(WARPED_TIMBERS, "Warped Boards");
+        translationBuilder.add(MANGROVE_TIMBERS, "Mangrove Boards");
+        translationBuilder.add(BAMBOO_TIMBERS, "Bamboo Boards");
+        translationBuilder.add(CHERRY_TIMBERS, "Cherry Boards");
         //Board Stairs
         translationBuilder.add(OAK_BOARDS_STAIRS, "Oak Boards Stairs");
         translationBuilder.add(BIRCH_BOARDS_STAIRS, "Birch Boards Stairs");
@@ -453,7 +453,7 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         Compressed Blocks
          */
         translationBuilder.add(BLOCK_OF_PAPER, "Paper Block");
-        translationBuilder.add(SOAKED_BLOCK_OF_PAPER, "Soaked Paper Block");
+        translationBuilder.add(GREY_PAPER_BLOCK, "Soaked Paper Block");
         translationBuilder.add(BLOCK_OF_STICKS, "Stick Bundle");
         translationBuilder.add(BLOCK_OF_CHARCOAL, "Block Of Charcoal");
 

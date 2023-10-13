@@ -1,0 +1,16 @@
+{
+	"elements": [
+		{
+			"from": [4, 0, 0],
+			"to": [12, 16, 7],
+			"color": 8,
+			"faces": {
+				"north": {"uv": [0, 0, 8, 16], "texture": "#barricade", "cullface": "north" },
+				"east": {"uv": [0, 0, 7, 16], "texture": "#barricade"},
+				"west": {"uv": [0, 0, 7, 16], "texture": "#barricade"},
+				"up": {"uv": [0, 0, 8, 7], "texture": "#barricade"},
+				"down": {"uv": [0, 0, 8, 7], "texture": "#barricade"}
+			}
+		}
+	]
+}

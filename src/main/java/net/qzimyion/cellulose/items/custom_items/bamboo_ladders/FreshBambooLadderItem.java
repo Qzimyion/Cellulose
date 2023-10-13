@@ -2,7 +2,6 @@ package net.qzimyion.cellulose.items.custom_items.bamboo_ladders;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ScaffoldingBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemPlacementContext;
@@ -47,9 +46,6 @@ public class FreshBambooLadderItem extends BlockItem {
                 if (!direction.getAxis().isHorizontal()) continue;
                 ++i;
             }
-            return null;
-        }
-        if (ScaffoldingBlock.calculateDistance(world, blockPos) == 7) {
             return null;
         }
         return context;

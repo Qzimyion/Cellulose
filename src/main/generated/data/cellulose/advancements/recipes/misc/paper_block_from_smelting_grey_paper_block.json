@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_grey_paper_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cellulose:grey_paper_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:paper_block_from_smelting_grey_paper_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_grey_paper_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:paper_block_from_smelting_grey_paper_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

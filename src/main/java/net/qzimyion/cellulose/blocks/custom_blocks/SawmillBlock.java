@@ -18,6 +18,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.qzimyion.cellulose.util.CelluloseStats;
@@ -27,6 +28,7 @@ import org.jetbrains.annotations.Nullable;
 @SuppressWarnings("ALL")
 public class SawmillBlock extends HorizontalFacingBlock
 {
+    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
     public static final Text TITLE = Text.translatable("container.cellulose.sawmill");
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public SawmillBlock(Settings settings)
@@ -50,6 +52,11 @@ public class SawmillBlock extends HorizontalFacingBlock
         player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
         player.incrementStat(CelluloseStats.INTERACT_WITH_SAWMILL);
         return ActionResult.CONSUME;
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
     }
 
     @Override

@@ -2,9 +2,9 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
-import net.minecraft.util.Identifier;
+import net.qzimyion.cellulose.blocks.CelluloseBlocks;
+import net.qzimyion.cellulose.items.CelluloseItems;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
@@ -81,18 +81,18 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool TilesBloomingAzalea = blockStateModelGenerator.registerCubeAllModelTexturePool(BLOOMING_AZALEA_TILES);
 
 
-        BlockStateModelGenerator.BlockTexturePool BoardsOak = blockStateModelGenerator.registerCubeAllModelTexturePool(OAK_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsBirch = blockStateModelGenerator.registerCubeAllModelTexturePool(BIRCH_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsSpruce = blockStateModelGenerator.registerCubeAllModelTexturePool(SPRUCE_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsDarkOak = blockStateModelGenerator.registerCubeAllModelTexturePool(DARK_OAK_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsJungle = blockStateModelGenerator.registerCubeAllModelTexturePool(JUNGLE_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsAcacia = blockStateModelGenerator.registerCubeAllModelTexturePool(ACACIA_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsCrimson = blockStateModelGenerator.registerCubeAllModelTexturePool(CRIMSON_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsWarped = blockStateModelGenerator.registerCubeAllModelTexturePool(WARPED_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsMangrove = blockStateModelGenerator.registerCubeAllModelTexturePool(MANGROVE_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsBamboo = blockStateModelGenerator.registerCubeAllModelTexturePool(BAMBOO_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsCherry = blockStateModelGenerator.registerCubeAllModelTexturePool(CHERRY_BOARDS);
-        BlockStateModelGenerator.BlockTexturePool BoardsCactus = blockStateModelGenerator.registerCubeAllModelTexturePool(CACTUS_BOARDS);
+        BlockStateModelGenerator.BlockTexturePool BoardsOak = blockStateModelGenerator.registerCubeAllModelTexturePool(OAK_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsBirch = blockStateModelGenerator.registerCubeAllModelTexturePool(BIRCH_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsSpruce = blockStateModelGenerator.registerCubeAllModelTexturePool(SPRUCE_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsDarkOak = blockStateModelGenerator.registerCubeAllModelTexturePool(DARK_OAK_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsJungle = blockStateModelGenerator.registerCubeAllModelTexturePool(JUNGLE_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsAcacia = blockStateModelGenerator.registerCubeAllModelTexturePool(ACACIA_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsCrimson = blockStateModelGenerator.registerCubeAllModelTexturePool(CRIMSON_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsWarped = blockStateModelGenerator.registerCubeAllModelTexturePool(WARPED_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsMangrove = blockStateModelGenerator.registerCubeAllModelTexturePool(MANGROVE_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsBamboo = blockStateModelGenerator.registerCubeAllModelTexturePool(BAMBOO_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsCherry = blockStateModelGenerator.registerCubeAllModelTexturePool(CHERRY_TIMBERS);
+        BlockStateModelGenerator.BlockTexturePool BoardsCactus = blockStateModelGenerator.registerCubeAllModelTexturePool(CACTUS_TIMBERS);
 
         BlockStateModelGenerator.BlockTexturePool GlazedOak = blockStateModelGenerator.registerCubeAllModelTexturePool(OAK_GLAZED);
         BlockStateModelGenerator.BlockTexturePool GlazedBirch = blockStateModelGenerator.registerCubeAllModelTexturePool(BIRCH_GLAZED);
@@ -520,6 +520,12 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_CACTUS_BOOKSHELF);
         blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_AZALEA_BOOKSHELF);
 
+        blockStateModelGenerator.registerSimpleState(STRIPPED_BAMBOO_STALK);
+
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(CelluloseBlocks.FRESH_BAMBOO_LADDER);
+
+        blockStateModelGenerator.registerSimpleState(BLOCK_OF_PAPER);
+        blockStateModelGenerator.registerSimpleState(GREY_PAPER_BLOCK);
 
     }
 
@@ -545,5 +551,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CHERRY_SAWDUST, Models.GENERATED);
         itemModelGenerator.register(CACTUS_SAWDUST, Models.GENERATED);
         itemModelGenerator.register(AZALEA_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(CelluloseItems.FRESH_BAMBOO_LADDER, Models.GENERATED);
     }
 }

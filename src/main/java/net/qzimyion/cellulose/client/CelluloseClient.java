@@ -3,10 +3,12 @@ package net.qzimyion.cellulose.client;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
+import net.qzimyion.cellulose.entity.CelluloseEntities;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreen;
 
@@ -19,7 +21,6 @@ public class CelluloseClient implements ClientModInitializer
     public void onInitializeClient()
     {
         RenderLayer Render = RenderLayer.getCutout();
-        RenderLayer Render1 = RenderLayer.getTranslucent();
 
         BlockRenderLayerMap.INSTANCE.putBlock(SAWMILL, Render);
 
@@ -75,7 +76,10 @@ public class CelluloseClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_DOOR, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_TRAPDOOR, Render);
 
-        //CelluloseSigns and Hanging signs
+        //Signs and Hanging signs
+
+        //Block Entity renderer
+
 
     }
 }

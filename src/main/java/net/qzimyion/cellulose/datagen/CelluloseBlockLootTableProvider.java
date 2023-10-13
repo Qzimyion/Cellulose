@@ -93,18 +93,18 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         addDrop(CHERRY_TILES);
         addDrop(CACTUS_TILES);
         /*Boards*/
-        addDrop(OAK_BOARDS);
-        addDrop(BIRCH_BOARDS);
-        addDrop(SPRUCE_BOARDS);
-        addDrop(DARK_OAK_BOARDS);
-        addDrop(JUNGLE_BOARDS);
-        addDrop(ACACIA_BOARDS);
-        addDrop(CRIMSON_BOARDS);
-        addDrop(WARPED_BOARDS);
-        addDrop(MANGROVE_BOARDS);
-        addDrop(BAMBOO_BOARDS);
-        addDrop(CHERRY_BOARDS);
-        addDrop(CACTUS_BOARDS);
+        addDrop(OAK_TIMBERS);
+        addDrop(BIRCH_TIMBERS);
+        addDrop(SPRUCE_TIMBERS);
+        addDrop(DARK_OAK_TIMBERS);
+        addDrop(JUNGLE_TIMBERS);
+        addDrop(ACACIA_TIMBERS);
+        addDrop(CRIMSON_TIMBERS);
+        addDrop(WARPED_TIMBERS);
+        addDrop(MANGROVE_TIMBERS);
+        addDrop(BAMBOO_TIMBERS);
+        addDrop(CHERRY_TIMBERS);
+        addDrop(CACTUS_TIMBERS);
         /*Glazed*/
         addDrop(OAK_GLAZED);
         addDrop(BIRCH_GLAZED);
@@ -388,7 +388,7 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         //Misc
         addDrop(CACTUS_BUNDLE);
         addDrop(BLOCK_OF_PAPER);
-        addDrop(SOAKED_BLOCK_OF_PAPER);
+        addDrop(GREY_PAPER_BLOCK);
         addDrop(BLOCK_OF_CHARCOAL);
         addDrop(BLOCK_OF_STICKS);
 

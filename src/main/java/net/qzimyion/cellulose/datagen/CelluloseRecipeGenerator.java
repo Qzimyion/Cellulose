@@ -420,6 +420,17 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .pattern("X X")
                 .pattern("###")
                 .input('#', PLANKS).input('X', STICK).criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_stick", RecipeProvider.conditionsFromItem(STICK)).offerTo(exporter);
+
+        //Paper blocks
+        //Normal
+        ShapedRecipeJsonBuilder.create(DECORATIONS, BLOCK_OF_PAPER)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .input('#', PAPER).criterion("has_paper", RecipeProvider.conditionsFromItem(PAPER)).offerTo(exporter);
+        //Dyed
+
+
         /*
          * Sawmilling recipes
          */
@@ -549,7 +560,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         //Petrified wood
 
 
-        final List<ItemConvertible> PAPER_SMELTING = Util.make(Lists.newArrayList(), list -> list.add(SOAKED_BLOCK_OF_PAPER));
+        final List<ItemConvertible> PAPER_SMELTING = Util.make(Lists.newArrayList(), list -> list.add(GREY_PAPER_BLOCK));
 
         offerSmelting(exporter, PAPER_SMELTING, MISC, BLOCK_OF_PAPER, 0.15F, 200, "misc");
     }
@@ -580,7 +591,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
     }
 
     public static void offerBookShelvesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 3).group("ceelulose:bookshelves").input('#', input).input('X', BOOK).pattern("###").pattern("XXX").pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_book", RecipeProvider.conditionsFromItem(BOOK)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 3).group("cellulose:bookshelves").input('#', input).input('X', BOOK).pattern("###").pattern("XXX").pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_book", RecipeProvider.conditionsFromItem(BOOK)).offerTo(exporter);
     }
 
 

@@ -1,0 +1,17 @@
+{
+	"parent": "minecraft:block/block",
+	"textures": {
+		"all": "block/block",
+		"particle": "#all"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 16, 12],
+			"color": 8,
+			"faces": {
+				"east": {"uv": [0, 0, 8, 16], "texture": "#barricade"}
+			}
+		}
+	]
+}
