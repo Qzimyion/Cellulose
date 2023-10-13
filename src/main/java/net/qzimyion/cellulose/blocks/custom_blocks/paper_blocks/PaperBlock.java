@@ -1,54 +1,71 @@
 package net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks;
 
 import net.minecraft.block.*;
-import net.minecraft.client.util.ParticleUtil;
-import net.minecraft.entity.FallingBlockEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.particle.BlockStateParticleEffect;
-import net.minecraft.particle.ParticleTypes;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldEvents;
+import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
-public class PaperBlock extends FallingBlock {
-
+@SuppressWarnings("deprecation")
+public class PaperBlock extends Block {
+    private static final Direction[] field_43257 = Direction.values();
     public PaperBlock(Settings settings) {
         super(settings);
     }
 
     @Override
-    public void onLanding(World world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
-        if (PaperBlock.shouldBreak(world, pos, currentStateInPos)) {
+    public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
+        if (oldState.isOf(state.getBlock())) {
+            return;
+        }
+        this.update(world, pos);
+    }
 
-            ParticleUtil.spawnParticle(world, pos, new BlockStateParticleEffect(ParticleTypes.BLOCK, world.getBlockState(pos)), UniformIntProvider.create(3,5));
-            dropStack(world, pos, new ItemStack(Items.PAPER));
-            world.breakBlock(pos, false);
+    @Override
+    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+        this.update(world, pos);
+        super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
+    }
+
+    protected void update(World world, BlockPos pos) {
+        if (this.absorbWater(world, pos)) {
+            world.setBlockState(pos, CelluloseBlocks.GRAY_PAPER_BLOCK.getDefaultState(), Block.NOTIFY_LISTENERS);
+            world.syncWorldEvent(WorldEvents.BLOCK_BROKEN, pos, Block.getRawIdFromState(Blocks.WATER.getDefaultState()));
         }
     }
 
-    private static boolean shouldBreak(BlockView world, BlockPos pos, BlockState state) {
-        return PaperBlock.breaksIn(state) || PaperBlock.breaksOnAnySide(world, pos);
-    }
-
-    private static boolean breaksOnAnySide(BlockView world, BlockPos pos) {
-        boolean bl = false;
-        BlockPos.Mutable mutable = pos.mutableCopy();
-        for (Direction direction : Direction.values()) {
-            BlockState blockState = world.getBlockState(mutable);
-            if (direction == Direction.DOWN && !PaperBlock.breaksIn(blockState)) continue;
-            mutable.set(pos, direction);
-            blockState = world.getBlockState(mutable);
-            if (!PaperBlock.breaksIn(blockState) || blockState.isSideSolidFullSquare(world, pos, direction.getOpposite())) continue;
-            bl = true;
-            break;
-        }
-        return bl;
-    }
-    private static boolean breaksIn(BlockState state) {
-        return state.getFluidState().isIn(FluidTags.WATER);
+    private boolean absorbWater(World world, BlockPos pos) {
+        return BlockPos.iterateRecursively(pos, 5, 36, (currentPos, queuer) -> {
+            for (Direction direction : field_43257) {
+                queuer.accept(currentPos.offset(direction));
+            }
+        }, currentPos -> {
+            if (currentPos.equals(pos)) {
+                return true;
+            }
+            BlockState blockState = world.getBlockState(currentPos);
+            FluidState fluidState = world.getFluidState(currentPos);
+            if (!fluidState.isIn(FluidTags.WATER)) {
+                return false;
+            }
+            Block block = blockState.getBlock();
+            if (block instanceof FluidDrainable && !((FluidDrainable) block).tryDrainFluid(world, currentPos, blockState).isEmpty()) {
+                return true;
+            }
+            if (blockState.getBlock() instanceof FluidBlock) {
+                world.setBlockState(currentPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
+            } else if (blockState.isOf(Blocks.KELP) || blockState.isOf(Blocks.KELP_PLANT) || blockState.isOf(Blocks.SEAGRASS) || blockState.isOf(Blocks.TALL_SEAGRASS)) {
+                BlockEntity blockEntity = blockState.hasBlockEntity() ? world.getBlockEntity(currentPos) : null;
+                PaperBlock.dropStacks(blockState, world, currentPos, blockEntity);
+                world.setBlockState(currentPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
+            } else {
+                return false;
+            }
+            return true;
+        }) > 1;
     }
 }
