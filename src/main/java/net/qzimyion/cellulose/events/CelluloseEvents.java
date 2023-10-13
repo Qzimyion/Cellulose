@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.util.ParticleUtil;
 import net.minecraft.item.*;
 import net.minecraft.particle.BlockStateParticleEffect;
@@ -18,7 +17,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.qzimyion.cellulose.Cellulose;
-import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.util.CelluloseTags;
 
 import java.util.HashMap;
@@ -45,7 +43,7 @@ public class CelluloseEvents {
     public static final HashMap<Identifier, Identifier> DEFLOWER_ENTITY = new HashMap<>();
     public static final HashMap<Block, Block> BOOKSHELF_ABANDONING = new HashMap<>();
     public static final HashMap<Block, Item> BOOK_DROP = new HashMap<>();
-    public static final HashMap<Block, Block> PAPER_PROCESSING = new HashMap<>();
+    //public static final HashMap<Block, Block> PAPER_PROCESSING = new HashMap<>();
 
 
     static {
