@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 @SuppressWarnings("ALL")
 public class SawmillBlock extends HorizontalFacingBlock
 {
-    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
     public static final Text TITLE = Text.translatable("container.cellulose.sawmill");
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public SawmillBlock(Settings settings)

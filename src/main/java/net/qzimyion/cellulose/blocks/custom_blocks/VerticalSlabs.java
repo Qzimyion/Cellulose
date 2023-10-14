@@ -19,7 +19,7 @@ import java.util.Objects;
 @SuppressWarnings("deprecation")
 public class VerticalSlabs extends HorizontalFacingBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    protected VerticalSlabs(Settings settings) {
+    public VerticalSlabs(Settings settings) {
         super(settings);
         setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, false));
     }

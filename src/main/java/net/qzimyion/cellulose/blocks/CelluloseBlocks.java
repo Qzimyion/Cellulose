@@ -776,6 +776,7 @@ public class CelluloseBlocks
     /*Stripped*/
     public static final Block STRIPPED_OAK_LOG_SLABS = registerBlock("stripped_oak_log_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
     public static final Block STRIPPED_OAK_LOG_STAIRS = registerBlock("stripped_oak_log_stairs", new StairsBlock(STRIPPED_OAK_LOG.getDefaultState(), FabricBlockSettings.copyOf(OAK_SLAB)));
+    public static final Block STRIPPED_OAK_LOG_VERTICAL_SLABS = registerBlock("stripped_oak_log_vertical_slab", new VerticalSlabs(FabricBlockSettings.copyOf(OAK_SLAB)));
     public static final Block STRIPPED_BIRCH_LOG_SLABS = registerBlock("stripped_birch_log_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
     public static final Block STRIPPED_BIRCH_LOG_STAIRS = registerBlock("stripped_birch_log_stairs", new StairsBlock(OAK_LOG.getDefaultState(), FabricBlockSettings.copyOf(OAK_SLAB)));
     public static final Block STRIPPED_SPRUCE_LOG_SLABS = registerBlock("stripped_spruce_log_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
