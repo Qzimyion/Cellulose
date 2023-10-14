@@ -1,9 +1,8 @@
 {
   "replace": false,
   "values": [
-    "minecraft:red_mushroom",
-    "minecraft:brown_mushroom",
-    "minecraft:crimson_fungus",
-    "minecraft:warped_fungus"
+    "minecraft:glowstone_dust",
+    "minecraft:gunpowder",
+    "minecraft:lapis_lazuli"
   ]
 }

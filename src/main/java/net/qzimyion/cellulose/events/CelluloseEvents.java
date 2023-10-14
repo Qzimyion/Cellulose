@@ -495,8 +495,7 @@ public class CelluloseEvents {
             ///Cauldron stuff
             //Bamboo dissolving
             if (heldItem.getItem()== Items.BAMBOO_BLOCK){
-                if (targetBlock.isOf(WATER_CAULDRON) && (targetBlock.get(LeveledCauldronBlock.LEVEL) == 3)
-                        && world.getBlockState(targetPos.down()).isIn(CelluloseTags.Blocks.FIRE_BLOCKS)){
+                if (targetBlock.isOf(WATER_CAULDRON) && (targetBlock.get(LeveledCauldronBlock.LEVEL) == 3) && world.getBlockState(targetPos.down()).isIn(CelluloseTags.Blocks.FIRE_BLOCKS)){
                     world.playSound(player, targetPos, SoundEvents.ENTITY_PLAYER_SPLASH, SoundCategory.BLOCKS, 1.0f,1.0f);
                     if (player instanceof ServerPlayerEntity) {
                         Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, targetPos, heldItem);
@@ -508,8 +507,8 @@ public class CelluloseEvents {
             //Paper mesh
             if (heldItem.isIn(CelluloseTags.Items.CURING_AGENTS)){
                 if (targetBlock.isOf(DISSOLVED_BAMBOO_CAULDRON_BLOCK)){
-                    world.playSound(player, targetPos, SoundEvents.ENTITY_PLAYER_SPLASH, SoundCategory.BLOCKS, 1.0f,1.0f);
                     world.playSound(player, targetPos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0f,1.0f);
+                    ParticleUtil.spawnParticle(world, targetPos, ParticleTypes.HAPPY_VILLAGER, UniformIntProvider.create(3, 5));
                     if (player instanceof ServerPlayerEntity) {
                         Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, targetPos, heldItem);
                         if (!player.isCreative()) heldItem.decrement(1);

@@ -426,11 +426,10 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Items.EXPERIENCE_BOTTLE);
 
         getOrCreateTagBuilder(CelluloseTags.Items.CURING_AGENTS)
-                .add(Items.RED_MUSHROOM)
-                .add(Items.BROWN_MUSHROOM)
-                .add(Items.CRIMSON_FUNGUS)
-                .add(Items.WARPED_FUNGUS)
-            ;
+                .add(Items.GLOWSTONE_DUST)
+                .add(Items.GUNPOWDER)
+                .add(Items.LAPIS_LAZULI);
+
         getOrCreateTagBuilder(CelluloseTags.Items.BOOKSHELVES)
                 .add(Items.BOOKSHELF)
                 .add(Item.fromBlock(BIRCH_BOOKSHELF))
