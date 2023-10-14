@@ -49,7 +49,7 @@ public class CelluloseTags
         public static final TagKey <Block> BOOKSHELVES = createTag("bookshelves");
         public static final TagKey <Block> EMPTY_BOOKSHELVES = createTag("empty_bookshelves");
         public static final TagKey <Block> COBWEBBED_BOOKSHELVES = createTag("cobwebbed_bookshelves");
-        public static final TagKey <Block> EMPTY_COBWEBBED_BOOKSHELVES = createTag("empty_cobwebbed_bookshelves");
+        public static final TagKey <Block> COBWEBBED_EMPTY_BOOKSHELVES = createTag("cobwebbed_empty_bookshelves");
         public static final TagKey <Block> ABANDONED_BOOKSHELVES = createTag("abandoned_bookshelves");
 
         public static final TagKey <Block> BAMBOO_LADDERS_PLACEABLE_ON = createTag("bamboo_ladders_placeable_on");
@@ -57,6 +57,7 @@ public class CelluloseTags
         //Event only tags
         public static final TagKey <Block> ENGRAVABLE_LOGS = createTag ("engravable_logs");
         public static final TagKey <Block> CHIPPABLE_LOGS = createTag ("chippable_logs");
+        public static final TagKey <Block> FIRE_BLOCKS = createTag ("fire_blocks");
 
         //Plants
         public static final TagKey <Block> FLOWERABLE = createTag("flowerable");
@@ -124,6 +125,11 @@ public class CelluloseTags
         public static final TagKey <Item> BLOOMING_AZALEA_PLANKS = createTag("blooming_azalea_planks");
         public static final TagKey <Item> SAWDUST = createTag("sawdust");
         public static final TagKey <Item> POTION_RACK_POTIONS = createTag("potion_rack_potions");
+        public static final TagKey <Item> BOOKSHELVES = createTag("bookshelves");
+        public static final TagKey <Item> EMPTY_BOOKSHELVES = createTag("empty_bookshelves");
+        public static final TagKey <Item> COBWEBBED_BOOKSHELVES = createTag("cobwebbed_bookshelves");
+        public static final TagKey <Item> COBWEBBED_EMPTY_BOOKSHELVES = createTag("cobwebbed_empty_bookshelves");
+        public static final TagKey <Item> ABANDONED_BOOKSHELVES = createTag("abandoned_bookshelves");
 
         //Common
 
