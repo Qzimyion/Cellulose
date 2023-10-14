@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -419,16 +420,17 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .pattern("###")
                 .pattern("X X")
                 .pattern("###")
-                .input('#', PLANKS).input('X', STICK).criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_stick", RecipeProvider.conditionsFromItem(STICK)).offerTo(exporter);
+                .input('#', WOODEN_SLABS).input('X', STICK).criterion("has_wooden_slabs", RecipeProvider.conditionsFromTag(WOODEN_SLABS)).criterion("has_stick", RecipeProvider.conditionsFromItem(STICK)).offerTo(exporter);
 
         //Paper blocks
         //Normal
-        ShapedRecipeJsonBuilder.create(DECORATIONS, BLOCK_OF_PAPER)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, PAPER_BLOCK)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
                 .input('#', PAPER).criterion("has_paper", RecipeProvider.conditionsFromItem(PAPER)).offerTo(exporter);
         //Dyed
+
 
 
         /*
@@ -560,9 +562,9 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         //Petrified wood
 
 
-        final List<ItemConvertible> PAPER_SMELTING = Util.make(Lists.newArrayList(), list -> list.add(GREY_PAPER_BLOCK));
+        final List<ItemConvertible> PAPER_SMELTING = Util.make(Lists.newArrayList(), list -> list.add(SOAKED_PAPER_BLOCK));
 
-        offerSmelting(exporter, PAPER_SMELTING, MISC, BLOCK_OF_PAPER, 0.15F, 200, "misc");
+        offerSmelting(exporter, PAPER_SMELTING, MISC, PAPER_BLOCK, 0.15F, 200, "misc");
     }
 
     private void createStairsRecipe(Block Stairs, Block block) {
@@ -591,9 +593,12 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
     }
 
     public static void offerBookShelvesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 3).group("cellulose:bookshelves").input('#', input).input('X', BOOK).pattern("###").pattern("XXX").pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_book", RecipeProvider.conditionsFromItem(BOOK)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).group("cellulose:bookshelves").input('#', input).input('X', BOOK).pattern("###").pattern("XXX").pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_book", RecipeProvider.conditionsFromItem(BOOK)).offerTo(exporter);
     }
 
+    public static void offerDyedPaperBlocksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, Item input) {
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).group("cellulose:paper_blocks").input('#', PAPER_BLOCK).input('X', (ItemConvertible) input).pattern("#").pattern("X").criterion("has_paper_block", RecipeProvider.conditionsFromItem(PAPER_BLOCK)).offerTo(exporter);
+    }
 
     ////Sawmilling
 

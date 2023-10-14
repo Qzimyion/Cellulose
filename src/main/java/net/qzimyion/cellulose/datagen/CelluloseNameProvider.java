@@ -452,8 +452,8 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         /*
         Compressed Blocks
          */
-        translationBuilder.add(BLOCK_OF_PAPER, "Paper Block");
-        translationBuilder.add(GREY_PAPER_BLOCK, "Soaked Paper Block");
+        translationBuilder.add(PAPER_BLOCK, "Paper Block");
+        translationBuilder.add(SOAKED_PAPER_BLOCK, "Soaked Paper Block");
         translationBuilder.add(BLOCK_OF_STICKS, "Stick Bundle");
         translationBuilder.add(BLOCK_OF_CHARCOAL, "Block Of Charcoal");
 

@@ -387,8 +387,8 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
 
         //Misc
         addDrop(CACTUS_BUNDLE);
-        addDrop(BLOCK_OF_PAPER);
-        addDrop(GREY_PAPER_BLOCK);
+        addDrop(PAPER_BLOCK);
+        addDrop(SOAKED_PAPER_BLOCK);
         addDrop(BLOCK_OF_CHARCOAL);
         addDrop(BLOCK_OF_STICKS);
 

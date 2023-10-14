@@ -23,16 +23,8 @@ public class ModBlockProperties {
     //Triple door Properties
 
 
-    //Armour properties
-    public static boolean hasThorns(LivingEntity entity) {
-        return EnchantmentHelper.getEquipmentLevel(Enchantments.THORNS, entity) > 0;
-    }
-
-    public static boolean ImmuneToSpikyStuff (LivingEntity entity){
-        return entity.getEquippedStack(EquipmentSlot.FEET).isOf(Items.CHAINMAIL_BOOTS);
-    }
-
     //Cauldron behaviors
+    public static final Map<Item, CauldronBehavior> BAMBOO_CAULDRON_BEHAVIOR = CauldronBehavior.createMap();
     public static final Map<Item, CauldronBehavior> DISSOVLED_BAMBOO_CAULDRON_BEHAVIOR = CauldronBehavior.createMap();
     public static final Map<Item, CauldronBehavior> PAPER_MESH_CAULDRON_BEHAVIOR = CauldronBehavior.createMap();
     public static final CauldronBehavior FILL_WITH_BAMBOO_SHELLS = (state, world, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(world, pos, player, hand, stack, CelluloseBlocks.DISSOLVED_BAMBOO_CAULDRON_BLOCK.getDefaultState(), SoundEvents.ITEM_BUCKET_EMPTY);

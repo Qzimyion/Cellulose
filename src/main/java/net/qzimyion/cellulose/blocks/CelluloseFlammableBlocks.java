@@ -77,6 +77,6 @@ public class CelluloseFlammableBlocks
         registry.add(ENGRAVED_CHERRY_WOOD, 5,5);
 
         //Compressed Blocks
-        registry.add(BLOCK_OF_PAPER, 1, 50);
+        registry.add(PAPER_BLOCK, 1, 50);
     }
 }

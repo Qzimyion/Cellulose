@@ -10,8 +10,6 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
-import net.qzimyion.cellulose.blocks.CelluloseBlocks;
-import net.qzimyion.cellulose.util.CelluloseTags;
 
 import java.util.concurrent.CompletableFuture;
 import static net.minecraft.block.Blocks.*;
@@ -34,6 +32,12 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
         TagKey<Block> LOG_STAIRS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "log_stairs"));
 
         ///Modded Tags
+
+        getOrCreateTagBuilder(FIRE_BLOCKS)
+                .add(CAMPFIRE)
+                .add(MAGMA_BLOCK)
+                .add(Blocks.FIRE)
+                .add(LAVA);
 
         getOrCreateTagBuilder(BAMBOO_LADDERS_PLACEABLE_ON)
                 .add(LADDER)
@@ -69,6 +73,70 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(CHERRY_BOOKSHELF)
                 .add(CACTUS_BOOKSHELF)
                 .add(AZALEA_BOOKSHELF)
+        ;
+
+        getOrCreateTagBuilder(EMPTY_BOOKSHELVES)
+                .add(EMPTY_OAK_BOOKSHELF)
+                .add(EMPTY_BIRCH_BOOKSHELF)
+                .add(EMPTY_SPRUCE_BOOKSHELF)
+                .add(EMPTY_DARK_OAK_BOOKSHELF)
+                .add(EMPTY_JUNGLE_BOOKSHELF)
+                .add(EMPTY_ACACIA_BOOKSHELF)
+                .add(EMPTY_CRIMSON_BOOKSHELF)
+                .add(EMPTY_WARPED_BOOKSHELF)
+                .add(EMPTY_MANGROVE_BOOKSHELF)
+                .add(EMPTY_BAMBOO_BOOKSHELF)
+                .add(EMPTY_CHERRY_BOOKSHELF)
+                .add(EMPTY_CACTUS_BOOKSHELF)
+                .add(EMPTY_AZALEA_BOOKSHELF)
+        ;
+
+        getOrCreateTagBuilder(COBWEBBED_BOOKSHELVES)
+                .add(COBWEBBED_OAK_BOOKSHELF)
+                .add(COBWEBBED_BIRCH_BOOKSHELF)
+                .add(COBWEBBED_SPRUCE_BOOKSHELF)
+                .add(COBWEBBED_DARK_OAK_BOOKSHELF)
+                .add(COBWEBBED_JUNGLE_BOOKSHELF)
+                .add(COBWEBBED_ACACIA_BOOKSHELF)
+                .add(COBWEBBED_CRIMSON_BOOKSHELF)
+                .add(COBWEBBED_WARPED_BOOKSHELF)
+                .add(COBWEBBED_MANGROVE_BOOKSHELF)
+                .add(COBWEBBED_BAMBOO_BOOKSHELF)
+                .add(COBWEBBED_CHERRY_BOOKSHELF)
+                .add(COBWEBBED_CACTUS_BOOKSHELF)
+                .add(COBWEBBED_AZALEA_BOOKSHELF)
+        ;
+
+        getOrCreateTagBuilder(COBWEBBED_EMPTY_BOOKSHELVES)
+                .add(COBWEBBED_EMPTY_OAK_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_BIRCH_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_SPRUCE_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_DARK_OAK_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_JUNGLE_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_ACACIA_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_CRIMSON_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_WARPED_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_MANGROVE_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_BAMBOO_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_CHERRY_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_CACTUS_BOOKSHELF)
+                .add(COBWEBBED_EMPTY_AZALEA_BOOKSHELF)
+        ;
+
+        getOrCreateTagBuilder(ABANDONED_BOOKSHELVES)
+                .add(ABANDONED_OAK_BOOKSHELF)
+                .add(ABANDONED_BIRCH_BOOKSHELF)
+                .add(ABANDONED_SPRUCE_BOOKSHELF)
+                .add(ABANDONED_DARK_OAK_BOOKSHELF)
+                .add(ABANDONED_JUNGLE_BOOKSHELF)
+                .add(ABANDONED_ACACIA_BOOKSHELF)
+                .add(ABANDONED_CRIMSON_BOOKSHELF)
+                .add(ABANDONED_WARPED_BOOKSHELF)
+                .add(ABANDONED_MANGROVE_BOOKSHELF)
+                .add(ABANDONED_BAMBOO_BOOKSHELF)
+                .add(ABANDONED_CHERRY_BOOKSHELF)
+                .add(ABANDONED_CACTUS_BOOKSHELF)
+                .add(ABANDONED_AZALEA_BOOKSHELF)
         ;
 
         getOrCreateTagBuilder(CHISELED_PLANKS)
@@ -693,6 +761,10 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 //New stuff
                 .forceAddTag(PAVEMENTS)
                 .forceAddTag(BOOKSHELVES)
+                .forceAddTag(EMPTY_BOOKSHELVES)
+                .forceAddTag(COBWEBBED_BOOKSHELVES)
+                .forceAddTag(ABANDONED_BOOKSHELVES)
+                .forceAddTag(COBWEBBED_EMPTY_BOOKSHELVES)
 
                 //Fence and Fence Gates
                 .forceAddTag(FENCES)

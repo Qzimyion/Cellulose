@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cellulose:grey_paper_block"
+          "name": "cellulose:soaked_paper_block"
         }
       ],
       "rolls": 1.0

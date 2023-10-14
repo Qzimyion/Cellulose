@@ -4,13 +4,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.potion.Potions;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
-import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.util.CelluloseTags;
 import java.util.concurrent.CompletableFuture;
 
@@ -28,9 +23,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
     @Override
     public void configure(RegistryWrapper.WrapperLookup arg) {
 
-
-        TagKey<Item> LOG_SLABS = TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, "log_slabs"));
-        TagKey<Item> LOG_STAIRS = TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, "log_stairs"));
 
 
         ///Vanilla Tags
@@ -439,6 +431,84 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Items.CRIMSON_FUNGUS)
                 .add(Items.WARPED_FUNGUS)
             ;
+        getOrCreateTagBuilder(CelluloseTags.Items.BOOKSHELVES)
+                .add(Items.BOOKSHELF)
+                .add(Item.fromBlock(BIRCH_BOOKSHELF))
+                .add(Item.fromBlock(SPRUCE_BOOKSHELF))
+                .add(Item.fromBlock(DARK_OAK_BOOKSHELF))
+                .add(Item.fromBlock(JUNGLE_BOOKSHELF))
+                .add(Item.fromBlock(ACACIA_BOOKSHELF))
+                .add(Item.fromBlock(CRIMSON_BOOKSHELF))
+                .add(Item.fromBlock(WARPED_BOOKSHELF))
+                .add(Item.fromBlock(MANGROVE_BOOKSHELF))
+                .add(Item.fromBlock(BAMBOO_BOOKSHELF))
+                .add(Item.fromBlock(CHERRY_BOOKSHELF))
+                .add(Item.fromBlock(CACTUS_BOOKSHELF))
+                .add(Item.fromBlock(AZALEA_BOOKSHELF))
+        ;
 
+        getOrCreateTagBuilder(CelluloseTags.Items.EMPTY_BOOKSHELVES)
+                .add(Item.fromBlock(EMPTY_OAK_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_BIRCH_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_SPRUCE_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_DARK_OAK_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_JUNGLE_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_ACACIA_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_CRIMSON_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_WARPED_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_MANGROVE_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_BAMBOO_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_CHERRY_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_CACTUS_BOOKSHELF))
+                .add(Item.fromBlock(EMPTY_AZALEA_BOOKSHELF))
+        ;
+
+        getOrCreateTagBuilder(CelluloseTags.Items.ABANDONED_BOOKSHELVES)
+                .add(Item.fromBlock(ABANDONED_OAK_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_BIRCH_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_SPRUCE_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_DARK_OAK_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_JUNGLE_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_ACACIA_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_CRIMSON_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_WARPED_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_MANGROVE_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_BAMBOO_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_CHERRY_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_CACTUS_BOOKSHELF))
+                .add(Item.fromBlock(ABANDONED_AZALEA_BOOKSHELF))
+        ;
+
+        getOrCreateTagBuilder(CelluloseTags.Items.COBWEBBED_BOOKSHELVES)
+                .add(Item.fromBlock(COBWEBBED_OAK_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_BIRCH_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_SPRUCE_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_DARK_OAK_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_JUNGLE_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_ACACIA_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_CRIMSON_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_WARPED_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_MANGROVE_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_BAMBOO_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_CHERRY_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_CACTUS_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_AZALEA_BOOKSHELF))
+        ;
+
+        getOrCreateTagBuilder(CelluloseTags.Items.COBWEBBED_EMPTY_BOOKSHELVES)
+                .add(Item.fromBlock(COBWEBBED_EMPTY_OAK_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_BIRCH_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_SPRUCE_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_DARK_OAK_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_JUNGLE_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_ACACIA_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_CRIMSON_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_WARPED_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_MANGROVE_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_BAMBOO_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_CHERRY_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_CACTUS_BOOKSHELF))
+                .add(Item.fromBlock(COBWEBBED_EMPTY_AZALEA_BOOKSHELF))
+        ;
     }
 }

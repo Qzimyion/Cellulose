@@ -60,6 +60,8 @@ public class CelluloseStrippableBlock
         StrippableBlockRegistry.register(BAMBOO_POST, STRIPPED_BAMBOO_POST);
         StrippableBlockRegistry.register(CHERRY_POST, STRIPPED_CHERRY_POST);
         StrippableBlockRegistry.register(CACTUS_POST, STRIPPED_CACTUS_POST);
+        StrippableBlockRegistry.register(AZALEA_POST, STRIPPED_AZALEA_POST);
+        StrippableBlockRegistry.register(BLOOMING_AZALEA_POST, STRIPPED_BLOOMING_AZALEA_POST);
 
         ///Overworld Mushroom stuff
         /*Red*/

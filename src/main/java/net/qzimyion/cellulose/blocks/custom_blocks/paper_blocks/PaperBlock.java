@@ -33,7 +33,7 @@ public class PaperBlock extends Block {
 
     protected void update(World world, BlockPos pos) {
         if (this.absorbWater(world, pos)) {
-            world.setBlockState(pos, CelluloseBlocks.GRAY_PAPER_BLOCK.getDefaultState(), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, CelluloseBlocks.SOAKED_PAPER_BLOCK.getDefaultState(), Block.NOTIFY_LISTENERS);
             world.syncWorldEvent(WorldEvents.BLOCK_BROKEN, pos, Block.getRawIdFromState(Blocks.WATER.getDefaultState()));
         }
     }

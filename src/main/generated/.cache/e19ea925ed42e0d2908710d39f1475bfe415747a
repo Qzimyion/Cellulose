@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-13T23:13:03.9869583	Cellulose /Block Loot Tables
+// 1.20.1	2023-10-14T10:24:45.8789065	Cellulose /Block Loot Tables
 c0fbbcc5eb6dcb58ba86743da1fa95838b0b31f9 data\cellulose\loot_tables\blocks\glazed_acacia_slab.json
 2fc3ccca8fc4ad7a22c37e017e6e7f072de11609 data\cellulose\loot_tables\blocks\mangrove_timbers_slab.json
 83b8003f5e59442fa1ec408318e5641c502a78d5 data\cellulose\loot_tables\blocks\engraved_cactus_crown.json
@@ -145,7 +145,6 @@ c4fa146eae6b31fb2dfbde4d7a78defbd3016dbd data\cellulose\loot_tables\blocks\birch
 b6b5ecdc729d3160053d20a4017967ce55e23ddf data\cellulose\loot_tables\blocks\stick_block.json
 69a0d713910de300bd3b5119a9037ad1ce341c56 data\cellulose\loot_tables\blocks\glazed_crimson_stairs.json
 ed2e90ba6c537d54f2d90693ad5ffbd0a4fc68b0 data\cellulose\loot_tables\blocks\blooming_azalea_frame.json
-26095e324e4a6c7bb8518b5ef6cfee7631a42c1b data\cellulose\loot_tables\blocks\grey_paper_block.json
 14ea75948f57d675e45407c991b6cab9f0673598 data\cellulose\loot_tables\blocks\vertical_spruce_stairs.json
 932aed55ada5b49990f46bc1e3a21a47fb89c131 data\cellulose\loot_tables\blocks\bamboo_lintels.json
 f5d986cbd241f353a7623ba2bb63153d01831637 data\cellulose\loot_tables\blocks\cactus_plank_pillar.json
@@ -246,6 +245,7 @@ cac8baf35f955d4925ad23f26d486081113adc43 data\cellulose\loot_tables\blocks\dark_
 1f215f333d6e91c4395a5937fda277841c45f787 data\cellulose\loot_tables\blocks\chiseled_acacia_planks.json
 847aea3b9cd9e7e737010f1ae2ba08612812198d data\cellulose\loot_tables\blocks\vertical_warped_planks.json
 1d9c755d9d3f692c1a0f167cdeb8224442c63de8 data\cellulose\loot_tables\blocks\engraved_warped_hyphae.json
+497bad9ed2e67ddf0991fd04d574ba3d2d3375ad data\cellulose\loot_tables\blocks\soaked_paper_block.json
 badce3be6ca635fae5d2a8bd259e7898a9e96ff4 data\cellulose\loot_tables\blocks\chipped_crimson_log.json
 e164e7c0d589c12d8449bfa1d73aa9c59e6fd135 data\cellulose\loot_tables\blocks\birch_tiles.json
 84dc2947a67921b4b63eba5626091e9a6d643cd2 data\cellulose\loot_tables\blocks\cactus_crown.json

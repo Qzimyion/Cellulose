@@ -524,9 +524,8 @@ public class CelluloseModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(CelluloseBlocks.FRESH_BAMBOO_LADDER);
 
-        blockStateModelGenerator.registerSimpleState(BLOCK_OF_PAPER);
-        blockStateModelGenerator.registerSimpleState(GREY_PAPER_BLOCK);
-
+        blockStateModelGenerator.registerSimpleState(PAPER_BLOCK);
+        blockStateModelGenerator.registerSimpleState(SOAKED_PAPER_BLOCK);
     }
 
     @Override

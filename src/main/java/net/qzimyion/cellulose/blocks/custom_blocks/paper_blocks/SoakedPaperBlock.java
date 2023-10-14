@@ -20,7 +20,7 @@ public class SoakedPaperBlock extends Block {
     @Override
     public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
         if (world.getDimension().ultrawarm()) {
-            world.setBlockState(pos, CelluloseBlocks.BLOCK_OF_PAPER.getDefaultState(), Block.NOTIFY_ALL);
+            world.setBlockState(pos, CelluloseBlocks.PAPER_BLOCK.getDefaultState(), Block.NOTIFY_ALL);
             world.syncWorldEvent(WorldEvents.WET_SPONGE_DRIES_OUT, pos, 0);
             world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0f, (1.0f + world.getRandom().nextFloat() * 0.2f) * 0.7f);
         }
