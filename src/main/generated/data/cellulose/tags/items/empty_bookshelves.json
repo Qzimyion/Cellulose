@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:empty_oak_bookshelf",
+    "cellulose:empty_birch_bookshelf",
+    "cellulose:empty_spruce_bookshelf",
+    "cellulose:empty_dark_oak_bookshelf",
+    "cellulose:empty_jungle_bookshelf",
+    "cellulose:empty_acacia_bookshelf",
+    "cellulose:empty_crimson_bookshelf",
+    "cellulose:empty_warped_bookshelf",
+    "cellulose:empty_mangrove_bookshelf",
+    "cellulose:empty_bamboo_bookshelf",
+    "cellulose:empty_cherry_bookshelf",
+    "cellulose:empty_cactus_bookshelf",
+    "cellulose:empty_azalea_bookshelf"
+  ]
+}

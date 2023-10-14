@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:cobwebbed_oak_bookshelf",
+    "cellulose:cobwebbed_birch_bookshelf",
+    "cellulose:cobwebbed_spruce_bookshelf",
+    "cellulose:cobwebbed_dark_oak_bookshelf",
+    "cellulose:cobwebbed_jungle_bookshelf",
+    "cellulose:cobwebbed_acacia_bookshelf",
+    "cellulose:cobwebbed_crimson_bookshelf",
+    "cellulose:cobwebbed_warped_bookshelf",
+    "cellulose:cobwebbed_mangrove_bookshelf",
+    "cellulose:cobwebbed_bamboo_bookshelf",
+    "cellulose:cobwebbed_cherry_bookshelf",
+    "cellulose:cobwebbed_cactus_bookshelf",
+    "cellulose:cobwebbed_azalea_bookshelf"
+  ]
+}
