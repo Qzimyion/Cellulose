@@ -359,7 +359,7 @@ public class CelluloseEvents {
             ItemStack heldItem = player.getStackInHand(hand);
 
             //Engraving
-            if (heldItem.getItem()==Items.POTION && State.isIn(CelluloseTags.Blocks.ENGRAVABLE_LOGS)) {
+            if (heldItem.getItem()==Items.FLINT && State.isIn(CelluloseTags.Blocks.ENGRAVABLE_LOGS)) {
                 world.playSound(player, Pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
 
                 if (player instanceof ServerPlayerEntity) {
