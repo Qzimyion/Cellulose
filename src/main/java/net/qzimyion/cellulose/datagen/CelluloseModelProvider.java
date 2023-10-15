@@ -187,7 +187,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
 
         //Cactus Wood
         BlockStateModelGenerator.LogTexturePool Cactus = blockStateModelGenerator.registerLog(CACTUS_BUNDLE);
-        BlockStateModelGenerator.LogTexturePool StrippedCactus = blockStateModelGenerator.registerLog(STRIPPED_CACTUS);
 
         //Azalea Wood
         BlockStateModelGenerator.LogTexturePool Azalea = blockStateModelGenerator.registerLog(AZALEA_LOG);
@@ -390,7 +389,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         //(Woodsets: Cactus)
         ///Logs stuff
         Cactus.log(CACTUS_BUNDLE).wood(CACTUS_CROWN);
-        StrippedCactus.log(STRIPPED_CACTUS).wood(STRIPPED_CACTUS_CROWN);
         EngravedCactus.log(ENGRAVED_CACTUS).wood(ENGRAVED_CACTUS_CROWN);
         ChippedCactus.log(CHIPPED_CACTUS).wood(CHIPPED_CACTUS_CROWN);
         PlankPillarCactus.log(CACTUS_PLANK_PILLARS).wood(CACTUS_PLANK_BOX);
@@ -521,11 +519,10 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_AZALEA_BOOKSHELF);
 
         blockStateModelGenerator.registerSimpleState(STRIPPED_BAMBOO_STALK);
-
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(CelluloseBlocks.FRESH_BAMBOO_LADDER);
-
         blockStateModelGenerator.registerSimpleState(PAPER_BLOCK);
         blockStateModelGenerator.registerSimpleState(SOAKED_PAPER_BLOCK);
+        blockStateModelGenerator.registerSimpleState(STRIPPED_CACTUS);
     }
 
     @Override

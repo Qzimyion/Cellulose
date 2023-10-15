@@ -9,9 +9,7 @@ public class CelluloseStrippableBlock
     public static void registerStrippableBlocks()
     {
         //Cactus stuff
-        StrippableBlockRegistry.register(CACTUS_BUNDLE, STRIPPED_CACTUS);
         StrippableBlockRegistry.register(CACTUS_CROWN, STRIPPED_CACTUS_CROWN);
-        StrippableBlockRegistry.register(STRIPPED_CACTUS, ENGRAVED_CACTUS);
         StrippableBlockRegistry.register(STRIPPED_CACTUS_CROWN, ENGRAVED_CACTUS_CROWN);
         StrippableBlockRegistry.register(CHIPPED_CACTUS_CROWN, STRIPPED_CHIPPED_CACTUS_CROWN);
         //Azalea stuff
