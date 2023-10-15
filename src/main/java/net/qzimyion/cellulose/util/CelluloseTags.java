@@ -33,25 +33,14 @@ public class CelluloseTags
         public static final TagKey <Block> PAVEMENTS = createTag ("pavements");
         public static final TagKey <Block> PLANK_PILLARS = createTag ("plank_pillars");
         public static final TagKey <Block> BEAMS = createTag("beams");
-        public static final TagKey <Block> PLANK_BARRICADE = createTag("plank_barricade");
+        public static final TagKey <Block> BARRICADE = createTag("barricade");
         public static final TagKey <Block> LOG_BARRICADE = createTag("log_barricade");
-        public static final TagKey <Block> STRIPPED_LOG_BARRICADE = createTag("stripped_log_barricade");
-        public static final TagKey <Block> CHIPPED_PLANK_BARRICADE = createTag("chipped_plank_barricade");
-        public static final TagKey <Block> CHIPPED_LOG_BARRICADE = createTag("chipped_log_barricade");
-        public static final TagKey <Block> CHIPPED_STRIPPED_LOG_BARRICADE = createTag("chipped_stripped_log_barricade");
-        public static final TagKey <Block> MOSAIC_BARRICADE = createTag("mosaic_barricade");
-        public static final TagKey <Block> TILE_BARRICADE = createTag("tile_barricade");
-        public static final TagKey <Block> PLANK_PILLAR_BARRICADE = createTag("plank_pillar_barricade");
-        public static final TagKey <Block> GLAZED_BARRICADE = createTag("glazed_barricade");
-        public static final TagKey <Block> BOARDS_BARRICADE = createTag("boards_barricade");
         public static final TagKey <Block> SAWDUST_LAYERS = createTag("sawdust_layers");
-
         public static final TagKey <Block> BOOKSHELVES = createTag("bookshelves");
         public static final TagKey <Block> EMPTY_BOOKSHELVES = createTag("empty_bookshelves");
         public static final TagKey <Block> COBWEBBED_BOOKSHELVES = createTag("cobwebbed_bookshelves");
         public static final TagKey <Block> COBWEBBED_EMPTY_BOOKSHELVES = createTag("cobwebbed_empty_bookshelves");
         public static final TagKey <Block> ABANDONED_BOOKSHELVES = createTag("abandoned_bookshelves");
-
         public static final TagKey <Block> BAMBOO_LADDERS_PLACEABLE_ON = createTag("bamboo_ladders_placeable_on");
 
         //Event only tags
