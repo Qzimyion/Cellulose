@@ -6,7 +6,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.World;
-import net.qzimyion.cellulose.items.CelluloseItems;
 
 public class PopacornBowlQuaterItem extends Item {
     public PopacornBowlQuaterItem(Settings settings) {

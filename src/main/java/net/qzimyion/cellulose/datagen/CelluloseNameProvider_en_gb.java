@@ -115,7 +115,7 @@ public class CelluloseNameProvider_en_gb extends FabricLanguageProvider {
         translationBuilder.add(CACTUS_SLAB, "Cactus Slab");
         translationBuilder.add(CACTUS_CROWN, "Cactus Crown");
         translationBuilder.add(STRIPPED_CACTUS, "Stripped Cactus");
-        translationBuilder.add(STRIPPED_CACTUS_CROWN, "Stripped Cactus Crown");
+        translationBuilder.add(STRIPPED_CACTUS_BUNDLE, "Stripped Cactus Crown");
         translationBuilder.add(CACTUS_FENCE, "Cactus Fence");
         translationBuilder.add(CACTUS_FENCE_GATE, "Cactus Fence gate");
         translationBuilder.add(CACTUS_BUTTON, "Cactus Button");

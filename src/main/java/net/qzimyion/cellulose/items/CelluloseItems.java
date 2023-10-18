@@ -5,7 +5,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.PowderSnowBucketItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
@@ -57,7 +56,6 @@ public class CelluloseItems
     public static final Item FRESH_BAMBOO_LADDER = registerItem("fresh_bamboo_ladder", new FreshBambooLadderItem(CelluloseBlocks.FRESH_BAMBOO_LADDER, new FabricItemSettings()));
 
     //Paper stuff
-    public static final Item PAPER_MESH_BOTTLE = registerItem("paper_mesh_bottle", new Item(new FabricItemSettings()));
     public static final Item PAPER_MESH_BUCKET = registerItem("paper_mesh_bucket", new PowderSnowBucketItem(PAPER_MESH_BLOCK , SoundEvents.BLOCK_POWDER_SNOW_PLACE,new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item)

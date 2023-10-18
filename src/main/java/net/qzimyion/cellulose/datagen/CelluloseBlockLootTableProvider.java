@@ -41,7 +41,7 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         addDrop(CACTUS_PLANKS);
         addDrop(CACTUS_CROWN);
         addDrop(STRIPPED_CACTUS);
-        addDrop(STRIPPED_CACTUS_CROWN);
+        addDrop(STRIPPED_CACTUS_BUNDLE);
         addDrop(OAK_MOSAIC);
         addDrop(BIRCH_MOSAIC);
         addDrop(SPRUCE_MOSAIC);

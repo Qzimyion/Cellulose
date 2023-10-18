@@ -680,7 +680,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(CACTUS_BUNDLE)
                 .add(CACTUS_CROWN)
                 .add(STRIPPED_CACTUS)
-                .add(STRIPPED_CACTUS_CROWN)
+                .add(STRIPPED_CACTUS_BUNDLE)
                 .add(ENGRAVED_CACTUS)
                 .add(ENGRAVED_CACTUS_CROWN);
 

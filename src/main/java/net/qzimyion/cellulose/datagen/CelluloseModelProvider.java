@@ -523,6 +523,12 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleState(PAPER_BLOCK);
         blockStateModelGenerator.registerSimpleState(SOAKED_PAPER_BLOCK);
         blockStateModelGenerator.registerSimpleState(STRIPPED_CACTUS);
+
+        blockStateModelGenerator.registerSimpleState(DISSOLVED_BAMBOO_CAULDRON_BLOCK);
+        blockStateModelGenerator.registerSimpleState(PAPER_MESH_CAULDRON_BLOCK);
+
+        blockStateModelGenerator.registerSimpleCubeAll(PAPER_MESH_BLOCK);
+
     }
 
     @Override
@@ -548,5 +554,8 @@ public class CelluloseModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CACTUS_SAWDUST, Models.GENERATED);
         itemModelGenerator.register(AZALEA_SAWDUST, Models.GENERATED);
         itemModelGenerator.register(CelluloseItems.FRESH_BAMBOO_LADDER, Models.GENERATED);
+
+        //Misc
+        itemModelGenerator.register(PAPER_MESH_BUCKET, Models.GENERATED);
     }
 }

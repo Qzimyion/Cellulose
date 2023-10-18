@@ -6,6 +6,7 @@ import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreenHandler;
 
+@SuppressWarnings("deprecation")
 public class CelluloseScreens
 {
     public static ScreenHandlerType<SawmillScreenHandler> SAWMILL_SCREEN_HANDLER =

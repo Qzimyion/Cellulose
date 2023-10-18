@@ -9,19 +9,17 @@ public class CelluloseStrippableBlock
     public static void registerStrippableBlocks()
     {
         //Cactus stuff
-        StrippableBlockRegistry.register(CACTUS_CROWN, STRIPPED_CACTUS_CROWN);
-        StrippableBlockRegistry.register(STRIPPED_CACTUS_CROWN, ENGRAVED_CACTUS_CROWN);
+        StrippableBlockRegistry.register(CACTUS_CROWN, STRIPPED_CACTUS_BUNDLE);
         StrippableBlockRegistry.register(CHIPPED_CACTUS_CROWN, STRIPPED_CHIPPED_CACTUS_CROWN);
+        StrippableBlockRegistry.register(CACTUS_POST, STRIPPED_CACTUS_POST);
         //Azalea stuff
         StrippableBlockRegistry.register(AZALEA_LOG, STRIPPED_AZALEA_LOG);
         StrippableBlockRegistry.register(AZALEA_WOOD, STRIPPED_AZALEA_WOOD);
-        StrippableBlockRegistry.register(STRIPPED_AZALEA_LOG, ENGRAVED_AZALEA);
-        StrippableBlockRegistry.register(STRIPPED_AZALEA_WOOD, ENGRAVED_AZALEA_WOOD);
         StrippableBlockRegistry.register(BLOOMING_AZALEA_LOG, BLOOMING_STRIPPED_AZALEA);
         StrippableBlockRegistry.register(BLOOMING_AZALEA_WOOD, BLOOMING_STRIPPED_AZALEA_WOOD);
-        StrippableBlockRegistry.register(BLOOMING_STRIPPED_AZALEA, ENGRAVED_BLOOMING_AZALEA);
-        StrippableBlockRegistry.register(BLOOMING_STRIPPED_AZALEA_WOOD, ENGRAVED_BLOOMING_AZALEA_WOOD);
         StrippableBlockRegistry.register(CHIPPED_AZALEA_WOOD, STRIPPED_CHIPPED_AZALEA_WOOD);
+        StrippableBlockRegistry.register(AZALEA_POST, STRIPPED_AZALEA_POST);
+        StrippableBlockRegistry.register(BLOOMING_AZALEA_POST, STRIPPED_BLOOMING_AZALEA_POST);
         //Chipped Stripped
         StrippableBlockRegistry.register(CHIPPED_OAK, STRIPPED_CHIPPED_OAK);
         StrippableBlockRegistry.register(CHIPPED_BIRCH, STRIPPED_CHIPPED_BIRCH);
@@ -57,16 +55,13 @@ public class CelluloseStrippableBlock
         StrippableBlockRegistry.register(MANGROVE_POST, STRIPPED_MANGROVE_POST);
         StrippableBlockRegistry.register(BAMBOO_POST, STRIPPED_BAMBOO_POST);
         StrippableBlockRegistry.register(CHERRY_POST, STRIPPED_CHERRY_POST);
-        StrippableBlockRegistry.register(CACTUS_POST, STRIPPED_CACTUS_POST);
-        StrippableBlockRegistry.register(AZALEA_POST, STRIPPED_AZALEA_POST);
-        StrippableBlockRegistry.register(BLOOMING_AZALEA_POST, STRIPPED_BLOOMING_AZALEA_POST);
 
         ///Overworld Mushroom stuff
         /*Red*/
 
         /*Brown*/
 
-        ///Petrified Wood
+        ///Ironwood Wood
 
         ///Gay™ wood
     }

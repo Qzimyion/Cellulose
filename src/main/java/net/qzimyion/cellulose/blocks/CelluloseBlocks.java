@@ -14,7 +14,9 @@ import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.custom_blocks.*;
 import net.qzimyion.cellulose.blocks.custom_blocks.BambooLadders.FreshBambooLadder;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.DissolvedBambooCauldronBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.PaperMeshBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.PaperMeshCauldronBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.VerticalSlotChiseledBookshelfBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.SawdustStuff.SawdustLayerBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.PaperBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.SoakedPaperBlock;
@@ -713,6 +715,9 @@ public class CelluloseBlocks
     public static final Block AZALEA_TILES_SLABS = registerBlock("azalea_tiles_slab", new SlabBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
     public static final Block BLOOMING_AZALEA_TILES_SLABS = registerBlock("blooming_azalea_tiles_slab", new SlabBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
 
+    //Chiseled bookshelf variants
+    public static final Block BIRCH_CHISELED_BOOKSHELF = registerBlock("birch_chiseled_bookshelf", new VerticalSlotChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
+
 
     // Sawmill Block //
     public static final Block SAWMILL = registerBlock("sawmill", new SawmillBlock(AbstractBlock.Settings.create().burnable().nonOpaque().strength(2.5f,2.5f).requiresTool().sounds(BlockSoundGroup.CHERRY_WOOD).mapColor(MapColor.BROWN)));
@@ -864,7 +869,8 @@ public class CelluloseBlocks
     public static final Block CACTUS_BUNDLE = registerBlock("cactus_bundle", new PillarBlock(FabricBlockSettings.create().burnable().mapColor(MapColor.DARK_GREEN).nonOpaque().sounds(BlockSoundGroup.NETHER_WART).strength(0.5f)));
     public static final Block CACTUS_CROWN = registerBlock("cactus_crown", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG).sounds(BlockSoundGroup.NETHER_WART)));
     public static final Block STRIPPED_CACTUS = registerBlock("stripped_cactus", new CactusPillar(FabricBlockSettings.copyOf(CHERRY_PLANKS).sounds(BlockSoundGroup.NETHER_WART)));
-    public static final Block STRIPPED_CACTUS_CROWN = registerBlock("stripped_cactus_crown", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_CHERRY_LOG).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block STRIPPED_CACTUS_BUNDLE = registerBlock("stripped_cactus_crown", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_CHERRY_LOG).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block STRIPPED_CACTUS_BUNDLE_CROWN = registerBlock("stripped_cactus_bundle_crown", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_CHERRY_LOG).sounds(BlockSoundGroup.NETHER_WART)));
     public static final Block CACTUS_PLANKS = registerBlock("cactus_planks", new Block(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
     public static final Block CACTUS_SLAB = registerBlock("cactus_slab", new SlabBlock(FabricBlockSettings.copyOf(CHERRY_SLAB)));
     public static final Block CACTUS_STAIRS = registerBlock("cactus_stairs", new StairsBlock(CACTUS_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(CHERRY_PLANKS)));
@@ -905,7 +911,7 @@ public class CelluloseBlocks
     public static final Block BLOOMING_AZALEA_DOOR = registerBlock("blooming_azalea_door", new DoorBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).nonOpaque(), BlockSetType.CHERRY));
     public static final Block BLOOMING_AZALEA_TRAPDOOR = registerBlock("blooming_azalea_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).nonOpaque(), BlockSetType.CHERRY));
 
-    //Petrified woodset
+    //Ironwood woodset
 
 
     ///Misc
@@ -918,9 +924,9 @@ public class CelluloseBlocks
 
 
     //Cauldron stuff
-    public static final Block DISSOLVED_BAMBOO_CAULDRON_BLOCK = registerBlock("dissolved_bamboo_cauldron_block", new DissolvedBambooCauldronBlock(FabricBlockSettings.copyOf(CAULDRON).dropsLike(CAULDRON)));
-    public static final Block PAPER_MESH_CAULDRON_BLOCK = registerBlock("paper_mesh_cauldron_block", new PaperMeshCauldronBlock(FabricBlockSettings.copyOf(CAULDRON).dropsLike(CAULDRON)));
-    public static final Block PAPER_MESH_BLOCK = registerBlock("paper_mesh_block", new Block(FabricBlockSettings.copyOf(MOSS_BLOCK)));
+    public static final Block DISSOLVED_BAMBOO_CAULDRON_BLOCK = registerBlockWithoutBlockItem("dissolved_bamboo_cauldron_block", new DissolvedBambooCauldronBlock(FabricBlockSettings.copyOf(CAULDRON).dropsLike(CAULDRON)));
+    public static final Block PAPER_MESH_CAULDRON_BLOCK = registerBlockWithoutBlockItem("paper_mesh_cauldron_block", new PaperMeshCauldronBlock(FabricBlockSettings.copyOf(CAULDRON).dropsLike(CAULDRON)));
+    public static final Block PAPER_MESH_BLOCK = registerBlock("paper_mesh_block", new PaperMeshBlock(FabricBlockSettings.copyOf(MOSS_BLOCK)));
 
     private static Block registerBlock(String name, Block block){
         registeringBlockItem(name, block);

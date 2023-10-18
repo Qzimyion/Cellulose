@@ -7,7 +7,6 @@ import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -310,7 +309,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerPlanksRecipe(CACTUS_BUNDLE);
         offerPlanksRecipe(CACTUS_CROWN);
         offerPlanksRecipe(STRIPPED_CACTUS);
-        offerPlanksRecipe(STRIPPED_CACTUS_CROWN);
+        offerPlanksRecipe(STRIPPED_CACTUS_BUNDLE);
         offerSlabRecipe(exporter, BUILDING_BLOCKS, CACTUS_SLAB, CACTUS_PLANKS);
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_STAIRS, 4)
                 .pattern("#  ")
@@ -319,7 +318,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .input('#', CACTUS_PLANKS).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
                 .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_STAIRS)));
         offerBarkBlockRecipe(exporter, CACTUS_CROWN, CACTUS_BUNDLE);
-        offerBarkBlockRecipe(exporter, STRIPPED_CACTUS_CROWN, CACTUS_BUNDLE);
+        offerBarkBlockRecipe(exporter, STRIPPED_CACTUS_BUNDLE, CACTUS_BUNDLE);
         offerVerticalPlanksRecipe(exporter, VERTICAL_CACTUS_PLANKS, CACTUS_PLANKS);
         offerReverseVerticalPlanksRecipe(exporter, CACTUS_PLANKS, VERTICAL_CACTUS_PLANKS);
         offerMosaicRecipe(exporter, BUILDING_BLOCKS, CACTUS_MOSAIC, CACTUS_SLAB);

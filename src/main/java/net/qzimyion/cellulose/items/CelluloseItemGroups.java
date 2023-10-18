@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 import static net.minecraft.item.Items.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
-import static net.qzimyion.cellulose.blocks.CelluloseBlocks.BLOOMING_AZALEA_STAIRS;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
 @SuppressWarnings("UnstableApiUsage")
@@ -26,9 +25,7 @@ public class CelluloseItemGroups
             content.addAfter(SUSPICIOUS_STEW, POPACORN_BOWL);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> {
-            content.addAfter(BAMBOO, STRIPPED_BAMBOO_STALK);
-        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> content.addAfter(BAMBOO, STRIPPED_BAMBOO_STALK));
 
         /* This section adds items to building blocks group */
 
@@ -148,7 +145,7 @@ public class CelluloseItemGroups
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(WARPED_FUNGUS_ON_A_STICK, PAPER_BLOCK, SOAKED_PAPER_BLOCK));
 
         //Cactus woodset
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.addAfter(WARPED_BUTTON, CACTUS_BUNDLE, CACTUS_CROWN, STRIPPED_CACTUS, STRIPPED_CACTUS_CROWN, ENGRAVED_CACTUS, ENGRAVED_CACTUS_CROWN,
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.addAfter(WARPED_BUTTON, CACTUS_BUNDLE, CACTUS_CROWN, STRIPPED_CACTUS, STRIPPED_CACTUS_BUNDLE, ENGRAVED_CACTUS, ENGRAVED_CACTUS_CROWN,
                 CACTUS_MOSAIC, CACTUS_MOSAIC_STAIRS, CACTUS_MOSAIC_SLABS, CACTUS_PLANKS, CACTUS_STAIRS, CACTUS_SLAB, VERTICAL_CACTUS_PLANKS, VERTICAL_CACTUS_STAIR,
                 VERTICAL_CACTUS_SLAB, CACTUS_FENCE, CACTUS_FENCE_GATE, CACTUS_DOOR, CACTUS_TRAPDOOR, CACTUS_PRESSURE_PLATE, CACTUS_BUTTON
         ));

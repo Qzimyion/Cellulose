@@ -10,16 +10,16 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.qzimyion.cellulose.blocks.ModBlockProperties;
+import net.qzimyion.cellulose.util.CelluloseCauldronBehavior;
 
 @SuppressWarnings("deprecation")
 public class PaperMeshCauldronBlock extends AbstractCauldronBlock {
     public static final IntProperty LEVEL = Properties.LEVEL_3;
     public PaperMeshCauldronBlock(Settings settings) {
-        super(settings, ModBlockProperties.PAPER_MESH_CAULDRON_BEHAVIOR);
+        super(settings, CelluloseCauldronBehavior.PAPER_MESH_CAULDRON_BEHAVIOR);
     }
     public boolean isFull(BlockState state) {
-        return true;
+        return state.get(LEVEL) == 3;
     }
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return VoxelShapes.fullCube();

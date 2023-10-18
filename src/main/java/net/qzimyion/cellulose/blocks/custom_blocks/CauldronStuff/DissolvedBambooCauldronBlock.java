@@ -9,13 +9,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.qzimyion.cellulose.blocks.ModBlockProperties;
+import net.qzimyion.cellulose.util.CelluloseCauldronBehavior;
 
 @SuppressWarnings("deprecation")
 public class DissolvedBambooCauldronBlock extends AbstractCauldronBlock {
 
     public DissolvedBambooCauldronBlock(Settings settings) {
-        super(settings, ModBlockProperties.DISSOVLED_BAMBOO_CAULDRON_BEHAVIOR);
+        super(settings, CelluloseCauldronBehavior.DISSOVLED_BAMBOO_CAULDRON_BEHAVIOR);
     }
 
     @Override

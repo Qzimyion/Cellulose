@@ -12,7 +12,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 
-@SuppressWarnings("")
 public class CelluloseBoats {
 
     /*
@@ -36,6 +35,7 @@ public class CelluloseBoats {
     public static final RegistryKey<TerraformBoatType> BLOOMING_AZALEA_BOAT_KEY = TerraformBoatTypeRegistry.createKey(BLOOMING_AZALEA_BOAT_ID);
     public static final RegistryKey<TerraformBoatType> BLOOMING_AZALEA_CHEST_BOAT_KEY = TerraformBoatTypeRegistry.createKey(BLOOMING_AZALEA_CHEST_BOAT_ID);
 
+    @SuppressWarnings("UnstableApiUsage")
     public static void registerBoats()
     {
 

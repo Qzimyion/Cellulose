@@ -28,14 +28,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Optional;
 
-@SuppressWarnings("deprecation, unused")
+@SuppressWarnings("deprecation")
 public class PotionRackBlock extends BlockWithEntity {
-    private static final int MAX_POTION_COUNT = 6;
-    private static final int MAX_GLASS_BOTTLE_COUNT = 6;
-    private static final int MAX_HONEY_BOTTLE_COUNT = 6;
-    public static final int POTION_HEIGHT = 3;
-    public static final int GLASS_BOTTLE_HEIGHT = 3;
-    public static final int HONEY_BOTTLE_HEIGHT = 3;
     public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(Properties.SLOT_0_OCCUPIED, Properties.SLOT_1_OCCUPIED, Properties.SLOT_2_OCCUPIED, Properties.SLOT_3_OCCUPIED, Properties.SLOT_4_OCCUPIED, Properties.SLOT_5_OCCUPIED);
 
     public PotionRackBlock(Settings settings) {
@@ -102,12 +96,9 @@ public class PotionRackBlock extends BlockWithEntity {
     }
 
     public static int getColumn(float x) {
-        float f = 0.0625f;
-        float g = 0.375f;
         if (x < 0.375f) {
             return 0;
         }
-        float h = 0.6875f;
         if (x < 0.6875f) {
             return 1;
         }

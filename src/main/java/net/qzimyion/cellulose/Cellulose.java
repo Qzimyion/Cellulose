@@ -6,10 +6,9 @@ import net.qzimyion.cellulose.boats.CelluloseBoats;
 import net.qzimyion.cellulose.entity.CelluloseEntities;
 import net.qzimyion.cellulose.events.CelluloseEvents;
 import net.qzimyion.cellulose.signs.CelluloseSigns;
+import net.qzimyion.cellulose.util.CelluloseCauldronBehavior;
 import net.qzimyion.cellulose.util.CelluloseStats;
-import net.qzimyion.cellulose.blocks.CelluloseFlammableBlocks;
 import net.qzimyion.cellulose.util.CelluloseFuel;
-import net.qzimyion.cellulose.blocks.CelluloseStrippableBlock;
 import net.qzimyion.cellulose.items.CelluloseItemGroups;
 import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.recipe.CelluloseRecipes;
@@ -43,5 +42,6 @@ public class Cellulose implements ModInitializer
 		CelluloseVillagers.registerVillagers();
 		CelluloseVillagerTrades.registerTrades();
 		CelluloseEntities.registerEntities();
+		CelluloseCauldronBehavior.registerBehavior();
 	}
 }

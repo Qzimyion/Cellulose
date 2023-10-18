@@ -3,12 +3,10 @@ package net.qzimyion.cellulose.client;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
-import net.qzimyion.cellulose.entity.CelluloseEntities;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreen;
 

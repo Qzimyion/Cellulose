@@ -262,7 +262,7 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
         getOrCreateTagBuilder(CelluloseTags.Items.CACTUS_LOGS)
                 .add(Item.fromBlock(CACTUS_CROWN))
                 .add(Item.fromBlock(STRIPPED_CACTUS))
-                .add(Item.fromBlock(STRIPPED_CACTUS_CROWN))
+                .add(Item.fromBlock(STRIPPED_CACTUS_BUNDLE))
                 .add(Item.fromBlock(ENGRAVED_CACTUS))
                 .add(Item.fromBlock(ENGRAVED_CACTUS_CROWN))
                 .add(Item.fromBlock(CHIPPED_CACTUS))
