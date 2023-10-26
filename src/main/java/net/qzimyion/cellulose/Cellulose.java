@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.qzimyion.cellulose.boats.CelluloseBoats;
 import net.qzimyion.cellulose.entity.CelluloseEntities;
 import net.qzimyion.cellulose.events.CelluloseEvents;
+import net.qzimyion.cellulose.particles.Celluloseparticles;
 import net.qzimyion.cellulose.signs.CelluloseSigns;
 import net.qzimyion.cellulose.util.CelluloseCauldronBehavior;
 import net.qzimyion.cellulose.util.CelluloseStats;
@@ -43,5 +44,6 @@ public class Cellulose implements ModInitializer
 		CelluloseVillagerTrades.registerTrades();
 		CelluloseEntities.registerEntities();
 		CelluloseCauldronBehavior.registerBehavior();
+		Celluloseparticles.registerParticles();
 	}
 }

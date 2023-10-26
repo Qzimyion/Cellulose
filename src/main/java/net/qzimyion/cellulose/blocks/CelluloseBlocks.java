@@ -13,11 +13,15 @@ import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.custom_blocks.*;
 import net.qzimyion.cellulose.blocks.custom_blocks.BambooLadders.FreshBambooLadder;
+import net.qzimyion.cellulose.blocks.custom_blocks.BarricadeBlock.BarricadeBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.DissolvedBambooCauldronBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.PaperMeshBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.PaperMeshCauldronBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.FourSlotChiseledBookshelf;
 import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.VerticalSlotChiseledBookshelfBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.SawdustStuff.SawdustLayerBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.celluloseLeaves.PaloVerde.FloweringPaloVerdeLeafBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.celluloseLeaves.PaloVerde.PaloVerdeLeafBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.PaperBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.SoakedPaperBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.sticky_blocks.StickyBookshelfBlock;
@@ -144,7 +148,7 @@ public class CelluloseBlocks
     public static final Block CHIPPED_STRIPPED_BAMBOO_BLOCK = registerBlock("chipped_stripped_bamboo_block", new PillarBlock(FabricBlockSettings.copyOf(BAMBOO_BLOCK)));
     public static final Block CHIPPED_CHERRY = registerBlock("chipped_cherry_log", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
     public static final Block CHIPPED_CHERRY_WOOD = registerBlock("chipped__wood", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_WOOD)));
-    public static final Block CHIPPED_CACTUS = registerBlock("chipped_cactus_log", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block CHIPPED_CACTUS = registerBlock("chipped_cactus_log", new CactusPillar(FabricBlockSettings.copyOf(CHERRY_PLANKS).sounds(BlockSoundGroup.NETHER_WART)));
     public static final Block CHIPPED_CACTUS_CROWN = registerBlock("chipped_cactus_crown", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_WOOD).sounds(BlockSoundGroup.NETHER_WART)));
     public static final Block CHIPPED_AZALEA = registerBlock("chipped_azalea_log", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
     public static final Block CHIPPED_AZALEA_WOOD = registerBlock("chipped_azalea_wood", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_WOOD)));
@@ -169,7 +173,7 @@ public class CelluloseBlocks
     public static final Block STRIPPED_CHIPPED_MANGROVE_WOOD = registerBlock("stripped_chipped_mangrove_wood", new PillarBlock(FabricBlockSettings.copyOf(MANGROVE_WOOD)));
     public static final Block STRIPPED_CHIPPED_CHERRY = registerBlock("stripped_chipped_cherry_log", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
     public static final Block STRIPPED_CHIPPED_CHERRY_WOOD = registerBlock("stripped_chipped__wood", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_WOOD)));
-    public static final Block STRIPPED_CHIPPED_CACTUS = registerBlock("stripped_chipped_cactus_log", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block STRIPPED_CHIPPED_CACTUS = registerBlock("stripped_chipped_cactus_log", new CactusPillar(FabricBlockSettings.copyOf(CHERRY_PLANKS).sounds(BlockSoundGroup.NETHER_WART)));
     public static final Block STRIPPED_CHIPPED_CACTUS_CROWN = registerBlock("stripped_chipped_cactus_crown", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_WOOD).sounds(BlockSoundGroup.NETHER_WART)));
     public static final Block STRIPPED_CHIPPED_AZALEA = registerBlock("stripped_chipped_azalea_log", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
     public static final Block STRIPPED_CHIPPED_AZALEA_WOOD = registerBlock("stripped_chipped_azalea_wood", new PillarBlock(FabricBlockSettings.copyOf(CHERRY_WOOD)));
@@ -439,35 +443,35 @@ public class CelluloseBlocks
     public static final Block BLOOMING_AZALEA_PLANK_PAVEMENT = registerBlock("blooming_azalea_plank_pavement", new GlazedTerracottaBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_PAVEMENT)));
 
     //Post Block
-    public static final Block OAK_POST = registerBlock("oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block BIRCH_POST = registerBlock("birch_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block SPRUCE_POST = registerBlock("spruce_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block DARK_OAK_POST = registerBlock("dark_oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block JUNGLE_POST = registerBlock("jungle_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block ACACIA_POST = registerBlock("acacia_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block CRIMSON_POST = registerBlock("crimson_post", new PostBlock(FabricBlockSettings.copyOf(CRIMSON_STEM)));
-    public static final Block WARPED_POST = registerBlock("warped_post", new PostBlock(FabricBlockSettings.copyOf(WARPED_STEM)));
-    public static final Block MANGROVE_POST = registerBlock("mangrove_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block BAMBOO_POST = registerBlock("bamboo_post", new PostBlock(FabricBlockSettings.copyOf(BAMBOO_BLOCK)));
-    public static final Block CHERRY_POST = registerBlock("cherry_post", new PostBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
-    public static final Block CACTUS_POST = registerBlock("cactus_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG).sounds(BlockSoundGroup.NETHER_WART)));
-    public static final Block AZALEA_POST = registerBlock("azalea_post", new PostBlock(FabricBlockSettings.copyOf(CHERRY_LOG).sounds(BlockSoundGroup.CHERRY_WOOD)));
-    public static final Block BLOOMING_AZALEA_POST = registerBlock("blooming_azalea_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block OAK_POST = registerBlock("oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block BIRCH_POST = registerBlock("birch_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block SPRUCE_POST = registerBlock("spruce_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block DARK_OAK_POST = registerBlock("dark_oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block JUNGLE_POST = registerBlock("jungle_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block ACACIA_POST = registerBlock("acacia_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block CRIMSON_POST = registerBlock("crimson_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block WARPED_POST = registerBlock("warped_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block MANGROVE_POST = registerBlock("mangrove_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block BAMBOO_POST = registerBlock("bamboo_post", new PostBlock(FabricBlockSettings.copyOf(BAMBOO_PLANKS)));
+    public static final Block CHERRY_POST = registerBlock("cherry_post", new PostBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
+    public static final Block CACTUS_POST = registerBlock("cactus_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block AZALEA_POST = registerBlock("azalea_post", new PostBlock(FabricBlockSettings.copyOf(CHERRY_POST)));
+    public static final Block BLOOMING_AZALEA_POST = registerBlock("blooming_azalea_post", new PostBlock(FabricBlockSettings.copyOf(AZALEA_POST)));
 
-    public static final Block STRIPPED_OAK_POST = registerBlock("stripped_oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block STRIPPED_BIRCH_POST = registerBlock("stripped_birch_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block STRIPPED_SPRUCE_POST = registerBlock("stripped_spruce_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block STRIPPED_DARK_OAK_POST = registerBlock("stripped_dark_oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block STRIPPED_JUNGLE_POST = registerBlock("stripped_jungle_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block STRIPPED_ACACIA_POST = registerBlock("stripped_acacia_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block STRIPPED_CRIMSON_POST = registerBlock("stripped_crimson_post", new PostBlock(FabricBlockSettings.copyOf(CRIMSON_STEM)));
-    public static final Block STRIPPED_WARPED_POST = registerBlock("stripped_warped_post", new PostBlock(FabricBlockSettings.copyOf(WARPED_STEM)));
-    public static final Block STRIPPED_MANGROVE_POST = registerBlock("stripped_mangrove_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block STRIPPED_BAMBOO_POST = registerBlock("stripped_bamboo_post", new PostBlock(FabricBlockSettings.copyOf(STRIPPED_BAMBOO_BLOCK)));
-    public static final Block STRIPPED_CHERRY_POST = registerBlock("stripped_cherry_post", new PostBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
-    public static final Block STRIPPED_CACTUS_POST = registerBlock("stripped_cactus_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG).sounds(BlockSoundGroup.NETHER_WART)));
-    public static final Block STRIPPED_AZALEA_POST = registerBlock("stripped_azalea_post", new PostBlock(FabricBlockSettings.copyOf(CHERRY_LOG).sounds(BlockSoundGroup.CHERRY_WOOD)));
-    public static final Block STRIPPED_BLOOMING_AZALEA_POST = registerBlock("stripped_blooming_azalea_post", new PostBlock(FabricBlockSettings.copyOf(OAK_LOG).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block STRIPPED_OAK_POST = registerBlock("stripped_oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_BIRCH_POST = registerBlock("stripped_birch_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_SPRUCE_POST = registerBlock("stripped_spruce_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_DARK_OAK_POST = registerBlock("stripped_dark_oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_JUNGLE_POST = registerBlock("stripped_jungle_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_ACACIA_POST = registerBlock("stripped_acacia_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_CRIMSON_POST = registerBlock("stripped_crimson_post", new PostBlock(FabricBlockSettings.copyOf(CRIMSON_POST)));
+    public static final Block STRIPPED_WARPED_POST = registerBlock("stripped_warped_post", new PostBlock(FabricBlockSettings.copyOf(WARPED_POST)));
+    public static final Block STRIPPED_MANGROVE_POST = registerBlock("stripped_mangrove_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_BAMBOO_POST = registerBlock("stripped_bamboo_post", new PostBlock(FabricBlockSettings.copyOf(BAMBOO_POST)));
+    public static final Block STRIPPED_CHERRY_POST = registerBlock("stripped_cherry_post", new PostBlock(FabricBlockSettings.copyOf(CHERRY_POST)));
+    public static final Block STRIPPED_CACTUS_POST = registerBlock("stripped_cactus_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block STRIPPED_AZALEA_POST = registerBlock("stripped_azalea_post", new PostBlock(FabricBlockSettings.copyOf(CHERRY_POST).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block STRIPPED_BLOOMING_AZALEA_POST = registerBlock("stripped_blooming_azalea_post", new PostBlock(FabricBlockSettings.copyOf(OAK_POST).sounds(BlockSoundGroup.CHERRY_WOOD)));
 
 
     /* (will be added in the next update)
@@ -717,6 +721,8 @@ public class CelluloseBlocks
 
     //Chiseled bookshelf variants
     public static final Block BIRCH_CHISELED_BOOKSHELF = registerBlock("birch_chiseled_bookshelf", new VerticalSlotChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
+    public static final Block SPRUCE_CHISELED_BOOKSHELF = registerBlock("spruce_chiseled_bookshelf", new ChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
+    public static final Block DARK_OAK_CHISELED_BOOKSHELF = registerBlock("dark_oak_chiseled_bookshelf", new FourSlotChiseledBookshelf(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
 
 
     // Sawmill Block //
@@ -911,7 +917,12 @@ public class CelluloseBlocks
     public static final Block BLOOMING_AZALEA_DOOR = registerBlock("blooming_azalea_door", new DoorBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).nonOpaque(), BlockSetType.CHERRY));
     public static final Block BLOOMING_AZALEA_TRAPDOOR = registerBlock("blooming_azalea_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).nonOpaque(), BlockSetType.CHERRY));
 
-    //Ironwood woodset
+    //Palo Verde woodset
+    //public static final Block PALO_VERDE_SAPLING = registerBlock("palo_verde_sapling", new SaplingBlock(FabricBlockSettings.copyOf(OAK_SAPLING)));
+    public static final Block PALO_VERDE_LEAVES = registerBlock("palo_verde_leaves", new PaloVerdeLeafBlock(FabricBlockSettings.copyOf(OAK_LEAVES).noCollision()));
+    public static final Block FLOWERING_PALO_VERDE_LEAVES = registerBlock("flowering_palo_verde_leaves", new FloweringPaloVerdeLeafBlock(FabricBlockSettings.copyOf(OAK_LEAVES).noCollision()));
+    public static final Block PALO_VERDE_LOG = registerBlock("palo_verde_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LEAVES)));
+    public static final Block PALO_VERDE_WOOD = registerBlock("palo_verde_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LEAVES)));
 
 
     ///Misc

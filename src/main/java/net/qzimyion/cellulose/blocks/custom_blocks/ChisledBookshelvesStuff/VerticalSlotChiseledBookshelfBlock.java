@@ -57,16 +57,16 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
         double y = vec3d.getY();
         double z = vec3d.getZ();
         return switch (direction) {
-            case NORTH -> Optional.of(new Vec2f((float)(x), (float)(1 - y)));
+            case NORTH -> Optional.of(new Vec2f((float)(1 - x), (float)y));
             case SOUTH -> Optional.of(new Vec2f((float)x, (float)y));
             case WEST -> Optional.of(new Vec2f((float)z, (float)y));
-            case EAST -> Optional.of(new Vec2f((float)(z), (float)(1 - y)));
+            case EAST -> Optional.of(new Vec2f((float)(1 - z), (float)y));
             case DOWN, UP -> Optional.empty();
         };
     }
 
     private static int getSlotForHitPos(Vec2f hitPos) {
-        int i = hitPos.x >= 0.5f ? 0 : 1;
+        int i = hitPos.x >= 0.5f ? 1 : 0;
         int j = VerticalSlotChiseledBookshelfBlock.getRow(hitPos.y);
         return j + i * 3;
     }

@@ -3,6 +3,8 @@ package net.qzimyion.cellulose;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.qzimyion.cellulose.datagen.*;
+import net.qzimyion.cellulose.datagen.languageProvider.CelluloseNameProvider;
+import net.qzimyion.cellulose.datagen.languageProvider.CelluloseNameProvider_en_gb;
 
 public class CelluloseDataGenerator implements DataGeneratorEntrypoint
 {

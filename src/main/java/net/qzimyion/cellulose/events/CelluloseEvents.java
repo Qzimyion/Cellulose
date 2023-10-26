@@ -21,6 +21,7 @@ import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.util.CelluloseTags;
 
 import java.util.HashMap;
+import java.util.Random;
 
 import static net.minecraft.block.Blocks.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
@@ -364,7 +365,12 @@ public class CelluloseEvents {
 
                 if (player instanceof ServerPlayerEntity) {
                     Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, Pos, heldItem);
-                    if (!player.isCreative()) heldItem.decrement(1);
+                    if (!player.isCreative()) {
+                        Random random = new Random();
+                        if (random.nextFloat() <= 0.25f) {
+                            heldItem.decrement(1);
+                        }
+                    }
                     world.setBlockState(Pos, ENGRAVING.get(State.getBlock()).getStateWithProperties(State));
                 }
                 return ActionResult.SUCCESS;

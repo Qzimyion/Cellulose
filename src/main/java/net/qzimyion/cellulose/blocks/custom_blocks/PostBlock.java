@@ -5,46 +5,50 @@ import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
-
 @SuppressWarnings("deprecation")
-public class PostBlock extends PillarBlock implements Waterloggable {
+public class PostBlock extends ConnectingBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    public static final VoxelShape SHAPE_X = Block.createCuboidShape(0.0, 4.0, 4.0, 16.0, 12.0, 12.0);
-    public static final VoxelShape SHAPE_Y = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
-    public static final VoxelShape SHAPE_Z = Block.createCuboidShape(4.0, 4.0, 0.0, 12.0, 12.0, 16.0);
 
     public PostBlock(Settings settings) {
-        super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, false).with(AXIS, Direction.Axis.Y));
-    }
-
-    @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
-    {
-        return switch (state.get(AXIS)) {
-            case Z -> SHAPE_Z;
-            case X -> SHAPE_X;
-            default -> SHAPE_Y;
-        };
+        super(0.3125F,settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(NORTH, false).with(EAST, false).with(SOUTH, false).with(WEST, false).with(UP, false).with(DOWN, false).with(WATERLOGGED, false));
     }
 
     @Override
     @Nullable
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
-        boolean bl = fluidState.getFluid() == Fluids.WATER;
-        return Objects.requireNonNull(super.getPlacementState(ctx)).with(WATERLOGGED, bl);
+        return this.withConnectionProperties(ctx.getWorld(), ctx.getBlockPos()).with(WATERLOGGED, fluidState.isIn(FluidTags.WATER) && fluidState.getLevel() == 8);
+    }
+
+    public BlockState withConnectionProperties(BlockView world, BlockPos pos) {
+        BlockState blockState = world.getBlockState(pos.down());
+        BlockState blockState2 = world.getBlockState(pos.up());
+        BlockState blockState3 = world.getBlockState(pos.north());
+        BlockState blockState4 = world.getBlockState(pos.east());
+        BlockState blockState5 = world.getBlockState(pos.south());
+        BlockState blockState6 = world.getBlockState(pos.west());
+        return this.getDefaultState().with(DOWN, blockState.getBlock() instanceof PostBlock || blockState.isSideSolid(world, pos, Direction.UP, SideShapeType.CENTER)
+        ).with(
+                UP,
+                blockState2.getBlock() instanceof PostBlock || blockState2.isSideSolid(world, pos, Direction.DOWN, SideShapeType.CENTER)
+        ).with(NORTH, blockState3.getBlock() instanceof PostBlock || blockState3.isSideSolid(world, pos, Direction.SOUTH, SideShapeType.CENTER)).with(
+                EAST,
+                blockState4.getBlock() instanceof PostBlock || blockState4.isSideSolid(world, pos, Direction.WEST, SideShapeType.CENTER)
+        ).with(SOUTH, blockState5.getBlock() instanceof PostBlock || blockState5.isSideSolid(world, pos, Direction.NORTH, SideShapeType.CENTER)).with(
+                WEST,
+                blockState6.getBlock() instanceof PostBlock || blockState6.isSideSolid(world, pos, Direction.EAST, SideShapeType.CENTER)
+        );
     }
 
     @Override
@@ -52,12 +56,13 @@ public class PostBlock extends PillarBlock implements Waterloggable {
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+        boolean bl = neighborState.isSideSolid(world, pos, direction.getOpposite(), SideShapeType.CENTER) || neighborState.getBlock() instanceof PostBlock;
+        return state.with(FACING_PROPERTIES.get(direction), bl);
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(WATERLOGGED).add(AXIS);
+        builder.add(WATERLOGGED, NORTH, EAST, SOUTH, WEST, UP, DOWN);
     }
 
     @Override

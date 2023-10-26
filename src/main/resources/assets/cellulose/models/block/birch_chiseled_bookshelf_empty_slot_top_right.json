@@ -1,6 +1,0 @@
-{
-    "parent": "cellulose:block/vertical_slot_top_right",
-    "textures": {
-        "texture": "cellulose:block/birch_chiseled_bookshelf_empty"
-    }
-}

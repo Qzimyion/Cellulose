@@ -48,7 +48,7 @@ public class AppleLeavesParticle extends SpriteBillboardParticle {
         double e = Math.sin(Math.toRadians(this.field_43370 * 60.0f)) * 2.0 * Math.pow(g, 1.25);
         this.velocityX += d * (double)0.0025f;
         this.velocityZ += e * (double)0.0025f;
-        this.velocityY -= (double)this.gravityStrength;
+        this.velocityY -= this.gravityStrength;
         this.field_43369 += this.field_43371 / 20.0f;
         this.prevAngle = this.angle;
         this.angle += this.field_43369 / 20.0f;
@@ -59,8 +59,8 @@ public class AppleLeavesParticle extends SpriteBillboardParticle {
         if (this.dead) {
             return;
         }
-        this.velocityX *= (double)this.velocityMultiplier;
-        this.velocityY *= (double)this.velocityMultiplier;
-        this.velocityZ *= (double)this.velocityMultiplier;
+        this.velocityX *= this.velocityMultiplier;
+        this.velocityY *= this.velocityMultiplier;
+        this.velocityZ *= this.velocityMultiplier;
     }
 }

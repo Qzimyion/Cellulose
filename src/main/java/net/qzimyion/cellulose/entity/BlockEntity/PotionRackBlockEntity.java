@@ -22,9 +22,6 @@ import java.util.function.Predicate;
 
 @SuppressWarnings("unused")
 public class PotionRackBlockEntity extends BlockEntity implements Inventory {
-    public static final int MAX_POTIONS = 6;
-    public static final int MAX_GLASS_BOTTLES = 6;
-    public static final int MAX_HONEY_BOTTLES = 6;
     private static final Logger LOGGER = LogUtils.getLogger();
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);
     private int lastInteractedSlot = -1;

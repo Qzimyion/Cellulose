@@ -3,10 +3,15 @@ package net.qzimyion.cellulose.client;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
+import net.minecraft.client.particle.CherryLeavesParticle;
+import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
+import net.qzimyion.cellulose.particles.Celluloseparticles;
+import net.qzimyion.cellulose.particles.FloweringPaloVerdeLeafParticles;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreen;
 
@@ -76,7 +81,7 @@ public class CelluloseClient implements ClientModInitializer
 
         //Signs and Hanging signs
 
-        //Block Entity renderer
+        //Particles
 
 
     }

@@ -11,15 +11,12 @@ public class CelluloseStrippableBlock
         //Cactus stuff
         StrippableBlockRegistry.register(CACTUS_CROWN, STRIPPED_CACTUS_BUNDLE);
         StrippableBlockRegistry.register(CHIPPED_CACTUS_CROWN, STRIPPED_CHIPPED_CACTUS_CROWN);
-        StrippableBlockRegistry.register(CACTUS_POST, STRIPPED_CACTUS_POST);
         //Azalea stuff
         StrippableBlockRegistry.register(AZALEA_LOG, STRIPPED_AZALEA_LOG);
         StrippableBlockRegistry.register(AZALEA_WOOD, STRIPPED_AZALEA_WOOD);
         StrippableBlockRegistry.register(BLOOMING_AZALEA_LOG, BLOOMING_STRIPPED_AZALEA);
         StrippableBlockRegistry.register(BLOOMING_AZALEA_WOOD, BLOOMING_STRIPPED_AZALEA_WOOD);
         StrippableBlockRegistry.register(CHIPPED_AZALEA_WOOD, STRIPPED_CHIPPED_AZALEA_WOOD);
-        StrippableBlockRegistry.register(AZALEA_POST, STRIPPED_AZALEA_POST);
-        StrippableBlockRegistry.register(BLOOMING_AZALEA_POST, STRIPPED_BLOOMING_AZALEA_POST);
         //Chipped Stripped
         StrippableBlockRegistry.register(CHIPPED_OAK, STRIPPED_CHIPPED_OAK);
         StrippableBlockRegistry.register(CHIPPED_BIRCH, STRIPPED_CHIPPED_BIRCH);
@@ -31,7 +28,6 @@ public class CelluloseStrippableBlock
         StrippableBlockRegistry.register(CHIPPED_WARPED, STRIPPED_CHIPPED_WARPED);
         StrippableBlockRegistry.register(CHIPPED_MANGROVE, STRIPPED_CHIPPED_MANGROVE);
         StrippableBlockRegistry.register(CHIPPED_CHERRY, STRIPPED_CHIPPED_CHERRY);
-        StrippableBlockRegistry.register(CHIPPED_CACTUS, STRIPPED_CHIPPED_CACTUS);
         StrippableBlockRegistry.register(CHIPPED_AZALEA, STRIPPED_CHIPPED_AZALEA);
         StrippableBlockRegistry.register(CHIPPED_OAK_WOOD, STRIPPED_CHIPPED_OAK_WOOD);
         StrippableBlockRegistry.register(CHIPPED_BIRCH_WOOD, STRIPPED_CHIPPED_BIRCH_WOOD);
@@ -44,17 +40,7 @@ public class CelluloseStrippableBlock
         StrippableBlockRegistry.register(CHIPPED_MANGROVE_WOOD, STRIPPED_CHIPPED_MANGROVE_WOOD);
         StrippableBlockRegistry.register(CHIPPED_CHERRY_WOOD, STRIPPED_CHIPPED_CHERRY_WOOD);
         //Post blocks
-        StrippableBlockRegistry.register(OAK_POST, STRIPPED_OAK_POST);
-        StrippableBlockRegistry.register(BIRCH_POST, STRIPPED_BIRCH_POST);
-        StrippableBlockRegistry.register(SPRUCE_POST, STRIPPED_SPRUCE_POST);
-        StrippableBlockRegistry.register(DARK_OAK_POST, STRIPPED_DARK_OAK_POST);
-        StrippableBlockRegistry.register(JUNGLE_POST, STRIPPED_JUNGLE_POST);
-        StrippableBlockRegistry.register(ACACIA_POST, STRIPPED_ACACIA_POST);
-        StrippableBlockRegistry.register(CRIMSON_POST, STRIPPED_CRIMSON_POST);
-        StrippableBlockRegistry.register(WARPED_POST, STRIPPED_WARPED_POST);
-        StrippableBlockRegistry.register(MANGROVE_POST, STRIPPED_MANGROVE_POST);
-        StrippableBlockRegistry.register(BAMBOO_POST, STRIPPED_BAMBOO_POST);
-        StrippableBlockRegistry.register(CHERRY_POST, STRIPPED_CHERRY_POST);
+
 
         ///Overworld Mushroom stuff
         /*Red*/
