@@ -35,4 +35,13 @@ public class ModBlockProperties {
     //Cauldron behaviors
     public static final Map<Item, CauldronBehavior> BAMBOO_CAULDRON_BEHAVIOR = CauldronBehavior.createMap();
     public static final CauldronBehavior FILL_WITH_BAMBOO_SHELLS = (state, world, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(world, pos, player, hand, stack, CelluloseBlocks.DISSOLVED_BAMBOO_CAULDRON_BLOCK.getDefaultState(), SoundEvents.ITEM_BUCKET_EMPTY);
+
+    //Extra slots properties
+    public static final BooleanProperty SLOT_6_OCCUPIED = BooleanProperty.of("slot_6_occupied");
+    public static final BooleanProperty SLOT_7_OCCUPIED = BooleanProperty.of("slot_7_occupied");
+    public static final BooleanProperty SLOT_8_OCCUPIED = BooleanProperty.of("slot_8_occupied");
+
+    //Bamboo Chiseled bookshelf properties
+    public static final IntProperty BOOKS_STORED = IntProperty.of("books_stored", 0, 7);
+    public static final IntProperty LAST_INTERACTION_BOOK_SLOT = IntProperty.of("last_interaction_book_slot", 0, 7);
 }

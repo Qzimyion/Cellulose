@@ -1,0 +1,429 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_2",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_2",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_2_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_0",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_0",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_0_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_1",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_1",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_1_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_2",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_2",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_2_occupied": "false"
+          }
+        ]
+      }
+    },
+
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_0",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_0",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_0_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_1",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_1",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_1_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_2",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_2",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_2_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_0",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_0",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_0_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_1",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_1",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_1_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf",
+        "uvlock": true,
+        "y": 0
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_2",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_2",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_2_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_0",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_0",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_0_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_occupied_slot_1",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/cactus_chiseled_bookshelf_empty_slot_1",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_1_occupied": "false"
+          }
+        ]
+      }
+    }
+  ]
+}

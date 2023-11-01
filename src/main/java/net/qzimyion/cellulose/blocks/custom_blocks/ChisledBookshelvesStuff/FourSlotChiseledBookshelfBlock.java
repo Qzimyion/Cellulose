@@ -2,7 +2,7 @@ package net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.ChiseledBookshelfBlockEntity;
+import net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves.FourSlotBookshelfBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
@@ -29,10 +29,10 @@ import java.util.List;
 import java.util.Optional;
 
 @SuppressWarnings("deprecation")
-public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
-    public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(Properties.SLOT_0_OCCUPIED, Properties.SLOT_1_OCCUPIED, Properties.SLOT_2_OCCUPIED, Properties.SLOT_3_OCCUPIED, Properties.SLOT_4_OCCUPIED, Properties.SLOT_5_OCCUPIED);
+public class FourSlotChiseledBookshelfBlock extends BlockWithEntity {
+    public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(Properties.SLOT_0_OCCUPIED, Properties.SLOT_1_OCCUPIED, Properties.SLOT_2_OCCUPIED, Properties.SLOT_3_OCCUPIED);
 
-    public VerticalSlotChiseledBookshelfBlock(Settings settings) {
+    public FourSlotChiseledBookshelfBlock(Settings settings) {
         super(settings);
         BlockState blockState = this.stateManager.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH);
         for (BooleanProperty booleanProperty : SLOT_OCCUPIED_PROPERTIES) {
@@ -46,7 +46,36 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
         return BlockRenderType.MODEL;
     }
 
-    private static Optional<Vec2f> getHitPos(BlockHitResult hit, Direction facing) {
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if (!(blockEntity instanceof FourSlotBookshelfBlockEntity fourSlotChiseledBookshelfBlockEntity)) {
+            return ActionResult.PASS;
+        }
+        Optional<Vec2f> optional = FourSlotChiseledBookshelfBlock.getHitPos(hit, state.get(HorizontalFacingBlock.FACING));
+        if (optional.isEmpty()) {
+            return ActionResult.PASS;
+        }
+        int i = FourSlotChiseledBookshelfBlock.getSlotForHitPos(optional.get());
+        if (state.get(SLOT_OCCUPIED_PROPERTIES.get(i))) {
+            FourSlotChiseledBookshelfBlock.tryRemoveBook(world, pos, player, fourSlotChiseledBookshelfBlockEntity, i);
+            return ActionResult.success(world.isClient);
+        }
+        ItemStack itemStack = player.getStackInHand(hand);
+        if (itemStack.isIn(ItemTags.BOOKSHELF_BOOKS)) {
+            FourSlotChiseledBookshelfBlock.tryAddBook(world, pos, player, fourSlotChiseledBookshelfBlockEntity, itemStack, i);
+            return ActionResult.success(world.isClient);
+        }
+        return ActionResult.CONSUME;
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new FourSlotBookshelfBlockEntity(pos, state);
+    }
+
+    public static Optional<Vec2f> getHitPos(BlockHitResult hit, Direction facing) {
         Direction direction = hit.getSide();
         if (facing != direction) {
             return Optional.empty();
@@ -66,51 +95,12 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
     }
 
     private static int getSlotForHitPos(Vec2f hitPos) {
-        int i = hitPos.x >= 0.5f ? 0 : 1;
-        int j = getRow(hitPos.y);
-        return j + i * 3;
+        int i = hitPos.y >= 0.5f ? 0 : 1;
+        int j = hitPos.x >= 0.5f ? 1 : 0;
+        return j + i * 2;
     }
 
-    private static int getRow(float y) {
-        if (y < 0.375f) {
-            return 0;
-        }
-        if (y < 0.6875f) {
-            return 1;
-        }
-        return 2;
-    }
-
-    @Nullable
-    @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new ChiseledBookshelfBlockEntity(pos, state);
-    }
-
-    @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (!(blockEntity instanceof ChiseledBookshelfBlockEntity chiseledBookshelfBlockEntity)) {
-            return ActionResult.PASS;
-        }
-        Optional<Vec2f> optional = VerticalSlotChiseledBookshelfBlock.getHitPos(hit, state.get(HorizontalFacingBlock.FACING));
-        if (optional.isEmpty()) {
-            return ActionResult.PASS;
-        }
-        int i = VerticalSlotChiseledBookshelfBlock.getSlotForHitPos(optional.get());
-        if (state.get(SLOT_OCCUPIED_PROPERTIES.get(i))) {
-            VerticalSlotChiseledBookshelfBlock.tryRemoveBook(world, pos, player, chiseledBookshelfBlockEntity, i);
-            return ActionResult.success(world.isClient);
-        }
-        ItemStack itemStack = player.getStackInHand(hand);
-        if (itemStack.isIn(ItemTags.BOOKSHELF_BOOKS)) {
-            VerticalSlotChiseledBookshelfBlock.tryAddBook(world, pos, player, chiseledBookshelfBlockEntity, itemStack, i);
-            return ActionResult.success(world.isClient);
-        }
-        return ActionResult.CONSUME;
-    }
-
-    private static void tryAddBook(World world, BlockPos pos, PlayerEntity player, ChiseledBookshelfBlockEntity blockEntity, ItemStack stack, int slot) {
+    private static void tryAddBook(World world, BlockPos pos, PlayerEntity player, FourSlotBookshelfBlockEntity blockEntity, ItemStack stack, int slot){
         if (world.isClient) {
             return;
         }
@@ -124,7 +114,7 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
         world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
     }
 
-    private static void tryRemoveBook(World world, BlockPos pos, PlayerEntity player, ChiseledBookshelfBlockEntity blockEntity, int slot) {
+    private static void tryRemoveBook(World world, BlockPos pos, PlayerEntity player, FourSlotBookshelfBlockEntity blockEntity, int slot){
         if (world.isClient) {
             return;
         }
@@ -145,18 +135,18 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        ChiseledBookshelfBlockEntity chiseledBookshelfBlockEntity;
+        FourSlotBookshelfBlockEntity fourSlotBookshelfBlockEntity;
         if (state.isOf(newState.getBlock())) {
             return;
         }
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof ChiseledBookshelfBlockEntity && !(chiseledBookshelfBlockEntity = (ChiseledBookshelfBlockEntity)blockEntity).isEmpty()) {
-            for (int i = 0; i < 6; ++i) {
-                ItemStack itemStack = chiseledBookshelfBlockEntity.getStack(i);
+        if (blockEntity instanceof FourSlotBookshelfBlockEntity && !(fourSlotBookshelfBlockEntity = (FourSlotBookshelfBlockEntity) blockEntity).isEmpty()){
+            for (int i = 0; i < 4; ++i) {
+                ItemStack itemStack = fourSlotBookshelfBlockEntity.getStack(i);
                 if (itemStack.isEmpty()) continue;
                 ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
             }
-            chiseledBookshelfBlockEntity.clear();
+            fourSlotBookshelfBlockEntity.clear();
             world.updateComparators(pos, this);
         }
         super.onStateReplaced(state, world, pos, newState, moved);
@@ -183,13 +173,13 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
     }
 
     @Override
-    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos){
         if (world.isClient()) {
             return 0;
         }
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof ChiseledBookshelfBlockEntity chiseledBookshelfBlockEntity) {
-            return chiseledBookshelfBlockEntity.getLastInteractedSlot() + 1;
+        if (blockEntity instanceof FourSlotBookshelfBlockEntity fourSlotBookshelfBlockEntity){
+            return fourSlotBookshelfBlockEntity.getLastInteractedSlot() +1;
         }
         return 0;
     }

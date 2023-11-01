@@ -1,0 +1,6 @@
+{
+    "parent": "cellulose:block/slot_2_c",
+    "textures": {
+        "texture": "cellulose:block/cactus_chiseled_bookshelf_empty"
+    }
+}

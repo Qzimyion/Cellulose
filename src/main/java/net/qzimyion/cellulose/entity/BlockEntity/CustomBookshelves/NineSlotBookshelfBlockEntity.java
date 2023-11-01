@@ -13,7 +13,7 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.FourSlotChiseledBookshelfBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.NineSlotChiseledBookshelfBlock;
 import net.qzimyion.cellulose.entity.CelluloseEntities;
 import org.slf4j.Logger;
 
@@ -21,25 +21,24 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 @SuppressWarnings("unused")
-public class FourSlotBookshelfBlockEntity extends BlockEntity implements Inventory {
+public class NineSlotBookshelfBlockEntity extends BlockEntity implements Inventory {
     private static final Logger LOGGER = LogUtils.getLogger();
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
     private int lastInteractedSlot = -1;
-
-    public FourSlotBookshelfBlockEntity(BlockPos pos, BlockState state) {
-        super(CelluloseEntities.DARK_OAK_CHISELED_BOOKSHELF, pos, state);
+    public NineSlotBookshelfBlockEntity(BlockPos pos, BlockState state) {
+        super(CelluloseEntities.CRIMSON_CHISELED_BOOKSHELF, pos, state);
     }
 
-    private void updateState(int interactedSlot){
-        if (interactedSlot < 0 || interactedSlot >= 4) {
-            LOGGER.error("Expected slot 0-3, got {}", interactedSlot);
+    private void updateState(int interactedSlot) {
+        if (interactedSlot < 0 || interactedSlot >= 9) {
+            LOGGER.error("Expected slot 0-8, got {}", interactedSlot);
             return;
         }
         this.lastInteractedSlot = interactedSlot;
         BlockState blockState = this.getCachedState();
-        for (int i = 0; i < FourSlotChiseledBookshelfBlock.SLOT_OCCUPIED_PROPERTIES.size(); ++i) {
+        for (int i = 0; i < NineSlotChiseledBookshelfBlock.SLOT_OCCUPIED_PROPERTIES.size(); ++i){
             boolean bl = !this.getStack(i).isEmpty();
-            BooleanProperty booleanProperty = FourSlotChiseledBookshelfBlock.SLOT_OCCUPIED_PROPERTIES.get(i);
+            BooleanProperty booleanProperty = NineSlotChiseledBookshelfBlock.SLOT_OCCUPIED_PROPERTIES.get(i);
             blockState = blockState.with(booleanProperty, bl);
         }
         Objects.requireNonNull(this.world).setBlockState(this.pos, blockState, Block.NOTIFY_ALL);
@@ -62,14 +61,10 @@ public class FourSlotBookshelfBlockEntity extends BlockEntity implements Invento
         return (int)this.inventory.stream().filter(Predicate.not(ItemStack::isEmpty)).count();
     }
 
-    @Override
-    public void clear() {
-        this.inventory.clear();
-    }
 
     @Override
     public int size() {
-        return 4;
+        return 9;
     }
 
     @Override
@@ -132,5 +127,9 @@ public class FourSlotBookshelfBlockEntity extends BlockEntity implements Invento
 
     public int getLastInteractedSlot() {
         return this.lastInteractedSlot;
+    }
+    @Override
+    public void clear() {
+        this.inventory.clear();
     }
 }

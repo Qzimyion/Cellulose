@@ -12,13 +12,11 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.custom_blocks.*;
-import net.qzimyion.cellulose.blocks.custom_blocks.BambooLadders.FreshBambooLadder;
 import net.qzimyion.cellulose.blocks.custom_blocks.BarricadeBlock.BarricadeBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.DissolvedBambooCauldronBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.PaperMeshBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.PaperMeshCauldronBlock;
-import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.FourSlotChiseledBookshelf;
-import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.VerticalSlotChiseledBookshelfBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.*;
 import net.qzimyion.cellulose.blocks.custom_blocks.SawdustStuff.SawdustLayerBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.celluloseLeaves.PaloVerde.FloweringPaloVerdeLeafBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.celluloseLeaves.PaloVerde.PaloVerdeLeafBlock;
@@ -722,7 +720,16 @@ public class CelluloseBlocks
     //Chiseled bookshelf variants
     public static final Block BIRCH_CHISELED_BOOKSHELF = registerBlock("birch_chiseled_bookshelf", new VerticalSlotChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
     public static final Block SPRUCE_CHISELED_BOOKSHELF = registerBlock("spruce_chiseled_bookshelf", new ChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
-    public static final Block DARK_OAK_CHISELED_BOOKSHELF = registerBlock("dark_oak_chiseled_bookshelf", new FourSlotChiseledBookshelf(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
+    public static final Block DARK_OAK_CHISELED_BOOKSHELF = registerBlock("dark_oak_chiseled_bookshelf", new FourSlotChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
+    public static final Block JUNGLE_CHISELED_BOOKSHELF = registerBlock("jungle_chiseled_bookshelf", new FiveSlotChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
+    public static final Block ACACIA_CHISELED_BOOKSHELF = registerBlock("acacia_chiseled_bookshelf", new VerticalSlotChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
+    public static final Block CRIMSON_CHISELED_BOOKSHELF = registerBlock("crimson_chiseled_bookshelf", new NineSlotChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block WARPED_CHISELED_BOOKSHELF = registerBlock("warped_chiseled_bookshelf", new FlippedFiveSlotChiseledBookshelf(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block MANGROVE_CHISELED_BOOKSHELF = registerBlock("mangrove_chiseled_bookshelf", new FourSlotChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
+    public static final Block BAMBOO_CHISELED_BOOKSHELF = registerBlock("bamboo_chiseled_bookshelf", new BambooChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF).sounds(BlockSoundGroup.BAMBOO_WOOD)));
+    public static final Block CHERRY_CHISELED_BOOKSHELF = registerBlock("cherry_chiseled_bookshelf", new CherryChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block CACTUS_CHISELED_BOOKSHELF = registerBlock("cactus_chiseled_bookshelf", new CactusChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block AZALEA_CHISELED_BOOKSHELF = registerBlock("azalea_chiseled_bookshelf", new AzaleaChiseledBookshelf(FabricBlockSettings.copyOf(CHERRY_CHISELED_BOOKSHELF)));
 
 
     // Sawmill Block //
@@ -920,15 +927,38 @@ public class CelluloseBlocks
     //Palo Verde woodset
     //public static final Block PALO_VERDE_SAPLING = registerBlock("palo_verde_sapling", new SaplingBlock(FabricBlockSettings.copyOf(OAK_SAPLING)));
     public static final Block PALO_VERDE_LEAVES = registerBlock("palo_verde_leaves", new PaloVerdeLeafBlock(FabricBlockSettings.copyOf(OAK_LEAVES).noCollision()));
-    public static final Block FLOWERING_PALO_VERDE_LEAVES = registerBlock("flowering_palo_verde_leaves", new FloweringPaloVerdeLeafBlock(FabricBlockSettings.copyOf(OAK_LEAVES).noCollision()));
-    public static final Block PALO_VERDE_LOG = registerBlock("palo_verde_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LEAVES)));
-    public static final Block PALO_VERDE_WOOD = registerBlock("palo_verde_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LEAVES)));
+    public static final Block PALO_VERDE_LOG = registerBlock("palo_verde_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block PALO_VERDE_WOOD = registerBlock("palo_verde_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block STRIPPED_PALO_VERDE_LOG = registerBlock("stripped_palo_verde_log", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PALO_VERDE_WOOD = registerBlock("stripped_palo_verde_wood", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
+    public static final Block PALO_VERDE_PLANKS = registerBlock("palo_verde_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block PALO_VERDE_SLAB = registerBlock("palo_verde_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
+    public static final Block PALO_VERDE_STAIRS = registerBlock("palo_verde_stairs", new StairsBlock(PALO_VERDE_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(OAK_LEAVES)));
+    public static final Block PALO_VERDE_FENCE = registerBlock("palo_verde_fence", new FenceBlock(FabricBlockSettings.copyOf(OAK_FENCE)));
+    public static final Block PALO_VERDE_FENCE_GATE = registerBlock("palo_verde_fence_gate", new FenceBlock(FabricBlockSettings.copyOf(OAK_FENCE_GATE)));
+    public static final Block PALO_VERDE_BUTTON = registerBlock("palo_verde_button", new ButtonBlock(FabricBlockSettings.copyOf(OAK_BUTTON), BlockSetType.OAK, 5, true));
+    public static final Block PALO_VERDE_PRESSURE_PLATE = registerBlock("palo_verde_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING ,FabricBlockSettings.copyOf(OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final Block PALO_VERDE_DOOR = registerBlock("palo_verde_door", new DoorBlock(FabricBlockSettings.copyOf(OAK_DOOR), BlockSetType.OAK));
+    public static final Block PALO_VERDE_TRAPDOOR = registerBlock("palo_verde_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(OAK_TRAPDOOR), BlockSetType.OAK));
 
+    ///Flowering variant
+    public static final Block FLOWERING_PALO_VERDE_LEAVES = registerBlock("flowering_palo_verde_leaves", new FloweringPaloVerdeLeafBlock(FabricBlockSettings.copyOf(OAK_LEAVES).noCollision()));
+    public static final Block FLOWERING_PALO_VERDE_LOG = registerBlock("flowering_palo_verde_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block FLOWERING_PALO_VERDE_WOOD = registerBlock("flowering_palo_verde_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block STRIPPED_FLOWERING_PALO_VERDE_LOG = registerBlock("stripped_flowering_palo_verde_log", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_FLOWERING_PALO_VERDE_WOOD = registerBlock("stripped_flowering_palo_verde_wood", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
+    public static final Block FLOWERING_PALO_VERDE_PLANKS = registerBlock("flowering_palo_verde_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block FLOWERING_PALO_VERDE_SLAB = registerBlock("flowering_palo_verde_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
+    public static final Block FLOWERING_PALO_VERDE_STAIRS = registerBlock("flowering_palo_verde_stairs", new StairsBlock(FLOWERING_PALO_VERDE_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(OAK_LEAVES)));
+    public static final Block FLOWERING_PALO_VERDE_FENCE = registerBlock("flowering_palo_verde_fence", new FenceBlock(FabricBlockSettings.copyOf(OAK_FENCE)));
+    public static final Block FLOWERING_PALO_VERDE_FENCE_GATE = registerBlock("flowering_palo_verde_fence_gate", new FenceBlock(FabricBlockSettings.copyOf(OAK_FENCE_GATE)));
+    public static final Block FLOWERING_PALO_VERDE_BUTTON = registerBlock("flowering_palo_verde_button", new ButtonBlock(FabricBlockSettings.copyOf(OAK_BUTTON), BlockSetType.OAK, 5, true));
+    public static final Block FLOWERING_PALO_VERDE_PRESSURE_PLATE = registerBlock("flowering_palo_verde_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING ,FabricBlockSettings.copyOf(OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final Block FLOWERING_PALO_VERDE_DOOR = registerBlock("flowering_palo_verde_door", new DoorBlock(FabricBlockSettings.copyOf(OAK_DOOR), BlockSetType.OAK));
+    public static final Block FLOWERING_PALO_VERDE_TRAPDOOR = registerBlock("flowering_palo_verde_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(OAK_TRAPDOOR), BlockSetType.OAK));
 
     ///Misc
-    public static final Block FRESH_BAMBOO_LADDER = registerBlockWithoutBlockItem("fresh_bamboo_ladder", new FreshBambooLadder(FabricBlockSettings.copyOf(SCAFFOLDING).sounds(BlockSoundGroup.BAMBOO_WOOD)));
     public static final Block POTION_RACK = registerBlock("potion_rack", new PotionRackBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
-    public static final Block STRIPPED_BAMBOO_STALK = registerBlock("stripped_bamboo_stalk", new StrippedBambooStalk(FabricBlockSettings.copyOf(BAMBOO)));
 
 
     //Nyeh! Heh! Heh!
