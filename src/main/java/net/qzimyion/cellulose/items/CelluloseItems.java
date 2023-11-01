@@ -52,9 +52,6 @@ public class CelluloseItems
     public static final Item CACTUS_SAWDUST = registerItem("cactus_sawdust", new Item(new FabricItemSettings()));
     public static final Item AZALEA_SAWDUST = registerItem("azalea_sawdust", new Item(new FabricItemSettings()));
 
-    //Misc
-    public static final Item FRESH_BAMBOO_LADDER = registerItem("fresh_bamboo_ladder", new FreshBambooLadderItem(CelluloseBlocks.FRESH_BAMBOO_LADDER, new FabricItemSettings()));
-
     //Paper stuff
     public static final Item PAPER_MESH_BUCKET = registerItem("paper_mesh_bucket", new PowderSnowBucketItem(PAPER_MESH_BLOCK , SoundEvents.BLOCK_POWDER_SNOW_PLACE,new FabricItemSettings()));
 

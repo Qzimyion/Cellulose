@@ -466,5 +466,13 @@ public class CelluloseNameProvider extends FabricLanguageProvider
 
         //Potion rack
         translationBuilder.add(POTION_RACK, "Potion Rack");
+
+        //Chiseled Bookshelves
+        translationBuilder.add(Blocks.CHISELED_BOOKSHELF, "Oak Chiseled Bookshelf");
+        translationBuilder.add(BIRCH_CHISELED_BOOKSHELF, "Birch Chiseled Bookshelf");
+        translationBuilder.add(SPRUCE_CHISELED_BOOKSHELF, "Spruce Chiseled Bookshelf");
+        translationBuilder.add(DARK_OAK_CHISELED_BOOKSHELF, "Dark Oak Chiseled Bookshelf");
+        translationBuilder.add(JUNGLE_CHISELED_BOOKSHELF, "Jungle Chiseled Bookshelf");
+        translationBuilder.add(ACACIA_CHISELED_BOOKSHELF, "Acacia Chiseled Bookshelf");
     }
 }

@@ -2,9 +2,9 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.*;
-import net.qzimyion.cellulose.blocks.CelluloseBlocks;
-import net.qzimyion.cellulose.items.CelluloseItems;
+import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Models;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
@@ -518,14 +518,11 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_CACTUS_BOOKSHELF);
         blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_AZALEA_BOOKSHELF);
 
-        blockStateModelGenerator.registerSimpleState(STRIPPED_BAMBOO_STALK);
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(CelluloseBlocks.FRESH_BAMBOO_LADDER);
         blockStateModelGenerator.registerSimpleState(PAPER_BLOCK);
         blockStateModelGenerator.registerSimpleState(SOAKED_PAPER_BLOCK);
         blockStateModelGenerator.registerSimpleState(STRIPPED_CACTUS);
 
         blockStateModelGenerator.registerSimpleState(DISSOLVED_BAMBOO_CAULDRON_BLOCK);
-        blockStateModelGenerator.registerSimpleState(PAPER_MESH_CAULDRON_BLOCK);
 
         blockStateModelGenerator.registerSimpleCubeAll(PAPER_MESH_BLOCK);
 
@@ -553,7 +550,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CHERRY_SAWDUST, Models.GENERATED);
         itemModelGenerator.register(CACTUS_SAWDUST, Models.GENERATED);
         itemModelGenerator.register(AZALEA_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(CelluloseItems.FRESH_BAMBOO_LADDER, Models.GENERATED);
 
         //Misc
         itemModelGenerator.register(PAPER_MESH_BUCKET, Models.GENERATED);

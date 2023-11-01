@@ -486,18 +486,6 @@ public class CelluloseEvents {
                     return ActionResult.SUCCESS;
                 }
             }
-            //BambooStripping
-            if (heldItem.getItem() instanceof AxeItem){
-                if (targetBlock.isOf(BAMBOO)){
-                    world.playSound(player, targetPos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
-                    if (player instanceof ServerPlayerEntity) {
-                        Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, targetPos, heldItem);
-                        if (!player.isCreative()) heldItem.damage(1, player, null);
-                        world.setBlockState(targetPos, STRIPPED_BAMBOO_STALK.getDefaultState());
-                    }
-                    return ActionResult.SUCCESS;
-                }
-            }
             ///Cauldron stuff
             //Bamboo dissolving
             if (heldItem.getItem()== Items.BAMBOO_BLOCK){

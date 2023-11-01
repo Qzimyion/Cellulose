@@ -25,8 +25,6 @@ public class CelluloseItemGroups
             content.addAfter(SUSPICIOUS_STEW, POPACORN_BOWL);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> content.addAfter(BAMBOO, STRIPPED_BAMBOO_STALK));
-
         /* This section adds items to building blocks group */
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
