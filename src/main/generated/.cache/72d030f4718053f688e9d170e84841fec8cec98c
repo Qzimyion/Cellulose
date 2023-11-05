@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-19T23:15:58.9381903	Cellulose /Tags for minecraft:block
+// 1.20.1	2023-11-03T03:30:43.5457332	Cellulose /Tags for minecraft:block
 b7c1f1bec421908c763258bc967c54c3bf9e7cdf data\minecraft\tags\blocks\enchantment_power_provider.json
 67c0a657371f6209b1351c72ff3560d687e402ba data\cellulose\tags\blocks\azalea_logs.json
 35a401c7aca235fe93ed396ae06e0bd79758d8a0 data\cellulose\tags\blocks\flowerable.json
@@ -19,7 +19,6 @@ dd6531cf5c87e42e50e61481af41a5f01c7dc512 data\cellulose\tags\blocks\empty_booksh
 91f664750b953c32b06fb8332bfdcc8673223d72 data\minecraft\tags\blocks\wooden_slabs.json
 17ba5006d4a57b6712b46f3c488c6a3b99b72cc4 data\minecraft\tags\blocks\mineable\shovel.json
 f284dae576a40855511c5d1f40f8672250c5635d data\minecraft\tags\blocks\logs_that_burn.json
-4e9b5dccad8270dfc27e40a3d17446307320a065 data\cellulose\tags\blocks\bamboo_ladders_placeable_on.json
 363278e2d956de48e8b135abb7c4f6e3e23f13a4 data\minecraft\tags\blocks\wooden_buttons.json
 1bfee9cfdf4b8741c0a78505a987f55a8705fcf1 data\minecraft\tags\blocks\planks.json
 788ee4cc12e2a2388cab2b95f77894120d697010 data\cellulose\tags\blocks\bookshelves.json
@@ -29,9 +28,7 @@ f284dae576a40855511c5d1f40f8672250c5635d data\minecraft\tags\blocks\logs_that_bu
 19d688adadae3a1bec75caf076fdcc6918628ea8 data\minecraft\tags\blocks\fences.json
 0865a809da6291653308ebde7c8263e60e2b4301 data\cellulose\tags\blocks\chippable_logs.json
 0fa90d4900561256c544212cff82a71b3a46d497 data\cellulose\tags\blocks\cobwebbed_empty_bookshelves.json
-03315420f18343673ee5c8967defdcb67b08f858 data\minecraft\tags\blocks\climbable.json
 6982697e94c615d9a4e824b567692881c22ee4bb data\cellulose\tags\blocks\cobwebbed_bookshelves.json
-2fe89dd90703e314af7da8ee49fb66ac121575f4 data\minecraft\tags\blocks\bamboo_plantable_on.json
 4b979c4420161de682e898f4647ed1de10b6c0f3 data\cellulose\tags\blocks\wooden_mosaics.json
 490179b447a574e93142af481a1d5d65c6989671 data\minecraft\tags\blocks\spruce_logs.json
 aeaa0b1cd0f071288cf80bab8e06dbe8822b235c data\cellulose\tags\blocks\abandoned_bookshelves.json
