@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cellulose:chiseled_bookshelves",
+  "key": {
+    "#": {
+      "tag": "cellulose:oak_planks"
+    },
+    "X": {
+      "item": "minecraft:oak_slab"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "count": 3,
+    "item": "minecraft:chiseled_bookshelf"
+  },
+  "show_notification": true
+}

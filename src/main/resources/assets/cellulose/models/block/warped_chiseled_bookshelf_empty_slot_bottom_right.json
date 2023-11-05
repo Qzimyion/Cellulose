@@ -1,0 +1,6 @@
+{
+  "parent": "cellulose:block/warped_slot_bottom_right",
+  "textures": {
+    "texture": "cellulose:block/warped_chiseled_bookshelf_empty"
+  }
+}

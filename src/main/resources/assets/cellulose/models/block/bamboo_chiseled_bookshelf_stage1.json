@@ -1,0 +1,8 @@
+{
+  "parent": "cellulose:block/template_bamboo_chiseled_bookshelf",
+  "textures": {
+    "front": "cellulose:block/bamboo_chiseled_bookshelf_stage1",
+    "side": "cellulose:block/bamboo_chiseled_bookshelf_side",
+    "top": "cellulose:block/bamboo_chiseled_bookshelf_top"
+  }
+}

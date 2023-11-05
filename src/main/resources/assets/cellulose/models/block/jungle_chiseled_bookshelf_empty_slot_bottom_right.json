@@ -1,0 +1,6 @@
+{
+    "parent": "cellulose:block/bottom_right_slot",
+    "textures": {
+        "texture": "cellulose:block/jungle_chiseled_bookshelf_empty"
+    }
+}

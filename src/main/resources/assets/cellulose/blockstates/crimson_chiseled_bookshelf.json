@@ -1,0 +1,1196 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_1_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_3_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_1_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_3_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_2_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_2_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_1_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_3_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_3_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_2_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_2_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_4_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_2_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_4_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_1_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_1_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_0_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_3_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_5_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_3_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_5_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_1_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_6_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_1_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_6_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_2_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_7_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_2_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_7_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_3_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_8_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_3_slot",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_8_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_1_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_3_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_1_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_3_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_2_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_2_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_1_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_3_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_3_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_2_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_2_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_4_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_2_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_4_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_1_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_1_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_0_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_3_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_5_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_3_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_5_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_1_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_6_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_1_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_6_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_2_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_7_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_2_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_7_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_3_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_8_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_3_slot",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_8_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_1_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_3_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_1_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_3_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_2_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_2_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_1_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_3_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_3_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_2_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_2_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_4_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_2_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_4_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_1_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_1_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_0_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_3_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_5_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_3_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_5_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_1_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_6_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_1_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_6_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_2_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_7_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_2_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_7_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_3_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_8_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_3_slot",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_8_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf",
+        "uvlock": true,
+        "y": 0
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_1_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_3_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_1_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_3_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_2_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_2_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_1_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_3_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_3_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_2_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_2_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_4_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_2_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_4_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_3_1_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_3_1_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_0_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_2_3_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_5_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_2_3_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_5_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_1_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_6_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_1_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_6_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_2_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_7_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_2_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_7_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_empty_1_3_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_8_occupied": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/crimson_chiseled_bookshelf_occupied_1_3_slot",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_8_occupied": "true"
+          }
+        ]
+      }
+    }
+  ]
+}

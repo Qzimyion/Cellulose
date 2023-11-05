@@ -1,0 +1,6 @@
+{
+  "parent": "cellulose:block/3-3_slot",
+  "textures": {
+    "texture": "cellulose:block/crimson_chiseled_bookshelf_occupied"
+  }
+}

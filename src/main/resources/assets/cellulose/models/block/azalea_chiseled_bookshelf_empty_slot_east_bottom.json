@@ -1,0 +1,6 @@
+{
+    "parent": "cellulose:block/vertical_east_bottom",
+    "textures": {
+        "texture": "cellulose:block/azalea_chiseled_bookshelf_empty"
+    }
+}

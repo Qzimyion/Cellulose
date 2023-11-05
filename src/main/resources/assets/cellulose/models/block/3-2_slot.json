@@ -1,0 +1,14 @@
+{
+	"textures": {
+	},
+	"elements": [
+		{
+			"from": [5, 0, 0],
+			"to": [11, 6, 0],
+			"color": 7,
+			"faces": {
+				"north": {"uv": [5, 10, 11, 16], "texture": "#texture", "cullface": "north"}
+			}
+		}
+	]
+}
