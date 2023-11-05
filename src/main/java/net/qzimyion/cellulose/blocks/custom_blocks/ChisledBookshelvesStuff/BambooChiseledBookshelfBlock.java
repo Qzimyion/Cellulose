@@ -16,11 +16,15 @@ import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec2f;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import net.qzimyion.cellulose.blocks.ModBlockProperties;
 import net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves.BambooChiseledBookshelfBlockEntity;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 @SuppressWarnings("deprecation")
 public class BambooChiseledBookshelfBlock extends BlockWithEntity {
@@ -41,7 +45,10 @@ public class BambooChiseledBookshelfBlock extends BlockWithEntity {
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (!(blockEntity instanceof BambooChiseledBookshelfBlockEntity)){
             return ActionResult.PASS;
-
+        }
+        Optional<Vec2f> optional = getHitPos(hit, state.get(HorizontalFacingBlock.FACING));
+        if (optional.isEmpty()) {
+            return ActionResult.PASS;
         }
         if (world.isClient){
             return ActionResult.SUCCESS;
@@ -103,6 +110,25 @@ public class BambooChiseledBookshelfBlock extends BlockWithEntity {
             world.updateComparators(pos, this);
         }
         super.onStateReplaced(state, world, pos, newState, moved);
+    }
+
+    public static Optional<Vec2f> getHitPos(BlockHitResult hit, Direction facing) {
+        Direction direction = hit.getSide();
+        if (facing != direction) {
+            return Optional.empty();
+        }
+        BlockPos blockPos = hit.getBlockPos().offset(direction);
+        Vec3d vec3d = hit.getPos().subtract(blockPos.getX(), blockPos.getY(), blockPos.getZ());
+        double x = vec3d.getX();
+        double y = vec3d.getY();
+        double z = vec3d.getZ();
+        return switch (direction) {
+            case NORTH -> Optional.of(new Vec2f((float)(1 - x), (float)y));
+            case SOUTH -> Optional.of(new Vec2f((float)x, (float)y));
+            case WEST -> Optional.of(new Vec2f((float)z, (float)y));
+            case EAST -> Optional.of(new Vec2f((float)(1 - z), (float)y));
+            case DOWN, UP -> Optional.empty();
+        };
     }
 
     @Override

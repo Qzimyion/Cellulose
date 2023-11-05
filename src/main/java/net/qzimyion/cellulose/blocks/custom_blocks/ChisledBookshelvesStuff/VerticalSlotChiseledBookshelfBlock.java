@@ -66,7 +66,7 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
     }
 
     private static int getSlotForHitPos(Vec2f hitPos) {
-        int i = hitPos.x >= 0.5f ? 0 : 1;
+        int i = hitPos.x >= 0.5f ? 1 : 0;
         int j = getRow(hitPos.y);
         return j + i * 3;
     }
@@ -93,7 +93,7 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
         if (!(blockEntity instanceof ChiseledBookshelfBlockEntity chiseledBookshelfBlockEntity)) {
             return ActionResult.PASS;
         }
-        Optional<Vec2f> optional = VerticalSlotChiseledBookshelfBlock.getHitPos(hit, state.get(HorizontalFacingBlock.FACING));
+        Optional<Vec2f> optional = getHitPos(hit, state.get(HorizontalFacingBlock.FACING));
         if (optional.isEmpty()) {
             return ActionResult.PASS;
         }
