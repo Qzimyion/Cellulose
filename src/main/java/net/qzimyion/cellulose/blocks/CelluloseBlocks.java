@@ -12,7 +12,6 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.custom_blocks.*;
-import net.qzimyion.cellulose.blocks.custom_blocks.BarricadeBlock.BarricadeBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.DissolvedBambooCauldronBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.PaperMeshBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.CauldronStuff.PaperMeshCauldronBlock;
@@ -20,8 +19,8 @@ import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.*;
 import net.qzimyion.cellulose.blocks.custom_blocks.SawdustStuff.SawdustLayerBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.celluloseLeaves.PaloVerde.FloweringPaloVerdeLeafBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.celluloseLeaves.PaloVerde.PaloVerdeLeafBlock;
-import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.PaperBlock;
-import net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks.SoakedPaperBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.PaperBlocks.PaperBlock;
+import net.qzimyion.cellulose.blocks.custom_blocks.PaperBlocks.SoakedPaperBlock;
 import net.qzimyion.cellulose.blocks.custom_blocks.sticky_blocks.StickyBookshelfBlock;
 
 import static net.minecraft.block.Blocks.*;
@@ -178,20 +177,20 @@ public class CelluloseBlocks
 
 
     //This section adds Barricades (Plank)
-    public static final Block OAK_PLANK_BARRICADES = registerBlock("oak_plank_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
-    public static final Block BIRCH_PLANK_BARRICADES = registerBlock("birch_plank_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.PALE_YELLOW)));
-    public static final Block SPRUCE_PLANK_BARRICADES = registerBlock("spruce_plank_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.SPRUCE_BROWN)));
-    public static final Block DARK_OAK_PLANK_BARRICADES = registerBlock("dark_oak_plank_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.BROWN)));
-    public static final Block JUNGLE_PLANK_BARRICADES = registerBlock("jungle_plank_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.DIRT_BROWN)));
-    public static final Block ACACIA_PLANK_BARRICADES = registerBlock("acacia_plank_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.ORANGE)));
-    public static final Block CRIMSON_PLANK_BARRICADES = registerBlock("crimson_plank_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.DULL_PINK).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.NETHER_WOOD)));
-    public static final Block WARPED_PLANK_BARRICADES = registerBlock("warped_plank_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.DARK_AQUA).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.NETHER_WOOD)));
-    public static final Block MANGROVE_PLANK_BARRICADES = registerBlock("mangrove_plank_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.RED).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
-    public static final Block BAMBOO_PLANK_BARRICADES = registerBlock("bamboo_plank_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.YELLOW).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.BAMBOO_WOOD).burnable()));
-    public static final Block CHERRY_PLANK_BARRICADES = registerBlock("cherry_plank_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
-    public static final Block CACTUS_PLANK_BARRICADES = registerBlock("cactus_plank_barricade", new BarricadeBlock(FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.NETHER_WART).burnable()));
-    public static final Block AZALEA_PLANK_BARRICADES = registerBlock("azalea_plank_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_BARRICADES)));
-    public static final Block BLOOMING_AZALEA_PLANK_BARRICADES = registerBlock("blooming_azalea_plank_barricade", new BarricadeBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_BARRICADES)));
+    public static final Block OAK_PLANK_BARRICADES = registerBlock("oak_plank_barricade", new WallBlock(FabricBlockSettings.create().mapColor(MapColor.OAK_TAN).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
+    public static final Block BIRCH_PLANK_BARRICADES = registerBlock("birch_plank_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block SPRUCE_PLANK_BARRICADES = registerBlock("spruce_plank_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.SPRUCE_BROWN)));
+    public static final Block DARK_OAK_PLANK_BARRICADES = registerBlock("dark_oak_plank_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.BROWN)));
+    public static final Block JUNGLE_PLANK_BARRICADES = registerBlock("jungle_plank_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.DIRT_BROWN)));
+    public static final Block ACACIA_PLANK_BARRICADES = registerBlock("acacia_plank_barricade", new WallBlock(FabricBlockSettings.copyOf(OAK_PLANK_BARRICADES).mapColor(MapColor.ORANGE)));
+    public static final Block CRIMSON_PLANK_BARRICADES = registerBlock("crimson_plank_barricade", new WallBlock(FabricBlockSettings.create().mapColor(MapColor.DULL_PINK).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block WARPED_PLANK_BARRICADES = registerBlock("warped_plank_barricade", new WallBlock(FabricBlockSettings.create().mapColor(MapColor.DARK_AQUA).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block MANGROVE_PLANK_BARRICADES = registerBlock("mangrove_plank_barricade", new WallBlock(FabricBlockSettings.create().mapColor(MapColor.RED).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
+    public static final Block BAMBOO_PLANK_BARRICADES = registerBlock("bamboo_plank_barricade", new WallBlock(FabricBlockSettings.create().mapColor(MapColor.YELLOW).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.BAMBOO_WOOD).burnable()));
+    public static final Block CHERRY_PLANK_BARRICADES = registerBlock("cherry_plank_barricade", new WallBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
+    public static final Block CACTUS_PLANK_BARRICADES = registerBlock("cactus_plank_barricade", new WallBlock(FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).instrument(Instrument.BASS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.NETHER_WART).burnable()));
+    public static final Block AZALEA_PLANK_BARRICADES = registerBlock("azalea_plank_barricade", new WallBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_BARRICADES)));
+    public static final Block BLOOMING_AZALEA_PLANK_BARRICADES = registerBlock("blooming_azalea_plank_barricade", new WallBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_BARRICADES)));
 
 
     /// This section adds bookshelf variants
