@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.blocks.custom_blocks.paper_blocks;
+package net.qzimyion.cellulose.blocks.custom_blocks.PaperBlocks;
 
 import net.minecraft.block.*;
 import net.minecraft.particle.ParticleTypes;
