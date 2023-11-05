@@ -20,7 +20,7 @@ public class PostBlock extends ConnectingBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
     public PostBlock(Settings settings) {
-        super(0.3125F,settings);
+        super(0.2495F,settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(NORTH, false).with(EAST, false).with(SOUTH, false).with(WEST, false).with(UP, false).with(DOWN, false).with(WATERLOGGED, false));
     }
 
