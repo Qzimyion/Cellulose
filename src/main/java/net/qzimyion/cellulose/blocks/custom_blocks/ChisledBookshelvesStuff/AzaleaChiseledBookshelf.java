@@ -92,10 +92,10 @@ public class AzaleaChiseledBookshelf extends BlockWithEntity {
     }
 
     public static int getSlotForHitPos(Vec2f hitPos) {
-        if (hitPos.x <= 0.5) {
+        if (hitPos.x >= 0.5) {
             return (int) Math.floor(hitPos.y * 3);
         } else {
-            return hitPos.y >= 0.5 ? 3 : 4;
+            return hitPos.y <= 0.5 ? 3 : 4;
         }
     }
 
