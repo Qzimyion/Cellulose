@@ -30,6 +30,20 @@
     "cellulose:cherry_mosaic_slab",
     "cellulose:cactus_mosaic_slab",
     "cellulose:azalea_mosaic_slab",
-    "cellulose:blooming_azalea_mosaic_slab"
+    "cellulose:blooming_azalea_mosaic_slab",
+    "cellulose:oak_tiles_slab",
+    "cellulose:birch_tiles_slab",
+    "cellulose:spruce_tiles_slab",
+    "cellulose:dark_oak_tiles_slab",
+    "cellulose:jungle_tiles_slab",
+    "cellulose:acacia_tiles_slab",
+    "cellulose:crimson_tiles_slab",
+    "cellulose:warped_tiles_slab",
+    "cellulose:mangrove_tiles_slab",
+    "cellulose:bamboo_tiles_slab",
+    "cellulose:cherry_tiles_slab",
+    "cellulose:cactus_tiles_slab",
+    "cellulose:azalea_tiles_slab",
+    "cellulose:blooming_azalea_tiles_slab"
   ]
 }

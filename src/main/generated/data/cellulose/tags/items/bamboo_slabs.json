@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:bamboo_slab",
+    "cellulose:vertical_bamboo_slab",
+    "cellulose:chipped_bamboo_slab"
+  ]
+}

@@ -14,9 +14,9 @@ import net.qzimyion.cellulose.Cellulose;
 
 public class CelluloseBoats {
 
-    /*
-    Note: If you want to copy this code for your project please remember to add Terraform Wood API
-    to your Build.Gradlew file first otherwise it won't work.
+    /**
+    *Note: If you want to copy this code for your project please remember to add Terraform Wood API
+    *to your Build.Gradlew file first otherwise it won't work.
     */
 
 

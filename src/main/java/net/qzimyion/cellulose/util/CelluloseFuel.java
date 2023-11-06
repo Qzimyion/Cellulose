@@ -15,8 +15,8 @@ public class CelluloseFuel
 
         registry.add(PLANKS, 300);
         registry.add(WOODEN_MOSAICS, 300);
-        registry.add(WOODEN_MOSAICS_SLABS, 300);
-        registry.add(WOODEN_MOSAICS_STAIRS, 300);
+        registry.add(WOODEN_SLABS, 300);
+        registry.add(WOODEN_STAIRS, 300);
         registry.add(WOODEN_FRAMES, 300);
         registry.add(LINTELS, 150);
         registry.add(CHIPPED_PLANKS, 300);

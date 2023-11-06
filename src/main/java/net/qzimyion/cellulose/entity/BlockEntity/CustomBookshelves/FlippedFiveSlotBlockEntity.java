@@ -13,7 +13,7 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.qzimyion.cellulose.blocks.custom_blocks.ChisledBookshelvesStuff.FlippedFiveSlotChiseledBookshelf;
+import net.qzimyion.cellulose.blocks.customBlocks.ChisledBookshelvesStuff.FlippedFiveSlotChiseledBookshelf;
 import net.qzimyion.cellulose.entity.CelluloseEntities;
 import org.slf4j.Logger;
 

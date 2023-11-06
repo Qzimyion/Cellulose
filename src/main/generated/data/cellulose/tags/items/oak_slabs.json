@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:oak_slab",
+    "cellulose:vertical_oak_slab",
+    "cellulose:chipped_oak_slab",
+    "cellulose:chipped_vertical_oak_slab"
+  ]
+}

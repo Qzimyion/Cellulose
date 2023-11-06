@@ -8,14 +8,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
-import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 import net.qzimyion.cellulose.items.custom_items.AcornItem;
-import net.qzimyion.cellulose.items.custom_items.bamboo_ladders.FreshBambooLadderItem;
 import net.qzimyion.cellulose.items.custom_items.popacorn_bowls.PopacornBowlHalfItem;
 import net.qzimyion.cellulose.items.custom_items.popacorn_bowls.PopacornBowlItem;
 import net.qzimyion.cellulose.items.custom_items.popacorn_bowls.PopacornBowlQuaterItem;
 
-import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
+import static net.qzimyion.cellulose.blocks.CelluloseBlocks.PAPER_MESH_BLOCK;
 
 public class CelluloseItems
 {

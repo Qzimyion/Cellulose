@@ -202,18 +202,18 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         addDrop(CHERRY_TILES_STAIRS);
         addDrop(CACTUS_TILES_STAIRS);
         /*Boards*/
-        addDrop(OAK_BOARDS_STAIRS);
-        addDrop(BIRCH_BOARDS_STAIRS);
-        addDrop(SPRUCE_BOARDS_STAIRS);
-        addDrop(DARK_OAK_BOARDS_STAIRS);
-        addDrop(JUNGLE_BOARDS_STAIRS);
-        addDrop(ACACIA_BOARDS_STAIRS);
-        addDrop(CRIMSON_BOARDS_STAIRS);
-        addDrop(WARPED_BOARDS_STAIRS);
-        addDrop(MANGROVE_BOARDS_STAIRS);
-        addDrop(BAMBOO_BOARDS_STAIRS);
-        addDrop(CHERRY_BOARDS_STAIRS);
-        addDrop(CACTUS_BOARDS_STAIRS);
+        addDrop(OAK_TIMBERS_STAIRS);
+        addDrop(BIRCH_TIMBERS_STAIRS);
+        addDrop(SPRUCE_TIMBERS_STAIRS);
+        addDrop(DARK_OAK_TIMBERS_STAIRS);
+        addDrop(JUNGLE_TIMBERS_STAIRS);
+        addDrop(ACACIA_TIMBERS_STAIRS);
+        addDrop(CRIMSON_TIMBERS_STAIRS);
+        addDrop(WARPED_TIMBERS_STAIRS);
+        addDrop(MANGROVE_TIMBERS_STAIRS);
+        addDrop(BAMBOO_TIMBERS_STAIRS);
+        addDrop(CHERRY_TIMBERS_STAIRS);
+        addDrop(CACTUS_TIMBERS_STAIRS);
         /*Glazed*/
         addDrop(GLAZED_OAK_STAIRS);
         addDrop(GLAZED_BIRCH_STAIRS);
@@ -257,18 +257,18 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         addDrop(CHERRY_TILES_SLABS, slabDrops(CHERRY_TILES_SLABS));
         addDrop(CACTUS_TILES_SLABS, slabDrops(CACTUS_TILES_SLABS));
         /*Boards*/
-        addDrop(OAK_BOARDS_SLABS, slabDrops(OAK_BOARDS_SLABS));
-        addDrop(BIRCH_BOARDS_SLABS, slabDrops(BIRCH_BOARDS_SLABS));
-        addDrop(SPRUCE_BOARDS_SLABS, slabDrops(SPRUCE_BOARDS_SLABS));
-        addDrop(DARK_OAK_BOARDS_SLABS, slabDrops(DARK_OAK_BOARDS_SLABS));
-        addDrop(JUNGLE_BOARDS_SLABS, slabDrops(JUNGLE_BOARDS_SLABS));
-        addDrop(ACACIA_BOARDS_SLABS, slabDrops(ACACIA_BOARDS_SLABS));
-        addDrop(CRIMSON_BOARDS_SLABS, slabDrops(CRIMSON_BOARDS_SLABS));
-        addDrop(WARPED_BOARDS_SLABS, slabDrops(WARPED_BOARDS_SLABS));
-        addDrop(MANGROVE_BOARDS_SLABS, slabDrops(MANGROVE_BOARDS_SLABS));
-        addDrop(BAMBOO_BOARDS_SLABS, slabDrops(BAMBOO_BOARDS_SLABS));
-        addDrop(CHERRY_BOARDS_SLABS, slabDrops(CHERRY_BOARDS_SLABS));
-        addDrop(CACTUS_BOARDS_SLABS, slabDrops(CACTUS_BOARDS_SLABS));
+        addDrop(OAK_TIMBERS_SLABS, slabDrops(OAK_TIMBERS_SLABS));
+        addDrop(BIRCH_TIMBERS_SLABS, slabDrops(BIRCH_TIMBERS_SLABS));
+        addDrop(SPRUCE_TIMBERS_SLABS, slabDrops(SPRUCE_TIMBERS_SLABS));
+        addDrop(DARK_OAK_TIMBERS_SLABS, slabDrops(DARK_OAK_TIMBERS_SLABS));
+        addDrop(JUNGLE_TIMBERS_SLABS, slabDrops(JUNGLE_TIMBERS_SLABS));
+        addDrop(ACACIA_TIMBERS_SLABS, slabDrops(ACACIA_TIMBERS_SLABS));
+        addDrop(CRIMSON_TIMBERS_SLABS, slabDrops(CRIMSON_TIMBERS_SLABS));
+        addDrop(WARPED_TIMBERS_SLABS, slabDrops(WARPED_TIMBERS_SLABS));
+        addDrop(MANGROVE_TIMBERS_SLABS, slabDrops(MANGROVE_TIMBERS_SLABS));
+        addDrop(BAMBOO_TIMBERS_SLABS, slabDrops(BAMBOO_TIMBERS_SLABS));
+        addDrop(CHERRY_TIMBERS_SLABS, slabDrops(CHERRY_TIMBERS_SLABS));
+        addDrop(CACTUS_TIMBERS_SLABS, slabDrops(CACTUS_TIMBERS_SLABS));
         /*Glazed*/
         addDrop(GLAZED_OAK_SLABS, slabDrops(GLAZED_OAK_SLABS));
         addDrop(GLAZED_BIRCH_SLABS, slabDrops(GLAZED_BIRCH_SLABS));

@@ -3,7 +3,7 @@ package net.qzimyion.cellulose.entity.BlockEntity;
 import com.mojang.logging.LogUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.qzimyion.cellulose.blocks.custom_blocks.PotionRackBlock;
+import net.qzimyion.cellulose.blocks.customBlocks.PotionRackBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;

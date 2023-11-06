@@ -7,7 +7,7 @@
       "tag": "cellulose:birch_planks"
     },
     "X": {
-      "item": "minecraft:birch_slab"
+      "tag": "cellulose:birch_slabs"
     }
   },
   "pattern": [

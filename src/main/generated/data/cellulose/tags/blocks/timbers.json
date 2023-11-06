@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_timbers",
+    "cellulose:birch_timbers",
+    "cellulose:spruce_timbers",
+    "cellulose:dark_oak_timbers",
+    "cellulose:jungle_timbers",
+    "cellulose:acacia_timbers",
+    "cellulose:crimson_timbers",
+    "cellulose:warped_timbers",
+    "cellulose:mangrove_timbers",
+    "cellulose:bamboo_timbers",
+    "cellulose:cherry_timbers",
+    "cellulose:cactus_timbers",
+    "cellulose:azalea_timbers",
+    "cellulose:blooming_azalea_timbers"
+  ]
+}

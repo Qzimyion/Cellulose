@@ -63,7 +63,26 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(VERTICAL_CHERRY_SLAB))
                 .add(Item.fromBlock(VERTICAL_CACTUS_SLAB))
                 .add(Item.fromBlock(VERTICAL_AZALEA_SLAB))
-                .add(Item.fromBlock(VERTICAL_BLOOMING_AZALEA_SLAB));
+                .add(Item.fromBlock(VERTICAL_BLOOMING_AZALEA_SLAB))
+
+                //Mosaic
+                .add(Item.fromBlock(OAK_MOSAIC_SLABS))
+                .add(Item.fromBlock(BIRCH_MOSAIC_SLABS))
+                .add(Item.fromBlock(SPRUCE_MOSAIC_SLABS))
+                .add(Item.fromBlock(DARK_OAK_MOSAIC_SLABS))
+                .add(Item.fromBlock(JUNGLE_MOSAIC_SLABS))
+                .add(Item.fromBlock(ACACIA_MOSAIC_SLABS))
+                .add(Item.fromBlock(CRIMSON_MOSAIC_SLABS))
+                .add(Item.fromBlock(WARPED_MOSAIC_SLABS))
+                .add(Item.fromBlock(MANGROVE_MOSAIC_SLABS))
+                .add(Items.BAMBOO_MOSAIC_SLAB)
+                .add(Item.fromBlock(CHERRY_MOSAIC_SLABS))
+                .add(Item.fromBlock(CACTUS_MOSAIC_SLABS))
+                .add(Item.fromBlock(AZALEA_MOSAIC_SLABS))
+                .add(Item.fromBlock(BLOOMING_AZALEA_MOSAIC_SLABS))
+
+                //Tiles
+        ;
 
         getOrCreateTagBuilder(WOODEN_STAIRS)
                 .add(Item.fromBlock(BLOOMING_AZALEA_STAIRS))
@@ -82,7 +101,24 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(VERTICAL_CHERRY_STAIR))
                 .add(Item.fromBlock(VERTICAL_CACTUS_STAIR))
                 .add(Item.fromBlock(VERTICAL_AZALEA_STAIR))
-                .add(Item.fromBlock(VERTICAL_BLOOMING_AZALEA_STAIR));
+                .add(Item.fromBlock(VERTICAL_BLOOMING_AZALEA_STAIR))
+
+                //Mosaic
+                .add(Item.fromBlock(OAK_MOSAIC_STAIRS))
+                .add(Item.fromBlock(BIRCH_MOSAIC_STAIRS))
+                .add(Item.fromBlock(SPRUCE_MOSAIC_STAIRS))
+                .add(Item.fromBlock(DARK_OAK_MOSAIC_STAIRS))
+                .add(Item.fromBlock(JUNGLE_MOSAIC_STAIRS))
+                .add(Item.fromBlock(ACACIA_MOSAIC_STAIRS))
+                .add(Item.fromBlock(CRIMSON_MOSAIC_STAIRS))
+                .add(Item.fromBlock(WARPED_MOSAIC_STAIRS))
+                .add(Item.fromBlock(MANGROVE_MOSAIC_STAIRS))
+                .add(Items.BAMBOO_MOSAIC_STAIRS)
+                .add(Item.fromBlock(CHERRY_MOSAIC_STAIRS))
+                .add(Item.fromBlock(CACTUS_MOSAIC_STAIRS))
+                .add(Item.fromBlock(AZALEA_MOSAIC_STAIRS))
+                .add(Item.fromBlock(BLOOMING_AZALEA_MOSAIC_STAIRS))
+        ;
 
         getOrCreateTagBuilder(WOODEN_FENCES)
                 .add(Item.fromBlock(AZALEA_FENCE))
@@ -218,38 +254,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(AZALEA_MOSAIC))
                 .add(Item.fromBlock(BLOOMING_AZALEA_MOSAIC));
 
-        getOrCreateTagBuilder(CelluloseTags.Items.WOODEN_MOSAICS_SLABS)
-                .add(Item.fromBlock(OAK_MOSAIC_SLABS))
-                .add(Item.fromBlock(BIRCH_MOSAIC_SLABS))
-                .add(Item.fromBlock(SPRUCE_MOSAIC_SLABS))
-                .add(Item.fromBlock(DARK_OAK_MOSAIC_SLABS))
-                .add(Item.fromBlock(JUNGLE_MOSAIC_SLABS))
-                .add(Item.fromBlock(ACACIA_MOSAIC_SLABS))
-                .add(Item.fromBlock(CRIMSON_MOSAIC_SLABS))
-                .add(Item.fromBlock(WARPED_MOSAIC_SLABS))
-                .add(Item.fromBlock(MANGROVE_MOSAIC_SLABS))
-                .add(Items.BAMBOO_MOSAIC_SLAB)
-                .add(Item.fromBlock(CHERRY_MOSAIC_SLABS))
-                .add(Item.fromBlock(CACTUS_MOSAIC_SLABS))
-                .add(Item.fromBlock(AZALEA_MOSAIC_SLABS))
-                .add(Item.fromBlock(BLOOMING_AZALEA_MOSAIC_SLABS));
-
-        getOrCreateTagBuilder(CelluloseTags.Items.WOODEN_MOSAICS_STAIRS)
-                .add(Item.fromBlock(OAK_MOSAIC_STAIRS))
-                .add(Item.fromBlock(BIRCH_MOSAIC_STAIRS))
-                .add(Item.fromBlock(SPRUCE_MOSAIC_STAIRS))
-                .add(Item.fromBlock(DARK_OAK_MOSAIC_STAIRS))
-                .add(Item.fromBlock(JUNGLE_MOSAIC_STAIRS))
-                .add(Item.fromBlock(ACACIA_MOSAIC_STAIRS))
-                .add(Item.fromBlock(CRIMSON_MOSAIC_STAIRS))
-                .add(Item.fromBlock(WARPED_MOSAIC_STAIRS))
-                .add(Item.fromBlock(MANGROVE_MOSAIC_STAIRS))
-                .add(Items.BAMBOO_MOSAIC_STAIRS)
-                .add(Item.fromBlock(CHERRY_MOSAIC_STAIRS))
-                .add(Item.fromBlock(CACTUS_MOSAIC_STAIRS))
-                .add(Item.fromBlock(AZALEA_MOSAIC_STAIRS))
-                .add(Item.fromBlock(BLOOMING_AZALEA_MOSAIC_STAIRS));
-
         //Food
         getOrCreateTagBuilder(CelluloseTags.Items.ACORNS)
                 .add(ACORN);
@@ -350,7 +354,8 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
         getOrCreateTagBuilder(CelluloseTags.Items.OAK_PLANKS)
                 .add(Items.OAK_PLANKS)
                 .add(Item.fromBlock(VERTICAL_OAK_PLANKS))
-                .add(Item.fromBlock(CHIPPED_OAK_PLANKS));
+                .add(Item.fromBlock(CHIPPED_OAK_PLANKS))
+                .add(Item.fromBlock(CHIPPED_VERTICAL_OAK_PLANKS));
 
         getOrCreateTagBuilder(CelluloseTags.Items.BIRCH_PLANKS)
                 .add(Items.BIRCH_PLANKS)
@@ -416,6 +421,79 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(BLOOMING_AZALEA_PLANKS))
                 .add(Item.fromBlock(VERTICAL_BLOOMING_AZALEA_PLANKS))
                 .add(Item.fromBlock(CHIPPED_BLOOMING_AZALEA_PLANKS));
+
+        //Wooden Slab Tags
+        getOrCreateTagBuilder(CelluloseTags.Items.OAK_SLABS)
+                .add(Items.OAK_SLAB)
+                .add(Item.fromBlock(VERTICAL_OAK_SLAB))
+                .add(Item.fromBlock(CHIPPED_OAK_SLAB))
+                .add(Item.fromBlock(CHIPPED_VERTICAL_OAK_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.BIRCH_SLABS)
+                .add(Items.BIRCH_SLAB)
+                .add(Item.fromBlock(VERTICAL_BIRCH_SLAB))
+                .add(Item.fromBlock(CHIPPED_BIRCH_SLAB));
+        getOrCreateTagBuilder(CelluloseTags.Items.SPRUCE_SLABS)
+                .add(Items.SPRUCE_SLAB)
+                .add(Item.fromBlock(VERTICAL_SPRUCE_SLAB))
+                .add(Item.fromBlock(CHIPPED_SPRUCE_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.DARK_OAK_SLABS)
+                .add(Items.DARK_OAK_SLAB)
+                .add(Item.fromBlock(VERTICAL_DARK_OAK_SLAB))
+                .add(Item.fromBlock(CHIPPED_DARK_OAK_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.JUNGLE_SLABS)
+                .add(Items.JUNGLE_SLAB)
+                .add(Item.fromBlock(VERTICAL_JUNGLE_SLAB))
+                .add(Item.fromBlock(CHIPPED_JUNGLE_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.ACACIA_SLABS)
+                .add(Items.ACACIA_SLAB)
+                .add(Item.fromBlock(VERTICAL_ACACIA_SLAB))
+                .add(Item.fromBlock(CHIPPED_ACACIA_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.CRIMSON_SLABS)
+                .add(Items.CRIMSON_SLAB)
+                .add(Item.fromBlock(VERTICAL_CRIMSON_SLAB))
+                .add(Item.fromBlock(CHIPPED_CRIMSON_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.WARPED_SLABS)
+                .add(Items.WARPED_SLAB)
+                .add(Item.fromBlock(VERTICAL_WARPED_SLAB))
+                .add(Item.fromBlock(CHIPPED_WARPED_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.MANGROVE_SLABS)
+                .add(Items.MANGROVE_SLAB)
+                .add(Item.fromBlock(VERTICAL_MANGROVE_SLAB))
+                .add(Item.fromBlock(CHIPPED_MANGROVE_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.BAMBOO_SLABS)
+                .add(Items.BAMBOO_SLAB)
+                .add(Item.fromBlock(VERTICAL_BAMBOO_SLAB))
+                .add(Item.fromBlock(CHIPPED_BAMBOO_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.CHERRY_SLABS)
+                .add(Items.CHERRY_SLAB)
+                .add(Item.fromBlock(VERTICAL_CHERRY_SLAB))
+                .add(Item.fromBlock(CHIPPED_CHERRY_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.CACTUS_SLABS)
+                .add(Item.fromBlock(CACTUS_SLAB))
+                .add(Item.fromBlock(VERTICAL_CACTUS_SLAB))
+                .add(Item.fromBlock(CHIPPED_CACTUS_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.AZALEA_SLABS)
+                .add(Item.fromBlock(AZALEA_SLAB))
+                .add(Item.fromBlock(VERTICAL_AZALEA_SLAB))
+                .add(Item.fromBlock(CHIPPED_AZALEA_SLAB));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.BLOOMING_AZALEA_SLABS)
+                .add(Item.fromBlock(BLOOMING_AZALEA_SLAB))
+                .add(Item.fromBlock(VERTICAL_BLOOMING_AZALEA_SLAB))
+                .add(Item.fromBlock(CHIPPED_BLOOMING_AZALEA_SLAB));
+
+        //
 
         getOrCreateTagBuilder(CelluloseTags.Items.POTION_RACK_POTIONS)
                 .add(Items.GLASS_BOTTLE)

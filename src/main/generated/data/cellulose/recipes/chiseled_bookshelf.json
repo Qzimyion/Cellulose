@@ -7,7 +7,7 @@
       "tag": "cellulose:oak_planks"
     },
     "X": {
-      "item": "minecraft:oak_slab"
+      "tag": "cellulose:oak_slabs"
     }
   },
   "pattern": [

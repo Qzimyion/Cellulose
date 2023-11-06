@@ -15,6 +15,8 @@ public class CelluloseModelProvider extends FabricModelProvider {
         super(output);
     }
 
+    //Custom models
+
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
@@ -121,7 +123,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.LogTexturePool ChippedBamboo = blockStateModelGenerator.registerLog(CHIPPED_BAMBOO_BLOCK);
         BlockStateModelGenerator.LogTexturePool ChippedStrippedBamboo = blockStateModelGenerator.registerLog(CHIPPED_STRIPPED_BAMBOO_BLOCK);
         BlockStateModelGenerator.LogTexturePool ChippedCherry = blockStateModelGenerator.registerLog(CHIPPED_CHERRY);
-        BlockStateModelGenerator.LogTexturePool ChippedCactus = blockStateModelGenerator.registerLog(CHIPPED_CACTUS);
         BlockStateModelGenerator.LogTexturePool ChippedAzalea = blockStateModelGenerator.registerLog(CHIPPED_AZALEA);
 
         BlockStateModelGenerator.LogTexturePool StrippedChippedOak = blockStateModelGenerator.registerLog(STRIPPED_CHIPPED_OAK);
@@ -134,7 +135,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.LogTexturePool StrippedChippedWarped = blockStateModelGenerator.registerLog(STRIPPED_CHIPPED_WARPED);
         BlockStateModelGenerator.LogTexturePool StrippedChippedMangrove = blockStateModelGenerator.registerLog(STRIPPED_CHIPPED_MANGROVE);
         BlockStateModelGenerator.LogTexturePool StrippedChippedCherry = blockStateModelGenerator.registerLog(STRIPPED_CHIPPED_CHERRY);
-        BlockStateModelGenerator.LogTexturePool StrippedChippedCactus = blockStateModelGenerator.registerLog(STRIPPED_CHIPPED_CACTUS);
         BlockStateModelGenerator.LogTexturePool StrippedChippedAzalea = blockStateModelGenerator.registerLog(STRIPPED_CHIPPED_AZALEA);
 
 
@@ -321,17 +321,17 @@ public class CelluloseModelProvider extends FabricModelProvider {
         TilesBamboo.slab(BAMBOO_TILES_SLABS).stairs(BAMBOO_TILES_STAIRS);
         TilesCherry.slab(CHERRY_TILES_SLABS).stairs(CHERRY_TILES_STAIRS);
 
-        BoardsOak.slab(OAK_BOARDS_SLABS).stairs(OAK_BOARDS_STAIRS);
-        BoardsBirch.slab(BIRCH_BOARDS_SLABS).stairs(BIRCH_BOARDS_STAIRS);
-        BoardsSpruce.slab(SPRUCE_BOARDS_SLABS).stairs(SPRUCE_BOARDS_STAIRS);
-        BoardsDarkOak.slab(DARK_OAK_BOARDS_SLABS).stairs(DARK_OAK_BOARDS_STAIRS);
-        BoardsJungle.slab(JUNGLE_BOARDS_SLABS).stairs(JUNGLE_BOARDS_STAIRS);
-        BoardsAcacia.slab(ACACIA_BOARDS_SLABS).stairs(ACACIA_BOARDS_STAIRS);
-        BoardsCrimson.slab(CRIMSON_BOARDS_SLABS).stairs(CRIMSON_BOARDS_STAIRS);
-        BoardsWarped.slab(WARPED_BOARDS_SLABS).stairs(WARPED_BOARDS_STAIRS);
-        BoardsMangrove.slab(MANGROVE_BOARDS_SLABS).stairs(MANGROVE_BOARDS_STAIRS);
-        BoardsBamboo.slab(BAMBOO_BOARDS_SLABS).stairs(BAMBOO_BOARDS_STAIRS);
-        BoardsCherry.slab(CHERRY_BOARDS_SLABS).stairs(CHERRY_BOARDS_STAIRS);
+        BoardsOak.slab(OAK_TIMBERS_SLABS).stairs(OAK_TIMBERS_STAIRS);
+        BoardsBirch.slab(BIRCH_TIMBERS_SLABS).stairs(BIRCH_TIMBERS_STAIRS);
+        BoardsSpruce.slab(SPRUCE_TIMBERS_SLABS).stairs(SPRUCE_TIMBERS_STAIRS);
+        BoardsDarkOak.slab(DARK_OAK_TIMBERS_SLABS).stairs(DARK_OAK_TIMBERS_STAIRS);
+        BoardsJungle.slab(JUNGLE_TIMBERS_SLABS).stairs(JUNGLE_TIMBERS_STAIRS);
+        BoardsAcacia.slab(ACACIA_TIMBERS_SLABS).stairs(ACACIA_TIMBERS_STAIRS);
+        BoardsCrimson.slab(CRIMSON_TIMBERS_SLABS).stairs(CRIMSON_TIMBERS_STAIRS);
+        BoardsWarped.slab(WARPED_TIMBERS_SLABS).stairs(WARPED_TIMBERS_STAIRS);
+        BoardsMangrove.slab(MANGROVE_TIMBERS_SLABS).stairs(MANGROVE_TIMBERS_STAIRS);
+        BoardsBamboo.slab(BAMBOO_TIMBERS_SLABS).stairs(BAMBOO_TIMBERS_STAIRS);
+        BoardsCherry.slab(CHERRY_TIMBERS_SLABS).stairs(CHERRY_TIMBERS_STAIRS);
 
         GlazedOak.slab(GLAZED_OAK_SLABS).stairs(GLAZED_OAK_STAIRS);
         GlazedBirch.slab(GLAZED_BIRCH_SLABS).stairs(GLAZED_BIRCH_STAIRS);
@@ -390,9 +390,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         ///Logs stuff
         Cactus.log(CACTUS_BUNDLE).wood(CACTUS_CROWN);
         EngravedCactus.log(ENGRAVED_CACTUS).wood(ENGRAVED_CACTUS_CROWN);
-        ChippedCactus.log(CHIPPED_CACTUS).wood(CHIPPED_CACTUS_CROWN);
         PlankPillarCactus.log(CACTUS_PLANK_PILLARS).wood(CACTUS_PLANK_BOX);
-        StrippedChippedCactus.log(STRIPPED_CHIPPED_CACTUS).wood(STRIPPED_CHIPPED_CACTUS_CROWN);
         BeamCactus.log(CACTUS_BEAM);
         ///Redstone component
         blockStateModelGenerator.registerDoor(CACTUS_DOOR);
@@ -404,7 +402,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         cactusMosaicTexturePool.slab(CACTUS_MOSAIC_SLABS).stairs(CACTUS_MOSAIC_STAIRS);
         ChippedPlankCactus.slab(CHIPPED_CACTUS_SLAB).stairs(CHIPPED_CACTUS_STAIR);
         TilesCactus.slab(CACTUS_TILES_SLABS).stairs(CACTUS_TILES_STAIRS);
-        BoardsCactus.slab(CACTUS_BOARDS_SLABS).stairs(CACTUS_BOARDS_STAIRS);
+        BoardsCactus.slab(CACTUS_TIMBERS_SLABS).stairs(CACTUS_TIMBERS_STAIRS);
         GlazedCactus.slab(GLAZED_CACTUS_SLABS).stairs(GLAZED_CACTUS_STAIRS);
 
         //(Woodsets: Azalea)

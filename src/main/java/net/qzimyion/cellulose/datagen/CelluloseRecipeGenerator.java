@@ -408,6 +408,10 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerBookShelvesRecipe(exporter, CACTUS_BOOKSHELF, CelluloseTags.Items.CACTUS_PLANKS);
         offerBookShelvesRecipe(exporter, AZALEA_BOOKSHELF, CelluloseTags.Items.AZALEA_PLANKS);
 
+        //Chiseled Bookshelves
+        offerChiseledBookShelvesRecipe(exporter, CHISELED_BOOKSHELF, CelluloseTags.Items.OAK_PLANKS, CelluloseTags.Items.OAK_SLABS);
+        offerChiseledBookShelvesRecipe(exporter, BIRCH_CHISELED_BOOKSHELF, CelluloseTags.Items.BIRCH_PLANKS, CelluloseTags.Items.BIRCH_SLABS);
+
         ///Cooking
 
         offerFoodCookingRecipe(exporter,"smelting", RecipeSerializer.SMELTING, 300, CelluloseItems.ACORN, CelluloseItems.POPPED_ACORN, 0.1f);
@@ -593,6 +597,10 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
 
     public static void offerBookShelvesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input) {
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).group("cellulose:bookshelves").input('#', input).input('X', BOOK).pattern("###").pattern("XXX").pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_book", RecipeProvider.conditionsFromItem(BOOK)).offerTo(exporter);
+    }
+
+    public static void offerChiseledBookShelvesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input, TagKey<Item> input1) {
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).group("cellulose:chiseled_bookshelves").input('#', input).input('X', input1).pattern("###").pattern("XXX").pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_slabs", RecipeProvider.conditionsFromTag(WOODEN_SLABS)).offerTo(exporter);
     }
 
     public static void offerDyedPaperBlocksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, Item input) {

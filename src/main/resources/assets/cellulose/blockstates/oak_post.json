@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "minecraft:block/chorus_plant_side"
+        "model": "cellulose:block/oak_post_side"
       },
       "when": {
         "north": "true"
@@ -10,8 +10,7 @@
     },
     {
       "apply": {
-        "model": "minecraft:block/chorus_plant_side",
-        "uvlock": true,
+        "model": "cellulose:block/oak_post_side",
         "y": 90
       },
       "when": {
@@ -20,8 +19,7 @@
     },
     {
       "apply": {
-        "model": "minecraft:block/chorus_plant_side",
-        "uvlock": true,
+        "model": "cellulose:block/oak_post_side",
         "y": 180
       },
       "when": {
@@ -30,8 +28,7 @@
     },
     {
       "apply": {
-        "model": "minecraft:block/chorus_plant_side",
-        "uvlock": true,
+        "model": "cellulose:block/oak_post_side",
         "y": 270
       },
       "when": {
@@ -40,8 +37,7 @@
     },
     {
       "apply": {
-        "model": "minecraft:block/chorus_plant_side",
-        "uvlock": true,
+        "model": "cellulose:block/oak_post_side",
         "x": 270
       },
       "when": {
@@ -50,8 +46,7 @@
     },
     {
       "apply": {
-        "model": "minecraft:block/chorus_plant_side",
-        "uvlock": true,
+        "model": "cellulose:block/oak_post_side",
         "x": 90
       },
       "when": {
@@ -59,163 +54,387 @@
       }
     },
     {
-      "apply": [
-        {
-          "model": "minecraft:block/chorus_plant_noside",
-          "weight": 2
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside1"
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside2"
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside3"
-        }
-      ],
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside"
+      },
       "when": {
-        "north": "false"
+        "north": "false",
+        "up": "true"
       }
     },
     {
-      "apply": [
-        {
-          "model": "minecraft:block/chorus_plant_noside1",
-          "uvlock": true,
-          "y": 90
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside2",
-          "uvlock": true,
-          "y": 90
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside3",
-          "uvlock": true,
-          "y": 90
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside",
-          "uvlock": true,
-          "weight": 2,
-          "y": 90
-        }
-      ],
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside"
+      },
       "when": {
-        "east": "false"
+        "north": "false",
+        "down": "true"
       }
     },
     {
-      "apply": [
-        {
-          "model": "minecraft:block/chorus_plant_noside2",
-          "uvlock": true,
-          "y": 180
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside3",
-          "uvlock": true,
-          "y": 180
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside",
-          "uvlock": true,
-          "weight": 2,
-          "y": 180
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside1",
-          "uvlock": true,
-          "y": 180
-        }
-      ],
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside_horizontal"
+      },
       "when": {
-        "south": "false"
-      }
-    },
-    {
-      "apply": [
-        {
-          "model": "minecraft:block/chorus_plant_noside3",
-          "uvlock": true,
-          "y": 270
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside",
-          "uvlock": true,
-          "weight": 2,
-          "y": 270
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside1",
-          "uvlock": true,
-          "y": 270
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside2",
-          "uvlock": true,
-          "y": 270
-        }
-      ],
-      "when": {
-        "west": "false"
-      }
-    },
-    {
-      "apply": [
-        {
-          "model": "minecraft:block/chorus_plant_noside",
-          "uvlock": true,
-          "weight": 2,
-          "x": 270
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside3",
-          "uvlock": true,
-          "x": 270
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside1",
-          "uvlock": true,
-          "x": 270
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside2",
-          "uvlock": true,
-          "x": 270
-        }
-      ],
-      "when": {
+        "north": "false",
+        "down": "false",
         "up": "false"
       }
     },
     {
-      "apply": [
-        {
-          "model": "minecraft:block/chorus_plant_noside3",
-          "uvlock": true,
-          "x": 90
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside2",
-          "uvlock": true,
-          "x": 90
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside1",
-          "uvlock": true,
-          "x": 90
-        },
-        {
-          "model": "minecraft:block/chorus_plant_noside",
-          "uvlock": true,
-          "weight": 2,
-          "x": 90
-        }
-      ],
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside"},
       "when": {
+        "north": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_end"
+      },
+      "when": {
+        "north": "false",
+        "down": "false",
+        "up": "false",
+        "south": "true",
+        "east": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside"
+      },
+      "when": {
+        "west": "false",
+        "up": "false",
+        "down": "false",
+        "east": "false",
+        "south": "false",
+        "north": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 90
+      },
+      "when": {
+        "east": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 90
+      },
+      "when": {
+        "east": "false",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "cellulose:block/oak_post_noside_horizontal",
+        "y": 90
+      },
+      "when": {
+        "east": "false",
+        "up": "false",
         "down": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 90
+      },
+      "when": {
+        "west": "false",
+        "up": "false",
+        "down": "false",
+        "east": "false",
+        "south": "false",
+        "north": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 90
+      },
+      "when": {
+        "east": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_end",
+        "y": 90
+      },
+      "when": {
+        "north": "false",
+        "down": "false",
+        "up": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 180
+      },
+      "when": {
+        "south": "false",
+        "up": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 180
+      },
+      "when": {
+        "south": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside_horizontal",
+        "y": 180
+      },
+      "when": {
+        "south": "false",
+        "down": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 180
+      },
+      "when": {
+        "west": "false",
+        "up": "false",
+        "down": "false",
+        "east": "false",
+        "south": "false",
+        "north": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 180
+      },
+      "when": {
+        "south": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_end",
+        "y": 180
+      },
+      "when": {
+        "north": "true",
+        "down": "false",
+        "up": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 270
+      },
+      "when": {
+        "west": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 270
+      },
+      "when": {
+        "west": "false",
+        "up": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside_horizontal",
+        "y": 270
+      },
+      "when": {
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "y": 270
+      },
+      "when": {
+        "west": "false",
+        "up": "false",
+        "down": "false",
+        "east": "false",
+        "south": "false",
+        "north": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_end",
+        "y": 270
+      },
+      "when": {
+        "north": "false",
+        "down": "false",
+        "up": "false",
+        "south": "false",
+        "east": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "x": 270
+      },
+      "when": {
+        "up": "false",
+        "west": "false",
+        "east": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "x": 270,
+        "y": 270
+      },
+      "when": {
+        "up": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "x": 270,
+        "y": 270
+      },
+      "when": {
+        "up": "false",
+        "east": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_end",
+        "x": 270
+      },
+      "when": {
+        "up": "false",
+        "west": "false",
+        "east": "false",
+        "south": "false",
+        "north": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "down": "false",
+        "east": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "down": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_noside",
+        "x": 90
+      },
+      "when": {
+        "down": "false",
+        "west": "false",
+        "east": "false"
+      }
+    },
+    {
+      "apply":
+      {
+        "model": "cellulose:block/oak_post_end",
+        "x": 90
+      },
+      "when": {
+        "down": "false",
+        "west": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false"
       }
     }
   ]

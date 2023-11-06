@@ -29,7 +29,8 @@ public class ModBlockProperties {
         return entity.getEquippedStack(EquipmentSlot.FEET).isOf(Items.CHAINMAIL_BOOTS);
     }
 
-    //Triple door Properties
+    ///Shape properties
+    //Shoji Blocks
 
 
     //Cauldron behaviors

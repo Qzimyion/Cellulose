@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:mangrove_slab",
+    "cellulose:vertical_mangrove_slab",
+    "cellulose:chipped_mangrove_slab"
+  ]
+}

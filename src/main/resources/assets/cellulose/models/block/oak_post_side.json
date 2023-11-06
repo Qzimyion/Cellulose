@@ -1,0 +1,7 @@
+{
+  "parent": "cellulose:block/template_post_block_side",
+  "textures": {
+    "top": "cellulose:block/oak_post_top",
+    "side": "block/oak_log"
+  }
+}

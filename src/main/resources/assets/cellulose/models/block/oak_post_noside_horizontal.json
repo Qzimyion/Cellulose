@@ -1,0 +1,6 @@
+{
+  "parent": "cellulose:block/template_post_block_noside_horizontal",
+  "textures": {
+    "side": "block/oak_log"
+  }
+}

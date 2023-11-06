@@ -2,7 +2,7 @@ package net.qzimyion.cellulose.datagen.languageProvider;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.qzimyion.cellulose.blocks.custom_blocks.SawmillBlock;
+import net.qzimyion.cellulose.blocks.customBlocks.SawmillBlock;
 import net.qzimyion.cellulose.util.CelluloseStats;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
@@ -140,9 +140,9 @@ public class CelluloseNameProvider_en_gb extends FabricLanguageProvider {
         translationBuilder.add(CACTUS_TILES, "Cactus Tiles");
         translationBuilder.add(CACTUS_TILES_STAIRS, "Cactus Tiles Stairs");
         translationBuilder.add(CACTUS_TILES_SLABS, "Cactus Tiles Slab");
-        translationBuilder.add(CACTUS_TIMBERS, "Cactus Boards");
-        translationBuilder.add(CACTUS_BOARDS_STAIRS, "Cactus Boards Stairs");
-        translationBuilder.add(CACTUS_BOARDS_SLABS, "Cactus Boards Slab");
+        translationBuilder.add(CACTUS_TIMBERS, "Cactus Timbers");
+        translationBuilder.add(CACTUS_TIMBERS_STAIRS, "Cactus Timbers Stairs");
+        translationBuilder.add(CACTUS_TIMBERS_SLABS, "Cactus Timbers Slab");
         translationBuilder.add(CACTUS_BEAM, "Cactus Beam");
         translationBuilder.add(CACTUS_PLANK_PILLARS, "Cactus Plank Pillar");
 
@@ -329,42 +329,42 @@ public class CelluloseNameProvider_en_gb extends FabricLanguageProvider {
         translationBuilder.add(MANGROVE_TILES_SLABS, "Mangrove Tiles Slab");
         translationBuilder.add(BAMBOO_TILES_SLABS, "Bamboo Tiles Slab");
         translationBuilder.add(CHERRY_TILES_SLABS, "Cherry Tiles Slab");
-        //Boards
-        translationBuilder.add(OAK_TIMBERS, "Oak Boards");
-        translationBuilder.add(BIRCH_TIMBERS, "Birch Boards");
-        translationBuilder.add(SPRUCE_TIMBERS, "Spruce Boards");
-        translationBuilder.add(DARK_OAK_TIMBERS, "Dark Oak Boards");
-        translationBuilder.add(JUNGLE_TIMBERS, "Jungle Boards");
-        translationBuilder.add(ACACIA_TIMBERS, "Acacia Boards");
-        translationBuilder.add(CRIMSON_TIMBERS, "Crimson Boards");
-        translationBuilder.add(WARPED_TIMBERS, "Warped Boards");
-        translationBuilder.add(MANGROVE_TIMBERS, "Mangrove Boards");
-        translationBuilder.add(BAMBOO_TIMBERS, "Bamboo Boards");
-        translationBuilder.add(CHERRY_TIMBERS, "Cherry Boards");
+        //Timbers
+        translationBuilder.add(OAK_TIMBERS, "Oak Timbers");
+        translationBuilder.add(BIRCH_TIMBERS, "Birch Timbers");
+        translationBuilder.add(SPRUCE_TIMBERS, "Spruce Timbers");
+        translationBuilder.add(DARK_OAK_TIMBERS, "Dark Oak Timbers");
+        translationBuilder.add(JUNGLE_TIMBERS, "Jungle Timbers");
+        translationBuilder.add(ACACIA_TIMBERS, "Acacia Timbers");
+        translationBuilder.add(CRIMSON_TIMBERS, "Crimson Timbers");
+        translationBuilder.add(WARPED_TIMBERS, "Warped Timbers");
+        translationBuilder.add(MANGROVE_TIMBERS, "Mangrove Timbers");
+        translationBuilder.add(BAMBOO_TIMBERS, "Bamboo Timbers");
+        translationBuilder.add(CHERRY_TIMBERS, "Cherry Timbers");
         //Board Stairs
-        translationBuilder.add(OAK_BOARDS_STAIRS, "Oak Boards Stairs");
-        translationBuilder.add(BIRCH_BOARDS_STAIRS, "Birch Boards Stairs");
-        translationBuilder.add(SPRUCE_BOARDS_STAIRS, "Spruce Boards Stairs");
-        translationBuilder.add(DARK_OAK_BOARDS_STAIRS, "Dark Oak Boards Stairs");
-        translationBuilder.add(JUNGLE_BOARDS_STAIRS, "Jungle Boards Stairs");
-        translationBuilder.add(ACACIA_BOARDS_STAIRS, "Acacia Boards Stairs");
-        translationBuilder.add(CRIMSON_BOARDS_STAIRS, "Crimson Boards Stairs");
-        translationBuilder.add(WARPED_BOARDS_STAIRS, "Warped Boards Stairs");
-        translationBuilder.add(MANGROVE_BOARDS_STAIRS, "Mangrove Boards Stairs");
-        translationBuilder.add(BAMBOO_BOARDS_STAIRS, "Bamboo Boards Stairs");
-        translationBuilder.add(CHERRY_BOARDS_STAIRS, "Cherry Boards Stairs");
+        translationBuilder.add(OAK_TIMBERS_STAIRS, "Oak Timbers Stairs");
+        translationBuilder.add(BIRCH_TIMBERS_STAIRS, "Birch Timbers Stairs");
+        translationBuilder.add(SPRUCE_TIMBERS_STAIRS, "Spruce Timbers Stairs");
+        translationBuilder.add(DARK_OAK_TIMBERS_STAIRS, "Dark Oak Timbers Stairs");
+        translationBuilder.add(JUNGLE_TIMBERS_STAIRS, "Jungle Timbers Stairs");
+        translationBuilder.add(ACACIA_TIMBERS_STAIRS, "Acacia Timbers Stairs");
+        translationBuilder.add(CRIMSON_TIMBERS_STAIRS, "Crimson Timbers Stairs");
+        translationBuilder.add(WARPED_TIMBERS_STAIRS, "Warped Timbers Stairs");
+        translationBuilder.add(MANGROVE_TIMBERS_STAIRS, "Mangrove Timbers Stairs");
+        translationBuilder.add(BAMBOO_TIMBERS_STAIRS, "Bamboo Timbers Stairs");
+        translationBuilder.add(CHERRY_TIMBERS_STAIRS, "Cherry Timbers Stairs");
         //Board Slab
-        translationBuilder.add(OAK_BOARDS_SLABS, "Oak Boards Slab");
-        translationBuilder.add(BIRCH_BOARDS_SLABS, "Birch Boards Slab");
-        translationBuilder.add(SPRUCE_BOARDS_SLABS, "Spruce Boards Slab");
-        translationBuilder.add(DARK_OAK_BOARDS_SLABS, "Dark Oak Boards Slab");
-        translationBuilder.add(JUNGLE_BOARDS_SLABS, "Jungle Boards Slab");
-        translationBuilder.add(ACACIA_BOARDS_SLABS, "Acacia Boards Slab");
-        translationBuilder.add(CRIMSON_BOARDS_SLABS, "Crimson Boards Slab");
-        translationBuilder.add(WARPED_BOARDS_SLABS, "Warped Boards Slab");
-        translationBuilder.add(MANGROVE_BOARDS_SLABS, "Mangrove Boards Slab");
-        translationBuilder.add(BAMBOO_BOARDS_SLABS, "Bamboo Boards Slab");
-        translationBuilder.add(CHERRY_BOARDS_SLABS, "Cherry Boards Slab");
+        translationBuilder.add(OAK_TIMBERS_SLABS, "Oak Timbers Slab");
+        translationBuilder.add(BIRCH_TIMBERS_SLABS, "Birch Timbers Slab");
+        translationBuilder.add(SPRUCE_TIMBERS_SLABS, "Spruce Timbers Slab");
+        translationBuilder.add(DARK_OAK_TIMBERS_SLABS, "Dark Oak Timbers Slab");
+        translationBuilder.add(JUNGLE_TIMBERS_SLABS, "Jungle Timbers Slab");
+        translationBuilder.add(ACACIA_TIMBERS_SLABS, "Acacia Timbers Slab");
+        translationBuilder.add(CRIMSON_TIMBERS_SLABS, "Crimson Timbers Slab");
+        translationBuilder.add(WARPED_TIMBERS_SLABS, "Warped Timbers Slab");
+        translationBuilder.add(MANGROVE_TIMBERS_SLABS, "Mangrove Timbers Slab");
+        translationBuilder.add(BAMBOO_TIMBERS_SLABS, "Bamboo Timbers Slab");
+        translationBuilder.add(CHERRY_TIMBERS_SLABS, "Cherry Timbers Slab");
         //Beams
         translationBuilder.add(OAK_BEAM, "Oak Beam");
         translationBuilder.add(BIRCH_BEAM, "Birch Beam");
