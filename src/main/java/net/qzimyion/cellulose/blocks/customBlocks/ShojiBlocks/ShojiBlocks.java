@@ -64,19 +64,15 @@ public class ShojiBlocks extends Block implements Waterloggable {
         return getConnection(state, world, pos);
     }
 
-    public BlockState getConnection(BlockState state, WorldAccess world, BlockPos currentPos){
+    public BlockState getConnection(BlockState state, WorldAccess world, BlockPos pos){
         Direction facing = state.get(FACING);
 
-        BlockState top = world.getBlockState(currentPos.offset(facing.rotateYClockwise()));
-        BlockState bottom = world.getBlockState(currentPos.offset(facing.rotateYCounterclockwise()));
+        BlockState top = world.getBlockState(pos.offset(facing.rotateClockwise(Direction.Axis.Y)));
+        BlockState bottom = world.getBlockState(pos.offset(facing.rotateCounterclockwise(Direction.Axis.Y)));
 
-        boolean sideU = (top.getBlock() instanceof ShojiBlocks && (top.get(FACING)==facing) || top.get(FACING)==facing.rotateYClockwise());
-        boolean sideD = (top.getBlock() instanceof ShojiBlocks && (bottom.get(FACING)==facing) || top.get(FACING)==facing.rotateYCounterclockwise());
-        ShojiShapes shapes = sideU && sideD ?
-                ShojiShapes.MID
-                : (sideD ? ShojiShapes.BOTTOM
-                : (sideU ? ShojiShapes.TOP
-                : ShojiShapes.NONE));
+        boolean sideU = (top.getBlock() instanceof ShojiBlocks && (top.get(FACING)==facing) || top.get(FACING)==facing.rotateClockwise(Direction.Axis.Y));
+        boolean sideD = (top.getBlock() instanceof ShojiBlocks && (bottom.get(FACING)==facing) || top.get(FACING)==facing.rotateCounterclockwise(Direction.Axis.Y));
+        ShojiShapes shapes = sideU && sideD ? ShojiShapes.MID : (sideD ? ShojiShapes.BOTTOM : (sideU ? ShojiShapes.TOP : ShojiShapes.NONE));
         return state.with(SHOJI_SHAPE, shapes);
     }
 
