@@ -29,7 +29,8 @@ public class ShojiBlocks extends Block implements Waterloggable {
     public static final EnumProperty<ShojiShapes> SHOJI_SHAPE = ModBlockProperties.SHOJI_SHAPE;
 
     //General Shape
-    protected static final VoxelShape SHOJI_WALL_NORTH_SOUTH = Block.createCuboidShape(0, 0, 7, 16, 16, 9);
+    protected static final VoxelShape SHOJI_WALL_NORTH = Block.createCuboidShape(0, 0, 7, 16, 16, 9);
+    protected static final VoxelShape SHOJI_WALL_SOUTH = Block.createCuboidShape(0, 0, 7, 16, 16, 9);
     protected static final VoxelShape SHOJI_WALL_EAST_WEST = Block.createCuboidShape(7, 0, 0, 9, 16, 16);
 
     public ShojiBlocks(Settings settings) {
@@ -46,7 +47,8 @@ public class ShojiBlocks extends Block implements Waterloggable {
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx){
         return switch (state.get(FACING)){
-            default -> SHOJI_WALL_NORTH_SOUTH;
+            default -> SHOJI_WALL_NORTH;
+            case SOUTH -> SHOJI_WALL_SOUTH;
             case EAST, WEST -> SHOJI_WALL_EAST_WEST;
         };
     }
