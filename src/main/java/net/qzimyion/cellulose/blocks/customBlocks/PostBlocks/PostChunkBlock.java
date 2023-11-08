@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.blocks.customBlocks;
+package net.qzimyion.cellulose.blocks.customBlocks.PostBlocks;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -16,10 +16,10 @@ import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
-public class PostBlock extends ConnectingBlock implements Waterloggable {
+public class PostChunkBlock extends ConnectingBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-    public PostBlock(Settings settings) {
+    public PostChunkBlock(Settings settings) {
         super(0.2495F,settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(NORTH, false).with(EAST, false).with(SOUTH, false).with(WEST, false).with(UP, false).with(DOWN, false).with(WATERLOGGED, false));
     }
@@ -38,16 +38,16 @@ public class PostBlock extends ConnectingBlock implements Waterloggable {
         BlockState blockState4 = world.getBlockState(pos.east());
         BlockState blockState5 = world.getBlockState(pos.south());
         BlockState blockState6 = world.getBlockState(pos.west());
-        return this.getDefaultState().with(DOWN, blockState.getBlock() instanceof PostBlock || blockState.isSideSolid(world, pos, Direction.UP, SideShapeType.CENTER)
+        return this.getDefaultState().with(DOWN, blockState.getBlock() instanceof PostChunkBlock || blockState.isSideSolid(world, pos, Direction.UP, SideShapeType.CENTER)
         ).with(
                 UP,
-                blockState2.getBlock() instanceof PostBlock || blockState2.isSideSolid(world, pos, Direction.DOWN, SideShapeType.CENTER)
-        ).with(NORTH, blockState3.getBlock() instanceof PostBlock || blockState3.isSideSolid(world, pos, Direction.SOUTH, SideShapeType.CENTER)).with(
+                blockState2.getBlock() instanceof PostChunkBlock || blockState2.isSideSolid(world, pos, Direction.DOWN, SideShapeType.CENTER)
+        ).with(NORTH, blockState3.getBlock() instanceof PostChunkBlock || blockState3.isSideSolid(world, pos, Direction.SOUTH, SideShapeType.CENTER)).with(
                 EAST,
-                blockState4.getBlock() instanceof PostBlock || blockState4.isSideSolid(world, pos, Direction.WEST, SideShapeType.CENTER)
-        ).with(SOUTH, blockState5.getBlock() instanceof PostBlock || blockState5.isSideSolid(world, pos, Direction.NORTH, SideShapeType.CENTER)).with(
+                blockState4.getBlock() instanceof PostChunkBlock || blockState4.isSideSolid(world, pos, Direction.WEST, SideShapeType.CENTER)
+        ).with(SOUTH, blockState5.getBlock() instanceof PostChunkBlock || blockState5.isSideSolid(world, pos, Direction.NORTH, SideShapeType.CENTER)).with(
                 WEST,
-                blockState6.getBlock() instanceof PostBlock || blockState6.isSideSolid(world, pos, Direction.EAST, SideShapeType.CENTER)
+                blockState6.getBlock() instanceof PostChunkBlock || blockState6.isSideSolid(world, pos, Direction.EAST, SideShapeType.CENTER)
         );
     }
 
@@ -56,7 +56,7 @@ public class PostBlock extends ConnectingBlock implements Waterloggable {
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-        boolean bl = neighborState.isSideSolid(world, pos, direction.getOpposite(), SideShapeType.CENTER) || neighborState.getBlock() instanceof PostBlock;
+        boolean bl = neighborState.isSideSolid(world, pos, direction.getOpposite(), SideShapeType.CENTER) || neighborState.getBlock() instanceof PostChunkBlock;
         return state.with(FACING_PROPERTIES.get(direction), bl);
     }
 

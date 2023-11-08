@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.blocks.customBlocks;
+package net.qzimyion.cellulose.blocks.customBlocks.PostBlocks;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -18,13 +18,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 
 @SuppressWarnings("deprecation")
-public class BambooStalk extends PillarBlock implements Waterloggable {
+public class PostBlock extends PillarBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
     public static final VoxelShape SHAPE_X = Block.createCuboidShape(0.0, 4.0, 4.0, 16.0, 12.0, 12.0);
     public static final VoxelShape SHAPE_Y = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
     public static final VoxelShape SHAPE_Z = Block.createCuboidShape(4.0, 4.0, 0.0, 12.0, 12.0, 16.0);
 
-    public BambooStalk(Settings settings) {
+    public PostBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, false).with(AXIS, Direction.Axis.Y));
     }
@@ -37,6 +37,12 @@ public class BambooStalk extends PillarBlock implements Waterloggable {
             case X -> SHAPE_X;
             default -> SHAPE_Y;
         };
+    }
+
+    @Override
+    public BlockRenderType getRenderType(BlockState state)
+    {
+        return BlockRenderType.MODEL;
     }
 
     @Override
@@ -71,4 +77,5 @@ public class BambooStalk extends PillarBlock implements Waterloggable {
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return false;
     }
+
 }
