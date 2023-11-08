@@ -4,7 +4,7 @@ import net.minecraft.util.StringIdentifiable;
 
 public enum ShojiShapes implements StringIdentifiable {
     TOP("top"),
-    MID("mid"),
+    MIDDLE("middle"),
     BOTTOM("bottom"),
     NONE("none");
 

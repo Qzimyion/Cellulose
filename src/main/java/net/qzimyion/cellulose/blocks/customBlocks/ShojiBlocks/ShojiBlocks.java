@@ -74,7 +74,7 @@ public class ShojiBlocks extends Block implements Waterloggable {
 
         boolean sideU = (bottom.getBlock() instanceof ShojiBlocks && (bottom.get(FACING)==facing));
         boolean sideD = (top.getBlock() instanceof ShojiBlocks && (top.get(FACING)==facing));
-        ShojiShapes shapes = sideU && sideD ? ShojiShapes.MID : (sideD ? ShojiShapes.BOTTOM : (sideU ? ShojiShapes.TOP : ShojiShapes.NONE));
+        ShojiShapes shapes = sideU && sideD ? ShojiShapes.MIDDLE : (sideD ? ShojiShapes.BOTTOM : (sideU ? ShojiShapes.TOP : ShojiShapes.NONE));
         return state.with(SHOJI_SHAPE, shapes);
     }
 
