@@ -1,36 +1,122 @@
 package net.qzimyion.cellulose.blocks.customBlocks.ShojiBlocks;
 
 import net.minecraft.block.*;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.function.BooleanBiFunction;
+import net.minecraft.util.BlockMirror;
+import net.minecraft.util.BlockRotation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
+import net.qzimyion.cellulose.blocks.ModBlockProperties;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 @SuppressWarnings("deprecation")
 public class ShojiBlocks extends Block implements Waterloggable {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+    public static final EnumProperty<ShojiShapes> SHOJI_SHAPE = ModBlockProperties.SHOJI_SHAPE;
 
     //General Shape
-    protected static final VoxelShape SHOJI_WALL_NORTH = Block.createCuboidShape(0, 0, 7, 16, 16, 9);
-    protected static final VoxelShape SHOJI_WALL_SOUTH = Block.createCuboidShape(0, 0, 7, 16, 16, 9);
-    protected static final VoxelShape SHOJI_WALL_EAST = Block.createCuboidShape(7, 0, 0, 9, 16, 16);
-    protected static final VoxelShape SHOJI_WALL_WEST = Block.createCuboidShape(7, 0, 0, 9, 16, 16);
-
-    //Curving Shapes
-    protected static final VoxelShape SHOJI_WALL_INNER_RIGHT = VoxelShapes.combineAndSimplify(Block.createCuboidShape(7, 0, 7, 16, 16, 9), Block.createCuboidShape(7, 0, 0, 9, 16, 7), BooleanBiFunction.OR);
-    protected static final VoxelShape SHOJI_WALL_INNER_LEFT = VoxelShapes.combineAndSimplify(Block.createCuboidShape(0, 0, 7, 9, 16, 9), Block.createCuboidShape(7, 0, 0, 9, 16, 7), BooleanBiFunction.OR);
-    protected static final VoxelShape SHOJI_WALL_OUTER_RIGHT = VoxelShapes.combineAndSimplify(Block.createCuboidShape(7, 0, 7, 16, 16, 9), Block.createCuboidShape(7, 0, 9, 9, 16, 16), BooleanBiFunction.OR);
-    protected static final VoxelShape SHOJI_WALL_OUTER_LEFT = VoxelShapes.combineAndSimplify(Block.createCuboidShape(0, 0, 7, 9, 16, 9), Block.createCuboidShape(7, 0, 9, 9, 16, 16), BooleanBiFunction.OR);
+    protected static final VoxelShape SHOJI_WALL_NORTH_SOUTH = Block.createCuboidShape(0, 0, 7, 16, 16, 9);
+    protected static final VoxelShape SHOJI_WALL_EAST_WEST = Block.createCuboidShape(7, 0, 0, 9, 16, 16);
 
     public ShojiBlocks(Settings settings) {
         super(settings);
+        this.setDefaultState(getDefaultState().with(FACING, Direction.NORTH).with(SHOJI_SHAPE, ShojiShapes.NONE).with(WATERLOGGED, false));
     }
 
     @Override
-    public boolean hasSidedTransparency(BlockState state) {
-        return true;
+    public BlockRenderType getRenderType(BlockState state)
+    {
+        return BlockRenderType.MODEL;
     }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx){
+        return switch (state.get(FACING)){
+            default -> SHOJI_WALL_NORTH_SOUTH;
+            case EAST, WEST -> SHOJI_WALL_EAST_WEST;
+        };
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING, WATERLOGGED, SHOJI_SHAPE);
+    }
+
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (state.get(WATERLOGGED)) {
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        }
+        return getConnection(state, world, pos);
+    }
+
+    public BlockState getConnection(BlockState state, WorldAccess world, BlockPos currentPos){
+        Direction facing = state.get(FACING);
+
+        BlockState top = world.getBlockState(currentPos.offset(facing.rotateYClockwise()));
+        BlockState bottom = world.getBlockState(currentPos.offset(facing.rotateYCounterclockwise()));
+
+        boolean sideU = (top.getBlock() instanceof ShojiBlocks && (top.get(FACING)==facing) || top.get(FACING)==facing.rotateYClockwise());
+        boolean sideD = (top.getBlock() instanceof ShojiBlocks && (bottom.get(FACING)==facing) || top.get(FACING)==facing.rotateYCounterclockwise());
+        ShojiShapes shapes = sideU && sideD ?
+                ShojiShapes.MID
+                : (sideD ? ShojiShapes.BOTTOM
+                : (sideU ? ShojiShapes.TOP
+                : ShojiShapes.NONE));
+        return state.with(SHOJI_SHAPE, shapes);
+    }
+
+    @Nullable
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx)
+    {
+        World world = ctx.getWorld();
+        Direction facing = ctx.getHorizontalPlayerFacing().getOpposite();
+
+        BlockPos hitPos = ctx.getBlockPos();
+        Direction direction = ctx.getPlayerLookDirection();
+        BlockPos clickedHitPos = hitPos.offset(direction.getOpposite());
+        BlockState clickedFacingState = world.getBlockState(clickedHitPos);
+
+        if (!Objects.requireNonNull(ctx.getPlayer()).isSneaking() && clickedFacingState.getBlock() instanceof ShojiBlocks){
+            Direction clickedHitPos1 = clickedFacingState.get(FACING);
+            if (clickedHitPos1 != direction && clickedHitPos1.getOpposite() != direction) facing = clickedHitPos1;
+        }
+        BlockState state = getConnection(this.getDefaultState().with(FACING, facing), world, hitPos);
+        return state.with(WATERLOGGED, world.getFluidState(hitPos).isOf(Fluids.WATER));
+    }
+
+    @Override
+    public BlockState rotate(BlockState state, BlockRotation rotation)
+    {
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
+    }
+
+    @Override
+    public BlockState mirror(BlockState state, BlockMirror mirror)
+    {
+        return state.rotate(mirror.getRotation(state.get(FACING)));
+    }
+
+    public FluidState getFluidState(BlockState state) {
+        if (state.get(WATERLOGGED)) {
+            return Fluids.WATER.getStill(false);
+        }
+        return super.getFluidState(state);
+    }
+
 }

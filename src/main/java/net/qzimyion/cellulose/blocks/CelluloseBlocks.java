@@ -16,7 +16,10 @@ import net.qzimyion.cellulose.blocks.customBlocks.CauldronStuff.DissolvedBambooC
 import net.qzimyion.cellulose.blocks.customBlocks.CauldronStuff.PaperMeshBlock;
 import net.qzimyion.cellulose.blocks.customBlocks.CauldronStuff.PaperMeshCauldronBlock;
 import net.qzimyion.cellulose.blocks.customBlocks.ChisledBookshelvesStuff.*;
+import net.qzimyion.cellulose.blocks.customBlocks.PostBlocks.PostBlock;
+import net.qzimyion.cellulose.blocks.customBlocks.PostBlocks.PostChunkBlock;
 import net.qzimyion.cellulose.blocks.customBlocks.SawdustStuff.SawdustLayerBlock;
+import net.qzimyion.cellulose.blocks.customBlocks.ShojiBlocks.ShojiBlocks;
 import net.qzimyion.cellulose.blocks.customBlocks.celluloseLeaves.PaloVerde.FloweringPaloVerdeLeafBlock;
 import net.qzimyion.cellulose.blocks.customBlocks.celluloseLeaves.PaloVerde.PaloVerdeLeafBlock;
 import net.qzimyion.cellulose.blocks.customBlocks.PaperBlocks.PaperBlock;
@@ -272,14 +275,14 @@ public class CelluloseBlocks
 
     //Panels (Version 1.1)
 
-    //Chiseled Panels (Version 1.1)
+    //Chiseled Shonji (Version 1.1)
 
-    //Paper Panels (Version 1.1)
+    //Shonji Wood (Version 1.1)
 
-    //Shonji Blocks (Version 1.1)
+    //Shonji Blocks
+    public static final Block JUNGLE_SHOJI = registerBlock("jungle_shoji", new ShojiBlocks(FabricBlockSettings.create().solid().strength(2.0f, 1.0f).sounds(BlockSoundGroup.SCAFFOLDING)));
 
     //Torch lamp (Version 1.1)
-
 
     //This section adds Plank pillar
     public static final Block OAK_PLANK_PILLARS = registerBlock("oak_plank_pillar", new PillarBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
@@ -441,6 +444,37 @@ public class CelluloseBlocks
     public static final Block AZALEA_PLANK_PAVEMENT = registerBlock("azalea_plank_pavement", new GlazedTerracottaBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_PAVEMENT)));
     public static final Block BLOOMING_AZALEA_PLANK_PAVEMENT = registerBlock("blooming_azalea_plank_pavement", new GlazedTerracottaBlock(FabricBlockSettings.copyOf(CHERRY_PLANK_PAVEMENT)));
 
+    //Post Chunk Block
+    public static final Block OAK_POST_CHUNK = registerBlock("oak_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block BIRCH_POST_CHUNK = registerBlock("birch_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block SPRUCE_POST_CHUNK = registerBlock("spruce_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block DARK_OAK_POST_CHUNK = registerBlock("dark_oak_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block JUNGLE_POST_CHUNK = registerBlock("jungle_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block ACACIA_POST_CHUNK = registerBlock("acacia_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block CRIMSON_POST_CHUNK = registerBlock("crimson_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block WARPED_POST_CHUNK = registerBlock("warped_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WOOD)));
+    public static final Block MANGROVE_POST_CHUNK = registerBlock("mangrove_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block BAMBOO_POST_CHUNK = registerBlock("bamboo_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(BAMBOO_PLANKS)));
+    public static final Block CHERRY_POST_CHUNK = registerBlock("cherry_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
+    public static final Block CACTUS_POST_CHUNK = registerBlock("cactus_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block AZALEA_POST_CHUNK = registerBlock("azalea_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(CHERRY_POST_CHUNK)));
+    public static final Block BLOOMING_AZALEA_POST_CHUNK = registerBlock("blooming_azalea_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(AZALEA_POST_CHUNK)));
+
+    public static final Block STRIPPED_OAK_POST_CHUNK = registerBlock("stripped_oak_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_BIRCH_POST_CHUNK = registerBlock("stripped_birch_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_SPRUCE_POST_CHUNK = registerBlock("stripped_spruce_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_DARK_OAK_POST_CHUNK = registerBlock("stripped_dark_oak_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_JUNGLE_POST_CHUNK = registerBlock("stripped_jungle_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_ACACIA_POST_CHUNK = registerBlock("stripped_acacia_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_CRIMSON_POST_CHUNK = registerBlock("stripped_crimson_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(CRIMSON_POST_CHUNK)));
+    public static final Block STRIPPED_WARPED_POST_CHUNK = registerBlock("stripped_warped_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(WARPED_POST_CHUNK)));
+    public static final Block STRIPPED_MANGROVE_POST_CHUNK = registerBlock("stripped_mangrove_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block STRIPPED_BAMBOO_POST_CHUNK = registerBlock("stripped_bamboo_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(BAMBOO_POST_CHUNK)));
+    public static final Block STRIPPED_CHERRY_POST_CHUNK = registerBlock("stripped_cherry_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(CHERRY_POST_CHUNK)));
+    public static final Block STRIPPED_CACTUS_POST_CHUNK = registerBlock("stripped_cactus_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WART)));
+    public static final Block STRIPPED_AZALEA_POST_CHUNK = registerBlock("stripped_azalea_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(CHERRY_POST_CHUNK).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block STRIPPED_BLOOMING_AZALEA_POST_CHUNK = registerBlock("stripped_blooming_azalea_post_chunk", new PostChunkBlock(FabricBlockSettings.copyOf(OAK_POST_CHUNK).sounds(BlockSoundGroup.CHERRY_WOOD)));
+
     //Post Block
     public static final Block OAK_POST = registerBlock("oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block BIRCH_POST = registerBlock("birch_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
@@ -471,7 +505,6 @@ public class CelluloseBlocks
     public static final Block STRIPPED_CACTUS_POST = registerBlock("stripped_cactus_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS).sounds(BlockSoundGroup.NETHER_WART)));
     public static final Block STRIPPED_AZALEA_POST = registerBlock("stripped_azalea_post", new PostBlock(FabricBlockSettings.copyOf(CHERRY_POST).sounds(BlockSoundGroup.CHERRY_WOOD)));
     public static final Block STRIPPED_BLOOMING_AZALEA_POST = registerBlock("stripped_blooming_azalea_post", new PostBlock(FabricBlockSettings.copyOf(OAK_POST).sounds(BlockSoundGroup.CHERRY_WOOD)));
-
 
     /* (will be added in the next update)
     //This section adds Plaster Blocks
