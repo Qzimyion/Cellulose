@@ -19,6 +19,6 @@ public enum ShojiShapes implements StringIdentifiable {
 
     @Override
     public String asString() {
-        return null;
+        return this.name;
     }
 }
