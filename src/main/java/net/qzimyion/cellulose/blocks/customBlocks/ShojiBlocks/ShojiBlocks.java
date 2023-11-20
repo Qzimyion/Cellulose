@@ -3,7 +3,6 @@ package net.qzimyion.cellulose.blocks.customBlocks.ShojiBlocks;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
@@ -15,12 +14,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.qzimyion.cellulose.blocks.ModBlockProperties;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Objects;
 
 @SuppressWarnings("deprecation")
 public class ShojiBlocks extends Block implements Waterloggable {
@@ -78,26 +73,6 @@ public class ShojiBlocks extends Block implements Waterloggable {
         return state.with(SHOJI_SHAPE, shapes);
     }
 
-    @Nullable
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx)
-    {
-        World world = ctx.getWorld();
-        Direction facing = ctx.getHorizontalPlayerFacing().getOpposite();
-
-        BlockPos hitPos = ctx.getBlockPos();
-        Direction direction = ctx.getPlayerLookDirection();
-        BlockPos clickedHitPos = hitPos.offset(direction.getOpposite());
-        BlockState clickedFacingState = world.getBlockState(clickedHitPos);
-
-        if (!Objects.requireNonNull(ctx.getPlayer()).isSneaking() && clickedFacingState.getBlock() instanceof ShojiBlocks){
-            Direction clickedHitPos1 = clickedFacingState.get(FACING);
-            if (clickedHitPos1 != direction && clickedHitPos1.getOpposite() != direction) facing = clickedHitPos1;
-        }
-        BlockState state = getConnection(this.getDefaultState().with(FACING, facing), world, hitPos);
-        return state.with(WATERLOGGED, world.getFluidState(hitPos).isOf(Fluids.WATER));
-    }
-
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation)
     {
@@ -111,10 +86,7 @@ public class ShojiBlocks extends Block implements Waterloggable {
     }
 
     public FluidState getFluidState(BlockState state) {
-        if (state.get(WATERLOGGED)) {
-            return Fluids.WATER.getStill(false);
-        }
-        return super.getFluidState(state);
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
 }
