@@ -66,19 +66,21 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         addDrop(BAMBOO_PLANK_PILLARS);
         addDrop(CHERRY_PLANK_PILLARS);
         addDrop(CACTUS_PLANK_PILLARS);
-        /*Beams*/
-        addDrop(OAK_BEAM);
-        addDrop(BIRCH_BEAM);
-        addDrop(SPRUCE_BEAM);
-        addDrop(DARK_OAK_BEAM);
-        addDrop(JUNGLE_BEAM);
-        addDrop(ACACIA_BEAM);
-        addDrop(CRIMSON_BEAM);
-        addDrop(WARPED_BEAM);
-        addDrop(MANGROVE_BEAM);
-        addDrop(BAMBOO_BEAM);
-        addDrop(CHERRY_BEAM);
-        addDrop(CACTUS_BEAM);
+        /*Log mosaics*/
+        addDrop(OAK_LOG_MOSAIC);
+        addDrop(BIRCH_LOG_MOSAIC);
+        addDrop(SPRUCE_LOG_MOSAIC);
+        addDrop(DARK_LOG_MOSAIC);
+        addDrop(JUNGLE_LOG_MOSAIC);
+        addDrop(ACACIA_LOG_MOSAIC);
+        addDrop(CRIMSON_LOG_MOSAIC);
+        addDrop(WARPED_LOG_MOSAIC);
+        addDrop(MANGROVE_LOG_MOSAIC);
+        addDrop(BAMBOO_LOG_MOSAIC);
+        addDrop(CHERRY_LOG_MOSAIC);
+        addDrop(CACTUS_LOG_MOSAIC);
+        addDrop(AZALEA_LOG_MOSAIC);
+        addDrop(BLOOMING_AZALEA_LOG_MOSAIC);
         /*Tiles*/
         addDrop(OAK_TILES);
         addDrop(BIRCH_TILES);
@@ -394,7 +396,7 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
 
         //Chipped Planks
         addDrop(CHIPPED_WARPED_PLANKS);
-        addDrop(CHIPPED_WARPED_STAIR);
+        addDrop(CHIPPED_WARPED_STAIRS);
         addDrop(CHIPPED_WARPED_SLAB);
 
         ///Potion Rack

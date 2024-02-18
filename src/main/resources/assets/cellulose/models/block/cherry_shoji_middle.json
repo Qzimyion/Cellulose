@@ -1,0 +1,6 @@
+{
+  "parent": "cellulose:block/template_shoji_block",
+  "textures": {
+    "texture": "cellulose:block/cherry_shoji_middle"
+  }
+}

@@ -94,6 +94,12 @@ public class CelluloseEntities {
             FabricBlockEntityTypeBuilder.create(AzaleaChiseldBookshelfBlockEntity::new, CelluloseBlocks.AZALEA_CHISELED_BOOKSHELF).build()
     );
 
+    public static final BlockEntityType<AzaleaChiseldBookshelfBlockEntity> BLOOMING_AZALEA_CHISELED_BOOKSHELF = Registry.register(
+            Registries.BLOCK_ENTITY_TYPE,
+            new Identifier(Cellulose.MOD_ID, "blooming_azalea_chiseled_bookshelf"),
+            FabricBlockEntityTypeBuilder.create(AzaleaChiseldBookshelfBlockEntity::new, CelluloseBlocks.BLOOMING_AZALEA_CHISELED_BOOKSHELF).build()
+    );
+
 
     public static void registerEntities(){
 

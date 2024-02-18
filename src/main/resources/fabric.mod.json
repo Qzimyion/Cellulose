@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "cellulose",
-	"version": "v1.0",
+	"version": "1.0.1",
 	"name": "Cellulose ",
 	"description": "Improving wood related blocks in minecraft by adding new ones and improving the old",
 	"authors": [
@@ -10,11 +10,11 @@
 		"Programming help: Zucchinibyday"
 	],
 	"contact": {
-		"homepage": "https://qzimyion.carrd.co/",
-		"sources": "https://github.com/Qzimyion/cellulose-1.20.1",
-		"issues": "https://github.com/Qzimyion/cellulose-1.20.1/issues"
+		"Contact me on Twitter": "https://twitter.com/Qzimyion",
+		"Source code": "https://github.com/Qzimyion/Cellulose",
+		"Issues and Bugs": "https://github.com/Qzimyion/Cellulose/issues"
 	},
-	"license": "CC-BY-4.0",
+	"license": "CC0-1.0 license",
 	"icon": "assets/cellulose/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -26,9 +26,6 @@
 		],
 		"fabric-datagen": [
 			"net.qzimyion.cellulose.CelluloseDataGenerator"
-		],
-		"jei_mod_plugin": [
-			
 		]
 	},
 	"mixins": [
@@ -39,11 +36,6 @@
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"
-
-	},
-	"suggests": {
-		"another-mod": "https://modrinth.com/mod/continuity/version/3.0.0-beta.2+1.20",
-		"required-dependency": "https://modrinth.com/mod/fusion"
 
 	}
 }

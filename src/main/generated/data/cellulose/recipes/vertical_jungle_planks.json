@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "cellulose:vertical_planks",
+  "group": "cellulose:verticalPlanks",
   "key": {
     "#": {
       "item": "minecraft:jungle_planks"

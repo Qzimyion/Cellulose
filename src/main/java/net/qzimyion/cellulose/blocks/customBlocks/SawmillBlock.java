@@ -34,7 +34,7 @@ public class SawmillBlock extends HorizontalFacingBlock
     public SawmillBlock(Settings settings)
     {
         super(settings);
-        setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
+        setDefaultState(getDefaultState().with(FACING, Direction.NORTH));
     }
 
     @Nullable
@@ -92,7 +92,7 @@ public class SawmillBlock extends HorizontalFacingBlock
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder)
     {
-        builder.add(Properties.HORIZONTAL_FACING);
+        builder.add(FACING);
     }
 
     @Override

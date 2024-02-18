@@ -25,6 +25,7 @@ import static net.minecraft.recipe.book.RecipeCategory.*;
 import static net.minecraft.registry.tag.ItemTags.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 
+@SuppressWarnings("deprecation")
 public class CelluloseRecipeGenerator extends FabricRecipeProvider {
     public CelluloseRecipeGenerator(FabricDataOutput output) {
         super(output);
@@ -278,26 +279,55 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(SAWMILL)));
 
         //Frame recipes
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, OAK_FRAME, 5)
-                .pattern("#A#")
-                .pattern("A#A")
-                .pattern("#A#")
-                .input('#', CelluloseTags.Items.OAK_PLANKS).input('A', STICK).criterion(FabricRecipeProvider.hasItem(STICK), FabricRecipeProvider.conditionsFromItem(STICK))
-                .group("cellulose:wooden_frame").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(OAK_FRAME)));
+        offerFrameRecipes(exporter, OAK_FRAME, CelluloseTags.Items.OAK_PLANKS);
+        offerFrameRecipes(exporter, BIRCH_FRAME, CelluloseTags.Items.BIRCH_PLANKS);
+        offerFrameRecipes(exporter, SPRUCE_FRAME, CelluloseTags.Items.SPRUCE_PLANKS);
+        offerFrameRecipes(exporter, DARK_OAK_FRAME, CelluloseTags.Items.DARK_OAK_PLANKS);
+        offerFrameRecipes(exporter, JUNGLE_FRAME, CelluloseTags.Items.JUNGLE_PLANKS);
+        offerFrameRecipes(exporter, ACACIA_FRAME, CelluloseTags.Items.ACACIA_PLANKS);
+        offerFrameRecipes(exporter, CRIMSON_FRAME, CelluloseTags.Items.CRIMSON_PLANKS);
+        offerFrameRecipes(exporter, WARPED_FRAME, CelluloseTags.Items.WARPED_PLANKS);
+        offerFrameRecipes(exporter, MANGROVE_FRAME, CelluloseTags.Items.MANGROVE_PLANKS);
+        offerFrameRecipes(exporter, BAMBOO_FRAME, CelluloseTags.Items.BAMBOO_PLANKS);
+        offerFrameRecipes(exporter, CHERRY_FRAME, CelluloseTags.Items.CHERRY_PLANKS);
+        offerFrameRecipes(exporter, CACTUS_FRAME, CelluloseTags.Items.CACTUS_PLANKS);
+        offerFrameRecipes(exporter, AZALEA_FRAME, CelluloseTags.Items.AZALEA_PLANKS);
+        offerFrameRecipes(exporter, BLOOMING_AZALEA_FRAME, CelluloseTags.Items.BLOOMING_AZALEA_PLANKS);
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, BIRCH_FRAME, 5)
-                .pattern("#A#")
-                .pattern("A#A")
-                .pattern("#A#")
-                .input('#', CelluloseTags.Items.BIRCH_PLANKS).input('A', STICK).criterion(FabricRecipeProvider.hasItem(STICK), FabricRecipeProvider.conditionsFromItem(STICK))
-                .group("cellulose:wooden_frame").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(BIRCH_FRAME)));
+        //Lintel recipes
+        offerLintelsRecipes(exporter, OAK_LINTELS, OAK_FRAME);
+        offerLintelsRecipes(exporter, BIRCH_LINTELS, BIRCH_FRAME);
+        offerLintelsRecipes(exporter, SPRUCE_LINTELS, SPRUCE_FRAME);
+        offerLintelsRecipes(exporter, DARK_OAK_LINTELS, DARK_OAK_FRAME);
+        offerLintelsRecipes(exporter, JUNGLE_LINTELS, JUNGLE_FRAME);
+        offerLintelsRecipes(exporter, ACACIA_LINTELS, ACACIA_FRAME);
+        offerLintelsRecipes(exporter, CRIMSON_LINTELS, CRIMSON_FRAME);
+        offerLintelsRecipes(exporter, WARPED_LINTELS, WARPED_FRAME);
+        offerLintelsRecipes(exporter, MANGROVE_LINTELS, MANGROVE_FRAME);
+        offerLintelsRecipes(exporter, BAMBOO_LINTELS, BAMBOO_FRAME);
+        offerLintelsRecipes(exporter, CHERRY_LINTELS, CHERRY_FRAME);
+        offerLintelsRecipes(exporter, CACTUS_LINTELS, CACTUS_FRAME);
+        offerLintelsRecipes(exporter, AZALEA_LINTELS, AZALEA_FRAME);
+        offerLintelsRecipes(exporter, BLOOMING_AZALEA_LINTELS, BLOOMING_AZALEA_FRAME);
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, DARK_OAK_FRAME, 5)
-                .pattern("#A#")
-                .pattern("A#A")
-                .pattern("#A#")
-                .input('#', CelluloseTags.Items.DARK_OAK_PLANKS).input('A', STICK).criterion(FabricRecipeProvider.hasItem(STICK), FabricRecipeProvider.conditionsFromItem(STICK))
-                .group("cellulose:wooden_frame").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(DARK_OAK_FRAME)));
+        //Tile recipes
+        offerTilesRecipes(exporter, OAK_TILES, OAK_PLANKS, OAK_SLAB);
+        offerTilesRecipes(exporter, BIRCH_TILES, BIRCH_PLANKS, BIRCH_SLAB);
+        offerTilesRecipes(exporter, SPRUCE_TILES, SPRUCE_PLANKS, SPRUCE_SLAB);
+        offerTilesRecipes(exporter, DARK_OAK_TILES, DARK_OAK_PLANKS, DARK_OAK_SLAB);
+        offerTilesRecipes(exporter, JUNGLE_TILES, JUNGLE_PLANKS, JUNGLE_SLAB);
+        offerTilesRecipes(exporter, ACACIA_TILES, ACACIA_PLANKS, ACACIA_SLAB);
+        offerTilesRecipes(exporter, CRIMSON_TILES, CRIMSON_PLANKS, CRIMSON_SLAB);
+        offerTilesRecipes(exporter, WARPED_TILES, WARPED_PLANKS, WARPED_SLAB);
+        offerTilesRecipes(exporter, MANGROVE_TILES, MANGROVE_PLANKS, MANGROVE_SLAB);
+        offerTilesRecipes(exporter, BAMBOO_TILES, BAMBOO_PLANKS, BAMBOO_SLAB);
+        offerTilesRecipes(exporter, CHERRY_TILES, CHERRY_PLANKS, CHERRY_SLAB);
+        offerTilesRecipes(exporter, CACTUS_TILES, Item.fromBlock(CACTUS_PLANKS), Item.fromBlock(CACTUS_SLAB));
+        offerTilesRecipes(exporter, AZALEA_TILES, Item.fromBlock(AZALEA_PLANKS), Item.fromBlock(AZALEA_SLAB));
+        offerTilesRecipes(exporter, BLOOMING_AZALEA_TILES, Item.fromBlock(BLOOMING_AZALEA_PLANKS), Item.fromBlock(BLOOMING_AZALEA_SLAB));
+
+        //Cedar woodset
+
 
         //Cactus woodset
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_BUNDLE, 4)
@@ -395,6 +425,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerSawdustLayerRecipe(exporter, AZALEA_SAWDUST_LAYER, CelluloseItems.AZALEA_SAWDUST);
 
         //Bookshelves
+        offerBookShelvesRecipe(exporter, BOOKSHELF, CelluloseTags.Items.OAK_PLANKS);
         offerBookShelvesRecipe(exporter, BIRCH_BOOKSHELF, CelluloseTags.Items.BIRCH_PLANKS);
         offerBookShelvesRecipe(exporter, SPRUCE_BOOKSHELF, CelluloseTags.Items.SPRUCE_PLANKS);
         offerBookShelvesRecipe(exporter, DARK_OAK_BOOKSHELF, CelluloseTags.Items.DARK_OAK_PLANKS);
@@ -411,6 +442,18 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         //Chiseled Bookshelves
         offerChiseledBookShelvesRecipe(exporter, CHISELED_BOOKSHELF, CelluloseTags.Items.OAK_PLANKS, CelluloseTags.Items.OAK_SLABS);
         offerChiseledBookShelvesRecipe(exporter, BIRCH_CHISELED_BOOKSHELF, CelluloseTags.Items.BIRCH_PLANKS, CelluloseTags.Items.BIRCH_SLABS);
+        offerChiseledBookShelvesRecipe(exporter, SPRUCE_CHISELED_BOOKSHELF, CelluloseTags.Items.SPRUCE_PLANKS, CelluloseTags.Items.SPRUCE_SLABS);
+        offerChiseledBookShelvesRecipe(exporter, DARK_OAK_CHISELED_BOOKSHELF, CelluloseTags.Items.DARK_OAK_PLANKS, CelluloseTags.Items.DARK_OAK_PLANKS);
+        offerChiseledBookShelvesRecipe(exporter, JUNGLE_CHISELED_BOOKSHELF, CelluloseTags.Items.JUNGLE_PLANKS, CelluloseTags.Items.JUNGLE_PLANKS);
+        offerChiseledBookShelvesRecipe(exporter, ACACIA_CHISELED_BOOKSHELF, CelluloseTags.Items.ACACIA_PLANKS, CelluloseTags.Items.ACACIA_SLABS);
+        offerChiseledBookShelvesRecipe(exporter, CRIMSON_CHISELED_BOOKSHELF, CelluloseTags.Items.CRIMSON_PLANKS, CelluloseTags.Items.CRIMSON_SLABS);
+        offerChiseledBookShelvesRecipe(exporter, WARPED_CHISELED_BOOKSHELF, CelluloseTags.Items.WARPED_PLANKS, CelluloseTags.Items.WARPED_PLANKS);
+        offerChiseledBookShelvesRecipe(exporter, MANGROVE_CHISELED_BOOKSHELF, CelluloseTags.Items.MANGROVE_PLANKS, CelluloseTags.Items.MANGROVE_PLANKS);
+        offerChiseledBookShelvesRecipe(exporter, BAMBOO_CHISELED_BOOKSHELF, CelluloseTags.Items.BAMBOO_PLANKS, CelluloseTags.Items.BAMBOO_SLABS);
+        offerChiseledBookShelvesRecipe(exporter, CHERRY_CHISELED_BOOKSHELF, CelluloseTags.Items.CHERRY_PLANKS, CelluloseTags.Items.CHERRY_SLABS);
+        offerChiseledBookShelvesRecipe(exporter, CACTUS_CHISELED_BOOKSHELF, CelluloseTags.Items.CACTUS_PLANKS, CelluloseTags.Items.CACTUS_SLABS);
+        offerChiseledBookShelvesRecipe(exporter, AZALEA_CHISELED_BOOKSHELF, CelluloseTags.Items.AZALEA_PLANKS, CelluloseTags.Items.AZALEA_SLABS);
+        offerChiseledBookShelvesRecipe(exporter, BLOOMING_AZALEA_CHISELED_BOOKSHELF, CelluloseTags.Items.BLOOMING_AZALEA_PLANKS, CelluloseTags.Items.BLOOMING_AZALEA_SLABS);
 
         ///Cooking
 
@@ -507,7 +550,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         ///Chipped Log
         offerSawmillingRecipe(exporter, CHIPPED_OAK_PLANKS, CHIPPED_OAK, 4);
         offerSawmillingRecipe(exporter, CHIPPED_OAK_SLAB, CHIPPED_OAK, 8);
-        offerSawmillingRecipe(exporter, CHIPPED_OAK_STAIR, CHIPPED_OAK, 5);
+        offerSawmillingRecipe(exporter, CHIPPED_OAK_STAIRS, CHIPPED_OAK, 5);
         offerSawmillingRecipe(exporter, OAK_FENCE, CHIPPED_OAK, 8);
         offerSawmillingRecipe(exporter, OAK_FENCE_GATE, CHIPPED_OAK, 8);
         offerSawmillingRecipe(exporter, OAK_BOAT, CHIPPED_OAK, 4);
@@ -517,7 +560,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         ///Chipped Wood
         offerSawmillingRecipe(exporter, CHIPPED_OAK_PLANKS, CHIPPED_OAK_WOOD, 4);
         offerSawmillingRecipe(exporter, CHIPPED_OAK_SLAB, CHIPPED_OAK_WOOD, 8);
-        offerSawmillingRecipe(exporter, CHIPPED_OAK_STAIR, CHIPPED_OAK_WOOD, 5);
+        offerSawmillingRecipe(exporter, CHIPPED_OAK_STAIRS, CHIPPED_OAK_WOOD, 5);
         offerSawmillingRecipe(exporter, OAK_FENCE, CHIPPED_OAK_WOOD, 8);
         offerSawmillingRecipe(exporter, OAK_FENCE_GATE, CHIPPED_OAK_WOOD, 8);
         offerSawmillingRecipe(exporter, OAK_BOAT, CHIPPED_OAK_WOOD, 4);
@@ -570,29 +613,33 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerSmelting(exporter, PAPER_SMELTING, MISC, PAPER_BLOCK, 0.15F, 200, "misc");
     }
 
+    private void offerPlanksRecipe(Block strippedCactusBundle) {
+    }
+
+    public static void offerPlanks(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 4).input('#', input).group("planks").criterion("has_logs", RecipeProvider.conditionsFromTag(LOGS)).offerTo(exporter);
+    }
+
     private void createStairsRecipe(Block Stairs, Block block) {
     }
 
-    private void offerPlanksRecipe(Block block)
-    {
 
-    }
     //Custom recipe generators
 
     public static void offerVerticalPlanksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("#").pattern("#").pattern("#").group("cellulose:vertical_planks").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(CelluloseTags.Items.VERTICAL_PLANKS)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("#").pattern("#").pattern("#").group("cellulose:verticalPlanks").criterion("has_planks", RecipeProvider.conditionsFromTag(CelluloseTags.Items.VERTICAL_PLANKS)).offerTo(exporter);
     }
 
     public static void offerReverseVerticalPlanksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("###").group("planks").group("planks").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(PLANKS)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("###").group("planks").criterion("has_vertical_planks", RecipeProvider.conditionsFromTag(PLANKS)).offerTo(exporter);
     }
 
     public static void offerSawdustLayerRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("##").group("cellulose:sawdust_layers").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(CelluloseTags.Items.SAWDUST)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("##").group("cellulose:sawdustLayers").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(CelluloseTags.Items.SAWDUST)).offerTo(exporter);
     }
 
     public static void offerPavementRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 5).input('#', input).pattern("#  ").pattern("#  ").pattern("###").group("cellulose:pavements").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(CelluloseTags.Items.PAVEMENTS)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 5).input('#', input).pattern("#  ").pattern("#  ").pattern("###").group("cellulose:pavements").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).offerTo(exporter);
     }
 
     public static void offerBookShelvesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input) {
@@ -600,11 +647,23 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
     }
 
     public static void offerChiseledBookShelvesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input, TagKey<Item> input1) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).group("cellulose:chiseled_bookshelves").input('#', input).input('X', input1).pattern("###").pattern("XXX").pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_slabs", RecipeProvider.conditionsFromTag(WOODEN_SLABS)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 1).group("cellulose:Cbookshelves").input('#', input).input('X', input1).pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).pattern("XXX").criterion("has_slabs", RecipeProvider.conditionsFromTag(WOODEN_SLABS)).pattern("###").offerTo(exporter);
     }
 
-    public static void offerDyedPaperBlocksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, Item input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).group("cellulose:paper_blocks").input('#', PAPER_BLOCK).input('X', (ItemConvertible) input).pattern("#").pattern("X").criterion("has_paper_block", RecipeProvider.conditionsFromItem(PAPER_BLOCK)).offerTo(exporter);
+    public static void offerFrameRecipes(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input) {
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 5).group("cellulose:frames").input('#', input).input('X', STICK).pattern("X X").pattern(" # ").pattern("X X").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_sticks", RecipeProvider.conditionsFromItem(STICK)).offerTo(exporter);
+    }
+
+    public static void offerLintelsRecipes(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, Block input) {
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 12).group("cellulose:lintels").input('#', input).pattern("###").pattern("###").criterion("has_frame_blocks", RecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_FRAMES)).offerTo(exporter);
+    }
+
+    public static void offerTilesRecipes(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, Item input, Item input1) {
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).group("cellulose:tiles").input('#', input).input('X', input1).pattern("#X").pattern("X#").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_slabs", RecipeProvider.conditionsFromTag(WOODEN_SLABS)).offerTo(exporter);
+    }
+
+    public static void offerWallPaperRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, Item input) {
+        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 1).group("cellulose:wallpaper").input('#', PAPER_BLOCK).input('X', input).pattern("#").pattern("X").criterion("has_paper_block", RecipeProvider.conditionsFromItem(PAPER_BLOCK)).offerTo(exporter);
     }
 
     ////Sawmilling

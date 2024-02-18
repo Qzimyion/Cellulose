@@ -3,13 +3,13 @@ package net.qzimyion.cellulose.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
+import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
 import java.util.concurrent.CompletableFuture;
 import static net.minecraft.block.Blocks.*;
@@ -50,11 +50,22 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(BLOOMING_AZALEA_TIMBERS)
         ;
 
-        getOrCreateTagBuilder(FIRE_BLOCKS)
-                .add(CAMPFIRE)
-                .add(MAGMA_BLOCK)
-                .add(Blocks.FIRE)
-                .add(LAVA);
+        getOrCreateTagBuilder(SHOJIS)
+                .add(OAK_SHOJI)
+                .add(BIRCH_SHOJI)
+                .add(SPRUCE_SHOJI)
+                .add(DARK_OAK_SHOJI)
+                .add(JUNGLE_SHOJI)
+                .add(ACACIA_SHOJI)
+                .add(CRIMSON_SHOJI)
+                .add(WARPED_SHOJI)
+                .add(MANGROVE_SHOJI)
+                .add(BAMBOO_SHOJI)
+                .add(CHERRY_SHOJI)
+                .add(CACTUS_SHOJI)
+                .add(AZALEA_SHOJI)
+                .add(BLOOMING_AZALEA_SHOJI)
+        ;
 
         getOrCreateTagBuilder(SAWDUST_LAYERS)
                 .add(OAK_SAWDUST_LAYER)
@@ -213,7 +224,36 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(CACTUS_CROWN)
                 .add(AZALEA_LOG)
                 .add(AZALEA_WOOD)
+
+                //Stripped log
+                .add(STRIPPED_OAK_LOG)
+                .add(STRIPPED_BIRCH_LOG)
+                .add(STRIPPED_SPRUCE_LOG)
+                .add(STRIPPED_DARK_OAK_LOG)
+                .add(STRIPPED_JUNGLE_LOG)
+                .add(STRIPPED_ACACIA_LOG)
+                .add(STRIPPED_CRIMSON_STEM)
+                .add(STRIPPED_WARPED_STEM)
+                .add(STRIPPED_MANGROVE_LOG)
+                .add(STRIPPED_CHERRY_LOG)
+                .add(STRIPPED_CACTUS)
+                .add(STRIPPED_AZALEA_LOG)
+                .add(BLOOMING_STRIPPED_AZALEA_LOG)
+                .add(STRIPPED_OAK_WOOD)
+                .add(STRIPPED_BIRCH_WOOD)
+                .add(STRIPPED_SPRUCE_WOOD)
+                .add(STRIPPED_DARK_OAK_WOOD)
+                .add(STRIPPED_JUNGLE_WOOD)
+                .add(STRIPPED_ACACIA_WOOD)
+                .add(STRIPPED_CRIMSON_STEM)
+                .add(STRIPPED_WARPED_STEM)
+                .add(STRIPPED_MANGROVE_WOOD)
+                .add(STRIPPED_CHERRY_WOOD)
+                .add(STRIPPED_CACTUS)
+                .add(STRIPPED_AZALEA_WOOD)
+                .add(BLOOMING_STRIPPED_AZALEA_WOOD)
         ;
+
         getOrCreateTagBuilder(FLOWERABLE)
                 .add(AZALEA)
                 .add(POTTED_AZALEA_BUSH)
@@ -229,7 +269,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(AZALEA_STAIRS)
                 .add(CHIPPED_AZALEA_PLANKS)
                 .add(CHIPPED_AZALEA_SLAB)
-                .add(CHIPPED_AZALEA_STAIR)
+                .add(CHIPPED_AZALEA_STAIRS)
                 .add(VERTICAL_AZALEA_PLANKS)
                 .add(VERTICAL_AZALEA_SLAB)
                 .add(VERTICAL_AZALEA_STAIR)
@@ -245,7 +285,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(POTTED_FLOWERING_AZALEA_BUSH)
                 .add(BLOOMING_AZALEA_LOG)
                 .add(BLOOMING_AZALEA_WOOD)
-                .add(BLOOMING_STRIPPED_AZALEA)
+                .add(BLOOMING_STRIPPED_AZALEA_LOG)
                 .add(BLOOMING_STRIPPED_AZALEA_WOOD)
                 .add(ENGRAVED_BLOOMING_AZALEA)
                 .add(ENGRAVED_BLOOMING_AZALEA_WOOD)
@@ -255,7 +295,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(BLOOMING_AZALEA_STAIRS)
                 .add(CHIPPED_BLOOMING_AZALEA_PLANKS)
                 .add(CHIPPED_BLOOMING_AZALEA_SLAB)
-                .add(CHIPPED_BLOOMING_AZALEA_STAIR)
+                .add(CHIPPED_BLOOMING_AZALEA_STAIRS)
                 .add(VERTICAL_BLOOMING_AZALEA_PLANKS)
                 .add(VERTICAL_BLOOMING_AZALEA_SLAB)
                 .add(VERTICAL_BLOOMING_AZALEA_STAIR)
@@ -277,7 +317,8 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_CACTUS_PLANKS)
                 .add(VERTICAL_CHERRY_PLANKS)
                 .add(VERTICAL_AZALEA_PLANKS)
-                .add(VERTICAL_BLOOMING_AZALEA_PLANKS);
+                .add(VERTICAL_BLOOMING_AZALEA_PLANKS)
+                .add(VERTICAL_CEDAR_PLANKS);
 
         getOrCreateTagBuilder(LOG_SLABS)
                 .add(OAK_LOG_SLABS)
@@ -418,24 +459,24 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(CHIPPED_VERTICAL_BLOOMING_AZALEA_SLAB);
 
         getOrCreateTagBuilder(CHIPPED_PLANKS_STAIRS)
-                .add(CHIPPED_AZALEA_STAIR)
-                .add(CHIPPED_BLOOMING_AZALEA_STAIR)
-                .add(CHIPPED_WARPED_STAIR)
-                .add(CHIPPED_CRIMSON_STAIR)
-                .add(CHIPPED_VERTICAL_OAK_STAIR)
-                .add(CHIPPED_VERTICAL_BIRCH_STAIR)
-                .add(CHIPPED_VERTICAL_SPRUCE_STAIR)
-                .add(CHIPPED_VERTICAL_DARK_OAK_STAIR)
-                .add(CHIPPED_VERTICAL_JUNGLE_STAIR)
-                .add(CHIPPED_VERTICAL_ACACIA_STAIR)
-                .add(CHIPPED_VERTICAL_WARPED_STAIR)
-                .add(CHIPPED_VERTICAL_CRIMSON_STAIR)
-                .add(CHIPPED_VERTICAL_MANGROVE_STAIR)
-                .add(CHIPPED_VERTICAL_BAMBOO_STAIR)
-                .add(CHIPPED_VERTICAL_CHERRY_STAIR)
-                .add(CHIPPED_VERTICAL_CACTUS_STAIR)
-                .add(CHIPPED_VERTICAL_AZALEA_STAIR)
-                .add(CHIPPED_VERTICAL_BLOOMING_AZALEA_STAIR);
+                .add(CHIPPED_AZALEA_STAIRS)
+                .add(CHIPPED_BLOOMING_AZALEA_STAIRS)
+                .add(CHIPPED_WARPED_STAIRS)
+                .add(CHIPPED_CRIMSON_STAIRS)
+                .add(CHIPPED_VERTICAL_OAK_STAIRS)
+                .add(CHIPPED_VERTICAL_BIRCH_STAIRS)
+                .add(CHIPPED_VERTICAL_SPRUCE_STAIRS)
+                .add(CHIPPED_VERTICAL_DARK_OAK_STAIRS)
+                .add(CHIPPED_VERTICAL_JUNGLE_STAIRS)
+                .add(CHIPPED_VERTICAL_ACACIA_STAIRS)
+                .add(CHIPPED_VERTICAL_WARPED_STAIRS)
+                .add(CHIPPED_VERTICAL_CRIMSON_STAIRS)
+                .add(CHIPPED_VERTICAL_MANGROVE_STAIRS)
+                .add(CHIPPED_VERTICAL_BAMBOO_STAIRS)
+                .add(CHIPPED_VERTICAL_CHERRY_STAIRS)
+                .add(CHIPPED_VERTICAL_CACTUS_STAIRS)
+                .add(CHIPPED_VERTICAL_AZALEA_STAIRS)
+                .add(CHIPPED_VERTICAL_BLOOMING_AZALEA_STAIRS);
 
         getOrCreateTagBuilder(TILES)
                 .add(OAK_TILES)
@@ -502,10 +543,15 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
         ;
 
         ///Vanilla Tags
+
+        getOrCreateTagBuilder(LEAVES)
+                .add(CelluloseBlocks.CEDAR_LEAVES);
+
         getOrCreateTagBuilder(PLANKS)
                 .add(AZALEA_PLANKS)
                 .add(BLOOMING_AZALEA_PLANKS)
                 .add(CACTUS_PLANKS)
+                .add(CEDAR_PLANKS)
                 .forceAddTag(VERTICAL_PLANKS);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_SLABS)
@@ -526,6 +572,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_CACTUS_SLAB)
                 .add(VERTICAL_AZALEA_SLAB)
                 .add(VERTICAL_BLOOMING_AZALEA_SLAB)
+                .add(VERTICAL_CEDAR_SLAB)
 
                 //Mosaic
                 .add(OAK_MOSAIC_SLABS)
@@ -577,6 +624,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_CACTUS_STAIR)
                 .add(VERTICAL_AZALEA_STAIR)
                 .add(VERTICAL_BLOOMING_AZALEA_STAIR)
+                .add(VERTICAL_CEDAR_STAIR)
 
                 //Mosaic
                 .add(OAK_MOSAIC_STAIRS)
@@ -612,21 +660,25 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
 
         getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS)
                 .add(AZALEA_BUTTON)
-                .add(CACTUS_BUTTON);
+                .add(CACTUS_BUTTON)
+                .add(CEDAR_BUTTON);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
                 .add(AZALEA_PRESSURE_PLATE)
-                .add(CACTUS_PRESSURE_PLATE);
+                .add(CACTUS_PRESSURE_PLATE)
+                .add(CEDAR_PRESSURE_PLATE);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
                 .add(AZALEA_DOOR)
                 .add(BLOOMING_AZALEA_DOOR)
-                .add(CACTUS_DOOR);
+                .add(CACTUS_DOOR)
+                .add(CEDAR_DOOR);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)
                 .add(AZALEA_TRAPDOOR)
                 .add(BLOOMING_AZALEA_TRAPDOOR)
-                .add(CACTUS_TRAPDOOR);
+                .add(CACTUS_TRAPDOOR)
+                .add(CEDAR_TRAPDOOR);
 
         getOrCreateTagBuilder(ENCHANTMENT_POWER_PROVIDER)
                 .add(BIRCH_BOOKSHELF)
@@ -706,7 +758,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(BLOOMING_AZALEA_WOOD)
                 .add(AZALEA_LOG)
                 .add(AZALEA_WOOD)
-                .add(BLOOMING_STRIPPED_AZALEA)
+                .add(BLOOMING_STRIPPED_AZALEA_LOG)
                 .add(BLOOMING_STRIPPED_AZALEA_WOOD)
                 .add(STRIPPED_AZALEA_LOG)
                 .add(STRIPPED_AZALEA_WOOD)
@@ -714,6 +766,12 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(ENGRAVED_BLOOMING_AZALEA_WOOD)
                 .add(ENGRAVED_AZALEA)
                 .add(ENGRAVED_AZALEA_WOOD);
+
+        getOrCreateTagBuilder(CEDAR_LOGS)
+                .add(CEDAR_LOG)
+                .add(CEDAR_WOOD)
+                .add(STRIPPED_CEDAR_LOG)
+                .add(STRIPPED_CEDAR_WOOD);
 
         getOrCreateTagBuilder(BlockTags.LOGS)
                 .forceAddTag(BlockTags.LOGS_THAT_BURN)
@@ -731,19 +789,23 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .forceAddTag(BlockTags.ACACIA_LOGS)
                 .forceAddTag(BlockTags.MANGROVE_LOGS)
                 .forceAddTag(BlockTags.CHERRY_LOGS)
-                .forceAddTag(AZALEA_LOGS);
+                .forceAddTag(AZALEA_LOGS)
+                .forceAddTag(CEDAR_LOGS);
 
         getOrCreateTagBuilder(WOODEN_FENCES)
                 .add(AZALEA_FENCE)
-                .add(CACTUS_FENCE);
+                .add(CACTUS_FENCE)
+                .add(CEDAR_FENCE);
 
         getOrCreateTagBuilder(FENCES)
                 .add(AZALEA_FENCE)
-                .add(CACTUS_FENCE);
+                .add(CACTUS_FENCE)
+                .add(CEDAR_FENCE);
 
         getOrCreateTagBuilder(FENCE_GATES)
                 .add(AZALEA_FENCE_GATE)
-                .add(CACTUS_FENCE_GATE);
+                .add(CACTUS_FENCE_GATE)
+                .add(CEDAR_FENCE_GATE);
 
         ///Mining tags
         getOrCreateTagBuilder(AXE_MINEABLE)
@@ -793,5 +855,8 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
         getOrCreateTagBuilder(SHOVEL_MINEABLE)
                 .forceAddTag(SAWDUST_LAYERS)
         ;
+
+        getOrCreateTagBuilder(HOE_MINEABLE)
+                .add(CelluloseBlocks.CEDAR_LEAVES);
     }
 }

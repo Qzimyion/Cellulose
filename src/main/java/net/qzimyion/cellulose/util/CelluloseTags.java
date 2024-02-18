@@ -37,7 +37,7 @@ public class CelluloseTags
         //Event only tags
         public static final TagKey <Block> ENGRAVABLE_LOGS = createTag ("engravable_logs");
         public static final TagKey <Block> CHIPPABLE_LOGS = createTag ("chippable_logs");
-        public static final TagKey <Block> FIRE_BLOCKS = createTag ("fire_blocks");
+        public static final TagKey <Block> SHOJIS = createTag ("shojis");
 
         //Plants
         public static final TagKey <Block> FLOWERABLE = createTag("flowerable");
@@ -47,8 +47,8 @@ public class CelluloseTags
         //Woodsets
         public static final TagKey <Block> CACTUS_LOGS = createTag("cactus_logs");
         public static final TagKey <Block> AZALEA_LOGS = createTag("azalea_logs");
-        public static final TagKey <Block> OLIVE_LOGS = createTag ("olive_logs");
-        public static final TagKey <Block> OLIVE_LEAVES = createTag ("olive_leaves");
+        public static final TagKey <Block> CEDAR_LOGS = createTag ("cedar_logs");
+        public static final TagKey <Block> CEDAR_LEAVES = createTag ("cedar_leaves");
 
         private static TagKey <Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, name));
@@ -71,16 +71,14 @@ public class CelluloseTags
         public static final TagKey <Item> CHIPPED_PLANKS_SLAB = createTag ("chipped_planks_slabs");
         public static final TagKey <Item> CHIPPED_PLANKS_STAIRS = createTag ("chipped_planks_stairs");
         public static final TagKey <Item> CHISELED_PLANKS = createTag ("chiseled_planks");
-        public static final TagKey <Item> GLAZED_WOOD = createTag ("glazed_wood");
         public static final TagKey <Item> AZALEA_FLOWER = createCommonTag("azalea_flower");
         public static final TagKey <Item> VERTICAL_PLANKS = createTag ("vertical_planks");
-        public static final TagKey <Item> CURING_AGENTS = createTag("curing_potions");
-
         public static final TagKey <Item> ACORNS = createTag("acorns");
 
         //Woodsets
         public static final TagKey <Item> CACTUS_LOGS = createTag("cactus_logs");
         public static final TagKey <Item> AZALEA_LOGS = createTag("azalea_logs");
+        public static final TagKey <Item> CEDAR_LOGS = createTag("cedar_logs");
 
         //Plank tags
         public static final TagKey <Item> OAK_PLANKS = createTag("oak_planks");

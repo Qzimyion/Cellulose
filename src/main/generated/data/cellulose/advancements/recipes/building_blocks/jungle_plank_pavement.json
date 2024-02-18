@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_jungle_planks": {
+    "has_planks": {
       "conditions": {
         "items": [
           {
-            "tag": "cellulose:pavements"
+            "tag": "minecraft:planks"
           }
         ]
       },
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_jungle_planks",
+      "has_planks",
       "has_the_recipe"
     ]
   ],

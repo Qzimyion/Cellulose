@@ -3,15 +3,13 @@ package net.qzimyion.cellulose.client;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
-import net.minecraft.client.particle.CherryLeavesParticle;
-import net.minecraft.client.particle.FlameParticle;
+import net.minecraft.client.color.world.BiomeColors;
+import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
-import net.qzimyion.cellulose.particles.Celluloseparticles;
-import net.qzimyion.cellulose.particles.FloweringPaloVerdeLeafParticles;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreen;
 
@@ -24,6 +22,8 @@ public class CelluloseClient implements ClientModInitializer
     public void onInitializeClient()
     {
         RenderLayer Render = RenderLayer.getCutout();
+        RenderLayer Render1 = RenderLayer.getTranslucent();
+        RenderLayer Render2 = RenderLayer.getCutoutMipped();
 
         BlockRenderLayerMap.INSTANCE.putBlock(SAWMILL, Render);
 
@@ -81,8 +81,44 @@ public class CelluloseClient implements ClientModInitializer
 
         //Signs and Hanging signs
 
-        //Particles
+        //Shoji
+        BlockRenderLayerMap.INSTANCE.putBlock(OAK_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(BIRCH_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(SPRUCE_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(DARK_OAK_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(ACACIA_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(CRIMSON_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(WARPED_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(MANGROVE_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(BAMBOO_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_SHOJI, Render1);
 
+        //Ghost Shoji
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_OAK_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_BIRCH_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_SPRUCE_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_DARK_OAK_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_JUNGLE_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_ACACIA_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_CRIMSON_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_WARPED_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_MANGROVE_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_BAMBOO_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_CHERRY_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_CACTUS_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_AZALEA_SHOJI, Render1);
+        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_BLOOMING_AZALEA_SHOJI, Render1);
+
+        //Plant stuff
+        BlockRenderLayerMap.INSTANCE.putBlock(CEDAR_SAPLING, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(CEDAR_LEAVES, Render2);
+
+        //Tints
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> FoliageColors.getSpruceColor(), CEDAR_LEAVES);
 
     }
 }

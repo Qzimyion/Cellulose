@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "cellulose:chiseled_bookshelves",
+  "group": "cellulose:Cbookshelves",
   "key": {
     "#": {
       "tag": "cellulose:birch_planks"
@@ -16,7 +16,6 @@
     "###"
   ],
   "result": {
-    "count": 3,
     "item": "cellulose:birch_chiseled_bookshelf"
   },
   "show_notification": true

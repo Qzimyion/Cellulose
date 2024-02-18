@@ -7,7 +7,7 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_vertical_spruce_planks": {
+    "has_vertical_planks": {
       "conditions": {
         "items": [
           {
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_vertical_spruce_planks",
+      "has_vertical_planks",
       "has_the_recipe"
     ]
   ],

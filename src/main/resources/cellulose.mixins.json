@@ -3,7 +3,12 @@
   "package": "net.qzimyion.cellulose.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "CactusBlockMixin"
+    "CactusBlockMixin",
+    "ChiseledBookshelfMixin",
+    "DarkOakSaplingGeneratorMixin",
+    "FoliagePlacerTypeInvoker",
+    "TrunkPlacerTypeInvoker",
+    "TallDoorsCompatibilityMixins.VillagerGoalMixin"
   ],
   "client": [
   ],
@@ -11,5 +16,5 @@
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }

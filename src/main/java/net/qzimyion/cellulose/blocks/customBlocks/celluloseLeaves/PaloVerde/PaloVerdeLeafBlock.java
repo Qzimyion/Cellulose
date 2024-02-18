@@ -16,7 +16,7 @@ public class PaloVerdeLeafBlock extends LeavesBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!(entity instanceof LivingEntity) || entity.getBlockStateAtPos().isOf(this) && !ModBlockProperties.ImmuneToSpikyStuff((LivingEntity)entity)) {
+        if (!(entity instanceof LivingEntity) || entity.getBlockStateAtPos().isOf(this) && ModBlockProperties.ImmuneToSpikyStuff((LivingEntity) entity)) {
             entity.damage(world.getDamageSources().cactus(), 1.0f);
         }
         super.onEntityCollision(state, world, pos, entity);

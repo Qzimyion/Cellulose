@@ -2,12 +2,10 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 
-import static net.minecraft.block.Blocks.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
@@ -18,7 +16,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
     }
 
     //Custom models
-
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
@@ -39,18 +36,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool VerticalCherry = blockStateModelGenerator.registerCubeAllModelTexturePool(VERTICAL_CHERRY_PLANKS);
         BlockStateModelGenerator.BlockTexturePool VerticalAzalea = blockStateModelGenerator.registerCubeAllModelTexturePool(VERTICAL_AZALEA_PLANKS);
         BlockStateModelGenerator.BlockTexturePool VerticalBloomingAzalea = blockStateModelGenerator.registerCubeAllModelTexturePool(VERTICAL_BLOOMING_AZALEA_PLANKS);
-
-        BlockStateModelGenerator.BlockTexturePool Oak = blockStateModelGenerator.registerCubeAllModelTexturePool(OAK_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool Birch = blockStateModelGenerator.registerCubeAllModelTexturePool(BIRCH_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool Spruce = blockStateModelGenerator.registerCubeAllModelTexturePool(SPRUCE_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool DarkOak = blockStateModelGenerator.registerCubeAllModelTexturePool(DARK_OAK_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool Jungle = blockStateModelGenerator.registerCubeAllModelTexturePool(JUNGLE_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool Acacia = blockStateModelGenerator.registerCubeAllModelTexturePool(ACACIA_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool Crimson = blockStateModelGenerator.registerCubeAllModelTexturePool(CRIMSON_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool Warped = blockStateModelGenerator.registerCubeAllModelTexturePool(WARPED_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool Mangrove = blockStateModelGenerator.registerCubeAllModelTexturePool(MANGROVE_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool Bamboo = blockStateModelGenerator.registerCubeAllModelTexturePool(BAMBOO_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool Cherry = blockStateModelGenerator.registerCubeAllModelTexturePool(CHERRY_PLANKS);
 
         BlockStateModelGenerator.BlockTexturePool MosaicOak = blockStateModelGenerator.registerCubeAllModelTexturePool(OAK_MOSAIC);
         BlockStateModelGenerator.BlockTexturePool MosaicBirch = blockStateModelGenerator.registerCubeAllModelTexturePool(BIRCH_MOSAIC);
@@ -181,19 +166,20 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.LogTexturePool PlankPillarAzalea = blockStateModelGenerator.registerLog(AZALEA_PLANK_PILLARS);
         BlockStateModelGenerator.LogTexturePool PlankPillarBloomingAzalea = blockStateModelGenerator.registerLog(BLOOMING_AZALEA_PLANK_PILLARS);
 
-
-        BlockStateModelGenerator.LogTexturePool BeamOak = blockStateModelGenerator.registerLog(OAK_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamBirch = blockStateModelGenerator.registerLog(BIRCH_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamSpruce = blockStateModelGenerator.registerLog(SPRUCE_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamDarkOak = blockStateModelGenerator.registerLog(DARK_OAK_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamJungle = blockStateModelGenerator.registerLog(JUNGLE_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamAcacia = blockStateModelGenerator.registerLog(ACACIA_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamCrimson = blockStateModelGenerator.registerLog(CRIMSON_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamWarped = blockStateModelGenerator.registerLog(WARPED_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamMangrove = blockStateModelGenerator.registerLog(MANGROVE_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamBamboo = blockStateModelGenerator.registerLog(BAMBOO_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamCherry = blockStateModelGenerator.registerLog(CHERRY_BEAM);
-        BlockStateModelGenerator.LogTexturePool BeamCactus = blockStateModelGenerator.registerLog(CACTUS_BEAM);
+        /*
+        BlockStateModelGenerator.LogTexturePool BeamOak = blockStateModelGenerator.registerLog(OAK_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamBirch = blockStateModelGenerator.registerLog(BIRCH_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamSpruce = blockStateModelGenerator.registerLog(SPRUCE_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamDarkOak = blockStateModelGenerator.registerLog(DARK_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamJungle = blockStateModelGenerator.registerLog(JUNGLE_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamAcacia = blockStateModelGenerator.registerLog(ACACIA_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamCrimson = blockStateModelGenerator.registerLog(CRIMSON_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamWarped = blockStateModelGenerator.registerLog(WARPED_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamMangrove = blockStateModelGenerator.registerLog(MANGROVE_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamBamboo = blockStateModelGenerator.registerLog(BAMBOO_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamCherry = blockStateModelGenerator.registerLog(CHERRY_LOG_MOSAIC);
+        BlockStateModelGenerator.LogTexturePool BeamCactus = blockStateModelGenerator.registerLog(CACTUS_LOG_MOSAIC);
+         */
 
         /*
         Woodsets
@@ -207,9 +193,15 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.LogTexturePool StrippedAzalea = blockStateModelGenerator.registerLog(STRIPPED_AZALEA_LOG);
         BlockStateModelGenerator.LogTexturePool BloomingAzalea = blockStateModelGenerator.registerLog(BLOOMING_AZALEA_LOG);
         BlockStateModelGenerator.LogTexturePool BloomingEngravedAzalea = blockStateModelGenerator.registerLog(ENGRAVED_BLOOMING_AZALEA);
-        BlockStateModelGenerator.LogTexturePool BloomingStrippedAzalea = blockStateModelGenerator.registerLog(BLOOMING_STRIPPED_AZALEA);
+        BlockStateModelGenerator.LogTexturePool BloomingStrippedAzalea = blockStateModelGenerator.registerLog(BLOOMING_STRIPPED_AZALEA_LOG);
         BlockStateModelGenerator.BlockTexturePool AzaleaPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(AZALEA_PLANKS);
         BlockStateModelGenerator.BlockTexturePool BloomingAzaleaPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(BLOOMING_AZALEA_PLANKS);
+
+        //Cedar wood
+        BlockStateModelGenerator.LogTexturePool Cedar = blockStateModelGenerator.registerLog(CEDAR_LOG);
+        BlockStateModelGenerator.LogTexturePool StrippedCedar = blockStateModelGenerator.registerLog(STRIPPED_CEDAR_LOG);
+        BlockStateModelGenerator.BlockTexturePool CedarPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(CEDAR_PLANKS);
+        BlockStateModelGenerator.BlockTexturePool CedarVerticalPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(VERTICAL_CEDAR_PLANKS);
 
         /*
         Misc stuff
@@ -275,17 +267,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         PlankPillarCherry.log(CHERRY_PLANK_PILLARS).wood(CHERRY_PLANK_BOX);
 
         //Beam
-        BeamOak.wood(OAK_BEAM);
-        BeamBirch.wood(BIRCH_BEAM);
-        BeamSpruce.wood(SPRUCE_BEAM);
-        BeamDarkOak.wood(DARK_OAK_BEAM);
-        BeamJungle.wood(JUNGLE_BEAM);
-        BeamAcacia.wood(ACACIA_BEAM);
-        BeamCrimson.wood(CRIMSON_BEAM);
-        BeamWarped.wood(WARPED_BEAM);
-        BeamMangrove.wood(MANGROVE_BEAM);
-        BeamBamboo.wood(BAMBOO_BEAM);
-        BeamCherry.wood(CHERRY_BEAM);
+
 
         //Slabs
         VerticalOak.slab(VERTICAL_OAK_SLAB).stairs(VERTICAL_OAK_STAIR);
@@ -311,17 +293,17 @@ public class CelluloseModelProvider extends FabricModelProvider {
         MosaicMangrove.slab(MANGROVE_MOSAIC_SLABS).stairs(MANGROVE_MOSAIC_STAIRS);
         MosaicCherry.slab(CHERRY_MOSAIC_SLABS).stairs(CHERRY_MOSAIC_STAIRS);
 
-        ChippedPlankOak.slab(CHIPPED_OAK_SLAB).stairs(CHIPPED_OAK_STAIR);
-        ChippedPlankBirch.slab(CHIPPED_BIRCH_SLAB).stairs(CHIPPED_BIRCH_STAIR);
-        ChippedPlankSpruce.slab(CHIPPED_SPRUCE_SLAB).stairs(CHIPPED_SPRUCE_STAIR);
-        ChippedPlankDarkOak.slab(CHIPPED_DARK_OAK_SLAB).stairs(CHIPPED_DARK_OAK_STAIR);
-        ChippedPlankJungle.slab(CHIPPED_JUNGLE_SLAB).stairs(CHIPPED_JUNGLE_STAIR);
-        ChippedPlankAcacia.slab(CHIPPED_ACACIA_SLAB).stairs(CHIPPED_ACACIA_STAIR);
-        ChippedPlankCrimson.slab(CHIPPED_CRIMSON_SLAB).stairs(CHIPPED_CRIMSON_STAIR);
-        ChippedPlankWarped.slab(CHIPPED_WARPED_SLAB).stairs(CHIPPED_WARPED_STAIR);
-        ChippedPlankMangrove.slab(CHIPPED_MANGROVE_SLAB).stairs(CHIPPED_MANGROVE_STAIR);
-        ChippedPlankBamboo.slab(CHIPPED_BAMBOO_SLAB).stairs(CHIPPED_BAMBOO_STAIR);
-        ChippedPlankCherry.slab(CHIPPED_CHERRY_SLAB).stairs(CHIPPED_CHERRY_STAIR);
+        ChippedPlankOak.slab(CHIPPED_OAK_SLAB).stairs(CHIPPED_OAK_STAIRS);
+        ChippedPlankBirch.slab(CHIPPED_BIRCH_SLAB).stairs(CHIPPED_BIRCH_STAIRS);
+        ChippedPlankSpruce.slab(CHIPPED_SPRUCE_SLAB).stairs(CHIPPED_SPRUCE_STAIRS);
+        ChippedPlankDarkOak.slab(CHIPPED_DARK_OAK_SLAB).stairs(CHIPPED_DARK_OAK_STAIRS);
+        ChippedPlankJungle.slab(CHIPPED_JUNGLE_SLAB).stairs(CHIPPED_JUNGLE_STAIRS);
+        ChippedPlankAcacia.slab(CHIPPED_ACACIA_SLAB).stairs(CHIPPED_ACACIA_STAIRS);
+        ChippedPlankCrimson.slab(CHIPPED_CRIMSON_SLAB).stairs(CHIPPED_CRIMSON_STAIRS);
+        ChippedPlankWarped.slab(CHIPPED_WARPED_SLAB).stairs(CHIPPED_WARPED_STAIRS);
+        ChippedPlankMangrove.slab(CHIPPED_MANGROVE_SLAB).stairs(CHIPPED_MANGROVE_STAIRS);
+        ChippedPlankBamboo.slab(CHIPPED_BAMBOO_SLAB).stairs(CHIPPED_BAMBOO_STAIRS);
+        ChippedPlankCherry.slab(CHIPPED_CHERRY_SLAB).stairs(CHIPPED_CHERRY_STAIRS);
 
         TilesOak.slab(OAK_TILES_SLABS).stairs(OAK_TILES_STAIRS);
         TilesBirch.slab(BIRCH_TILES_SLABS).stairs(BIRCH_TILES_STAIRS);
@@ -393,10 +375,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerGlassPane(AZALEA_FRAME, AZALEA_LINTELS);
         blockStateModelGenerator.registerGlassPane(BLOOMING_AZALEA_FRAME, BLOOMING_AZALEA_LINTELS);
 
-        //Walls
-        Oak.wall(OAK_PLANK_BARRICADES);
-        Birch.wall(BIRCH_PLANK_BARRICADES);
-
 
         /*
         *Barricades
@@ -409,28 +387,36 @@ public class CelluloseModelProvider extends FabricModelProvider {
         Cactus.log(CACTUS_BUNDLE).wood(CACTUS_CROWN);
         EngravedCactus.log(ENGRAVED_CACTUS).wood(ENGRAVED_CACTUS_CROWN);
         PlankPillarCactus.log(CACTUS_PLANK_PILLARS).wood(CACTUS_PLANK_BOX);
-        BeamCactus.log(CACTUS_BEAM);
         ///Redstone component
         blockStateModelGenerator.registerDoor(CACTUS_DOOR);
         blockStateModelGenerator.registerTrapdoor(CACTUS_TRAPDOOR);
         blockStateModelGenerator.registerSimpleCubeAll(CHISELED_CACTUS);
         ///Plank related
-        cactusTexturePool.slab(CACTUS_SLAB).stairs(CACTUS_STAIRS).fence(CACTUS_FENCE).fenceGate(CACTUS_FENCE_GATE).button(CACTUS_BUTTON).pressurePlate(CACTUS_PRESSURE_PLATE).wall(CACTUS_PLANK_BARRICADES);
+        cactusTexturePool.slab(CACTUS_SLAB).stairs(CACTUS_STAIRS).fence(CACTUS_FENCE).fenceGate(CACTUS_FENCE_GATE).button(CACTUS_BUTTON).pressurePlate(CACTUS_PRESSURE_PLATE);
         cactusVerticalTexturePool.slab(VERTICAL_CACTUS_SLAB).stairs(VERTICAL_CACTUS_STAIR);
         cactusMosaicTexturePool.slab(CACTUS_MOSAIC_SLABS).stairs(CACTUS_MOSAIC_STAIRS);
-        ChippedPlankCactus.slab(CHIPPED_CACTUS_SLAB).stairs(CHIPPED_CACTUS_STAIR);
+        ChippedPlankCactus.slab(CHIPPED_CACTUS_SLAB).stairs(CHIPPED_CACTUS_STAIRS);
         TilesCactus.slab(CACTUS_TILES_SLABS).stairs(CACTUS_TILES_STAIRS);
         BoardsCactus.slab(CACTUS_TIMBERS_SLABS).stairs(CACTUS_TIMBERS_STAIRS);
         GlazedCactus.slab(GLAZED_CACTUS_SLABS).stairs(GLAZED_CACTUS_STAIRS);
 
+        //(Woodsets: Cedar)
+        ///Logs stuff
+        blockStateModelGenerator.registerTintableCross(CEDAR_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        Cedar.log(CEDAR_LOG).wood(CEDAR_WOOD);
+        StrippedCedar.log(STRIPPED_CEDAR_LOG).wood(STRIPPED_CEDAR_WOOD);
+        blockStateModelGenerator.registerDoor(CEDAR_DOOR);
+        blockStateModelGenerator.registerTrapdoor(CEDAR_TRAPDOOR);
+        CedarPlanks.slab(CEDAR_SLAB).stairs(CEDAR_STAIRS).fence(CEDAR_FENCE).fenceGate(CEDAR_FENCE_GATE).button(CEDAR_BUTTON).pressurePlate(CEDAR_PRESSURE_PLATE);
+        CedarVerticalPlanks.slab(VERTICAL_CEDAR_SLAB).stairs(VERTICAL_CEDAR_STAIR);
+
+
         //(Woodsets: Azalea)
         ///Logs stuff
-        ///Redstone component
-        ///Plank related
         Azalea.log(AZALEA_LOG);
         BloomingAzalea.log(BLOOMING_AZALEA_LOG);
         StrippedAzalea.log(STRIPPED_AZALEA_LOG);
-        BloomingStrippedAzalea.log(BLOOMING_STRIPPED_AZALEA);
+        BloomingStrippedAzalea.log(BLOOMING_STRIPPED_AZALEA_LOG);
         EngravedAzalea.log(ENGRAVED_AZALEA);
         EngravedAzalea.wood(ENGRAVED_AZALEA_WOOD);
         ChippedAzalea.log(CHIPPED_AZALEA);
@@ -439,7 +425,9 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BloomingAzalea.wood(BLOOMING_AZALEA_WOOD);
         StrippedAzalea.wood(STRIPPED_AZALEA_WOOD);
         BloomingStrippedAzalea.wood(BLOOMING_STRIPPED_AZALEA_WOOD);
-        AzaleaPlanks.slab(AZALEA_SLAB).wall(AZALEA_PLANK_BARRICADES);
+        ///Redstone component
+        ///Plank related
+        AzaleaPlanks.slab(AZALEA_SLAB);
         AzaleaPlanks.stairs(AZALEA_STAIRS);
         AzaleaPlanks.fence(AZALEA_FENCE);
         AzaleaPlanks.fenceGate(AZALEA_FENCE_GATE);
@@ -462,9 +450,9 @@ public class CelluloseModelProvider extends FabricModelProvider {
         StrippedChippedAzalea.log(STRIPPED_CHIPPED_AZALEA);
         StrippedChippedAzalea.wood(STRIPPED_CHIPPED_AZALEA_WOOD);
         ChippedPlankAzalea.slab(CHIPPED_AZALEA_SLAB);
-        ChippedPlankAzalea.stairs(CHIPPED_AZALEA_STAIR);
+        ChippedPlankAzalea.stairs(CHIPPED_AZALEA_STAIRS);
         ChippedPlankBloomingAzalea.slab(CHIPPED_BLOOMING_AZALEA_SLAB);
-        ChippedPlankBloomingAzalea.stairs(CHIPPED_BLOOMING_AZALEA_STAIR);
+        ChippedPlankBloomingAzalea.stairs(CHIPPED_BLOOMING_AZALEA_STAIRS);
         BloomingEngravedAzalea.log(ENGRAVED_BLOOMING_AZALEA);
         BloomingEngravedAzalea.wood(ENGRAVED_BLOOMING_AZALEA_WOOD);
         TilesAzalea.slab(AZALEA_TILES_SLABS);
@@ -478,7 +466,8 @@ public class CelluloseModelProvider extends FabricModelProvider {
         GlazedAzalea.slab(GLAZED_AZALEA_SLABS).stairs(GLAZED_AZALEA_STAIRS);
 
         ///Misc
-        blockStateModelGenerator.registerSimpleState(EMPTY_OAK_BOOKSHELF);
+        blockStateModelGenerator.registerLog(EMPTY_OAK_BOOKSHELF);
+
         blockStateModelGenerator.registerSimpleState(EMPTY_BIRCH_BOOKSHELF);
         blockStateModelGenerator.registerSimpleState(EMPTY_SPRUCE_BOOKSHELF);
         blockStateModelGenerator.registerSimpleState(EMPTY_DARK_OAK_BOOKSHELF);
@@ -536,10 +525,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleState(PAPER_BLOCK);
         blockStateModelGenerator.registerSimpleState(SOAKED_PAPER_BLOCK);
         blockStateModelGenerator.registerSimpleState(STRIPPED_CACTUS);
-        blockStateModelGenerator.registerSimpleState(DISSOLVED_BAMBOO_CAULDRON_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(PAPER_MESH_BLOCK);
-
-
     }
 
     @Override
@@ -550,7 +535,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         itemModelGenerator.register(POPACORN_BOWL_HALF, Models.GENERATED);
         itemModelGenerator.register(POPACORN_BOWL_QUATER, Models.GENERATED);
 
-        //barks
+        //Sawdust
         itemModelGenerator.register(OAK_SAWDUST, Models.GENERATED);
         itemModelGenerator.register(BIRCH_SAWDUST, Models.GENERATED);
         itemModelGenerator.register(SPRUCE_SAWDUST, Models.GENERATED);
@@ -566,6 +551,5 @@ public class CelluloseModelProvider extends FabricModelProvider {
         itemModelGenerator.register(AZALEA_SAWDUST, Models.GENERATED);
 
         //Misc
-        itemModelGenerator.register(PAPER_MESH_BUCKET, Models.GENERATED);
     }
 }

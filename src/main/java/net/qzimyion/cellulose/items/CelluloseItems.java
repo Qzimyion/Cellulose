@@ -13,7 +13,6 @@ import net.qzimyion.cellulose.items.custom_items.popacorn_bowls.PopacornBowlHalf
 import net.qzimyion.cellulose.items.custom_items.popacorn_bowls.PopacornBowlItem;
 import net.qzimyion.cellulose.items.custom_items.popacorn_bowls.PopacornBowlQuaterItem;
 
-import static net.qzimyion.cellulose.blocks.CelluloseBlocks.PAPER_MESH_BLOCK;
 
 public class CelluloseItems
 {
@@ -50,8 +49,8 @@ public class CelluloseItems
     public static final Item CACTUS_SAWDUST = registerItem("cactus_sawdust", new Item(new FabricItemSettings()));
     public static final Item AZALEA_SAWDUST = registerItem("azalea_sawdust", new Item(new FabricItemSettings()));
 
-    //Paper stuff
-    public static final Item PAPER_MESH_BUCKET = registerItem("paper_mesh_bucket", new PowderSnowBucketItem(PAPER_MESH_BLOCK , SoundEvents.BLOCK_POWDER_SNOW_PLACE,new FabricItemSettings()));
+    //
+    //public static final Item TALL_OAK_DOOR = registerItem("tall_oak_door", new TallDoorItem(CelluloseBlocks.TALL_OAK_DOOR, new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item)
     {

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,shape=none": {
+      "model": "cellulose:block/jungle_shoji_none"
+    },
+    "facing=east,shape=none": {
+      "model": "cellulose:block/jungle_shoji_none",
+      "y": 90
+    },
+    "facing=south,shape=none": {
+      "model": "cellulose:block/jungle_shoji_none",
+      "y": 180
+    },
+    "facing=west,shape=none": {
+      "model": "cellulose:block/jungle_shoji_none",
+      "y": 270
+    },
+    "facing=north,shape=top": {
+      "model": "cellulose:block/jungle_shoji_top"
+    },
+    "facing=east,shape=top": {
+      "model": "cellulose:block/jungle_shoji_top",
+      "y": 90
+    },
+    "facing=south,shape=top": {
+      "model": "cellulose:block/jungle_shoji_top",
+      "y": 180
+    },
+    "facing=west,shape=top": {
+      "model": "cellulose:block/jungle_shoji_top",
+      "y": 270
+    },
+    "facing=north,shape=middle": {
+      "model": "cellulose:block/jungle_shoji_middle"
+    },
+    "facing=east,shape=middle": {
+      "model": "cellulose:block/jungle_shoji_middle",
+      "y": 90
+    },
+    "facing=south,shape=middle": {
+      "model": "cellulose:block/jungle_shoji_middle",
+      "y": 180
+    },
+    "facing=west,shape=middle": {
+      "model": "cellulose:block/jungle_shoji_middle",
+      "y": 270
+    },
+    "facing=north,shape=bottom": {
+      "model": "cellulose:block/jungle_shoji_bottom"
+    },
+    "facing=east,shape=bottom": {
+      "model": "cellulose:block/jungle_shoji_bottom",
+      "y": 90
+    },
+    "facing=south,shape=bottom": {
+      "model": "cellulose:block/jungle_shoji_bottom",
+      "y": 180
+    },
+    "facing=west,shape=bottom": {
+      "model": "cellulose:block/jungle_shoji_bottom",
+      "y": 270
+    }
+  }
+}

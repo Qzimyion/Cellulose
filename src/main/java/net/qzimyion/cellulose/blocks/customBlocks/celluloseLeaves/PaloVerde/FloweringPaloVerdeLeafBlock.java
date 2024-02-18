@@ -22,7 +22,7 @@ public class FloweringPaloVerdeLeafBlock extends LeavesBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!(entity instanceof LivingEntity) || entity.getBlockStateAtPos().isOf(this) && !ModBlockProperties.ImmuneToSpikyStuff((LivingEntity)entity)) {
+        if (!(entity instanceof LivingEntity) || entity.getBlockStateAtPos().isOf(this) && ModBlockProperties.ImmuneToSpikyStuff((LivingEntity) entity)) {
             entity.slowMovement(state, new Vec3d(0.9f, 1.5, 0.9f));
         }
         super.onEntityCollision(state, world, pos, entity);

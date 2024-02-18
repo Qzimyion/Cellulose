@@ -222,7 +222,8 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .forceAddTag(ACACIA_LOGS)
                 .forceAddTag(MANGROVE_LOGS)
                 .forceAddTag(CHERRY_LOGS)
-                .forceAddTag(CelluloseTags.Items.AZALEA_LOGS);
+                .forceAddTag(CelluloseTags.Items.AZALEA_LOGS)
+                .forceAddTag(CelluloseTags.Items.CEDAR_LOGS);
 
         getOrCreateTagBuilder(BOATS)
                 .add(CACTUS_BOAT_ID)
@@ -281,6 +282,13 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(ENGRAVED_AZALEA_WOOD))
                 .add(Item.fromBlock(CHIPPED_AZALEA))
                 .add(Item.fromBlock(CHIPPED_AZALEA_WOOD));
+
+        getOrCreateTagBuilder(CelluloseTags.Items.CEDAR_LOGS)
+                .add(Item.fromBlock(CEDAR_LOG))
+                .add(Item.fromBlock(CEDAR_WOOD))
+                .add(Item.fromBlock(STRIPPED_CEDAR_LOG))
+                .add(Item.fromBlock(STRIPPED_CEDAR_WOOD))
+        ;
 
         getOrCreateTagBuilder(CelluloseTags.Items.PAVEMENTS)
                 .add(Item.fromBlock(OAK_PLANK_PAVEMENT))
@@ -502,11 +510,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Items.LINGERING_POTION)
                 .add(Items.HONEY_BOTTLE)
                 .add(Items.EXPERIENCE_BOTTLE);
-
-        getOrCreateTagBuilder(CelluloseTags.Items.CURING_AGENTS)
-                .add(Items.GLOWSTONE_DUST)
-                .add(Items.GUNPOWDER)
-                .add(Items.LAPIS_LAZULI);
 
         getOrCreateTagBuilder(CelluloseTags.Items.BOOKSHELVES)
                 .add(Items.BOOKSHELF)

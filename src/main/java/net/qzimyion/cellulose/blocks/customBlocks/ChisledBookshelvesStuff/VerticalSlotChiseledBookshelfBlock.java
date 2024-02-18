@@ -23,14 +23,18 @@ import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import net.qzimyion.cellulose.blocks.ModBlockProperties;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Optional;
 
+import static net.minecraft.state.property.Properties.*;
+import static net.qzimyion.cellulose.blocks.ModBlockProperties.*;
+
 @SuppressWarnings("deprecation")
 public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
-    public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(Properties.SLOT_0_OCCUPIED, Properties.SLOT_1_OCCUPIED, Properties.SLOT_2_OCCUPIED, Properties.SLOT_3_OCCUPIED, Properties.SLOT_4_OCCUPIED, Properties.SLOT_5_OCCUPIED);
+    public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(SLOT_0_OCCUPIED, SLOT_1_OCCUPIED, SLOT_2_OCCUPIED, SLOT_3_OCCUPIED, SLOT_4_OCCUPIED, SLOT_5_OCCUPIED);
 
     public VerticalSlotChiseledBookshelfBlock(Settings settings) {
         super(settings);
@@ -110,6 +114,7 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
         return ActionResult.CONSUME;
     }
 
+    //Books
     private static void tryAddBook(World world, BlockPos pos, PlayerEntity player, ChiseledBookshelfBlockEntity blockEntity, ItemStack stack, int slot) {
         if (world.isClient) {
             return;
@@ -136,6 +141,7 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
         }
         world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
     }
+
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

@@ -162,7 +162,7 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CACTUS_MOSAIC_SLABS, "Cactus Mosaic Slab");
         translationBuilder.add(CHIPPED_CACTUS_PLANKS, "Chipped Cactus Planks");
         translationBuilder.add(CHIPPED_CACTUS_SLAB, "Chipped Cactus Slab");
-        translationBuilder.add(CHIPPED_CACTUS_STAIR, "Chipped Cactus Stairs");
+        translationBuilder.add(CHIPPED_CACTUS_STAIRS, "Chipped Cactus Stairs");
         translationBuilder.add(CACTUS_PLANK_PAVEMENT, "Cactus Pavement");
         translationBuilder.add(CHISELED_CACTUS, "Carved cactus");
         translationBuilder.add(CACTUS_GLAZED, "Glazed Cactus");
@@ -173,7 +173,7 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CACTUS_TIMBERS, "Cactus Timbers");
         translationBuilder.add(CACTUS_TIMBERS_STAIRS, "Cactus Timbers Stairs");
         translationBuilder.add(CACTUS_TIMBERS_SLABS, "Cactus Timbers Slab");
-        translationBuilder.add(CACTUS_BEAM, "Cactus Beam");
+        translationBuilder.add(CACTUS_LOG_MOSAIC, "Cactus Beam");
         translationBuilder.add(CACTUS_PLANK_PILLARS, "Cactus Plank Pillar");
         translationBuilder.add(CACTUS_FRAME, "Cactus Frame");
         translationBuilder.add(CACTUS_LINTELS, "Cactus Lintels");
@@ -188,7 +188,7 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(AZALEA_WOOD, "Azalea Wood");
         translationBuilder.add(BLOOMING_AZALEA_WOOD, "Azalea Blooming Wood");
         translationBuilder.add(STRIPPED_AZALEA_LOG, "Stripped Azalea Log");
-        translationBuilder.add(BLOOMING_STRIPPED_AZALEA, "Stripped Blooming Azalea Log");
+        translationBuilder.add(BLOOMING_STRIPPED_AZALEA_LOG, "Stripped Blooming Azalea Log");
         translationBuilder.add(STRIPPED_AZALEA_WOOD, "Stripped Azalea Wood");
         translationBuilder.add(BLOOMING_STRIPPED_AZALEA_WOOD, "Stripped Blooming Azalea Wood");
         translationBuilder.add(AZALEA_FENCE, "Azalea Fence");
@@ -211,13 +211,20 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(AZALEA_MOSAIC_SLABS, "Azalea Mosaic Slab");
         translationBuilder.add(CHIPPED_AZALEA_PLANKS, "Chipped Azalea Planks");
         translationBuilder.add(CHIPPED_AZALEA_SLAB, "Chipped Azalea Slab");
-        translationBuilder.add(CHIPPED_AZALEA_STAIR, "Chipped Azalea Stairs");
+        translationBuilder.add(CHIPPED_AZALEA_STAIRS, "Chipped Azalea Stairs");
         translationBuilder.add(AZALEA_PLANK_PAVEMENT, "Azalea Pavement");
         translationBuilder.add(BLOOMING_AZALEA_PLANK_PAVEMENT, "Blooming Azalea Pavement");
         translationBuilder.add(AZALEA_FRAME, "Azalea Frame");
         translationBuilder.add(BLOOMING_AZALEA_FRAME, "Blooming Azalea Frame");
         translationBuilder.add(AZALEA_LINTELS, "Azalea Lintels");
         translationBuilder.add(BLOOMING_AZALEA_LINTELS, "Blooming Azalea Lintels");
+        ///Azalea woodset
+        translationBuilder.add(CEDAR_SAPLING, "Cedar Sapling");
+        translationBuilder.add(CEDAR_LEAVES, "Cedar Leaves");
+        translationBuilder.add(CEDAR_LOG, "Cedar Log");
+        translationBuilder.add(CEDAR_WOOD, "Cedar Wood");
+        translationBuilder.add(STRIPPED_CEDAR_LOG, "Stripped Cedar Log");
+        translationBuilder.add(STRIPPED_CEDAR_WOOD, "Stripped Cedar Wood");
 
         /*Stats*/
         translationBuilder.add(CelluloseStats.INTERACT_WITH_SAWMILL, "Interaction with sawmill");
@@ -267,17 +274,17 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CHIPPED_BAMBOO_SLAB, "Chipped Bamboo Slab");
         translationBuilder.add(CHIPPED_CHERRY_SLAB, "Chipped Cherry Slab");
         //Chipped Planks
-        translationBuilder.add(CHIPPED_OAK_STAIR, "Chipped Oak Stairs");
-        translationBuilder.add(CHIPPED_BIRCH_STAIR, "Chipped Birch Stairs");
-        translationBuilder.add(CHIPPED_SPRUCE_STAIR, "Chipped Spruce Stairs");
-        translationBuilder.add(CHIPPED_DARK_OAK_STAIR, "Chipped Dark Oak Stairs");
-        translationBuilder.add(CHIPPED_JUNGLE_STAIR, "Chipped Jungle Stairs");
-        translationBuilder.add(CHIPPED_ACACIA_STAIR, "Chipped Acacia Stairs");
-        translationBuilder.add(CHIPPED_CRIMSON_STAIR, "Chipped Crimson Stairs");
-        translationBuilder.add(CHIPPED_WARPED_STAIR, "Chipped Warped Stairs");
-        translationBuilder.add(CHIPPED_MANGROVE_STAIR, "Chipped Mangrove Stairs");
-        translationBuilder.add(CHIPPED_BAMBOO_STAIR, "Chipped Bamboo Stairs");
-        translationBuilder.add(CHIPPED_CHERRY_STAIR, "Chipped Cherry Stairs");
+        translationBuilder.add(CHIPPED_OAK_STAIRS, "Chipped Oak Stairs");
+        translationBuilder.add(CHIPPED_BIRCH_STAIRS, "Chipped Birch Stairs");
+        translationBuilder.add(CHIPPED_SPRUCE_STAIRS, "Chipped Spruce Stairs");
+        translationBuilder.add(CHIPPED_DARK_OAK_STAIRS, "Chipped Dark Oak Stairs");
+        translationBuilder.add(CHIPPED_JUNGLE_STAIRS, "Chipped Jungle Stairs");
+        translationBuilder.add(CHIPPED_ACACIA_STAIRS, "Chipped Acacia Stairs");
+        translationBuilder.add(CHIPPED_CRIMSON_STAIRS, "Chipped Crimson Stairs");
+        translationBuilder.add(CHIPPED_WARPED_STAIRS, "Chipped Warped Stairs");
+        translationBuilder.add(CHIPPED_MANGROVE_STAIRS, "Chipped Mangrove Stairs");
+        translationBuilder.add(CHIPPED_BAMBOO_STAIRS, "Chipped Bamboo Stairs");
+        translationBuilder.add(CHIPPED_CHERRY_STAIRS, "Chipped Cherry Stairs");
         //Pavements
         translationBuilder.add(OAK_PLANK_PAVEMENT, "Oak Pavement");
         translationBuilder.add(BIRCH_PLANK_PAVEMENT, "Birch Pavement");
@@ -411,17 +418,17 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(BAMBOO_TIMBERS_SLABS, "Bamboo Timbers Slab");
         translationBuilder.add(CHERRY_TIMBERS_SLABS, "Cherry Timbers Slab");
         //Beams
-        translationBuilder.add(OAK_BEAM, "Oak Beam");
-        translationBuilder.add(BIRCH_BEAM, "Birch Beam");
-        translationBuilder.add(SPRUCE_BEAM, "Spruce Beam");
-        translationBuilder.add(DARK_OAK_BEAM, "Dark Oak Beam");
-        translationBuilder.add(JUNGLE_BEAM, "Jungle Beam");
-        translationBuilder.add(ACACIA_BEAM, "Acacia Beam");
-        translationBuilder.add(CRIMSON_BEAM, "Crimson Beam");
-        translationBuilder.add(WARPED_BEAM, "Warped Beam");
-        translationBuilder.add(MANGROVE_BEAM, "Mangrove Beam");
-        translationBuilder.add(BAMBOO_BEAM, "Bamboo Beam");
-        translationBuilder.add(CHERRY_BEAM, "Cherry Beam");
+        translationBuilder.add(OAK_LOG_MOSAIC, "Oak Beam");
+        translationBuilder.add(BIRCH_LOG_MOSAIC, "Birch Beam");
+        translationBuilder.add(SPRUCE_LOG_MOSAIC, "Spruce Beam");
+        translationBuilder.add(DARK_LOG_MOSAIC, "Dark Oak Beam");
+        translationBuilder.add(JUNGLE_LOG_MOSAIC, "Jungle Beam");
+        translationBuilder.add(ACACIA_LOG_MOSAIC, "Acacia Beam");
+        translationBuilder.add(CRIMSON_LOG_MOSAIC, "Crimson Beam");
+        translationBuilder.add(WARPED_LOG_MOSAIC, "Warped Beam");
+        translationBuilder.add(MANGROVE_LOG_MOSAIC, "Mangrove Beam");
+        translationBuilder.add(BAMBOO_LOG_MOSAIC, "Bamboo Beam");
+        translationBuilder.add(CHERRY_LOG_MOSAIC, "Cherry Beam");
         //Plank pillars
         translationBuilder.add(OAK_PLANK_PILLARS, "Oak Plank Pillar");
         translationBuilder.add(BIRCH_PLANK_PILLARS, "Birch Plank Pillar");
@@ -481,5 +488,6 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CHERRY_CHISELED_BOOKSHELF, "Cherry Chiseled Bookshelf");
         translationBuilder.add(CACTUS_CHISELED_BOOKSHELF, "Cactus Chiseled Bookshelf");
         translationBuilder.add(AZALEA_CHISELED_BOOKSHELF, "Azalea Chiseled Bookshelf");
+        translationBuilder.add(BLOOMING_AZALEA_CHISELED_BOOKSHELF, "Blooming Azalea Chiseled Bookshelf");
     }
 }
