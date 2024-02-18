@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "cellulose:block/cedar_door_bottom",
+    "top": "cellulose:block/cedar_door_top"
+  }
+}

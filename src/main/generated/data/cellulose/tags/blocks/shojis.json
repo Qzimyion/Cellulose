@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_shoji",
+    "cellulose:birch_shoji",
+    "cellulose:spruce_shoji",
+    "cellulose:dark_oak_shoji",
+    "cellulose:jungle_shoji",
+    "cellulose:acacia_shoji",
+    "cellulose:crimson_shoji",
+    "cellulose:warped_shoji",
+    "cellulose:mangrove_shoji",
+    "cellulose:bamboo_shoji",
+    "cellulose:cherry_shoji",
+    "cellulose:cactus_shoji",
+    "cellulose:azalea_shoji",
+    "cellulose:blooming_azalea_shoji"
+  ]
+}

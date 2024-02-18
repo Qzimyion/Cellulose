@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cellulose:Cbookshelves",
+  "key": {
+    "#": {
+      "tag": "cellulose:acacia_planks"
+    },
+    "X": {
+      "tag": "cellulose:acacia_slabs"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "item": "cellulose:acacia_chiseled_bookshelf"
+  },
+  "show_notification": true
+}

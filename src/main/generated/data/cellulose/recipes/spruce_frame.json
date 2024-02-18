@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cellulose:frames",
+  "key": {
+    "#": {
+      "tag": "cellulose:spruce_planks"
+    },
+    "X": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "X X",
+    " # ",
+    "X X"
+  ],
+  "result": {
+    "count": 5,
+    "item": "cellulose:spruce_frame"
+  },
+  "show_notification": true
+}

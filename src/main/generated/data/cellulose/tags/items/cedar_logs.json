@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:cedar_log",
+    "cellulose:cedar_wood",
+    "cellulose:stripped_cedar_log",
+    "cellulose:stripped_cedar_wood"
+  ]
+}

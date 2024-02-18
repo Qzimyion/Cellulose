@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cellulose:lintels",
+  "key": {
+    "#": {
+      "item": "cellulose:crimson_frame"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 12,
+    "item": "cellulose:crimson_lintels"
+  },
+  "show_notification": true
+}

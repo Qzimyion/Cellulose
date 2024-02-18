@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cellulose:Cbookshelves",
+  "key": {
+    "#": {
+      "tag": "cellulose:cactus_planks"
+    },
+    "X": {
+      "tag": "cellulose:cactus_slabs"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "item": "cellulose:cactus_chiseled_bookshelf"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "cellulose:block/cedar_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "cellulose:block/cedar_wood"
+    },
+    "axis=z": {
+      "model": "cellulose:block/cedar_wood",
+      "x": 90
+    }
+  }
+}

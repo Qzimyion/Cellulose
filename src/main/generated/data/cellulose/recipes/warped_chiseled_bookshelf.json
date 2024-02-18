@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cellulose:Cbookshelves",
+  "key": {
+    "#": {
+      "tag": "cellulose:warped_planks"
+    },
+    "X": {
+      "tag": "cellulose:warped_planks"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "item": "cellulose:warped_chiseled_bookshelf"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "cellulose:block/cedar_pressure_plate"
+    },
+    "powered=true": {
+      "model": "cellulose:block/cedar_pressure_plate_down"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cellulose:tiles",
+  "key": {
+    "#": {
+      "item": "cellulose:blooming_azalea_planks"
+    },
+    "X": {
+      "item": "cellulose:blooming_azalea_slab"
+    }
+  },
+  "pattern": [
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "count": 3,
+    "item": "cellulose:blooming_azalea_tiles"
+  },
+  "show_notification": true
+}
