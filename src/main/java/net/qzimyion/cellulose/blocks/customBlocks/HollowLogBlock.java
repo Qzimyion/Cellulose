@@ -22,7 +22,6 @@ import java.util.Objects;
 public class HollowLogBlock extends PillarBlock implements Waterloggable {
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    public static final BooleanProperty MOSSY = ModBlockProperties.MOSSY;
 
     private static final VoxelShape BARK_BOTTOM = Block.createCuboidShape(0F, 0F, 0F, 16F, 2F, 16F);
     private static final VoxelShape BARK_TOP = Block.createCuboidShape(0F, 14F, 0F, 16F, 16F, 16F);
@@ -37,7 +36,7 @@ public class HollowLogBlock extends PillarBlock implements Waterloggable {
 
     public HollowLogBlock(Settings settings) {
         super(settings);
-        setDefaultState(getDefaultState().with(WATERLOGGED, false).with(MOSSY, false));
+        setDefaultState(getDefaultState().with(WATERLOGGED, false));
     }
 
     @Override
@@ -62,7 +61,7 @@ public class HollowLogBlock extends PillarBlock implements Waterloggable {
         FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
         boolean bl = fluidState.getFluid() == Fluids.WATER;
         BlockState blockState = ctx.getWorld().getBlockState(ctx.getBlockPos().up());
-        return Objects.requireNonNull(super.getPlacementState(ctx)).with(WATERLOGGED, bl).with(MOSSY, isMoss(blockState));
+        return Objects.requireNonNull(super.getPlacementState(ctx)).with(WATERLOGGED, bl);
     }
 
     public static boolean isMoss(BlockState state) {
@@ -71,9 +70,6 @@ public class HollowLogBlock extends PillarBlock implements Waterloggable {
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (direction == Direction.UP) {
-            return state.with(MOSSY, isMoss(neighborState));
-        }
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
@@ -86,6 +82,6 @@ public class HollowLogBlock extends PillarBlock implements Waterloggable {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(AXIS, WATERLOGGED, MOSSY);
+        builder.add(AXIS, WATERLOGGED);
     }
 }
