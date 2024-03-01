@@ -17,7 +17,7 @@ public class ModBlockProperties {
     public static final IntProperty SAWDUST_LAYERS = IntProperty.of("sawdust_layers", 1, 16);
 
     ///Boolean properties
-    public static final BooleanProperty MOSSY = BooleanProperty.of("mossy");
+
 
     public static boolean ImmuneToSpikyStuff (LivingEntity entity){
         return !entity.getEquippedStack(EquipmentSlot.FEET).isOf(Items.CHAINMAIL_BOOTS);

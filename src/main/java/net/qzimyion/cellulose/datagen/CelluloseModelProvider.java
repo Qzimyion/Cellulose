@@ -17,6 +17,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
 
     //Custom models
 
+
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         //Texturepool (Block)

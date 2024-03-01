@@ -18,7 +18,6 @@ import net.qzimyion.cellulose.blocks.customBlocks.PannelBlocks.ShojiBlocks.Shoji
 import net.qzimyion.cellulose.blocks.customBlocks.PaperBlocks.PaperBlock;
 import net.qzimyion.cellulose.blocks.customBlocks.PaperBlocks.SoakedPaperBlock;
 import net.qzimyion.cellulose.blocks.customBlocks.SawdustStuff.SawdustLayerBlock;
-import net.qzimyion.cellulose.blocks.customBlocks.celluloseLeaves.PaloVerde.PaloVerdeLeafBlock;
 import net.qzimyion.cellulose.worldgen.trees.JuniperSaplingGenerator;
 import net.qzimyion.cellulose.worldgen.trees.CedarSaplingGenerator;
 
@@ -756,6 +755,19 @@ public class CelluloseBlocks
     public static final Block AZALEA_CHISELED_BOOKSHELF = registerBlock("azalea_chiseled_bookshelf", new AzaleaChiseledBookshelf(FabricBlockSettings.copyOf(CHERRY_CHISELED_BOOKSHELF)));
     public static final Block BLOOMING_AZALEA_CHISELED_BOOKSHELF = registerBlock("blooming_azalea_chiseled_bookshelf", new AzaleaChiseledBookshelf(FabricBlockSettings.copyOf(CHERRY_CHISELED_BOOKSHELF)));
 
+    //Hollow Logs
+    public static final Block HOLLOW_OAK_LOG = registerBlock("hollow_oak_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_BIRCH_LOG = registerBlock("hollow_birch_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_SPRUCE_LOG = registerBlock("hollow_spruce_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_DARK_OAK_LOG = registerBlock("hollow_dark_aok_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_JUNGLE_LOG = registerBlock("hollow_jungle_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_ACACIA_LOG = registerBlock("hollow_acacia_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_CRIMSON_LOG = registerBlock("hollow_crimson_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_WARPED_LOG = registerBlock("hollow_warped_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_MANGROVE_LOG = registerBlock("hollow_mangrove_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_CHERRY_LOG = registerBlock("hollow_cherry_log", new HollowLogBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
+    public static final Block HOLLOW_AZALEA_LOG = registerBlock("hollow_azalea_log", new HollowLogBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
+    public static final Block HOLLOW_CEDAR_LOG = registerBlock("hollow_cedar_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
 
     // Sawmill Block //
     public static final Block SAWMILL = registerBlock("sawmill", new SawmillBlock(AbstractBlock.Settings.create().burnable().nonOpaque().strength(2.5f,2.5f).requiresTool().sounds(BlockSoundGroup.CHERRY_WOOD).mapColor(BROWN)));
@@ -964,7 +976,7 @@ public class CelluloseBlocks
 
     //Cedar woodset
     public static final Block CEDAR_SAPLING = registerBlock("cedar_sapling", new SaplingBlock(new CedarSaplingGenerator(),FabricBlockSettings.copyOf(OAK_SAPLING)));
-    public static final Block CEDAR_LEAVES = registerBlock("cedar_leaves", new PaloVerdeLeafBlock(FabricBlockSettings.copyOf(OAK_LEAVES)));
+    public static final Block CEDAR_LEAVES = registerBlock("cedar_leaves", new LeavesBlock(FabricBlockSettings.copyOf(OAK_LEAVES)));
     public static final Block CEDAR_LOG = registerBlock("cedar_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
     public static final Block CEDAR_WOOD = registerBlock("cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
     public static final Block STRIPPED_CEDAR_LOG = registerBlock("stripped_cedar_log", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
@@ -979,8 +991,8 @@ public class CelluloseBlocks
     public static final Block CEDAR_DOOR = registerBlock("cedar_door", new DoorBlock(FabricBlockSettings.copyOf(OAK_DOOR), BlockSetType.OAK));
     public static final Block CEDAR_TRAPDOOR = registerBlock("cedar_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(OAK_TRAPDOOR), BlockSetType.OAK));
 
-    //Juniper woodset
-    public static final Block JUNIPER_SAPLING = registerBlock("juniper_sapling", new SaplingBlock(new JuniperSaplingGenerator(),FabricBlockSettings.copyOf(OAK_SAPLING)));
+    //Olive woodset
+    public static final Block OLIVE_SAPLING = registerBlock("olive_sapling", new SaplingBlock(new JuniperSaplingGenerator(),FabricBlockSettings.copyOf(OAK_SAPLING)));
 
 
     ///Misc

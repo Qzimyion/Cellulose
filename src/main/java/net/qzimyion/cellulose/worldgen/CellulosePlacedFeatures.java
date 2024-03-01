@@ -31,7 +31,7 @@ public class CellulosePlacedFeatures {
 
         register(context, JUNIPER_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(CelluloseConfiguredFeatures.JUNIPER_TREE),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.05f, 1),
-                        CelluloseBlocks.JUNIPER_SAPLING));
+                        CelluloseBlocks.OLIVE_SAPLING));
 
         register(context, SMALL_DARK_OAK_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(CelluloseConfiguredFeatures.SMALL_DARK_OAK),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.05f, 1),
