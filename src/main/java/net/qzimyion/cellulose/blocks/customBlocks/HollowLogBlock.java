@@ -12,8 +12,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.qzimyion.cellulose.blocks.ModBlockProperties;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
@@ -64,10 +64,6 @@ public class HollowLogBlock extends PillarBlock implements Waterloggable {
         return Objects.requireNonNull(super.getPlacementState(ctx)).with(WATERLOGGED, bl);
     }
 
-    public static boolean isMoss(BlockState state) {
-        return state.isOf(Blocks.MOSS_CARPET) || state.isOf(Blocks.MOSS_BLOCK);
-    }
-
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED)) {
@@ -84,4 +80,5 @@ public class HollowLogBlock extends PillarBlock implements Waterloggable {
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(AXIS, WATERLOGGED);
     }
+
 }

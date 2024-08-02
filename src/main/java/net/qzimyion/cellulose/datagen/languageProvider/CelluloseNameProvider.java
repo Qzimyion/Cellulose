@@ -218,24 +218,13 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(BLOOMING_AZALEA_FRAME, "Blooming Azalea Frame");
         translationBuilder.add(AZALEA_LINTELS, "Azalea Lintels");
         translationBuilder.add(BLOOMING_AZALEA_LINTELS, "Blooming Azalea Lintels");
-        ///Azalea woodset
-        translationBuilder.add(CEDAR_SAPLING, "Cedar Sapling");
-        translationBuilder.add(CEDAR_LEAVES, "Cedar Leaves");
-        translationBuilder.add(CEDAR_LOG, "Cedar Log");
-        translationBuilder.add(CEDAR_WOOD, "Cedar Wood");
-        translationBuilder.add(STRIPPED_CEDAR_LOG, "Stripped Cedar Log");
-        translationBuilder.add(STRIPPED_CEDAR_WOOD, "Stripped Cedar Wood");
 
         /*Stats*/
         translationBuilder.add(CelluloseStats.INTERACT_WITH_SAWMILL, "Interaction with sawmill");
         //Item
         translationBuilder.add(PIPIS, "[[PIPIS]]");
         translationBuilder.add(AZALEA_FLOWERS, "Azalea Flowers");
-        translationBuilder.add(ACORN, "Oak Acorn");
-        translationBuilder.add(POPPED_ACORN, "Popped Oak Acorn");
-        translationBuilder.add(POPACORN_BOWL, "Bowl of Popacorn");
-        translationBuilder.add(POPACORN_BOWL_HALF, "Half Eaten Bowl of Popacorn");
-        translationBuilder.add(POPACORN_BOWL_QUATER, "Almost Eaten Bowl of Popacorn");
+
         //Chipped woodset
         translationBuilder.add(CHIPPED_OAK, "Chipped Oak Log");
         translationBuilder.add(CHIPPED_OAK_WOOD, "Chipped Oak Wood");
@@ -461,8 +450,6 @@ public class CelluloseNameProvider extends FabricLanguageProvider
          */
         translationBuilder.add(PAPER_BLOCK, "Paper Block");
         translationBuilder.add(SOAKED_PAPER_BLOCK, "Soaked Paper Block");
-        translationBuilder.add(BLOCK_OF_STICKS, "Stick Bundle");
-        translationBuilder.add(BLOCK_OF_CHARCOAL, "Block Of Charcoal");
 
         //Bookshelves
         translationBuilder.add(Blocks.BOOKSHELF, "Oak Bookshelf");

@@ -340,11 +340,6 @@
   "block.cellulose.warped_timbers_slab": "Warped Timbers Slab",
   "block.cellulose.warped_timbers_stairs": "Warped Timbers Stairs",
   "cellulose.interact_with_sawmill": "Interaction with sawmill",
-  "item.cellulose.acorn": "Oak Acorn",
   "item.cellulose.pipis": "Crispity crunchy munchie crackerjack snacker nibbler snap crack n pop Westpoolchestershireshire King's lovely jubily delights",
-  "item.cellulose.popacorn_bowl": "Bowl of Popacorn",
-  "item.cellulose.popacorn_bowl_half": "Half Eaten Bowl of Popacorn",
-  "item.cellulose.popacorn_bowl_quater": "Almost Eaten Bowl of Popacorn",
-  "item.cellulose.popped_acorn": "Popped Oak Acorn",
   "translation{key='container.cellulose.sawmill', args=[]}": "Sawmill"
 }

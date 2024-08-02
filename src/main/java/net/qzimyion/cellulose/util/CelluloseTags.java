@@ -27,7 +27,6 @@ public class CelluloseTags
         public static final TagKey <Block> PAVEMENTS = createTag ("pavements");
         public static final TagKey <Block> PLANK_PILLARS = createTag ("plank_pillars");
         public static final TagKey <Block> BEAMS = createTag("beams");
-        public static final TagKey <Block> SAWDUST_LAYERS = createTag("sawdust_layers");
         public static final TagKey <Block> BOOKSHELVES = createTag("bookshelves");
         public static final TagKey <Block> EMPTY_BOOKSHELVES = createTag("empty_bookshelves");
         public static final TagKey <Block> COBWEBBED_BOOKSHELVES = createTag("cobwebbed_bookshelves");
@@ -113,7 +112,7 @@ public class CelluloseTags
         public static final TagKey <Item> BLOOMING_AZALEA_SLABS = createTag("blooming_azalea_slabs");
 
 
-        public static final TagKey <Item> SAWDUST = createTag("sawdust");
+        public static final TagKey <Item> BARK = createTag("bark");
         public static final TagKey <Item> POTION_RACK_POTIONS = createTag("potion_rack_potions");
         public static final TagKey <Item> BOOKSHELVES = createTag("bookshelves");
         public static final TagKey <Item> EMPTY_BOOKSHELVES = createTag("empty_bookshelves");

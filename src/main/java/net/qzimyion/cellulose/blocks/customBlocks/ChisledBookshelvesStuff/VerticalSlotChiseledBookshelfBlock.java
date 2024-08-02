@@ -114,7 +114,6 @@ public class VerticalSlotChiseledBookshelfBlock extends BlockWithEntity {
         return ActionResult.CONSUME;
     }
 
-    //Books
     private static void tryAddBook(World world, BlockPos pos, PlayerEntity player, ChiseledBookshelfBlockEntity blockEntity, ItemStack stack, int slot) {
         if (world.isClient) {
             return;

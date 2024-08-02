@@ -389,9 +389,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
                 .input('#', CACTUS_PLANKS).input('A', STICK).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_FENCES))
                 .group("minecraft:wooden_fences").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_FENCE_GATE)));
 
-        //Log slabs and stairs
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, OAK_LOG_SLABS, OAK_LOG);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, STRIPPED_OAK_LOG_SLABS, STRIPPED_OAK_LOG);
+
 
         //Pavements
         offerPavementRecipe(exporter, OAK_PLANK_PAVEMENT, OAK_PLANKS);
@@ -408,21 +406,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerPavementRecipe(exporter, CACTUS_PLANK_PAVEMENT, CACTUS_PLANKS);
         offerPavementRecipe(exporter, AZALEA_PLANK_PAVEMENT, AZALEA_PLANKS);
         offerPavementRecipe(exporter, BLOOMING_AZALEA_PLANK_PAVEMENT, BLOOMING_AZALEA_PLANKS);
-
-        //SawlayersF
-        offerSawdustLayerRecipe(exporter, OAK_SAWDUST_LAYER, CelluloseItems.OAK_SAWDUST);
-        offerSawdustLayerRecipe(exporter, BIRCH_SAWDUST_LAYER, CelluloseItems.BIRCH_SAWDUST);
-        offerSawdustLayerRecipe(exporter, SPRUCE_SAWDUST_LAYER, CelluloseItems.SPRUCE_SAWDUST);
-        offerSawdustLayerRecipe(exporter, DARK_OAK_SAWDUST_LAYER, CelluloseItems.DARK_OAK_SAWDUST);
-        offerSawdustLayerRecipe(exporter, JUNGLE_SAWDUST_LAYER, CelluloseItems.JUNGLE_SAWDUST);
-        offerSawdustLayerRecipe(exporter, ACACIA_SAWDUST_LAYER, CelluloseItems.ACACIA_SAWDUST);
-        offerSawdustLayerRecipe(exporter, CRIMSON_SAWDUST_LAYER, CelluloseItems.CRIMSON_SAWDUST);
-        offerSawdustLayerRecipe(exporter, WARPED_SAWDUST_LAYER, CelluloseItems.WARPED_SAWDUST);
-        offerSawdustLayerRecipe(exporter, MANGROVE_SAWDUST_LAYER, CelluloseItems.MANGROVE_SAWDUST);
-        offerSawdustLayerRecipe(exporter, BAMBOO_SAWDUST_LAYER, CelluloseItems.BAMBOO_SAWDUST);
-        offerSawdustLayerRecipe(exporter, CHERRY_SAWDUST_LAYER, CelluloseItems.CHERRY_SAWDUST);
-        offerSawdustLayerRecipe(exporter, CACTUS_SAWDUST_LAYER, CelluloseItems.CACTUS_SAWDUST);
-        offerSawdustLayerRecipe(exporter, AZALEA_SAWDUST_LAYER, CelluloseItems.AZALEA_SAWDUST);
 
         //Bookshelves
         offerBookShelvesRecipe(exporter, BOOKSHELF, CelluloseTags.Items.OAK_PLANKS);
@@ -455,11 +438,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerChiseledBookShelvesRecipe(exporter, AZALEA_CHISELED_BOOKSHELF, CelluloseTags.Items.AZALEA_PLANKS, CelluloseTags.Items.AZALEA_SLABS);
         offerChiseledBookShelvesRecipe(exporter, BLOOMING_AZALEA_CHISELED_BOOKSHELF, CelluloseTags.Items.BLOOMING_AZALEA_PLANKS, CelluloseTags.Items.BLOOMING_AZALEA_SLABS);
 
-        ///Cooking
-
-        offerFoodCookingRecipe(exporter,"smelting", RecipeSerializer.SMELTING, 300, CelluloseItems.ACORN, CelluloseItems.POPPED_ACORN, 0.1f);
-        offerFoodCookingRecipe(exporter,"smoking", RecipeSerializer.SMOKING, 150, CelluloseItems.ACORN, CelluloseItems.POPPED_ACORN, 0.1f);
-        offerFoodCookingRecipe(exporter,"campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 400, CelluloseItems.ACORN, CelluloseItems.POPPED_ACORN, 0.1f);
 
         //Potion rack
         ShapedRecipeJsonBuilder.create(DECORATIONS, POTION_RACK)
@@ -632,10 +610,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
 
     public static void offerReverseVerticalPlanksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
         ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("###").group("planks").criterion("has_vertical_planks", RecipeProvider.conditionsFromTag(PLANKS)).offerTo(exporter);
-    }
-
-    public static void offerSawdustLayerRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("##").group("cellulose:sawdustLayers").criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromTag(CelluloseTags.Items.SAWDUST)).offerTo(exporter);
     }
 
     public static void offerPavementRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {

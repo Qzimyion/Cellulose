@@ -1,4 +1,4 @@
-package net.qzimyion.cellulose.worldgen.trees;
+package net.qzimyion.cellulose.worldgen.trees.saplingGenerators;
 
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.registry.RegistryKey;

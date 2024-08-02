@@ -255,10 +255,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(AZALEA_MOSAIC))
                 .add(Item.fromBlock(BLOOMING_AZALEA_MOSAIC));
 
-        //Food
-        getOrCreateTagBuilder(CelluloseTags.Items.ACORNS)
-                .add(ACORN);
-
         //Flowering
         getOrCreateTagBuilder(CelluloseTags.Items.AZALEA_FLOWER)
                 .add(Item.fromBlock(AZALEA_FLOWERS));
@@ -343,19 +339,19 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
         ;
 
         //Barks
-        getOrCreateTagBuilder(CelluloseTags.Items.SAWDUST)
-                .add(OAK_SAWDUST)
-                .add(BIRCH_SAWDUST)
-                .add(SPRUCE_SAWDUST)
-                .add(DARK_OAK_SAWDUST)
-                .add(JUNGLE_SAWDUST)
-                .add(ACACIA_SAWDUST)
-                .add(CRIMSON_SAWDUST)
-                .add(WARPED_SAWDUST)
-                .add(MANGROVE_SAWDUST)
-                .add(BAMBOO_SAWDUST)
-                .add(CHERRY_SAWDUST)
-                .add(AZALEA_SAWDUST)
+        getOrCreateTagBuilder(CelluloseTags.Items.BARK)
+                .add(OAK_BARK)
+                .add(BIRCH_BARK)
+                .add(SPRUCE_BARK)
+                .add(DARK_OAK_BARK)
+                .add(JUNGLE_BARK)
+                .add(ACACIA_BARK)
+                .add(CRIMSON_BARK)
+                .add(WARPED_BARK)
+                .add(MANGROVE_BARK)
+                .add(BAMBOO_BARK)
+                .add(CHERRY_BARK)
+                .add(AZALEA_BARK)
                 ;
 
         //Plank Tags

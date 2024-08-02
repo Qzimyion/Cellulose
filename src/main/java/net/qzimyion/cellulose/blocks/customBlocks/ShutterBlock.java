@@ -141,7 +141,7 @@ public class ShutterBlock extends HorizontalFacingBlock implements Waterloggable
         boolean bl = leftBlockstate.getBlock() == this;
         boolean bl1 = rightBlockstate.getBlock() == this;
         if ((!bl || bl1) && i <= 0) {
-            if ((!bl1 || bl) && i >= 0) {
+            if ((!bl1 || bl) && i == 0) {
                 int j = behindDir.getOffsetX();
                 int k = behindDir.getOffsetZ();
                 Vec3d vec3d = ctx.getHitPos();

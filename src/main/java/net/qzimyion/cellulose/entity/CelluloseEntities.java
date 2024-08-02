@@ -58,10 +58,10 @@ public class CelluloseEntities {
             FabricBlockEntityTypeBuilder.create(NineSlotBookshelfBlockEntity::new, CelluloseBlocks.CRIMSON_CHISELED_BOOKSHELF).build()
     );
 
-    public static final BlockEntityType<FlippedFiveSlotBlockEntity> WARPED_CHISELED_BOOKSHELF = Registry.register(
+    public static final BlockEntityType<FourSlotBookshelfBlockEntity> WARPED_CHISELED_BOOKSHELF = Registry.register(
             Registries.BLOCK_ENTITY_TYPE,
             new Identifier(Cellulose.MOD_ID, "warped_chiseled_bookshelf"),
-            FabricBlockEntityTypeBuilder.create(FlippedFiveSlotBlockEntity::new, CelluloseBlocks.WARPED_CHISELED_BOOKSHELF).build()
+            FabricBlockEntityTypeBuilder.create(FourSlotBookshelfBlockEntity::new, CelluloseBlocks.WARPED_CHISELED_BOOKSHELF).build()
     );
 
     public static final BlockEntityType<FourSlotBookshelfBlockEntity> MANGROVE_CHISELED_BOOKSHELF = Registry.register(
@@ -100,9 +100,14 @@ public class CelluloseEntities {
             FabricBlockEntityTypeBuilder.create(AzaleaChiseldBookshelfBlockEntity::new, CelluloseBlocks.BLOOMING_AZALEA_CHISELED_BOOKSHELF).build()
     );
 
+    public static final BlockEntityType<FlippedFiveSlotBlockEntity> CEDAR_CHISELED_BOOKSHELF = Registry.register(
+            Registries.BLOCK_ENTITY_TYPE,
+            new Identifier(Cellulose.MOD_ID, "cedar_chiseled_bookshelf"),
+            FabricBlockEntityTypeBuilder.create(FlippedFiveSlotBlockEntity::new, CelluloseBlocks.CEDAR_CHISELED_BOOKSHELF).build()
+    );
+
 
     public static void registerEntities(){
-
         Cellulose.LOGGER.info("Registering Mod entities");
     }
 }

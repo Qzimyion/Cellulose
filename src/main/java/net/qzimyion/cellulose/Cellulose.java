@@ -15,8 +15,8 @@ import net.qzimyion.cellulose.blocks.*;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 import net.qzimyion.cellulose.villager.CelluloseVillagerTrades;
 import net.qzimyion.cellulose.villager.CelluloseVillagers;
-import net.qzimyion.cellulose.worldgen.trees.foliagePlacers.CelluloseFoliagePlacerTypes;
-import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.CelluloseTrunkPlacerTypes;
+import net.qzimyion.cellulose.worldgen.CelluloseBiomeSpecificFeatureGen;
+import net.qzimyion.cellulose.worldgen.WorldGenRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +30,7 @@ public class Cellulose implements ModInitializer
 	{
 		CelluloseItems.registerCelluloseItems();
 		CelluloseBlocks.registerCelluloseBlocks();
+		CelluloseBlockSetType.registerCelluloseBlockSetTypes();
 		CelluloseFlammableBlocks.registerFlammableBlocks();
 		CelluloseStrippableBlock.registerStrippableBlocks();
 		CelluloseFuel.registerFuel();
@@ -44,7 +45,7 @@ public class Cellulose implements ModInitializer
 		CelluloseVillagerTrades.registerTrades();
 		CelluloseEntities.registerEntities();
 		Celluloseparticles.registerParticles();
-		CelluloseFoliagePlacerTypes.registerFoliagePlacers();
-		CelluloseTrunkPlacerTypes.registerTrunkPlacers();
+		WorldGenRegistry.registerFeatures();
+		CelluloseBiomeSpecificFeatureGen.registerBiomeSpecificFeature();
 	}
 }

@@ -27,9 +27,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg)
     {
-        //Misc
-        TagKey<Block> LOG_SLABS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "log_slabs"));
-        TagKey<Block> LOG_STAIRS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, "log_stairs"));
 
         ///Modded Tags
 
@@ -65,22 +62,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(CACTUS_SHOJI)
                 .add(AZALEA_SHOJI)
                 .add(BLOOMING_AZALEA_SHOJI)
-        ;
-
-        getOrCreateTagBuilder(SAWDUST_LAYERS)
-                .add(OAK_SAWDUST_LAYER)
-                .add(BIRCH_SAWDUST_LAYER)
-                .add(SPRUCE_SAWDUST_LAYER)
-                .add(DARK_OAK_SAWDUST_LAYER)
-                .add(JUNGLE_SAWDUST_LAYER)
-                .add(ACACIA_SAWDUST_LAYER)
-                .add(CRIMSON_SAWDUST_LAYER)
-                .add(WARPED_SAWDUST_LAYER)
-                .add(MANGROVE_SAWDUST_LAYER)
-                .add(BAMBOO_SAWDUST_LAYER)
-                .add(CHERRY_SAWDUST_LAYER)
-                .add(CACTUS_SAWDUST_LAYER)
-                .add(AZALEA_SAWDUST_LAYER)
         ;
 
         getOrCreateTagBuilder(BOOKSHELVES)
@@ -320,14 +301,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_BLOOMING_AZALEA_PLANKS)
                 .add(VERTICAL_CEDAR_PLANKS);
 
-        getOrCreateTagBuilder(LOG_SLABS)
-                .add(OAK_LOG_SLABS)
-                .add(STRIPPED_OAK_LOG_SLABS);
-
-        getOrCreateTagBuilder(LOG_STAIRS)
-                .add(OAK_LOG_STAIRS)
-                .add(STRIPPED_OAK_LOG_STAIRS);
-
         getOrCreateTagBuilder(WOODEN_MOSAICS)
                 .add(OAK_MOSAIC)
                 .add(BIRCH_MOSAIC)
@@ -545,7 +518,8 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
         ///Vanilla Tags
 
         getOrCreateTagBuilder(LEAVES)
-                .add(CelluloseBlocks.CEDAR_LEAVES);
+                .add(CelluloseBlocks.CEDAR_LEAVES)
+                .add(OLIVE_LEAVES);
 
         getOrCreateTagBuilder(PLANKS)
                 .add(AZALEA_PLANKS)
@@ -790,7 +764,8 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .forceAddTag(BlockTags.MANGROVE_LOGS)
                 .forceAddTag(BlockTags.CHERRY_LOGS)
                 .forceAddTag(AZALEA_LOGS)
-                .forceAddTag(CEDAR_LOGS);
+                .forceAddTag(CEDAR_LOGS)
+                .add(OLIVE_LOG);
 
         getOrCreateTagBuilder(WOODEN_FENCES)
                 .add(AZALEA_FENCE)
@@ -851,10 +826,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .forceAddTag(DOORS)
                 .forceAddTag(TRAPDOORS)
                 ;
-
-        getOrCreateTagBuilder(SHOVEL_MINEABLE)
-                .forceAddTag(SAWDUST_LAYERS)
-        ;
 
         getOrCreateTagBuilder(HOE_MINEABLE)
                 .add(CelluloseBlocks.CEDAR_LEAVES);

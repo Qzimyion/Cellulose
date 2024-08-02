@@ -25,7 +25,7 @@ public class FlippedFiveSlotBlockEntity extends BlockEntity implements Inventory
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(5, ItemStack.EMPTY);
     private int lastInteractedSlot = -1;
     public FlippedFiveSlotBlockEntity(BlockPos pos, BlockState state) {
-        super(CelluloseEntities.WARPED_CHISELED_BOOKSHELF, pos, state);
+        super(CelluloseEntities.CEDAR_CHISELED_BOOKSHELF, pos, state);
     }
 
     private void updateState(int interactedSlot){

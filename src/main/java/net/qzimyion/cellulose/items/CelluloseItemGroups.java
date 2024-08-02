@@ -16,13 +16,7 @@ public class CelluloseItemGroups
         //This section adds items to ingredients group
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> {
             content.addAfter(EGG, PIPIS);
-            content.add(ACORN);
             content.add(AZALEA_FLOWERS);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(content -> {
-            content.addAfter(DRIED_KELP, POPPED_ACORN);
-            content.addAfter(SUSPICIOUS_STEW, POPACORN_BOWL);
         });
 
         /* This section adds items to building blocks group */

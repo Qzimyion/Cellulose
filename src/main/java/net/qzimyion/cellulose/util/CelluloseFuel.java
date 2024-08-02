@@ -202,9 +202,7 @@ public class CelluloseFuel
         registry.add(SAWMILL, 300);
 
         //Compressed Blocks
-        registry.add(BLOCK_OF_CHARCOAL, 16000);
         registry.add(PAPER_BLOCK, 4000);
-        registry.add(BLOCK_OF_STICKS, 2000);
 
         ///Woodsets
         //Logs

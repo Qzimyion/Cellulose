@@ -63,8 +63,6 @@ public class ShojiBlocks extends Block implements Waterloggable {
         return getConnection(state, world, pos);
     }
 
-
-    //TODO: Figure out how to make a player only able to place a `NONE` Shoji shape block when sneaking
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {

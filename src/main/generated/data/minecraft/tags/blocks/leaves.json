@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "cellulose:cedar_leaves"
+    "cellulose:cedar_leaves",
+    "cellulose:olive_leaves"
   ]
 }

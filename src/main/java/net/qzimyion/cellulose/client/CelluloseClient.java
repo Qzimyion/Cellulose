@@ -5,7 +5,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
-import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
@@ -97,28 +96,8 @@ public class CelluloseClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_SHOJI, Render1);
         BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_SHOJI, Render1);
 
-        //Ghost Shoji
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_OAK_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_BIRCH_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_SPRUCE_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_DARK_OAK_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_JUNGLE_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_ACACIA_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_CRIMSON_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_WARPED_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_MANGROVE_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_BAMBOO_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_CHERRY_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_CACTUS_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_AZALEA_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(GHOST_BLOOMING_AZALEA_SHOJI, Render1);
-
-        //Plant stuff
-        BlockRenderLayerMap.INSTANCE.putBlock(CEDAR_SAPLING, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(CEDAR_LEAVES, Render2);
-
         //Tints
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> FoliageColors.getSpruceColor(), CEDAR_LEAVES);
+        ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> FoliageColors.getDefaultColor()), OAK_LEAF);
 
     }
 }

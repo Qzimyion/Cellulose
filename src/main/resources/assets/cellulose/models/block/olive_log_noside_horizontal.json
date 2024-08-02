@@ -1,8 +1,8 @@
 {
-  "parent": "block/block",
+  "ambientocclusion": false,
   "textures": {
-    "all": "block/block",
-    "particle": "#top"
+    "particle": "cellulose:block/olive_log",
+    "inside": "cellulose:block/olive_log"
   },
   "elements": [
     {
@@ -10,7 +10,7 @@
       "to": [12, 12, 12],
       "rotation": {"angle": 0, "axis": "z", "origin": [8, 8, 8]},
       "faces": {
-        "north": {"uv": [4, 4, 12, 12], "rotation": 90, "texture": "#side"}
+        "north": {"uv": [4, 4, 12, 12], "rotation": 90, "texture": "#inside"}
       }
     }
   ]

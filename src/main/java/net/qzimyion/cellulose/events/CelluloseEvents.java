@@ -1,6 +1,7 @@
 package net.qzimyion.cellulose.events;
 
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -30,8 +31,6 @@ import static net.qzimyion.cellulose.boats.CelluloseBoats.*;
 public class CelluloseEvents {
     public static final HashMap<Block, Block> ENGRAVING = new HashMap<>();
     public static final HashMap<Block, Block> LOG_CHIPPING = new HashMap<>();
-    public static final HashMap<Block, Block> LOG_SLAB_STRIPPING = new HashMap<>();
-    public static final HashMap<Block, Block> LOG_STAIR_STRIPPING = new HashMap<>();
     public static final HashMap<Block, Block> PLANK_CHIPPING = new HashMap<>();
     public static final HashMap<Block, Block> SLAB_CHIPPING = new HashMap<>();
     public static final HashMap<Block, Block> STAIR_CHIPPING = new HashMap<>();
@@ -43,7 +42,6 @@ public class CelluloseEvents {
     public static final HashMap<Block, Block> DEFLOWER = new HashMap<>();
     public static final HashMap<Identifier, Identifier> DEFLOWER_ENTITY = new HashMap<>();
     public static final HashMap<Block, Block> BOOKSHELF_ABANDONING = new HashMap<>();
-    public static final HashMap<Block, Block> SHOJI_SWAPPING = new HashMap<>();
     public static final HashMap<Block, Item> BOOK_DROP = new HashMap<>();
 
     static {
@@ -122,14 +120,6 @@ public class CelluloseEvents {
         //LOG_CHIPPING.put(STRIPPED_CACTUS_CROWN, STRIPPED_CHIPPED_CACTUS_CROWN);
         LOG_CHIPPING.put(STRIPPED_AZALEA_LOG, STRIPPED_CHIPPED_AZALEA);
         LOG_CHIPPING.put(STRIPPED_AZALEA_WOOD, STRIPPED_CHIPPED_AZALEA_WOOD);
-
-        //Log Slab Stripping
-        LOG_SLAB_STRIPPING.put(OAK_LOG_SLABS, STRIPPED_OAK_LOG_SLABS);
-        LOG_SLAB_STRIPPING.put(OAK_WOOD_SLABS, STRIPPED_OAK_WOOD_SLABS);
-
-        //Log Stair Stripping
-        LOG_STAIR_STRIPPING.put(OAK_LOG_STAIRS, STRIPPED_OAK_LOG_STAIRS);
-        LOG_STAIR_STRIPPING.put(OAK_WOOD_STAIRS, STRIPPED_OAK_WOOD_STAIRS);
 
         //Plank Chipping
         PLANK_CHIPPING.put(OAK_PLANKS, CHIPPED_OAK_PLANKS);
@@ -369,26 +359,11 @@ public class CelluloseEvents {
         BOOKSHELF_ABANDONING.put(BOOKSHELF, ABANDONED_OAK_BOOKSHELF);
         BOOKSHELF_ABANDONING.put(BIRCH_BOOKSHELF, ABANDONED_BIRCH_BOOKSHELF);
 
-        //Shoji Swapping
-        SHOJI_SWAPPING.put(OAK_SHOJI, GHOST_OAK_SHOJI);
-        SHOJI_SWAPPING.put(BIRCH_SHOJI, GHOST_BIRCH_SHOJI);
-        SHOJI_SWAPPING.put(SPRUCE_SHOJI, GHOST_SPRUCE_SHOJI);
-        SHOJI_SWAPPING.put(DARK_OAK_SHOJI, GHOST_DARK_OAK_SHOJI);
-        SHOJI_SWAPPING.put(JUNGLE_SHOJI, GHOST_JUNGLE_SHOJI);
-        SHOJI_SWAPPING.put(ACACIA_SHOJI, GHOST_ACACIA_SHOJI);
-        SHOJI_SWAPPING.put(CRIMSON_SHOJI, GHOST_CRIMSON_SHOJI);
-        SHOJI_SWAPPING.put(WARPED_SHOJI, GHOST_WARPED_SHOJI);
-        SHOJI_SWAPPING.put(MANGROVE_SHOJI, GHOST_MANGROVE_SHOJI);
-        SHOJI_SWAPPING.put(BAMBOO_SHOJI, GHOST_BAMBOO_SHOJI);
-        SHOJI_SWAPPING.put(CHERRY_SHOJI, GHOST_CHERRY_SHOJI);
-        SHOJI_SWAPPING.put(CACTUS_SHOJI, GHOST_CACTUS_SHOJI);
-        SHOJI_SWAPPING.put(AZALEA_SHOJI, GHOST_AZALEA_SHOJI);
-        SHOJI_SWAPPING.put(BLOOMING_AZALEA_SHOJI, GHOST_BLOOMING_AZALEA_SHOJI);
-
 
     }
 
     public static void registerEvents(){
+
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
 
             BlockPos targetPos = hitResult.getBlockPos();
@@ -407,7 +382,7 @@ public class CelluloseEvents {
                     if (!player.isCreative()) {
                         Random random = new Random();
                         if (random.nextFloat() <= 0.25f) {
-                            heldItem.decrement(1);       //Flint has 25% chance of consumption. This took a long time to figure out for some reason lmfao.
+                            heldItem.decrement(1);//Flint has 25% chance of consumption. This took a long time to figure out for some reason lmfao.
                         }
                     }
                     world.setBlockState(Pos, ENGRAVING.get(State.getBlock()).getStateWithProperties(State));
@@ -525,18 +500,6 @@ public class CelluloseEvents {
                     return ActionResult.SUCCESS;
                 }
             }
-            //Shoji blockstate stuff
-            if (heldItem.getItem()== Items.SHEARS){
-                if (targetBlock.isIn(CelluloseTags.Blocks.SHOJIS)){
-                    world.playSound(player, targetPos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0f,1.0f);
-                    if (player instanceof ServerPlayerEntity){
-                        Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, targetPos, heldItem);
-                        ParticleUtil.spawnParticle(world, Pos, new BlockStateParticleEffect(ParticleTypes.BLOCK, State), UniformIntProvider.create(3, 5));
-                        if (!player.isCreative()) heldItem.damage(1, player, null);
-                        world.setBlockState(targetPos, SHOJI_SWAPPING.get(targetBlock.getBlock()).getStateWithProperties(targetBlock));
-                    }
-                }
-            }
             //Cactus stripping
             if (heldItem.getItem() instanceof AxeItem){
                 if (targetBlock.isOf(CACTUS)){
@@ -551,6 +514,14 @@ public class CelluloseEvents {
             }
             return ActionResult.PASS;
         });
+
+        UseEntityCallback.EVENT.register(((player, world, hand, entity, hitResult) -> {
+            ItemStack heldItem = player.getStackInHand(hand);
+
+            
+
+            return ActionResult.PASS;
+        }));
 
         Cellulose.LOGGER.info("Registering Mod Events");
     }

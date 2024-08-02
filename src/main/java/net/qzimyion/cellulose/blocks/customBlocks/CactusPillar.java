@@ -25,7 +25,7 @@ public class CactusPillar extends Block implements Waterloggable {
 
     public CactusPillar(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, false));
+        setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, false));
     }
 
     @Override

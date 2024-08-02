@@ -179,11 +179,7 @@ public class CelluloseNameProvider_en_gb extends FabricLanguageProvider {
         //Item
         translationBuilder.add(PIPIS, "Crispity crunchy munchie crackerjack snacker nibbler snap crack n pop Westpoolchestershireshire King's lovely jubily delights");
         translationBuilder.add(AZALEA_FLOWERS, "Azalea Flowers");
-        translationBuilder.add(ACORN, "Oak Acorn");
-        translationBuilder.add(POPPED_ACORN, "Popped Oak Acorn");
-        translationBuilder.add(POPACORN_BOWL, "Bowl of Popacorn");
-        translationBuilder.add(POPACORN_BOWL_HALF, "Half Eaten Bowl of Popacorn");
-        translationBuilder.add(POPACORN_BOWL_QUATER, "Almost Eaten Bowl of Popacorn");
+
         //Chipped woodset
         translationBuilder.add(CHIPPED_OAK, "Chipped Oak Log");
         translationBuilder.add(CHIPPED_OAK_WOOD, "Chipped Oak Wood");
@@ -398,8 +394,6 @@ public class CelluloseNameProvider_en_gb extends FabricLanguageProvider {
          */
         translationBuilder.add(PAPER_BLOCK, "Paper Block");
         translationBuilder.add(SOAKED_PAPER_BLOCK, "Soaked Paper Block");
-        translationBuilder.add(BLOCK_OF_STICKS, "Stick Bundle");
-        translationBuilder.add(BLOCK_OF_CHARCOAL, "Block Of Charcoal");
 
         //Potion rack
         translationBuilder.add(POTION_RACK, "Potion Rack");

@@ -188,8 +188,6 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         addDrop(MANGROVE_MOSAIC_STAIRS);
         addDrop(CHERRY_MOSAIC_STAIRS);
         addDrop(CACTUS_MOSAIC_STAIRS);
-        addDrop(OAK_LOG_STAIRS);
-        addDrop(STRIPPED_OAK_LOG_STAIRS);
         /*Tiles*/
         addDrop(OAK_TILES_STAIRS);
         addDrop(BIRCH_TILES_STAIRS);
@@ -243,8 +241,7 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         addDrop(MANGROVE_MOSAIC_SLABS, slabDrops(MANGROVE_MOSAIC_SLABS));
         addDrop(CHERRY_MOSAIC_SLABS, slabDrops(CHERRY_MOSAIC_SLABS));
         addDrop(CACTUS_MOSAIC_SLABS, slabDrops(CACTUS_MOSAIC_SLABS));
-        addDrop(OAK_LOG_SLABS, slabDrops(OAK_LOG_SLABS));
-        addDrop(STRIPPED_OAK_LOG_SLABS, slabDrops(STRIPPED_OAK_LOG_SLABS));
+
         /*Tiles*/
         addDrop(OAK_TILES_SLABS, slabDrops(OAK_TILES_SLABS));
         addDrop(BIRCH_TILES_SLABS, slabDrops(BIRCH_TILES_SLABS));
@@ -391,8 +388,6 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         addDrop(CACTUS_BUNDLE);
         addDrop(PAPER_BLOCK);
         addDrop(SOAKED_PAPER_BLOCK);
-        addDrop(BLOCK_OF_CHARCOAL);
-        addDrop(BLOCK_OF_STICKS);
 
         //Chipped Planks
         addDrop(CHIPPED_WARPED_PLANKS);

@@ -1,0 +1,16 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "texture": "cellulose:block/olive_log",
+    "inside": "cellulose:block/olive_log",
+    "particle": "cellulose:block/olive_log"
+  },
+  "elements": [
+    {   "from": [ 4, 4, 4 ],
+      "to": [ 12, 12, 12 ],
+      "faces": {
+        "north": { "texture": "#inside" }
+      }
+    }
+  ]
+}

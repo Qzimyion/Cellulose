@@ -2,9 +2,12 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Block;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.util.Identifier;
+import net.qzimyion.cellulose.Cellulose;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
@@ -15,8 +18,17 @@ public class CelluloseModelProvider extends FabricModelProvider {
         super(output);
     }
 
-    //Custom models
+    //Custom blockstates
+    public final void registerSingleton(BlockStateModelGenerator blockStateModelGenerator, Block block, Identifier modelIdentifier) {
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, modelIdentifier));
+    }
 
+
+    //Thanks to Leafenzo for helping me out on this
+    public final void registerHollowLog(BlockStateModelGenerator blockStateModelGenerator, Block block) {
+        Identifier identifier = new Identifier(Cellulose.MOD_ID, "block/hollow_log");
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createAxisRotatedBlockState(block, identifier));
+    }
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
@@ -198,12 +210,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool AzaleaPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(AZALEA_PLANKS);
         BlockStateModelGenerator.BlockTexturePool BloomingAzaleaPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(BLOOMING_AZALEA_PLANKS);
 
-        //Cedar wood
-        BlockStateModelGenerator.LogTexturePool Cedar = blockStateModelGenerator.registerLog(CEDAR_LOG);
-        BlockStateModelGenerator.LogTexturePool StrippedCedar = blockStateModelGenerator.registerLog(STRIPPED_CEDAR_LOG);
-        BlockStateModelGenerator.BlockTexturePool CedarPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(CEDAR_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool CedarVerticalPlanks = blockStateModelGenerator.registerCubeAllModelTexturePool(VERTICAL_CEDAR_PLANKS);
-
         /*
         Misc stuff
          */
@@ -356,8 +362,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(CHISELED_CHERRY);
 
         //(Storage Blocks)
-        blockStateModelGenerator.registerSimpleCubeAll(BLOCK_OF_STICKS);
-        blockStateModelGenerator.registerSimpleCubeAll(BLOCK_OF_CHARCOAL);
+
         blockStateModelGenerator.registerWallPlant(AZALEA_FLOWERS);
 
         //Panes
@@ -400,16 +405,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         TilesCactus.slab(CACTUS_TILES_SLABS).stairs(CACTUS_TILES_STAIRS);
         BoardsCactus.slab(CACTUS_TIMBERS_SLABS).stairs(CACTUS_TIMBERS_STAIRS);
         GlazedCactus.slab(GLAZED_CACTUS_SLABS).stairs(GLAZED_CACTUS_STAIRS);
-
-        //(Woodsets: Cedar)
-        ///Logs stuff
-        blockStateModelGenerator.registerTintableCross(CEDAR_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        Cedar.log(CEDAR_LOG).wood(CEDAR_WOOD);
-        StrippedCedar.log(STRIPPED_CEDAR_LOG).wood(STRIPPED_CEDAR_WOOD);
-        blockStateModelGenerator.registerDoor(CEDAR_DOOR);
-        blockStateModelGenerator.registerTrapdoor(CEDAR_TRAPDOOR);
-        CedarPlanks.slab(CEDAR_SLAB).stairs(CEDAR_STAIRS).fence(CEDAR_FENCE).fenceGate(CEDAR_FENCE_GATE).button(CEDAR_BUTTON).pressurePlate(CEDAR_PRESSURE_PLATE);
-        CedarVerticalPlanks.slab(VERTICAL_CEDAR_SLAB).stairs(VERTICAL_CEDAR_STAIR);
 
 
         //(Woodsets: Azalea)
@@ -530,26 +525,21 @@ public class CelluloseModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ACORN, Models.GENERATED);
-        itemModelGenerator.register(POPPED_ACORN, Models.GENERATED);
-        itemModelGenerator.register(POPACORN_BOWL, Models.GENERATED);
-        itemModelGenerator.register(POPACORN_BOWL_HALF, Models.GENERATED);
-        itemModelGenerator.register(POPACORN_BOWL_QUATER, Models.GENERATED);
 
         //Sawdust
-        itemModelGenerator.register(OAK_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(BIRCH_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(SPRUCE_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(DARK_OAK_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(JUNGLE_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(ACACIA_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(CRIMSON_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(WARPED_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(MANGROVE_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(BAMBOO_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(CHERRY_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(CACTUS_SAWDUST, Models.GENERATED);
-        itemModelGenerator.register(AZALEA_SAWDUST, Models.GENERATED);
+        itemModelGenerator.register(OAK_BARK, Models.GENERATED);
+        itemModelGenerator.register(BIRCH_BARK, Models.GENERATED);
+        itemModelGenerator.register(SPRUCE_BARK, Models.GENERATED);
+        itemModelGenerator.register(DARK_OAK_BARK, Models.GENERATED);
+        itemModelGenerator.register(JUNGLE_BARK, Models.GENERATED);
+        itemModelGenerator.register(ACACIA_BARK, Models.GENERATED);
+        itemModelGenerator.register(CRIMSON_BARK, Models.GENERATED);
+        itemModelGenerator.register(WARPED_BARK, Models.GENERATED);
+        itemModelGenerator.register(MANGROVE_BARK, Models.GENERATED);
+        itemModelGenerator.register(BAMBOO_BARK, Models.GENERATED);
+        itemModelGenerator.register(CHERRY_BARK, Models.GENERATED);
+        itemModelGenerator.register(CACTUS_BARK, Models.GENERATED);
+        itemModelGenerator.register(AZALEA_BARK, Models.GENERATED);
 
         //Misc
     }

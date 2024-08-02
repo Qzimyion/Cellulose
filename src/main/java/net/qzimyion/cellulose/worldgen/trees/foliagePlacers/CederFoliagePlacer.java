@@ -10,6 +10,7 @@ import net.minecraft.world.TestableWorld;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
+import net.qzimyion.cellulose.worldgen.WorldGenRegistry;
 
 public class CederFoliagePlacer extends FoliagePlacer {
     public static final Codec<CederFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) -> fillFoliagePlacerFields(instance).and(IntProvider.createValidatingCodec(0, 24)
@@ -23,7 +24,7 @@ public class CederFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected FoliagePlacerType<?> getType() {
-        return CelluloseFoliagePlacerTypes.CEDAR_FOLIAGE_PLACER;
+        return WorldGenRegistry.CEDAR_FOLIAGE_PLACER;
     }
 
     //Modified code taken from here:https://github.com/Team-Hibiscus/NaturesSpirit/blob/dev/src/main/java/net/hibiscus/naturespirit/world/foliage_placer/FirFoliagePlacer.java

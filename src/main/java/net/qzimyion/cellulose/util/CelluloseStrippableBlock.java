@@ -49,9 +49,5 @@ public class CelluloseStrippableBlock
         /*Red*/
 
         /*Brown*/
-
-        ///Ironwood Wood
-
-        ///Gay™ wood
     }
 }

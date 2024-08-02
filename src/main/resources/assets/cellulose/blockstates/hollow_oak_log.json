@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y":  {
+      "model": "cellulose:block/hollow_oak_log"
+    },
+    "axis=z":   {
+      "model": "cellulose:block/hollow_oak_log_horizontal",
+      "x": 90
+    },
+    "axis=x":   {
+      "model": "cellulose:block/hollow_oak_log_horizontal",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

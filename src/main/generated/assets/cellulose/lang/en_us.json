@@ -414,11 +414,6 @@
   "cellulose.cactus_boat": "Cactus Boat",
   "cellulose.cactus_chest_boat": "Cactus Chest Boat",
   "cellulose.interact_with_sawmill": "Interaction with sawmill",
-  "item.cellulose.acorn": "Oak Acorn",
   "item.cellulose.pipis": "[[PIPIS]]",
-  "item.cellulose.popacorn_bowl": "Bowl of Popacorn",
-  "item.cellulose.popacorn_bowl_half": "Half Eaten Bowl of Popacorn",
-  "item.cellulose.popacorn_bowl_quater": "Almost Eaten Bowl of Popacorn",
-  "item.cellulose.popped_acorn": "Popped Oak Acorn",
   "translation{key='container.cellulose.sawmill', args=[]}": "Sawmill"
 }
