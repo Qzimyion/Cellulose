@@ -9,12 +9,14 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.qzimyion.cellulose.Cellulose;
+import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
 import java.util.List;
 
 public class CellulosePlacedFeatures {
 
-    public static final RegistryKey<PlacedFeature> DARK_OAK_ROOFED_PLACED = registerKey("dark");
+    public static final RegistryKey<PlacedFeature> DARK_OAK_ROOFED_PLACED = registerKey("dark_oak_roofed");
+    public static final RegistryKey<PlacedFeature> PINE_TREE_PLACED = registerKey("pine_tree");
 
 
     public static void boostrap(Registerable<PlacedFeature> context) {
@@ -26,6 +28,10 @@ public class CellulosePlacedFeatures {
                         treeModifiersWithWouldSurvive
                                 (PlacedFeatures.createCountExtraModifier(2, 0.5f, 2),
                                         Blocks.DARK_OAK_SAPLING));
+
+        register(context, PINE_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(CelluloseConfiguredFeatures.PINE_TREE),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(5, 0.1f, 1),
+                        CelluloseBlocks.PINE_SAPLING));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

@@ -7,10 +7,10 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.qzimyion.cellulose.worldgen.CelluloseConfiguredFeatures;
 import org.jetbrains.annotations.Nullable;
 
-public class CedarSaplingGenerator extends SaplingGenerator {
+public class PineSaplingGenerator extends SaplingGenerator {
     @Nullable
     @Override
     protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-        return CelluloseConfiguredFeatures.CEDAR_TREE;
+        return CelluloseConfiguredFeatures.PINE_TREE;
     }
 }

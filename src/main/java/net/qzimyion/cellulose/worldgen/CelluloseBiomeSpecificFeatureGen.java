@@ -12,6 +12,12 @@ public class CelluloseBiomeSpecificFeatureGen {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DARK_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, CellulosePlacedFeatures.DARK_OAK_ROOFED_PLACED);
 
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.TAIGA),
+                GenerationStep.Feature.VEGETAL_DECORATION, CellulosePlacedFeatures.PINE_TREE_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SNOWY_TAIGA),
+                GenerationStep.Feature.VEGETAL_DECORATION, CellulosePlacedFeatures.PINE_TREE_PLACED);
+
         Cellulose.LOGGER.info("Registering Biome Specific Mod Features");
     }
 }

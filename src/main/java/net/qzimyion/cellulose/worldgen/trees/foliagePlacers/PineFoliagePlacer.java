@@ -12,19 +12,19 @@ import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 import net.qzimyion.cellulose.worldgen.WorldGenRegistry;
 
-public class CederFoliagePlacer extends FoliagePlacer {
-    public static final Codec<CederFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) -> fillFoliagePlacerFields(instance).and(IntProvider.createValidatingCodec(0, 24)
-            .fieldOf("trunk_height").forGetter((placer) -> placer.trunkHeight)).apply(instance, CederFoliagePlacer::new));
+public class PineFoliagePlacer extends FoliagePlacer {
+    public static final Codec<PineFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) -> fillFoliagePlacerFields(instance).and(IntProvider.createValidatingCodec(0, 24)
+            .fieldOf("trunk_height").forGetter((placer) -> placer.trunkHeight)).apply(instance, PineFoliagePlacer::new));
     private final IntProvider trunkHeight;
 
-    public CederFoliagePlacer(IntProvider radius, IntProvider offset, IntProvider trunkHeight) {
+    public PineFoliagePlacer(IntProvider radius, IntProvider offset, IntProvider trunkHeight) {
         super(radius, offset);
         this.trunkHeight = trunkHeight;
     }
 
     @Override
     protected FoliagePlacerType<?> getType() {
-        return WorldGenRegistry.CEDAR_FOLIAGE_PLACER;
+        return WorldGenRegistry.PINE_FOLIAGE_PLACER;
     }
 
     //Modified code taken from here:https://github.com/Team-Hibiscus/NaturesSpirit/blob/dev/src/main/java/net/hibiscus/naturespirit/world/foliage_placer/FirFoliagePlacer.java
