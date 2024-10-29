@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:chiseled_bookshelf",
+    "cellulose:birch_chiseled_bookshelf",
+    "cellulose:spruce_chiseled_bookshelf",
+    "cellulose:dark_oak_chiseled_bookshelf",
+    "cellulose:jungle_chiseled_bookshelf",
+    "cellulose:acacia_chiseled_bookshelf",
+    "cellulose:crimson_chiseled_bookshelf",
+    "cellulose:warped_chiseled_bookshelf",
+    "cellulose:mangrove_chiseled_bookshelf",
+    "cellulose:bamboo_chiseled_bookshelf",
+    "cellulose:cherry_chiseled_bookshelf",
+    "cellulose:cactus_chiseled_bookshelf",
+    "cellulose:azalea_chiseled_bookshelf"
+  ]
+}

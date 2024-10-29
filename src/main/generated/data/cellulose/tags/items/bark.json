@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "cellulose:oak_bark",
+    "cellulose:birch_bark",
+    "cellulose:spruce_bark",
+    "cellulose:dark_oak_bark",
+    "cellulose:jungle_bark",
+    "cellulose:acacia_bark",
+    "cellulose:crimson_bark",
+    "cellulose:warped_bark",
+    "cellulose:mangrove_bark",
+    "cellulose:bamboo_bark",
+    "cellulose:cherry_bark",
+    "cellulose:azalea_bark"
+  ]
+}

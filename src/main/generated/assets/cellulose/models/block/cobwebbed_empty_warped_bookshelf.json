@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "minecraft:block/warped_planks",
+    "side": "cellulose:block/cobwebbed_empty_warped_bookshelf"
+  }
+}
