@@ -1,14 +1,20 @@
 package net.qzimyion.cellulose.datagen;
 
+import com.google.gson.JsonElement;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.block.Blocks;
+import net.minecraft.data.client.*;
 import net.minecraft.util.Identifier;
 import net.qzimyion.cellulose.Cellulose;
 
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+import static net.minecraft.block.Blocks.*;
+import static net.minecraft.data.client.BlockStateModelGenerator.createSingletonBlockState;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
@@ -20,9 +26,20 @@ public class CelluloseModelProvider extends FabricModelProvider {
 
     //Custom blockstates
     public final void registerSingleton(BlockStateModelGenerator blockStateModelGenerator, Block block, Identifier modelIdentifier) {
-        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, modelIdentifier));
+        blockStateModelGenerator.blockStateCollector.accept(createSingletonBlockState(block, modelIdentifier));
     }
 
+    public static void registerBookshelf(Block bookshelf, Block plank, BlockStateModelGenerator blockStateModelGenerator) {
+        TextureMap textureMap = TextureMap.sideEnd(TextureMap.getId(bookshelf), TextureMap.getId(plank));
+        Identifier identifier = Models.CUBE_COLUMN.upload(bookshelf, textureMap, blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.blockStateCollector.accept(createSingletonBlockState(bookshelf, identifier));
+    }
+
+    public static void registerPesudoPillarBlocks(Block side, BlockStateModelGenerator blockStateModelGenerator){
+        TextureMap textureMap = TextureMap.sideEnd(TextureMap.getId(side), TextureMap.getSubId(side,"_top"));
+        Identifier identifier = Models.CUBE_COLUMN.upload(side, textureMap, blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.blockStateCollector.accept(createSingletonBlockState(side, identifier));
+    }
 
     //Thanks to Leafenzo for helping me out on this
     public final void registerHollowLog(BlockStateModelGenerator blockStateModelGenerator, Block block) {
@@ -32,6 +49,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        
         //Texturepool (Block)
         BlockStateModelGenerator.BlockTexturePool cactusTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(CACTUS_PLANKS);
         BlockStateModelGenerator.BlockTexturePool cactusVerticalTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(VERTICAL_CACTUS_PLANKS);
@@ -461,63 +479,76 @@ public class CelluloseModelProvider extends FabricModelProvider {
         PlankPillarBloomingAzalea.log(BLOOMING_AZALEA_PLANK_PILLARS).wood(BLOOMING_AZALEA_PLANK_BOX);
         GlazedAzalea.slab(GLAZED_AZALEA_SLABS).stairs(GLAZED_AZALEA_STAIRS);
 
-        ///Misc
-        blockStateModelGenerator.registerLog(EMPTY_OAK_BOOKSHELF);
+        //Bookshelf
+        registerBookshelf(BIRCH_BOOKSHELF, BIRCH_PLANKS, blockStateModelGenerator);
+        registerBookshelf(SPRUCE_BOOKSHELF, SPRUCE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(DARK_OAK_BOOKSHELF, DARK_OAK_PLANKS, blockStateModelGenerator);
+        registerBookshelf(JUNGLE_BOOKSHELF, JUNGLE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ACACIA_BOOKSHELF, ACACIA_PLANKS, blockStateModelGenerator);
+        registerBookshelf(CRIMSON_BOOKSHELF, CRIMSON_PLANKS, blockStateModelGenerator);
+        registerBookshelf(WARPED_BOOKSHELF, WARPED_PLANKS, blockStateModelGenerator);
+        registerBookshelf(MANGROVE_BOOKSHELF, MANGROVE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(BAMBOO_BOOKSHELF, BAMBOO_PLANKS, blockStateModelGenerator);
+        registerBookshelf(CHERRY_BOOKSHELF, CHERRY_PLANKS, blockStateModelGenerator);
+        registerBookshelf(CACTUS_BOOKSHELF, CACTUS_PLANKS, blockStateModelGenerator);
+        registerBookshelf(AZALEA_BOOKSHELF, AZALEA_PLANKS, blockStateModelGenerator);
 
-        blockStateModelGenerator.registerSimpleState(EMPTY_BIRCH_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_SPRUCE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_DARK_OAK_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_JUNGLE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_ACACIA_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_CRIMSON_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_WARPED_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_MANGROVE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_BAMBOO_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_CHERRY_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_CACTUS_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(EMPTY_AZALEA_BOOKSHELF);
+        registerBookshelf(EMPTY_BIRCH_BOOKSHELF, BIRCH_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_SPRUCE_BOOKSHELF, SPRUCE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_DARK_OAK_BOOKSHELF, DARK_OAK_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_JUNGLE_BOOKSHELF, JUNGLE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_ACACIA_BOOKSHELF, ACACIA_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_CRIMSON_BOOKSHELF, CRIMSON_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_WARPED_BOOKSHELF, WARPED_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_MANGROVE_BOOKSHELF, MANGROVE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_BAMBOO_BOOKSHELF, BAMBOO_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_CHERRY_BOOKSHELF, CHERRY_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_CACTUS_BOOKSHELF, CACTUS_PLANKS, blockStateModelGenerator);
+        registerBookshelf(EMPTY_AZALEA_BOOKSHELF, AZALEA_PLANKS, blockStateModelGenerator);
 
-        blockStateModelGenerator.registerSimpleState(ABANDONED_OAK_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_BIRCH_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_SPRUCE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_DARK_OAK_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_JUNGLE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_ACACIA_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_CRIMSON_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_WARPED_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_MANGROVE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_BAMBOO_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_CHERRY_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_CACTUS_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(ABANDONED_AZALEA_BOOKSHELF);
+        registerBookshelf(ABANDONED_OAK_BOOKSHELF, OAK_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_BIRCH_BOOKSHELF, BIRCH_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_SPRUCE_BOOKSHELF, SPRUCE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_DARK_OAK_BOOKSHELF, DARK_OAK_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_JUNGLE_BOOKSHELF, JUNGLE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_ACACIA_BOOKSHELF, ACACIA_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_CRIMSON_BOOKSHELF, CRIMSON_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_WARPED_BOOKSHELF, WARPED_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_MANGROVE_BOOKSHELF, MANGROVE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_BAMBOO_BOOKSHELF, BAMBOO_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_CHERRY_BOOKSHELF, CHERRY_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_CACTUS_BOOKSHELF, CACTUS_PLANKS, blockStateModelGenerator);
+        registerBookshelf(ABANDONED_AZALEA_BOOKSHELF, AZALEA_PLANKS, blockStateModelGenerator);
 
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_OAK_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_BIRCH_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_SPRUCE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_DARK_OAK_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_JUNGLE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_ACACIA_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_CRIMSON_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_WARPED_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_MANGROVE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_BAMBOO_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_CHERRY_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_CACTUS_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_AZALEA_BOOKSHELF);
+        registerBookshelf(COBWEBBED_OAK_BOOKSHELF, OAK_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_BIRCH_BOOKSHELF, BIRCH_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_SPRUCE_BOOKSHELF, SPRUCE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_DARK_OAK_BOOKSHELF, DARK_OAK_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_JUNGLE_BOOKSHELF, JUNGLE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_ACACIA_BOOKSHELF, ACACIA_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_CRIMSON_BOOKSHELF, CRIMSON_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_WARPED_BOOKSHELF, WARPED_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_MANGROVE_BOOKSHELF, MANGROVE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_BAMBOO_BOOKSHELF, BAMBOO_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_CHERRY_BOOKSHELF, CHERRY_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_CACTUS_BOOKSHELF, CACTUS_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_AZALEA_BOOKSHELF, AZALEA_PLANKS, blockStateModelGenerator);
 
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_OAK_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_BIRCH_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_SPRUCE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_DARK_OAK_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_JUNGLE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_ACACIA_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_CRIMSON_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_WARPED_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_MANGROVE_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_BAMBOO_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_CHERRY_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_CACTUS_BOOKSHELF);
-        blockStateModelGenerator.registerSimpleState(COBWEBBED_EMPTY_AZALEA_BOOKSHELF);
+        registerBookshelf(COBWEBBED_EMPTY_OAK_BOOKSHELF, OAK_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_BIRCH_BOOKSHELF, BIRCH_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_SPRUCE_BOOKSHELF, SPRUCE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_DARK_OAK_BOOKSHELF, DARK_OAK_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_JUNGLE_BOOKSHELF, JUNGLE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_ACACIA_BOOKSHELF, ACACIA_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_CRIMSON_BOOKSHELF, CRIMSON_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_WARPED_BOOKSHELF, WARPED_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_MANGROVE_BOOKSHELF, MANGROVE_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_BAMBOO_BOOKSHELF, BAMBOO_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_CHERRY_BOOKSHELF, CHERRY_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_CACTUS_BOOKSHELF, CACTUS_PLANKS, blockStateModelGenerator);
+        registerBookshelf(COBWEBBED_EMPTY_AZALEA_BOOKSHELF, AZALEA_PLANKS, blockStateModelGenerator);
+
+        //Misc
         blockStateModelGenerator.registerSimpleState(PAPER_BLOCK);
         blockStateModelGenerator.registerSimpleState(SOAKED_PAPER_BLOCK);
         blockStateModelGenerator.registerSimpleState(STRIPPED_CACTUS);
