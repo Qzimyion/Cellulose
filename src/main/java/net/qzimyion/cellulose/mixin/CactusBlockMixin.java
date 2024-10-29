@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @SuppressWarnings("deprecation")
 @Mixin(CactusBlock.class)
 public class CactusBlockMixin {
+
     @Inject(at = @At("TAIL"), method = "canPlaceAt", cancellable = true)
     public void canPlaceAt(BlockState state, WorldView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         if(world.getBlockState(pos.down()).isOf(CelluloseBlocks.STRIPPED_CACTUS) && !world.getBlockState(pos.up()).isLiquid()) cir.setReturnValue(true);
