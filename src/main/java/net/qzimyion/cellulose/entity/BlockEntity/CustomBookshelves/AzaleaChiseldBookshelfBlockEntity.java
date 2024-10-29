@@ -18,6 +18,7 @@ import net.qzimyion.cellulose.entity.CelluloseEntities;
 import org.slf4j.Logger;
 
 import java.util.Objects;
+import java.util.function.Predicate;
 
 public class AzaleaChiseldBookshelfBlockEntity extends BlockEntity implements Inventory {
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -40,6 +41,10 @@ public class AzaleaChiseldBookshelfBlockEntity extends BlockEntity implements In
             blockState = blockState.with(booleanProperty, bl);
         }
         Objects.requireNonNull(this.world).setBlockState(this.pos, blockState, Block.NOTIFY_ALL);
+    }
+
+    public int getOpenSlotCount() {
+        return (int)this.inventory.stream().filter(Predicate.not(ItemStack::isEmpty)).count();
     }
 
     @Override
