@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "cellulose:block/azalea_planks",
-    "side": "cellulose:block/abandoned_azalea_bookshelf"
-  }
-}
