@@ -17,7 +17,7 @@ public class CelluloseEntities {
     //Potion racks
     public static final BlockEntityType<PotionRackBlockEntity> POTION_RACK_BLOCK_ENTITY = Registry.register(
             Registries.BLOCK_ENTITY_TYPE,
-            new Identifier(Cellulose.MOD_ID, "potion_rack_block_entity"),
+            new Identifier(Cellulose.MOD_ID, "potion_rack"),
             FabricBlockEntityTypeBuilder.create(PotionRackBlockEntity::new, CelluloseBlocks.POTION_RACK).build()
     );
 
@@ -103,7 +103,7 @@ public class CelluloseEntities {
     public static final BlockEntityType<FlippedFiveSlotBlockEntity> CEDAR_CHISELED_BOOKSHELF = Registry.register(
             Registries.BLOCK_ENTITY_TYPE,
             new Identifier(Cellulose.MOD_ID, "cedar_chiseled_bookshelf"),
-            FabricBlockEntityTypeBuilder.create(FlippedFiveSlotBlockEntity::new, CelluloseBlocks.CEDAR_CHISELED_BOOKSHELF).build()
+            FabricBlockEntityTypeBuilder.create(FlippedFiveSlotBlockEntity::new, CelluloseBlocks.PINE_CHISELED_BOOKSHELF).build()
     );
 
 

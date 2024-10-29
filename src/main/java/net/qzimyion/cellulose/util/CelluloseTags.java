@@ -32,6 +32,7 @@ public class CelluloseTags
         public static final TagKey <Block> COBWEBBED_BOOKSHELVES = createTag("cobwebbed_bookshelves");
         public static final TagKey <Block> COBWEBBED_EMPTY_BOOKSHELVES = createTag("cobwebbed_empty_bookshelves");
         public static final TagKey <Block> ABANDONED_BOOKSHELVES = createTag("abandoned_bookshelves");
+        public static final TagKey <Block> CHISELED_BOOKSHELVES = createTag("chiseled_bookshelves");
 
         //Event only tags
         public static final TagKey <Block> ENGRAVABLE_LOGS = createTag ("engravable_logs");

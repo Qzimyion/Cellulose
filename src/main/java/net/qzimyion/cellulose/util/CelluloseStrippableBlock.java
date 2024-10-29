@@ -12,8 +12,8 @@ public class CelluloseStrippableBlock
         StrippableBlockRegistry.register(CACTUS_CROWN, STRIPPED_CACTUS_BUNDLE);
         StrippableBlockRegistry.register(CHIPPED_CACTUS_CROWN, STRIPPED_CHIPPED_CACTUS_CROWN);
         //Cedar
-        StrippableBlockRegistry.register(CEDAR_LOG, STRIPPED_CEDAR_LOG);
-        StrippableBlockRegistry.register(CEDAR_WOOD, STRIPPED_CEDAR_WOOD);
+        StrippableBlockRegistry.register(PINE_LOG, STRIPPED_PINE_LOG);
+        StrippableBlockRegistry.register(PINE_WOOD, STRIPPED_PINE_WOOD);
         //Azalea stuff
         StrippableBlockRegistry.register(AZALEA_LOG, STRIPPED_AZALEA_LOG);
         StrippableBlockRegistry.register(AZALEA_WOOD, STRIPPED_AZALEA_WOOD);

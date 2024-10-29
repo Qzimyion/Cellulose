@@ -224,9 +224,6 @@ public class CelluloseFuel
         //Trapdoors
         registry.add(CACTUS_TRAPDOOR, 300);
 
-        //Tripe doors
-        registry.add(TALL_OAK_DOOR, 400);
-
         //Shutter
         registry.add(OAK_SHOJI, 100);
         

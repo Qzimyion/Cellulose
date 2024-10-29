@@ -2,13 +2,8 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
-import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
 import java.util.concurrent.CompletableFuture;
@@ -78,6 +73,22 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(CHERRY_BOOKSHELF)
                 .add(CACTUS_BOOKSHELF)
                 .add(AZALEA_BOOKSHELF)
+        ;
+
+        getOrCreateTagBuilder(CHISELED_BOOKSHELVES)
+                .add(CHISELED_BOOKSHELF)
+                .add(BIRCH_CHISELED_BOOKSHELF)
+                .add(SPRUCE_CHISELED_BOOKSHELF)
+                .add(DARK_OAK_CHISELED_BOOKSHELF)
+                .add(JUNGLE_CHISELED_BOOKSHELF)
+                .add(ACACIA_CHISELED_BOOKSHELF)
+                .add(CRIMSON_CHISELED_BOOKSHELF)
+                .add(WARPED_CHISELED_BOOKSHELF)
+                .add(MANGROVE_CHISELED_BOOKSHELF)
+                .add(BAMBOO_CHISELED_BOOKSHELF)
+                .add(CHERRY_CHISELED_BOOKSHELF)
+                .add(CACTUS_CHISELED_BOOKSHELF)
+                .add(AZALEA_CHISELED_BOOKSHELF)
         ;
 
         getOrCreateTagBuilder(EMPTY_BOOKSHELVES)
@@ -299,7 +310,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_CHERRY_PLANKS)
                 .add(VERTICAL_AZALEA_PLANKS)
                 .add(VERTICAL_BLOOMING_AZALEA_PLANKS)
-                .add(VERTICAL_CEDAR_PLANKS);
+                .add(VERTICAL_PINE_PLANKS);
 
         getOrCreateTagBuilder(WOODEN_MOSAICS)
                 .add(OAK_MOSAIC)
@@ -515,17 +526,17 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(STRIPPED_AZALEA_WOOD)
         ;
 
-        ///Vanilla Tags
+        //Vanilla Tags
 
         getOrCreateTagBuilder(LEAVES)
-                .add(CelluloseBlocks.CEDAR_LEAVES)
-                .add(OLIVE_LEAVES);
+                .add(CelluloseBlocks.PINE_LEAVES)
+        ;
 
         getOrCreateTagBuilder(PLANKS)
                 .add(AZALEA_PLANKS)
                 .add(BLOOMING_AZALEA_PLANKS)
                 .add(CACTUS_PLANKS)
-                .add(CEDAR_PLANKS)
+                .add(PINE_PLANKS)
                 .forceAddTag(VERTICAL_PLANKS);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_SLABS)
@@ -546,7 +557,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_CACTUS_SLAB)
                 .add(VERTICAL_AZALEA_SLAB)
                 .add(VERTICAL_BLOOMING_AZALEA_SLAB)
-                .add(VERTICAL_CEDAR_SLAB)
+                .add(VERTICAL_PINE_SLAB)
 
                 //Mosaic
                 .add(OAK_MOSAIC_SLABS)
@@ -598,7 +609,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(VERTICAL_CACTUS_STAIR)
                 .add(VERTICAL_AZALEA_STAIR)
                 .add(VERTICAL_BLOOMING_AZALEA_STAIR)
-                .add(VERTICAL_CEDAR_STAIR)
+                .add(VERTICAL_PINE_STAIR)
 
                 //Mosaic
                 .add(OAK_MOSAIC_STAIRS)
@@ -635,24 +646,24 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
         getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS)
                 .add(AZALEA_BUTTON)
                 .add(CACTUS_BUTTON)
-                .add(CEDAR_BUTTON);
+                .add(PINE_BUTTON);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
                 .add(AZALEA_PRESSURE_PLATE)
                 .add(CACTUS_PRESSURE_PLATE)
-                .add(CEDAR_PRESSURE_PLATE);
+                .add(PINE_PRESSURE_PLATE);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
                 .add(AZALEA_DOOR)
                 .add(BLOOMING_AZALEA_DOOR)
                 .add(CACTUS_DOOR)
-                .add(CEDAR_DOOR);
+                .add(PINE_DOOR);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)
                 .add(AZALEA_TRAPDOOR)
                 .add(BLOOMING_AZALEA_TRAPDOOR)
                 .add(CACTUS_TRAPDOOR)
-                .add(CEDAR_TRAPDOOR);
+                .add(PINE_TRAPDOOR);
 
         getOrCreateTagBuilder(ENCHANTMENT_POWER_PROVIDER)
                 .add(BIRCH_BOOKSHELF)
@@ -742,10 +753,10 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(ENGRAVED_AZALEA_WOOD);
 
         getOrCreateTagBuilder(CEDAR_LOGS)
-                .add(CEDAR_LOG)
-                .add(CEDAR_WOOD)
-                .add(STRIPPED_CEDAR_LOG)
-                .add(STRIPPED_CEDAR_WOOD);
+                .add(PINE_LOG)
+                .add(PINE_WOOD)
+                .add(STRIPPED_PINE_LOG)
+                .add(STRIPPED_PINE_WOOD);
 
         getOrCreateTagBuilder(BlockTags.LOGS)
                 .forceAddTag(BlockTags.LOGS_THAT_BURN)
@@ -765,24 +776,24 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .forceAddTag(BlockTags.CHERRY_LOGS)
                 .forceAddTag(AZALEA_LOGS)
                 .forceAddTag(CEDAR_LOGS)
-                .add(OLIVE_LOG);
+        ;
 
         getOrCreateTagBuilder(WOODEN_FENCES)
                 .add(AZALEA_FENCE)
                 .add(CACTUS_FENCE)
-                .add(CEDAR_FENCE);
+                .add(PINE_FENCE);
 
         getOrCreateTagBuilder(FENCES)
                 .add(AZALEA_FENCE)
                 .add(CACTUS_FENCE)
-                .add(CEDAR_FENCE);
+                .add(PINE_FENCE);
 
         getOrCreateTagBuilder(FENCE_GATES)
                 .add(AZALEA_FENCE_GATE)
                 .add(CACTUS_FENCE_GATE)
-                .add(CEDAR_FENCE_GATE);
+                .add(PINE_FENCE_GATE);
 
-        ///Mining tags
+        //Mining tags
         getOrCreateTagBuilder(AXE_MINEABLE)
 
                 .add(POTION_RACK)
@@ -811,6 +822,8 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .forceAddTag(COBWEBBED_BOOKSHELVES)
                 .forceAddTag(ABANDONED_BOOKSHELVES)
                 .forceAddTag(COBWEBBED_EMPTY_BOOKSHELVES)
+                .forceAddTag(CHISELED_BOOKSHELVES)
+
 
                 //Fence and Fence Gates
                 .forceAddTag(FENCES)
@@ -828,6 +841,6 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 ;
 
         getOrCreateTagBuilder(HOE_MINEABLE)
-                .add(CelluloseBlocks.CEDAR_LEAVES);
+                .add(CelluloseBlocks.PINE_LEAVES);
     }
 }

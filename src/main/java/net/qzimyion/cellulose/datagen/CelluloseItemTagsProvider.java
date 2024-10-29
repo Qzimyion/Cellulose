@@ -280,10 +280,10 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.fromBlock(CHIPPED_AZALEA_WOOD));
 
         getOrCreateTagBuilder(CelluloseTags.Items.CEDAR_LOGS)
-                .add(Item.fromBlock(CEDAR_LOG))
-                .add(Item.fromBlock(CEDAR_WOOD))
-                .add(Item.fromBlock(STRIPPED_CEDAR_LOG))
-                .add(Item.fromBlock(STRIPPED_CEDAR_WOOD))
+                .add(Item.fromBlock(PINE_LOG))
+                .add(Item.fromBlock(PINE_WOOD))
+                .add(Item.fromBlock(STRIPPED_PINE_LOG))
+                .add(Item.fromBlock(STRIPPED_PINE_WOOD))
         ;
 
         getOrCreateTagBuilder(CelluloseTags.Items.PAVEMENTS)

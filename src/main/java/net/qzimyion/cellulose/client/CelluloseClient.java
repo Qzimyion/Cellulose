@@ -98,6 +98,5 @@ public class CelluloseClient implements ClientModInitializer
 
         //Tints
         ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> FoliageColors.getDefaultColor()), OAK_LEAF);
-
     }
 }
