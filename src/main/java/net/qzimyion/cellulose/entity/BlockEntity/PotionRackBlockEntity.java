@@ -3,6 +3,7 @@ package net.qzimyion.cellulose.entity.BlockEntity;
 import com.mojang.logging.LogUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.world.World;
 import net.qzimyion.cellulose.blocks.customBlocks.PotionRackBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -30,6 +31,7 @@ public class PotionRackBlockEntity extends BlockEntity implements Inventory {
     }
 
     private void updateState(int interactedSlot){
+        World world = this.world;
         if (interactedSlot < 0 || interactedSlot >= 6) {
             LOGGER.error("Expected slot 0-5, got {}", interactedSlot);
             return;
@@ -97,7 +99,6 @@ public class PotionRackBlockEntity extends BlockEntity implements Inventory {
             this.inventory.set(slot, stack);
             this.updateState(slot);
         }
-
     }
 
     @Override

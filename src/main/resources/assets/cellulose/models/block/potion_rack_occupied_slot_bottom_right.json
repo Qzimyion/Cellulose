@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/template_chiseled_bookshelf_slot_bottom_right",
+  "parent": "cellulose:block/template_chiseled_bookshelf_slot_bottom_right_tinted",
   "textures": {
     "texture": "cellulose:block/potion_rack_occupied"
   }
