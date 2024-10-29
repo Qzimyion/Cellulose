@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "cellulose:cedar_log",
-    "cellulose:cedar_wood",
-    "cellulose:stripped_cedar_log",
-    "cellulose:stripped_cedar_wood"
+    "cellulose:pine_log",
+    "cellulose:pine_wood",
+    "cellulose:stripped_pine_log",
+    "cellulose:stripped_pine_wood"
   ]
 }
