@@ -1,5 +1,6 @@
 package net.qzimyion.cellulose.blocks;
 
+import com.terraformersmc.terraform.wood.block.BareSmallLogBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -15,7 +16,7 @@ import net.qzimyion.cellulose.blocks.customBlocks.ChisledBookshelvesStuff.*;
 import net.qzimyion.cellulose.blocks.customBlocks.PannelBlocks.ShojiBlocks.ShojiBlocks;
 import net.qzimyion.cellulose.blocks.customBlocks.PaperBlocks.PaperBlock;
 import net.qzimyion.cellulose.blocks.customBlocks.PaperBlocks.SoakedPaperBlock;
-import net.qzimyion.cellulose.worldgen.trees.saplingGenerators.CedarSaplingGenerator;
+import net.qzimyion.cellulose.worldgen.trees.saplingGenerators.PineSaplingGenerator;
 
 import static net.minecraft.block.Blocks.*;
 import static net.minecraft.block.MapColor.*;
@@ -37,7 +38,7 @@ public class CelluloseBlocks
     public static final Block VERTICAL_CACTUS_PLANKS = registerBlock("vertical_cactus_planks", new Block(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
     public static final Block VERTICAL_AZALEA_PLANKS = registerBlock("vertical_azalea_planks", new Block(FabricBlockSettings.copyOf(CHERRY_PLANKS).burnable()));
     public static final Block VERTICAL_BLOOMING_AZALEA_PLANKS = registerBlock("vertical_blooming_azalea_planks", new Block(FabricBlockSettings.copyOf(CHERRY_PLANKS).burnable()));
-    public static final Block VERTICAL_CEDAR_PLANKS = registerBlock("vertical_cedar_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS).burnable()));
+    public static final Block VERTICAL_PINE_PLANKS = registerBlock("vertical_cedar_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS).burnable()));
 
 
     //This section adds Mosaic Blocks
@@ -458,7 +459,7 @@ public class CelluloseBlocks
 
 
     //Post Block
-    public static final Block OAK_POST = registerBlock("oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block OAK_POST = registerBlock("oak_post", new BareSmallLogBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block BIRCH_POST = registerBlock("birch_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block SPRUCE_POST = registerBlock("spruce_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
     public static final Block DARK_OAK_POST = registerBlock("dark_oak_post", new PostBlock(FabricBlockSettings.copyOf(OAK_PLANKS)));
@@ -512,8 +513,7 @@ public class CelluloseBlocks
     public static final Block CACTUS_CHISELED_BOOKSHELF = registerBlock("cactus_chiseled_bookshelf", new CactusChiseledBookshelfBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF).sounds(BlockSoundGroup.NETHER_WART)));
     public static final Block AZALEA_CHISELED_BOOKSHELF = registerBlock("azalea_chiseled_bookshelf", new AzaleaChiseledBookshelf(FabricBlockSettings.copyOf(CHERRY_CHISELED_BOOKSHELF)));
     public static final Block BLOOMING_AZALEA_CHISELED_BOOKSHELF = registerBlock("blooming_azalea_chiseled_bookshelf", new AzaleaChiseledBookshelf(FabricBlockSettings.copyOf(CHERRY_CHISELED_BOOKSHELF)));
-    //
-    public static final Block CEDAR_CHISELED_BOOKSHELF = registerBlock("cedar_chiseled_bookshelf", new FlippedFiveSlotChiseledBookshelf(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
+    public static final Block PINE_CHISELED_BOOKSHELF = registerBlock("cedar_chiseled_bookshelf", new FlippedFiveSlotChiseledBookshelf(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF).sounds(BlockSoundGroup.CHERRY_WOOD)));
 
 
     //Hollow Logs
@@ -528,7 +528,7 @@ public class CelluloseBlocks
     public static final Block HOLLOW_MANGROVE_LOG = registerBlock("hollow_mangrove_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
     public static final Block HOLLOW_CHERRY_LOG = registerBlock("hollow_cherry_log", new HollowLogBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
     public static final Block HOLLOW_AZALEA_LOG = registerBlock("hollow_azalea_log", new HollowLogBlock(FabricBlockSettings.copyOf(CHERRY_LOG)));
-    public static final Block HOLLOW_CEDAR_LOG = registerBlock("hollow_cedar_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block HOLLOW_PINE_LOG = registerBlock("hollow_cedar_log", new HollowLogBlock(FabricBlockSettings.copyOf(OAK_LOG)));
 
     // Sawmill Block //
     public static final Block SAWMILL = registerBlock("sawmill", new SawmillBlock(AbstractBlock.Settings.create().burnable().nonOpaque().strength(2.5f,2.5f).requiresTool().sounds(BlockSoundGroup.CHERRY_WOOD).mapColor(BROWN)));
@@ -631,7 +631,7 @@ public class CelluloseBlocks
     public static final Block VERTICAL_CACTUS_STAIR = registerBlock("vertical_cactus_stairs", new StairsBlock(VERTICAL_CACTUS_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(CHERRY_PLANKS)));
     public static final Block VERTICAL_AZALEA_STAIR = registerBlock("vertical_azalea_stairs", new StairsBlock(VERTICAL_AZALEA_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(CHERRY_PLANKS).burnable()));
     public static final Block VERTICAL_BLOOMING_AZALEA_STAIR = registerBlock("vertical_azalea_blooming_stairs", new StairsBlock(VERTICAL_AZALEA_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(CHERRY_PLANKS).burnable()));
-    public static final Block VERTICAL_CEDAR_STAIR = registerBlock("vertical_cedar_stairs", new StairsBlock(VERTICAL_CEDAR_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(OAK_PLANKS).burnable()));
+    public static final Block VERTICAL_PINE_STAIR = registerBlock("vertical_cedar_stairs", new StairsBlock(VERTICAL_PINE_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(OAK_PLANKS).burnable()));
 
 
     /* Mosaic stairs*/
@@ -746,7 +746,7 @@ public class CelluloseBlocks
     public static final Block VERTICAL_CACTUS_SLAB = registerBlock("vertical_cactus_slab", new SlabBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS)));
     public static final Block VERTICAL_AZALEA_SLAB = registerBlock("vertical_azalea_planks_slab", new SlabBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).burnable()));
     public static final Block VERTICAL_BLOOMING_AZALEA_SLAB = registerBlock("vertical_blooming_azalea_slab", new SlabBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).burnable()));
-    public static final Block VERTICAL_CEDAR_SLAB = registerBlock("vertical_cedar_planks_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_PLANKS).burnable()));
+    public static final Block VERTICAL_PINE_SLAB = registerBlock("vertical_cedar_planks_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_PLANKS).burnable()));
 
 
     /* Mosaic slabs*/
@@ -901,22 +901,23 @@ public class CelluloseBlocks
     public static final Block BLOOMING_AZALEA_DOOR = registerBlock("blooming_azalea_door", new DoorBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).nonOpaque(), BlockSetType.CHERRY));
     public static final Block BLOOMING_AZALEA_TRAPDOOR = registerBlock("blooming_azalea_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CHERRY_PLANKS).nonOpaque(), BlockSetType.CHERRY));
 
-    //Cedar woodset
-    public static final Block CEDAR_SAPLING = registerBlock("cedar_sapling", new SaplingBlock(new CedarSaplingGenerator(),FabricBlockSettings.copyOf(OAK_SAPLING)));
-    public static final Block CEDAR_LEAVES = registerBlock("cedar_leaves", new LeavesBlock(FabricBlockSettings.copyOf(OAK_LEAVES)));
-    public static final Block CEDAR_LOG = registerBlock("cedar_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block CEDAR_WOOD = registerBlock("cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
-    public static final Block STRIPPED_CEDAR_LOG = registerBlock("stripped_cedar_log", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
-    public static final Block STRIPPED_CEDAR_WOOD = registerBlock("stripped_cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
-    public static final Block CEDAR_PLANKS = registerBlock("cedar_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
-    public static final Block CEDAR_SLAB = registerBlock("cedar_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
-    public static final Block CEDAR_STAIRS = registerBlock("cedar_stairs", new StairsBlock(CEDAR_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(OAK_LEAVES)));
-    public static final Block CEDAR_FENCE = registerBlock("cedar_fence", new FenceBlock(FabricBlockSettings.copyOf(OAK_FENCE)));
-    public static final Block CEDAR_FENCE_GATE = registerBlock("cedar_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(OAK_FENCE_GATE), WoodType.OAK));
-    public static final Block CEDAR_BUTTON = registerBlock("cedar_button", new ButtonBlock(FabricBlockSettings.copyOf(OAK_BUTTON), BlockSetType.OAK, 5, true));
-    public static final Block CEDAR_PRESSURE_PLATE = registerBlock("cedar_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING ,FabricBlockSettings.copyOf(OAK_PRESSURE_PLATE), BlockSetType.OAK));
-    public static final Block CEDAR_DOOR = registerBlock("cedar_door", new DoorBlock(FabricBlockSettings.copyOf(OAK_DOOR), BlockSetType.OAK));
-    public static final Block CEDAR_TRAPDOOR = registerBlock("cedar_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(OAK_TRAPDOOR), BlockSetType.OAK));
+    //Pine woodset
+    public static final Block PINE_SAPLING = registerBlock("pine_sapling", new SaplingBlock(new PineSaplingGenerator(), FabricBlockSettings.copyOf(OAK_SAPLING)));
+    public static final Block PINE_LEAVES = registerBlock("pine_leaves", new LeavesBlock(FabricBlockSettings.copyOf(OAK_LEAVES)));
+    public static final Block PINE_LOG = registerBlock("pine_log", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+
+    public static final Block PINE_WOOD = registerBlock("pine_wood", new PillarBlock(FabricBlockSettings.copyOf(OAK_LOG)));
+    public static final Block STRIPPED_PINE_LOG = registerBlock("stripped_pine_log", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood", new PillarBlock(FabricBlockSettings.copyOf(STRIPPED_OAK_LOG)));
+    public static final Block PINE_PLANKS = registerBlock("pine_planks", new Block(FabricBlockSettings.copyOf(OAK_PLANKS)));
+    public static final Block PINE_SLAB = registerBlock("pine_slab", new SlabBlock(FabricBlockSettings.copyOf(OAK_SLAB)));
+    public static final Block PINE_STAIRS = registerBlock("pine_stairs", new StairsBlock(PINE_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(OAK_LEAVES)));
+    public static final Block PINE_FENCE = registerBlock("pine_fence", new FenceBlock(FabricBlockSettings.copyOf(OAK_FENCE)));
+    public static final Block PINE_FENCE_GATE = registerBlock("pine_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(OAK_FENCE_GATE), WoodType.OAK));
+    public static final Block PINE_BUTTON = registerBlock("pine_button", new ButtonBlock(FabricBlockSettings.copyOf(OAK_BUTTON), BlockSetType.OAK, 5, true));
+    public static final Block PINE_PRESSURE_PLATE = registerBlock("pine_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final Block PINE_DOOR = registerBlock("pine_door", new DoorBlock(FabricBlockSettings.copyOf(OAK_DOOR), BlockSetType.OAK));
+    public static final Block PINE_TRAPDOOR = registerBlock("pine_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(OAK_TRAPDOOR), BlockSetType.OAK));
 
     ///Misc
     public static final Block POTION_RACK = registerBlock("potion_rack", new PotionRackBlock(FabricBlockSettings.copyOf(CHISELED_BOOKSHELF)));
