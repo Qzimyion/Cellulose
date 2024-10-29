@@ -1,6 +1,8 @@
 package net.qzimyion.cellulose.blocks.customBlocks;
 
 import net.minecraft.block.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
@@ -8,6 +10,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
@@ -81,4 +84,17 @@ public class HollowLogBlock extends PillarBlock implements Waterloggable {
         builder.add(AXIS, WATERLOGGED);
     }
 
+
+    @Override
+    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+        if (entity instanceof PlayerEntity player) {
+            Box playerHitbox = player.getBoundingBox();
+            VoxelShape voxelShape = state.getOutlineShape(world, pos);
+            Box logHitbox = voxelShape.getBoundingBox().offset(pos);
+            if (logHitbox.intersects(playerHitbox)) {
+               player.canClimb(state);
+            }
+        }
+    }
+    
 }
