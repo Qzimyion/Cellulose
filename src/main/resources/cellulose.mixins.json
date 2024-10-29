@@ -6,10 +6,10 @@
     "CactusBlockMixin",
     "ChiseledBookshelfMixin",
     "DarkOakSaplingGeneratorMixin",
+    "EnchatmentTableMixin",
     "FoliagePlacerTypeInvoker",
     "PillarBlockMixin",
-    "TrunkPlacerTypeInvoker",
-    "TallDoorsCompatibilityMixins.VillagerGoalMixin"
+    "TrunkPlacerTypeInvoker"
   ],
   "client": [
   ],
