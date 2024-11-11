@@ -9,6 +9,7 @@ import net.qzimyion.cellulose.Cellulose;
 public class CelluloseBiomeSpecificFeatureGen {
     public static void registerBiomeSpecificFeature(){
 
+        //Trees
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DARK_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, CellulosePlacedFeatures.DARK_OAK_ROOFED_PLACED);
 
@@ -18,6 +19,10 @@ public class CelluloseBiomeSpecificFeatureGen {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SNOWY_TAIGA),
                 GenerationStep.Feature.VEGETAL_DECORATION, CellulosePlacedFeatures.PINE_TREE_PLACED);
 
-        Cellulose.LOGGER.info("Registering Biome Specific Mod Features");
+        //Fallen logs
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, CellulosePlacedFeatures.FALLEN_OAK_LOG_PLACED);
+
+        Cellulose.LOGGER.info("Registering Cellulose Biome Specific Mod Features");
     }
 }
