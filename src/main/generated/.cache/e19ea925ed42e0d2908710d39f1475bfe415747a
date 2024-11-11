@@ -1,9 +1,9 @@
-// 1.20.1	2024-10-28T22:25:51.4120013	Cellulose /Block Loot Tables
+// 1.20.1	2024-11-11T02:00:46.9581327	Cellulose /Block Loot Tables
 f5d986cbd241f353a7623ba2bb63153d01831637 data\cellulose\loot_tables\blocks\cactus_plank_pillar.json
 badce3be6ca635fae5d2a8bd259e7898a9e96ff4 data\cellulose\loot_tables\blocks\chipped_crimson_log.json
 1f215f333d6e91c4395a5937fda277841c45f787 data\cellulose\loot_tables\blocks\chiseled_acacia_planks.json
-1ebbfcb51eef13df1f1ccf6cb67b3cc9ecc0fd2c data\cellulose\loot_tables\blocks\mangrove_tiles_slab.json
 3ec363383609b06ff0fb494df6daaacc80199645 data\cellulose\loot_tables\blocks\vertical_crimson_slab.json
+1ebbfcb51eef13df1f1ccf6cb67b3cc9ecc0fd2c data\cellulose\loot_tables\blocks\mangrove_tiles_slab.json
 bfeb3b5920cb903d2791fe1d054828d1e508f1f2 data\cellulose\loot_tables\blocks\chipped_bamboo_block.json
 41803420d7371b60977d33ba21cd290c3027ffa2 data\cellulose\loot_tables\blocks\engraved_crimson_hyphae.json
 6cc567d8f16310267d4df10fe6d0449a85f8dd55 data\cellulose\loot_tables\blocks\dark_oak_frame.json
@@ -167,8 +167,8 @@ f7e927186f38c40f4245a9d9ca1332fc46514ae5 data\cellulose\loot_tables\blocks\warpe
 ed2e90ba6c537d54f2d90693ad5ffbd0a4fc68b0 data\cellulose\loot_tables\blocks\blooming_azalea_frame.json
 75cb3d6b78506d0994f5161ae44dfb726f01d2fa data\cellulose\loot_tables\blocks\vertical_oak_stairs.json
 cfc7b4e282d6bf86b172f81bb8ac8c567dee7e85 data\cellulose\loot_tables\blocks\glazed_cactus_stairs.json
-7cc3f0d58578cfedf63b34db278ca5a0b71b9532 data\cellulose\loot_tables\blocks\crimson_mosaic.json
 f6d3ff5755afdb9e30f090d02eed6a1e88e386ae data\cellulose\loot_tables\blocks\vertical_crimson_planks.json
+7cc3f0d58578cfedf63b34db278ca5a0b71b9532 data\cellulose\loot_tables\blocks\crimson_mosaic.json
 39a098ae376bfd0c5c4fee46e1a5eb1078621622 data\cellulose\loot_tables\blocks\glazed_mangrove.json
 392b9953b9dc9182171a3cdae4f42227a6f66c36 data\cellulose\loot_tables\blocks\glazed_jungle_slab.json
 8d62fc71341dc508783b2ecdd11f9a0bef57eb9f data\cellulose\loot_tables\blocks\cherry_timbers_slab.json
