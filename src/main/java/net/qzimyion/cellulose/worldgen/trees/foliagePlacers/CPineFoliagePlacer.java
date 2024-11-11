@@ -12,12 +12,12 @@ import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 import net.qzimyion.cellulose.worldgen.WorldGenRegistry;
 
-public class PineFoliagePlacer extends FoliagePlacer {
-    public static final Codec<PineFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) -> fillFoliagePlacerFields(instance).and(IntProvider.createValidatingCodec(0, 24)
-            .fieldOf("trunk_height").forGetter((placer) -> placer.trunkHeight)).apply(instance, PineFoliagePlacer::new));
+public class CPineFoliagePlacer extends FoliagePlacer {
+    public static final Codec<CPineFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) -> fillFoliagePlacerFields(instance).and(IntProvider.createValidatingCodec(0, 24)
+            .fieldOf("trunk_height").forGetter((placer) -> placer.trunkHeight)).apply(instance, CPineFoliagePlacer::new));
     private final IntProvider trunkHeight;
 
-    public PineFoliagePlacer(IntProvider radius, IntProvider offset, IntProvider trunkHeight) {
+    public CPineFoliagePlacer(IntProvider radius, IntProvider offset, IntProvider trunkHeight) {
         super(radius, offset);
         this.trunkHeight = trunkHeight;
     }
