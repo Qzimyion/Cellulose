@@ -7,8 +7,11 @@
     "ChiseledBookshelfMixin",
     "DarkOakSaplingGeneratorMixin",
     "EnchatmentTableMixin",
+    "EntityMixin",
     "FoliagePlacerTypeInvoker",
+    "MushroomPlantMixin",
     "PillarBlockMixin",
+    "TreeDecoratorInvoker",
     "TrunkPlacerTypeInvoker"
   ],
   "client": [

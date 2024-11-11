@@ -12,6 +12,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
@@ -90,8 +91,10 @@ public class HollowLogBlock extends PillarBlock implements Waterloggable {
         if (entity instanceof PlayerEntity player) {
             Box playerHitbox = player.getBoundingBox();
             VoxelShape voxelShape = state.getOutlineShape(world, pos);
+            Vec3d eyePos = player.getEyePos();
+            float f = 2.0f/16.0f;
             Box logHitbox = voxelShape.getBoundingBox().offset(pos);
-            if (logHitbox.intersects(playerHitbox)) {
+            if (logHitbox.intersects(playerHitbox) && eyePos.x > (pos.getX() + f) && eyePos.z > (pos.getZ() + f) && eyePos.x < (pos.getX() + 1 - f) && eyePos.z < (pos.getZ() + 1 - f)){
                player.canClimb(state);
             }
         }

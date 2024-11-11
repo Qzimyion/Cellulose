@@ -38,7 +38,7 @@ public class LeafBedBlock extends PlantBlock {
 
     public LeafBedBlock(Settings settings) {
         super(settings);
-        setDefaultState(getDefaultState().with(FACING, Direction.NORTH));
+        setDefaultState(getDefaultState().with(FACING, Direction.NORTH).with(LAYERS, 1));
     }
 
     @Override
@@ -84,6 +84,6 @@ public class LeafBedBlock extends PlantBlock {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING, LAYERS);
     }
 }
