@@ -1,0 +1,13 @@
+{
+  "feature": "cellulose:fallen_oak_log",
+  "placement": [
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING_NO_LEAVES"
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 3
+    }
+  ]
+}
