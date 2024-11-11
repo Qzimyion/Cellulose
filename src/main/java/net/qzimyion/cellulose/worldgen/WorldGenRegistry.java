@@ -1,30 +1,41 @@
 package net.qzimyion.cellulose.worldgen;
 
-import com.mojang.serialization.Codec;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
+import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
 import net.qzimyion.cellulose.Cellulose;
+import net.qzimyion.cellulose.mixin.FoliagePlacerTypeInvoker;
+import net.qzimyion.cellulose.mixin.TreeDecoratorInvoker;
 import net.qzimyion.cellulose.mixin.TrunkPlacerTypeInvoker;
-import net.qzimyion.cellulose.worldgen.trees.foliagePlacers.PineFoliagePlacer;
+import net.qzimyion.cellulose.worldgen.trees.foliagePlacers.CPineFoliagePlacer;
+import net.qzimyion.cellulose.worldgen.trees.treeDecorators.MossCarpetDecorator;
+import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.BetterCherryTrunkPlacer;
+import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.HorizontalStraightTrunkPlacer;
 import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.SmallDarkOakTrunkPlacer;
-
-import static net.qzimyion.cellulose.Cellulose.MOD_ID;
+import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.SnappedBigTrunkPlacer;
 
 public class WorldGenRegistry {
 
     //TrunkPlacer
-    public static final TrunkPlacerType<SmallDarkOakTrunkPlacer> SMALL_DARK_OAK_TRUNK_PLACER = TrunkPlacerTypeInvoker.callRegister("small_dark_oak_placer", SmallDarkOakTrunkPlacer.CODEC);
+    public static final TrunkPlacerType<SmallDarkOakTrunkPlacer> SMALL_DARK_OAK_TRUNK_PLACER =
+            TrunkPlacerTypeInvoker.callRegister("small_dark_oak_placer", SmallDarkOakTrunkPlacer.CODEC);
+
+    public static final TrunkPlacerType<HorizontalStraightTrunkPlacer> HORIZONTAL_STRAIGHT_TRUNK_PLACER =
+            TrunkPlacerTypeInvoker.callRegister("horizontal_straight_trunk_placer", HorizontalStraightTrunkPlacer.CODEC);
+
+    public static final TrunkPlacerType<SnappedBigTrunkPlacer> SNAPPED_BIG_TRUNK_PLACER =
+            TrunkPlacerTypeInvoker.callRegister("snapped_big_trunk_placer", SnappedBigTrunkPlacer.CODEC);
+
+    public static final TrunkPlacerType<BetterCherryTrunkPlacer> BETTER_CHERRY_TRUNK_PLACER =
+            TrunkPlacerTypeInvoker.callRegister("better_cherry_trunk_placer", BetterCherryTrunkPlacer.CODEC);
 
     //FoliagePlacer
-    public static final FoliagePlacerType<PineFoliagePlacer> PINE_FOLIAGE_PLACER = registerFoliagePlacer("pine_foliage_placer", PineFoliagePlacer.CODEC);
+    public static final FoliagePlacerType<CPineFoliagePlacer> PINE_FOLIAGE_PLACER =
+            FoliagePlacerTypeInvoker.callRegister("frosty_pine_foliage_placer", CPineFoliagePlacer.CODEC);
 
-    private static <P extends FoliagePlacer> FoliagePlacerType<P> registerFoliagePlacer(String id, Codec<P> codec) {
-        return (FoliagePlacerType) Registry.register(Registries.FOLIAGE_PLACER_TYPE, new Identifier(MOD_ID, id), new FoliagePlacerType(codec));
-    }
+    //Tree Decorator
+    public static final TreeDecoratorType<MossCarpetDecorator> MOSS_CARPET_DECORATOR =
+            TreeDecoratorInvoker.callRegister("moss_carpet_decorator", MossCarpetDecorator.CODEC);
 
     public static void registerFeatures()
     {
