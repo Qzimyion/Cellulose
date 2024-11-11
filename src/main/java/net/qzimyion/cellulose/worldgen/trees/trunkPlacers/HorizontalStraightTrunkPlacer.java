@@ -5,6 +5,7 @@ import com.mojang.datafixers.Products;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
@@ -20,6 +21,7 @@ import org.jetbrains.annotations.Contract;
 
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.function.Function;
 
 import static net.minecraft.state.property.Properties.AXIS;
 
@@ -66,35 +68,44 @@ public class HorizontalStraightTrunkPlacer extends TrunkPlacer {
     @Override
     public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int length, BlockPos startPos, TreeFeatureConfig config) {
         Direction.Axis logDir = random.nextBoolean() ? Direction.Axis.X : Direction.Axis.Z;
-        BlockState state = config.trunkProvider.get(random, startPos);
+        Direction direction = Direction.Type.HORIZONTAL.random(random);
+        //BlockState state = config.trunkProvider.get(random, startPos);
         List<FoliagePlacer.TreeNode> list = Lists.newArrayList();
         if (isWater(world, startPos) && random.nextFloat() > this.successInWaterChance) {
             return list;
         }
         for (int i = 0; i < length; i++) {
             BlockPos currentPos = startPos.offset(logDir, i);
-            if (state.contains(Properties.AXIS) && logDir == Direction.Axis.X){
-                state = state.with(AXIS, Direction.Axis.X);
-            }else{
-                state = state.with(AXIS, Direction.Axis.Z);
-            }
-            //Stump generation
+//            if (state.contains(Properties.AXIS) && logDir == Direction.Axis.X){
+//                state = state.with(AXIS, Direction.Axis.X);
+//            }else{
+//                state = state.with(AXIS, Direction.Axis.Z);
+//            }
+            Function<BlockState, BlockState> blockStateBlockStateFunction = (state) -> {
+                if (state.contains(Properties.AXIS) && logDir == Direction.Axis.X){
+                    state = state.with(AXIS, Direction.Axis.X);
+                }else{
+                    state = state.with(AXIS, Direction.Axis.Z);
+                }
+                return state;
+            };
             if (random.nextFloat() < this.stumpChance){
                 if (i == length - 1) {
                     List<Integer> distanceList = List.of(2, 3);
                     int placementDistance = getRandomFromList(distanceList);
                     BlockPos stumpPos;
-                    BlockState stumpState = config.trunkProvider.get(random, startPos).with(Properties.AXIS, Direction.Axis.Y);
+                    //BlockState stumpState = config.trunkProvider.get(random, startPos).with(Properties.AXIS, Direction.Axis.Y);
+                    Function<BlockState, BlockState> stumpState = (state) -> state.with(Properties.AXIS, Direction.Axis.Y);
                     if (logDir == Direction.Axis.X) {
                         stumpPos = currentPos.offset(Direction.Axis.X, placementDistance);
                     } else {
                         stumpPos = currentPos.offset(Direction.Axis.Z, placementDistance);
                     }
-                    replacer.accept(stumpPos, stumpState);
+                    getAndSetState(world, replacer, random, stumpPos, config, stumpState);
                 }
             }
             startPos.add(currentPos);
-            replacer.accept(currentPos, state);
+            getAndSetState(world, replacer, random, currentPos, config, blockStateBlockStateFunction);
         }
         return list;
     }
