@@ -84,7 +84,6 @@ public class HorizontalStraightTrunkPlacer extends TrunkPlacer {
             int aboveSolidAmount = 0;
             boolean isEndAboveSolid = false;
             BlockPos currentPos = startPos.offset(logDir, i);
-            BlockPos newPos = world.getTopPosition(Heightmap.Type.OCEAN_FLOOR_WG, currentPos);
             if (random.nextFloat() < this.stumpChance){
                 if (i == length - 1) {
                     BlockPos stumpPos;
@@ -92,9 +91,9 @@ public class HorizontalStraightTrunkPlacer extends TrunkPlacer {
                     int placementDistance = getRandomFromList(distanceList);
                     Function<BlockState, BlockState> stumpState = (state) -> state.with(AXIS, Direction.Axis.Y);
                     if (logDir == Direction.Axis.X) {
-                        stumpPos = newPos.offset(Direction.Axis.X, placementDistance);
+                        stumpPos = currentPos.offset(Direction.Axis.X, placementDistance);
                     } else {
-                        stumpPos = newPos.offset(Direction.Axis.Z, placementDistance);
+                        stumpPos = currentPos.offset(Direction.Axis.Z, placementDistance);
                     }
                     BlockPos[] directions = new BlockPos[]{
                             stumpPos.north(),
@@ -109,19 +108,19 @@ public class HorizontalStraightTrunkPlacer extends TrunkPlacer {
                             replacer.accept(pos, mossState);
                         }
                     }
-                    Iterable<BlockPos> poses = BlockPos.iterate(newPos, stumpPos);
+                    Iterable<BlockPos> poses = BlockPos.iterate(currentPos, stumpPos);
                     for (BlockPos blockPos : poses){
                         mutable.add(blockPos);
                         if (TreeFeature.canReplace(world, mutable)){
                             if (!TreeFeature.canReplace(world, mutable.offset(Direction.DOWN)) && !TreeFeature.isAirOrLeaves(world, mutable)){
                                 aboveSolidAmount += 1;
                                 mutable.offset(Direction.UP);
-                                if (mutable.equals(newPos) || mutable.equals(stumpPos)){
+                                if (mutable.equals(currentPos) || mutable.equals(stumpPos)){
                                     isEndAboveSolid = true;
                                 }
                             } else {
                                 mutable.offset(Direction.UP);
-                                if (mutable.equals(newPos)){
+                                if (mutable.equals(currentPos)){
                                     return list;
                                 }
                             }
@@ -133,7 +132,7 @@ public class HorizontalStraightTrunkPlacer extends TrunkPlacer {
                 }
             }
             if (isEndAboveSolid || ((double) aboveSolidAmount / (double) length) > 0.5){
-                getAndSetState(world, replacer, random, newPos, config, blockStateBlockStateFunction);
+                getAndSetState(world, replacer, random, currentPos, config, blockStateBlockStateFunction);
             }
         }
         return list;
