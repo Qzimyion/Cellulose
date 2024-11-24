@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "cellulose:block/chipped_crimson_planks",
-    "side": "cellulose:block/chipped_crimson_planks",
-    "top": "cellulose:block/chipped_crimson_planks"
-  }
-}

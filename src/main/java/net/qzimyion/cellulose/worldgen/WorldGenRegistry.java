@@ -1,15 +1,14 @@
 package net.qzimyion.cellulose.worldgen;
 
-import net.minecraft.world.gen.foliage.FoliagePlacerType;
-import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
-import net.minecraft.world.gen.trunk.TrunkPlacerType;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.mixin.FoliagePlacerTypeInvoker;
 import net.qzimyion.cellulose.mixin.TreeDecoratorInvoker;
 import net.qzimyion.cellulose.mixin.TrunkPlacerTypeInvoker;
 import net.qzimyion.cellulose.worldgen.trees.foliagePlacers.CPineFoliagePlacer;
 import net.qzimyion.cellulose.worldgen.trees.treeDecorators.MossCarpetDecorator;
-import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.BetterCherryTrunkPlacer;
 import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.HorizontalStraightTrunkPlacer;
 import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.SmallDarkOakTrunkPlacer;
 import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.SnappedBigTrunkPlacer;
@@ -25,9 +24,6 @@ public class WorldGenRegistry {
 
     public static final TrunkPlacerType<SnappedBigTrunkPlacer> SNAPPED_BIG_TRUNK_PLACER =
             TrunkPlacerTypeInvoker.callRegister("snapped_big_trunk_placer", SnappedBigTrunkPlacer.CODEC);
-
-    public static final TrunkPlacerType<BetterCherryTrunkPlacer> BETTER_CHERRY_TRUNK_PLACER =
-            TrunkPlacerTypeInvoker.callRegister("better_cherry_trunk_placer", BetterCherryTrunkPlacer.CODEC);
 
     //FoliagePlacer
     public static final FoliagePlacerType<CPineFoliagePlacer> PINE_FOLIAGE_PLACER =

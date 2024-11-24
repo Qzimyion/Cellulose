@@ -2,29 +2,28 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BlockTags;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
 import java.util.concurrent.CompletableFuture;
-import static net.minecraft.block.Blocks.*;
-import static net.minecraft.registry.tag.BlockTags.*;
+import static net.minecraft.world.level.block.Blocks.*;
+import static net.minecraft.tags.BlockTags.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.util.CelluloseTags.Blocks.*;
 
 public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvider
 {
 
-    public CelluloseBlockTagsProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public CelluloseBlockTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup arg)
+    protected void addTags(HolderLookup.Provider arg)
     {
 
-        ///Modded Tags
-
+        //==Modded Tags==//
         getOrCreateTagBuilder(TIMERS)
                 .add(OAK_TIMBERS)
                 .add(BIRCH_TIMBERS)
@@ -248,7 +247,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
 
         getOrCreateTagBuilder(FLOWERABLE)
                 .add(AZALEA)
-                .add(POTTED_AZALEA_BUSH)
+                .add(POTTED_AZALEA)
                 .add(AZALEA_LOG)
                 .add(AZALEA_WOOD)
                 .add(STRIPPED_AZALEA_LOG)
@@ -274,7 +273,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
 
         getOrCreateTagBuilder(DEFLOWER)
                 .add(FLOWERING_AZALEA)
-                .add(POTTED_FLOWERING_AZALEA_BUSH)
+                .add(POTTED_FLOWERING_AZALEA)
                 .add(BLOOMING_AZALEA_LOG)
                 .add(BLOOMING_AZALEA_WOOD)
                 .add(BLOOMING_STRIPPED_AZALEA_LOG)
@@ -794,7 +793,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .add(PINE_FENCE_GATE);
 
         //Mining tags
-        getOrCreateTagBuilder(AXE_MINEABLE)
+        getOrCreateTagBuilder(MINEABLE_WITH_AXE)
 
                 .add(POTION_RACK)
                 //Logs
@@ -840,7 +839,7 @@ public class CelluloseBlockTagsProvider extends FabricTagProvider.BlockTagProvid
                 .forceAddTag(TRAPDOORS)
                 ;
 
-        getOrCreateTagBuilder(HOE_MINEABLE)
+        getOrCreateTagBuilder(MINEABLE_WITH_HOE)
                 .add(CelluloseBlocks.PINE_LEAVES);
     }
 }

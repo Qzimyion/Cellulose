@@ -1,44 +1,49 @@
 package net.qzimyion.cellulose.blocks.customBlocks;
 
-import net.minecraft.block.*;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 //TODO: Complete this in the next version
 @SuppressWarnings("deprecation")
-public class WindowBlock extends HorizontalFacingBlock implements Waterloggable {
-    public static final BooleanProperty OPEN = Properties.OPEN;
-    public static final BooleanProperty POWERED = Properties.POWERED;
-    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
-    protected static final VoxelShape NORTH = Block.createCuboidShape(0, 0, 6, 16, 16, 9);
-    protected static final VoxelShape SOUTH = Block.createCuboidShape(0, 0, 6, 16, 16, 9);
-    protected static final VoxelShape EAST_WEST = Block.createCuboidShape(6, 0, 0, 9, 16, 16);
-    protected static final VoxelShape OPEN_NORTH = Block.createCuboidShape(0, 0, 6, 8, 16, 9);
-    protected static final VoxelShape OPEN_SOUTH = Block.createCuboidShape(0, 0, 6, 8, 16, 9);
-    protected static final VoxelShape OPEN_EAST_WEST = Block.createCuboidShape(6, 0, 0, 9, 16, 8);
+public class WindowBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+    public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
+    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    protected static final VoxelShape NORTH = Block.box(0, 0, 6, 16, 16, 9);
+    protected static final VoxelShape SOUTH = Block.box(0, 0, 6, 16, 16, 9);
+    protected static final VoxelShape EAST_WEST = Block.box(6, 0, 0, 9, 16, 16);
+    protected static final VoxelShape OPEN_NORTH = Block.box(0, 0, 6, 8, 16, 9);
+    protected static final VoxelShape OPEN_SOUTH = Block.box(0, 0, 6, 8, 16, 9);
+    protected static final VoxelShape OPEN_EAST_WEST = Block.box(6, 0, 0, 9, 16, 8);
     private final BlockSetType blockSetType;
-    protected WindowBlock(Settings settings, BlockSetType blockSetType) {
+    protected WindowBlock(Properties settings, BlockSetType blockSetType) {
         super(settings);
         this.blockSetType = blockSetType;
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, OPEN, POWERED, WATERLOGGED);
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext ctx){
-        Direction direction = state.get(FACING);
-        if (!state.get(OPEN)){
+    public VoxelShape getShape(BlockState state, BlockGetter view, BlockPos pos, CollisionContext ctx){
+        Direction direction = state.getValue(FACING);
+        if (!state.getValue(OPEN)){
             switch (direction) {
                 default -> {
                     return NORTH;
@@ -66,8 +71,8 @@ public class WindowBlock extends HorizontalFacingBlock implements Waterloggable 
 
     @Nullable
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx)
+    public BlockState getStateForPlacement(BlockPlaceContext ctx)
     {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+        return this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
     }
 }

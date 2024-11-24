@@ -1,16 +1,16 @@
 package net.qzimyion.cellulose.worldgen.trees.saplingGenerators;
 
-import net.minecraft.block.sapling.SaplingGenerator;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.qzimyion.cellulose.worldgen.CelluloseConfiguredFeatures;
 import org.jetbrains.annotations.Nullable;
 
-public class PineSaplingGenerator extends SaplingGenerator {
+public class PineSaplingGenerator extends AbstractTreeGrower {
     @Nullable
     @Override
-    protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
+    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bees) {
         return CelluloseConfiguredFeatures.PINE_TREE;
     }
 }

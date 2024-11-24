@@ -1,11 +1,13 @@
 package net.qzimyion.cellulose.items;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PlaceOnWaterBlockItem;
 import net.qzimyion.cellulose.Cellulose;
+import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
 
 public class CelluloseItems
@@ -28,10 +30,13 @@ public class CelluloseItems
     public static final Item CACTUS_BARK = registerItem("cactus_bark", new Item(new FabricItemSettings()));
     public static final Item AZALEA_BARK = registerItem("azalea_bark", new Item(new FabricItemSettings()));
 
+    //Special items
+    public static final Item VICTORIAN_LILY = registerItem("victorian_lily", new PlaceOnWaterBlockItem(CelluloseBlocks.VICTORIAN_LILY, new FabricItemSettings()));
+
 
     private static Item registerItem(String name, Item item)
     {
-        return Registry.register(Registries.ITEM, new Identifier(Cellulose.MOD_ID, name), item);
+        return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Cellulose.MOD_ID, name), item);
     }
     public static void registerCelluloseItems()
     {

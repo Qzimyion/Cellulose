@@ -3,7 +3,7 @@ package net.qzimyion.cellulose.util;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
-import static net.minecraft.item.Items.*;
+import static net.minecraft.world.item.Items.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.util.CelluloseTags.Items.*;
 

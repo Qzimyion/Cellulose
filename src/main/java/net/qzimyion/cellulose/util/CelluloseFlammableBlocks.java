@@ -1,7 +1,7 @@
 package net.qzimyion.cellulose.util;
 
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.tags.BlockTags;
 import net.qzimyion.cellulose.util.CelluloseTags;
 
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;

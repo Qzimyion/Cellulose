@@ -2,7 +2,7 @@ package net.qzimyion.cellulose.datagen.languageProvider;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.level.block.Blocks;
 import net.qzimyion.cellulose.blocks.customBlocks.SawmillBlock;
 import net.qzimyion.cellulose.boats.CelluloseBoats;
 import net.qzimyion.cellulose.util.CelluloseStats;

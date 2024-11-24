@@ -1,18 +1,18 @@
 package net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.Container;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.qzimyion.cellulose.blocks.customBlocks.ChisledBookshelvesStuff.FiveSlotChiseledBookshelfBlock;
 import net.qzimyion.cellulose.entity.CelluloseEntities;
 import org.slf4j.Logger;
@@ -21,9 +21,9 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 @SuppressWarnings("unused")
-public class FiveSlotBlockEntity extends BlockEntity implements Inventory {
+public class FiveSlotBlockEntity extends BlockEntity implements Container {
     private static final Logger LOGGER = LogUtils.getLogger();
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(5, ItemStack.EMPTY);
+    private final NonNullList<ItemStack> inventory = NonNullList.withSize(5, ItemStack.EMPTY);
     private int lastInteractedSlot = -1;
     public FiveSlotBlockEntity(BlockPos pos, BlockState state) {
         super(CelluloseEntities.JUNGLE_CHISELED_BOOKSHELF, pos, state);
@@ -35,25 +35,25 @@ public class FiveSlotBlockEntity extends BlockEntity implements Inventory {
             return;
         }
         this.lastInteractedSlot = interactedSlot;
-        BlockState blockState = this.getCachedState();
+        BlockState blockState = this.getBlockState();
         for (int i = 0; i < FiveSlotChiseledBookshelfBlock.SLOT_OCCUPIED_PROPERTIES.size(); ++i) {
-            boolean bl = !this.getStack(i).isEmpty();
+            boolean bl = !this.getItem(i).isEmpty();
             BooleanProperty booleanProperty = FiveSlotChiseledBookshelfBlock.SLOT_OCCUPIED_PROPERTIES.get(i);
-            blockState = blockState.with(booleanProperty, bl);
+            blockState = blockState.setValue(booleanProperty, bl);
         }
-        Objects.requireNonNull(this.world).setBlockState(this.pos, blockState, Block.NOTIFY_ALL);
+        Objects.requireNonNull(this.level).setBlock(this.worldPosition, blockState, Block.UPDATE_ALL);
     }
 
     @Override
-    public void readNbt(NbtCompound nbt) {
+    public void load(CompoundTag nbt) {
         this.inventory.clear();
-        Inventories.readNbt(nbt, this.inventory);
+        ContainerHelper.loadAllItems(nbt, this.inventory);
         this.lastInteractedSlot = nbt.getInt("last_interacted_slot");
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt) {
-        Inventories.writeNbt(nbt, this.inventory, true);
+    protected void saveAdditional(CompoundTag nbt) {
+        ContainerHelper.saveAllItems(nbt, this.inventory, true);
         nbt.putInt("last_interacted_slot", this.lastInteractedSlot);
     }
 
@@ -62,7 +62,7 @@ public class FiveSlotBlockEntity extends BlockEntity implements Inventory {
     }
 
     @Override
-    public int size() {
+    public int getContainerSize() {
         return 5;
     }
 
@@ -72,12 +72,12 @@ public class FiveSlotBlockEntity extends BlockEntity implements Inventory {
     }
 
     @Override
-    public ItemStack getStack(int slot) {
+    public ItemStack getItem(int slot) {
         return this.inventory.get(slot);
     }
 
     @Override
-    public ItemStack removeStack(int slot, int amount) {
+    public ItemStack removeItem(int slot, int amount) {
         ItemStack itemStack = Objects.requireNonNullElse(this.inventory.get(slot), ItemStack.EMPTY);
         this.inventory.set(slot, ItemStack.EMPTY);
         if (!itemStack.isEmpty()) {
@@ -87,41 +87,41 @@ public class FiveSlotBlockEntity extends BlockEntity implements Inventory {
     }
 
     @Override
-    public ItemStack removeStack(int slot) {
-        return this.removeStack(slot, 1);
+    public ItemStack removeItemNoUpdate(int slot) {
+        return this.removeItem(slot, 1);
     }
 
     @Override
-    public void setStack(int slot, ItemStack stack) {
-        if (stack.isIn(ItemTags.BOOKSHELF_BOOKS)) {
+    public void setItem(int slot, ItemStack stack) {
+        if (stack.is(ItemTags.BOOKSHELF_BOOKS)) {
             this.inventory.set(slot, stack);
             this.updateState(slot);
         }
     }
 
     @Override
-    public boolean canTransferTo(Inventory hopperInventory, int slot, ItemStack stack) {
-        return hopperInventory.containsAny((ItemStack itemStack2) -> {
+    public boolean canTakeItem(Container hopperInventory, int slot, ItemStack stack) {
+        return hopperInventory.hasAnyMatching((ItemStack itemStack2) -> {
             if (itemStack2.isEmpty()) {
                 return true;
             }
-            return ItemStack.canCombine(stack, itemStack2) && itemStack2.getCount() + stack.getCount() <= Math.min(itemStack2.getMaxCount(), hopperInventory.getMaxCountPerStack());
+            return ItemStack.isSameItemSameTags(stack, itemStack2) && itemStack2.getCount() + stack.getCount() <= Math.min(itemStack2.getMaxStackSize(), hopperInventory.getMaxStackSize());
         });
     }
 
     @Override
-    public int getMaxCountPerStack() {
+    public int getMaxStackSize() {
         return 1;
     }
 
     @Override
-    public boolean canPlayerUse(PlayerEntity player) {
-        return Inventory.canPlayerUse(this, player);
+    public boolean stillValid(Player player) {
+        return Container.stillValidBlockEntity(this, player);
     }
 
     @Override
-    public boolean isValid(int slot, ItemStack stack) {
-        return stack.isIn(ItemTags.BOOKSHELF_BOOKS) && this.getStack(slot).isEmpty();
+    public boolean canPlaceItem(int slot, ItemStack stack) {
+        return stack.is(ItemTags.BOOKSHELF_BOOKS) && this.getItem(slot).isEmpty();
     }
 
     public int getLastInteractedSlot() {
@@ -129,7 +129,7 @@ public class FiveSlotBlockEntity extends BlockEntity implements Inventory {
     }
 
     @Override
-    public void clear() {
+    public void clearContent() {
         this.inventory.clear();
     }
 }

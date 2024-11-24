@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "cellulose:block/chipped_oak_planks",
-    "side": "cellulose:block/chipped_oak_planks",
-    "top": "cellulose:block/chipped_oak_planks"
-  }
-}

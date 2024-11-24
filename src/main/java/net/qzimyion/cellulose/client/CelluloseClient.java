@@ -5,9 +5,9 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
-import net.minecraft.client.color.world.FoliageColors;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.FoliageColor;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreen;
@@ -20,9 +20,9 @@ public class CelluloseClient implements ClientModInitializer
     @Override
     public void onInitializeClient()
     {
-        RenderLayer Render = RenderLayer.getCutout();
-        RenderLayer Render1 = RenderLayer.getTranslucent();
-        RenderLayer Render2 = RenderLayer.getCutoutMipped();
+        RenderType Render = RenderType.cutout();
+        RenderType Render1 = RenderType.translucent();
+        RenderType Render2 = RenderType.cutoutMipped();
 
         BlockRenderLayerMap.INSTANCE.putBlock(SAWMILL, Render);
 
@@ -67,12 +67,12 @@ public class CelluloseClient implements ClientModInitializer
         ScreenRegistry.register(CelluloseScreens.SAWMILL_SCREEN_HANDLER, SawmillScreen::new);
 
         //Boats
-        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "cactus_boat"), false);
-        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "cactus_chest_boat"), false);
-        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "azalea_boat"), false);
-        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "azalea_chest_boat"), false);
-        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "blooming_azalea_boat"), false);
-        TerraformBoatClientHelper.registerModelLayers(new Identifier(Cellulose.MOD_ID, "blooming_azalea_chest_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new ResourceLocation(Cellulose.MOD_ID, "cactus_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new ResourceLocation(Cellulose.MOD_ID, "cactus_chest_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new ResourceLocation(Cellulose.MOD_ID, "azalea_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new ResourceLocation(Cellulose.MOD_ID, "azalea_chest_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new ResourceLocation(Cellulose.MOD_ID, "blooming_azalea_boat"), false);
+        TerraformBoatClientHelper.registerModelLayers(new ResourceLocation(Cellulose.MOD_ID, "blooming_azalea_chest_boat"), false);
 
         //Doors and Trapdoors
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_DOOR, Render);
@@ -97,6 +97,6 @@ public class CelluloseClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_SHOJI, Render1);
 
         //Tints
-        ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> FoliageColors.getDefaultColor()), OAK_LEAF);
+        ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> FoliageColor.getDefaultColor()), OAK_LEAF);
     }
 }

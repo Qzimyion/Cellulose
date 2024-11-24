@@ -3,16 +3,19 @@ package net.qzimyion.cellulose.datagen;
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.block.Block;
-import net.minecraft.data.server.recipe.*;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
+import net.minecraft.Util;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.recipe.SawmillingRecipe;
 import net.qzimyion.cellulose.util.CelluloseTags;
@@ -20,9 +23,9 @@ import net.qzimyion.cellulose.util.CelluloseTags;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static net.minecraft.item.Items.*;
-import static net.minecraft.recipe.book.RecipeCategory.*;
-import static net.minecraft.registry.tag.ItemTags.*;
+import static net.minecraft.world.item.Items.*;
+import static net.minecraft.data.recipes.RecipeCategory.*;
+import static net.minecraft.tags.ItemTags.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 
 @SuppressWarnings("deprecation")
@@ -32,7 +35,7 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter)
+    public void buildRecipes(Consumer<FinishedRecipe> exporter)
     {
         /*Crafting table recipes*/
         //This section adds vertical plank recipes (BLOCK)
@@ -66,125 +69,125 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
 
         //This section adds vertical plank recipes (SLAB)
 
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_OAK_SLAB, VERTICAL_OAK_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_BIRCH_SLAB, VERTICAL_BIRCH_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_SPRUCE_SLAB, VERTICAL_SPRUCE_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_DARK_OAK_SLAB, VERTICAL_DARK_OAK_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_JUNGLE_SLAB, VERTICAL_JUNGLE_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_ACACIA_SLAB, VERTICAL_ACACIA_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_CRIMSON_SLAB, VERTICAL_CRIMSON_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_WARPED_SLAB, VERTICAL_WARPED_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_MANGROVE_SLAB, VERTICAL_MANGROVE_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_BAMBOO_SLAB, VERTICAL_BAMBOO_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_CHERRY_SLAB, VERTICAL_CHERRY_PLANKS);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, VERTICAL_CACTUS_SLAB, VERTICAL_CACTUS_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_OAK_SLAB, VERTICAL_OAK_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_BIRCH_SLAB, VERTICAL_BIRCH_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_SPRUCE_SLAB, VERTICAL_SPRUCE_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_DARK_OAK_SLAB, VERTICAL_DARK_OAK_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_JUNGLE_SLAB, VERTICAL_JUNGLE_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_ACACIA_SLAB, VERTICAL_ACACIA_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_CRIMSON_SLAB, VERTICAL_CRIMSON_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_WARPED_SLAB, VERTICAL_WARPED_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_MANGROVE_SLAB, VERTICAL_MANGROVE_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_BAMBOO_SLAB, VERTICAL_BAMBOO_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_CHERRY_SLAB, VERTICAL_CHERRY_PLANKS);
+        slab(exporter, BUILDING_BLOCKS, VERTICAL_CACTUS_SLAB, VERTICAL_CACTUS_PLANKS);
 
         //This section adds vertical plank recipes (STAIRS)
         
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_BIRCH_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_BIRCH_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_BIRCH_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_BIRCH_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_BIRCH_STAIR)));
+                .define('#', VERTICAL_BIRCH_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_BIRCH_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_BIRCH_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_OAK_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_OAK_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_OAK_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_OAK_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_OAK_STAIR)));
+                .define('#', VERTICAL_OAK_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_OAK_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_OAK_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_SPRUCE_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_SPRUCE_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_SPRUCE_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_SPRUCE_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_SPRUCE_STAIR)));
+                .define('#', VERTICAL_SPRUCE_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_SPRUCE_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_SPRUCE_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_DARK_OAK_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_DARK_OAK_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_DARK_OAK_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_DARK_OAK_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_DARK_OAK_STAIR)));
+                .define('#', VERTICAL_DARK_OAK_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_DARK_OAK_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_DARK_OAK_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_JUNGLE_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_JUNGLE_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_JUNGLE_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_JUNGLE_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_JUNGLE_STAIR)));
+                .define('#', VERTICAL_JUNGLE_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_JUNGLE_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_JUNGLE_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_ACACIA_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_ACACIA_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_ACACIA_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_ACACIA_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_ACACIA_STAIR)));
+                .define('#', VERTICAL_ACACIA_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_ACACIA_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_ACACIA_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_CRIMSON_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_CRIMSON_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_CRIMSON_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_CRIMSON_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_CRIMSON_STAIR)));
+                .define('#', VERTICAL_CRIMSON_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_CRIMSON_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_CRIMSON_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_WARPED_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_WARPED_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_WARPED_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_WARPED_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_WARPED_STAIR)));
+                .define('#', VERTICAL_WARPED_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_WARPED_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_WARPED_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_MANGROVE_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_MANGROVE_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_MANGROVE_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_MANGROVE_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_MANGROVE_STAIR)));
+                .define('#', VERTICAL_MANGROVE_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_MANGROVE_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_MANGROVE_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_BAMBOO_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_BAMBOO_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_BAMBOO_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_BAMBOO_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_BAMBOO_STAIR)));
+                .define('#', VERTICAL_BAMBOO_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_BAMBOO_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_BAMBOO_STAIR)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, VERTICAL_CHERRY_STAIR, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, VERTICAL_CHERRY_STAIR, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', VERTICAL_CHERRY_PLANKS).criterion(FabricRecipeProvider.hasItem(VERTICAL_CHERRY_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(VERTICAL_CHERRY_STAIR)));
+                .define('#', VERTICAL_CHERRY_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(VERTICAL_CHERRY_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(VERTICAL_CHERRY_STAIR)));
 
 
         // This section adds wooden mosaics recipes (Block)
 
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,OAK_MOSAIC, OAK_SLAB);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,BIRCH_MOSAIC, BIRCH_SLAB);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,SPRUCE_MOSAIC, SPRUCE_SLAB);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,DARK_OAK_MOSAIC, DARK_OAK_SLAB);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,JUNGLE_MOSAIC, JUNGLE_SLAB);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,ACACIA_MOSAIC, ACACIA_SLAB);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,CRIMSON_MOSAIC, CRIMSON_SLAB);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,WARPED_MOSAIC, WARPED_SLAB);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,MANGROVE_MOSAIC, MANGROVE_SLAB);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS,CHERRY_MOSAIC, CHERRY_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,OAK_MOSAIC, OAK_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,BIRCH_MOSAIC, BIRCH_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,SPRUCE_MOSAIC, SPRUCE_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,DARK_OAK_MOSAIC, DARK_OAK_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,JUNGLE_MOSAIC, JUNGLE_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,ACACIA_MOSAIC, ACACIA_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,CRIMSON_MOSAIC, CRIMSON_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,WARPED_MOSAIC, WARPED_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,MANGROVE_MOSAIC, MANGROVE_SLAB);
+        mosaicBuilder(exporter, BUILDING_BLOCKS,CHERRY_MOSAIC, CHERRY_SLAB);
 
         //This section adds mosaic recipes (SLAB)
 
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,OAK_MOSAIC_SLABS, OAK_MOSAIC);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,BIRCH_MOSAIC_SLABS, BIRCH_MOSAIC);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,SPRUCE_MOSAIC_SLABS, SPRUCE_MOSAIC);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,DARK_OAK_MOSAIC_SLABS, DARK_OAK_MOSAIC);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,JUNGLE_MOSAIC_SLABS, JUNGLE_MOSAIC);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,ACACIA_MOSAIC_SLABS, ACACIA_MOSAIC);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,CRIMSON_MOSAIC_SLABS, CRIMSON_MOSAIC);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,WARPED_MOSAIC_SLABS, WARPED_MOSAIC);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,MANGROVE_MOSAIC_SLABS, MANGROVE_MOSAIC);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS,CHERRY_MOSAIC_SLABS, CHERRY_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,OAK_MOSAIC_SLABS, OAK_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,BIRCH_MOSAIC_SLABS, BIRCH_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,SPRUCE_MOSAIC_SLABS, SPRUCE_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,DARK_OAK_MOSAIC_SLABS, DARK_OAK_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,JUNGLE_MOSAIC_SLABS, JUNGLE_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,ACACIA_MOSAIC_SLABS, ACACIA_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,CRIMSON_MOSAIC_SLABS, CRIMSON_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,WARPED_MOSAIC_SLABS, WARPED_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,MANGROVE_MOSAIC_SLABS, MANGROVE_MOSAIC);
+        slab(exporter, BUILDING_BLOCKS,CHERRY_MOSAIC_SLABS, CHERRY_MOSAIC);
 
         //This section adds mosaic recipes (STAIRS)
         createStairsRecipe(OAK_MOSAIC_STAIRS, OAK_MOSAIC);
@@ -202,81 +205,81 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         createStairsRecipe(BLOOMING_AZALEA_MOSAIC_STAIRS, BLOOMING_AZALEA_MOSAIC);
 
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, BIRCH_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, BIRCH_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', BIRCH_MOSAIC).criterion(FabricRecipeProvider.hasItem(BIRCH_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(BIRCH_MOSAIC_STAIRS)));
+                .define('#', BIRCH_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(BIRCH_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(BIRCH_MOSAIC_STAIRS)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, OAK_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, OAK_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', OAK_MOSAIC).criterion(FabricRecipeProvider.hasItem(OAK_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(OAK_MOSAIC_STAIRS)));
+                .define('#', OAK_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(OAK_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(OAK_MOSAIC_STAIRS)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, SPRUCE_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, SPRUCE_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', SPRUCE_MOSAIC).criterion(FabricRecipeProvider.hasItem(SPRUCE_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(SPRUCE_MOSAIC_STAIRS)));
+                .define('#', SPRUCE_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(SPRUCE_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(SPRUCE_MOSAIC_STAIRS)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, DARK_OAK_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, DARK_OAK_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', DARK_OAK_MOSAIC).criterion(FabricRecipeProvider.hasItem(DARK_OAK_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(DARK_OAK_MOSAIC_STAIRS)));
+                .define('#', DARK_OAK_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(DARK_OAK_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(DARK_OAK_MOSAIC_STAIRS)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, JUNGLE_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, JUNGLE_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', JUNGLE_MOSAIC).criterion(FabricRecipeProvider.hasItem(JUNGLE_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(JUNGLE_MOSAIC_STAIRS)));
+                .define('#', JUNGLE_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(JUNGLE_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(JUNGLE_MOSAIC_STAIRS)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, ACACIA_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, ACACIA_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', ACACIA_MOSAIC).criterion(FabricRecipeProvider.hasItem(ACACIA_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ACACIA_MOSAIC_STAIRS)));
+                .define('#', ACACIA_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(ACACIA_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(ACACIA_MOSAIC_STAIRS)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CRIMSON_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CRIMSON_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', CRIMSON_MOSAIC).criterion(FabricRecipeProvider.hasItem(CRIMSON_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CRIMSON_MOSAIC_STAIRS)));
+                .define('#', CRIMSON_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(CRIMSON_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CRIMSON_MOSAIC_STAIRS)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, WARPED_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, WARPED_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', WARPED_MOSAIC).criterion(FabricRecipeProvider.hasItem(WARPED_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(WARPED_MOSAIC_STAIRS)));
+                .define('#', WARPED_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(WARPED_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(WARPED_MOSAIC_STAIRS)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, MANGROVE_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, MANGROVE_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', MANGROVE_MOSAIC).criterion(FabricRecipeProvider.hasItem(MANGROVE_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(MANGROVE_MOSAIC_STAIRS)));
+                .define('#', MANGROVE_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(MANGROVE_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(MANGROVE_MOSAIC_STAIRS)));
 
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CHERRY_MOSAIC_STAIRS, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CHERRY_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', CHERRY_MOSAIC).criterion(FabricRecipeProvider.hasItem(CHERRY_MOSAIC), FabricRecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_MOSAICS))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CHERRY_MOSAIC_STAIRS)));
+                .define('#', CHERRY_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(CHERRY_MOSAIC), FabricRecipeProvider.has(CelluloseTags.Items.WOODEN_MOSAICS))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CHERRY_MOSAIC_STAIRS)));
 
         //Sawmill recipe
-        ShapedRecipeJsonBuilder.create(DECORATIONS, SAWMILL, 1)
+        ShapedRecipeBuilder.shaped(DECORATIONS, SAWMILL, 1)
                 .pattern(" # ")
-                .pattern("AAA").input('#', IRON_INGOT).input('A', PLANKS).criterion(FabricRecipeProvider.hasItem(OAK_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(SAWMILL)));
+                .pattern("AAA").define('#', IRON_INGOT).define('A', PLANKS).unlockedBy(FabricRecipeProvider.getHasName(OAK_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(SAWMILL)));
 
         //Frame recipes
         offerFrameRecipes(exporter, OAK_FRAME, CelluloseTags.Items.OAK_PLANKS);
@@ -322,72 +325,72 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerTilesRecipes(exporter, MANGROVE_TILES, MANGROVE_PLANKS, MANGROVE_SLAB);
         offerTilesRecipes(exporter, BAMBOO_TILES, BAMBOO_PLANKS, BAMBOO_SLAB);
         offerTilesRecipes(exporter, CHERRY_TILES, CHERRY_PLANKS, CHERRY_SLAB);
-        offerTilesRecipes(exporter, CACTUS_TILES, Item.fromBlock(CACTUS_PLANKS), Item.fromBlock(CACTUS_SLAB));
-        offerTilesRecipes(exporter, AZALEA_TILES, Item.fromBlock(AZALEA_PLANKS), Item.fromBlock(AZALEA_SLAB));
-        offerTilesRecipes(exporter, BLOOMING_AZALEA_TILES, Item.fromBlock(BLOOMING_AZALEA_PLANKS), Item.fromBlock(BLOOMING_AZALEA_SLAB));
+        offerTilesRecipes(exporter, CACTUS_TILES, Item.byBlock(CACTUS_PLANKS), Item.byBlock(CACTUS_SLAB));
+        offerTilesRecipes(exporter, AZALEA_TILES, Item.byBlock(AZALEA_PLANKS), Item.byBlock(AZALEA_SLAB));
+        offerTilesRecipes(exporter, BLOOMING_AZALEA_TILES, Item.byBlock(BLOOMING_AZALEA_PLANKS), Item.byBlock(BLOOMING_AZALEA_SLAB));
 
         //Cedar woodset
 
 
         //Cactus woodset
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_BUNDLE, 4)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CACTUS_BUNDLE, 4)
                 .pattern("   ")
                 .pattern("## ")
                 .pattern("## ")
-                .input('#', CACTUS).criterion(FabricRecipeProvider.hasItem(CACTUS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("cellulose:cactus_wood").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_BUNDLE)));
+                .define('#', CACTUS).unlockedBy(FabricRecipeProvider.getHasName(CACTUS), FabricRecipeProvider.has(PLANKS))
+                .group("cellulose:cactus_wood").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CACTUS_BUNDLE)));
         offerPlanksRecipe(CACTUS_BUNDLE);
         offerPlanksRecipe(CACTUS_CROWN);
         offerPlanksRecipe(STRIPPED_CACTUS);
         offerPlanksRecipe(STRIPPED_CACTUS_BUNDLE);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, CACTUS_SLAB, CACTUS_PLANKS);
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_STAIRS, 4)
+        slab(exporter, BUILDING_BLOCKS, CACTUS_SLAB, CACTUS_PLANKS);
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CACTUS_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', CACTUS_PLANKS).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(PLANKS))
-                .group("minecraft:wooden_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_STAIRS)));
-        offerBarkBlockRecipe(exporter, CACTUS_CROWN, CACTUS_BUNDLE);
-        offerBarkBlockRecipe(exporter, STRIPPED_CACTUS_BUNDLE, CACTUS_BUNDLE);
+                .define('#', CACTUS_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(CACTUS_PLANKS), FabricRecipeProvider.has(PLANKS))
+                .group("minecraft:wooden_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CACTUS_STAIRS)));
+        woodFromLogs(exporter, CACTUS_CROWN, CACTUS_BUNDLE);
+        woodFromLogs(exporter, STRIPPED_CACTUS_BUNDLE, CACTUS_BUNDLE);
         offerVerticalPlanksRecipe(exporter, VERTICAL_CACTUS_PLANKS, CACTUS_PLANKS);
         offerReverseVerticalPlanksRecipe(exporter, CACTUS_PLANKS, VERTICAL_CACTUS_PLANKS);
-        offerMosaicRecipe(exporter, BUILDING_BLOCKS, CACTUS_MOSAIC, CACTUS_SLAB);
-        offerSlabRecipe(exporter, BUILDING_BLOCKS, CACTUS_MOSAIC_SLABS, CACTUS_MOSAIC);
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_MOSAIC_STAIRS, 4)
+        mosaicBuilder(exporter, BUILDING_BLOCKS, CACTUS_MOSAIC, CACTUS_SLAB);
+        slab(exporter, BUILDING_BLOCKS, CACTUS_MOSAIC_SLABS, CACTUS_MOSAIC);
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CACTUS_MOSAIC_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .input('#', CACTUS_MOSAIC).criterion(FabricRecipeProvider.hasItem(CACTUS_MOSAIC), FabricRecipeProvider.conditionsFromItem(CACTUS_MOSAIC))
-                .group("cellulose:wooden_mosaic_stairs").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_MOSAIC_STAIRS)));
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, CACTUS_BUTTON, 2)
-                .input(CACTUS_PLANKS).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_BUTTONS))
-                .group("minecraft:wooden_buttons").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_BUTTON)));
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_PRESSURE_PLATE, 2)
+                .define('#', CACTUS_MOSAIC).unlockedBy(FabricRecipeProvider.getHasName(CACTUS_MOSAIC), FabricRecipeProvider.has(CACTUS_MOSAIC))
+                .group("cellulose:wooden_mosaic_stairs").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CACTUS_MOSAIC_STAIRS)));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, CACTUS_BUTTON, 2)
+                .requires(CACTUS_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(CACTUS_PLANKS), FabricRecipeProvider.has(WOODEN_BUTTONS))
+                .group("minecraft:wooden_buttons").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CACTUS_BUTTON)));
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CACTUS_PRESSURE_PLATE, 2)
                 .pattern("## ")
-                .input('#', CACTUS_PLANKS).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_PRESSURE_PLATES))
-                .group("minecraft:wooden_pressure_plates").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_PRESSURE_PLATE)));
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_TRAPDOOR, 2)
+                .define('#', CACTUS_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(CACTUS_PLANKS), FabricRecipeProvider.has(WOODEN_PRESSURE_PLATES))
+                .group("minecraft:wooden_pressure_plates").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CACTUS_PRESSURE_PLATE)));
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CACTUS_TRAPDOOR, 2)
                 .pattern("## ")
-                .input('#', CACTUS_PLANKS).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_TRAPDOORS))
-                .group("minecraft:wooden_trapdoors").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_TRAPDOOR)));
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_DOOR, 2)
+                .define('#', CACTUS_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(CACTUS_PLANKS), FabricRecipeProvider.has(WOODEN_TRAPDOORS))
+                .group("minecraft:wooden_trapdoors").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CACTUS_TRAPDOOR)));
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CACTUS_DOOR, 2)
                 .pattern("## ")
                 .pattern("## ")
                 .pattern("## ")
-                .input('#', CACTUS_PLANKS).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_DOORS))
-                .group("minecraft:wooden_doors").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_DOOR)));
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_PRESSURE_PLATE, 2)
+                .define('#', CACTUS_PLANKS).unlockedBy(FabricRecipeProvider.getHasName(CACTUS_PLANKS), FabricRecipeProvider.has(WOODEN_DOORS))
+                .group("minecraft:wooden_doors").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CACTUS_DOOR)));
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CACTUS_PRESSURE_PLATE, 2)
                 .pattern("   ")
                 .pattern("#A#")
                 .pattern("#A#")
-                .input('#', CACTUS_PLANKS).input('A', STICK).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_FENCES))
-                .group("minecraft:wooden_fences").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_FENCE)));
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, CACTUS_PRESSURE_PLATE, 2)
+                .define('#', CACTUS_PLANKS).define('A', STICK).unlockedBy(FabricRecipeProvider.getHasName(CACTUS_PLANKS), FabricRecipeProvider.has(WOODEN_FENCES))
+                .group("minecraft:wooden_fences").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CACTUS_FENCE)));
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CACTUS_PRESSURE_PLATE, 2)
                 .pattern("   ")
                 .pattern("A#A")
                 .pattern("A#A")
-                .input('#', CACTUS_PLANKS).input('A', STICK).criterion(FabricRecipeProvider.hasItem(CACTUS_PLANKS), FabricRecipeProvider.conditionsFromTag(WOODEN_FENCES))
-                .group("minecraft:wooden_fences").offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(CACTUS_FENCE_GATE)));
+                .define('#', CACTUS_PLANKS).define('A', STICK).unlockedBy(FabricRecipeProvider.getHasName(CACTUS_PLANKS), FabricRecipeProvider.has(WOODEN_FENCES))
+                .group("minecraft:wooden_fences").save(exporter, new ResourceLocation(FabricRecipeProvider.getSimpleRecipeName(CACTUS_FENCE_GATE)));
 
 
 
@@ -440,19 +443,19 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
 
 
         //Potion rack
-        ShapedRecipeJsonBuilder.create(DECORATIONS, POTION_RACK)
+        ShapedRecipeBuilder.shaped(DECORATIONS, POTION_RACK)
                 .pattern("###")
                 .pattern("X X")
                 .pattern("###")
-                .input('#', WOODEN_SLABS).input('X', STICK).criterion("has_wooden_slabs", RecipeProvider.conditionsFromTag(WOODEN_SLABS)).criterion("has_stick", RecipeProvider.conditionsFromItem(STICK)).offerTo(exporter);
+                .define('#', WOODEN_SLABS).define('X', STICK).unlockedBy("has_wooden_slabs", RecipeProvider.has(WOODEN_SLABS)).unlockedBy("has_stick", RecipeProvider.has(STICK)).save(exporter);
 
         //Paper blocks
         //Normal
-        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, PAPER_BLOCK)
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, PAPER_BLOCK)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
-                .input('#', PAPER).criterion("has_paper", RecipeProvider.conditionsFromItem(PAPER)).offerTo(exporter);
+                .define('#', PAPER).unlockedBy("has_paper", RecipeProvider.has(PAPER)).save(exporter);
         //Dyed
 
 
@@ -586,16 +589,16 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         //Petrified wood
 
 
-        final List<ItemConvertible> PAPER_SMELTING = Util.make(Lists.newArrayList(), list -> list.add(SOAKED_PAPER_BLOCK));
+        final List<ItemLike> PAPER_SMELTING = Util.make(Lists.newArrayList(), list -> list.add(SOAKED_PAPER_BLOCK));
 
-        offerSmelting(exporter, PAPER_SMELTING, MISC, PAPER_BLOCK, 0.15F, 200, "misc");
+        oreSmelting(exporter, PAPER_SMELTING, MISC, PAPER_BLOCK, 0.15F, 200, "misc");
     }
 
     private void offerPlanksRecipe(Block strippedCactusBundle) {
     }
 
-    public static void offerPlanks(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 4).input('#', input).group("planks").criterion("has_logs", RecipeProvider.conditionsFromTag(LOGS)).offerTo(exporter);
+    public static void offerPlanks(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 4).define('#', input).group("planks").unlockedBy("has_logs", RecipeProvider.has(LOGS)).save(exporter);
     }
 
     private void createStairsRecipe(Block Stairs, Block block) {
@@ -604,54 +607,54 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
 
     //Custom recipe generators
 
-    public static void offerVerticalPlanksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("#").pattern("#").pattern("#").group("cellulose:verticalPlanks").criterion("has_planks", RecipeProvider.conditionsFromTag(CelluloseTags.Items.VERTICAL_PLANKS)).offerTo(exporter);
+    public static void offerVerticalPlanksRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 3).define('#', input).pattern("#").pattern("#").pattern("#").group("cellulose:verticalPlanks").unlockedBy("has_planks", RecipeProvider.has(CelluloseTags.Items.VERTICAL_PLANKS)).save(exporter);
     }
 
-    public static void offerReverseVerticalPlanksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).input('#', input).pattern("###").group("planks").criterion("has_vertical_planks", RecipeProvider.conditionsFromTag(PLANKS)).offerTo(exporter);
+    public static void offerReverseVerticalPlanksRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 3).define('#', input).pattern("###").group("planks").unlockedBy("has_vertical_planks", RecipeProvider.has(PLANKS)).save(exporter);
     }
 
-    public static void offerPavementRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 5).input('#', input).pattern("#  ").pattern("#  ").pattern("###").group("cellulose:pavements").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).offerTo(exporter);
+    public static void offerPavementRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 5).define('#', input).pattern("#  ").pattern("#  ").pattern("###").group("cellulose:pavements").unlockedBy("has_planks", RecipeProvider.has(PLANKS)).save(exporter);
     }
 
-    public static void offerBookShelvesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).group("cellulose:bookshelves").input('#', input).input('X', BOOK).pattern("###").pattern("XXX").pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_book", RecipeProvider.conditionsFromItem(BOOK)).offerTo(exporter);
+    public static void offerBookShelvesRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, TagKey<Item> input) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 3).group("cellulose:bookshelves").define('#', input).define('X', BOOK).pattern("###").pattern("XXX").pattern("###").unlockedBy("has_planks", RecipeProvider.has(PLANKS)).unlockedBy("has_book", RecipeProvider.has(BOOK)).save(exporter);
     }
 
-    public static void offerChiseledBookShelvesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input, TagKey<Item> input1) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 1).group("cellulose:Cbookshelves").input('#', input).input('X', input1).pattern("###").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).pattern("XXX").criterion("has_slabs", RecipeProvider.conditionsFromTag(WOODEN_SLABS)).pattern("###").offerTo(exporter);
+    public static void offerChiseledBookShelvesRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, TagKey<Item> input, TagKey<Item> input1) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 1).group("cellulose:Cbookshelves").define('#', input).define('X', input1).pattern("###").unlockedBy("has_planks", RecipeProvider.has(PLANKS)).pattern("XXX").unlockedBy("has_slabs", RecipeProvider.has(WOODEN_SLABS)).pattern("###").save(exporter);
     }
 
-    public static void offerFrameRecipes(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, TagKey<Item> input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 5).group("cellulose:frames").input('#', input).input('X', STICK).pattern("X X").pattern(" # ").pattern("X X").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_sticks", RecipeProvider.conditionsFromItem(STICK)).offerTo(exporter);
+    public static void offerFrameRecipes(Consumer<FinishedRecipe> exporter, ItemLike output, TagKey<Item> input) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 5).group("cellulose:frames").define('#', input).define('X', STICK).pattern("X X").pattern(" # ").pattern("X X").unlockedBy("has_planks", RecipeProvider.has(PLANKS)).unlockedBy("has_sticks", RecipeProvider.has(STICK)).save(exporter);
     }
 
-    public static void offerLintelsRecipes(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, Block input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 12).group("cellulose:lintels").input('#', input).pattern("###").pattern("###").criterion("has_frame_blocks", RecipeProvider.conditionsFromTag(CelluloseTags.Items.WOODEN_FRAMES)).offerTo(exporter);
+    public static void offerLintelsRecipes(Consumer<FinishedRecipe> exporter, ItemLike output, Block input) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 12).group("cellulose:lintels").define('#', input).pattern("###").pattern("###").unlockedBy("has_frame_blocks", RecipeProvider.has(CelluloseTags.Items.WOODEN_FRAMES)).save(exporter);
     }
 
-    public static void offerTilesRecipes(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, Item input, Item input1) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 3).group("cellulose:tiles").input('#', input).input('X', input1).pattern("#X").pattern("X#").criterion("has_planks", RecipeProvider.conditionsFromTag(PLANKS)).criterion("has_slabs", RecipeProvider.conditionsFromTag(WOODEN_SLABS)).offerTo(exporter);
+    public static void offerTilesRecipes(Consumer<FinishedRecipe> exporter, ItemLike output, Item input, Item input1) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 3).group("cellulose:tiles").define('#', input).define('X', input1).pattern("#X").pattern("X#").unlockedBy("has_planks", RecipeProvider.has(PLANKS)).unlockedBy("has_slabs", RecipeProvider.has(WOODEN_SLABS)).save(exporter);
     }
 
-    public static void offerWallPaperRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, Item input) {
-        ShapedRecipeJsonBuilder.create(BUILDING_BLOCKS, output, 1).group("cellulose:wallpaper").input('#', PAPER_BLOCK).input('X', input).pattern("#").pattern("X").criterion("has_paper_block", RecipeProvider.conditionsFromItem(PAPER_BLOCK)).offerTo(exporter);
+    public static void offerWallPaperRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, Item input) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, output, 1).group("cellulose:wallpaper").define('#', PAPER_BLOCK).define('X', input).pattern("#").pattern("X").unlockedBy("has_paper_block", RecipeProvider.has(PAPER_BLOCK)).save(exporter);
     }
 
     ////Sawmilling
 
-    public static SingleItemRecipeJsonBuilder createSawmilling(Ingredient input, ItemConvertible output, int count) {
-        return new SingleItemRecipeJsonBuilder(RecipeCategory.BUILDING_BLOCKS, SawmillingRecipe.Serializer.INSTANCE, input, output, count);
+    public static SingleItemRecipeBuilder createSawmilling(Ingredient input, ItemLike output, int count) {
+        return new SingleItemRecipeBuilder(RecipeCategory.BUILDING_BLOCKS, SawmillingRecipe.Serializer.INSTANCE, input, output, count);
     }
 
-    public static void offerSawmillingRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
+    public static void offerSawmillingRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input) {
         offerSawmillingRecipe(exporter, output, input, 1);
     }
 
-    public static void offerSawmillingRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input, int count) {
-        createSawmilling(Ingredient.ofItems(input), output, count).criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input)).offerTo(exporter, RecipeProvider.convertBetween(output, input) + "_sawmilling");
+    public static void offerSawmillingRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input, int count) {
+        createSawmilling(Ingredient.of(input), output, count).unlockedBy(RecipeProvider.getHasName(input), RecipeProvider.has(input)).save(exporter, RecipeProvider.getConversionRecipeName(output, input) + "_sawmilling");
     }
 
 }

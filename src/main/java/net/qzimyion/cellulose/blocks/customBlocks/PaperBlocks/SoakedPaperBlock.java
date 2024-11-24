@@ -1,40 +1,41 @@
 package net.qzimyion.cellulose.blocks.customBlocks.PaperBlocks;
 
-import net.minecraft.block.*;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldEvents;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LevelEvent;
+import net.minecraft.world.level.block.state.BlockState;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 
 @SuppressWarnings("deprecation")
 public class SoakedPaperBlock extends Block {
-    public SoakedPaperBlock(Settings settings) {
+    public SoakedPaperBlock(Properties settings) {
         super(settings);
     }
 
     @Override
-    public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
-        if (world.getDimension().ultrawarm()) {
-            world.setBlockState(pos, CelluloseBlocks.PAPER_BLOCK.getDefaultState(), Block.NOTIFY_ALL);
-            world.syncWorldEvent(WorldEvents.WET_SPONGE_DRIES_OUT, pos, 0);
-            world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0f, (1.0f + world.getRandom().nextFloat() * 0.2f) * 0.7f);
+    public void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify) {
+        if (world.dimensionType().ultraWarm()) {
+            world.setBlock(pos, CelluloseBlocks.PAPER_BLOCK.defaultBlockState(), Block.UPDATE_ALL);
+            world.levelEvent(LevelEvent.PARTICLES_WATER_EVAPORATING, pos, 0);
+            world.playSound(null, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0f, (1.0f + world.getRandom().nextFloat() * 0.2f) * 0.7f);
         }
     }
 
     @Override
-    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        Direction direction = Direction.random(random);
+    public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
+        Direction direction = Direction.getRandom(random);
         if (direction == Direction.UP) {
             return;
         }
-        BlockPos blockPos = pos.offset(direction);
+        BlockPos blockPos = pos.relative(direction);
         BlockState blockState = world.getBlockState(blockPos);
-        if (state.isOpaque() && blockState.isSideSolidFullSquare(world, blockPos, direction.getOpposite())) {
+        if (state.canOcclude() && blockState.isFaceSturdy(world, blockPos, direction.getOpposite())) {
             return;
         }
         double d = pos.getX();

@@ -1,8 +1,8 @@
 package net.qzimyion.cellulose.blocks.customBlocks.PannelBlocks.ShojiBlocks;
 
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
 
-public enum ShojiShapes implements StringIdentifiable {
+public enum ShojiShapes implements StringRepresentable {
     TOP("top"),
     MIDDLE("middle"),
     BOTTOM("bottom"),
@@ -18,7 +18,7 @@ public enum ShojiShapes implements StringIdentifiable {
     }
 
     @Override
-    public String asString() {
+    public String getSerializedName() {
         return this.name;
     }
 }

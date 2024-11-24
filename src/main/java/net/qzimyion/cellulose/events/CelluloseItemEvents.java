@@ -1,26 +1,27 @@
 package net.qzimyion.cellulose.events;
 
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.*;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class CelluloseItemEvents {
 
     public static void registerEvents(){
         UseItemCallback.EVENT.register((player, world, hand) ->{
-            Item itemInHand = player.getStackInHand(hand).getItem();
+            Item itemInHand = player.getItemInHand(hand).getItem();
             if (itemInHand == Items.RED_MUSHROOM) {
-                BlockPos blockPos = player.getBlockPos().offset(player.getHorizontalFacing());
-                if (!world.isClient) {
-                    BlockState blockState = Blocks.DIAMOND_BLOCK.getDefaultState();
-                    world.setBlockState(blockPos, blockState);
+                BlockPos blockPos = player.blockPosition().relative(player.getDirection());
+                if (!world.isClientSide) {
+                    BlockState blockState = Blocks.DIAMOND_BLOCK.defaultBlockState();
+                    world.setBlockAndUpdate(blockPos, blockState);
                 }
-                return TypedActionResult.success(itemInHand.getDefaultStack());
+                return InteractionResultHolder.success(itemInHand.getDefaultInstance());
             }
-            return TypedActionResult.pass(itemInHand.getDefaultStack());
+            return InteractionResultHolder.pass(itemInHand.getDefaultInstance());
         });
     }
 }

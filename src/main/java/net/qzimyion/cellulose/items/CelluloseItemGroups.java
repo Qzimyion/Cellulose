@@ -1,10 +1,9 @@
 package net.qzimyion.cellulose.items;
 
-import net.minecraft.item.ItemGroups;
-
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.world.item.CreativeModeTabs;
 
-import static net.minecraft.item.Items.*;
+import static net.minecraft.world.item.Items.*;
 import static net.qzimyion.cellulose.blocks.CelluloseBlocks.*;
 import static net.qzimyion.cellulose.items.CelluloseItems.*;
 
@@ -14,14 +13,14 @@ public class CelluloseItemGroups
     public static void registerItemGroups()
     {
         //This section adds items to ingredients group
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(content -> {
             content.addAfter(EGG, PIPIS);
-            content.add(AZALEA_FLOWERS);
+            content.accept(AZALEA_FLOWERS);
         });
 
         /* This section adds items to building blocks group */
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> {
             /* Section 1: Vertical Planks */
             content.addAfter(OAK_SLAB, VERTICAL_OAK_PLANKS, VERTICAL_OAK_STAIR, VERTICAL_OAK_SLAB);
             content.addAfter(BIRCH_SLAB, VERTICAL_BIRCH_PLANKS, VERTICAL_BIRCH_STAIR, VERTICAL_BIRCH_SLAB);
@@ -130,7 +129,7 @@ public class CelluloseItemGroups
         });
 
         // Functional blocks
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(content -> {
             content.addAfter(STONECUTTER, SAWMILL);
             content.addAfter(CHISELED_BOOKSHELF, BIRCH_CHISELED_BOOKSHELF, SPRUCE_CHISELED_BOOKSHELF, DARK_OAK_CHISELED_BOOKSHELF, JUNGLE_CHISELED_BOOKSHELF, ACACIA_CHISELED_BOOKSHELF,
                     CRIMSON_CHISELED_BOOKSHELF, WARPED_CHISELED_BOOKSHELF, MANGROVE_CHISELED_BOOKSHELF, BAMBOO_CHISELED_BOOKSHELF, CHERRY_CHISELED_BOOKSHELF, CACTUS_CHISELED_BOOKSHELF,
@@ -138,22 +137,22 @@ public class CelluloseItemGroups
         });
 
         //Redstone
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(content -> {
             content.addAfter(CHISELED_BOOKSHELF, BIRCH_CHISELED_BOOKSHELF, SPRUCE_CHISELED_BOOKSHELF, DARK_OAK_CHISELED_BOOKSHELF, JUNGLE_CHISELED_BOOKSHELF, ACACIA_CHISELED_BOOKSHELF,
                     CRIMSON_CHISELED_BOOKSHELF, WARPED_CHISELED_BOOKSHELF, MANGROVE_CHISELED_BOOKSHELF, BAMBOO_CHISELED_BOOKSHELF, CHERRY_CHISELED_BOOKSHELF, CACTUS_CHISELED_BOOKSHELF,
                     AZALEA_CHISELED_BOOKSHELF, BLOOMING_AZALEA_CHISELED_BOOKSHELF);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(WARPED_FUNGUS_ON_A_STICK, PAPER_BLOCK, SOAKED_PAPER_BLOCK));
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(content -> content.addAfter(WARPED_FUNGUS_ON_A_STICK, PAPER_BLOCK, SOAKED_PAPER_BLOCK));
 
         //Cactus woodset
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.addAfter(WARPED_BUTTON, CACTUS_BUNDLE, CACTUS_CROWN, STRIPPED_CACTUS, STRIPPED_CACTUS_BUNDLE, ENGRAVED_CACTUS, ENGRAVED_CACTUS_CROWN,
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> content.addAfter(WARPED_BUTTON, CACTUS_BUNDLE, CACTUS_CROWN, STRIPPED_CACTUS, STRIPPED_CACTUS_BUNDLE, ENGRAVED_CACTUS, ENGRAVED_CACTUS_CROWN,
                 CACTUS_MOSAIC, CACTUS_MOSAIC_STAIRS, CACTUS_MOSAIC_SLABS, CACTUS_PLANKS, CACTUS_STAIRS, CACTUS_SLAB, VERTICAL_CACTUS_PLANKS, VERTICAL_CACTUS_STAIR,
                 VERTICAL_CACTUS_SLAB, CACTUS_FENCE, CACTUS_FENCE_GATE, CACTUS_DOOR, CACTUS_TRAPDOOR, CACTUS_PRESSURE_PLATE, CACTUS_BUTTON
         ));
 
         //Azalea woodset
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.addAfter(CACTUS_BUTTON, AZALEA_LOG, AZALEA_WOOD, STRIPPED_AZALEA_LOG, STRIPPED_AZALEA_WOOD, ENGRAVED_AZALEA, ENGRAVED_AZALEA_WOOD,
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> content.addAfter(CACTUS_BUTTON, AZALEA_LOG, AZALEA_WOOD, STRIPPED_AZALEA_LOG, STRIPPED_AZALEA_WOOD, ENGRAVED_AZALEA, ENGRAVED_AZALEA_WOOD,
                 AZALEA_MOSAIC, AZALEA_MOSAIC_STAIRS, AZALEA_MOSAIC_SLABS, BLOOMING_AZALEA_MOSAIC, BLOOMING_AZALEA_MOSAIC_STAIRS, BLOOMING_AZALEA_MOSAIC_SLABS, AZALEA_PLANKS, AZALEA_STAIRS, AZALEA_SLAB, BLOOMING_AZALEA_PLANKS,
                 BLOOMING_AZALEA_STAIRS, BLOOMING_AZALEA_SLAB, VERTICAL_AZALEA_PLANKS, VERTICAL_AZALEA_STAIR, VERTICAL_AZALEA_SLAB, VERTICAL_BLOOMING_AZALEA_PLANKS, VERTICAL_BLOOMING_AZALEA_STAIR, VERTICAL_BLOOMING_AZALEA_SLAB, AZALEA_FENCE, AZALEA_FENCE_GATE, AZALEA_DOOR, BLOOMING_AZALEA_DOOR, AZALEA_TRAPDOOR, BLOOMING_AZALEA_TRAPDOOR,
                 AZALEA_PRESSURE_PLATE, AZALEA_BUTTON

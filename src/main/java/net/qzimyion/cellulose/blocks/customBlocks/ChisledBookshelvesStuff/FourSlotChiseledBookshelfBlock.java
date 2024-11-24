@@ -1,180 +1,188 @@
 package net.qzimyion.cellulose.blocks.customBlocks.ChisledBookshelvesStuff;
 
-import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.tags.ItemTags;
 import net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves.FourSlotBookshelfBlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.stat.Stats;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.*;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.Vec2f;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.world.Containers;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Optional;
 
 @SuppressWarnings("deprecation")
-public class FourSlotChiseledBookshelfBlock extends BlockWithEntity {
-    public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(Properties.SLOT_0_OCCUPIED, Properties.SLOT_1_OCCUPIED, Properties.SLOT_2_OCCUPIED, Properties.SLOT_3_OCCUPIED);
+public class FourSlotChiseledBookshelfBlock extends BaseEntityBlock {
+    public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(BlockStateProperties.CHISELED_BOOKSHELF_SLOT_0_OCCUPIED, BlockStateProperties.CHISELED_BOOKSHELF_SLOT_1_OCCUPIED, BlockStateProperties.CHISELED_BOOKSHELF_SLOT_2_OCCUPIED, BlockStateProperties.CHISELED_BOOKSHELF_SLOT_3_OCCUPIED);
 
-    public FourSlotChiseledBookshelfBlock(Settings settings) {
+    public FourSlotChiseledBookshelfBlock(Properties settings) {
         super(settings);
-        BlockState blockState = this.stateManager.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH);
+        BlockState blockState = this.stateDefinition.any().setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH);
         for (BooleanProperty booleanProperty : SLOT_OCCUPIED_PROPERTIES) {
-            blockState = blockState.with(booleanProperty, false);
+            blockState = blockState.setValue(booleanProperty, false);
         }
-        this.setDefaultState(blockState);
+        this.registerDefaultState(blockState);
     }
 
     @Override
-    public BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
+    public RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (!(blockEntity instanceof FourSlotBookshelfBlockEntity fourSlotChiseledBookshelfBlockEntity)) {
-            return ActionResult.PASS;
+            return InteractionResult.PASS;
         }
-        Optional<Vec2f> optional = FourSlotChiseledBookshelfBlock.getHitPos(hit, state.get(HorizontalFacingBlock.FACING));
+        Optional<Vec2> optional = FourSlotChiseledBookshelfBlock.getHitPos(hit, state.getValue(HorizontalDirectionalBlock.FACING));
         if (optional.isEmpty()) {
-            return ActionResult.PASS;
+            return InteractionResult.PASS;
         }
         int i = FourSlotChiseledBookshelfBlock.getSlotForHitPos(optional.get());
-        if (state.get(SLOT_OCCUPIED_PROPERTIES.get(i))) {
+        if (state.getValue(SLOT_OCCUPIED_PROPERTIES.get(i))) {
             FourSlotChiseledBookshelfBlock.tryRemoveBook(world, pos, player, fourSlotChiseledBookshelfBlockEntity, i);
-            return ActionResult.success(world.isClient);
+            return InteractionResult.sidedSuccess(world.isClientSide);
         }
-        ItemStack itemStack = player.getStackInHand(hand);
-        if (itemStack.isIn(ItemTags.BOOKSHELF_BOOKS)) {
+        ItemStack itemStack = player.getItemInHand(hand);
+        if (itemStack.is(ItemTags.BOOKSHELF_BOOKS)) {
             FourSlotChiseledBookshelfBlock.tryAddBook(world, pos, player, fourSlotChiseledBookshelfBlockEntity, itemStack, i);
-            return ActionResult.success(world.isClient);
+            return InteractionResult.sidedSuccess(world.isClientSide);
         }
-        return ActionResult.CONSUME;
+        return InteractionResult.CONSUME;
     }
 
     @Nullable
     @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new FourSlotBookshelfBlockEntity(pos, state);
     }
 
-    public static Optional<Vec2f> getHitPos(BlockHitResult hit, Direction facing) {
-        Direction direction = hit.getSide();
+    public static Optional<Vec2> getHitPos(BlockHitResult hit, Direction facing) {
+        Direction direction = hit.getDirection();
         if (facing != direction) {
             return Optional.empty();
         }
-        BlockPos blockPos = hit.getBlockPos().offset(direction);
-        Vec3d vec3d = hit.getPos().subtract(blockPos.getX(), blockPos.getY(), blockPos.getZ());
-        double x = vec3d.getX();
-        double y = vec3d.getY();
-        double z = vec3d.getZ();
+        BlockPos blockPos = hit.getBlockPos().relative(direction);
+        Vec3 vec3d = hit.getLocation().subtract(blockPos.getX(), blockPos.getY(), blockPos.getZ());
+        double x = vec3d.x();
+        double y = vec3d.y();
+        double z = vec3d.z();
         return switch (direction) {
-            case NORTH -> Optional.of(new Vec2f((float)(1 - x), (float)y));
-            case SOUTH -> Optional.of(new Vec2f((float)x, (float)y));
-            case WEST -> Optional.of(new Vec2f((float)z, (float)y));
-            case EAST -> Optional.of(new Vec2f((float)(1 - z), (float)y));
+            case NORTH -> Optional.of(new Vec2((float)(1 - x), (float)y));
+            case SOUTH -> Optional.of(new Vec2((float)x, (float)y));
+            case WEST -> Optional.of(new Vec2((float)z, (float)y));
+            case EAST -> Optional.of(new Vec2((float)(1 - z), (float)y));
             case DOWN, UP -> Optional.empty();
         };
     }
 
-    private static int getSlotForHitPos(Vec2f hitPos) {
+    private static int getSlotForHitPos(Vec2 hitPos) {
         int i = hitPos.y >= 0.5f ? 0 : 1;
         int j = hitPos.x >= 0.5f ? 1 : 0;
         return j + i * 2;
     }
 
-    private static void tryAddBook(World world, BlockPos pos, PlayerEntity player, FourSlotBookshelfBlockEntity blockEntity, ItemStack stack, int slot){
-        if (world.isClient) {
+    private static void tryAddBook(Level world, BlockPos pos, Player player, FourSlotBookshelfBlockEntity blockEntity, ItemStack stack, int slot){
+        if (world.isClientSide) {
             return;
         }
-        player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
-        SoundEvent soundEvent = stack.isOf(Items.ENCHANTED_BOOK) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT;
-        blockEntity.setStack(slot, stack.split(1));
-        world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
+        player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
+        SoundEvent soundEvent = stack.is(Items.ENCHANTED_BOOK) ? SoundEvents.CHISELED_BOOKSHELF_INSERT_ENCHANTED : SoundEvents.CHISELED_BOOKSHELF_INSERT;
+        blockEntity.setItem(slot, stack.split(1));
+        world.playSound(null, pos, soundEvent, SoundSource.BLOCKS, 1.0f, 1.0f);
         if (player.isCreative()) {
-            stack.increment(1);
+            stack.grow(1);
         }
-        world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+        world.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
     }
 
-    private static void tryRemoveBook(World world, BlockPos pos, PlayerEntity player, FourSlotBookshelfBlockEntity blockEntity, int slot){
-        if (world.isClient) {
+    private static void tryRemoveBook(Level world, BlockPos pos, Player player, FourSlotBookshelfBlockEntity blockEntity, int slot){
+        if (world.isClientSide) {
             return;
         }
-        ItemStack itemStack = blockEntity.removeStack(slot, 1);
-        SoundEvent soundEvent = itemStack.isOf(Items.ENCHANTED_BOOK) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP;
-        world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        if (!player.getInventory().insertStack(itemStack)) {
-            player.dropItem(itemStack, false);
+        ItemStack itemStack = blockEntity.removeItem(slot, 1);
+        SoundEvent soundEvent = itemStack.is(Items.ENCHANTED_BOOK) ? SoundEvents.CHISELED_BOOKSHELF_PICKUP_ENCHANTED : SoundEvents.CHISELED_BOOKSHELF_PICKUP;
+        world.playSound(null, pos, soundEvent, SoundSource.BLOCKS, 1.0f, 1.0f);
+        if (!player.getInventory().add(itemStack)) {
+            player.drop(itemStack, false);
         }
-        world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+        world.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(HorizontalFacingBlock.FACING);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(HorizontalDirectionalBlock.FACING);
         SLOT_OCCUPIED_PROPERTIES.forEach(builder::add);
     }
 
     @Override
-    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean moved) {
         FourSlotBookshelfBlockEntity fourSlotBookshelfBlockEntity;
-        if (state.isOf(newState.getBlock())) {
+        if (state.is(newState.getBlock())) {
             return;
         }
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof FourSlotBookshelfBlockEntity && !(fourSlotBookshelfBlockEntity = (FourSlotBookshelfBlockEntity) blockEntity).isEmpty()){
             for (int i = 0; i < 4; ++i) {
-                ItemStack itemStack = fourSlotBookshelfBlockEntity.getStack(i);
+                ItemStack itemStack = fourSlotBookshelfBlockEntity.getItem(i);
                 if (itemStack.isEmpty()) continue;
-                ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
+                Containers.dropItemStack(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
             }
-            fourSlotBookshelfBlockEntity.clear();
-            world.updateComparators(pos, this);
+            fourSlotBookshelfBlockEntity.clearContent();
+            world.updateNeighbourForOutputSignal(pos, this);
         }
-        super.onStateReplaced(state, world, pos, newState, moved);
+        super.onRemove(state, world, pos, newState, moved);
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(HorizontalFacingBlock.FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, ctx.getHorizontalDirection().getOpposite());
     }
 
     @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return state.with(HorizontalFacingBlock.FACING, rotation.rotate(state.get(HorizontalFacingBlock.FACING)));
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(HorizontalDirectionalBlock.FACING, rotation.rotate(state.getValue(HorizontalDirectionalBlock.FACING)));
     }
 
     @Override
-    public BlockState mirror(BlockState state, BlockMirror mirror) {
-        return state.rotate(mirror.getRotation(state.get(HorizontalFacingBlock.FACING)));
+    public BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation(state.getValue(HorizontalDirectionalBlock.FACING)));
     }
 
     @Override
-    public boolean hasComparatorOutput(BlockState state) {
+    public boolean hasAnalogOutputSignal(BlockState state) {
         return true;
     }
 
     @Override
-    public int getComparatorOutput(BlockState state, World world, BlockPos pos){
-        if (world.isClient()) {
+    public int getAnalogOutputSignal(BlockState state, Level world, BlockPos pos){
+        if (world.isClientSide()) {
             return 0;
         }
         BlockEntity blockEntity = world.getBlockEntity(pos);

@@ -1,28 +1,31 @@
 package net.qzimyion.cellulose.screen.sawmill;
 
 import com.google.common.collect.Lists;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.CraftingResultInventory;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.screen.*;
-import net.minecraft.screen.slot.Slot;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.world.World;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.DataSlot;
+import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.inventory.ResultContainer;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.qzimyion.cellulose.recipe.SawmillingRecipe;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 
 import java.util.List;
 
-public class SawmillScreenHandler extends ScreenHandler {
-    private final ScreenHandlerContext context;
-    private final Property selectedRecipe = Property.create();
-    private final World world;
+public class SawmillScreenHandler extends AbstractContainerMenu {
+    private final ContainerLevelAccess context;
+    private final DataSlot selectedRecipe = DataSlot.standalone();
+    private final Level world;
     private List<SawmillingRecipe> availableRecipes = Lists.newArrayList();
     private ItemStack inputStack = ItemStack.EMPTY;
     long lastTakeTime;
@@ -31,50 +34,50 @@ public class SawmillScreenHandler extends ScreenHandler {
     public List<ItemStack> ingredients;
     Runnable contentsChangedListener = () -> {
     };
-    public final Inventory input = new SimpleInventory(1) {
+    public final Container input = new SimpleContainer(1) {
 
         @Override
-        public void markDirty() {
-            super.markDirty();
-            SawmillScreenHandler.this.onContentChanged(this);
+        public void setChanged() {
+            super.setChanged();
+            SawmillScreenHandler.this.slotsChanged(this);
             SawmillScreenHandler.this.contentsChangedListener.run();
         }
     };
-    final CraftingResultInventory output = new CraftingResultInventory();
+    final ResultContainer output = new ResultContainer();
 
-    public SawmillScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, ScreenHandlerContext.EMPTY);
+    public SawmillScreenHandler(int syncId, Inventory playerInventory) {
+        this(syncId, playerInventory, ContainerLevelAccess.NULL);
     }
 
-    public SawmillScreenHandler(int syncId, PlayerInventory playerInventory, final ScreenHandlerContext context) {
+    public SawmillScreenHandler(int syncId, Inventory playerInventory, final ContainerLevelAccess context) {
         super(CelluloseScreens.SAWMILL_SCREEN_HANDLER, syncId);
         int i;
         this.context = context;
-        this.world = playerInventory.player.getWorld();
+        this.world = playerInventory.player.level();
         this.inputSlot = this.addSlot(new Slot(this.input, 0, 20, 33));
         this.outputSlot = this.addSlot(new Slot(this.output, 1, 143, 33) {
 
             @Override
-            public boolean canInsert(ItemStack stack) {
+            public boolean mayPlace(ItemStack stack) {
                 return false;
             }
 
             @Override
-            public void onTakeItem(PlayerEntity player, ItemStack stack) {
-                stack.onCraft(player.getWorld(), player, stack.getCount());
-                SawmillScreenHandler.this.output.unlockLastRecipe(player, ingredients);
-                ItemStack itemStack = SawmillScreenHandler.this.inputSlot.takeStack(1);
+            public void onTake(Player player, ItemStack stack) {
+                stack.onCraftedBy(player.level(), player, stack.getCount());
+                SawmillScreenHandler.this.output.awardUsedRecipes(player, ingredients);
+                ItemStack itemStack = SawmillScreenHandler.this.inputSlot.remove(1);
                 if (!itemStack.isEmpty()) {
                     SawmillScreenHandler.this.populateResult();
                 }
-                context.run((world, pos) -> {
-                    long l = world.getTime();
+                context.execute((world, pos) -> {
+                    long l = world.getGameTime();
                     if (SawmillScreenHandler.this.lastTakeTime != l) {
-                        world.playSound(null, pos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                        world.playSound(null, pos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0f, 1.0f);
                         SawmillScreenHandler.this.lastTakeTime = l;
                     }
                 });
-                super.onTakeItem(player, stack);
+                super.onTake(player, stack);
             }
         });
         for (i = 0; i < 3; ++i) {
@@ -85,7 +88,7 @@ public class SawmillScreenHandler extends ScreenHandler {
         for (i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
-        this.addProperty(this.selectedRecipe);
+        this.addDataSlot(this.selectedRecipe);
     }
 
     public int getSelectedRecipe() {
@@ -101,16 +104,16 @@ public class SawmillScreenHandler extends ScreenHandler {
     }
 
     public boolean canCraft() {
-        return this.inputSlot.hasStack() && !this.availableRecipes.isEmpty();
+        return this.inputSlot.hasItem() && !this.availableRecipes.isEmpty();
     }
 
     @Override
-    public boolean canUse(PlayerEntity player) {
-        return SawmillScreenHandler.canUse(this.context, player, CelluloseBlocks.SAWMILL);
+    public boolean stillValid(Player player) {
+        return SawmillScreenHandler.stillValid(this.context, player, CelluloseBlocks.SAWMILL);
     }
 
     @Override
-    public boolean onButtonClick(PlayerEntity player, int id) {
+    public boolean clickMenuButton(Player player, int id) {
         if (this.isInBounds(id)) {
             this.selectedRecipe.set(id);
             this.populateResult();
@@ -123,41 +126,41 @@ public class SawmillScreenHandler extends ScreenHandler {
     }
 
     @Override
-    public void onContentChanged(Inventory inventory) {
-        ItemStack itemStack = this.inputSlot.getStack();
-        if (!itemStack.isOf(this.inputStack.getItem())) {
+    public void slotsChanged(Container inventory) {
+        ItemStack itemStack = this.inputSlot.getItem();
+        if (!itemStack.is(this.inputStack.getItem())) {
             this.inputStack = itemStack.copy();
             this.updateInput(inventory, itemStack);
         }
     }
 
-    private void updateInput(Inventory input, ItemStack stack) {
+    private void updateInput(Container input, ItemStack stack) {
         this.availableRecipes.clear();
         this.selectedRecipe.set(-1);
-        this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
+        this.outputSlot.set(ItemStack.EMPTY);
         if (!stack.isEmpty()) {
-            this.availableRecipes = this.world.getRecipeManager().getAllMatches(SawmillingRecipe.Type.INSTANCE, input, this.world);
+            this.availableRecipes = this.world.getRecipeManager().getRecipesFor(SawmillingRecipe.Type.INSTANCE, input, this.world);
         }
     }
 
     void populateResult() {
         if (!this.availableRecipes.isEmpty() && this.isInBounds(this.selectedRecipe.get())) {
             SawmillingRecipe woodcuttingRecipe = this.availableRecipes.get(this.selectedRecipe.get());
-            ItemStack itemStack = woodcuttingRecipe.craft(this.input, this.world.getRegistryManager());
-            if (itemStack.isItemEnabled(this.world.getEnabledFeatures())) {
-                this.output.setLastRecipe(woodcuttingRecipe);
-                this.outputSlot.setStackNoCallbacks(itemStack);
+            ItemStack itemStack = woodcuttingRecipe.assemble(this.input, this.world.registryAccess());
+            if (itemStack.isItemEnabled(this.world.enabledFeatures())) {
+                this.output.setRecipeUsed(woodcuttingRecipe);
+                this.outputSlot.set(itemStack);
             } else {
-                this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
+                this.outputSlot.set(ItemStack.EMPTY);
             }
         } else {
-            this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
+            this.outputSlot.set(ItemStack.EMPTY);
         }
-        this.sendContentUpdates();
+        this.broadcastChanges();
     }
 
     @Override
-    public ScreenHandlerType<?> getType() {
+    public MenuType<?> getType() {
         return CelluloseScreens.SAWMILL_SCREEN_HANDLER;
     }
 
@@ -166,44 +169,44 @@ public class SawmillScreenHandler extends ScreenHandler {
     }
 
     @Override
-    public boolean canInsertIntoSlot(ItemStack stack, Slot slot) {
-        return slot.inventory != this.output && super.canInsertIntoSlot(stack, slot);
+    public boolean canTakeItemForPickAll(ItemStack stack, Slot slot) {
+        return slot.container != this.output && super.canTakeItemForPickAll(stack, slot);
     }
 
     @Override
-    public ItemStack quickMove(PlayerEntity player, int slot) {
+    public ItemStack quickMoveStack(Player player, int slot) {
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot2 = this.slots.get(slot);
-        if (slot2.hasStack()) {
-            ItemStack itemStack2 = slot2.getStack();
+        if (slot2.hasItem()) {
+            ItemStack itemStack2 = slot2.getItem();
             Item item = itemStack2.getItem();
             itemStack = itemStack2.copy();
             if (slot == 1) {
-                item.onCraft(itemStack2, player.getWorld(), player);
-                if (!this.insertItem(itemStack2, 2, 38, true)) {
+                item.onCraftedBy(itemStack2, player.level(), player);
+                if (!this.moveItemStackTo(itemStack2, 2, 38, true)) {
                     return ItemStack.EMPTY;
                 }
-                slot2.onQuickTransfer(itemStack2, itemStack);
-            } else if (slot == 0 ? !this.insertItem(itemStack2, 2, 38, false) : (this.world.getRecipeManager().getFirstMatch(SawmillingRecipe.Type.INSTANCE, new SimpleInventory(itemStack2), this.world).isPresent() ? !this.insertItem(itemStack2, 0, 1, false) : (slot >= 2 && slot < 29 ? !this.insertItem(itemStack2, 29, 38, false) : slot >= 29 && slot < 38 && !this.insertItem(itemStack2, 2, 29, false)))) {
+                slot2.onQuickCraft(itemStack2, itemStack);
+            } else if (slot == 0 ? !this.moveItemStackTo(itemStack2, 2, 38, false) : (this.world.getRecipeManager().getRecipeFor(SawmillingRecipe.Type.INSTANCE, new SimpleContainer(itemStack2), this.world).isPresent() ? !this.moveItemStackTo(itemStack2, 0, 1, false) : (slot >= 2 && slot < 29 ? !this.moveItemStackTo(itemStack2, 29, 38, false) : slot >= 29 && slot < 38 && !this.moveItemStackTo(itemStack2, 2, 29, false)))) {
                 return ItemStack.EMPTY;
             }
             if (itemStack2.isEmpty()) {
-                slot2.setStack(ItemStack.EMPTY);
+                slot2.setByPlayer(ItemStack.EMPTY);
             }
-            slot2.markDirty();
+            slot2.setChanged();
             if (itemStack2.getCount() == itemStack.getCount()) {
                 return ItemStack.EMPTY;
             }
-            slot2.onTakeItem(player, itemStack2);
-            this.sendContentUpdates();
+            slot2.onTake(player, itemStack2);
+            this.broadcastChanges();
         }
         return itemStack;
     }
 
     @Override
-    public void onClosed(PlayerEntity player) {
-        super.onClosed(player);
-        this.output.removeStack(1);
-        this.context.run((world, pos) -> this.dropInventory(player, this.input));
+    public void removed(Player player) {
+        super.removed(player);
+        this.output.removeItemNoUpdate(1);
+        this.context.execute((world, pos) -> this.clearContainer(player, this.input));
     }
 }

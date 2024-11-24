@@ -1,14 +1,14 @@
 package net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.inventory.Inventories;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.util.Clearable;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.Clearable;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.qzimyion.cellulose.entity.CelluloseEntities;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,30 +28,30 @@ public class BambooChiseledBookshelfBlockEntity extends BlockEntity implements C
     }
 
     public void addBook(ItemStack stack) {
-        if (stack.isIn(ItemTags.BOOKSHELF_BOOKS)) {
+        if (stack.is(ItemTags.BOOKSHELF_BOOKS)) {
             this.books.addFirst(stack);
         }
     }
 
     @Override
-    public void readNbt(NbtCompound nbt) {
-        DefaultedList<ItemStack> defaultedList = DefaultedList.ofSize(7, ItemStack.EMPTY);
-        Inventories.readNbt(nbt, defaultedList);
+    public void load(CompoundTag nbt) {
+        NonNullList<ItemStack> defaultedList = NonNullList.withSize(7, ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(nbt, defaultedList);
         this.books.clear();
         for (ItemStack itemStack : defaultedList) {
-            if (!itemStack.isIn(ItemTags.BOOKSHELF_BOOKS)) continue;
+            if (!itemStack.is(ItemTags.BOOKSHELF_BOOKS)) continue;
             this.books.add(itemStack);
         }
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt) {
-        Inventories.writeNbt(nbt, getBooksAsList(this.books), true);
+    protected void saveAdditional(CompoundTag nbt) {
+        ContainerHelper.saveAllItems(nbt, getBooksAsList(this.books), true);
     }
 
     @NotNull
-    private static DefaultedList<ItemStack> getBooksAsList(Collection<ItemStack> books) {
-        DefaultedList<ItemStack> defaultedList = DefaultedList.ofSize(books.size());
+    private static NonNullList<ItemStack> getBooksAsList(Collection<ItemStack> books) {
+        NonNullList<ItemStack> defaultedList = NonNullList.createWithCapacity(books.size());
         defaultedList.addAll(books);
         return defaultedList;
     }
@@ -59,14 +59,14 @@ public class BambooChiseledBookshelfBlockEntity extends BlockEntity implements C
 
 
     @Override
-    public NbtCompound toInitialChunkDataNbt() {
-        NbtCompound nbtCompound = new NbtCompound();
-        Inventories.writeNbt(nbtCompound, getBooksAsList(this.books), true);
+    public CompoundTag getUpdateTag() {
+        CompoundTag nbtCompound = new CompoundTag();
+        ContainerHelper.saveAllItems(nbtCompound, getBooksAsList(this.books), true);
         return nbtCompound;
     }
 
     @Override
-    public void clear() {
+    public void clearContent() {
         this.books.clear();
     }
 

@@ -1,101 +1,106 @@
 package net.qzimyion.cellulose.blocks.customBlocks.PannelBlocks.ShojiBlocks;
 
-import net.minecraft.block.*;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.BlockMirror;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.WorldAccess;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.qzimyion.cellulose.blocks.ModBlockProperties;
 import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
-public class ShojiBlocks extends Block implements Waterloggable {
-    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
-    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+public class ShojiBlocks extends Block implements SimpleWaterloggedBlock {
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final EnumProperty<ShojiShapes> SHOJI_SHAPE = ModBlockProperties.SHOJI_SHAPE;
 
     //General Shape
-    protected static final VoxelShape SHOJI_WALL_NORTH = Block.createCuboidShape(0, 0, 7, 16, 16, 9);
-    protected static final VoxelShape SHOJI_WALL_SOUTH = Block.createCuboidShape(0, 0, 7, 16, 16, 9);
-    protected static final VoxelShape SHOJI_WALL_EAST_WEST = Block.createCuboidShape(7, 0, 0, 9, 16, 16);
+    protected static final VoxelShape SHOJI_WALL_NORTH = Block.box(0, 0, 7, 16, 16, 9);
+    protected static final VoxelShape SHOJI_WALL_SOUTH = Block.box(0, 0, 7, 16, 16, 9);
+    protected static final VoxelShape SHOJI_WALL_EAST_WEST = Block.box(7, 0, 0, 9, 16, 16);
 
-    public ShojiBlocks(Settings settings) {
+    public ShojiBlocks(Properties settings) {
         super(settings);
-        this.setDefaultState(getDefaultState().with(FACING, Direction.NORTH).with(SHOJI_SHAPE, ShojiShapes.NONE).with(WATERLOGGED, false));
+        this.registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(SHOJI_SHAPE, ShojiShapes.NONE).setValue(WATERLOGGED, false));
     }
 
     @Override
-    public BlockRenderType getRenderType(BlockState state)
+    public RenderShape getRenderShape(BlockState state)
     {
-        return BlockRenderType.MODEL;
+        return RenderShape.MODEL;
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx){
-        return switch (state.get(FACING)){
-            default -> SHOJI_WALL_NORTH;
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext ctx){
+        return switch (state.getValue(FACING)){
             case SOUTH -> SHOJI_WALL_SOUTH;
             case EAST, WEST -> SHOJI_WALL_EAST_WEST;
+            default -> SHOJI_WALL_NORTH;
         };
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, WATERLOGGED, SHOJI_SHAPE);
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (state.get(WATERLOGGED)) {
-            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
+        if (state.getValue(WATERLOGGED)) {
+            world.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
         }
         return getConnection(state, world, pos);
     }
 
     @Nullable
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
     }
 
-    public BlockState getConnection(BlockState state, WorldAccess world, BlockPos pos){
-        Direction facing = state.get(FACING);
+    public BlockState getConnection(BlockState state, LevelAccessor world, BlockPos pos){
+        Direction facing = state.getValue(FACING);
 
-        BlockState top = world.getBlockState(pos.up());
-        BlockState bottom = world.getBlockState(pos.down());
+        BlockState top = world.getBlockState(pos.above());
+        BlockState bottom = world.getBlockState(pos.below());
 
-        boolean sideU = (bottom.getBlock() instanceof ShojiBlocks && (bottom.get(FACING)==facing));
-        boolean sideD = (top.getBlock() instanceof ShojiBlocks && (top.get(FACING)==facing));
+        boolean sideU = (bottom.getBlock() instanceof ShojiBlocks && (bottom.getValue(FACING)==facing));
+        boolean sideD = (top.getBlock() instanceof ShojiBlocks && (top.getValue(FACING)==facing));
         ShojiShapes shapes = sideU && sideD ? ShojiShapes.MIDDLE : (sideD ? ShojiShapes.BOTTOM
                 : (sideU ? ShojiShapes.TOP : ShojiShapes.NONE));
-        return state.with(SHOJI_SHAPE, shapes);
+        return state.setValue(SHOJI_SHAPE, shapes);
     }
 
     @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation)
+    public BlockState rotate(BlockState state, Rotation rotation)
     {
-        return state.with(FACING, rotation.rotate(state.get(FACING)));
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
     @Override
-    public BlockState mirror(BlockState state, BlockMirror mirror)
+    public BlockState mirror(BlockState state, Mirror mirror)
     {
-        return state.rotate(mirror.getRotation(state.get(FACING)));
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
     public FluidState getFluidState(BlockState state) {
-        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
 }

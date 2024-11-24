@@ -4,12 +4,12 @@ import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.qzimyion.cellulose.Cellulose;
 
 public class CelluloseBoats {
@@ -20,20 +20,20 @@ public class CelluloseBoats {
     */
 
 
-    public static final Identifier CACTUS_BOAT_ID = new Identifier(Cellulose.MOD_ID, "cactus_boat");
-    public static final Identifier CACTUS_CHEST_BOAT_ID = new Identifier(Cellulose.MOD_ID, "cactus_chest_boat");
-    public static final Identifier AZALEA_BOAT_ID = new Identifier(Cellulose.MOD_ID, "azalea_boat");
-    public static final Identifier AZALEA_CHEST_BOAT_ID = new Identifier(Cellulose.MOD_ID, "azalea_chest_boat");
-    public static final Identifier BLOOMING_AZALEA_BOAT_ID = new Identifier(Cellulose.MOD_ID, "blooming_azalea_boat");
-    public static final Identifier BLOOMING_AZALEA_CHEST_BOAT_ID = new Identifier(Cellulose.MOD_ID, "blooming_azalea_chest_boat");
+    public static final ResourceLocation CACTUS_BOAT_ID = new ResourceLocation(Cellulose.MOD_ID, "cactus_boat");
+    public static final ResourceLocation CACTUS_CHEST_BOAT_ID = new ResourceLocation(Cellulose.MOD_ID, "cactus_chest_boat");
+    public static final ResourceLocation AZALEA_BOAT_ID = new ResourceLocation(Cellulose.MOD_ID, "azalea_boat");
+    public static final ResourceLocation AZALEA_CHEST_BOAT_ID = new ResourceLocation(Cellulose.MOD_ID, "azalea_chest_boat");
+    public static final ResourceLocation BLOOMING_AZALEA_BOAT_ID = new ResourceLocation(Cellulose.MOD_ID, "blooming_azalea_boat");
+    public static final ResourceLocation BLOOMING_AZALEA_CHEST_BOAT_ID = new ResourceLocation(Cellulose.MOD_ID, "blooming_azalea_chest_boat");
 
 
-    public static final RegistryKey<TerraformBoatType> CACTUS_BOAT_KEY = TerraformBoatTypeRegistry.createKey(CACTUS_BOAT_ID);
-    public static final RegistryKey<TerraformBoatType> CACTUS_CHEST_BOAT_KEY = TerraformBoatTypeRegistry.createKey(CACTUS_CHEST_BOAT_ID);
-    public static final RegistryKey<TerraformBoatType> AZALEA_BOAT_KEY = TerraformBoatTypeRegistry.createKey(AZALEA_BOAT_ID);
-    public static final RegistryKey<TerraformBoatType> AZALEA_CHEST_BOAT_KEY = TerraformBoatTypeRegistry.createKey(AZALEA_CHEST_BOAT_ID);
-    public static final RegistryKey<TerraformBoatType> BLOOMING_AZALEA_BOAT_KEY = TerraformBoatTypeRegistry.createKey(BLOOMING_AZALEA_BOAT_ID);
-    public static final RegistryKey<TerraformBoatType> BLOOMING_AZALEA_CHEST_BOAT_KEY = TerraformBoatTypeRegistry.createKey(BLOOMING_AZALEA_CHEST_BOAT_ID);
+    public static final ResourceKey<TerraformBoatType> CACTUS_BOAT_KEY = TerraformBoatTypeRegistry.createKey(CACTUS_BOAT_ID);
+    public static final ResourceKey<TerraformBoatType> CACTUS_CHEST_BOAT_KEY = TerraformBoatTypeRegistry.createKey(CACTUS_CHEST_BOAT_ID);
+    public static final ResourceKey<TerraformBoatType> AZALEA_BOAT_KEY = TerraformBoatTypeRegistry.createKey(AZALEA_BOAT_ID);
+    public static final ResourceKey<TerraformBoatType> AZALEA_CHEST_BOAT_KEY = TerraformBoatTypeRegistry.createKey(AZALEA_CHEST_BOAT_ID);
+    public static final ResourceKey<TerraformBoatType> BLOOMING_AZALEA_BOAT_KEY = TerraformBoatTypeRegistry.createKey(BLOOMING_AZALEA_BOAT_ID);
+    public static final ResourceKey<TerraformBoatType> BLOOMING_AZALEA_CHEST_BOAT_KEY = TerraformBoatTypeRegistry.createKey(BLOOMING_AZALEA_CHEST_BOAT_ID);
 
     @SuppressWarnings("UnstableApiUsage")
     public static void registerBoats()
@@ -81,7 +81,7 @@ public class CelluloseBoats {
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, BLOOMING_AZALEA_CHEST_BOAT_KEY, ChestBoat2);
 
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(content -> {
             content.addAfter(Items.BAMBOO_CHEST_RAFT, boatItem, chestBoatItem);
             content.addAfter(Items.CHERRY_CHEST_BOAT, boatItem1, chestBoatItem1);
             content.addAfter(chestBoatItem1, boatItem2, chestBoatItem2);

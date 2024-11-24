@@ -1,8 +1,0 @@
-{
-  "type": "cellulose:sawmilling",
-  "count": 8,
-  "ingredient": {
-    "item": "cellulose:chipped_oak_log"
-  },
-  "result": "minecraft:oak_fence"
-}

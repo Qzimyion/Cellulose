@@ -1,42 +1,41 @@
 package net.qzimyion.cellulose.blocks.customBlocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FacingBlock;
-import net.minecraft.block.MapColor;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateManager;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.math.Direction;
+import net.minecraft.core.Direction;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 
 @SuppressWarnings("deprecation")
-public class OrientablePillarBlock extends FacingBlock {
+public class OrientablePillarBlock extends DirectionalBlock {
 
-    public OrientablePillarBlock(Settings settings) {
+    public OrientablePillarBlock(Properties settings) {
         super(settings);
-        this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
     }
 
     @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return state.with(FACING, rotation.rotate(state.get(FACING)));
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
     @Override
-    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx){
-        PlayerEntity entity = ctx.getPlayer();
+    public BlockState getStateForPlacement(BlockPlaceContext ctx){
+        Player entity = ctx.getPlayer();
         assert entity != null;
-        if(entity.isSneaking()) {
-            return this.getDefaultState().with(FACING, ctx.getSide().getOpposite());
+        if(entity.isShiftKeyDown()) {
+            return this.defaultBlockState().setValue(FACING, ctx.getClickedFace().getOpposite());
         }
         else {
-            return this.getDefaultState().with(FACING, ctx.getSide());
+            return this.defaultBlockState().setValue(FACING, ctx.getClickedFace());
         }
     }
 }

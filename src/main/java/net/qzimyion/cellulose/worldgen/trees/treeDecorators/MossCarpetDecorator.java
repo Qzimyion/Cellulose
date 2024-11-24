@@ -4,12 +4,16 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.gen.treedecorator.TreeDecorator;
-import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import net.qzimyion.cellulose.worldgen.WorldGenRegistry;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class MossCarpetDecorator extends TreeDecorator {
 
@@ -24,24 +28,24 @@ public class MossCarpetDecorator extends TreeDecorator {
     }
 
     @Override
-    protected TreeDecoratorType<?> getType() {
+    protected @NotNull TreeDecoratorType<?> type() {
         return WorldGenRegistry.MOSS_CARPET_DECORATOR;
     }
 
     public final float carpetChance;
 
-    private boolean shouldPlaceMossCarpet(Random random) {
+    private boolean shouldPlaceMossCarpet(RandomSource random) {
         return random.nextFloat() < carpetChance;
     }
 
     @Override
-    public void generate(Generator generator) {
-        ObjectArrayList<BlockPos> nodes = generator.getLogPositions();
+    public void place(Context generator) {
+        ObjectArrayList<BlockPos> nodes = generator.logs();
         for (BlockPos node : nodes){
-            if (shouldPlaceMossCarpet(generator.getRandom())) {
-                BlockPos.Mutable abovePos = (BlockPos.Mutable) node.up();
-                if (generator.getWorld().testBlockState(abovePos, blockState -> blockState.isAir() || blockState.getBlock() == Blocks.MOSS_CARPET)){
-                    generator.replace(abovePos, Blocks.MOSS_CARPET.getDefaultState());
+            if (shouldPlaceMossCarpet(generator.random())) {
+                BlockPos abovePos = node.above();
+                if (generator.level().isStateAtPosition(abovePos, BlockBehaviour.BlockStateBase::isAir)){
+                    generator.setBlock(abovePos, Blocks.MOSS_CARPET.defaultBlockState());
                 }
             }
         }

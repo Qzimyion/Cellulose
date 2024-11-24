@@ -2,8 +2,8 @@ package net.qzimyion.cellulose;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.minecraft.registry.RegistryBuilder;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.qzimyion.cellulose.datagen.*;
 import net.qzimyion.cellulose.datagen.languageProvider.CelluloseNameProvider;
 import net.qzimyion.cellulose.datagen.languageProvider.CelluloseNameProvider_en_gb;
@@ -28,8 +28,8 @@ public class CelluloseDataGenerator implements DataGeneratorEntrypoint
 	}
 
 	@Override
-	public void buildRegistry(RegistryBuilder registryBuilder){
-		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, CelluloseConfiguredFeatures::boostrap);
-		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, CellulosePlacedFeatures::boostrap);
+	public void buildRegistry(RegistrySetBuilder registryBuilder){
+		registryBuilder.add(Registries.CONFIGURED_FEATURE, CelluloseConfiguredFeatures::boostrap);
+		registryBuilder.add(Registries.PLACED_FEATURE, CellulosePlacedFeatures::boostrap);
 	}
 }

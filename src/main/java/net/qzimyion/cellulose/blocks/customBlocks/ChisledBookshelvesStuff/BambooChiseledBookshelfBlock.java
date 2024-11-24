@@ -1,27 +1,31 @@
 package net.qzimyion.cellulose.blocks.customBlocks.ChisledBookshelvesStuff;
 
-import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ItemScatterer;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.Vec2f;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.Containers;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.Vec3;
 import net.qzimyion.cellulose.blocks.ModBlockProperties;
 import net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves.BambooChiseledBookshelfBlockEntity;
 import org.jetbrains.annotations.Nullable;
@@ -29,125 +33,125 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 @SuppressWarnings("deprecation")
-public class BambooChiseledBookshelfBlock extends BlockWithEntity {
-    public static final IntProperty BOOKS_STORED = ModBlockProperties.BOOKS_STORED;
-    public static final IntProperty LAST_INTERACTION_BOOK_SLOT = ModBlockProperties.LAST_INTERACTION_BOOK_SLOT;
-    public BambooChiseledBookshelfBlock(Settings settings) {
+public class BambooChiseledBookshelfBlock extends BaseEntityBlock {
+    public static final IntegerProperty BOOKS_STORED = ModBlockProperties.BOOKS_STORED;
+    public static final IntegerProperty LAST_INTERACTION_BOOK_SLOT = ModBlockProperties.LAST_INTERACTION_BOOK_SLOT;
+    public BambooChiseledBookshelfBlock(Properties settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(BOOKS_STORED, 0).with(HorizontalFacingBlock.FACING, Direction.NORTH).with(LAST_INTERACTION_BOOK_SLOT, 0));
+        this.registerDefaultState(this.stateDefinition.any().setValue(BOOKS_STORED, 0).setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH).setValue(LAST_INTERACTION_BOOK_SLOT, 0));
     }
 
     @Nullable
     @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new BambooChiseledBookshelfBlockEntity(pos, state);
     }
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (!(blockEntity instanceof BambooChiseledBookshelfBlockEntity)){
-            return ActionResult.PASS;
+            return InteractionResult.PASS;
         }
-        Optional<Vec2f> optional = getHitPos(hit, state.get(HorizontalFacingBlock.FACING));
+        Optional<Vec2> optional = getHitPos(hit, state.getValue(HorizontalDirectionalBlock.FACING));
         if (optional.isEmpty()) {
-            return ActionResult.PASS;
+            return InteractionResult.PASS;
         }
-        if (world.isClient){
-            return ActionResult.SUCCESS;
+        if (world.isClientSide){
+            return InteractionResult.SUCCESS;
         }
-        ItemStack itemStack = player.getStackInHand(hand);
-        return itemStack.isIn(ItemTags.BOOKSHELF_BOOKS) ? tryAddBook(state, world, pos, player, (BambooChiseledBookshelfBlockEntity) blockEntity, itemStack) : tryRemoveBook(state, world, pos, player, (BambooChiseledBookshelfBlockEntity) blockEntity);
+        ItemStack itemStack = player.getItemInHand(hand);
+        return itemStack.is(ItemTags.BOOKSHELF_BOOKS) ? tryAddBook(state, world, pos, player, (BambooChiseledBookshelfBlockEntity) blockEntity, itemStack) : tryRemoveBook(state, world, pos, player, (BambooChiseledBookshelfBlockEntity) blockEntity);
     }
 
-    private static ActionResult tryRemoveBook(BlockState state, World world, BlockPos pos, PlayerEntity player, BambooChiseledBookshelfBlockEntity blockEntity) {
+    private static InteractionResult tryRemoveBook(BlockState state, Level world, BlockPos pos, Player player, BambooChiseledBookshelfBlockEntity blockEntity) {
         if (!blockEntity.isEmpty()) {
             ItemStack itemStack = blockEntity.getLastBook();
 
             int i = blockEntity.getBookCount();
-            world.setBlockState(pos, state.with(BOOKS_STORED, i).with(LAST_INTERACTION_BOOK_SLOT, i + 1), Block.NOTIFY_ALL);
-            SoundEvent soundEvent = itemStack.isOf(Items.ENCHANTED_BOOK) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_PICKUP;
-            world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
-            world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-            if (!player.getInventory().insertStack(itemStack)) {
-                player.dropItem(itemStack, false);
+            world.setBlock(pos, state.setValue(BOOKS_STORED, i).setValue(LAST_INTERACTION_BOOK_SLOT, i + 1), Block.UPDATE_ALL);
+            SoundEvent soundEvent = itemStack.is(Items.ENCHANTED_BOOK) ? SoundEvents.CHISELED_BOOKSHELF_PICKUP_ENCHANTED : SoundEvents.CHISELED_BOOKSHELF_PICKUP;
+            world.playSound(null, pos, soundEvent, SoundSource.BLOCKS, 1.0f, 1.0f);
+            world.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+            if (!player.getInventory().add(itemStack)) {
+                player.drop(itemStack, false);
             }
         }
-        return ActionResult.CONSUME;
+        return InteractionResult.CONSUME;
     }
 
-    private static ActionResult tryAddBook(BlockState state, World world, BlockPos pos, PlayerEntity player, BambooChiseledBookshelfBlockEntity blockEntity, ItemStack stack) {
+    private static InteractionResult tryAddBook(BlockState state, Level world, BlockPos pos, Player player, BambooChiseledBookshelfBlockEntity blockEntity, ItemStack stack) {
         if (!blockEntity.isFull()) {
             blockEntity.addBook(stack.split(1));
-            SoundEvent soundEvent = stack.isOf(Items.ENCHANTED_BOOK) ? SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT_ENCHANTED : SoundEvents.BLOCK_CHISELED_BOOKSHELF_INSERT;
+            SoundEvent soundEvent = stack.is(Items.ENCHANTED_BOOK) ? SoundEvents.CHISELED_BOOKSHELF_INSERT_ENCHANTED : SoundEvents.CHISELED_BOOKSHELF_INSERT;
             if (player.isCreative()) {
-                stack.increment(1);
+                stack.grow(1);
             }
             int i = blockEntity.getBookCount();
-            world.playSound(null, pos, soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f);
-            world.setBlockState(pos, state.with(BOOKS_STORED, i).with(LAST_INTERACTION_BOOK_SLOT, i), Block.NOTIFY_ALL);
-            world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+            world.playSound(null, pos, soundEvent, SoundSource.BLOCKS, 1.0f, 1.0f);
+            world.setBlock(pos, state.setValue(BOOKS_STORED, i).setValue(LAST_INTERACTION_BOOK_SLOT, i), Block.UPDATE_ALL);
+            world.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
         }
-        return ActionResult.CONSUME;
+        return InteractionResult.CONSUME;
     }
 
     @Override
-    public BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
+    public RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(BOOKS_STORED).add(LAST_INTERACTION_BOOK_SLOT).add(HorizontalFacingBlock.FACING);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(BOOKS_STORED).add(LAST_INTERACTION_BOOK_SLOT).add(HorizontalDirectionalBlock.FACING);
     }
 
     @Override
-    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved){
-        if (state.isOf(newState.getBlock())) {
+    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean moved){
+        if (state.is(newState.getBlock())) {
             return;
         }
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof BambooChiseledBookshelfBlockEntity bambooChiseledBookshelfBlockEntity){
             ItemStack itemStack = bambooChiseledBookshelfBlockEntity.getLastBook();
             while (!itemStack.isEmpty()){
-                ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
+                Containers.dropItemStack(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
                 itemStack = bambooChiseledBookshelfBlockEntity.getLastBook();
             }
-            world.updateComparators(pos, this);
+            world.updateNeighbourForOutputSignal(pos, this);
         }
-        super.onStateReplaced(state, world, pos, newState, moved);
+        super.onRemove(state, world, pos, newState, moved);
     }
 
-    public static Optional<Vec2f> getHitPos(BlockHitResult hit, Direction facing) {
-        Direction direction = hit.getSide();
+    public static Optional<Vec2> getHitPos(BlockHitResult hit, Direction facing) {
+        Direction direction = hit.getDirection();
         if (facing != direction) {
             return Optional.empty();
         }
-        BlockPos blockPos = hit.getBlockPos().offset(direction);
-        Vec3d vec3d = hit.getPos().subtract(blockPos.getX(), blockPos.getY(), blockPos.getZ());
-        double x = vec3d.getX();
-        double y = vec3d.getY();
-        double z = vec3d.getZ();
+        BlockPos blockPos = hit.getBlockPos().relative(direction);
+        Vec3 vec3d = hit.getLocation().subtract(blockPos.getX(), blockPos.getY(), blockPos.getZ());
+        double x = vec3d.x();
+        double y = vec3d.y();
+        double z = vec3d.z();
         return switch (direction) {
-            case NORTH -> Optional.of(new Vec2f((float)(1 - x), (float)y));
-            case SOUTH -> Optional.of(new Vec2f((float)x, (float)y));
-            case WEST -> Optional.of(new Vec2f((float)z, (float)y));
-            case EAST -> Optional.of(new Vec2f((float)(1 - z), (float)y));
+            case NORTH -> Optional.of(new Vec2((float)(1 - x), (float)y));
+            case SOUTH -> Optional.of(new Vec2((float)x, (float)y));
+            case WEST -> Optional.of(new Vec2((float)z, (float)y));
+            case EAST -> Optional.of(new Vec2((float)(1 - z), (float)y));
             case DOWN, UP -> Optional.empty();
         };
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(HorizontalFacingBlock.FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, ctx.getHorizontalDirection().getOpposite());
     }
 
     @Override
-    public boolean hasComparatorOutput(BlockState state) {
+    public boolean hasAnalogOutputSignal(BlockState state) {
         return true;
     }
 
     @Override
-    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
-        return state.get(LAST_INTERACTION_BOOK_SLOT);
+    public int getAnalogOutputSignal(BlockState state, Level world, BlockPos pos) {
+        return state.getValue(LAST_INTERACTION_BOOK_SLOT);
     }
 }

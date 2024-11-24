@@ -1,10 +1,10 @@
 package net.qzimyion.cellulose.util;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.qzimyion.cellulose.Cellulose;
 
 public class CelluloseTags
@@ -51,11 +51,11 @@ public class CelluloseTags
         public static final TagKey <Block> CEDAR_LEAVES = createTag ("cedar_leaves");
 
         private static TagKey <Block> createTag(String name) {
-            return TagKey.of(RegistryKeys.BLOCK, new Identifier(Cellulose.MOD_ID, name));
+            return TagKey.create(Registries.BLOCK, new ResourceLocation(Cellulose.MOD_ID, name));
         }
 
         private static TagKey <Block> createCommonTag(String name) {
-            return TagKey.of(RegistryKeys.BLOCK, new Identifier("c", name));
+            return TagKey.create(Registries.BLOCK, new ResourceLocation("c", name));
         }
     }
 
@@ -125,11 +125,11 @@ public class CelluloseTags
 
 
         private static TagKey <Item> createTag(String name) {
-            return TagKey.of(RegistryKeys.ITEM, new Identifier(Cellulose.MOD_ID, name));
+            return TagKey.create(Registries.ITEM, new ResourceLocation(Cellulose.MOD_ID, name));
         }
 
         private static TagKey <Item> createCommonTag(String name) {
-            return TagKey.of(RegistryKeys.ITEM, new Identifier("c", name));
+            return TagKey.create(Registries.ITEM, new ResourceLocation("c", name));
         }
     }
 
