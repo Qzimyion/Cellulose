@@ -48,8 +48,6 @@ public class BetterPaleOakTrunkPlacer extends TrunkPlacer {
         int currentX = trunkX;
         int currentZ = trunkZ;
         int trunkTopY = trunkY + height - 1;
-
-        // Build the trunk with jagged twists
         for (int y = 0; y < height; y++) {
             if (y >= trunkHeight && branchSpacing > 0) {
                 currentX += direction.getStepX();
@@ -73,14 +71,14 @@ public class BetterPaleOakTrunkPlacer extends TrunkPlacer {
     }
 
     private void createTwistedBranches(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> replacer, RandomSource random, int startY, int startX, int startZ, TreeConfiguration config) {
-        for (int i = 0; i < 4; i++) {  // Maximum 4 branches for simplicity
-            int branchLength = random.nextInt(5) + 3;  // Branch length between 3-7 blocks
-            int branchDirectionX = random.nextInt(3) - 1;  // Random X offset (-1, 0, 1)
-            int branchDirectionZ = random.nextInt(3) - 1;  // Random Z offset (-1, 0, 1)
+        for (int i = 0; i < 4; i++) {
+            int branchLength = random.nextInt(5) + 3;
+            int branchDirectionX = random.nextInt(3) - 1;
+            int branchDirectionZ = random.nextInt(3) - 1;
             int branchY = startY;
 
             for (int j = 0; j < branchLength; j++) {
-                branchY += random.nextInt(2) - 1;  // Small vertical variance
+                branchY += random.nextInt(2) - 1;
                 startX += branchDirectionX;
                 startZ += branchDirectionZ;
 
