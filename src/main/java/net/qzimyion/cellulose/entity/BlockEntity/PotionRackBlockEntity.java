@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.qzimyion.cellulose.blocks.customBlocks.PotionRackBlock;
 import net.qzimyion.cellulose.entity.CelluloseEntities;
 import net.qzimyion.cellulose.util.CelluloseTags;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 import java.util.Objects;
@@ -43,7 +45,20 @@ public class PotionRackBlockEntity extends BlockEntity implements Container {
             BooleanProperty booleanProperty = PotionRackBlock.SLOT_OCCUPIED_PROPERTIES.get(i);
             blockState = blockState.setValue(booleanProperty, bl);
         }
-        Objects.requireNonNull(this.level).setBlock(this.worldPosition, blockState, Block.UPDATE_ALL);
+        if (level != null) {
+            BlockState state = level.getBlockState(worldPosition);
+            level.sendBlockUpdated(worldPosition, state, state, 6);
+        }
+    }
+
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        return this.saveWithoutMetadata();
     }
 
     @Override
@@ -51,6 +66,9 @@ public class PotionRackBlockEntity extends BlockEntity implements Container {
         this.inventory.clear();
         ContainerHelper.loadAllItems(nbt, this.inventory);
         this.lastInteractedSlot = nbt.getInt("last_interacted_slot");
+        if(level != null && level.isClientSide){
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 6);
+        }
     }
 
     @Override
@@ -74,12 +92,12 @@ public class PotionRackBlockEntity extends BlockEntity implements Container {
     }
 
     @Override
-    public ItemStack getItem(int slot) {
+    public @NotNull ItemStack getItem(int slot) {
         return this.inventory.get(slot);
     }
 
     @Override
-    public ItemStack removeItem(int slot, int amount) {
+    public @NotNull ItemStack removeItem(int slot, int amount) {
         ItemStack itemStack = Objects.requireNonNullElse(this.inventory.get(slot), ItemStack.EMPTY);
         this.inventory.set(slot, ItemStack.EMPTY);
         if (!itemStack.isEmpty()) {
