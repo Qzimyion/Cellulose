@@ -2,20 +2,14 @@ package net.qzimyion.cellulose.util;
 
 import net.minecraft.util.StringRepresentable;
 
-public enum OmegaLilyBlockShape implements StringRepresentable {
-    NORTH_WEST("north_west"),
-    NORTH("north"),
+public enum TwoByTwoShapeEnum implements StringRepresentable {
     NORTH_EAST("north_east"),
-    WEST("west"),
-    CENTER("center"),
-    EAST("east"),
-    SOUTH_WEST("south_west"),
-    SOUTH("south"),
-    SOUTH_EAST("south_east");
-
+    NORTH_WEST("north_west"),
+    SOUTH_EAST("south_east"),
+    SOUTH_WEST("south_west");
 
     private final String name;
-    OmegaLilyBlockShape(String name) {
+    TwoByTwoShapeEnum(String name) {
         this.name = name;
     }
 
