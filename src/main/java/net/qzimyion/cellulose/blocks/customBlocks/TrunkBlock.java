@@ -95,7 +95,7 @@ public class TrunkBlock extends RotatedPillarBlock {
     private BlockPos[] getNeighborPositions(BlockPos pos, int axisIndex, int direction) {
         BlockPos[] positions = new BlockPos[3];
         for (int i = 0; i < 3; i++) {
-            positions[i] = offsetPos(pos, offsets[axisIndex][direction][i]);
+            positions[i] = offsetPos(pos, BLOCKPOS_OFFSET_SETS[axisIndex][direction][i]);
         }
         return positions;
     }
@@ -152,7 +152,7 @@ public class TrunkBlock extends RotatedPillarBlock {
             Direction.Axis.Z
     };
 
-    private final BlockPos[][][] offsets = {
+    private final BlockPos[][][] BLOCKPOS_OFFSET_SETS = {
             {   // Y-axis facing (UP/DOWN)
                     {new BlockPos(0, 0, 1), new BlockPos(1, 0, 0), new BlockPos(1, 0, 1)},     // South + East + SE
                     {new BlockPos(0, 0, 1), new BlockPos(-1, 0, 0), new BlockPos(-1, 0, 1)},   // South + West + SW
