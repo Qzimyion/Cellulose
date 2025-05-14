@@ -3,7 +3,6 @@ package net.qzimyion.cellulose.blocks.customBlocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -21,7 +20,7 @@ import net.qzimyion.cellulose.blocks.ModBlockProperties;
 
 @SuppressWarnings({"NullableProblems", "deprecation"})
 public class TrunkBlock extends RotatedPillarBlock {
-    public static final BooleanProperty UPDATED = ModBlockProperties.UPDATED;
+    public static final BooleanProperty UPDATED = ModBlockProperties.UPDATE_NEIGHBOUR;
     public static final IntegerProperty VARIANT = ModBlockProperties.VARIANT;
 
     public TrunkBlock(Properties properties) {
@@ -34,8 +33,6 @@ public class TrunkBlock extends RotatedPillarBlock {
         builder.add(AXIS, UPDATED, VARIANT);
     }
 
-
-
     @Override
     public void tick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
         if (world.isClientSide() || state.getValue(UPDATED)) return;
@@ -45,7 +42,7 @@ public class TrunkBlock extends RotatedPillarBlock {
     @Override
     public void neighborChanged(BlockState state, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean isMoving) {
         if (world.isClientSide() || state.getValue(UPDATED)) return;
-        world.scheduleTick(pos, this, 0);
+        world.scheduleTick(pos, this, 3);
     }
 
     @Override
@@ -145,7 +142,7 @@ public class TrunkBlock extends RotatedPillarBlock {
                 .setValue(UPDATED, true);
     }
 
-    private BlockPos offsetPos(BlockPos pos, Vec3i offset) {
+    private BlockPos offsetPos(BlockPos pos, BlockPos offset) {
         return pos.offset(offset);
     }
 
@@ -155,26 +152,24 @@ public class TrunkBlock extends RotatedPillarBlock {
             Direction.Axis.Z
     };
 
-    private final Vec3i[][][] offsets = {
-            {
-                    {new Vec3i(0, 0, 1), new Vec3i(1, 0, 0), new Vec3i(1, 0, 1)},
-                    {new Vec3i(0, 0, 1), new Vec3i(-1, 0, 0), new Vec3i(-1, 0, 1)},
-                    {new Vec3i(0, 0, -1), new Vec3i(-1, 0, 0), new Vec3i(-1, 0, -1)},
-                    {new Vec3i(0, 0, -1), new Vec3i(1, 0, 0), new Vec3i(1, 0, -1)},
+    private final BlockPos[][][] offsets = {
+            {   // Y-axis facing (UP/DOWN)
+                    {new BlockPos(0, 0, 1), new BlockPos(1, 0, 0), new BlockPos(1, 0, 1)},     // South + East + SE
+                    {new BlockPos(0, 0, 1), new BlockPos(-1, 0, 0), new BlockPos(-1, 0, 1)},   // South + West + SW
+                    {new BlockPos(0, 0, -1), new BlockPos(-1, 0, 0), new BlockPos(-1, 0, -1)}, // North + West + NW
+                    {new BlockPos(0, 0, -1), new BlockPos(1, 0, 0), new BlockPos(1, 0, -1)}     // North + East + NE
             },
-            {
-                    {new Vec3i(0, 1, 0), new Vec3i(0, 0, 1), new Vec3i(0, 1, 1)},
-                    {new Vec3i(0, 1, 0), new Vec3i(0, 0, -1), new Vec3i(0, 1, -1)},
-                    {new Vec3i(0, -1, 0), new Vec3i(0, 0, -1), new Vec3i(0, -1, -1)},
-                    {new Vec3i(0, -1, 0), new Vec3i(0, 0, 1), new Vec3i(0, -1, 1)},
+            {   // Z-axis facing (NORTH/SOUTH)
+                    {new BlockPos(0, 1, 0), new BlockPos(0, 0, 1), new BlockPos(0, 1, 1)},     // Up + South + Up-South
+                    {new BlockPos(0, 1, 0), new BlockPos(0, 0, -1), new BlockPos(0, 1, -1)},   // Up + North + Up-North
+                    {new BlockPos(0, -1, 0), new BlockPos(0, 0, -1), new BlockPos(0, -1, -1)}, // Down + North + Down-North
+                    {new BlockPos(0, -1, 0), new BlockPos(0, 0, 1), new BlockPos(0, -1, 1)}    // Down + South + Down-South
             },
-            {
-                    {new Vec3i(0, 1, 0), new Vec3i(1, 0, 0), new Vec3i(1, 1, 0)},
-                    {new Vec3i(0, 1, 0), new Vec3i(-1, 0, 0), new Vec3i(-1, 1, 0)},
-                    {new Vec3i(0, -1, 0), new Vec3i(-1, 0, 0), new Vec3i(-1, -1, 0)},
-                    {new Vec3i(0, -1, 0), new Vec3i(1, 0, 0), new Vec3i(1, -1, 0)},
+            {   // X-axis facing (EAST/WEST)
+                    {new BlockPos(0, 1, 0), new BlockPos(1, 0, 0), new BlockPos(1, 1, 0)},     // Up + East + Up-East
+                    {new BlockPos(0, 1, 0), new BlockPos(-1, 0, 0), new BlockPos(-1, 1, 0)},   // Up + West + Up-West
+                    {new BlockPos(0, -1, 0), new BlockPos(-1, 0, 0), new BlockPos(-1, -1, 0)}, // Down + West + Down-West
+                    {new BlockPos(0, -1, 0), new BlockPos(1, 0, 0), new BlockPos(1, -1, 0)}    // Down + East + Down-East
             }
     };
-
-
 }
