@@ -28,7 +28,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.qzimyion.cellulose.blocks.ModBlockProperties;
-import net.qzimyion.cellulose.util.VictorianLilyBlockShape;
+import net.qzimyion.cellulose.util.TwoByTwoShapeEnum;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
@@ -36,14 +36,14 @@ import java.util.Random;
 @SuppressWarnings("deprecation")
 public class VictorianLilyBlock extends BushBlock {
     public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-    public static final EnumProperty<VictorianLilyBlockShape> VICTORIAN_LILY_BLOCK_SHAPE = ModBlockProperties.VICTORIAN_LILY_SHAPE;
+    public static final EnumProperty<TwoByTwoShapeEnum> VICTORIAN_LILY_BLOCK_SHAPE = ModBlockProperties.VICTORIAN_LILY_SHAPE;
 
     protected static final VoxelShape SHAPE = Block.box(0.0F, 0.0F, 0.0F, 16.0F, 1.5F, 16.0F);
 
     public VictorianLilyBlock(Properties properties)
     {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(VICTORIAN_LILY_BLOCK_SHAPE, VictorianLilyBlockShape.SOUTH_WEST));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(VICTORIAN_LILY_BLOCK_SHAPE, TwoByTwoShapeEnum.SOUTH_WEST));
     }
 
     @Override
@@ -55,7 +55,7 @@ public class VictorianLilyBlock extends BushBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {
-        builder.add(FACING).add(VICTORIAN_LILY_BLOCK_SHAPE);
+        builder.add(FACING, VICTORIAN_LILY_BLOCK_SHAPE);
     }
 
     @Override
@@ -67,44 +67,46 @@ public class VictorianLilyBlock extends BushBlock {
         BlockPos northwest = pos.relative(facing);
         BlockPos northeast = northwest.relative(facing.getClockWise());
         BlockPos southeast = pos.relative(facing.getClockWise());
+        TwoByTwoShapeEnum shape = state.getValue(VICTORIAN_LILY_BLOCK_SHAPE);
 
-        if (state.getValue(VICTORIAN_LILY_BLOCK_SHAPE) == VictorianLilyBlockShape.SOUTH_WEST) {
-            northwest = pos.relative(facing);
-            northeast = northwest.relative(facing.getClockWise());
-            southeast = pos.relative(facing.getClockWise());
-        }
-        if (state.getValue(VICTORIAN_LILY_BLOCK_SHAPE) == VictorianLilyBlockShape.NORTH_WEST) {
-            southwest = pos.relative(facing.getOpposite());
-            northwest = pos;
-            northeast = pos.relative(facing.getClockWise());
-            southeast = southwest.relative(facing.getClockWise());
-        }
-        if (state.getValue(VICTORIAN_LILY_BLOCK_SHAPE) == VictorianLilyBlockShape.NORTH_EAST) {
-            northwest = pos.relative(facing.getCounterClockWise());
-            northeast = pos;
-            southeast = pos.relative(facing.getOpposite());
-            southwest = southeast.relative(facing);
-        }
-        if (state.getValue(VICTORIAN_LILY_BLOCK_SHAPE) == VictorianLilyBlockShape.SOUTH_EAST) {
-            southwest = pos.relative(facing.getCounterClockWise());
-            northeast = pos.relative(facing);
-            southeast = pos;
-            northwest = northeast.relative(facing.getCounterClockWise());
+        switch (shape) {
+            case SOUTH_WEST -> {
+                northwest = pos.relative(facing);
+                northeast = northwest.relative(facing.getClockWise());
+                southeast = pos.relative(facing.getClockWise());
+            }
+            case NORTH_WEST -> {
+                southwest = pos.relative(facing.getOpposite());
+                northwest = pos;
+                northeast = pos.relative(facing.getClockWise());
+                southeast = southwest.relative(facing.getClockWise());
+            }
+            case NORTH_EAST -> {
+                northwest = pos.relative(facing.getCounterClockWise());
+                northeast = pos;
+                southeast = pos.relative(facing.getOpposite());
+                southwest = southeast.relative(facing);
+            }
+            case SOUTH_EAST -> {
+                southwest = pos.relative(facing.getCounterClockWise());
+                northeast = pos.relative(facing);
+                southeast = pos;
+                northwest = northeast.relative(facing.getCounterClockWise());
+            }
         }
         if (!levelAccessor.getBlockState(southwest).is(this) || !levelAccessor.getBlockState(northwest).is(this) || !levelAccessor.getBlockState(northeast).is(this) || !levelAccessor.getBlockState(southeast).is(this)) {
             lilypadSurvive = false;
         }
-
-        if (levelAccessor.getBlockState(southwest).is(this) && levelAccessor.getBlockState(southwest).getValue(FACING) != facing && levelAccessor.getBlockState(southwest).getValue(VICTORIAN_LILY_BLOCK_SHAPE) != VictorianLilyBlockShape.SOUTH_WEST) {
+        if (levelAccessor.getBlockState(southwest).is(this) && levelAccessor.getBlockState(southwest).getValue(FACING) != facing && levelAccessor.getBlockState(southwest).getValue(VICTORIAN_LILY_BLOCK_SHAPE) != TwoByTwoShapeEnum.SOUTH_WEST) {
             lilypadSurvive = false;
         }
-        if (levelAccessor.getBlockState(northwest).is(this) && levelAccessor.getBlockState(northwest).getValue(FACING) != facing && levelAccessor.getBlockState(northwest).getValue(VICTORIAN_LILY_BLOCK_SHAPE) != VictorianLilyBlockShape.NORTH_WEST) {
+        if (levelAccessor.getBlockState(northwest).is(this) && levelAccessor.getBlockState(northwest).getValue(FACING) != facing && levelAccessor.getBlockState(northwest).getValue(VICTORIAN_LILY_BLOCK_SHAPE) != TwoByTwoShapeEnum.NORTH_WEST) {
             lilypadSurvive = false;
         }
-        if (levelAccessor.getBlockState(northeast).is(this) && levelAccessor.getBlockState(northeast).getValue(FACING) != facing && levelAccessor.getBlockState(northeast).getValue(VICTORIAN_LILY_BLOCK_SHAPE) != VictorianLilyBlockShape.NORTH_EAST) {
+        if (levelAccessor.getBlockState(northeast).is(this) && levelAccessor.getBlockState(northeast).getValue(FACING) != facing && levelAccessor.getBlockState(northeast).getValue(VICTORIAN_LILY_BLOCK_SHAPE) != TwoByTwoShapeEnum.NORTH_EAST) {
             lilypadSurvive = false;
         }
-        if (levelAccessor.getBlockState(southeast).is(this) && levelAccessor.getBlockState(southeast).getValue(FACING) != facing && levelAccessor.getBlockState(southeast).getValue(VICTORIAN_LILY_BLOCK_SHAPE) != VictorianLilyBlockShape.SOUTH_EAST) {
+        if (levelAccessor.getBlockState(southeast).is(this) && levelAccessor.getBlockState(southeast).getValue(FACING) != facing && levelAccessor.getBlockState(southeast).getValue(VICTORIAN_LILY_BLOCK_SHAPE) != TwoByTwoShapeEnum.SOUTH_EAST) {
             lilypadSurvive = false;
         }
         if (!lilypadSurvive) {
@@ -140,9 +142,9 @@ public class VictorianLilyBlock extends BushBlock {
             BlockPos blockpos = pos.relative(state.getValue(FACING));
             BlockPos blockpos1 = blockpos.relative(state.getValue(FACING).getClockWise());
             BlockPos blockpos2 = pos.relative(state.getValue(FACING).getClockWise());
-            level.setBlock(blockpos, state.setValue(VICTORIAN_LILY_BLOCK_SHAPE, VictorianLilyBlockShape.NORTH_WEST), 26);
-            level.setBlock(blockpos1, state.setValue(VICTORIAN_LILY_BLOCK_SHAPE, VictorianLilyBlockShape.NORTH_EAST), 26);
-            level.setBlock(blockpos2, state.setValue(VICTORIAN_LILY_BLOCK_SHAPE, VictorianLilyBlockShape.SOUTH_EAST), 26);
+            level.setBlock(blockpos, state.setValue(VICTORIAN_LILY_BLOCK_SHAPE, TwoByTwoShapeEnum.NORTH_WEST), 26);
+            level.setBlock(blockpos1, state.setValue(VICTORIAN_LILY_BLOCK_SHAPE, TwoByTwoShapeEnum.NORTH_EAST), 26);
+            level.setBlock(blockpos2, state.setValue(VICTORIAN_LILY_BLOCK_SHAPE, TwoByTwoShapeEnum.SOUTH_EAST), 26);
             level.blockUpdated(pos, Blocks.AIR);
             level.blockUpdated(blockpos, Blocks.AIR);
             level.blockUpdated(blockpos1, Blocks.AIR);
@@ -171,13 +173,13 @@ public class VictorianLilyBlock extends BushBlock {
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         Random random = new Random();
-        if (level instanceof ServerLevel && entity instanceof Boat) {
+        if (level instanceof ServerLevel && entity instanceof Boat boatEntity) {
             level.destroyBlock(new BlockPos(pos), true, entity);
-        }
-        if (random.nextFloat() <= 0.25f && entity instanceof Boat boatEntity){
-            Boat.Type boatType = boatEntity.getVariant();
-            boatEntity.spawnAtLocation(getBoatItem(boatType));
-            boatEntity.discard();
+            if (random.nextFloat() <= 0.25f){
+                Boat.Type boatType = boatEntity.getVariant();
+                entity.spawnAtLocation(getBoatItem(boatType));
+                boatEntity.discard();
+            }
         }
     }
 

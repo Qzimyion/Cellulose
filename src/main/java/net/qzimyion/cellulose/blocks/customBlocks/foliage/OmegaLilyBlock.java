@@ -8,13 +8,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BushBlock;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.IceBlock;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -23,19 +17,19 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.qzimyion.cellulose.blocks.ModBlockProperties;
-import net.qzimyion.cellulose.util.OmegaLilyBlockShape;
+import net.qzimyion.cellulose.util.ThreeByThreeShapeEnum;
 import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
-public class OmegaLilyBlock extends BushBlock {
+public class OmegaLilyBlock extends WaterlilyBlock {
     public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-    public static final EnumProperty<OmegaLilyBlockShape> OMEGA_LILY_BLOCK_SHAPE = ModBlockProperties.OMEGA_LILY_SHAPE;
+    public static final EnumProperty<ThreeByThreeShapeEnum> OMEGA_LILY_BLOCK_SHAPE = ModBlockProperties.OMEGA_LILY_SHAPE;
 
     protected static final VoxelShape SHAPE = Block.box(0.0F, 0.0F, 0.0F, 16.0F, 1.5F, 16.0F);
 
     public OmegaLilyBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OMEGA_LILY_BLOCK_SHAPE, OmegaLilyBlockShape.CENTER));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OMEGA_LILY_BLOCK_SHAPE, ThreeByThreeShapeEnum.CENTER));
     }
 
     @Override
@@ -73,7 +67,7 @@ public class OmegaLilyBlock extends BushBlock {
         BlockPos pos = ctx.getClickedPos();
         Level level = ctx.getLevel();
 
-        BlockPos[] positions = getBlockPositions(pos, direction, OmegaLilyBlockShape.CENTER);
+        BlockPos[] positions = getBlockPositions(pos, direction, ThreeByThreeShapeEnum.CENTER);
 
         for (BlockPos blockPos : positions) {
             if (!level.getBlockState(blockPos).canBeReplaced(ctx) || !mayPlaceOn(level.getBlockState(blockPos.below()), level, blockPos.below())) {
@@ -88,15 +82,15 @@ public class OmegaLilyBlock extends BushBlock {
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity entity, ItemStack stack) {
         super.setPlacedBy(level, pos, state, entity, stack);
         Direction direction = state.getValue(FACING);
-        BlockPos[] positions = getBlockPositions(pos, direction, OmegaLilyBlockShape.CENTER);
+        BlockPos[] positions = getBlockPositions(pos, direction, ThreeByThreeShapeEnum.CENTER);
 
         for (int i = 0; i < positions.length; i++) {
-            OmegaLilyBlockShape shape = OmegaLilyBlockShape.values()[i];
-            level.setBlock(positions[i], state.setValue(OMEGA_LILY_BLOCK_SHAPE, shape), 26);
+            ThreeByThreeShapeEnum shape = ThreeByThreeShapeEnum.values()[i];
+            level.setBlock(positions[i], state.setValue(OMEGA_LILY_BLOCK_SHAPE, shape), 27);
         }
     }
 
-    private BlockPos[] getBlockPositions(BlockPos center, Direction facing, OmegaLilyBlockShape shape) {
+    private BlockPos[] getBlockPositions(BlockPos center, Direction facing, ThreeByThreeShapeEnum shape) {
         BlockPos[] positions = new BlockPos[9];
         Direction right = facing.getClockWise();
         Direction left = facing.getCounterClockWise();
