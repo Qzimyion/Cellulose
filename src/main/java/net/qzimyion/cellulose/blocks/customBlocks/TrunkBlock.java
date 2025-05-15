@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.qzimyion.cellulose.blocks.ModBlockProperties;
 import net.qzimyion.cellulose.util.TwoByTwoShapeEnum;
 
-@SuppressWarnings({"deprecation", "NullableProblems", "DataFlowIssue"})
+@SuppressWarnings({"deprecation", "NullableProblems"})
 public class TrunkBlock extends RotatedPillarBlock {
     public static final EnumProperty<TwoByTwoShapeEnum> TRUNK_ENUM = ModBlockProperties.TRUNK_ENUM;
     public static final BooleanProperty UPDATED = BooleanProperty.create("updated");
@@ -116,18 +116,12 @@ public class TrunkBlock extends RotatedPillarBlock {
         switch (axis) {
             case Y: // X-Z plane (like tree trunks)
                 dz = switch (shape) {
-                    case NORTH_WEST -> {
-                        dx = 0;
-                        yield 0;
-                    }
+                    case NORTH_WEST -> 0;
                     case NORTH_EAST -> {
                         dx = -1;
                         yield 0;
                     }
-                    case SOUTH_WEST -> {
-                        dx = 0;
-                        yield -1;
-                    }
+                    case SOUTH_WEST -> -1;
                     case SOUTH_EAST -> {
                         dx = -1;
                         yield -1;
@@ -136,18 +130,12 @@ public class TrunkBlock extends RotatedPillarBlock {
                 break;
             case X: // Y-Z plane
                 dz = switch (shape) {
-                    case NORTH_WEST -> {
-                        dy = 0;
-                        yield 0;
-                    }
+                    case NORTH_WEST -> 0;
                     case NORTH_EAST -> {
                         dy = -1;
                         yield 0;
                     }
-                    case SOUTH_WEST -> {
-                        dy = 0;
-                        yield -1;
-                    }
+                    case SOUTH_WEST -> -1;
                     case SOUTH_EAST -> {
                         dy = -1;
                         yield -1;
@@ -156,18 +144,12 @@ public class TrunkBlock extends RotatedPillarBlock {
                 break;
             case Z: // X-Y plane
                 dy = switch (shape) {
-                    case NORTH_WEST -> {
-                        dx = 0;
-                        yield 0;
-                    }
+                    case NORTH_WEST -> 0;
                     case NORTH_EAST -> {
                         dx = -1;
                         yield 0;
                     }
-                    case SOUTH_WEST -> {
-                        dx = 0;
-                        yield -1;
-                    }
+                    case SOUTH_WEST -> -1;
                     case SOUTH_EAST -> {
                         dx = -1;
                         yield -1;
@@ -175,7 +157,6 @@ public class TrunkBlock extends RotatedPillarBlock {
                 };
                 break;
         }
-
         return new BlockPos(dx, dy, dz);
     }
 }
