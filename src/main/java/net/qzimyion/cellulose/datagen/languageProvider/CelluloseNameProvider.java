@@ -181,31 +181,23 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CelluloseBoats.CACTUS_CHEST_BOAT_ID, "Cactus Chest Boat");
         ///Azalea woodset
         translationBuilder.add(AZALEA_LOG, "Azalea Log");
-        translationBuilder.add(BLOOMING_AZALEA_LOG, "Azalea Blooming Log");
         translationBuilder.add(AZALEA_PLANKS, "Azalea Planks");
         translationBuilder.add(AZALEA_STAIRS, "Azalea Stairs");
         translationBuilder.add(AZALEA_SLAB, "Azalea Slab");
         translationBuilder.add(AZALEA_WOOD, "Azalea Wood");
-        translationBuilder.add(BLOOMING_AZALEA_WOOD, "Azalea Blooming Wood");
         translationBuilder.add(STRIPPED_AZALEA_LOG, "Stripped Azalea Log");
-        translationBuilder.add(BLOOMING_STRIPPED_AZALEA_LOG, "Stripped Blooming Azalea Log");
         translationBuilder.add(STRIPPED_AZALEA_WOOD, "Stripped Azalea Wood");
-        translationBuilder.add(BLOOMING_STRIPPED_AZALEA_WOOD, "Stripped Blooming Azalea Wood");
         translationBuilder.add(AZALEA_FENCE, "Azalea Fence");
         translationBuilder.add(AZALEA_FENCE_GATE, "Azalea Fence gate");
         translationBuilder.add(AZALEA_BUTTON, "Azalea Button");
         translationBuilder.add(AZALEA_PRESSURE_PLATE, "Azalea Pressure Plate");
         translationBuilder.add(AZALEA_DOOR, "Azalea Door");
-        translationBuilder.add(BLOOMING_AZALEA_DOOR, "Blooming Azalea Door");
         translationBuilder.add(AZALEA_TRAPDOOR, "Azalea Trapdoor");
-        translationBuilder.add(BLOOMING_AZALEA_TRAPDOOR, "Blooming Azalea Trapdoor");
         translationBuilder.add(VERTICAL_AZALEA_PLANKS, "Vertical Azalea Planks");
         translationBuilder.add(VERTICAL_AZALEA_STAIR, "Vertical Azalea Stairs");
         translationBuilder.add(VERTICAL_AZALEA_SLAB, "Vertical Azalea Stairs");
         translationBuilder.add(ENGRAVED_AZALEA, "Engraved Azalea");
-        translationBuilder.add(ENGRAVED_BLOOMING_AZALEA, "Engraved Blooming Azalea Log");
         translationBuilder.add(ENGRAVED_AZALEA_WOOD, "Engraved Azalea Wood");
-        translationBuilder.add(ENGRAVED_BLOOMING_AZALEA_WOOD, "Engraved Blooming Azalea Wood");
         translationBuilder.add(AZALEA_MOSAIC, "Azalea Mosaic");
         translationBuilder.add(AZALEA_MOSAIC_STAIRS, "Azalea Mosaic Stairs");
         translationBuilder.add(AZALEA_MOSAIC_SLABS, "Azalea Mosaic Slab");
@@ -213,11 +205,8 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CHIPPED_AZALEA_SLAB, "Chipped Azalea Slab");
         translationBuilder.add(CHIPPED_AZALEA_STAIRS, "Chipped Azalea Stairs");
         translationBuilder.add(AZALEA_PLANK_PAVEMENT, "Azalea Pavement");
-        translationBuilder.add(BLOOMING_AZALEA_PLANK_PAVEMENT, "Blooming Azalea Pavement");
         translationBuilder.add(AZALEA_FRAME, "Azalea Frame");
-        translationBuilder.add(BLOOMING_AZALEA_FRAME, "Blooming Azalea Frame");
         translationBuilder.add(AZALEA_LINTELS, "Azalea Lintels");
-        translationBuilder.add(BLOOMING_AZALEA_LINTELS, "Blooming Azalea Lintels");
 
         /*Stats*/
         translationBuilder.add(CelluloseStats.INTERACT_WITH_SAWMILL, "Interaction with sawmill");
@@ -335,7 +324,7 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(GLAZED_BAMBOO_SLABS, "Glazed Bamboo Slab");
         translationBuilder.add(GLAZED_CHERRY_SLABS, "Glazed Cherry Slab");
         //Tiles
-        translationBuilder.add(OAK_TILES, "Oak Tiles");
+        translationBuilder.add(OAK_BOARDS, "Oak Tiles");
         translationBuilder.add(BIRCH_TILES, "Birch Tiles");
         translationBuilder.add(SPRUCE_TILES, "Spruce Tiles");
         translationBuilder.add(DARK_OAK_TILES, "Dark Oak Tiles");
@@ -475,6 +464,5 @@ public class CelluloseNameProvider extends FabricLanguageProvider
         translationBuilder.add(CHERRY_CHISELED_BOOKSHELF, "Cherry Chiseled Bookshelf");
         translationBuilder.add(CACTUS_CHISELED_BOOKSHELF, "Cactus Chiseled Bookshelf");
         translationBuilder.add(AZALEA_CHISELED_BOOKSHELF, "Azalea Chiseled Bookshelf");
-        translationBuilder.add(BLOOMING_AZALEA_CHISELED_BOOKSHELF, "Blooming Azalea Chiseled Bookshelf");
     }
 }

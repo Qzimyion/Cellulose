@@ -3,26 +3,6 @@
   "values": [
     "minecraft:flowering_azalea",
     "minecraft:potted_flowering_azalea_bush",
-    "cellulose:blooming_azalea_log",
-    "cellulose:blooming_azalea_wood",
-    "cellulose:stripped_blooming_azalea_log",
-    "cellulose:blooming_blooming_stripped_azalea_wood",
-    "cellulose:engraved_blooming_azalea_log",
-    "cellulose:engraved_blooming_azalea_wood",
-    "minecraft:flowering_azalea_leaves",
-    "cellulose:blooming_azalea_planks",
-    "cellulose:blooming_azalea_slab",
-    "cellulose:blooming_azalea_stairs",
-    "cellulose:splintered_blooming_azalea_planks",
-    "cellulose:splintered_blooming_azalea_slab",
-    "cellulose:splintered_blooming_azalea_stairs",
-    "cellulose:vertical_blooming_azalea_planks",
-    "cellulose:vertical_blooming_azalea_slab",
-    "cellulose:vertical_azalea_blooming_stairs",
-    "cellulose:blooming_azalea_mosaic",
-    "cellulose:blooming_azalea_mosaic_slab",
-    "cellulose:blooming_azalea_mosaic_stairs",
-    "cellulose:blooming_azalea_door",
-    "cellulose:blooming_azalea_trapdoor"
+    "minecraft:flowering_azalea_leaves"
   ]
 }

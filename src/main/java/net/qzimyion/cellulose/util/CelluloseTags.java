@@ -26,13 +26,13 @@ public class CelluloseTags
         public static final TagKey <Block> GLAZED_WOOD = createTag ("glazed_wood");
         public static final TagKey <Block> PAVEMENTS = createTag ("pavements");
         public static final TagKey <Block> PLANK_PILLARS = createTag ("plank_pillars");
-        public static final TagKey <Block> BEAMS = createTag("beams");
         public static final TagKey <Block> BOOKSHELVES = createTag("bookshelves");
         public static final TagKey <Block> EMPTY_BOOKSHELVES = createTag("empty_bookshelves");
         public static final TagKey <Block> COBWEBBED_BOOKSHELVES = createTag("cobwebbed_bookshelves");
         public static final TagKey <Block> COBWEBBED_EMPTY_BOOKSHELVES = createTag("cobwebbed_empty_bookshelves");
         public static final TagKey <Block> ABANDONED_BOOKSHELVES = createTag("abandoned_bookshelves");
         public static final TagKey <Block> CHISELED_BOOKSHELVES = createTag("chiseled_bookshelves");
+        public static final TagKey <Block> HOLLOW_LOGS = createTag("hollow_logs");
 
         //Event only tags
         public static final TagKey <Block> ENGRAVABLE_LOGS = createTag ("engravable_logs");
@@ -94,7 +94,6 @@ public class CelluloseTags
         public static final TagKey <Item> CHERRY_PLANKS = createTag("cherry_planks");
         public static final TagKey <Item> CACTUS_PLANKS = createTag("cactus_planks");
         public static final TagKey <Item> AZALEA_PLANKS = createTag("azalea_planks");
-        public static final TagKey <Item> BLOOMING_AZALEA_PLANKS = createTag("blooming_azalea_planks");
 
         //Wooden slab tags
         public static final TagKey <Item> OAK_SLABS = createTag("oak_slabs");
@@ -110,7 +109,6 @@ public class CelluloseTags
         public static final TagKey <Item> CHERRY_SLABS = createTag("cherry_slabs");
         public static final TagKey <Item> CACTUS_SLABS = createTag("cactus_slabs");
         public static final TagKey <Item> AZALEA_SLABS = createTag("azalea_slabs");
-        public static final TagKey <Item> BLOOMING_AZALEA_SLABS = createTag("blooming_azalea_slabs");
 
 
         public static final TagKey <Item> BARK = createTag("bark");

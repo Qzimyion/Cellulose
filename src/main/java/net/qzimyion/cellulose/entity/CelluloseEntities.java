@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.ChiseledBookShelfBlockEntity;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
-import net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves.*;
-import net.qzimyion.cellulose.entity.BlockEntity.PotionRackBlockEntity;
+import net.qzimyion.cellulose.blocks.BlockEntity.CustomBookshelves.*;
+import net.qzimyion.cellulose.blocks.BlockEntity.PotionRackBlockEntity;
 
 @SuppressWarnings("unused")
 public class CelluloseEntities {
@@ -92,12 +92,6 @@ public class CelluloseEntities {
             BuiltInRegistries.BLOCK_ENTITY_TYPE,
             new ResourceLocation(Cellulose.MOD_ID, "azalea_chiseled_bookshelf"),
             FabricBlockEntityTypeBuilder.create(AzaleaChiseldBookshelfBlockEntity::new, CelluloseBlocks.AZALEA_CHISELED_BOOKSHELF).build()
-    );
-
-    public static final BlockEntityType<AzaleaChiseldBookshelfBlockEntity> BLOOMING_AZALEA_CHISELED_BOOKSHELF = Registry.register(
-            BuiltInRegistries.BLOCK_ENTITY_TYPE,
-            new ResourceLocation(Cellulose.MOD_ID, "blooming_azalea_chiseled_bookshelf"),
-            FabricBlockEntityTypeBuilder.create(AzaleaChiseldBookshelfBlockEntity::new, CelluloseBlocks.BLOOMING_AZALEA_CHISELED_BOOKSHELF).build()
     );
 
     public static final BlockEntityType<FlippedFiveSlotBlockEntity> CEDAR_CHISELED_BOOKSHELF = Registry.register(

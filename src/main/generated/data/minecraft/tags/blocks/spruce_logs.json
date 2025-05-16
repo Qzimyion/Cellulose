@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "cellulose:spruce_trunk",
     "cellulose:engraved_spruce_log",
     "cellulose:engraved_spruce_wood"
   ]

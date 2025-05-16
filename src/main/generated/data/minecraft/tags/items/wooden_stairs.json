@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "cellulose:blooming_azalea_stairs",
     "cellulose:azalea_stairs",
     "cellulose:cactus_stairs",
     "cellulose:vertical_oak_stairs",
@@ -17,7 +16,6 @@
     "cellulose:vertical_cherry_stairs",
     "cellulose:vertical_cactus_stairs",
     "cellulose:vertical_azalea_stairs",
-    "cellulose:vertical_azalea_blooming_stairs",
     "cellulose:oak_mosaic_stairs",
     "cellulose:birch_mosaic_stairs",
     "cellulose:spruce_mosaic_stairs",
@@ -30,7 +28,6 @@
     "minecraft:bamboo_mosaic_stairs",
     "cellulose:cherry_mosaic_stairs",
     "cellulose:cactus_mosaic_stairs",
-    "cellulose:azalea_mosaic_stairs",
-    "cellulose:blooming_azalea_mosaic_stairs"
+    "cellulose:azalea_mosaic_stairs"
   ]
 }

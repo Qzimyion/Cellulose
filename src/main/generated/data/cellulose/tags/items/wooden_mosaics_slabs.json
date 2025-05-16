@@ -13,7 +13,6 @@
     "minecraft:bamboo_mosaic",
     "cellulose:cherry_mosaic",
     "cellulose:cactus_mosaic",
-    "cellulose:azalea_mosaic",
-    "cellulose:blooming_azalea_mosaic"
+    "cellulose:azalea_mosaic"
   ]
 }

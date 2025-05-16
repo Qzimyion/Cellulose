@@ -17,8 +17,6 @@ public class CelluloseStrippableBlock
         //Azalea stuff
         StrippableBlockRegistry.register(AZALEA_LOG, STRIPPED_AZALEA_LOG);
         StrippableBlockRegistry.register(AZALEA_WOOD, STRIPPED_AZALEA_WOOD);
-        StrippableBlockRegistry.register(BLOOMING_AZALEA_LOG, BLOOMING_STRIPPED_AZALEA_LOG);
-        StrippableBlockRegistry.register(BLOOMING_AZALEA_WOOD, BLOOMING_STRIPPED_AZALEA_WOOD);
         StrippableBlockRegistry.register(CHIPPED_AZALEA_WOOD, STRIPPED_CHIPPED_AZALEA_WOOD);
         //Chipped Stripped
         StrippableBlockRegistry.register(CHIPPED_OAK, STRIPPED_CHIPPED_OAK);

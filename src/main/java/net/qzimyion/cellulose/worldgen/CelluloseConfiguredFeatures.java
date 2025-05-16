@@ -20,11 +20,9 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.blocks.CelluloseBlocks;
 import net.qzimyion.cellulose.worldgen.trees.foliagePlacers.CPineFoliagePlacer;
-import net.qzimyion.cellulose.worldgen.trees.treeDecorators.MossCarpetDecorator;
 import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.HorizontalStraightTrunkPlacer;
 import net.qzimyion.cellulose.worldgen.trees.trunkPlacers.SmallDarkOakTrunkPlacer;
 
-import java.util.List;
 import java.util.OptionalInt;
 
 import static net.minecraft.world.level.block.Blocks.*;
@@ -54,28 +52,25 @@ public class CelluloseConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_PINE_TREE = registerKey("big_pine_tree");
 
     //Vanilla improvements
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BETTER_CHERRY_TREE = registerKey("better_cherry_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BETTER_PALE_OAK = registerKey("better_pale_oak");
 
     public static void boostrap(BootstapContext<ConfiguredFeature<?, ?>> context){
 
-        MossCarpetDecorator mossCarpetDecorator = new MossCarpetDecorator(1.0F);
-
-
         //Fallen logs
         register(context, FALLEN_OAK_LOG, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(OAK_LOG),
-                new HorizontalStraightTrunkPlacer(3, 1, 0,  0.5F),BlockStateProvider.simple(OAK_LEAVES),
+                new HorizontalStraightTrunkPlacer(3, 1, 2,  0.5F, 0.8F),BlockStateProvider.simple(OAK_LEAVES),
                 new BlobFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), 0),
                 new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());
 
         register(context, FALLEN_HOLLOW_OAK_LOG, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(CelluloseBlocks.HOLLOW_OAK_LOG),
-                new HorizontalStraightTrunkPlacer(3, 1, 0,  0.5F),BlockStateProvider.simple(OAK_LEAVES),
+                new HorizontalStraightTrunkPlacer(3, 1, 2,  0.5F, 0.8F),BlockStateProvider.simple(OAK_LEAVES),
                 new BlobFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), 0),
                 new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());
 
         register(context, FALLEN_LUSH_OAK_LOG, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(OAK_LOG),
-                new HorizontalStraightTrunkPlacer(3, 1, 0,  0.5F),BlockStateProvider.simple(OAK_LEAVES),
+                new HorizontalStraightTrunkPlacer(3, 1, 2,  0.5F, 0.8F),BlockStateProvider.simple(OAK_LEAVES),
                 new BlobFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), 0),
-                new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().decorators(List.of(mossCarpetDecorator)).build());
+                new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());
 
         //==Trees==//
         //Vanilla

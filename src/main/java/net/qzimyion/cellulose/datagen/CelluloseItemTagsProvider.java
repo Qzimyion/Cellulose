@@ -24,7 +24,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
     public void addTags(HolderLookup.Provider arg) {
         //==Vanilla Tags==//
         getOrCreateTagBuilder(PLANKS)
-                .add(Item.byBlock(BLOOMING_AZALEA_PLANKS))
                 .add(Item.byBlock(AZALEA_PLANKS))
                 .add(Item.byBlock(CACTUS_PLANKS))
                 .add(Item.byBlock(VERTICAL_OAK_PLANKS))
@@ -40,10 +39,9 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(VERTICAL_CHERRY_PLANKS))
                 .add(Item.byBlock(VERTICAL_CACTUS_PLANKS))
                 .add(Item.byBlock(VERTICAL_AZALEA_PLANKS))
-                .add(Item.byBlock(VERTICAL_BLOOMING_AZALEA_PLANKS));
+                ;
 
         getOrCreateTagBuilder(WOODEN_SLABS)
-                .add(Item.byBlock(BLOOMING_AZALEA_SLAB))
                 .add(Item.byBlock(AZALEA_SLAB))
                 .add(Item.byBlock(CACTUS_SLAB))
                 .add(Item.byBlock(VERTICAL_OAK_SLAB))
@@ -59,7 +57,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(VERTICAL_CHERRY_SLAB))
                 .add(Item.byBlock(VERTICAL_CACTUS_SLAB))
                 .add(Item.byBlock(VERTICAL_AZALEA_SLAB))
-                .add(Item.byBlock(VERTICAL_BLOOMING_AZALEA_SLAB))
 
                 //Mosaic
                 .add(Item.byBlock(OAK_MOSAIC_SLABS))
@@ -75,13 +72,11 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(CHERRY_MOSAIC_SLABS))
                 .add(Item.byBlock(CACTUS_MOSAIC_SLABS))
                 .add(Item.byBlock(AZALEA_MOSAIC_SLABS))
-                .add(Item.byBlock(BLOOMING_AZALEA_MOSAIC_SLABS))
 
         //Tiles
         ;
 
         getOrCreateTagBuilder(WOODEN_STAIRS)
-                .add(Item.byBlock(BLOOMING_AZALEA_STAIRS))
                 .add(Item.byBlock(AZALEA_STAIRS))
                 .add(Item.byBlock(CACTUS_STAIRS))
                 .add(Item.byBlock(VERTICAL_OAK_STAIR))
@@ -97,7 +92,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(VERTICAL_CHERRY_STAIR))
                 .add(Item.byBlock(VERTICAL_CACTUS_STAIR))
                 .add(Item.byBlock(VERTICAL_AZALEA_STAIR))
-                .add(Item.byBlock(VERTICAL_BLOOMING_AZALEA_STAIR))
 
                 //Mosaic
                 .add(Item.byBlock(OAK_MOSAIC_STAIRS))
@@ -113,7 +107,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(CHERRY_MOSAIC_STAIRS))
                 .add(Item.byBlock(CACTUS_MOSAIC_STAIRS))
                 .add(Item.byBlock(AZALEA_MOSAIC_STAIRS))
-                .add(Item.byBlock(BLOOMING_AZALEA_MOSAIC_STAIRS))
         ;
 
         getOrCreateTagBuilder(WOODEN_FENCES)
@@ -133,12 +126,10 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(CACTUS_PRESSURE_PLATE));
 
         getOrCreateTagBuilder(WOODEN_DOORS)
-                .add(Item.byBlock(BLOOMING_AZALEA_DOOR))
                 .add(Item.byBlock(AZALEA_DOOR))
                 .add(Item.byBlock(CACTUS_DOOR));
 
         getOrCreateTagBuilder(WOODEN_TRAPDOORS)
-                .add(Item.byBlock(BLOOMING_AZALEA_TRAPDOOR))
                 .add(Item.byBlock(AZALEA_TRAPDOOR))
                 .add(Item.byBlock(CACTUS_TRAPDOOR));
 
@@ -224,16 +215,14 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
         getOrCreateTagBuilder(BOATS)
                 .add(CACTUS_BOAT_ID)
                 .add(AZALEA_BOAT_ID)
-                .add(BLOOMING_AZALEA_BOAT_ID)
         ;
 
         getOrCreateTagBuilder(CHEST_BOATS)
                 .add(CACTUS_CHEST_BOAT_ID)
                 .add(AZALEA_CHEST_BOAT_ID)
-                .add(BLOOMING_AZALEA_CHEST_BOAT_ID)
         ;
 
-        ///Modded Tags
+        //==Modded Tags==//
 
         getOrCreateTagBuilder(CelluloseTags.Items.WOODEN_MOSAICS)
                 .add(Item.byBlock(OAK_MOSAIC))
@@ -249,7 +238,7 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(CHERRY_MOSAIC))
                 .add(Item.byBlock(CACTUS_MOSAIC))
                 .add(Item.byBlock(AZALEA_MOSAIC))
-                .add(Item.byBlock(BLOOMING_AZALEA_MOSAIC));
+                ;
 
         //Flowering
         getOrCreateTagBuilder(CelluloseTags.Items.AZALEA_FLOWER)
@@ -296,7 +285,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(CHERRY_PLANK_PAVEMENT))
                 .add(Item.byBlock(CACTUS_PLANK_PAVEMENT))
                 .add(Item.byBlock(AZALEA_PLANK_PAVEMENT))
-                .add(Item.byBlock(BLOOMING_AZALEA_PLANK_PAVEMENT))
         ;
 
         getOrCreateTagBuilder(CelluloseTags.Items.WOODEN_FRAMES)
@@ -313,7 +301,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(CHERRY_FRAME))
                 .add(Item.byBlock(CACTUS_FRAME))
                 .add(Item.byBlock(AZALEA_FRAME))
-                .add(Item.byBlock(BLOOMING_AZALEA_FRAME))
         ;
 
 
@@ -331,7 +318,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(CHERRY_LINTELS))
                 .add(Item.byBlock(CACTUS_LINTELS))
                 .add(Item.byBlock(AZALEA_LINTELS))
-                .add(Item.byBlock(BLOOMING_AZALEA_LINTELS))
         ;
 
         //Barks
@@ -417,10 +403,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(VERTICAL_AZALEA_PLANKS))
                 .add(Item.byBlock(CHIPPED_AZALEA_PLANKS));
 
-        getOrCreateTagBuilder(CelluloseTags.Items.BLOOMING_AZALEA_PLANKS)
-                .add(Item.byBlock(BLOOMING_AZALEA_PLANKS))
-                .add(Item.byBlock(VERTICAL_BLOOMING_AZALEA_PLANKS))
-                .add(Item.byBlock(CHIPPED_BLOOMING_AZALEA_PLANKS));
 
         //Wooden Slab Tags
         getOrCreateTagBuilder(CelluloseTags.Items.OAK_SLABS)
@@ -487,11 +469,6 @@ public class CelluloseItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(Item.byBlock(AZALEA_SLAB))
                 .add(Item.byBlock(VERTICAL_AZALEA_SLAB))
                 .add(Item.byBlock(CHIPPED_AZALEA_SLAB));
-
-        getOrCreateTagBuilder(CelluloseTags.Items.BLOOMING_AZALEA_SLABS)
-                .add(Item.byBlock(BLOOMING_AZALEA_SLAB))
-                .add(Item.byBlock(VERTICAL_BLOOMING_AZALEA_SLAB))
-                .add(Item.byBlock(CHIPPED_BLOOMING_AZALEA_SLAB));
 
         //
 

@@ -30,7 +30,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
-import net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves.FourSlotBookshelfBlockEntity;
+import net.qzimyion.cellulose.blocks.BlockEntity.CustomBookshelves.FourSlotBookshelfBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

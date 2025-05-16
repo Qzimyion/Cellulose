@@ -16,7 +16,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.qzimyion.cellulose.items.CelluloseItems;
 import net.qzimyion.cellulose.recipe.SawmillingRecipe;
 import net.qzimyion.cellulose.util.CelluloseTags;
 
@@ -52,7 +51,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerVerticalPlanksRecipe(exporter, VERTICAL_BAMBOO_PLANKS, BAMBOO_PLANKS);
         offerVerticalPlanksRecipe(exporter, VERTICAL_CHERRY_PLANKS, CHERRY_PLANKS);
         offerVerticalPlanksRecipe(exporter, VERTICAL_AZALEA_PLANKS, AZALEA_PLANKS);
-        offerVerticalPlanksRecipe(exporter, VERTICAL_BLOOMING_AZALEA_PLANKS, BLOOMING_AZALEA_PLANKS);
 
         //Reverse recipe
         offerReverseVerticalPlanksRecipe(exporter, OAK_PLANKS, VERTICAL_OAK_PLANKS);
@@ -202,7 +200,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         createStairsRecipe(CHERRY_MOSAIC_STAIRS, CHERRY_MOSAIC);
         createStairsRecipe(CACTUS_MOSAIC_STAIRS, CACTUS_MOSAIC);
         createStairsRecipe(AZALEA_MOSAIC_STAIRS, AZALEA_MOSAIC);
-        createStairsRecipe(BLOOMING_AZALEA_MOSAIC_STAIRS, BLOOMING_AZALEA_MOSAIC);
 
 
         ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, BIRCH_MOSAIC_STAIRS, 4)
@@ -295,7 +292,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerFrameRecipes(exporter, CHERRY_FRAME, CelluloseTags.Items.CHERRY_PLANKS);
         offerFrameRecipes(exporter, CACTUS_FRAME, CelluloseTags.Items.CACTUS_PLANKS);
         offerFrameRecipes(exporter, AZALEA_FRAME, CelluloseTags.Items.AZALEA_PLANKS);
-        offerFrameRecipes(exporter, BLOOMING_AZALEA_FRAME, CelluloseTags.Items.BLOOMING_AZALEA_PLANKS);
 
         //Lintel recipes
         offerLintelsRecipes(exporter, OAK_LINTELS, OAK_FRAME);
@@ -311,10 +307,9 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerLintelsRecipes(exporter, CHERRY_LINTELS, CHERRY_FRAME);
         offerLintelsRecipes(exporter, CACTUS_LINTELS, CACTUS_FRAME);
         offerLintelsRecipes(exporter, AZALEA_LINTELS, AZALEA_FRAME);
-        offerLintelsRecipes(exporter, BLOOMING_AZALEA_LINTELS, BLOOMING_AZALEA_FRAME);
 
         //Tile recipes
-        offerTilesRecipes(exporter, OAK_TILES, OAK_PLANKS, OAK_SLAB);
+        offerTilesRecipes(exporter, OAK_BOARDS, OAK_PLANKS, OAK_SLAB);
         offerTilesRecipes(exporter, BIRCH_TILES, BIRCH_PLANKS, BIRCH_SLAB);
         offerTilesRecipes(exporter, SPRUCE_TILES, SPRUCE_PLANKS, SPRUCE_SLAB);
         offerTilesRecipes(exporter, DARK_OAK_TILES, DARK_OAK_PLANKS, DARK_OAK_SLAB);
@@ -327,7 +322,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerTilesRecipes(exporter, CHERRY_TILES, CHERRY_PLANKS, CHERRY_SLAB);
         offerTilesRecipes(exporter, CACTUS_TILES, Item.byBlock(CACTUS_PLANKS), Item.byBlock(CACTUS_SLAB));
         offerTilesRecipes(exporter, AZALEA_TILES, Item.byBlock(AZALEA_PLANKS), Item.byBlock(AZALEA_SLAB));
-        offerTilesRecipes(exporter, BLOOMING_AZALEA_TILES, Item.byBlock(BLOOMING_AZALEA_PLANKS), Item.byBlock(BLOOMING_AZALEA_SLAB));
 
         //Cedar woodset
 
@@ -408,7 +402,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerPavementRecipe(exporter, CHERRY_PLANK_PAVEMENT, CHERRY_PLANKS);
         offerPavementRecipe(exporter, CACTUS_PLANK_PAVEMENT, CACTUS_PLANKS);
         offerPavementRecipe(exporter, AZALEA_PLANK_PAVEMENT, AZALEA_PLANKS);
-        offerPavementRecipe(exporter, BLOOMING_AZALEA_PLANK_PAVEMENT, BLOOMING_AZALEA_PLANKS);
 
         //Bookshelves
         offerBookShelvesRecipe(exporter, BOOKSHELF, CelluloseTags.Items.OAK_PLANKS);
@@ -439,7 +432,6 @@ public class CelluloseRecipeGenerator extends FabricRecipeProvider {
         offerChiseledBookShelvesRecipe(exporter, CHERRY_CHISELED_BOOKSHELF, CelluloseTags.Items.CHERRY_PLANKS, CelluloseTags.Items.CHERRY_SLABS);
         offerChiseledBookShelvesRecipe(exporter, CACTUS_CHISELED_BOOKSHELF, CelluloseTags.Items.CACTUS_PLANKS, CelluloseTags.Items.CACTUS_SLABS);
         offerChiseledBookShelvesRecipe(exporter, AZALEA_CHISELED_BOOKSHELF, CelluloseTags.Items.AZALEA_PLANKS, CelluloseTags.Items.AZALEA_SLABS);
-        offerChiseledBookShelvesRecipe(exporter, BLOOMING_AZALEA_CHISELED_BOOKSHELF, CelluloseTags.Items.BLOOMING_AZALEA_PLANKS, CelluloseTags.Items.BLOOMING_AZALEA_SLABS);
 
 
         //Potion rack

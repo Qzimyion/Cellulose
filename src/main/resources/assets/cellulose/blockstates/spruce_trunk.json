@@ -1,0 +1,124 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "shape": "north_east",
+        "axis": "y"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_sw"
+      }
+    },
+    {
+      "when": {
+        "shape": "north_west",
+        "axis": "y"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_se"
+      }
+    },
+    {
+      "when": {
+        "shape": "south_east",
+        "axis": "y"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_nw"
+      }
+    },
+    {
+      "when": {
+        "shape": "south_west",
+        "axis": "y"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_ne"
+      }
+    },
+    {
+      "when": {
+        "shape": "north_east",
+        "axis": "x"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_ne",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "shape": "north_west",
+        "axis": "x"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_se",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "shape": "south_east",
+        "axis": "x"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_nw",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "shape": "south_west",
+        "axis": "x"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_sw",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "shape": "north_east",
+        "axis": "z"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_sw",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "shape": "north_west",
+        "axis": "z"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_se",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "shape": "south_east",
+        "axis": "z"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_nw",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "shape": "south_west",
+        "axis": "z"
+      },
+      "apply": {
+        "model": "cellulose:block/spruce_trunk_ne",
+        "x": 90
+      }
+    }
+  ]
+}

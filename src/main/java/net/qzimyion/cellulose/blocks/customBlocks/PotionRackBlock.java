@@ -29,7 +29,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
-import net.qzimyion.cellulose.entity.BlockEntity.PotionRackBlockEntity;
+import net.qzimyion.cellulose.blocks.BlockEntity.PotionRackBlockEntity;
 import net.qzimyion.cellulose.util.CelluloseTags;
 import org.jetbrains.annotations.Nullable;
 

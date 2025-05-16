@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "cellulose:blooming_azalea_planks",
     "cellulose:azalea_planks",
     "cellulose:cactus_planks",
     "cellulose:vertical_oak_planks",
@@ -16,7 +15,6 @@
     "cellulose:vertical_bamboo_planks",
     "cellulose:vertical_cherry_planks",
     "cellulose:vertical_cactus_planks",
-    "cellulose:vertical_azalea_planks",
-    "cellulose:vertical_blooming_azalea_planks"
+    "cellulose:vertical_azalea_planks"
   ]
 }

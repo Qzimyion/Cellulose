@@ -14,7 +14,6 @@
     "cellulose:cherry_mosaic",
     "cellulose:cactus_mosaic",
     "cellulose:azalea_mosaic",
-    "cellulose:blooming_azalea_mosaic",
     "cellulose:oak_mosaic_slab",
     "cellulose:birch_mosaic_slab",
     "cellulose:spruce_mosaic_slab",
@@ -27,7 +26,6 @@
     "minecraft:bamboo_mosaic_slab",
     "cellulose:cherry_mosaic_slab",
     "cellulose:cactus_mosaic_slab",
-    "cellulose:azalea_mosaic_slab",
-    "cellulose:blooming_azalea_mosaic_slab"
+    "cellulose:azalea_mosaic_slab"
   ]
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "cellulose:jungle_trunk",
     "cellulose:engraved_jungle_log",
     "cellulose:engraved_jungle_wood"
   ]

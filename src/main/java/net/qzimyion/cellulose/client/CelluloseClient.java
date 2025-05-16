@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.Blocks;
 import net.qzimyion.cellulose.Cellulose;
 import net.qzimyion.cellulose.screen.CelluloseScreens;
 import net.qzimyion.cellulose.screen.sawmill.SawmillScreen;
@@ -22,9 +23,12 @@ public class CelluloseClient implements ClientModInitializer
     {
         RenderType Render = RenderType.cutout();
         RenderType Render1 = RenderType.translucent();
-        RenderType Render2 = RenderType.cutoutMipped();
 
         BlockRenderLayerMap.INSTANCE.putBlock(SAWMILL, Render);
+
+        //Foliage
+        BlockRenderLayerMap.INSTANCE.putBlock(VICTORIAN_LILY, Render);
+        BlockRenderLayerMap.INSTANCE.putBlock(OMEGA_LILY, Render);
 
         //Frames
         BlockRenderLayerMap.INSTANCE.putBlock(OAK_FRAME, Render);
@@ -40,7 +44,6 @@ public class CelluloseClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_FRAME, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_FRAME, Render);
 
 
         //Lintels
@@ -57,7 +60,6 @@ public class CelluloseClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_FRAME, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_LINTELS, Render);
         BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_LINTELS, Render);
-        BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_LINTELS, Render);
 
         //Nature
         BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_FLOWERS, Render);
@@ -94,9 +96,11 @@ public class CelluloseClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(CHERRY_SHOJI, Render1);
         BlockRenderLayerMap.INSTANCE.putBlock(CACTUS_SHOJI, Render1);
         BlockRenderLayerMap.INSTANCE.putBlock(AZALEA_SHOJI, Render1);
-        BlockRenderLayerMap.INSTANCE.putBlock(BLOOMING_AZALEA_SHOJI, Render1);
 
-        //Tints
-        ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> FoliageColor.getDefaultColor()), OAK_LEAF);
+        //==Tints==//
+        //Blocks
+        ColorProviderRegistry.BLOCK.register((b, bt, bp, bo) -> FoliageColor.getDefaultColor(),
+                Blocks.LILY_PAD, VICTORIAN_LILY, OMEGA_LILY);
+
     }
 }

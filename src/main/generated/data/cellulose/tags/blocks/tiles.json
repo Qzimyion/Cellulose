@@ -13,7 +13,6 @@
     "cellulose:bamboo_tiles",
     "cellulose:cherry_tiles",
     "cellulose:cactus_tiles",
-    "cellulose:azalea_tiles",
-    "cellulose:blooming_azalea_tiles"
+    "cellulose:azalea_tiles"
   ]
 }

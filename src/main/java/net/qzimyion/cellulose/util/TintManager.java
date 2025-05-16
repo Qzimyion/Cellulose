@@ -2,13 +2,33 @@ package net.qzimyion.cellulose.util;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.LevelRenderer;
+import net.minecraft.client.renderer.ViewArea;
+import net.minecraft.client.renderer.chunk.ChunkRenderDispatcher;
 import net.minecraft.util.Mth;
+import net.qzimyion.cellulose.mixin.LevelRendererAccessor;
 
 import java.util.Objects;
 
 public class TintManager {
     private static float gradient = 0;
     private static long lastUpdateTime = 0;
+
+    private static void updateAllChunks() {
+        Minecraft minecraft = Minecraft.getInstance();
+        ClientLevel world = minecraft.level;
+        LevelRenderer levelRenderer = minecraft.levelRenderer;
+        if (world != null) {
+            ViewArea chunkMap = ((LevelRendererAccessor) levelRenderer).viewArea();
+            if (chunkMap != null) {
+                for (ChunkRenderDispatcher.RenderChunk chunk : chunkMap.chunks) {
+                    if (chunk != null) {
+                        chunk.setDirty(true);
+                    }
+                }
+            }
+        }
+    }
 
     public static void updateTint() {
         Minecraft client = Minecraft.getInstance();
@@ -29,13 +49,7 @@ public class TintManager {
 
         gradient = Mth.clamp(gradient, 0, 1);
         lastUpdateTime = currentTime;
-        updateChunks(clientLevel);
-    }
-
-    public static void updateChunks(ClientLevel level) {
-        if (level != null) {
-            Minecraft.getInstance().levelRenderer.allChanged();
-        }
+        updateAllChunks();
     }
 
     public static float getGradient() {

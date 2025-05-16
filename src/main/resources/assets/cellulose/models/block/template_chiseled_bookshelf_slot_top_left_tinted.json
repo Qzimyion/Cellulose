@@ -7,7 +7,13 @@
 			"from": [10, 8, 0],
 			"to": [16, 16, 0],
 			"faces": {
-				"north": {"uv": [0, 0, 6, 8], "texture": "#texture", "tintindex": 1, "cullface": "north"}
+				"north":
+				{
+					"uv": [0, 0, 6, 8],
+					"texture": "#texture",
+					"tintindex": 1,
+					"cullface": "north"
+				}
 			}
 		}
 	]

@@ -1,0 +1,9 @@
+{
+  "parent": "cellulose:block/trunk_sw",
+  "textures": {
+    "side": "minecraft:block/spruce_log",
+    "inside": "cellulose:block/spruce_inner_trunk",
+    "top": "cellulose:block/spruce_trunk_south_west",
+    "particle": "cellulose:block/spruce_trunk_south_west"
+  }
+}

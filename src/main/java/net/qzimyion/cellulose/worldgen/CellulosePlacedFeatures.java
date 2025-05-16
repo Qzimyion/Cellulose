@@ -8,6 +8,7 @@ import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -48,13 +49,10 @@ public class CellulosePlacedFeatures {
 
         //Fallen logs
         registerKey(context, FALLEN_OAK_LOG_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(CelluloseConfiguredFeatures.FALLEN_OAK_LOG),
-                HeightmapPlacement.onHeightmap(MOTION_BLOCKING_NO_LEAVES),
-                RarityFilter.onAverageOnceEvery(31)
-        );
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1f, 1), Blocks.OAK_SAPLING));
 
         registerKey(context, FALLEN_HOLLOW_OAK_LOG_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(CelluloseConfiguredFeatures.FALLEN_HOLLOW_OAK_LOG),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.05f, 1), Blocks.OAK_SAPLING)
-        );
+                RarityFilter.onAverageOnceEvery(5));
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {

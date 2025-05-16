@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "cellulose:splintered_azalea_stairs",
-    "cellulose:splintered_blooming_azalea_stairs",
     "cellulose:splintered_warped_stairs",
     "cellulose:splintered_crimson_stairs",
     "cellulose:splintered_vertical_oak_stairs",
@@ -17,7 +16,6 @@
     "cellulose:splintered_vertical_bamboo_stairs",
     "cellulose:splintered_vertical_cherry_stairs",
     "cellulose:splintered_vertical_cactus_stairs",
-    "cellulose:splintered_vertical_azalea_stairs",
-    "cellulose:splintered_vertical_blooming_azalea_stairs"
+    "cellulose:splintered_vertical_azalea_stairs"
   ]
 }

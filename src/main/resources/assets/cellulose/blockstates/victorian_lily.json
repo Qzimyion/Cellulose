@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,shape=north_east": {
+      "model": "cellulose:block/victorian_lily_north_east"
+    },
+    "facing=east,shape=north_east": {
+      "model": "cellulose:block/victorian_lily_north_east",
+      "y": 90
+    },
+    "facing=south,shape=north_east": {
+      "model": "cellulose:block/victorian_lily_north_east",
+      "y": 180
+    },
+    "facing=west,shape=north_east": {
+      "model": "cellulose:block/victorian_lily_north_east",
+      "y": 270
+    },
+    "facing=north,shape=north_west": {
+      "model": "cellulose:block/victorian_lily_north_west"
+    },
+    "facing=east,shape=north_west": {
+      "model": "cellulose:block/victorian_lily_north_west",
+      "y": 90
+    },
+    "facing=south,shape=north_west": {
+      "model": "cellulose:block/victorian_lily_north_west",
+      "y": 180
+    },
+    "facing=west,shape=north_west": {
+      "model": "cellulose:block/victorian_lily_north_west",
+      "y": 270
+    },
+    "facing=north,shape=south_east": {
+      "model": "cellulose:block/victorian_lily_south_east"
+    },
+    "facing=east,shape=south_east": {
+      "model": "cellulose:block/victorian_lily_south_east",
+      "y": 90
+    },
+    "facing=south,shape=south_east": {
+      "model": "cellulose:block/victorian_lily_south_east",
+      "y": 180
+    },
+    "facing=west,shape=south_east": {
+      "model": "cellulose:block/victorian_lily_south_east",
+      "y": 270
+    },
+    "facing=north,shape=south_west": {
+      "model": "cellulose:block/victorian_lily_south_west"
+    },
+    "facing=east,shape=south_west": {
+      "model": "cellulose:block/victorian_lily_south_west",
+      "y": 90
+    },
+    "facing=south,shape=south_west": {
+      "model": "cellulose:block/victorian_lily_south_west",
+      "y": 180
+    },
+    "facing=west,shape=south_west": {
+      "model": "cellulose:block/victorian_lily_south_west",
+      "y": 270
+    }
+  }
+}

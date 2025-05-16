@@ -32,6 +32,7 @@ public class CelluloseItems
 
     //Special items
     public static final Item VICTORIAN_LILY = registerItem("victorian_lily", new PlaceOnWaterBlockItem(CelluloseBlocks.VICTORIAN_LILY, new FabricItemSettings()));
+    public static final Item OMEGA_LILY = registerItem("omega_lily", new PlaceOnWaterBlockItem(CelluloseBlocks.OMEGA_LILY, new FabricItemSettings()));
 
 
     private static Item registerItem(String name, Item item)

@@ -37,8 +37,9 @@
       "type": "minecraft:horizontal_straight_trunk_placer",
       "base_height": 3,
       "height_rand_a": 1,
-      "height_rand_b": 0,
-      "stump_chance": 0.5
+      "height_rand_b": 2,
+      "stump_chance": 0.5,
+      "success_in_water_chance": 0.8
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",

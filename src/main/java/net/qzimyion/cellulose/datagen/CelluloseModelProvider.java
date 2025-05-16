@@ -2,13 +2,21 @@ package net.qzimyion.cellulose.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.core.Direction;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.blockstates.Condition;
+import net.minecraft.data.models.blockstates.MultiPartGenerator;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
 import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.qzimyion.cellulose.Cellulose;
+import net.qzimyion.cellulose.blocks.customBlocks.TrunkBlock;
+import net.qzimyion.cellulose.util.TwoByTwoShapeEnum;
 
 import static net.minecraft.world.level.block.Blocks.*;
 import static net.minecraft.data.models.BlockModelGenerators.createSimpleBlock;
@@ -22,9 +30,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
     }
 
     //Custom blockstates
-    public final void registerSingleton(BlockModelGenerators blockStateModelGenerator, Block block, ResourceLocation modelIdentifier) {
-        blockStateModelGenerator.blockStateOutput.accept(createSimpleBlock(block, modelIdentifier));
-    }
 
     public static void registerBookshelf(Block bookshelf, Block plank, BlockModelGenerators blockStateModelGenerator) {
         TextureMapping textureMap = TextureMapping.column(TextureMapping.getBlockTexture(bookshelf), TextureMapping.getBlockTexture(plank));
@@ -68,7 +73,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockModelGenerators.BlockFamilyProvider VerticalBamboo = blockStateModelGenerator.family(VERTICAL_BAMBOO_PLANKS);
         BlockModelGenerators.BlockFamilyProvider VerticalCherry = blockStateModelGenerator.family(VERTICAL_CHERRY_PLANKS);
         BlockModelGenerators.BlockFamilyProvider VerticalAzalea = blockStateModelGenerator.family(VERTICAL_AZALEA_PLANKS);
-        BlockModelGenerators.BlockFamilyProvider VerticalBloomingAzalea = blockStateModelGenerator.family(VERTICAL_BLOOMING_AZALEA_PLANKS);
 
         BlockModelGenerators.BlockFamilyProvider MosaicOak = blockStateModelGenerator.family(OAK_MOSAIC);
         BlockModelGenerators.BlockFamilyProvider MosaicBirch = blockStateModelGenerator.family(BIRCH_MOSAIC);
@@ -82,7 +86,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockModelGenerators.BlockFamilyProvider MosaicCherry = blockStateModelGenerator.family(CHERRY_MOSAIC);
         BlockModelGenerators.BlockFamilyProvider cactusMosaicTexturePool = blockStateModelGenerator.family(CACTUS_MOSAIC);
         BlockModelGenerators.BlockFamilyProvider MosaicAzalea = blockStateModelGenerator.family(AZALEA_MOSAIC);
-        BlockModelGenerators.BlockFamilyProvider MosaicBloomingAzalea = blockStateModelGenerator.family(BLOOMING_AZALEA_MOSAIC);
 
         BlockModelGenerators.BlockFamilyProvider ChippedPlankOak = blockStateModelGenerator.family(CHIPPED_OAK_PLANKS);
         BlockModelGenerators.BlockFamilyProvider ChippedPlankBirch = blockStateModelGenerator.family(CHIPPED_BIRCH_PLANKS);
@@ -97,9 +100,8 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockModelGenerators.BlockFamilyProvider ChippedPlankCherry = blockStateModelGenerator.family(CHIPPED_CHERRY_PLANKS);
         BlockModelGenerators.BlockFamilyProvider ChippedPlankCactus = blockStateModelGenerator.family(CHIPPED_CACTUS_PLANKS);
         BlockModelGenerators.BlockFamilyProvider ChippedPlankAzalea = blockStateModelGenerator.family(CHIPPED_AZALEA_PLANKS);
-        BlockModelGenerators.BlockFamilyProvider ChippedPlankBloomingAzalea = blockStateModelGenerator.family(CHIPPED_BLOOMING_AZALEA_PLANKS);
 
-        BlockModelGenerators.BlockFamilyProvider TilesOak = blockStateModelGenerator.family(OAK_TILES);
+        BlockModelGenerators.BlockFamilyProvider TilesOak = blockStateModelGenerator.family(OAK_BOARDS);
         BlockModelGenerators.BlockFamilyProvider TilesBirch = blockStateModelGenerator.family(BIRCH_TILES);
         BlockModelGenerators.BlockFamilyProvider TilesSpruce = blockStateModelGenerator.family(SPRUCE_TILES);
         BlockModelGenerators.BlockFamilyProvider TilesDarkOak = blockStateModelGenerator.family(DARK_OAK_TILES);
@@ -112,8 +114,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockModelGenerators.BlockFamilyProvider TilesCherry = blockStateModelGenerator.family(CHERRY_TILES);
         BlockModelGenerators.BlockFamilyProvider TilesCactus = blockStateModelGenerator.family(CACTUS_TILES);
         BlockModelGenerators.BlockFamilyProvider TilesAzalea = blockStateModelGenerator.family(AZALEA_TILES);
-        BlockModelGenerators.BlockFamilyProvider TilesBloomingAzalea = blockStateModelGenerator.family(BLOOMING_AZALEA_TILES);
-
 
         BlockModelGenerators.BlockFamilyProvider BoardsOak = blockStateModelGenerator.family(OAK_TIMBERS);
         BlockModelGenerators.BlockFamilyProvider BoardsBirch = blockStateModelGenerator.family(BIRCH_TIMBERS);
@@ -197,7 +197,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         BlockModelGenerators.WoodProvider PlankPillarCherry = blockStateModelGenerator.woodProvider(CHERRY_PLANK_PILLARS);
         BlockModelGenerators.WoodProvider PlankPillarCactus = blockStateModelGenerator.woodProvider(CACTUS_PLANK_PILLARS);
         BlockModelGenerators.WoodProvider PlankPillarAzalea = blockStateModelGenerator.woodProvider(AZALEA_PLANK_PILLARS);
-        BlockModelGenerators.WoodProvider PlankPillarBloomingAzalea = blockStateModelGenerator.woodProvider(BLOOMING_AZALEA_PLANK_PILLARS);
 
         /*
         BlockStateModelGenerator.LogTexturePool BeamOak = blockStateModelGenerator.registerLog(OAK_LOG_MOSAIC);
@@ -224,11 +223,7 @@ public class CelluloseModelProvider extends FabricModelProvider {
         //Azalea Wood
         BlockModelGenerators.WoodProvider Azalea = blockStateModelGenerator.woodProvider(AZALEA_LOG);
         BlockModelGenerators.WoodProvider StrippedAzalea = blockStateModelGenerator.woodProvider(STRIPPED_AZALEA_LOG);
-        BlockModelGenerators.WoodProvider BloomingAzalea = blockStateModelGenerator.woodProvider(BLOOMING_AZALEA_LOG);
-        BlockModelGenerators.WoodProvider BloomingEngravedAzalea = blockStateModelGenerator.woodProvider(ENGRAVED_BLOOMING_AZALEA);
-        BlockModelGenerators.WoodProvider BloomingStrippedAzalea = blockStateModelGenerator.woodProvider(BLOOMING_STRIPPED_AZALEA_LOG);
         BlockModelGenerators.BlockFamilyProvider AzaleaPlanks = blockStateModelGenerator.family(AZALEA_PLANKS);
-        BlockModelGenerators.BlockFamilyProvider BloomingAzaleaPlanks = blockStateModelGenerator.family(BLOOMING_AZALEA_PLANKS);
 
         /*
         Misc stuff
@@ -399,8 +394,6 @@ public class CelluloseModelProvider extends FabricModelProvider {
         blockStateModelGenerator.createGlassBlocks(CHERRY_FRAME, CHERRY_LINTELS);
         blockStateModelGenerator.createGlassBlocks(CACTUS_FRAME, CACTUS_LINTELS);
         blockStateModelGenerator.createGlassBlocks(AZALEA_FRAME, AZALEA_LINTELS);
-        blockStateModelGenerator.createGlassBlocks(BLOOMING_AZALEA_FRAME, BLOOMING_AZALEA_LINTELS);
-
 
         /*
         *Barricades
@@ -430,17 +423,13 @@ public class CelluloseModelProvider extends FabricModelProvider {
         //(Woodsets: Azalea)
         ///Logs stuff
         Azalea.logWithHorizontal(AZALEA_LOG);
-        BloomingAzalea.logWithHorizontal(BLOOMING_AZALEA_LOG);
         StrippedAzalea.logWithHorizontal(STRIPPED_AZALEA_LOG);
-        BloomingStrippedAzalea.logWithHorizontal(BLOOMING_STRIPPED_AZALEA_LOG);
         EngravedAzalea.logWithHorizontal(ENGRAVED_AZALEA);
         EngravedAzalea.wood(ENGRAVED_AZALEA_WOOD);
         ChippedAzalea.logWithHorizontal(CHIPPED_AZALEA);
         ChippedAzalea.wood(CHIPPED_AZALEA_WOOD);
         Azalea.wood(AZALEA_WOOD);
-        BloomingAzalea.wood(BLOOMING_AZALEA_WOOD);
         StrippedAzalea.wood(STRIPPED_AZALEA_WOOD);
-        BloomingStrippedAzalea.wood(BLOOMING_STRIPPED_AZALEA_WOOD);
         ///Redstone component
         ///Plank related
         AzaleaPlanks.slab(AZALEA_SLAB);
@@ -449,36 +438,20 @@ public class CelluloseModelProvider extends FabricModelProvider {
         AzaleaPlanks.fenceGate(AZALEA_FENCE_GATE);
         AzaleaPlanks.pressurePlate(AZALEA_PRESSURE_PLATE);
         AzaleaPlanks.button(AZALEA_BUTTON);
-        BloomingAzaleaPlanks.slab(BLOOMING_AZALEA_SLAB);
-        BloomingAzaleaPlanks.stairs(BLOOMING_AZALEA_STAIRS);
         VerticalAzalea.slab(VERTICAL_AZALEA_SLAB);
-        VerticalBloomingAzalea.slab(VERTICAL_BLOOMING_AZALEA_SLAB);
         MosaicAzalea.slab(AZALEA_MOSAIC_SLABS);
-        MosaicBloomingAzalea.slab(BLOOMING_AZALEA_MOSAIC_SLABS);
         VerticalAzalea.stairs(VERTICAL_AZALEA_STAIR);
-        VerticalBloomingAzalea.stairs(VERTICAL_BLOOMING_AZALEA_STAIR);
         MosaicAzalea.stairs(AZALEA_MOSAIC_STAIRS);
-        MosaicBloomingAzalea.stairs(BLOOMING_AZALEA_MOSAIC_STAIRS);
         blockStateModelGenerator.createDoor(AZALEA_DOOR);
-        blockStateModelGenerator.createDoor(BLOOMING_AZALEA_DOOR);
         blockStateModelGenerator.createTrapdoor(AZALEA_TRAPDOOR);
-        blockStateModelGenerator.createTrapdoor(BLOOMING_AZALEA_TRAPDOOR);
         StrippedChippedAzalea.logWithHorizontal(STRIPPED_CHIPPED_AZALEA);
         StrippedChippedAzalea.wood(STRIPPED_CHIPPED_AZALEA_WOOD);
         ChippedPlankAzalea.slab(CHIPPED_AZALEA_SLAB);
         ChippedPlankAzalea.stairs(CHIPPED_AZALEA_STAIRS);
-        ChippedPlankBloomingAzalea.slab(CHIPPED_BLOOMING_AZALEA_SLAB);
-        ChippedPlankBloomingAzalea.stairs(CHIPPED_BLOOMING_AZALEA_STAIRS);
-        BloomingEngravedAzalea.logWithHorizontal(ENGRAVED_BLOOMING_AZALEA);
-        BloomingEngravedAzalea.wood(ENGRAVED_BLOOMING_AZALEA_WOOD);
         TilesAzalea.slab(AZALEA_TILES_SLABS);
         TilesAzalea.stairs(AZALEA_TILES_STAIRS);
-        TilesBloomingAzalea.slab(BLOOMING_AZALEA_TILES_SLABS);
-        TilesBloomingAzalea.stairs(BLOOMING_AZALEA_TILES_STAIRS);
         blockStateModelGenerator.createTrivialCube(CHISELED_AZALEA);
-        blockStateModelGenerator.createTrivialCube(CHISELED_BLOOMING_AZALEA);
         PlankPillarAzalea.logWithHorizontal(AZALEA_PLANK_PILLARS).wood(AZALEA_PLANK_BOX);
-        PlankPillarBloomingAzalea.logWithHorizontal(BLOOMING_AZALEA_PLANK_PILLARS).wood(BLOOMING_AZALEA_PLANK_BOX);
         GlazedAzalea.slab(GLAZED_AZALEA_SLABS).stairs(GLAZED_AZALEA_STAIRS);
 
         //Bookshelf

@@ -80,9 +80,8 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         dropSelf(CHERRY_LOG_MOSAIC);
         dropSelf(CACTUS_LOG_MOSAIC);
         dropSelf(AZALEA_LOG_MOSAIC);
-        dropSelf(BLOOMING_AZALEA_LOG_MOSAIC);
         /*Tiles*/
-        dropSelf(OAK_TILES);
+        dropSelf(OAK_BOARDS);
         dropSelf(BIRCH_TILES);
         dropSelf(SPRUCE_TILES);
         dropSelf(DARK_OAK_TILES);
@@ -134,7 +133,6 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         dropSelf(CHISELED_CHERRY);
         dropSelf(CHISELED_CACTUS);
         dropSelf(CHISELED_AZALEA);
-        dropSelf(CHISELED_BLOOMING_AZALEA);
         /*Pavement*/
         dropSelf(OAK_PLANK_PAVEMENT);
         dropSelf(BIRCH_PLANK_PAVEMENT);
@@ -366,7 +364,6 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         add(CHERRY_FRAME, createSilkTouchOnlyTable(CHERRY_FRAME));
         add(CACTUS_FRAME, createSilkTouchOnlyTable(CACTUS_FRAME));
         add(AZALEA_FRAME, createSilkTouchOnlyTable(AZALEA_FRAME));
-        add(BLOOMING_AZALEA_FRAME, createSilkTouchOnlyTable(BLOOMING_AZALEA_FRAME));
 
         //Lintels
         add(OAK_LINTELS, createSilkTouchOnlyTable(OAK_LINTELS));
@@ -382,7 +379,6 @@ public class CelluloseBlockLootTableProvider extends FabricBlockLootTableProvide
         add(CHERRY_LINTELS, createSilkTouchOnlyTable(CHERRY_LINTELS));
         add(CACTUS_LINTELS, createSilkTouchOnlyTable(CACTUS_LINTELS));
         add(AZALEA_LINTELS, createSilkTouchOnlyTable(AZALEA_LINTELS));
-        add(BLOOMING_AZALEA_LINTELS, createSilkTouchOnlyTable(BLOOMING_AZALEA_LINTELS));
 
         //Misc
         dropSelf(CACTUS_BUNDLE);

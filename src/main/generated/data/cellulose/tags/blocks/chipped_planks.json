@@ -14,7 +14,6 @@
     "cellulose:splintered_cherry_planks",
     "cellulose:splintered_cactus_planks",
     "cellulose:splintered_azalea_planks",
-    "cellulose:splintered_blooming_azalea_planks",
     "cellulose:splintered_vertical_oak_planks",
     "cellulose:splintered_vertical_birch_planks",
     "cellulose:splintered_vertical_spruce_planks",
@@ -27,7 +26,6 @@
     "cellulose:splintered_vertical_bamboo_planks",
     "cellulose:splintered_vertical_cherry_planks",
     "cellulose:splintered_vertical_cactus_planks",
-    "cellulose:splintered_vertical_azalea_planks",
-    "cellulose:splintered_vertical_blooming_azalea_planks"
+    "cellulose:splintered_vertical_azalea_planks"
   ]
 }

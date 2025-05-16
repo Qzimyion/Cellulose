@@ -1,0 +1,54 @@
+{
+  "multipart": [
+    {
+      "when": { "axis": "x", "shape": "north_west" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_x_north_west" }
+    },
+    {
+      "when": { "axis": "x", "shape": "north_east" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_x_north_east" }
+    },
+    {
+      "when": { "axis": "x", "shape": "south_west" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_x_south_west" }
+    },
+    {
+      "when": { "axis": "x", "shape": "south_east" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_x_south_east" }
+    },
+
+    {
+      "when": { "axis": "y", "shape": "north_west" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_y_north_west" }
+    },
+    {
+      "when": { "axis": "y", "shape": "north_east" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_y_north_east" }
+    },
+    {
+      "when": { "axis": "y", "shape": "south_west" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_y_south_west" }
+    },
+    {
+      "when": { "axis": "y", "shape": "south_east" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_y_south_east" }
+    },
+
+    {
+      "when": { "axis": "z", "shape": "north_west" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_z_north_west" }
+    },
+    {
+      "when": { "axis": "z", "shape": "north_east" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_z_north_east" }
+    },
+    {
+      "when": { "axis": "z", "shape": "south_west" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_z_south_west" }
+    },
+    {
+      "when": { "axis": "z", "shape": "south_east" },
+      "apply": { "model": "cellulose:block/dark_oak_trunk_z_south_east" }
+    }
+  ]
+}

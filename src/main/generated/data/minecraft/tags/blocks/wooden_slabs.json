@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "cellulose:azalea_slab",
-    "cellulose:blooming_azalea_slab",
     "cellulose:cactus_slab",
     "cellulose:vertical_oak_slab",
     "cellulose:vertical_birch_slab",
@@ -17,7 +16,6 @@
     "cellulose:vertical_cherry_slab",
     "cellulose:vertical_cactus_slab",
     "cellulose:vertical_azalea_planks_slab",
-    "cellulose:vertical_blooming_azalea_slab",
     "cellulose:vertical_cedar_planks_slab",
     "cellulose:oak_mosaic_slab",
     "cellulose:birch_mosaic_slab",
@@ -31,7 +29,6 @@
     "cellulose:cherry_mosaic_slab",
     "cellulose:cactus_mosaic_slab",
     "cellulose:azalea_mosaic_slab",
-    "cellulose:blooming_azalea_mosaic_slab",
     "cellulose:oak_tiles_slab",
     "cellulose:birch_tiles_slab",
     "cellulose:spruce_tiles_slab",
@@ -44,7 +41,6 @@
     "cellulose:bamboo_tiles_slab",
     "cellulose:cherry_tiles_slab",
     "cellulose:cactus_tiles_slab",
-    "cellulose:azalea_tiles_slab",
-    "cellulose:blooming_azalea_tiles_slab"
+    "cellulose:azalea_tiles_slab"
   ]
 }

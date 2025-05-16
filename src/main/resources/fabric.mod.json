@@ -17,6 +17,7 @@
 	"license": "CC0-1.0 license",
 	"icon": "assets/cellulose/icon.png",
 	"environment": "*",
+	"accessWidener": "cellulose.accesswidener",
 	"entrypoints": {
 		"main": [
           "net.qzimyion.cellulose.Cellulose"

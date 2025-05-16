@@ -27,7 +27,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import net.qzimyion.cellulose.blocks.ModBlockProperties;
-import net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves.BambooChiseledBookshelfBlockEntity;
+import net.qzimyion.cellulose.blocks.BlockEntity.CustomBookshelves.BambooChiseledBookshelfBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;

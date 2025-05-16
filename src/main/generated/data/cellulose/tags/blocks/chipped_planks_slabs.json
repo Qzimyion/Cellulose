@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "cellulose:splintered_azalea_slab",
-    "cellulose:splintered_blooming_azalea_slab",
     "cellulose:splintered_warped_slab",
     "cellulose:splintered_crimson_slab",
     "cellulose:splintered_vertical_oak_slab",
@@ -17,7 +16,6 @@
     "cellulose:splintered_vertical_bamboo_slab",
     "cellulose:splintered_vertical_cherry_slab",
     "cellulose:splintered_vertical_cactus_slab",
-    "cellulose:splintered_vertical_azalea_slab",
-    "cellulose:splintered_vertical_blooming_azalea"
+    "cellulose:splintered_vertical_azalea_slab"
   ]
 }

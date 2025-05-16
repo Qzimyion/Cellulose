@@ -7,7 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.ItemTags;
-import net.qzimyion.cellulose.entity.BlockEntity.CustomBookshelves.FourSlotBookshelfBlockEntity;
+import net.qzimyion.cellulose.blocks.BlockEntity.CustomBookshelves.FourSlotBookshelfBlockEntity;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

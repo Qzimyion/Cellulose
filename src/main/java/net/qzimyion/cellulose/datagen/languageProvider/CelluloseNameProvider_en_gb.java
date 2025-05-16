@@ -172,7 +172,6 @@ public class CelluloseNameProvider_en_gb extends FabricLanguageProvider {
         translationBuilder.add(CHIPPED_AZALEA_SLAB, "Chipped Azalea Slab");
         translationBuilder.add(CHIPPED_AZALEA_STAIRS, "Chipped Azalea Stairs");
         translationBuilder.add(AZALEA_PLANK_PAVEMENT, "Azalea Pavement");
-        translationBuilder.add(BLOOMING_AZALEA_PLANK_PAVEMENT, "Blooming Azalea Pavement");
 
         /*Stats*/
         translationBuilder.add(CelluloseStats.INTERACT_WITH_SAWMILL, "Interaction with sawmill");
@@ -290,7 +289,7 @@ public class CelluloseNameProvider_en_gb extends FabricLanguageProvider {
         translationBuilder.add(GLAZED_BAMBOO_SLABS, "Glazed Bamboo Slab");
         translationBuilder.add(GLAZED_CHERRY_SLABS, "Glazed Cherry Slab");
         //Tiles
-        translationBuilder.add(OAK_TILES, "Oak Tiles");
+        translationBuilder.add(OAK_BOARDS, "Oak Tiles");
         translationBuilder.add(BIRCH_TILES, "Birch Tiles");
         translationBuilder.add(SPRUCE_TILES, "Spruce Tiles");
         translationBuilder.add(DARK_OAK_TILES, "Dark Oak Tiles");

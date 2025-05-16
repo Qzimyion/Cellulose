@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "cellulose:block/chiseled_blooming_azalea_planks"
-  }
-}

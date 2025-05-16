@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "cellulose:azalea_stairs",
-    "cellulose:blooming_azalea_stairs",
     "cellulose:cactus_stairs",
     "cellulose:vertical_oak_stairs",
     "cellulose:vertical_birch_stairs",
@@ -17,7 +16,6 @@
     "cellulose:vertical_cherry_stairs",
     "cellulose:vertical_cactus_stairs",
     "cellulose:vertical_azalea_stairs",
-    "cellulose:vertical_azalea_blooming_stairs",
     "cellulose:vertical_cedar_stairs",
     "cellulose:oak_mosaic_stairs",
     "cellulose:birch_mosaic_stairs",
@@ -31,7 +29,6 @@
     "cellulose:cherry_mosaic_stairs",
     "cellulose:cactus_mosaic_stairs",
     "cellulose:azalea_mosaic_stairs",
-    "cellulose:blooming_azalea_mosaic_stairs",
     "cellulose:oak_tiles_stairs",
     "cellulose:birch_tiles_stairs",
     "cellulose:spruce_tiles_stairs",
@@ -44,7 +41,6 @@
     "cellulose:bamboo_tiles_stairs",
     "cellulose:cherry_tiles_stairs",
     "cellulose:cactus_tiles_stairs",
-    "cellulose:azalea_tiles_stairs",
-    "cellulose:blooming_azalea_tiles_stairs"
+    "cellulose:azalea_tiles_stairs"
   ]
 }

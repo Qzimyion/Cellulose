@@ -16,7 +16,6 @@ public class CelluloseFuel
         //Planks
         registry.add(CelluloseBlocks.CACTUS_PLANKS, 300);
         registry.add(CelluloseBlocks.AZALEA_PLANKS, 300);
-        registry.add(CelluloseBlocks.BLOOMING_AZALEA_PLANKS, 300);
 
         //Vertical planks
         registry.add(VERTICAL_OAK_PLANKS, 300);
@@ -30,7 +29,6 @@ public class CelluloseFuel
         registry.add(VERTICAL_CHERRY_PLANKS, 300);
         registry.add(VERTICAL_CACTUS_PLANKS, 300);
         registry.add(VERTICAL_AZALEA_PLANKS, 300);
-        registry.add(VERTICAL_BLOOMING_AZALEA_PLANKS, 300);
 
         //Mosaics
         registry.add(OAK_MOSAIC, 300);
@@ -44,17 +42,14 @@ public class CelluloseFuel
         registry.add(CHERRY_MOSAIC, 300);
         registry.add(CACTUS_MOSAIC, 300);
         registry.add(AZALEA_MOSAIC, 300);
-        registry.add(BLOOMING_AZALEA_MOSAIC, 300);
 
         //Wooden Slabs
         registry.add(CACTUS_SLAB, 150);
         registry.add(AZALEA_SLAB, 150);
-        registry.add(BLOOMING_AZALEA_SLAB, 150);
 
         //Wooden Stairs
         registry.add(CACTUS_STAIRS, 300);
         registry.add(AZALEA_STAIRS, 300);
-        registry.add(BLOOMING_AZALEA_STAIRS, 300);
 
         //Frames
         registry.add(OAK_FRAME, 300);
@@ -68,7 +63,6 @@ public class CelluloseFuel
         registry.add(CHERRY_FRAME, 300);
         registry.add(CACTUS_FRAME, 300);
         registry.add(AZALEA_FRAME, 300);
-        registry.add(BLOOMING_AZALEA_FRAME, 300);
 
         //Lintels
         registry.add(OAK_LINTELS, 100);
@@ -82,7 +76,6 @@ public class CelluloseFuel
         registry.add(CHERRY_LINTELS, 100);
         registry.add(CACTUS_LINTELS, 100);
         registry.add(AZALEA_LINTELS, 100);
-        registry.add(BLOOMING_AZALEA_LINTELS, 100);
 
         //Chipped Planks
         registry.add(CHIPPED_OAK_PLANKS, 300);
@@ -96,7 +89,6 @@ public class CelluloseFuel
         registry.add(CHIPPED_CHERRY_PLANKS, 300);
         registry.add(CHIPPED_CACTUS_PLANKS, 300);
         registry.add(CHIPPED_AZALEA_PLANKS, 300);
-        registry.add(CHIPPED_BLOOMING_AZALEA_PLANKS, 300);
 
         //Chipped Planks Slabs
         registry.add(CHIPPED_OAK_SLAB, 300);
@@ -110,7 +102,6 @@ public class CelluloseFuel
         registry.add(CHIPPED_CHERRY_SLAB, 300);
         registry.add(CHIPPED_CACTUS_SLAB, 300);
         registry.add(CHIPPED_AZALEA_SLAB, 300);
-        registry.add(CHIPPED_BLOOMING_AZALEA_SLAB, 300);
 
         //Chipped stairs
         registry.add(CHIPPED_OAK_STAIRS, 300);
@@ -124,7 +115,6 @@ public class CelluloseFuel
         registry.add(CHIPPED_CHERRY_STAIRS, 300);
         registry.add(CHIPPED_CACTUS_STAIRS, 300);
         registry.add(CHIPPED_AZALEA_STAIRS, 300);
-        registry.add(CHIPPED_BLOOMING_AZALEA_STAIRS, 300);
 
         //Vertical Chipped Planks
         registry.add(CHIPPED_VERTICAL_OAK_PLANKS, 300);
@@ -138,7 +128,6 @@ public class CelluloseFuel
         registry.add(CHIPPED_VERTICAL_CHERRY_PLANKS, 300);
         registry.add(CHIPPED_VERTICAL_CACTUS_PLANKS, 300);
         registry.add(CHIPPED_VERTICAL_AZALEA_PLANKS, 300);
-        registry.add(CHIPPED_VERTICAL_BLOOMING_AZALEA_PLANKS, 300);
 
         //Vertical Chipped Planks Slabs
         registry.add(CHIPPED_VERTICAL_OAK_SLAB, 300);
@@ -152,7 +141,6 @@ public class CelluloseFuel
         registry.add(CHIPPED_VERTICAL_CHERRY_SLAB, 300);
         registry.add(CHIPPED_VERTICAL_CACTUS_SLAB, 300);
         registry.add(CHIPPED_VERTICAL_AZALEA_SLAB, 300);
-        registry.add(CHIPPED_VERTICAL_BLOOMING_AZALEA_SLAB, 300);
 
         //Vertical Chipped Planks Stairs
         registry.add(CHIPPED_VERTICAL_OAK_STAIRS, 300);
@@ -166,7 +154,6 @@ public class CelluloseFuel
         registry.add(CHIPPED_VERTICAL_CHERRY_STAIRS, 300);
         registry.add(CHIPPED_VERTICAL_CACTUS_STAIRS, 300);
         registry.add(CHIPPED_VERTICAL_AZALEA_STAIRS, 300);
-        registry.add(CHIPPED_VERTICAL_BLOOMING_AZALEA_STAIRS, 300);
 
         //registry.add(BOOKSHELVES, 300);
 

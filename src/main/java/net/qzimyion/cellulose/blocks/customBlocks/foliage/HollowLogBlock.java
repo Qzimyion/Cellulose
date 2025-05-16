@@ -2,7 +2,9 @@ package net.qzimyion.cellulose.blocks.customBlocks.foliage;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -19,11 +21,11 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
@@ -49,6 +51,25 @@ public class HollowLogBlock extends RotatedPillarBlock implements SimpleWaterlog
     }
 
     @Override
+    public VoxelShape getInteractionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+        return Shapes.block();
+    }
+
+    @Override
+    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+        if (!level.isClientSide) {
+            Vec3 hitPos = blockHitResult.getLocation();
+            AABB blockBounds = blockState.getShape(level, blockPos).bounds().move(blockPos.getX(), blockPos.getY(), blockPos.getZ());
+
+            if (blockBounds.contains(hitPos)) { // Check if the player is clicking inside the block
+                player.setPose(Pose.SWIMMING); // Set player to crawling position
+                return InteractionResult.SUCCESS;
+            }
+        }
+        return InteractionResult.PASS;
+    }
+
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context)
     {
         return switch (state.getValue(AXIS)) {
@@ -65,11 +86,9 @@ public class HollowLogBlock extends RotatedPillarBlock implements SimpleWaterlog
     }
 
     @Override
-    @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
         FluidState fluidState = ctx.getLevel().getFluidState(ctx.getClickedPos());
         boolean bl = fluidState.getType() == Fluids.WATER;
-        BlockState blockState = ctx.getLevel().getBlockState(ctx.getClickedPos().above());
         return Objects.requireNonNull(super.getStateForPlacement(ctx)).setValue(WATERLOGGED, bl);
     }
 
